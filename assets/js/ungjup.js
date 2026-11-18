@@ -4,7 +4,7 @@
   const $ = (id) => document.getElementById(id);
   const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-  const state = { assets: [], cache: {}, cur: null, range: 3, lower: "lv", log: false, view: null };
+  const state = { assets: [], cache: {}, cur: null, range: 3, log: false, view: null };
 
   const ZONE_LABEL = ["평상시", "관심 (옅은 음영)", "웅줍 구간 (진한 음영)"];
   const fmtNum = (v, unit) => {
@@ -141,22 +141,20 @@
     });
   }
   seg("uj-range", "range", Number);
-  seg("uj-lower", "lower", String);
   $("uj-log").addEventListener("change", (e) => { state.log = e.target.checked; draw(); });
 
   function renderLegend() {
-    const lower = state.lower === "lv"
-      ? `<li><span class="sw" style="border-color:${css("--chart-price")}"></span>웅줍LV (실시간)</li>
-         <li><span class="sw" style="border-color:${css("--chart-truth")}"></span>사후 정답 레벨</li>`
-      : `<li><span class="sw" style="border-color:${css("--chart-price")}"></span>RSI(14)</li>`;
     $("uj-legend").innerHTML = `
-      <li><span class="sw" style="border-color:${css("--chart-price")}"></span>종가</li>
+      <li>종가 색 = 웅줍LV:</li>
+      <li><span class="sw" style="border-color:${css("--chart-price")}"></span>400 미만</li>
+      <li><span class="sw" style="border-color:${css("--lv-mid")}"></span>400~900</li>
+      <li><span class="sw" style="border-color:${css("--lv-high")}"></span>900 이상</li>
       <li><span class="sw" style="border-color:${css("--chart-s20")}"></span>20일선</li>
       <li><span class="sw" style="border-color:${css("--chart-s200")}"></span>200일선</li>
       <li><span class="sw dash" style="border-color:${css("--chart-uj")}"></span>웅줍라인</li>
       <li><span class="box" style="background:${css("--chart-zone1")}"></span>관심</li>
       <li><span class="box" style="background:${css("--chart-zone2")}"></span>웅줍 구간</li>
-      <li>· 아래 차트:</li>${lower}`;
+      <li><span class="sw dash" style="border-color:${css("--chart-truth")}"></span>사후 정답 레벨 (아래)</li>`;
   }
 
   // ---------- 차트 ----------
@@ -193,7 +191,7 @@
 
     const narrow = W < 520;
     const padL = 8, padR = narrow ? 52 : 64, padT = 8, gap = 26, padB = 24;
-    const lowerH = Math.round((H - padT - gap - padB) * 0.28);
+    const lowerH = Math.round((H - padT - gap - padB) * 0.36);
     const topH = H - padT - gap - padB - lowerH;
     const x0 = padL, x1 = W - padR;
     const cnt = n - start;
@@ -213,7 +211,7 @@
     const padv = (thi - tlo) * 0.06; tlo -= padv; thi += padv;
     const yP = (v) => padT + (1 - (tf(v) - tlo) / (thi - tlo)) * topH;
     const ly0 = padT + topH + gap;
-    const yL = (v) => ly0 + (1 - v / (state.lower === "lv" ? LV_MAX : 100)) * lowerH;
+    const yL = (v) => ly0 + (1 - v / LV_MAX) * lowerH;
 
     // 음영 (두 패널 모두)
     const step = (x1 - x0) / Math.max(1, cnt - 1);
@@ -226,7 +224,6 @@
           ctx.fillStyle = zc[z];
           const xa = xAt(runStart) - step / 2, xb = xAt(i - 1) + step / 2;
           ctx.fillRect(Math.max(x0, xa), padT, Math.min(x1, xb) - Math.max(x0, xa), topH);
-          ctx.fillRect(Math.max(x0, xa), ly0, Math.min(x1, xb) - Math.max(x0, xa), lowerH);
         }
         runStart = i;
       }
@@ -254,11 +251,10 @@
       ctx.beginPath(); ctx.moveTo(x0, y + 0.5); ctx.lineTo(x1, y + 0.5); ctx.stroke();
       ctx.fillText(v >= 1000 ? Math.round(v).toLocaleString("ko-KR") : +v.toFixed(2), x1 + 6, y);
     });
-    const lt = state.lower === "lv" ? [1, 500, 1000] : [33, 50, 70];
-    lt.forEach((v) => {
+    [1, 500, 1000].forEach((v) => {
       const y = yL(v);
       ctx.beginPath(); ctx.moveTo(x0, y + 0.5); ctx.lineTo(x1, y + 0.5); ctx.stroke();
-      ctx.fillText(state.lower === "lv" ? "LV" + v : v, x1 + 6, y);
+      ctx.fillText(v, x1 + 6, y);
     });
 
     // x축 날짜
@@ -300,20 +296,57 @@
     line(R.s200, yP, css("--chart-s200"), 2);
     line(R.s20, yP, css("--chart-s20"), 1.2);
     line(R.uj, yP, css("--chart-uj"), 1.4, [5, 3]);
-    line(R.c, yP, css("--chart-price"), thin ? 1 : 1.5);
-
-    if (state.lower === "lv") {
-      line(R.tr, yL, css("--chart-truth"), 1.6);
-      line(R.lv, yL, css("--chart-price"), thin ? 0.8 : 1.2);
-    } else {
-      ctx.strokeStyle = css("--chart-uj"); ctx.setLineDash([4, 3]);
-      ctx.beginPath(); ctx.moveTo(x0, yL(33)); ctx.lineTo(x1, yL(33)); ctx.stroke(); ctx.setLineDash([]);
-      line(R.rsi, yL, css("--chart-price"), thin ? 0.8 : 1.2);
+    // 종가: 웅줍LV 구간에 따라 색을 바꿔 그림
+    const bucket = (lv) => (lv == null ? 0 : lv >= 900 ? 2 : lv >= 400 ? 1 : 0);
+    const pc = [css("--chart-price"), css("--lv-mid"), css("--lv-high")];
+    ctx.lineWidth = thin ? 1.1 : 1.7; ctx.lineJoin = "round";
+    let segStart = start;
+    for (let i = start + 1; i <= n; i++) {
+      if (i < n && bucket(R.lv[i]) === bucket(R.lv[segStart])) continue;
+      ctx.strokeStyle = pc[bucket(R.lv[segStart])];
+      ctx.beginPath();
+      // 앞 구간과 이어지도록 한 칸 앞에서 시작
+      for (let k = Math.max(start, segStart - 1); k < i; k++) {
+        const v = R.c[k];
+        if (v == null) continue;
+        k === Math.max(start, segStart - 1) ? ctx.moveTo(xAt(k), yP(v)) : ctx.lineTo(xAt(k), yP(v));
+      }
+      ctx.stroke();
+      segStart = i;
     }
+
+    // 웅줍LV: 높이에 따라 색이 변하는 면 + 선
+    const grad = (alpha) => {
+      const g = ctx.createLinearGradient(0, yL(1), 0, yL(LV_MAX));
+      g.addColorStop(0, css("--lv-low")); g.addColorStop(0.5, css("--lv-mid")); g.addColorStop(0.9, css("--lv-high")); g.addColorStop(1, css("--lv-high"));
+      return g;
+    };
+    ctx.save();
+    ctx.beginPath();
+    let open = false, firstX = 0, lastXp = 0;
+    for (let i = start; i < n; i++) {
+      const v = R.lv[i];
+      if (v == null) continue;
+      const x = xAt(i);
+      if (!open) { ctx.moveTo(x, yL(1)); firstX = x; open = true; }
+      ctx.lineTo(x, yL(v)); lastXp = x;
+    }
+    if (open) {
+      ctx.lineTo(lastXp, yL(1)); ctx.lineTo(firstX, yL(1)); ctx.closePath();
+      ctx.globalAlpha = 0.28; ctx.fillStyle = grad(); ctx.fill();
+    }
+    ctx.restore();
+    line(R.tr, yL, css("--chart-truth"), 1.4, [3, 2]);
+    line(R.lv, yL, grad(), thin ? 1 : 1.6);
+    // 900 기준선 (과거 바닥권)
+    ctx.strokeStyle = css("--lv-high"); ctx.lineWidth = 1; ctx.setLineDash([4, 3]);
+    ctx.beginPath(); ctx.moveTo(x0, yL(900) + 0.5); ctx.lineTo(x1, yL(900) + 0.5); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = css("--lv-high"); ctx.textAlign = "left"; ctx.textBaseline = "middle";
+    ctx.fillText("900", x1 + 6, yL(900));
 
     ctx.fillStyle = css("--chart-axis");
     ctx.textAlign = "left"; ctx.textBaseline = "bottom";
-    ctx.fillText(state.lower === "lv" ? "웅줍LV" : "RSI(14)", x0 + 2, ly0 - 4);
+    ctx.fillText("웅줍LV (1~1000) · 점선 900 = 과거 바닥권", x0 + 2, ly0 - 4);
 
     state.view = { start, n, xAt, x0, x1, yP, yL, padT, ly0, lowerH, topH, W, H, dpr };
     overlay.getContext("2d").clearRect(0, 0, overlay.width, overlay.height);
@@ -338,7 +371,7 @@
     o.setLineDash([]);
     const dot = (y, c) => { o.fillStyle = c; o.beginPath(); o.arc(cx, y, 3.5, 0, Math.PI * 2); o.fill(); o.strokeStyle = css("--color-bg"); o.lineWidth = 1.5; o.stroke(); };
     if (R.c[i] != null) dot(v.yP(R.c[i]), css("--chart-price"));
-    const lowV = state.lower === "lv" ? R.lv[i] : R.rsi[i];
+    const lowV = R.lv[i];
     if (lowV != null) dot(v.yL(lowV), css("--chart-price"));
 
     const row = (k, val) => `<div class="r"><span>${k}</span><span>${val}</span></div>`;
