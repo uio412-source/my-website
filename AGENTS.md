@@ -3,7 +3,7 @@
 이 저장소를 수정하는 모든 AI 도구와 사람은 아래 규칙을 따릅니다.
 
 ## 프로젝트 개요
-- **Mr. Stock**: 웅줍 지표 차트와 보유종목·자산 현황을 보여 주는 **정적 웹사이트**입니다. 빌드 도구나 프레임워크 없이 HTML, CSS, JS만 씁니다.
+- **Mr. Stocks**: 웅줍 지표 차트와 보유종목·자산 현황을 보여 주는 **정적 웹사이트**입니다. 빌드 도구나 프레임워크 없이 HTML, CSS, JS만 씁니다.
 - 모바일 우선입니다. 폭 720px 이하에서는 위 메뉴 대신 하단 탭바(차트 · 보유종목 · 자산)가 나옵니다.
 - `main` 브랜치에 merge되면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages로 자동 배포합니다.
 
@@ -21,7 +21,7 @@ assets/js/ungjup.js   차트 (캔버스, 외부 라이브러리 없음)
 assets/js/portfolio.js 보유종목·자산 페이지
 tools/ungjup/build.py 데이터 생성기 (Yahoo Finance → data/ungjup/*.json)
 data/holdings.json    보유종목 원본 (사람이 직접 수정)
-data/ungjup/          생성된 지수 데이터, holdings_lv.json, 보정 계수(coefs.json)
+data/ungjup/          생성된 지수 데이터, holdings_lv.json, 웅줍LV 기준표(lv_model.json)
 assets/img/           이미지
 ```
 
@@ -44,9 +44,14 @@ assets/img/           이미지
 ## 웅줍 지표
 - 데이터는 배포 워크플로가 하루 두 번(한국시간 06:40, 16:40) `tools/ungjup/build.py`로 갱신합니다.
 - 자산 추가·변경은 `build.py`의 `ASSETS` 목록만 고치면 페이지에 자동으로 나타납니다.
-- 보유종목은 과거 하락장이 6번 이상이면 자체 계수, 아니면 공통 계수(`_pooled`)를 씁니다. 상장 200일 미만 종목은 있는 기간으로 200일선을 근사하고 "추정"으로 표시합니다.
-- 웅줍LV 계수는 `data/ungjup/coefs.json`에 고정되어 있습니다. 다시 보정할 때만 `python tools/ungjup/build.py --fit`을 실행하고, PR에 바뀐 계수를 적으세요.
-- 차트 색은 `style.css`의 `--chart-*`, `--lv-*` 변수를 씁니다.
+- **웅줍LV(v2)** = 지금의 하락 스트레스가 "전체 자산(지수+보유종목) 과거 모든 날 중 몇 번째인가"를 1~1000으로 나타낸 값입니다.
+  1. 52주 고점 대비 하락률, 200일선 아래 이격(위면 0)을 자산의 평소 변동성으로 나누고, 과매도 = max(0, 50 − RSI)
+  2. 셋을 공통 백분위로 바꿔 0.5·하락률 + 0.3·이격 + 0.2·과매도로 합치고 3일 평활
+  3. 그 점수의 공통 백분위 × 999 + 1 → LV 900 = 과거 전체에서 상위 10%
+- 구간 이름: 1~399 평온 · 400~699 조정 · 700~899 깊은 조정 · 900~1000 웅줍권
+- 기준표와 자산별 평소 변동성은 `data/ungjup/lv_model.json`에 고정되어 있습니다. 다시 만들 때만 `python tools/ungjup/build.py --fit`을 실행하고 PR에 이유를 적으세요. 상장 200일 미만 종목은 있는 기간으로 200일선을 근사하고 "추정"으로 표시합니다.
+- 차트 색은 `style.css`의 `--chart-*`, `--lv-*` 변수를 씁니다. 웅줍 음영은 핑크(`--chart-zone1/2`, 진한 구간 하단 띠 `--chart-zone-strip`)입니다.
+- 다크/라이트 모드는 오른쪽 위 버튼으로 바꾸며 `<html data-theme>`과 localStorage에 저장됩니다. 색을 추가할 때는 `style.css`의 다크 블록 두 곳(시스템 설정용, `data-theme="dark"`용)에 모두 넣으세요.
 
 ## 로컬 미리보기
 ```

@@ -1,485 +1,405 @@
 {
- "updated": "2026-11-18 06:22 UTC",
+ "updated": "2026-11-18 07:20 UTC",
  "items": {
   "486290.KS": {
    "date": "2026-11-18",
-   "close": 9050.0,
-   "rsi": 30.3,
-   "lv": 919,
+   "close": 9070.0,
+   "rsi": 30.7,
+   "lv": 966,
    "zone": 2,
-   "dd52": 0.2763,
-   "gap200": -0.1592,
-   "short": false,
-   "pooled": true,
-   "min_dd": 0.11
+   "dd52": 0.2747,
+   "gap200": -0.1573,
+   "short": false
   },
   "498400.KS": {
    "date": "2026-11-18",
-   "close": 14395.0,
-   "rsi": 34.4,
-   "lv": 936,
+   "close": 14445.0,
+   "rsi": 35.0,
+   "lv": 997,
    "zone": 1,
-   "dd52": 0.4964,
-   "gap200": -0.2804,
-   "short": false,
-   "pooled": true,
-   "min_dd": 0.22
+   "dd52": 0.4947,
+   "gap200": -0.2779,
+   "short": false
   },
   "005930.KS": {
    "date": "2026-11-18",
-   "close": 193000.0,
-   "rsi": 37.6,
-   "lv": 935,
+   "close": 194700.0,
+   "rsi": 38.7,
+   "lv": 981,
    "zone": 1,
-   "dd52": 0.4676,
-   "gap200": -0.2,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.18
+   "dd52": 0.4629,
+   "gap200": -0.1929,
+   "short": false
   },
   "494300.KS": {
    "date": "2026-11-18",
-   "close": 7755.0,
-   "rsi": 29.5,
-   "lv": 930,
+   "close": 7770.0,
+   "rsi": 29.8,
+   "lv": 991,
    "zone": 2,
-   "dd52": 0.3116,
-   "gap200": -0.1978,
-   "short": false,
-   "pooled": true,
-   "min_dd": 0.1
+   "dd52": 0.3103,
+   "gap200": -0.1962,
+   "short": false
   },
   "010120.KS": {
    "date": "2026-11-18",
-   "close": 115200.0,
-   "rsi": 31.8,
-   "lv": 963,
+   "close": 116000.0,
+   "rsi": 32.4,
+   "lv": 991,
    "zone": 2,
-   "dd52": 0.6383,
-   "gap200": -0.393,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.25
+   "dd52": 0.6358,
+   "gap200": -0.3888,
+   "short": false
   },
   "042660.KS": {
    "date": "2026-11-18",
-   "close": 44450.0,
-   "rsi": 25.2,
-   "lv": 963,
+   "close": 44700.0,
+   "rsi": 25.5,
+   "lv": 992,
    "zone": 2,
-   "dd52": 0.7035,
-   "gap200": -0.5671,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.28
+   "dd52": 0.7018,
+   "gap200": -0.5647,
+   "short": false
   },
   "323410.KS": {
    "date": "2026-11-18",
-   "close": 20900.0,
-   "rsi": 56.7,
-   "lv": 529,
+   "close": 21000.0,
+   "rsi": 58.1,
+   "lv": 680,
    "zone": 1,
-   "dd52": 0.2718,
-   "gap200": -0.0792,
-   "short": false,
-   "pooled": true,
-   "min_dd": 0.23
+   "dd52": 0.2683,
+   "gap200": -0.0748,
+   "short": false
   },
   "034020.KS": {
    "date": "2026-11-18",
-   "close": 42750.0,
-   "rsi": 25.4,
-   "lv": 960,
+   "close": 43050.0,
+   "rsi": 26.2,
+   "lv": 994,
    "zone": 2,
-   "dd52": 0.6866,
-   "gap200": -0.5147,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.26
+   "dd52": 0.6844,
+   "gap200": -0.5113,
+   "short": false
   },
   "QLD": {
    "date": "2026-11-17",
    "close": 73.98,
    "rsi": 35.5,
-   "lv": 857,
+   "lv": 809,
    "zone": 1,
    "dd52": 0.2659,
    "gap200": -0.1155,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.22
+   "short": false
   },
   "CRWV": {
    "date": "2026-11-17",
    "close": 49.89,
    "rsi": 40.6,
-   "lv": 927,
+   "lv": 768,
    "zone": 1,
    "dd52": 0.6384,
    "gap200": -0.4368,
-   "short": false,
-   "pooled": true,
-   "min_dd": 0.3
+   "short": false
   },
   "NVDA": {
    "date": "2026-11-17",
    "close": 155.46,
    "rsi": 22.5,
-   "lv": 923,
+   "lv": 876,
    "zone": 2,
    "dd52": 0.3502,
    "gap200": -0.2374,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.29
+   "short": false
   },
   "SOXX": {
    "date": "2026-11-17",
    "close": 141.46,
    "rsi": 37.9,
-   "lv": 892,
+   "lv": 930,
    "zone": 1,
    "dd52": 0.3521,
    "gap200": -0.1194,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.17
+   "short": false
   },
   "QTUM": {
    "date": "2026-11-17",
    "close": 122.42,
    "rsi": 35.8,
-   "lv": 934,
+   "lv": 912,
    "zone": 1,
    "dd52": 0.2746,
    "gap200": -0.1156,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.14
+   "short": false
   },
   "QCLN": {
    "date": "2026-11-17",
    "close": 41.14,
    "rsi": 38.6,
-   "lv": 879,
+   "lv": 941,
    "zone": 1,
    "dd52": 0.3992,
    "gap200": -0.2076,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.18
+   "short": false
   },
   "ROBO": {
    "date": "2026-11-17",
    "close": 68.44,
    "rsi": 33.6,
-   "lv": 927,
+   "lv": 959,
    "zone": 1,
    "dd52": 0.2424,
    "gap200": -0.1334,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.11
+   "short": false
   },
   "URA": {
    "date": "2026-11-17",
    "close": 30.04,
    "rsi": 32.3,
-   "lv": 938,
+   "lv": 990,
    "zone": 2,
    "dd52": 0.514,
    "gap200": -0.3424,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.19
+   "short": false
   },
   "NASA": {
    "date": "2026-11-17",
    "close": 19.64,
    "rsi": 42.1,
-   "lv": 903,
+   "lv": 860,
    "zone": 1,
    "dd52": 0.5312,
    "gap200": -0.2641,
-   "short": true,
-   "pooled": true,
-   "min_dd": 0.3
+   "short": true
   },
   "AIPO": {
    "date": "2026-11-17",
    "close": 22.63,
    "rsi": 38.5,
-   "lv": 869,
+   "lv": 927,
    "zone": 1,
    "dd52": 0.3492,
    "gap200": -0.2059,
-   "short": false,
-   "pooled": true,
-   "min_dd": 0.19
+   "short": false
   },
   "AMD": {
    "date": "2026-11-17",
    "close": 503.41,
    "rsi": 46.6,
-   "lv": 525,
+   "lv": 532,
    "zone": 0,
    "dd52": 0.2248,
    "gap200": 0.1824,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.3
+   "short": false
   },
   "NBIS": {
    "date": "2026-11-17",
    "close": 106.04,
    "rsi": 33.7,
-   "lv": 952,
+   "lv": 794,
    "zone": 1,
    "dd52": 0.6301,
    "gap200": -0.4094,
-   "short": false,
-   "pooled": true,
-   "min_dd": 0.3
+   "short": false
   },
   "AVGO": {
    "date": "2026-11-17",
    "close": 341.6,
    "rsi": 51.4,
-   "lv": 908,
+   "lv": 786,
    "zone": 1,
    "dd52": 0.2907,
    "gap200": -0.0704,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.19
+   "short": false
   },
   "KO": {
    "date": "2026-11-17",
    "close": 98.79,
    "rsi": 69.5,
-   "lv": 15,
+   "lv": 77,
    "zone": 0,
    "dd52": 0.0069,
    "gap200": 0.1818,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.12
+   "short": false
   },
   "SPCX": {
    "date": "2026-11-17",
    "close": 141.7,
    "rsi": 49.1,
-   "lv": 689,
+   "lv": 560,
    "zone": 1,
    "dd52": 0.3297,
    "gap200": -0.0219,
-   "short": true,
-   "pooled": true,
-   "min_dd": 0.3
+   "short": true
   },
   "AAPL": {
    "date": "2026-11-17",
    "close": 351.91,
    "rsi": 56.1,
-   "lv": 165,
+   "lv": 88,
    "zone": 0,
    "dd52": 0.0122,
    "gap200": 0.1648,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.22
+   "short": false
   },
   "MCD": {
    "date": "2026-11-17",
    "close": 275.82,
    "rsi": 64.9,
-   "lv": 367,
+   "lv": 759,
    "zone": 1,
    "dd52": 0.1913,
    "gap200": -0.0185,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.13
+   "short": false
   },
   "ABBV": {
    "date": "2026-11-17",
    "close": 292.82,
    "rsi": 58.7,
-   "lv": 89,
+   "lv": 73,
    "zone": 0,
    "dd52": 0.0075,
    "gap200": 0.2126,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.13
+   "short": false
   },
   "ARM": {
    "date": "2026-11-17",
    "close": 183.39,
    "rsi": 40.0,
-   "lv": 923,
+   "lv": 866,
    "zone": 1,
    "dd52": 0.5827,
    "gap200": -0.2148,
-   "short": false,
-   "pooled": true,
-   "min_dd": 0.3
+   "short": false
   },
   "V": {
    "date": "2026-11-17",
    "close": 416.77,
    "rsi": 54.4,
-   "lv": 346,
+   "lv": 294,
    "zone": 0,
    "dd52": 0.0454,
    "gap200": 0.1976,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.14
+   "short": false
   },
   "AMZN": {
    "date": "2026-11-17",
    "close": 257.89,
    "rsi": 49.7,
-   "lv": 471,
+   "lv": 367,
    "zone": 0,
    "dd52": 0.092,
    "gap200": 0.0536,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.27
+   "short": false
   },
   "NEE": {
    "date": "2026-11-17",
    "close": 84.42,
    "rsi": 54.0,
-   "lv": 480,
+   "lv": 736,
    "zone": 1,
    "dd52": 0.1375,
    "gap200": -0.0335,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.11
+   "short": false
   },
   "GOOGL": {
    "date": "2026-11-17",
    "close": 280.2,
    "rsi": 32.9,
-   "lv": 928,
+   "lv": 946,
    "zone": 2,
    "dd52": 0.3041,
    "gap200": -0.1707,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.15
+   "short": false
   },
   "UNH": {
    "date": "2026-11-17",
    "close": 389.68,
    "rsi": 42.9,
-   "lv": 586,
+   "lv": 429,
    "zone": 0,
    "dd52": 0.107,
    "gap200": 0.0601,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.2
+   "short": false
   },
   "JPM": {
    "date": "2026-11-17",
    "close": 329.96,
    "rsi": 42.0,
-   "lv": 583,
+   "lv": 481,
    "zone": 0,
    "dd52": 0.0964,
    "gap200": 0.0148,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.17
+   "short": false
   },
   "CAT": {
    "date": "2026-11-17",
    "close": 570.79,
    "rsi": 31.4,
-   "lv": 951,
+   "lv": 994,
    "zone": 2,
    "dd52": 0.464,
    "gap200": -0.2922,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.15
+   "short": false
   },
   "BX": {
    "date": "2026-11-17",
    "close": 116.48,
    "rsi": 46.6,
-   "lv": 654,
+   "lv": 764,
    "zone": 1,
    "dd52": 0.2876,
    "gap200": -0.0476,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.22
+   "short": false
   },
   "SPGI": {
    "date": "2026-11-17",
    "close": 452.35,
    "rsi": 49.1,
-   "lv": 530,
+   "lv": 529,
    "zone": 0,
    "dd52": 0.1249,
    "gap200": 0.0898,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.15
+   "short": false
   },
   "MSFT": {
    "date": "2026-11-17",
    "close": 506.24,
    "rsi": 41.9,
-   "lv": 641,
+   "lv": 451,
    "zone": 0,
    "dd52": 0.0892,
    "gap200": 0.1446,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.17
+   "short": false
   },
   "BE": {
    "date": "2026-11-17",
    "close": 173.46,
    "rsi": 39.3,
-   "lv": 867,
+   "lv": 738,
    "zone": 1,
    "dd52": 0.4985,
    "gap200": -0.2247,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.3
+   "short": false
   },
   "BRK-B": {
    "date": "2026-11-17",
    "close": 586.76,
    "rsi": 73.1,
-   "lv": 1,
+   "lv": 105,
    "zone": 0,
    "dd52": 0.0104,
    "gap200": 0.17,
-   "short": false,
-   "pooled": false,
-   "min_dd": 0.11
+   "short": false
   },
   "316140.KS": {
    "date": "2026-11-18",
-   "close": 32050.0,
-   "rsi": 52.1,
-   "lv": 562,
+   "close": 32150.0,
+   "rsi": 52.8,
+   "lv": 702,
    "zone": 1,
-   "dd52": 0.2145,
-   "gap200": -0.0182,
-   "short": false,
-   "pooled": true,
-   "min_dd": 0.15
+   "dd52": 0.212,
+   "gap200": -0.0151,
+   "short": false
   }
  }
 }

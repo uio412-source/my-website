@@ -4,13 +4,18 @@ Yahoo Finance 일봉을 받아 자산마다 다음을 계산해 data/ungjup/<id>
   - 20일/200일 이동평균, RSI(14, Wilder)
   - 웅줍라인 = min(200일선, 다음 종가가 RSI 33이 되는 가격)
   - 음영 단계: 0 없음 / 1 (200일선 아래 또는 RSI<33) / 2 (둘 다 = 웅줍 구간)
-  - 웅줍LV(1~1000): 하락장 고점=LV1, 바닥=LV1000이 되도록 자산별로 보정한 실시간 산식
-      점수 x = 계수·[1, √52주하락률, 200일선이격도, RSI]  (과거 바닥일의 x 중앙값 = 100)
-      x ≤ 90 → 1~900 비례,  x > 90 → 900~1000 사이에서 1000에 점점 가까워짐 (잘라내지 않음)
+  - 웅줍LV(1~1000, v2): "지금의 하락 스트레스가 전체 자산 과거 모든 날 중 몇 번째인가"
+      1) 세 지표를 자산의 평소 변동성(연율)으로 나눠 자산 간 비교가 되게 함
+           깊이 = 52주 고점 대비 하락률 / 변동성
+           이격 = 200일선 아래로 벌어진 정도 / 변동성 (위에 있으면 0)
+           과매도 = max(0, 50 − RSI)
+      2) 각 지표를 전 자산·전 기간 공통 백분위로 바꿔 0.5·깊이 + 0.3·이격 + 0.2·과매도 로 합침
+      3) 3일 지수평활 후, 그 점수의 공통 백분위 × 999 + 1 = 웅줍LV
+         → LV 900 = 과거 전체에서 상위 10% 하락 스트레스, LV 500 = 중간
 
 사용법
-  python tools/ungjup/build.py          # 저장된 계수(coefs.json)로 데이터만 갱신
-  python tools/ungjup/build.py --fit    # 하락장 기준으로 계수를 다시 보정한 뒤 갱신
+  python tools/ungjup/build.py          # 저장된 기준표(lv_model.json)로 데이터만 갱신
+  python tools/ungjup/build.py --fit    # 모든 자산 이력으로 기준표·변동성을 다시 만든 뒤 갱신
 """
 import argparse, json, math, sys, time, urllib.request
 from datetime import datetime, timezone
@@ -106,62 +111,59 @@ def episodes(close, min_dd):
     return eps
 
 
-def features(df):
-    return np.c_[np.ones(len(df)), np.sqrt(df["dd52"].clip(lower=0)), df["gap200"], df["rsi"]]
+# ---------- 웅줍LV v2 ----------
+WEIGHTS = {"depth": 0.5, "below": 0.3, "rsilow": 0.2}
+SMOOTH_SPAN = 3
+GRID = np.linspace(0, 1, 1001)
+MODEL = OUT / "lv_model.json"
 
 
-def fit_parts(df, eps):
-    """완료된 하락장의 (지표, 사후 레벨 1~100, 가중치, 바닥일 지표). 하락장마다 가중치 합이 1."""
-    X, y, w, bottoms = [], [], [], []
-    cv = df["close"].values
-    for e in eps:
-        if not e["done"]:
-            continue
-        sl = slice(e["peak"], e["bottom"] + 1)
-        part = df.iloc[sl]
-        ok = part[["dd52", "gap200", "rsi"]].notna().all(axis=1).values
-        if ok.sum() < 3:
-            continue
-        lv = 1 + 99 * (1 - cv[sl] / cv[e["peak"]]) / e["mdd"]
-        X.append(features(part[ok])); y.append(lv[ok]); w.append(np.full(ok.sum(), 1 / ok.sum()))
-        bottoms.append(e["bottom"])
-    if not X:
-        return None
-    return np.vstack(X), np.concatenate(y), np.concatenate(w), features(df.iloc[bottoms])
+def long_vol(df, year):
+    """평소 변동성: 1년 이동 변동성(연율)의 전체 기간 중앙값. 폭락기 변동성 급등에 휘둘리지 않게."""
+    lr = np.log(df["close"]).diff()
+    return float((lr.rolling(year, min_periods=60).std() * np.sqrt(year)).median())
 
 
-def fit_solve(parts):
-    """사후 레벨을 실시간 지표로 근사(가중 최소제곱) + 바닥일 중앙값이 100이 되도록 눈금 보정."""
-    parts = [p for p in parts if p is not None]
-    X = np.vstack([p[0] for p in parts]); y = np.concatenate([p[1] for p in parts])
-    w = np.concatenate([p[2] for p in parts]); XB = np.vstack([p[3] for p in parts])
-    sw = np.sqrt(w)[:, None]
-    b = np.linalg.lstsq(X * sw, y * sw[:, 0], rcond=None)[0]
-    raw_bottom = np.clip(XB @ b, 1, 100)
-    q = float(np.nanmedian(raw_bottom))
-    k = 99 / (q - 1)
-    b = b * k
-    b[0] += 1 - k
-    return [round(float(v), 3) for v in b]
+def raw_features(df, vol):
+    return pd.DataFrame({
+        "depth": df["dd52"] / vol,
+        "below": (-df["gap200"]).clip(lower=0) / vol,
+        "rsilow": (50 - df["rsi"]).clip(lower=0),
+    }, index=df.index)
 
 
-def fit(df, eps):
-    return fit_solve([fit_parts(df, eps)])
+def pct(x, table):
+    return np.interp(x, table, GRID)
 
 
-KNEE, KNEE_LV, TAU = 90.0, 900.0, 25.0
+def score(feat, model):
+    s = sum(w * pct(feat[k].values, np.array(model["tables"][k])) for k, w in model["weights"].items())
+    return pd.Series(s, index=feat.index).ewm(span=model["smooth_span"], adjust=False).mean()
 
 
-def to_lv(x):
-    """점수 x(바닥 중앙값≈100)를 웅줍LV 1~1000으로 변환."""
-    x = np.asarray(x, dtype=float)
-    lin = 1 + (x - 1) * (KNEE_LV - 1) / (KNEE - 1)
-    top = KNEE_LV + (1000 - KNEE_LV) * (1 - np.exp(-(x - KNEE) / TAU))
-    return np.clip(np.where(x <= KNEE, lin, top), 1, 1000)
+def lv_series(df, vol, model):
+    feat = raw_features(df, vol)
+    ok = feat.notna().all(axis=1)
+    out = pd.Series(np.nan, index=df.index)
+    if ok.any():
+        s = score(feat[ok], model)
+        out[ok] = 1 + 999 * pct(s.values, np.array(model["tables"]["score"]))
+    return out
 
 
-def apply_lv(df, coef):
-    return to_lv(features(df) @ np.array(coef))
+def fit_model(series):
+    """series: {symbol: (df, vol)} → 전 자산 공통 백분위 기준표."""
+    feats = pd.concat([raw_features(df, v) for df, v in series.values()]).dropna()
+    tables = {k: np.quantile(feats[k].values, GRID).tolist() for k in WEIGHTS}
+    model = {"version": 2, "weights": WEIGHTS, "smooth_span": SMOOTH_SPAN, "tables": tables}
+    scores = []
+    for df, v in series.values():
+        f = raw_features(df, v).dropna()
+        if len(f):
+            scores.append(score(f, model).values)
+    model["tables"]["score"] = np.quantile(np.concatenate(scores), GRID).tolist()
+    model["vol"] = {s: round(v, 4) for s, (_, v) in series.items()}
+    return model
 
 
 def stats(df, eps, year):
@@ -169,44 +171,26 @@ def stats(df, eps, year):
     fw = c.shift(-year) / c - 1
     lv = df["lv"]
     rows = []
-    for lo, hi in [(1, 400), (400, 800), (800, 950), (950, 1001)]:
+    for lo, hi in LV_BANDS:
         m = (lv >= lo) & (lv < hi) & fw.notna()
-        if m.sum() < 20:
-            rows.append({"range": f"{lo}~{min(hi, 1000)}", "days": int(m.sum())}); continue
-        rows.append({"range": f"{lo}~{min(hi, 1000)}", "days": int(m.sum()),
-                     "fwd1y_median": round(float(fw[m].median()), 4),
-                     "fwd1y_up": round(float((fw[m] > 0).mean()), 3)})
+        row = {"lo": lo, "hi": min(hi, 1000), "days": int(m.sum())}
+        if m.sum() >= 20:
+            row.update({"fwd1y_median": round(float(fw[m].median()), 4), "fwd1y_up": round(float((fw[m] > 0).mean()), 3)})
+        rows.append(row)
     done = [e for e in eps if e["done"]]
-    bl = [df["lv"].iloc[e["bottom"]] for e in done if not math.isnan(df["lv"].iloc[e["bottom"]])]
+    bl = [lv.iloc[e["bottom"]] for e in done if not math.isnan(lv.iloc[e["bottom"]])]
     return {"episodes": len(done), "bottom_lv_median": round(float(np.median(bl)), 1) if bl else None,
-            "bottom_lv900_share": round(float(np.mean(np.array(bl) >= 900)), 3) if bl else None,
             "by_level": rows}
+
+
+LV_BANDS = [(1, 400), (400, 700), (700, 900), (900, 1001)]
 
 
 def r(v, nd):
     return None if v is None or (isinstance(v, float) and math.isnan(v)) else round(float(v), nd)
 
 
-def build(asset, coefs, do_fit):
-    df = indicators(fetch(asset["symbol"]), asset["year"])
-    eps = episodes(df["close"], asset["min_dd"])
-    if do_fit or asset["id"] not in coefs:
-        coefs[asset["id"]] = fit(df, eps)
-    coef = coefs[asset["id"]]
-    df["lv"] = np.nan
-    ok = df[["dd52", "gap200", "rsi"]].notna().all(axis=1)
-    df.loc[ok, "lv"] = apply_lv(df[ok], coef)
-
-    # 사후 정답 레벨 (완료된 하락장만)
-    truth = np.full(len(df), np.nan)
-    cv = df["close"].values
-    for e in eps:
-        if e["done"]:
-            sl = slice(e["peak"], e["bottom"] + 1)
-            truth[sl] = 1 + 999 * (1 - cv[sl] / cv[e["peak"]]) / e["mdd"]
-    df["truth"] = truth
-
-    # 가격 자릿수: 값 크기에 맞춰 반올림 (파일 크기 절약)
+def index_json(asset, df, eps):
     last = df["close"].iloc[-1]
     nd = 0 if last >= 1000 else 2
     out = df.dropna(subset=["sma20"])
@@ -217,112 +201,109 @@ def build(asset, coefs, do_fit):
         "s200": [r(v, nd) for v in out["sma200"]],
         "uj": [r(v, nd) for v in out["ujline"]],
         "rsi": [r(v, 1) for v in out["rsi"]],
-        "lv": [None if v is None or math.isnan(v) else int(round(v)) for v in out["lv"]],
-        "tr": [None if math.isnan(v) else int(round(v)) for v in out["truth"]],
+        "lv": [None if math.isnan(v) else int(round(v)) for v in out["lv"]],
         "z": [int(v) for v in out["zone"]],
     }
     lt = df.iloc[-1]
-    meta = {k: asset[k] for k in ("id", "symbol", "name", "desc", "unit", "min_dd")}
+    meta = {k: asset[k] for k in ("id", "symbol", "name", "desc", "unit")}
     meta.update({
-        "coef": coef,
-        "map": {"knee": KNEE, "knee_lv": KNEE_LV, "tau": TAU},
         "last": {"date": df.index[-1].strftime("%Y-%m-%d"), "close": r(lt.close, 2), "sma20": r(lt.sma20, 2),
                  "sma200": r(lt.sma200, 2), "rsi": r(lt.rsi, 1), "ujline": r(lt.ujline, 2),
-                 "lv": r(lt.lv, 0), "zone": int(lt.zone), "dd52": r(lt.dd52, 4), "gap200": r(lt.gap200, 4)},
+                 "lv": None if math.isnan(lt.lv) else int(round(lt.lv)), "zone": int(lt.zone),
+                 "dd52": r(lt.dd52, 4), "gap200": r(lt.gap200, 4)},
         "stats": stats(df, eps, asset["year"]),
-        "bottoms": [df.index[e["bottom"]].strftime("%Y-%m-%d") for e in eps if e["done"]],
     })
     return meta, rec
 
 
 HOLDINGS = ROOT / "data" / "holdings.json"
-MIN_OWN_EPISODES = 6   # 완료된 하락장이 이보다 적으면 공통(풀링) 계수 사용
 
 
-def build_holdings(coefs, do_fit):
-    """보유종목마다 웅줍LV·음영 단계를 계산해 data/ungjup/holdings_lv.json 으로 저장."""
+def holding_symbols():
     if not HOLDINGS.exists():
-        return
+        return []
     syms = []
     for g in json.loads(HOLDINGS.read_text())["groups"]:
         for it in g["items"]:
             if it.get("symbol") and it["symbol"] not in syms:
                 syms.append(it["symbol"])
-    loaded = {}
-    for s in syms:
-        try:
-            raw = fetch(s)
-        except Exception as e:
-            print(f"[실패] {s}: {e}", file=sys.stderr)
-            continue
-        year = 365 if s.endswith("-USD") else 252
-        short = len(raw) < 200
-        df = indicators(raw, year, sma_min=60 if short else 200)
-        vol = float(np.log(df["close"]).diff().std() * np.sqrt(year))
-        min_dd = float(np.clip(round(vol * 0.5, 2), 0.10, 0.30))
-        eps = episodes(df["close"], min_dd)
-        loaded[s] = (df, eps, short, min_dd)
-
-    if do_fit or "_pooled" not in coefs:
-        parts = [fit_parts(df, eps) for df, eps, _, _ in loaded.values()]
-        coefs["_pooled"] = fit_solve(parts)
-
-    ppath = OUT / "holdings_lv.json"
-    out = json.loads(ppath.read_text())["items"] if ppath.exists() else {}
-    for s, (df, eps, short, min_dd) in loaded.items():
-        key = "h:" + s
-        done = sum(e["done"] for e in eps)
-        if do_fit or key not in coefs:
-            coefs[key] = fit(df, eps) if (done >= MIN_OWN_EPISODES and not short) else "_pooled"
-        src = coefs[key]
-        coef = coefs["_pooled"] if src == "_pooled" else src
-        last = df.iloc[-1]
-        ok = not any(math.isnan(last[k]) for k in ("dd52", "gap200", "rsi"))
-        lv = float(apply_lv(df.iloc[[-1]], coef)[0]) if ok else None
-        out[s] = {"date": df.index[-1].strftime("%Y-%m-%d"), "close": r(last.close, 2), "rsi": r(last.rsi, 1),
-                  "lv": None if lv is None else int(round(lv)), "zone": int(last.zone),
-                  "dd52": r(last.dd52, 4), "gap200": r(last.gap200, 4),
-                  "short": short, "pooled": src == "_pooled", "min_dd": min_dd}
-        print(f"  {s:10s} LV {out[s]['lv'] if out[s]['lv'] is not None else '-':>4}  음영 {out[s]['zone']}  "
-              f"{'짧은이력 ' if short else ''}{'공통계수' if src == '_pooled' else f'자체계수(하락장 {done})'}")
-    ppath.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "items": out},
-                                ensure_ascii=False, indent=1))
+    return syms
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--fit", action="store_true", help="계수를 다시 보정")
+    ap.add_argument("--fit", action="store_true", help="기준표·변동성을 다시 만듦")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
-    cpath = OUT / "coefs.json"
-    coefs = json.loads(cpath.read_text()) if cpath.exists() else {}
-    index, failed = [], []
-    for a in ASSETS:
+
+    # 1) 모든 자산(지수 + 보유종목) 받아서 지표 계산
+    plan = {a["symbol"]: {"year": a["year"], "asset": a} for a in ASSETS}
+    for s in holding_symbols():
+        plan.setdefault(s, {"year": 365 if s.endswith("-USD") else 252, "asset": None})
+    model = json.loads(MODEL.read_text()) if MODEL.exists() else None
+    series, failed = {}, []
+    for s, p in plan.items():
         try:
-            meta, rec = build(a, coefs, args.fit)
+            raw = fetch(s)
         except Exception as e:
-            print(f"[실패] {a['symbol']}: {e}", file=sys.stderr)
-            failed.append(a["id"])
+            print(f"[실패] {s}: {e}", file=sys.stderr)
+            failed.append(s)
             continue
+        p["short"] = len(raw) < 200
+        df = indicators(raw, p["year"], sma_min=60 if p["short"] else 200)
+        vol = (model or {}).get("vol", {}).get(s) if not args.fit else None
+        series[s] = (df, vol or long_vol(df, p["year"]))
+    if not series:
+        sys.exit(1)
+
+    # 2) 기준표 (처음이거나 --fit 일 때만 새로 만듦)
+    if model is None or args.fit:
+        model = fit_model(series)
+    for s, (df, v) in series.items():
+        model["vol"].setdefault(s, round(v, 4))
+    MODEL.write_text(json.dumps(model, separators=(",", ":")))
+
+    for s, (df, v) in series.items():
+        df["lv"] = lv_series(df, v, model)
+
+    # 3) 지수 데이터
+    index = []
+    for a in ASSETS:
+        if a["symbol"] not in series:
+            continue
+        df, _ = series[a["symbol"]]
+        meta, rec = index_json(a, df, episodes(df["close"], a["min_dd"]))
         (OUT / f"{a['id']}.json").write_text(json.dumps({"meta": meta, "rows": rec}, ensure_ascii=False, separators=(",", ":")))
         index.append(meta)
         L = meta["last"]
-        print(f"{a['name']:8s} {L['date']} 종가 {L['close']:>12,.2f}  RSI {L['rsi']:5.1f}  음영 {L['zone']}  웅줍LV {L['lv']:>4.0f}  "
-              f"하락장 {meta['stats']['episodes']}개  바닥LV중앙값 {meta['stats']['bottom_lv_median']}")
-    if failed and len(failed) == len(ASSETS):
-        sys.exit(1)
-    print("보유종목")
-    build_holdings(coefs, args.fit)
-    cpath.write_text(json.dumps(coefs, indent=1))
-    # 실패한 자산은 기존 index 항목 유지
+        print(f"{a['name']:8s} {L['date']} 종가 {L['close']:>12,.2f}  RSI {L['rsi']:5.1f}  음영 {L['zone']}  웅줍LV {L['lv']:>4}  "
+              f"바닥일LV중앙값 {meta['stats']['bottom_lv_median']}")
     ipath = OUT / "index.json"
-    if failed and ipath.exists():
+    if ipath.exists():  # 실패한 지수는 기존 값 유지
         old = {m["id"]: m for m in json.loads(ipath.read_text())["assets"]}
-        index += [old[i] for i in failed if i in old]
+        have = {m["id"] for m in index}
+        index += [old[a["id"]] for a in ASSETS if a["id"] not in have and a["id"] in old]
         order = [a["id"] for a in ASSETS]
         index.sort(key=lambda m: order.index(m["id"]))
     ipath.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
                                  "assets": index}, ensure_ascii=False, indent=1))
+
+    # 4) 보유종목 웅줍LV
+    hpath = OUT / "holdings_lv.json"
+    items = json.loads(hpath.read_text())["items"] if hpath.exists() else {}
+    print("보유종목")
+    for s in holding_symbols():
+        if s not in series:
+            continue
+        df, _ = series[s]
+        lt = df.iloc[-1]
+        items[s] = {"date": df.index[-1].strftime("%Y-%m-%d"), "close": r(lt.close, 2), "rsi": r(lt.rsi, 1),
+                    "lv": None if math.isnan(lt.lv) else int(round(lt.lv)), "zone": int(lt.zone),
+                    "dd52": r(lt.dd52, 4), "gap200": r(lt.gap200, 4), "short": plan[s]["short"]}
+        print(f"  {s:10s} LV {items[s]['lv'] if items[s]['lv'] is not None else '-':>4}  음영 {items[s]['zone']}"
+              f"{'  짧은이력' if plan[s]['short'] else ''}")
+    hpath.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "items": items},
+                                ensure_ascii=False, indent=1))
 
 
 if __name__ == "__main__":

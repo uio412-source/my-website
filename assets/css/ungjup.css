@@ -40,7 +40,6 @@
   padding: 4px 11px; border-radius: 999px; cursor: pointer;
 }
 .uj-seg button.on { background: var(--color-primary); color: #fff; }
-.uj-check { font-size: .82rem; color: var(--color-muted); display: inline-flex; gap: 6px; align-items: center; }
 .uj-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 0; margin: 0 0 6px; font-size: .74rem; color: var(--color-muted); }
 .uj-legend li { display: inline-flex; align-items: center; gap: 5px; }
 .uj-legend .sw { width: 16px; height: 0; border-top: 2px solid; display: inline-block; }
@@ -60,26 +59,63 @@
 
 /* 참고자료 */
 .uj-ref { margin-top: 32px; padding: 0; }
-.uj-ref h2 { font-size: 1.1rem; margin: 0; }
-.uj-ref-chart {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
-  border: 1px solid var(--color-border); border-radius: var(--radius); padding: 16px;
+.ref-h { font-size: 1.15rem; margin: 0 0 12px; }
+.ref-card { border: 1px solid var(--color-border); border-radius: var(--radius); padding: 18px; margin-bottom: 14px; }
+.ref-title { font-size: .9rem; font-weight: 700; margin-bottom: 14px; }
+
+/* 구간 색 (LV 색 변수에서만 만듦) */
+.b0 { --band: var(--lv-low); }
+.b1 { --band: color-mix(in srgb, var(--lv-low) 45%, var(--lv-mid)); }
+.b2 { --band: var(--lv-mid); }
+.b3 { --band: var(--lv-high); }
+
+/* 현재 위치 스펙트럼 */
+.ref-spec { position: relative; padding: 0 4px; }
+.spec-pins { position: relative; }
+.spec-pin {
+  position: absolute; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+  font: inherit; font-size: .75rem; font-weight: 600; cursor: pointer; line-height: 1;
+  padding: 5px 9px; border-radius: 999px; background: var(--color-bg); color: var(--color-text);
+  border: 1.5px solid var(--band); z-index: 1;
 }
-.uj-ref-col { display: flex; flex-direction: column; align-items: stretch; min-width: 0; }
-.uj-ref-bar { position: relative; height: 140px; display: flex; align-items: flex-end; justify-content: center;
-  border-bottom: 1px solid var(--color-border); }
-.uj-ref-bar i { display: block; width: 56%; max-width: 64px; border-radius: 4px 4px 0 0; }
-.uj-ref-bar span { position: absolute; top: 0; font-weight: 700; font-size: .95rem; }
-.uj-ref-lbl { text-align: center; font-size: .78rem; font-weight: 600; margin-top: 6px; }
-.uj-ref-med { text-align: center; font-size: .7rem; color: var(--color-muted); min-height: 1.2em; }
-.uj-ref-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin-top: 8px; }
-.uj-tag {
-  display: inline-flex; gap: 4px; align-items: center; font: inherit; font-size: .7rem; cursor: pointer;
-  padding: 2px 8px; border-radius: 999px; border: 1px solid var(--color-border);
-  background: var(--color-bg-alt); color: var(--color-text);
+.spec-pin b { color: var(--band); font-weight: 800; }
+.spec-pin.on { background: var(--band); color: #fff; }
+.spec-pin.on b { color: #fff; }
+.spec-stem { position: absolute; bottom: 0; width: 2px; margin-left: -1px; background: var(--band); opacity: .55; }
+.spec-stem.on { opacity: 1; }
+.spec-track {
+  height: 12px; border-radius: 6px;
+  background: linear-gradient(90deg, var(--lv-low) 0%, var(--lv-mid) 60%, var(--lv-high) 90%, var(--lv-high) 100%);
 }
-.uj-tag b { font-weight: 700; color: var(--color-muted); }
-.uj-tag.on { border-color: var(--color-primary); color: var(--color-primary); }
+.spec-ticks { position: relative; height: 18px; font-size: .68rem; color: var(--color-muted); }
+.spec-ticks span { position: absolute; top: 3px; transform: translateX(-50%); }
+.spec-ticks span:first-child { transform: none; }
+.spec-ticks span:last-child { transform: translateX(-100%); }
+.spec-bands { position: relative; height: 20px; }
+.spec-bands span {
+  position: absolute; top: 0; text-align: center; font-size: .72rem; font-weight: 700; color: var(--band);
+  border-top: 2px solid var(--band); padding-top: 2px; white-space: nowrap; overflow: hidden;
+}
+
+/* 구간별 성과 카드 */
+.ref-bands { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.band-card {
+  position: relative; border-radius: 12px; padding: 14px; background: var(--color-bg-alt); overflow: hidden;
+  border: 1.5px solid transparent;
+}
+.band-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--band); }
+.band-card.here { border-color: var(--band); background: color-mix(in srgb, var(--band) 9%, var(--color-bg)); }
+.band-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-top: 2px; }
+.band-name { font-weight: 800; color: var(--band); }
+.band-here { font-size: .66rem; font-weight: 700; color: #fff; background: var(--band); padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.band-range { font-size: .72rem; color: var(--color-muted); }
+.band-big { font-size: 2.1rem; font-weight: 800; line-height: 1.1; margin-top: 10px; letter-spacing: -.02em; }
+.band-big small { font-size: 1rem; margin-left: 1px; }
+.band-k { font-size: .72rem; color: var(--color-muted); }
+.band-bar { height: 6px; border-radius: 3px; background: var(--color-border); margin: 8px 0 10px; overflow: hidden; }
+.band-bar i { display: block; height: 100%; border-radius: 3px; background: var(--band); }
+.band-foot { display: flex; justify-content: space-between; gap: 6px; font-size: .72rem; color: var(--color-muted); }
+.band-foot b { font-weight: 700; }
 
 @media (max-width: 720px) {
   .uj-card { flex-basis: 42%; }
@@ -90,9 +126,10 @@
   .uj-stat .v { font-size: .92rem; }
   .uj-stat .v small { display: block; margin: 0; font-size: .62rem; }
   .uj-chart { height: 420px; }
-  .uj-ref-chart { padding: 12px 8px; gap: 4px; }
-  .uj-ref-bar { height: 110px; }
-  .uj-ref-lbl { font-size: .66rem; }
-  .uj-ref-med { font-size: .6rem; }
-  .uj-tag { font-size: .62rem; padding: 1px 6px; }
+  .ref-card { padding: 14px 12px; }
+  .ref-bands { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .band-card { padding: 12px; }
+  .band-big { font-size: 1.8rem; }
+  .spec-pin { font-size: .68rem; padding: 4px 7px; }
+  .spec-bands span { font-size: .62rem; }
 }
