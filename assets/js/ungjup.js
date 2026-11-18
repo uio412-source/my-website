@@ -16,7 +16,7 @@
   };
   const pct = (v, d = 1) => (v == null ? "-" : (v > 0 ? "+" : "") + (v * 100).toFixed(d) + "%");
   const LV_MAX = 1000;
-  const lvColor = (lv) => (lv >= 800 ? css("--lv-high") : lv >= 400 ? css("--lv-mid") : css("--lv-low"));
+  const lvColor = (lv) => (lv >= 900 ? css("--lv-high") : lv >= 400 ? css("--lv-mid") : css("--lv-low"));
 
   // ---------- 자산 카드 ----------
   function renderCards() {
@@ -96,29 +96,77 @@
       `<div class="uj-stat"><div class="k">${k}</div><div class="v">${v}${s ? `<small>${s}</small>` : ""}</div></div>`).join("");
   }
 
-  // ---------- 참고자료: 웅줍LV 구간별 1년 뒤 상승 확률 + 지금 그 구간에 있는 지수 ----------
-  const BUCKETS = [[1, 400], [400, 800], [800, 950], [950, 1001]];
+  // ---------- 참고자료 ----------
+  const BANDS = [
+    { lo: 1, hi: 400, name: "평온", cls: "b0" },
+    { lo: 400, hi: 700, name: "조정", cls: "b1" },
+    { lo: 700, hi: 900, name: "깊은 조정", cls: "b2" },
+    { lo: 900, hi: 1001, name: "웅줍권", cls: "b3" },
+  ];
+  const bandOf = (lv) => BANDS.find((b) => lv >= b.lo && lv < b.hi) || BANDS[0];
+
+  // 1) 그라데이션 막대 위에 지수 핀을 꽂아 현재 위치를 한눈에
+  function renderSpectrum() {
+    const box = $("ref-spec");
+    const list = state.assets.filter((a) => a.last.lv != null).sort((a, b) => a.last.lv - b.last.lv);
+    box.innerHTML = `
+      <div class="spec-pins"></div>
+      <div class="spec-track"></div>
+      <div class="spec-ticks">${[1, 400, 700, 900, 1000].map((v) => `<span style="left:${(v - 1) / 9.99}%">${v}</span>`).join("")}</div>
+      <div class="spec-bands">${BANDS.map((b) => `<span class="${b.cls}" style="left:${(b.lo - 1) / 9.99}%;width:${(Math.min(b.hi, 1000) - b.lo) / 9.99}%">${b.name}</span>`).join("")}</div>`;
+    const pins = box.querySelector(".spec-pins");
+    const W = pins.clientWidth;
+    const chips = list.map((a) => {
+      const el = document.createElement("button");
+      el.className = "spec-pin " + bandOf(a.last.lv).cls + (a.id === state.cur ? " on" : "");
+      el.innerHTML = `${a.name}<b>${a.last.lv}</b>`;
+      el.addEventListener("click", () => select(a.id, true));
+      pins.appendChild(el);
+      return { a, el, x: ((a.last.lv - 1) / 999) * W, w: el.offsetWidth };
+    });
+    // 겹치지 않게 줄 배정 (가까운 핀은 위 줄로)
+    const rowEnd = [];
+    const ROW = 30;
+    chips.forEach((c) => {
+      let left = Math.min(Math.max(0, c.x - c.w / 2), W - c.w);
+      let row = rowEnd.findIndex((end) => left > end + 6);
+      if (row < 0) { row = rowEnd.length; rowEnd.push(0); }
+      rowEnd[row] = left + c.w;
+      c.left = left; c.row = row;
+    });
+    const rows = Math.max(1, rowEnd.length);
+    pins.style.height = rows * ROW + 10 + "px";
+    chips.forEach((c) => {
+      c.el.style.left = c.left + "px";
+      c.el.style.bottom = c.row * ROW + 10 + "px";
+      const stem = document.createElement("i");
+      stem.className = "spec-stem " + bandOf(c.a.last.lv).cls + (c.a.id === state.cur ? " on" : "");
+      stem.style.left = c.x + "px";
+      stem.style.height = c.row * ROW + 10 + "px";
+      pins.appendChild(stem);
+    });
+  }
+
+  // 2) 선택한 지수의 구간별 1년 뒤 성과 카드
   function renderRef() {
     const { meta } = state.cache[state.cur];
-    $("ref-sub").textContent = `${meta.name} · 웅줍LV 구간별 1년 뒤 상승 확률`;
+    $("ref-asset").textContent = meta.name;
+    const now = meta.last.lv;
     const rows = meta.stats.by_level;
-    $("uj-ref").innerHTML = BUCKETS.map(([lo, hi], k) => {
+    $("ref-bands").innerHTML = BANDS.map((b, k) => {
       const r = rows[k] || {};
       const up = r.fwd1y_up != null ? Math.round(r.fwd1y_up * 100) : null;
-      const mid = (lo + Math.min(hi, 1000)) / 2;
-      const tags = state.assets.filter((a) => a.last.lv != null && a.last.lv >= lo && a.last.lv < hi)
-        .map((a) => `<button class="uj-tag${a.id === state.cur ? " on" : ""}" data-id="${a.id}">${a.name}<b>${a.last.lv}</b></button>`).join("");
-      return `<div class="uj-ref-col">
-        <div class="uj-ref-bar"><i style="height:${up ?? 0}%;background:${lvColor(mid)}"></i><span>${up != null ? up + "%" : "-"}</span></div>
-        <div class="uj-ref-lbl">LV ${lo}~${Math.min(hi, 1000)}</div>
-        <div class="uj-ref-med">${r.fwd1y_median != null ? "중앙값 " + pct(r.fwd1y_median, 0) : ""}</div>
-        <div class="uj-ref-tags">${tags}</div>
+      const here = now != null && now >= b.lo && now < b.hi;
+      return `<div class="band-card ${b.cls}${here ? " here" : ""}">
+        <div class="band-top"><span class="band-name">${b.name}</span>${here ? '<span class="band-here">지금 여기</span>' : ""}</div>
+        <div class="band-range">LV ${b.lo}~${Math.min(b.hi, 1000)}</div>
+        <div class="band-big">${up != null ? up + "<small>%</small>" : "-"}</div>
+        <div class="band-k">1년 뒤 오른 확률</div>
+        <div class="band-bar"><i style="width:${up ?? 0}%"></i></div>
+        <div class="band-foot"><span>중앙 수익률 <b class="${(r.fwd1y_median ?? 0) >= 0 ? "up" : "down"}">${r.fwd1y_median != null ? pct(r.fwd1y_median, 0) : "-"}</b></span><span>${r.days ? r.days.toLocaleString() + "일" : ""}</span></div>
       </div>`;
     }).join("");
-    $("uj-ref").querySelectorAll(".uj-tag").forEach((t) => t.addEventListener("click", () => {
-      select(t.dataset.id, true);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }));
+    renderSpectrum();
   }
 
   // ---------- 컨트롤 ----------
@@ -132,7 +180,6 @@
     });
   }
   seg("uj-range", "range", Number);
-  $("uj-log").addEventListener("change", (e) => { state.log = e.target.checked; draw(); });
 
   function renderLegend() {
     $("uj-legend").innerHTML = `
@@ -196,7 +243,7 @@
         if (v != null && v > 0) { if (v < lo) lo = v; if (v > hi) hi = v; }
       }
     }
-    const useLog = state.log;
+    const useLog = false;
     const tf = (v) => (useLog ? Math.log(v) : v);
     let tlo = tf(lo), thi = tf(hi);
     const padv = (thi - tlo) * 0.06; tlo -= padv; thi += padv;
@@ -215,6 +262,11 @@
           ctx.fillStyle = zc[z];
           const xa = xAt(runStart) - step / 2, xb = xAt(i - 1) + step / 2;
           ctx.fillRect(Math.max(x0, xa), padT, Math.min(x1, xb) - Math.max(x0, xa), topH);
+          // 웅줍 구간은 가격 차트 아래쪽에 진한 띠도 그려서 멀리서도 보이게
+          if (z === 2) {
+            ctx.fillStyle = css("--chart-zone-strip");
+            ctx.fillRect(Math.max(x0, xa), padT + topH - 5, Math.max(1.5, Math.min(x1, xb) - Math.max(x0, xa)), 5);
+          }
         }
         runStart = i;
       }
@@ -333,6 +385,8 @@
     ctx.beginPath(); ctx.moveTo(x0, yL(900) + 0.5); ctx.lineTo(x1, yL(900) + 0.5); ctx.stroke(); ctx.setLineDash([]);
     ctx.fillStyle = css("--lv-high"); ctx.textAlign = "left"; ctx.textBaseline = "middle";
     ctx.fillText("900", x1 + 6, yL(900));
+    ctx.fillStyle = css("--chart-axis"); ctx.textAlign = "right";
+    ctx.fillText("상위 10%", x1 - 4, yL(900) - 7);
 
     ctx.fillStyle = css("--chart-axis");
     ctx.textAlign = "left"; ctx.textBaseline = "bottom";
@@ -384,7 +438,9 @@
 
   let rt;
   new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(draw, 80); }).observe(wrap);
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { renderCards(); select(state.cur, false); });
+  window.addEventListener("themechange", () => { renderCards(); select(state.cur, false); });
+  let sw;
+  window.addEventListener("resize", () => { clearTimeout(sw); sw = setTimeout(() => state.cur && state.cache[state.cur] && renderSpectrum(), 120); });
 
   // 키보드: 좌우 화살표로 자산 이동
   $("uj-carousel").addEventListener("keydown", (e) => {
