@@ -7,6 +7,7 @@
   const state = { assets: [], cache: {}, cur: null, range: 3, log: false, view: null };
 
   const ZONE_LABEL = ["평상시", "관심 (옅은 음영)", "웅줍 구간 (진한 음영)"];
+  const ZONE_SHORT = ["평상시", "관심", "웅줍"];
   const fmtNum = (v, unit) => {
     if (v == null) return "-";
     const d = Math.abs(v) >= 1000 ? 0 : 2;
@@ -28,11 +29,9 @@
       b.setAttribute("role", "tab");
       b.dataset.id = a.id;
       b.innerHTML = `
-        <div class="nm">${a.name}</div>
-        <div class="ds">${a.desc}</div>
+        <div class="nm">${a.name}<span class="uj-chip z${L.zone}">${ZONE_SHORT[L.zone]}</span></div>
         <div class="lv"><small>LV</small>${L.lv ?? "-"}</div>
-        <div class="bar"><i style="width:${(L.lv ?? 0) / LV_MAX * 100}%;background:${lvColor(L.lv)}"></i></div>
-        <span class="uj-chip z${L.zone}">${ZONE_LABEL[L.zone]}</span>`;
+        <div class="bar"><i style="width:${(L.lv ?? 0) / LV_MAX * 100}%;background:${lvColor(L.lv)}"></i></div>`;
       b.addEventListener("click", () => select(a.id, true));
       box.appendChild(b);
     });
@@ -56,12 +55,11 @@
       box.addEventListener(ev, () => (box.dataset.userScroll = "1"), { passive: true }));
   }
 
-  document.querySelectorAll(".uj-arrow").forEach((btn) =>
-    btn.addEventListener("click", () => {
-      const i = state.assets.findIndex((a) => a.id === state.cur);
-      const n = state.assets.length;
-      select(state.assets[(i + Number(btn.dataset.dir) + n) % n].id, true);
-    }));
+  const step = (dir) => {
+    const i = state.assets.findIndex((a) => a.id === state.cur);
+    const n = state.assets.length;
+    select(state.assets[(i + dir + n) % n].id, true);
+  };
 
   async function select(id, scrollCard) {
     state.cur = id;
@@ -80,54 +78,47 @@
     }
     if (state.cur !== id) return;
     renderSummary();
-    renderExplain();
-    renderTable();
+    renderRef();
     draw();
   }
 
-  // ---------- 요약 / 설명 / 표 ----------
+  // ---------- 요약 ----------
   function renderSummary() {
     const { meta } = state.cache[state.cur];
     const L = meta.last, u = meta.unit;
     const items = [
-      ["웅줍LV", `<span style="color:${lvColor(L.lv)}">${L.lv ?? "-"}</span>`, ZONE_LABEL[L.zone]],
-      ["종가", fmtNum(L.close, u), L.date],
-      ["20일선", fmtNum(L.sma20, u), "종가 대비 " + pct(L.close / L.sma20 - 1)],
-      ["200일선", fmtNum(L.sma200, u), "이격도 " + pct(L.gap200)],
-      ["웅줍라인", fmtNum(L.ujline, u), "종가 대비 " + pct(L.ujline / L.close - 1)],
-      ["RSI(14)", L.rsi?.toFixed(1) ?? "-", L.rsi < 33 ? "33 미만" : "33까지 " + (L.rsi - 33).toFixed(1)],
-      ["52주 고점 대비", pct(-L.dd52), ""],
+      ["웅줍LV", `<span style="color:${lvColor(L.lv)}">${L.lv ?? "-"}</span>`, ZONE_SHORT[L.zone]],
+      ["종가", fmtNum(L.close, u), L.date.slice(5).replace("-", ".")],
+      ["RSI", L.rsi?.toFixed(1) ?? "-", ""],
+      ["200일선", pct(L.gap200), ""],
     ];
     $("uj-summary").innerHTML = items.map(([k, v, s]) =>
-      `<div class="uj-stat"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join("");
+      `<div class="uj-stat"><div class="k">${k}</div><div class="v">${v}${s ? `<small>${s}</small>` : ""}</div></div>`).join("");
   }
 
-  function renderExplain() {
+  // ---------- 참고자료: 웅줍LV 구간별 1년 뒤 상승 확률 + 지금 그 구간에 있는 지수 ----------
+  const BUCKETS = [[1, 400], [400, 800], [800, 950], [950, 1001]];
+  function renderRef() {
     const { meta } = state.cache[state.cur];
-    const [a, b, c, d] = meta.coef;
-    const mp = meta.map || { knee: 90, knee_lv: 900, tau: 25 };
-    const sg = (v) => (v < 0 ? " − " : " + ") + Math.abs(v).toFixed(1);
-    $("uj-formula").innerHTML =
-      `${meta.name}  점수 x = ${a.toFixed(1)}${sg(b)}×√(52주 고점 대비 하락률)${sg(c)}×(200일선 이격도)${sg(d)}×RSI<br>` +
-      `웅줍LV = x ≤ ${mp.knee} 이면 1 + (x − 1) × ${((mp.knee_lv - 1) / (mp.knee - 1)).toFixed(2)}  ·  ` +
-      `x > ${mp.knee} 이면 ${mp.knee_lv} + ${LV_MAX - mp.knee_lv} × (1 − e^(−(x − ${mp.knee}) / ${mp.tau}))  → 1~${LV_MAX}`;
-    $("uj-mdd").textContent = Math.round(meta.min_dd * 100) + "%";
-    const st = meta.stats;
-    const rows = st.by_level.map((r) =>
-      `<tr><td>LV ${r.range}</td><td>${r.days.toLocaleString()}일</td><td>${r.fwd1y_median != null ? pct(r.fwd1y_median, 0) : "-"}</td><td>${r.fwd1y_up != null ? Math.round(r.fwd1y_up * 100) + "%" : "-"}</td></tr>`).join("");
-    $("uj-stats").innerHTML =
-      `<thead><tr><th>구간</th><th>해당 일수</th><th>1년 뒤 중앙값</th><th>1년 뒤 상승 확률</th></tr></thead><tbody>${rows}</tbody>
-       <tfoot><tr><td colspan="4" style="text-align:left;color:var(--color-muted)">과거 하락장 ${st.episodes}개 · 바닥일 웅줍LV 중앙값 ${st.bottom_lv_median} · 바닥일 중 LV900 이상 ${Math.round((st.bottom_lv900_share || 0) * 100)}%</td></tr></tfoot>`;
-  }
-
-  function renderTable() {
-    const { meta, rows: R } = state.cache[state.cur];
-    const n = R.d.length, u = meta.unit;
-    let h = "<thead><tr><th>날짜</th><th>종가</th><th>20일선</th><th>200일선</th><th>웅줍라인</th><th>RSI</th><th>웅줍LV</th><th>상태</th></tr></thead><tbody>";
-    for (let i = n - 1; i >= Math.max(0, n - 10); i--) {
-      h += `<tr><td>${R.d[i]}</td><td>${fmtNum(R.c[i], u)}</td><td>${fmtNum(R.s20[i], u)}</td><td>${fmtNum(R.s200[i], u)}</td><td>${fmtNum(R.uj[i], u)}</td><td>${R.rsi[i] ?? "-"}</td><td>${R.lv[i] ?? "-"}</td><td>${ZONE_LABEL[R.z[i]]}</td></tr>`;
-    }
-    $("uj-table").innerHTML = h + "</tbody>";
+    $("ref-sub").textContent = `${meta.name} · 웅줍LV 구간별 1년 뒤 상승 확률`;
+    const rows = meta.stats.by_level;
+    $("uj-ref").innerHTML = BUCKETS.map(([lo, hi], k) => {
+      const r = rows[k] || {};
+      const up = r.fwd1y_up != null ? Math.round(r.fwd1y_up * 100) : null;
+      const mid = (lo + Math.min(hi, 1000)) / 2;
+      const tags = state.assets.filter((a) => a.last.lv != null && a.last.lv >= lo && a.last.lv < hi)
+        .map((a) => `<button class="uj-tag${a.id === state.cur ? " on" : ""}" data-id="${a.id}">${a.name}<b>${a.last.lv}</b></button>`).join("");
+      return `<div class="uj-ref-col">
+        <div class="uj-ref-bar"><i style="height:${up ?? 0}%;background:${lvColor(mid)}"></i><span>${up != null ? up + "%" : "-"}</span></div>
+        <div class="uj-ref-lbl">LV ${lo}~${Math.min(hi, 1000)}</div>
+        <div class="uj-ref-med">${r.fwd1y_median != null ? "중앙값 " + pct(r.fwd1y_median, 0) : ""}</div>
+        <div class="uj-ref-tags">${tags}</div>
+      </div>`;
+    }).join("");
+    $("uj-ref").querySelectorAll(".uj-tag").forEach((t) => t.addEventListener("click", () => {
+      select(t.dataset.id, true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }));
   }
 
   // ---------- 컨트롤 ----------
@@ -145,7 +136,7 @@
 
   function renderLegend() {
     $("uj-legend").innerHTML = `
-      <li>종가 색 = 웅줍LV:</li>
+      <li>종가 LV</li>
       <li><span class="sw" style="border-color:${css("--chart-price")}"></span>400 미만</li>
       <li><span class="sw" style="border-color:${css("--lv-mid")}"></span>400~900</li>
       <li><span class="sw" style="border-color:${css("--lv-high")}"></span>900 이상</li>
@@ -154,7 +145,7 @@
       <li><span class="sw dash" style="border-color:${css("--chart-uj")}"></span>웅줍라인</li>
       <li><span class="box" style="background:${css("--chart-zone1")}"></span>관심</li>
       <li><span class="box" style="background:${css("--chart-zone2")}"></span>웅줍 구간</li>
-      <li><span class="sw dash" style="border-color:${css("--chart-truth")}"></span>사후 정답 레벨 (아래)</li>`;
+`;
   }
 
   // ---------- 차트 ----------
@@ -336,7 +327,6 @@
       ctx.globalAlpha = 0.28; ctx.fillStyle = grad(); ctx.fill();
     }
     ctx.restore();
-    line(R.tr, yL, css("--chart-truth"), 1.4, [3, 2]);
     line(R.lv, yL, grad(), thin ? 1 : 1.6);
     // 900 기준선 (과거 바닥권)
     ctx.strokeStyle = css("--lv-high"); ctx.lineWidth = 1; ctx.setLineDash([4, 3]);
@@ -346,7 +336,7 @@
 
     ctx.fillStyle = css("--chart-axis");
     ctx.textAlign = "left"; ctx.textBaseline = "bottom";
-    ctx.fillText("웅줍LV (1~1000) · 점선 900 = 과거 바닥권", x0 + 2, ly0 - 4);
+    ctx.fillText("웅줍LV", x0 + 2, ly0 - 4);
 
     state.view = { start, n, xAt, x0, x1, yP, yL, padT, ly0, lowerH, topH, W, H, dpr };
     overlay.getContext("2d").clearRect(0, 0, overlay.width, overlay.height);
@@ -377,8 +367,7 @@
     const row = (k, val) => `<div class="r"><span>${k}</span><span>${val}</span></div>`;
     tip.innerHTML = `<div class="t">${R.d[i]} · ${ZONE_LABEL[R.z[i]]}</div>` +
       row("종가", fmtNum(R.c[i], u)) + row("20일선", fmtNum(R.s20[i], u)) + row("200일선", fmtNum(R.s200[i], u)) +
-      row("웅줍라인", fmtNum(R.uj[i], u)) + row("RSI", R.rsi[i] ?? "-") + row("웅줍LV", R.lv[i] ?? "-") +
-      (R.tr[i] != null ? row("사후 정답 레벨", R.tr[i]) : "");
+      row("웅줍라인", fmtNum(R.uj[i], u)) + row("RSI", R.rsi[i] ?? "-") + row("웅줍LV", R.lv[i] ?? "-");
     tip.hidden = false;
     const tw = tip.offsetWidth;
     tip.style.left = (cx + 14 + tw > v.W ? cx - tw - 14 : cx + 14) + "px";
@@ -401,7 +390,7 @@
   $("uj-carousel").addEventListener("keydown", (e) => {
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
     e.preventDefault();
-    document.querySelector(`.uj-arrow[data-dir="${e.key === "ArrowRight" ? 1 : -1}"]`).click();
+    step(e.key === "ArrowRight" ? 1 : -1);
   });
 
   // ---------- 시작 ----------
@@ -409,12 +398,11 @@
     .then((r) => r.json())
     .then((idx) => {
       state.assets = idx.assets.map((m) => ({ ...m, last: m.last }));
-      $("uj-updated").textContent = `데이터 갱신: ${idx.updated} · 카드를 좌우로 밀거나 눌러서 자산을 고르세요.`;
       renderCards();
       const want = location.hash.slice(1);
       select(state.assets.some((a) => a.id === want) ? want : state.assets[0].id, true);
     })
     .catch(() => {
-      $("uj-updated").textContent = "데이터를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.";
+      $("uj-panel").innerHTML = '<p class="uj-err">데이터를 불러오지 못했습니다.</p>';
     });
 })();
