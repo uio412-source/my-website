@@ -1,4 +1,4 @@
-# Mr. Stock
+# Mr. Stocks
 
 웅줍 지표 차트와 보유종목·자산 현황을 보여 주는 정적 웹사이트입니다(HTML/CSS/JS). `main` 브랜치에 merge되면 **GitHub Pages로 자동 배포**됩니다.
 
