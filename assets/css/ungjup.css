@@ -1,95 +1,98 @@
-/* 웅줍 지표 페이지 전용 스타일 — 색상은 style.css의 변수만 사용 */
-.uj-section { padding-top: 40px; }
-.uj-h2 { font-size: 1.1rem; margin: 0; }
-.uj-h3 { font-size: 1.05rem; margin: 40px 0 8px; }
-.uj-carousel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.uj-arrows { display: flex; gap: 8px; }
-.uj-arrow {
-  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--color-border);
-  background: var(--color-bg); color: var(--color-text); font-size: 1.3rem; line-height: 1; cursor: pointer;
-}
-.uj-arrow:hover { border-color: var(--color-primary); color: var(--color-primary); }
+/* 차트 페이지 — 색상은 style.css 변수만 사용 */
 
-/* 좌우로 밀어서 고르는 자산 카드 */
+/* 지수 카드: 좌우로 밀어서 선택 */
+.uj-carousel-wrap { position: relative; margin-bottom: 16px; }
 .uj-carousel {
-  display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
-  padding: 4px 2px 12px; scrollbar-width: thin; -webkit-overflow-scrolling: touch;
+  display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding: 2px 2px 8px; scrollbar-width: none; -webkit-overflow-scrolling: touch;
 }
+.uj-carousel::-webkit-scrollbar { display: none; }
 .uj-card {
-  flex: 0 0 200px; scroll-snap-align: start; text-align: left; cursor: pointer;
+  flex: 1 0 150px; scroll-snap-align: start; text-align: left; cursor: pointer; font: inherit;
   border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-bg);
-  color: var(--color-text); padding: 16px; font: inherit; transition: border-color .15s, box-shadow .15s;
+  color: var(--color-text); padding: 14px; transition: border-color .15s, box-shadow .15s;
 }
 .uj-card:hover { border-color: var(--color-primary); }
 .uj-card[aria-selected="true"] { border-color: var(--color-primary); box-shadow: 0 0 0 2px var(--color-primary) inset; }
-.uj-card .nm { font-weight: 700; }
-.uj-card .ds { color: var(--color-muted); font-size: .8rem; }
-.uj-card .lv { font-size: 1.9rem; font-weight: 800; margin-top: 8px; line-height: 1.1; }
-.uj-card .lv small { font-size: .8rem; font-weight: 600; color: var(--color-muted); margin-right: 4px; }
-.uj-card .bar { height: 6px; border-radius: 3px; background: var(--color-border); margin-top: 8px; overflow: hidden; }
-.uj-card .bar i { display: block; height: 100%; border-radius: 3px; }
+.uj-card .nm { display: flex; align-items: center; justify-content: space-between; gap: 6px; font-weight: 700; font-size: .92rem; }
+.uj-card .lv { font-size: 1.7rem; font-weight: 800; line-height: 1.1; margin-top: 6px; letter-spacing: -.02em; }
+.uj-card .lv small { font-size: .72rem; font-weight: 600; color: var(--color-muted); margin-right: 3px; }
+.uj-card .bar { height: 4px; border-radius: 2px; background: var(--color-border); margin-top: 8px; overflow: hidden; }
+.uj-card .bar i { display: block; height: 100%; border-radius: 2px; }
 .uj-chip {
-  display: inline-block; font-size: .75rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; margin-top: 8px;
+  font-size: .68rem; font-weight: 600; padding: 1px 7px; border-radius: 999px; white-space: nowrap;
   border: 1px solid var(--color-border); color: var(--color-muted);
 }
 .uj-chip.z1 { background: var(--chart-zone1); color: var(--color-text); }
 .uj-chip.z2 { background: var(--chart-zone2); color: var(--color-text); border-color: var(--chart-s200); }
-.uj-updated { color: var(--color-muted); font-size: .85rem; margin: 0 0 20px; }
 
-.uj-panel { border: 1px solid var(--color-border); border-radius: var(--radius); padding: 20px; background: var(--color-bg); }
-.uj-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 16px; }
-.uj-stat { padding: 10px 12px; border-radius: 10px; background: var(--color-bg-alt); }
-.uj-stat .k { font-size: .78rem; color: var(--color-muted); }
-.uj-stat .v { font-size: 1.15rem; font-weight: 700; }
-.uj-stat .s { font-size: .75rem; color: var(--color-muted); }
-
-.uj-controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-bottom: 10px; }
+/* 차트 패널 */
+.uj-panel { border: 1px solid var(--color-border); border-radius: var(--radius); padding: 16px; background: var(--color-bg); }
+.uj-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
+.uj-stat { padding: 10px 12px; border-radius: 10px; background: var(--color-bg-alt); min-width: 0; }
+.uj-stat .k { font-size: .74rem; color: var(--color-muted); }
+.uj-stat .v { font-size: 1.1rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.uj-stat .v small { font-size: .72rem; font-weight: 600; color: var(--color-muted); margin-left: 6px; }
+.uj-controls { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-bottom: 8px; }
 .uj-seg { display: inline-flex; border: 1px solid var(--color-border); border-radius: 999px; padding: 2px; }
 .uj-seg button {
-  border: 0; background: transparent; color: var(--color-muted); font: inherit; font-size: .85rem;
-  padding: 4px 12px; border-radius: 999px; cursor: pointer;
+  border: 0; background: transparent; color: var(--color-muted); font: inherit; font-size: .82rem;
+  padding: 4px 11px; border-radius: 999px; cursor: pointer;
 }
 .uj-seg button.on { background: var(--color-primary); color: #fff; }
-.uj-check { font-size: .85rem; color: var(--color-muted); display: inline-flex; gap: 6px; align-items: center; }
-
-.uj-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 16px; padding: 0; margin: 0 0 8px; font-size: .8rem; color: var(--color-muted); }
-.uj-legend li { display: inline-flex; align-items: center; gap: 6px; }
-.uj-legend .sw { width: 18px; height: 0; border-top: 2px solid; display: inline-block; }
+.uj-check { font-size: .82rem; color: var(--color-muted); display: inline-flex; gap: 6px; align-items: center; }
+.uj-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 0; margin: 0 0 6px; font-size: .74rem; color: var(--color-muted); }
+.uj-legend li { display: inline-flex; align-items: center; gap: 5px; }
+.uj-legend .sw { width: 16px; height: 0; border-top: 2px solid; display: inline-block; }
 .uj-legend .sw.dash { border-top-style: dashed; }
-.uj-legend .box { width: 14px; height: 12px; border-radius: 2px; display: inline-block; }
-
-.uj-chart { position: relative; width: 100%; height: 520px; touch-action: pan-y; }
+.uj-legend .box { width: 12px; height: 10px; border-radius: 2px; display: inline-block; }
+.uj-chart { position: relative; width: 100%; height: 500px; touch-action: pan-y; }
 .uj-chart canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .uj-tip {
-  position: absolute; pointer-events: none; z-index: 2; min-width: 170px;
+  position: absolute; pointer-events: none; z-index: 2; min-width: 160px;
   background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 10px;
-  padding: 8px 10px; font-size: .78rem; line-height: 1.5; box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  padding: 8px 10px; font-size: .76rem; line-height: 1.5; box-shadow: 0 4px 16px rgba(0,0,0,.12);
 }
 .uj-tip .t { font-weight: 700; margin-bottom: 2px; }
 .uj-tip .r { display: flex; justify-content: space-between; gap: 12px; }
 .uj-tip .r span:first-child { color: var(--color-muted); }
+.uj-err { color: var(--color-muted); }
 
-.uj-table-wrap { margin-top: 12px; }
-.uj-table-wrap summary { cursor: pointer; color: var(--color-muted); font-size: .9rem; }
-.uj-scroll { overflow-x: auto; }
-.uj-table { width: 100%; border-collapse: collapse; font-size: .85rem; margin-top: 8px; white-space: nowrap; }
-.uj-table th, .uj-table td { padding: 6px 10px; border-bottom: 1px solid var(--color-border); text-align: right; }
-.uj-table th:first-child, .uj-table td:first-child { text-align: left; }
-.uj-table th { color: var(--color-muted); font-weight: 600; }
-
-.uj-formula {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9rem; background: var(--color-bg);
-  border: 1px solid var(--color-border); border-radius: 10px; padding: 12px 14px; overflow-x: auto; white-space: nowrap;
+/* 참고자료 */
+.uj-ref { margin-top: 32px; padding: 0; }
+.uj-ref h2 { font-size: 1.1rem; margin: 0; }
+.uj-ref-chart {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  border: 1px solid var(--color-border); border-radius: var(--radius); padding: 16px;
 }
-.uj-note { color: var(--color-muted); font-size: .85rem; }
+.uj-ref-col { display: flex; flex-direction: column; align-items: stretch; min-width: 0; }
+.uj-ref-bar { position: relative; height: 140px; display: flex; align-items: flex-end; justify-content: center;
+  border-bottom: 1px solid var(--color-border); }
+.uj-ref-bar i { display: block; width: 56%; max-width: 64px; border-radius: 4px 4px 0 0; }
+.uj-ref-bar span { position: absolute; top: 0; font-weight: 700; font-size: .95rem; }
+.uj-ref-lbl { text-align: center; font-size: .78rem; font-weight: 600; margin-top: 6px; }
+.uj-ref-med { text-align: center; font-size: .7rem; color: var(--color-muted); min-height: 1.2em; }
+.uj-ref-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin-top: 8px; }
+.uj-tag {
+  display: inline-flex; gap: 4px; align-items: center; font: inherit; font-size: .7rem; cursor: pointer;
+  padding: 2px 8px; border-radius: 999px; border: 1px solid var(--color-border);
+  background: var(--color-bg-alt); color: var(--color-text);
+}
+.uj-tag b { font-weight: 700; color: var(--color-muted); }
+.uj-tag.on { border-color: var(--color-primary); color: var(--color-primary); }
 
 @media (max-width: 720px) {
-  .uj-panel { padding: 14px; }
-  .uj-chart { height: 440px; }
-  .uj-card { flex-basis: 70%; }
-  .uj-summary { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .uj-card { flex-basis: 42%; }
+  .uj-panel { padding: 12px; margin: 0 -4px; }
+  .uj-summary { gap: 6px; }
   .uj-stat { padding: 8px; }
-  .uj-stat .k { font-size: .7rem; }
-  .uj-stat .v { font-size: .95rem; }
-  .uj-stat .s { font-size: .68rem; }
+  .uj-stat .k { font-size: .66rem; }
+  .uj-stat .v { font-size: .92rem; }
+  .uj-stat .v small { display: block; margin: 0; font-size: .62rem; }
+  .uj-chart { height: 420px; }
+  .uj-ref-chart { padding: 12px 8px; gap: 4px; }
+  .uj-ref-bar { height: 110px; }
+  .uj-ref-lbl { font-size: .66rem; }
+  .uj-ref-med { font-size: .6rem; }
+  .uj-tag { font-size: .62rem; padding: 1px 6px; }
 }
