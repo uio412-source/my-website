@@ -113,7 +113,7 @@ section { padding: 64px 0; }
   --chart-axis: #6b6a66;
   --chart-truth: rgba(194, 24, 91, 0.45);
   --lv-low: #8fb0dc;
-  --lv-mid: #2a78d6;
+  --lv-mid: #6250d6;
   --lv-high: #c2185b;
 }
 @media (prefers-color-scheme: dark) {
@@ -128,7 +128,7 @@ section { padding: 64px 0; }
     --chart-axis: #9aa4b4;
     --chart-truth: rgba(240, 98, 146, 0.5);
     --lv-low: #5a7aa8;
-    --lv-mid: #5b9cf0;
+    --lv-mid: #9085e9;
     --lv-high: #f06292;
   }
 }
