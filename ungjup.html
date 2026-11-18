@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>웅줍 지표 | 회사이름</title>
-  <meta name="description" content="나스닥100, SPY, QLD, GLD, 코스피200, 비트코인의 웅줍 구간과 웅줍 레벨(LV1~100)을 매일 보여 주는 지표.">
+  <meta name="description" content="나스닥100, SPY, QLD, GLD, 코스피200, 비트코인의 웅줍 구간과 웅줍 레벨(LV1~1000)을 매일 보여 주는 지표.">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/ungjup.css">
 </head>
@@ -96,18 +96,18 @@
             <p>200일선과 “다음 종가가 RSI 33이 되는 가격” 중 낮은 값입니다. 종가가 이 선 아래에서 마감하면 진한 음영이 됩니다.</p>
           </div>
           <div class="card">
-            <h3>웅줍LV (1~100)</h3>
-            <p>과거 하락장마다 고점을 LV1, 바닥을 LV100으로 두고, 이를 가장 잘 맞추도록 자산별로 보정한 실시간 산식입니다.</p>
+            <h3>웅줍LV (1~1000)</h3>
+            <p>과거 하락장마다 고점을 LV1, 바닥을 LV1000으로 두고, 이를 가장 잘 맞추도록 자산별로 보정한 실시간 산식입니다. 900을 넘으면 과거 바닥 수준, 1000에 가까울수록 과거 바닥보다도 깊은 구간입니다.</p>
           </div>
         </div>
 
         <h3 class="uj-h3">웅줍LV 산식 (현재 선택한 자산)</h3>
         <p class="uj-formula" id="uj-formula"></p>
-        <p class="uj-note">하락장 = 스윙 고점 대비 <span id="uj-mdd"></span> 이상 하락, 바닥에서 그 두 배 반등하면 종료. 52주 고점 대비 하락률과 200일선 이격도는 소수(예: −12% → −0.12)로 넣습니다.</p>
+        <p class="uj-note">점수 x는 과거 바닥일의 중앙값이 100이 되도록 맞춘 값이며, 90까지는 그대로 10배, 그 위는 1000을 넘지 않도록 부드럽게 눌러 줍니다. 하락장 = 스윙 고점 대비 <span id="uj-mdd"></span> 이상 하락, 바닥에서 그 두 배 반등하면 종료. 52주 고점 대비 하락률과 200일선 이격도는 소수(예: −12% → −0.12)로 넣습니다.</p>
 
         <h3 class="uj-h3">웅줍LV 구간별 1년 뒤 성과 (과거)</h3>
         <div class="uj-scroll"><table class="uj-table" id="uj-stats"></table></div>
-        <p class="uj-note">LV가 높다는 것은 “하락장 안에서 깊이 들어왔다”는 뜻이지 수익을 보장한다는 뜻이 아닙니다. 큰 하락장의 중턱에서도 LV는 100 가까이 올라갈 수 있습니다. 하락장 수가 적은 자산(GLD, 코스피200 등)은 산식의 신뢰도가 낮습니다.</p>
+        <p class="uj-note">LV가 높다는 것은 “하락장 안에서 깊이 들어왔다”는 뜻이지 수익을 보장한다는 뜻이 아닙니다. 큰 하락장의 중턱에서도 LV는 1000 가까이 올라갈 수 있습니다. 하락장 수가 적은 자산(GLD, 코스피200 등)은 산식의 신뢰도가 낮습니다.</p>
         <p class="uj-note"><b>투자 조언이 아닙니다.</b> 데이터: Yahoo Finance 일봉(최근 값은 장중 가격일 수 있음). 코스피200은 KODEX 200 ETF(069500) 가격을 사용합니다.</p>
       </div>
     </section>

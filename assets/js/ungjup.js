@@ -14,7 +14,8 @@
     return unit === "₩" ? s + "원" : (unit || "") + s;
   };
   const pct = (v, d = 1) => (v == null ? "-" : (v > 0 ? "+" : "") + (v * 100).toFixed(d) + "%");
-  const lvColor = (lv) => (lv >= 80 ? css("--lv-high") : lv >= 40 ? css("--lv-mid") : css("--lv-low"));
+  const LV_MAX = 1000;
+  const lvColor = (lv) => (lv >= 800 ? css("--lv-high") : lv >= 400 ? css("--lv-mid") : css("--lv-low"));
 
   // ---------- 자산 카드 ----------
   function renderCards() {
@@ -30,7 +31,7 @@
         <div class="nm">${a.name}</div>
         <div class="ds">${a.desc}</div>
         <div class="lv"><small>LV</small>${L.lv ?? "-"}</div>
-        <div class="bar"><i style="width:${L.lv ?? 0}%;background:${lvColor(L.lv)}"></i></div>
+        <div class="bar"><i style="width:${(L.lv ?? 0) / LV_MAX * 100}%;background:${lvColor(L.lv)}"></i></div>
         <span class="uj-chip z${L.zone}">${ZONE_LABEL[L.zone]}</span>`;
       b.addEventListener("click", () => select(a.id, true));
       box.appendChild(b);
@@ -104,16 +105,19 @@
   function renderExplain() {
     const { meta } = state.cache[state.cur];
     const [a, b, c, d] = meta.coef;
+    const mp = meta.map || { knee: 90, knee_lv: 900, tau: 25 };
     const sg = (v) => (v < 0 ? " − " : " + ") + Math.abs(v).toFixed(1);
-    $("uj-formula").textContent =
-      `${meta.name}  웅줍LV = ${a.toFixed(1)}${sg(b)}×√(52주 고점 대비 하락률)${sg(c)}×(200일선 이격도)${sg(d)}×RSI  → 1~100으로 자름`;
+    $("uj-formula").innerHTML =
+      `${meta.name}  점수 x = ${a.toFixed(1)}${sg(b)}×√(52주 고점 대비 하락률)${sg(c)}×(200일선 이격도)${sg(d)}×RSI<br>` +
+      `웅줍LV = x ≤ ${mp.knee} 이면 1 + (x − 1) × ${((mp.knee_lv - 1) / (mp.knee - 1)).toFixed(2)}  ·  ` +
+      `x > ${mp.knee} 이면 ${mp.knee_lv} + ${LV_MAX - mp.knee_lv} × (1 − e^(−(x − ${mp.knee}) / ${mp.tau}))  → 1~${LV_MAX}`;
     $("uj-mdd").textContent = Math.round(meta.min_dd * 100) + "%";
     const st = meta.stats;
     const rows = st.by_level.map((r) =>
       `<tr><td>LV ${r.range}</td><td>${r.days.toLocaleString()}일</td><td>${r.fwd1y_median != null ? pct(r.fwd1y_median, 0) : "-"}</td><td>${r.fwd1y_up != null ? Math.round(r.fwd1y_up * 100) + "%" : "-"}</td></tr>`).join("");
     $("uj-stats").innerHTML =
       `<thead><tr><th>구간</th><th>해당 일수</th><th>1년 뒤 중앙값</th><th>1년 뒤 상승 확률</th></tr></thead><tbody>${rows}</tbody>
-       <tfoot><tr><td colspan="4" style="text-align:left;color:var(--color-muted)">과거 하락장 ${st.episodes}개 · 바닥일 웅줍LV 중앙값 ${st.bottom_lv_median} · 바닥일 중 LV90 이상 ${Math.round((st.bottom_lv90_share || 0) * 100)}%</td></tr></tfoot>`;
+       <tfoot><tr><td colspan="4" style="text-align:left;color:var(--color-muted)">과거 하락장 ${st.episodes}개 · 바닥일 웅줍LV 중앙값 ${st.bottom_lv_median} · 바닥일 중 LV900 이상 ${Math.round((st.bottom_lv900_share || 0) * 100)}%</td></tr></tfoot>`;
   }
 
   function renderTable() {
@@ -209,7 +213,7 @@
     const padv = (thi - tlo) * 0.06; tlo -= padv; thi += padv;
     const yP = (v) => padT + (1 - (tf(v) - tlo) / (thi - tlo)) * topH;
     const ly0 = padT + topH + gap;
-    const yL = (v) => ly0 + (1 - v / 100) * lowerH;
+    const yL = (v) => ly0 + (1 - v / (state.lower === "lv" ? LV_MAX : 100)) * lowerH;
 
     // 음영 (두 패널 모두)
     const step = (x1 - x0) / Math.max(1, cnt - 1);
@@ -250,7 +254,7 @@
       ctx.beginPath(); ctx.moveTo(x0, y + 0.5); ctx.lineTo(x1, y + 0.5); ctx.stroke();
       ctx.fillText(v >= 1000 ? Math.round(v).toLocaleString("ko-KR") : +v.toFixed(2), x1 + 6, y);
     });
-    const lt = state.lower === "lv" ? [1, 50, 100] : [33, 50, 70];
+    const lt = state.lower === "lv" ? [1, 500, 1000] : [33, 50, 70];
     lt.forEach((v) => {
       const y = yL(v);
       ctx.beginPath(); ctx.moveTo(x0, y + 0.5); ctx.lineTo(x1, y + 0.5); ctx.stroke();

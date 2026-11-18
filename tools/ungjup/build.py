@@ -4,7 +4,9 @@ Yahoo Finance 일봉을 받아 자산마다 다음을 계산해 data/ungjup/<id>
   - 20일/200일 이동평균, RSI(14, Wilder)
   - 웅줍라인 = min(200일선, 다음 종가가 RSI 33이 되는 가격)
   - 음영 단계: 0 없음 / 1 (200일선 아래 또는 RSI<33) / 2 (둘 다 = 웅줍 구간)
-  - 웅줍LV(1~100): 하락장 고점=LV1, 바닥=LV100이 되도록 자산별로 보정한 실시간 산식
+  - 웅줍LV(1~1000): 하락장 고점=LV1, 바닥=LV1000이 되도록 자산별로 보정한 실시간 산식
+      점수 x = 계수·[1, √52주하락률, 200일선이격도, RSI]  (과거 바닥일의 x 중앙값 = 100)
+      x ≤ 90 → 1~900 비례,  x > 90 → 900~1000 사이에서 1000에 점점 가까워짐 (잘라내지 않음)
 
 사용법
   python tools/ungjup/build.py          # 저장된 계수(coefs.json)로 데이터만 갱신
@@ -126,15 +128,26 @@ def fit(df, eps):
     sw = np.sqrt(w)[:, None]
     b = np.linalg.lstsq(X * sw, y * sw[:, 0], rcond=None)[0]
     raw_bottom = np.clip(features(df.iloc[bottoms]) @ b, 1, 100)
-    q = float(np.median(raw_bottom))
+    q = float(np.nanmedian(raw_bottom))
     k = 99 / (q - 1)
     b = b * k
     b[0] += 1 - k
     return [round(float(v), 3) for v in b]
 
 
+KNEE, KNEE_LV, TAU = 90.0, 900.0, 25.0
+
+
+def to_lv(x):
+    """점수 x(바닥 중앙값≈100)를 웅줍LV 1~1000으로 변환."""
+    x = np.asarray(x, dtype=float)
+    lin = 1 + (x - 1) * (KNEE_LV - 1) / (KNEE - 1)
+    top = KNEE_LV + (1000 - KNEE_LV) * (1 - np.exp(-(x - KNEE) / TAU))
+    return np.clip(np.where(x <= KNEE, lin, top), 1, 1000)
+
+
 def apply_lv(df, coef):
-    return np.clip(features(df) @ np.array(coef), 1, 100)
+    return to_lv(features(df) @ np.array(coef))
 
 
 def stats(df, eps, year):
@@ -142,17 +155,17 @@ def stats(df, eps, year):
     fw = c.shift(-year) / c - 1
     lv = df["lv"]
     rows = []
-    for lo, hi in [(1, 40), (40, 80), (80, 95), (95, 101)]:
+    for lo, hi in [(1, 400), (400, 800), (800, 950), (950, 1001)]:
         m = (lv >= lo) & (lv < hi) & fw.notna()
         if m.sum() < 20:
-            rows.append({"range": f"{lo}~{min(hi, 100)}", "days": int(m.sum())}); continue
-        rows.append({"range": f"{lo}~{min(hi, 100)}", "days": int(m.sum()),
+            rows.append({"range": f"{lo}~{min(hi, 1000)}", "days": int(m.sum())}); continue
+        rows.append({"range": f"{lo}~{min(hi, 1000)}", "days": int(m.sum()),
                      "fwd1y_median": round(float(fw[m].median()), 4),
                      "fwd1y_up": round(float((fw[m] > 0).mean()), 3)})
     done = [e for e in eps if e["done"]]
     bl = [df["lv"].iloc[e["bottom"]] for e in done if not math.isnan(df["lv"].iloc[e["bottom"]])]
     return {"episodes": len(done), "bottom_lv_median": round(float(np.median(bl)), 1) if bl else None,
-            "bottom_lv90_share": round(float(np.mean(np.array(bl) >= 90)), 3) if bl else None,
+            "bottom_lv900_share": round(float(np.mean(np.array(bl) >= 900)), 3) if bl else None,
             "by_level": rows}
 
 
@@ -176,7 +189,7 @@ def build(asset, coefs, do_fit):
     for e in eps:
         if e["done"]:
             sl = slice(e["peak"], e["bottom"] + 1)
-            truth[sl] = 1 + 99 * (1 - cv[sl] / cv[e["peak"]]) / e["mdd"]
+            truth[sl] = 1 + 999 * (1 - cv[sl] / cv[e["peak"]]) / e["mdd"]
     df["truth"] = truth
 
     # 가격 자릿수: 값 크기에 맞춰 반올림 (파일 크기 절약)
@@ -190,14 +203,15 @@ def build(asset, coefs, do_fit):
         "s200": [r(v, nd) for v in out["sma200"]],
         "uj": [r(v, nd) for v in out["ujline"]],
         "rsi": [r(v, 1) for v in out["rsi"]],
-        "lv": [r(v, 0) for v in out["lv"]],
-        "tr": [r(v, 0) for v in out["truth"]],
+        "lv": [None if v is None or math.isnan(v) else int(round(v)) for v in out["lv"]],
+        "tr": [None if math.isnan(v) else int(round(v)) for v in out["truth"]],
         "z": [int(v) for v in out["zone"]],
     }
     lt = df.iloc[-1]
     meta = {k: asset[k] for k in ("id", "symbol", "name", "desc", "unit", "min_dd")}
     meta.update({
         "coef": coef,
+        "map": {"knee": KNEE, "knee_lv": KNEE_LV, "tau": TAU},
         "last": {"date": df.index[-1].strftime("%Y-%m-%d"), "close": r(lt.close, 2), "sma20": r(lt.sma20, 2),
                  "sma200": r(lt.sma200, 2), "rsi": r(lt.rsi, 1), "ujline": r(lt.ujline, 2),
                  "lv": r(lt.lv, 0), "zone": int(lt.zone), "dd52": r(lt.dd52, 4), "gap200": r(lt.gap200, 4)},
@@ -225,7 +239,7 @@ def main():
         (OUT / f"{a['id']}.json").write_text(json.dumps({"meta": meta, "rows": rec}, ensure_ascii=False, separators=(",", ":")))
         index.append(meta)
         L = meta["last"]
-        print(f"{a['name']:8s} {L['date']} 종가 {L['close']:>12,.2f}  RSI {L['rsi']:5.1f}  음영 {L['zone']}  웅줍LV {L['lv']:>3.0f}  "
+        print(f"{a['name']:8s} {L['date']} 종가 {L['close']:>12,.2f}  RSI {L['rsi']:5.1f}  음영 {L['zone']}  웅줍LV {L['lv']:>4.0f}  "
               f"하락장 {meta['stats']['episodes']}개  바닥LV중앙값 {meta['stats']['bottom_lv_median']}")
     if failed and len(failed) == len(ASSETS):
         sys.exit(1)

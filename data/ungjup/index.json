@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18 05:43 UTC",
+ "updated": "2026-11-18 05:51 UTC",
  "assets": [
   {
    "id": "ndx",
@@ -14,6 +14,11 @@
     82.157,
     -2.411
    ],
+   "map": {
+    "knee": 90.0,
+    "knee_lv": 900.0,
+    "tau": 25.0
+   },
    "last": {
     "date": "2026-11-17",
     "close": 27001.78,
@@ -21,39 +26,39 @@
     "sma200": 28053.88,
     "rsi": 36.3,
     "ujline": 26394.96,
-    "lv": 87.0,
+    "lv": 866.0,
     "zone": 1,
     "dd52": 0.1352,
     "gap200": -0.0375
    },
    "stats": {
     "episodes": 58,
-    "bottom_lv_median": 99.8,
-    "bottom_lv90_share": 0.914,
+    "bottom_lv_median": 932.9,
+    "bottom_lv900_share": 0.914,
     "by_level": [
      {
-      "range": "1~40",
-      "days": 5038,
+      "range": "1~400",
+      "days": 5084,
       "fwd1y_median": 0.1619,
       "fwd1y_up": 0.853
      },
      {
-      "range": "40~80",
-      "days": 3569,
-      "fwd1y_median": 0.1841,
-      "fwd1y_up": 0.817
+      "range": "400~800",
+      "days": 3530,
+      "fwd1y_median": 0.1836,
+      "fwd1y_up": 0.816
      },
      {
-      "range": "80~95",
-      "days": 791,
+      "range": "800~950",
+      "days": 1144,
       "fwd1y_median": 0.1971,
-      "fwd1y_up": 0.733
+      "fwd1y_up": 0.715
      },
      {
-      "range": "95~100",
-      "days": 514,
-      "fwd1y_median": 0.1921,
-      "fwd1y_up": 0.652
+      "range": "950~1000",
+      "days": 154,
+      "fwd1y_median": 0.1857,
+      "fwd1y_up": 0.623
      }
     ]
    },
@@ -131,6 +136,11 @@
     -1.199,
     -2.027
    ],
+   "map": {
+    "knee": 90.0,
+    "knee_lv": 900.0,
+    "tau": 25.0
+   },
    "last": {
     "date": "2026-11-17",
     "close": 732.44,
@@ -138,39 +148,39 @@
     "sma200": 732.34,
     "rsi": 37.5,
     "ujline": 718.59,
-    "lv": 73.0,
+    "lv": 727.0,
     "zone": 0,
     "dd52": 0.0599,
     "gap200": 0.0001
    },
    "stats": {
     "episodes": 19,
-    "bottom_lv_median": 100.0,
-    "bottom_lv90_share": 0.789,
+    "bottom_lv_median": 933.0,
+    "bottom_lv900_share": 0.789,
     "by_level": [
      {
-      "range": "1~40",
-      "days": 4677,
-      "fwd1y_median": 0.1266,
-      "fwd1y_up": 0.838
+      "range": "1~400",
+      "days": 4719,
+      "fwd1y_median": 0.1263,
+      "fwd1y_up": 0.836
      },
      {
-      "range": "40~80",
-      "days": 2736,
-      "fwd1y_median": 0.1222,
-      "fwd1y_up": 0.731
+      "range": "400~800",
+      "days": 2699,
+      "fwd1y_median": 0.1227,
+      "fwd1y_up": 0.732
      },
      {
-      "range": "80~95",
-      "days": 426,
-      "fwd1y_median": 0.1531,
-      "fwd1y_up": 0.707
+      "range": "800~950",
+      "days": 568,
+      "fwd1y_median": 0.1564,
+      "fwd1y_up": 0.701
      },
      {
-      "range": "95~100",
-      "days": 219,
-      "fwd1y_median": 0.1666,
-      "fwd1y_up": 0.708
+      "range": "950~1000",
+      "days": 72,
+      "fwd1y_median": 0.2116,
+      "fwd1y_up": 0.736
      }
     ]
    },
@@ -209,6 +219,11 @@
     62.913,
     -2.107
    ],
+   "map": {
+    "knee": 90.0,
+    "knee_lv": 900.0,
+    "tau": 25.0
+   },
    "last": {
     "date": "2026-11-17",
     "close": 73.98,
@@ -216,39 +231,39 @@
     "sma200": 83.64,
     "rsi": 35.5,
     "ujline": 71.35,
-    "lv": 86.0,
+    "lv": 856.0,
     "zone": 1,
     "dd52": 0.2659,
     "gap200": -0.1155
    },
    "stats": {
     "episodes": 22,
-    "bottom_lv_median": 99.9,
-    "bottom_lv90_share": 0.909,
+    "bottom_lv_median": 932.9,
+    "bottom_lv900_share": 0.909,
     "by_level": [
      {
-      "range": "1~40",
-      "days": 2655,
-      "fwd1y_median": 0.3257,
+      "range": "1~400",
+      "days": 2685,
+      "fwd1y_median": 0.3246,
       "fwd1y_up": 0.81
      },
      {
-      "range": "40~80",
-      "days": 1486,
-      "fwd1y_median": 0.4085,
+      "range": "400~800",
+      "days": 1459,
+      "fwd1y_median": 0.414,
       "fwd1y_up": 0.832
      },
      {
-      "range": "80~95",
-      "days": 355,
-      "fwd1y_median": 0.4586,
-      "fwd1y_up": 0.794
+      "range": "800~950",
+      "days": 489,
+      "fwd1y_median": 0.4645,
+      "fwd1y_up": 0.767
      },
      {
-      "range": "95~100",
-      "days": 188,
-      "fwd1y_median": 0.4786,
-      "fwd1y_up": 0.697
+      "range": "950~1000",
+      "days": 51,
+      "fwd1y_median": 0.4307,
+      "fwd1y_up": 0.686
      }
     ]
    },
@@ -290,6 +305,11 @@
     72.465,
     -0.987
    ],
+   "map": {
+    "knee": 90.0,
+    "knee_lv": 900.0,
+    "tau": 25.0
+   },
    "last": {
     "date": "2026-11-17",
     "close": 352.48,
@@ -297,39 +317,39 @@
     "sma200": 407.58,
     "rsi": 36.3,
     "ujline": 346.03,
-    "lv": 100.0,
+    "lv": 969.0,
     "zone": 1,
     "dd52": 0.2892,
     "gap200": -0.1352
    },
    "stats": {
     "episodes": 13,
-    "bottom_lv_median": 100.0,
-    "bottom_lv90_share": 0.846,
+    "bottom_lv_median": 933.0,
+    "bottom_lv900_share": 0.846,
     "by_level": [
      {
-      "range": "1~40",
-      "days": 1698,
-      "fwd1y_median": 0.1773,
-      "fwd1y_up": 0.745
+      "range": "1~400",
+      "days": 1719,
+      "fwd1y_median": 0.1772,
+      "fwd1y_up": 0.744
      },
      {
-      "range": "40~80",
-      "days": 2402,
-      "fwd1y_median": 0.0657,
-      "fwd1y_up": 0.654
+      "range": "400~800",
+      "days": 2390,
+      "fwd1y_median": 0.0659,
+      "fwd1y_up": 0.655
      },
      {
-      "range": "80~95",
-      "days": 566,
-      "fwd1y_median": 0.053,
-      "fwd1y_up": 0.671
+      "range": "800~950",
+      "days": 835,
+      "fwd1y_median": 0.0613,
+      "fwd1y_up": 0.673
      },
      {
-      "range": "95~100",
-      "days": 417,
-      "fwd1y_median": 0.0661,
-      "fwd1y_up": 0.619
+      "range": "950~1000",
+      "days": 139,
+      "fwd1y_median": -0.0016,
+      "fwd1y_up": 0.489
      }
     ]
    },
@@ -362,46 +382,51 @@
     6.519,
     -0.262
    ],
+   "map": {
+    "knee": 90.0,
+    "knee_lv": 900.0,
+    "tau": 25.0
+   },
    "last": {
     "date": "2026-11-18",
-    "close": 79225.0,
-    "sma20": 85715.25,
-    "sma200": 101914.55,
-    "rsi": 36.4,
+    "close": 79520.0,
+    "sma20": 85730.0,
+    "sma200": 101916.02,
+    "rsi": 36.9,
     "ujline": 77200.9,
-    "lv": 100.0,
+    "lv": 990.0,
     "zone": 1,
-    "dd52": 0.466,
-    "gap200": -0.2226
+    "dd52": 0.464,
+    "gap200": -0.2197
    },
    "stats": {
     "episodes": 12,
-    "bottom_lv_median": 100.0,
-    "bottom_lv90_share": 0.727,
+    "bottom_lv_median": 933.0,
+    "bottom_lv900_share": 0.727,
     "by_level": [
      {
-      "range": "1~40",
-      "days": 1474,
-      "fwd1y_median": -0.0004,
-      "fwd1y_up": 0.499
+      "range": "1~400",
+      "days": 1498,
+      "fwd1y_median": -0.0015,
+      "fwd1y_up": 0.495
      },
      {
-      "range": "40~80",
-      "days": 1700,
-      "fwd1y_median": 0.0155,
-      "fwd1y_up": 0.552
+      "range": "400~800",
+      "days": 1680,
+      "fwd1y_median": 0.0159,
+      "fwd1y_up": 0.555
      },
      {
-      "range": "80~95",
-      "days": 421,
-      "fwd1y_median": 0.078,
-      "fwd1y_up": 0.741
+      "range": "800~950",
+      "days": 595,
+      "fwd1y_median": 0.0846,
+      "fwd1y_up": 0.787
      },
      {
-      "range": "95~100",
-      "days": 264,
-      "fwd1y_median": 0.0994,
-      "fwd1y_up": 0.92
+      "range": "950~1000",
+      "days": 86,
+      "fwd1y_median": 0.102,
+      "fwd1y_up": 1.0
      }
     ]
    },
@@ -433,46 +458,51 @@
     2.103,
     -1.385
    ],
+   "map": {
+    "knee": 90.0,
+    "knee_lv": 900.0,
+    "tau": 25.0
+   },
    "last": {
     "date": "2026-11-18",
-    "close": 64602.86,
-    "sma20": 73424.86,
-    "sma200": 72796.79,
+    "close": 64618.62,
+    "sma20": 73425.65,
+    "sma200": 72796.87,
     "rsi": 23.8,
     "ujline": 67329.65,
-    "lv": 100.0,
+    "lv": 939.0,
     "zone": 2,
-    "dd52": 0.3335,
-    "gap200": -0.1126
+    "dd52": 0.3333,
+    "gap200": -0.1123
    },
    "stats": {
     "episodes": 17,
-    "bottom_lv_median": 99.9,
-    "bottom_lv90_share": 0.688,
+    "bottom_lv_median": 932.9,
+    "bottom_lv900_share": 0.688,
     "by_level": [
      {
-      "range": "1~40",
-      "days": 1161,
-      "fwd1y_median": 0.8784,
-      "fwd1y_up": 0.731
+      "range": "1~400",
+      "days": 1192,
+      "fwd1y_median": 0.869,
+      "fwd1y_up": 0.732
      },
      {
-      "range": "40~80",
-      "days": 1937,
-      "fwd1y_median": 0.893,
-      "fwd1y_up": 0.716
+      "range": "400~800",
+      "days": 1910,
+      "fwd1y_median": 0.8961,
+      "fwd1y_up": 0.715
      },
      {
-      "range": "80~95",
-      "days": 532,
-      "fwd1y_median": 0.4082,
-      "fwd1y_up": 0.639
+      "range": "800~950",
+      "days": 709,
+      "fwd1y_median": 0.427,
+      "fwd1y_up": 0.671
      },
      {
-      "range": "95~100",
-      "days": 251,
-      "fwd1y_median": 0.5213,
-      "fwd1y_up": 0.801
+      "range": "950~1000",
+      "days": 70,
+      "fwd1y_median": 0.6779,
+      "fwd1y_up": 0.9
      }
     ]
    },
