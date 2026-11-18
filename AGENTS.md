@@ -20,8 +20,9 @@ assets/js/main.js     공통 스크립트
 assets/js/ungjup.js   차트 (캔버스, 외부 라이브러리 없음)
 assets/js/portfolio.js 보유종목·자산 페이지
 tools/ungjup/build.py 데이터 생성기 (Yahoo Finance → data/ungjup/*.json)
+tools/ungjup/extras.py 종목 검색 목록(symbols.json)·뉴스 자막(news.json) 생성
 data/holdings.json    보유종목 원본 (사람이 직접 수정)
-data/ungjup/          생성된 지수 데이터, holdings_lv.json, 웅줍LV 기준표(lv_model.json)
+data/ungjup/          생성된 지수 데이터, holdings_lv.json, 웅줍LV 기준표(lv_model.json), symbols.json, news.json
 assets/img/           이미지
 ```
 
@@ -40,6 +41,11 @@ assets/img/           이미지
 - `data/holdings.json`의 `asof`(기준일)와 각 종목의 `qty`(수량), `value`(평가금액, 원), `pnl`(평가손익, 원)을 고칩니다. 수익률은 페이지가 `pnl / (value - pnl)`로 계산합니다.
 - 새 종목은 Yahoo Finance 티커를 `symbol`에 넣으면(국내는 `005930.KS` 형식) 다음 배포 때 웅줍LV가 계산됩니다.
 - `type`은 자산 탭의 유형별 비중에 쓰입니다 (레버리지 ETF, 커버드콜 ETF, 개별 종목, 테마·섹터 ETF, 기타 투자).
+
+## 보유종목 페이지 부가 기능
+- **뉴스 자막**: 배포 때 `extras.py`가 보유 개별 종목(+ `news_q`가 있는 종목)과 시장(나스닥·코스피)마다 Google 뉴스 한국어 최근 3일 기사를 받아 `news.json`(최대 40건)으로 저장합니다. 브라우저는 외부 API를 직접 부르지 않습니다(CORS).
+- **종목 검색 목록**: 미국 = nasdaqtrader.com 공식 목록, 한국 = 네이버 증권 시가총액 목록(코스피 .KS·코스닥 .KQ, ETF 포함). 7일마다 새로 받고 `--symbols`로 강제 갱신. 미국 종목 한글 이름은 `extras.py`의 `US_KO` 별칭표에 추가하세요.
+- **직접 추가한 종목**: 브라우저 localStorage(`mrstocks.added.v1`)에만 저장되고 자산 탭 합계에도 들어갑니다. 웅줍LV는 `data/holdings.json`에 반영해야 계산됩니다(시트의 "반영용 JSON 복사").
 
 ## 웅줍 지표
 - 데이터는 배포 워크플로가 하루 두 번(한국시간 06:40, 16:40) `tools/ungjup/build.py`로 갱신합니다.

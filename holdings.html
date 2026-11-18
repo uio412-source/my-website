@@ -35,6 +35,17 @@
     <div class="container">
       <div class="page-head">
         <h1>보유종목</h1>
+        <button class="add-btn" id="add-btn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>종목 추가
+        </button>
+      </div>
+
+      <div class="news" id="news" hidden>
+        <span class="news-tag">뉴스</span>
+        <div class="news-viewport"><div class="news-track" id="news-track"></div></div>
+      </div>
+
+      <div class="h-tools">
         <div class="uj-seg" id="h-sort" role="group" aria-label="정렬">
           <button data-sort="default" class="on">기본</button>
           <button data-sort="value">금액</button>
@@ -45,6 +56,37 @@
       <div id="h-list"></div>
     </div>
   </main>
+
+  <dialog class="sheet" id="add-dlg" aria-labelledby="add-title">
+    <div class="sheet-head">
+      <h2 id="add-title">종목 추가</h2>
+      <button class="sheet-x" type="button" data-close aria-label="닫기">✕</button>
+    </div>
+
+    <div class="sheet-step" id="step-search">
+      <input class="sheet-input" id="q" type="search" placeholder="종목명 또는 티커 (예: 삼성전자, NVDA, 애플)" autocomplete="off" enterkeyhint="search">
+      <ul class="sym-list" id="sym-list"></ul>
+      <p class="sheet-hint" id="sym-hint">미국·한국 상장 종목과 ETF를 찾을 수 있어요.</p>
+    </div>
+
+    <form class="sheet-step" id="step-form" hidden>
+      <button class="picked" type="button" id="picked"></button>
+      <label class="fld"><span>보유 수량 (주)</span><input id="f-qty" type="number" step="any" min="0" inputmode="decimal" required></label>
+      <label class="fld"><span>평가금액 (원)</span><input id="f-value" type="number" step="1" min="0" inputmode="numeric" required></label>
+      <label class="fld"><span>평가손익 (원, 손실은 -)</span><input id="f-pnl" type="number" step="1" inputmode="numeric" value="0"></label>
+      <label class="fld"><span>유형</span>
+        <select id="f-type">
+          <option>개별 종목</option><option>테마·섹터 ETF</option><option>레버리지 ETF</option><option>커버드콜 ETF</option><option>기타 투자</option>
+        </select>
+      </label>
+      <div class="sheet-btns">
+        <button type="button" class="btn-ghost danger" id="f-del" hidden>삭제</button>
+        <button type="submit" class="btn-solid" id="f-save">저장</button>
+      </div>
+      <p class="sheet-hint">이 브라우저에만 저장돼요. 웅줍LV는 저장소의 보유종목에 반영해야 계산됩니다.
+        <button type="button" class="link-btn" id="f-export">반영용 JSON 복사</button></p>
+    </form>
+  </dialog>
 
   <nav class="tabbar" aria-label="메인 메뉴">
     <a href="ungjup.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg><span>차트</span></a>

@@ -233,6 +233,7 @@ def holding_symbols():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--fit", action="store_true", help="기준표·변동성을 다시 만듦")
+    ap.add_argument("--symbols", action="store_true", help="종목 검색 목록을 7일이 안 됐어도 새로 받음")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
 
@@ -304,6 +305,11 @@ def main():
               f"{'  짧은이력' if plan[s]['short'] else ''}")
     hpath.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "items": items},
                                 ensure_ascii=False, indent=1))
+
+    # 5) 종목 검색 목록 + 뉴스 자막
+    sys.path.insert(0, str(Path(__file__).parent))
+    import extras
+    extras.main(HOLDINGS, OUT, force_symbols=args.symbols)
 
 
 if __name__ == "__main__":
