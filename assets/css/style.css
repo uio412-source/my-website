@@ -100,3 +100,35 @@ section { padding: 64px 0; }
 /* ===== 푸터 ===== */
 .site-footer { padding: 32px 0; border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: .9rem; }
 .site-footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+/* ===== 차트 색상 (웅줍 지표) ===== */
+:root {
+  --chart-price: #1f1f1e;
+  --chart-s20: #e0761f;
+  --chart-s200: #2a78d6;
+  --chart-uj: #c2185b;
+  --chart-zone1: rgba(42, 120, 214, 0.10);
+  --chart-zone2: rgba(42, 120, 214, 0.32);
+  --chart-grid: #e6e5e1;
+  --chart-axis: #6b6a66;
+  --chart-truth: rgba(194, 24, 91, 0.45);
+  --lv-low: #8fb0dc;
+  --lv-mid: #2a78d6;
+  --lv-high: #c2185b;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --chart-price: #e8ecf2;
+    --chart-s20: #f0894a;
+    --chart-s200: #5b9cf0;
+    --chart-uj: #f06292;
+    --chart-zone1: rgba(91, 156, 240, 0.12);
+    --chart-zone2: rgba(91, 156, 240, 0.34);
+    --chart-grid: #2a3240;
+    --chart-axis: #9aa4b4;
+    --chart-truth: rgba(240, 98, 146, 0.5);
+    --lv-low: #5a7aa8;
+    --lv-mid: #5b9cf0;
+    --lv-high: #f06292;
+  }
+}
