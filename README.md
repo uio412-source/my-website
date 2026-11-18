@@ -18,6 +18,15 @@ Claude, ChatGPT, Gemini 모두 같은 규칙을 따르도록 [AGENTS.md](AGENTS.
 3. PR에서 변경 내용을 확인한 뒤 **Merge**합니다.
 4. 1~2분 안에 사이트에 자동으로 반영됩니다. 진행 상황은 **Actions** 탭에서 볼 수 있습니다.
 
+## 웅줍 지표 페이지
+`ungjup.html`에서 나스닥100, SPY, QLD, GLD, 코스피200, 비트코인의 웅줍 구간과 웅줍LV를 볼 수 있습니다.
+데이터는 GitHub Actions가 매일 자동으로 갱신합니다. 직접 갱신하려면:
+
+```
+pip install numpy pandas
+python tools/ungjup/build.py
+```
+
 ## 바꿔야 할 내용
 - 모든 페이지의 `회사이름`
 - `contact@example.com`, 전화번호, 주소

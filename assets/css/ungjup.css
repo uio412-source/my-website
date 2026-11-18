@@ -1,0 +1,95 @@
+/* 웅줍 지표 페이지 전용 스타일 — 색상은 style.css의 변수만 사용 */
+.uj-section { padding-top: 40px; }
+.uj-h2 { font-size: 1.1rem; margin: 0; }
+.uj-h3 { font-size: 1.05rem; margin: 40px 0 8px; }
+.uj-carousel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.uj-arrows { display: flex; gap: 8px; }
+.uj-arrow {
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--color-border);
+  background: var(--color-bg); color: var(--color-text); font-size: 1.3rem; line-height: 1; cursor: pointer;
+}
+.uj-arrow:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+/* 좌우로 밀어서 고르는 자산 카드 */
+.uj-carousel {
+  display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding: 4px 2px 12px; scrollbar-width: thin; -webkit-overflow-scrolling: touch;
+}
+.uj-card {
+  flex: 0 0 200px; scroll-snap-align: start; text-align: left; cursor: pointer;
+  border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-bg);
+  color: var(--color-text); padding: 16px; font: inherit; transition: border-color .15s, box-shadow .15s;
+}
+.uj-card:hover { border-color: var(--color-primary); }
+.uj-card[aria-selected="true"] { border-color: var(--color-primary); box-shadow: 0 0 0 2px var(--color-primary) inset; }
+.uj-card .nm { font-weight: 700; }
+.uj-card .ds { color: var(--color-muted); font-size: .8rem; }
+.uj-card .lv { font-size: 1.9rem; font-weight: 800; margin-top: 8px; line-height: 1.1; }
+.uj-card .lv small { font-size: .8rem; font-weight: 600; color: var(--color-muted); margin-right: 4px; }
+.uj-card .bar { height: 6px; border-radius: 3px; background: var(--color-border); margin-top: 8px; overflow: hidden; }
+.uj-card .bar i { display: block; height: 100%; border-radius: 3px; }
+.uj-chip {
+  display: inline-block; font-size: .75rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; margin-top: 8px;
+  border: 1px solid var(--color-border); color: var(--color-muted);
+}
+.uj-chip.z1 { background: var(--chart-zone1); color: var(--color-text); }
+.uj-chip.z2 { background: var(--chart-zone2); color: var(--color-text); border-color: var(--chart-s200); }
+.uj-updated { color: var(--color-muted); font-size: .85rem; margin: 0 0 20px; }
+
+.uj-panel { border: 1px solid var(--color-border); border-radius: var(--radius); padding: 20px; background: var(--color-bg); }
+.uj-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.uj-stat { padding: 10px 12px; border-radius: 10px; background: var(--color-bg-alt); }
+.uj-stat .k { font-size: .78rem; color: var(--color-muted); }
+.uj-stat .v { font-size: 1.15rem; font-weight: 700; }
+.uj-stat .s { font-size: .75rem; color: var(--color-muted); }
+
+.uj-controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-bottom: 10px; }
+.uj-seg { display: inline-flex; border: 1px solid var(--color-border); border-radius: 999px; padding: 2px; }
+.uj-seg button {
+  border: 0; background: transparent; color: var(--color-muted); font: inherit; font-size: .85rem;
+  padding: 4px 12px; border-radius: 999px; cursor: pointer;
+}
+.uj-seg button.on { background: var(--color-primary); color: #fff; }
+.uj-check { font-size: .85rem; color: var(--color-muted); display: inline-flex; gap: 6px; align-items: center; }
+
+.uj-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 16px; padding: 0; margin: 0 0 8px; font-size: .8rem; color: var(--color-muted); }
+.uj-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.uj-legend .sw { width: 18px; height: 0; border-top: 2px solid; display: inline-block; }
+.uj-legend .sw.dash { border-top-style: dashed; }
+.uj-legend .box { width: 14px; height: 12px; border-radius: 2px; display: inline-block; }
+
+.uj-chart { position: relative; width: 100%; height: 520px; touch-action: pan-y; }
+.uj-chart canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.uj-tip {
+  position: absolute; pointer-events: none; z-index: 2; min-width: 170px;
+  background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 10px;
+  padding: 8px 10px; font-size: .78rem; line-height: 1.5; box-shadow: 0 4px 16px rgba(0,0,0,.12);
+}
+.uj-tip .t { font-weight: 700; margin-bottom: 2px; }
+.uj-tip .r { display: flex; justify-content: space-between; gap: 12px; }
+.uj-tip .r span:first-child { color: var(--color-muted); }
+
+.uj-table-wrap { margin-top: 12px; }
+.uj-table-wrap summary { cursor: pointer; color: var(--color-muted); font-size: .9rem; }
+.uj-scroll { overflow-x: auto; }
+.uj-table { width: 100%; border-collapse: collapse; font-size: .85rem; margin-top: 8px; white-space: nowrap; }
+.uj-table th, .uj-table td { padding: 6px 10px; border-bottom: 1px solid var(--color-border); text-align: right; }
+.uj-table th:first-child, .uj-table td:first-child { text-align: left; }
+.uj-table th { color: var(--color-muted); font-weight: 600; }
+
+.uj-formula {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9rem; background: var(--color-bg);
+  border: 1px solid var(--color-border); border-radius: 10px; padding: 12px 14px; overflow-x: auto; white-space: nowrap;
+}
+.uj-note { color: var(--color-muted); font-size: .85rem; }
+
+@media (max-width: 720px) {
+  .uj-panel { padding: 14px; }
+  .uj-chart { height: 440px; }
+  .uj-card { flex-basis: 70%; }
+  .uj-summary { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .uj-stat { padding: 8px; }
+  .uj-stat .k { font-size: .7rem; }
+  .uj-stat .v { font-size: .95rem; }
+  .uj-stat .s { font-size: .68rem; }
+}
