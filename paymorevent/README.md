@@ -10,6 +10,7 @@
 npm ci
 npm run dev
 npm run build
+npm run theme   # app/*.css의 색을 바꾼 뒤 다크 모드 파일(app/mr-cards-dark.css) 다시 만들기
 ```
 
 카드 검색은 `public/catalog-snapshot.json`을 사용합니다. 카드 상세는 `data/cards.json.gz`, 이벤트는 `data/events.json`을 기준으로 빌드합니다. 데이터를 갱신할 때 카드 목록과 상세의 ID가 일치해야 합니다.

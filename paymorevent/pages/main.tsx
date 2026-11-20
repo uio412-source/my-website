@@ -16,6 +16,7 @@ import '@/app/customer.css';
 import '@/app/database.css';
 import '@/app/issuer-ui.css';
 import '@/app/mr-cards.css';
+import '@/app/mr-cards-dark.css';
 
 const events = eventSnapshot as Offer[];
 const catalogRoute = /^(cards|events)\/([a-zA-Z0-9][a-zA-Z0-9._-]*)\/?$/;

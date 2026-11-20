@@ -83,3 +83,39 @@ body { font-family: var(--mc-font); background: var(--mc-bg); color: var(--mc-te
   .pm-intro h1 { font-size: 1.35rem; }
   .pm-footer { padding: 20px 16px 28px; }
 }
+
+/* ----- 사이트 전환(Mr. Stocks ↔ Mr. Cards)과 다크 모드 버튼: Mr. Stocks와 같은 모양 ----- */
+.mc-head-right { display: flex; align-items: center; gap: 20px; }
+.site-switch { position: relative; display: flex; align-items: center; gap: 2px; }
+.site-switch-btn {
+  width: 28px; height: 28px; border: 0; border-radius: 8px; padding: 0; cursor: pointer;
+  background: transparent; color: var(--mc-muted); display: inline-flex; align-items: center; justify-content: center;
+}
+.site-switch-btn:hover, .site-switch-btn[aria-expanded="true"] { background: var(--mc-bg-alt); color: var(--mc-text); }
+.site-switch-btn svg { width: 16px; height: 16px; transition: transform .15s; }
+.site-switch-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.site-switch-menu {
+  position: absolute; top: calc(100% + 10px); left: -8px; z-index: 40; width: 264px; padding: 6px;
+  background: var(--mc-bg); border: 1px solid var(--mc-border); border-radius: 14px;
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--mc-text) 14%, transparent);
+}
+.site-switch-menu a { display: block; padding: 10px 12px; border-radius: 10px; color: var(--mc-text); text-decoration: none; }
+.site-switch-menu a:hover { background: var(--mc-bg-alt); }
+.site-switch-menu a[aria-current="true"] { background: color-mix(in srgb, var(--mc-primary) 10%, transparent); }
+.site-switch-menu b { display: block; font-weight: 800; font-size: 1rem; }
+.site-switch-menu b span { color: var(--mc-primary); }
+.site-switch-menu small { display: block; margin-top: 2px; color: var(--mc-muted); font-size: .78rem; }
+.theme-btn {
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--mc-border); flex: none;
+  background: var(--mc-bg); color: var(--mc-text); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; padding: 0;
+}
+.theme-btn:hover { border-color: var(--mc-primary); color: var(--mc-primary); }
+.theme-btn svg { width: 18px; height: 18px; }
+.theme-btn .moon { display: none; }
+:root[data-theme="dark"] .theme-btn .sun { display: none; }
+:root[data-theme="dark"] .theme-btn .moon { display: inline; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-btn .sun { display: none; }
+  :root:not([data-theme="light"]) .theme-btn .moon { display: inline; }
+}
