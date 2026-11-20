@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/publish-detail-pages.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "theme": "node scripts/dark-theme.mjs"
   },
   "dependencies": {
     "lucide-react": "1.31.0",

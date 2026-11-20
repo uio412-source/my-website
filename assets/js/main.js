@@ -30,6 +30,29 @@ document.addEventListener("DOMContentLoaded", () => {
   sysDark.addEventListener("change", () => { label(); window.dispatchEvent(new Event("themechange")); });
 });
 
+// ---------- 공통: 사이트 전환 (Mr. Stocks ↔ Mr. Cards). Mr. Cards는 paymorevent/components/customer-shell.tsx ----------
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.querySelector(".site-header .logo");
+  if (!logo) return;
+  const box = document.createElement("div");
+  box.className = "site-switch";
+  logo.replaceWith(box);
+  box.innerHTML =
+    '<button type="button" class="site-switch-btn" aria-label="다른 사이트로 이동" aria-expanded="false" aria-haspopup="true">' +
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>' +
+    '<div class="site-switch-menu" hidden>' +
+    '<a href="ungjup.html" aria-current="true"><b>Mr. <span>Stocks</span></b><small>줍줍 차트 · 관심종목 · 배당</small></a>' +
+    '<a href="paymorevent/"><b>Mr. <span>Cards</span></b><small>카드상품 · 발급이벤트 · 카드사 이벤트</small></a>' +
+    "</div>";
+  box.prepend(logo);
+  const btn = box.querySelector(".site-switch-btn");
+  const menu = box.querySelector(".site-switch-menu");
+  const set = (open) => { menu.hidden = !open; btn.setAttribute("aria-expanded", String(open)); };
+  btn.addEventListener("click", () => set(menu.hidden));
+  document.addEventListener("pointerdown", (e) => { if (!box.contains(e.target)) set(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") set(false); });
+});
+
 // ---------- 공통: 시간 표시 도우미 ----------
 const DAYS = ["일", "월", "화", "수", "목", "금", "토"];
 const p2 = (n) => String(n).padStart(2, "0");
