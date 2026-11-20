@@ -1,4 +1,4 @@
-// 웅줍 지표 페이지: 자산 카드 슬라이드 + 캔버스 차트 (외부 라이브러리 없음)
+// 줍줍 지표 페이지: 자산 카드 슬라이드 + 캔버스 차트 (외부 라이브러리 없음)
 (() => {
   const DATA = "data/ungjup/";
   const $ = (id) => document.getElementById(id);
@@ -8,8 +8,8 @@
   const getData = (file) => window.MS.getJSON(DATA + file + "?schema=2");
   const state = { assets: [], cache: {}, cur: null, range: 3, log: false, view: null };
 
-  const ZONE_LABEL = ["평상시", "관심 (옅은 음영)", "웅줍 구간 (진한 음영)"];
-  const ZONE_SHORT = ["평상시", "관심", "웅줍"];
+  const ZONE_LABEL = ["평상시", "관심 (옅은 음영)", "줍줍 구간 (진한 음영)"];
+  const ZONE_SHORT = ["평상시", "관심", "줍줍"];
   const fmtNum = (v, unit, d = Math.abs(v) >= 1000 ? 0 : 2) => {
     if (v == null) return "-";
     const s = v.toLocaleString("ko-KR", { minimumFractionDigits: d, maximumFractionDigits: d });
@@ -97,7 +97,7 @@
     const { meta } = state.cache[state.cur];
     const L = meta.last, u = meta.unit;
     const items = [
-      ["웅줍LV", `<span style="color:${lvColor(L.lv)}">${L.lv ?? "-"}</span>`, ZONE_SHORT[L.zone]],
+      ["줍줍LV", `<span style="color:${lvColor(L.lv)}">${L.lv ?? "-"}</span>`, ZONE_SHORT[L.zone]],
       ["현재가", fmtPrice(L.close, u), `전일 대비 ${changeLabel(L.change)} · ${L.date.slice(5).replace("-", ".")}`],
       ["RSI", L.rsi?.toFixed(1) ?? "-", ""],
       ["200일선", pct(L.gap200), ""],
@@ -111,7 +111,7 @@
     { lo: 1, hi: 400, name: "평온", cls: "b0" },
     { lo: 400, hi: 700, name: "조정", cls: "b1" },
     { lo: 700, hi: 900, name: "깊은 조정", cls: "b2" },
-    { lo: 900, hi: 1001, name: "웅줍권", cls: "b3" },
+    { lo: 900, hi: 1001, name: "줍줍권", cls: "b3" },
   ];
   const bandOf = (lv) => BANDS.find((b) => lv >= b.lo && lv < b.hi) || BANDS[0];
 
@@ -199,9 +199,9 @@
       <li><span class="sw" style="border-color:${css("--lv-high")}"></span>900 이상</li>
       <li><span class="sw" style="border-color:${css("--chart-s20")}"></span>20일선</li>
       <li><span class="sw" style="border-color:${css("--chart-s200")}"></span>200일선</li>
-      <li><span class="sw dash" style="border-color:${css("--chart-uj")}"></span>웅줍라인</li>
+      <li><span class="sw dash" style="border-color:${css("--chart-uj")}"></span>줍줍라인</li>
       <li><span class="box" style="background:${css("--chart-zone1")}"></span>관심</li>
-      <li><span class="box" style="background:${css("--chart-zone2")}"></span>웅줍 구간</li>
+      <li><span class="box" style="background:${css("--chart-zone2")}"></span>줍줍 구간</li>
 `;
   }
 
@@ -272,7 +272,7 @@
           ctx.fillStyle = zc[z];
           const xa = xAt(runStart) - step / 2, xb = xAt(i - 1) + step / 2;
           ctx.fillRect(Math.max(x0, xa), padT, Math.min(x1, xb) - Math.max(x0, xa), topH);
-          // 웅줍 구간은 가격 차트 아래쪽에 진한 띠도 그려서 멀리서도 보이게
+          // 줍줍 구간은 가격 차트 아래쪽에 진한 띠도 그려서 멀리서도 보이게
           if (z === 2) {
             ctx.fillStyle = css("--chart-zone-strip");
             ctx.fillRect(Math.max(x0, xa), padT + topH - 5, Math.max(1.5, Math.min(x1, xb) - Math.max(x0, xa)), 5);
@@ -349,7 +349,7 @@
     line(R.s200, yP, css("--chart-s200"), 2);
     line(R.s20, yP, css("--chart-s20"), 1.2);
     line(R.uj, yP, css("--chart-uj"), 1.4, [5, 3]);
-    // 종가: 웅줍LV 구간에 따라 색을 바꿔 그림
+    // 종가: 줍줍LV 구간에 따라 색을 바꿔 그림
     const bucket = (lv) => (lv == null ? 0 : lv >= 900 ? 2 : lv >= 400 ? 1 : 0);
     const pc = [css("--chart-price"), css("--lv-mid"), css("--lv-high")];
     ctx.lineWidth = thin ? 1.1 : 1.7; ctx.lineJoin = "round";
@@ -368,7 +368,7 @@
       segStart = i;
     }
 
-    // 웅줍LV: 높이에 따라 색이 변하는 면 + 선
+    // 줍줍LV: 높이에 따라 색이 변하는 면 + 선
     const grad = (alpha) => {
       const g = ctx.createLinearGradient(0, yL(1), 0, yL(LV_MAX));
       g.addColorStop(0, css("--lv-low")); g.addColorStop(0.5, css("--lv-mid")); g.addColorStop(0.9, css("--lv-high")); g.addColorStop(1, css("--lv-high"));
@@ -400,7 +400,7 @@
 
     ctx.fillStyle = css("--chart-axis");
     ctx.textAlign = "left"; ctx.textBaseline = "bottom";
-    ctx.fillText("웅줍LV", x0 + 2, ly0 - 4);
+    ctx.fillText("줍줍LV", x0 + 2, ly0 - 4);
 
     state.view = { start, n, xAt, x0, x1, yP, yL, padT, ly0, lowerH, topH, W, H, dpr };
     overlay.getContext("2d").clearRect(0, 0, overlay.width, overlay.height);
@@ -431,7 +431,7 @@
     const row = (k, val) => `<div class="r"><span>${k}</span><span>${val}</span></div>`;
     tip.innerHTML = `<div class="t">${R.d[i]} · ${ZONE_LABEL[R.z[i]]}</div>` +
       row("종가", fmtNum(R.c[i], u)) + row("20일선", fmtNum(R.s20[i], u)) + row("200일선", fmtNum(R.s200[i], u)) +
-      row("웅줍라인", fmtNum(R.uj[i], u)) + row("RSI", R.rsi[i] ?? "-") + row("웅줍LV", R.lv[i] ?? "-");
+      row("줍줍라인", fmtNum(R.uj[i], u)) + row("RSI", R.rsi[i] ?? "-") + row("줍줍LV", R.lv[i] ?? "-");
     tip.hidden = false;
     const tw = tip.offsetWidth;
     tip.style.left = (cx + 14 + tw > v.W ? cx - tw - 14 : cx + 14) + "px";

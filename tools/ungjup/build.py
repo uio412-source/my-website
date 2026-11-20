@@ -1,16 +1,16 @@
-"""웅줍 지표 데이터 생성기.
+"""줍줍 지표 데이터 생성기.
 
 Yahoo Finance 일봉을 받아 자산마다 다음을 계산해 data/ungjup/<id>.json 으로 저장합니다.
   - 20일/200일 이동평균, RSI(14, Wilder)
-  - 웅줍라인 = min(200일선, 다음 종가가 RSI 33이 되는 가격)
-  - 음영 단계: 0 없음 / 1 (200일선 아래 또는 RSI<33) / 2 (둘 다 = 웅줍 구간)
-  - 웅줍LV(1~1000, v2): "지금의 하락 스트레스가 전체 자산 과거 모든 날 중 몇 번째인가"
+  - 줍줍라인 = min(200일선, 다음 종가가 RSI 33이 되는 가격)
+  - 음영 단계: 0 없음 / 1 (200일선 아래 또는 RSI<33) / 2 (둘 다 = 줍줍 구간)
+  - 줍줍LV(1~1000, v2): "지금의 하락 스트레스가 전체 자산 과거 모든 날 중 몇 번째인가"
       1) 세 지표를 자산의 평소 변동성(연율)으로 나눠 자산 간 비교가 되게 함
            깊이 = 52주 고점 대비 하락률 / 변동성
            이격 = 200일선 아래로 벌어진 정도 / 변동성 (위에 있으면 0)
            과매도 = max(0, 50 − RSI)
       2) 각 지표를 전 자산·전 기간 공통 백분위로 바꿔 0.5·깊이 + 0.3·이격 + 0.2·과매도 로 합침
-      3) 3일 지수평활 후, 그 점수의 공통 백분위 × 999 + 1 = 웅줍LV
+      3) 3일 지수평활 후, 그 점수의 공통 백분위 × 999 + 1 = 줍줍LV
          → LV 900 = 과거 전체에서 상위 10% 하락 스트레스, LV 500 = 중간
 
 사용법
@@ -110,7 +110,7 @@ def episodes(close, min_dd):
     return eps
 
 
-# ---------- 웅줍LV v2 ----------
+# ---------- 줍줍LV v2 ----------
 WEIGHTS = {"depth": 0.5, "below": 0.3, "rsilow": 0.2}
 SMOOTH_SPAN = 3
 GRID = np.linspace(0, 1, 1001)
@@ -278,7 +278,7 @@ def main():
         (OUT / f"{a['id']}.json").write_text(json.dumps({"meta": meta, "rows": rec}, ensure_ascii=False, separators=(",", ":")))
         index.append(meta)
         L = meta["last"]
-        print(f"{a['name']:8s} {L['date']} 종가 {L['close']:>12,.2f}  RSI {L['rsi']:5.1f}  음영 {L['zone']}  웅줍LV {L['lv']:>4}  "
+        print(f"{a['name']:8s} {L['date']} 종가 {L['close']:>12,.2f}  RSI {L['rsi']:5.1f}  음영 {L['zone']}  줍줍LV {L['lv']:>4}  "
               f"바닥일LV중앙값 {meta['stats']['bottom_lv_median']}")
     ipath = OUT / "index.json"
     if ipath.exists():  # 실패한 지수는 기존 값 유지
@@ -290,7 +290,7 @@ def main():
     ipath.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
                                  "assets": index}, ensure_ascii=False, indent=1))
 
-    # 4) 관심종목 시세와 웅줍LV
+    # 4) 관심종목 시세와 줍줍LV
     hpath = OUT / "holdings_lv.json"
     old = json.loads(hpath.read_text()) if hpath.exists() else {}
     previous = old.get("items", {})
