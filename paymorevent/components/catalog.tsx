@@ -1,7 +1,7 @@
 "use client";
 import {IssuerLogo,IssuerLogoFilter} from '@/components/issuer-logos';
 import {PersonalBenefits} from '@/components/personal-benefits';
-import {readCardSummaries} from '@/pages/data';
+import {readSearchableCards} from '@/pages/data';
 import {cardThemes,matchesPaymentEligibility,ELIGIBILITY_THEMES} from '@/lib/card-themes';
 import {EventBoard} from '@/components/event-board';
 import {CashbackGroups} from '@/components/cashback-groups';
@@ -33,7 +33,7 @@ export default function Catalog({initialCards,initialEvents,eventsLoading=false}
   useEffect(() => {
     let mounted = true;
     setLoadFailed(false);
-    readCardSummaries().then(data => {
+    readSearchableCards().then(data => {
       if (mounted) setCards(data);
     }).catch(() => {
       if (mounted) setLoadFailed(true);
