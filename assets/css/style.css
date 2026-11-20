@@ -244,16 +244,18 @@ section { padding: 64px 0; }
 /* ===== 오른쪽 아래 새로고침 버튼 (데이터 최신화) ===== */
 .page { padding-bottom: 104px; } /* 마지막 줄이 버튼에 가리지 않게 */
 .fab-refresh {
+  --refresh-pink: #db2777;
+  --refresh-pink-hover: #be185d;
   position: fixed; right: 24px; bottom: 24px; z-index: 30;
   width: 54px; height: 54px; border-radius: 50%; border: 0; cursor: pointer;
   display: inline-flex; align-items: center; justify-content: center;
-  background: var(--color-primary); color: #fff;
-  box-shadow: 0 6px 20px color-mix(in srgb, var(--color-primary) 40%, transparent), 0 2px 6px rgba(0, 0, 0, .18);
+  background: var(--refresh-pink); color: #fff;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--refresh-pink) 40%, transparent), 0 2px 6px rgba(0, 0, 0, .18);
   transition: transform .15s ease, background .15s ease;
 }
-@media (hover: hover) { .fab-refresh:hover { background: var(--color-primary-dark); transform: translateY(-2px); } }
+@media (hover: hover) { .fab-refresh:hover { background: var(--refresh-pink-hover); transform: translateY(-2px); } }
 .fab-refresh:active { transform: scale(.94); }
-.fab-refresh:focus-visible { outline: 3px solid color-mix(in srgb, var(--color-primary) 45%, transparent); outline-offset: 3px; }
+.fab-refresh:focus-visible { outline: 3px solid var(--refresh-pink); outline-offset: 3px; }
 .fab-refresh svg { width: 24px; height: 24px; }
 .fab-refresh.spin { cursor: progress; }
 .fab-refresh.spin svg { animation: fab-spin .8s linear infinite; }
