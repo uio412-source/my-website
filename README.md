@@ -19,7 +19,7 @@ Claude, ChatGPT, Gemini 모두 같은 규칙을 따르도록 [AGENTS.md](AGENTS.
 4. 1~2분 안에 사이트에 자동으로 반영됩니다. 진행 상황은 **Actions** 탭에서 볼 수 있습니다.
 
 ## 페이지
-- **차트** (`ungjup.html`): 나스닥100, SPY, QLD, GLD, 코스피200, 비트코인의 웅줍 구간과 웅줍LV
+- **차트** (`ungjup.html`): QQQ, SPY, GLD, 코스피200, 비트코인의 웅줍 구간·웅줍LV와 최근 일봉 기준 가격·전일 대비 등락률
 - **보유종목** (`holdings.html`): 종목별 평가금액·손익과 웅줍LV 태그
 - **자산** (`wealth.html`): 총액·손익, 시장·유형·웅줍LV·상위종목 비중
 
