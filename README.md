@@ -29,3 +29,7 @@ Claude, ChatGPT, Gemini 모두 같은 규칙을 따르도록 [AGENTS.md](AGENTS.
 pip install numpy pandas
 python tools/ungjup/build.py
 ```
+
+## Mr. Hotels
+
+`hotels/`에서 Accor, IHG, HOTELLUX, Marriott, Hilton의 서울 호텔과 등급별 혜택을 비교합니다. 종목 화면과 카드 화면에서는 로고 옆 사이트 전환 메뉴로 이동할 수 있습니다.

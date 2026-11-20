@@ -27,10 +27,11 @@ function useNav({current, onNav}: NavProps) {
   }));
 }
 
-// Mr. Stocks ↔ Mr. Cards 전환 (Mr. Stocks는 assets/js/main.js에서 같은 메뉴를 만듦)
+// Mr. 사이트 전환 (Stocks와 Hotels는 assets/js/main.js에서 같은 메뉴를 만듦)
 const SITES = [
   {id: 'stocks', name: 'Stocks', desc: '줍줍 차트 · 관심종목 · 배당', href: () => sitePath('../ungjup.html')},
   {id: 'cards', name: 'Cards', desc: '카드상품 · 발급이벤트 · 카드사 이벤트', href: () => sitePath()},
+  {id: 'hotels', name: 'Hotels', desc: '서울 호텔 · 멤버십 혜택', href: () => sitePath('../hotels/')},
 ] as const;
 
 function SiteSwitch() {
