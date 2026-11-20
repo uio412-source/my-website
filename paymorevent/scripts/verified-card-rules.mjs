@@ -1,5 +1,6 @@
 import {readFileSync} from 'node:fs';
 import {gunzipSync} from 'node:zlib';
+import {applyPickingReview, readPickingReview} from './picking-review.mjs';
 
 // Build the list and detail pages from the same reviewed product records.
 export function readVerifiedCardRules() {
@@ -24,5 +25,6 @@ export function applyVerifiedCardRules(cards, {patches}, {summary = false} = {})
     return updated;
   });
   if (remaining.size) throw new Error('Verified rules without matching product IDs: '+[...remaining.keys()].join(', '));
-  return result;
+  // Hand-checked picking-rate corrections (data/picking-review.json) go on top.
+  return applyPickingReview(result, readPickingReview());
 }

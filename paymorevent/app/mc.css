@@ -181,6 +181,23 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .mc-table td.ok { color: var(--mc-green); font-weight: 800; }
 .mc-table td.no { color: var(--mc-up); font-weight: 800; }
 .mc-table td.na { color: var(--mc-muted); }
+.mc-sub { margin: -4px 2px 10px; font-size: .78rem; line-height: 1.55; color: var(--mc-muted); }
+.mc-pay { list-style: none; margin: 0; padding: 0; border: 1px solid var(--mc-border); border-radius: 12px; overflow: hidden; }
+.mc-pay-row + .mc-pay-row { border-top: 1px solid var(--mc-border); }
+.mc-pay-head { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 6px; padding: 9px 12px; }
+.mc-pay details > summary { list-style: none; cursor: pointer; }
+.mc-pay details > summary::-webkit-details-marker { display: none; }
+.mc-pay details > summary .mc-pay-label::after { content: " ›"; color: var(--mc-muted); font-weight: 600; }
+.mc-pay details[open] > summary .mc-pay-label::after { content: " ⌄"; }
+.mc-pay-name { font-size: .86rem; font-weight: 700; min-width: 0; }
+.mc-pay-name small { display: block; font-size: .7rem; font-weight: 600; color: var(--mc-muted); }
+.mc-pay-v { min-width: 62px; padding: 3px 7px; border-radius: 999px; font-size: .7rem; font-weight: 800; text-align: center; white-space: nowrap; }
+.mc-pay-v.ok { color: var(--mc-green); background: color-mix(in srgb, var(--mc-green) 13%, transparent); }
+.mc-pay-v.no { color: var(--mc-up); background: color-mix(in srgb, var(--mc-up) 11%, transparent); }
+.mc-pay-v.na { color: var(--mc-muted); background: var(--mc-bg-alt); }
+.mc-pay-v.blank { visibility: hidden; }
+.mc-pay-ev { margin: 0 12px 10px; padding: 8px 10px; border-radius: 8px; background: var(--mc-bg-alt); font-size: .74rem; line-height: 1.55; color: var(--mc-muted); overflow-wrap: anywhere; }
+.mc-pay-ev b { color: var(--mc-text); margin-right: 4px; }
 .mc-acc { border: 1px solid var(--mc-border); border-radius: 12px; padding: 0 14px; margin-bottom: 8px; }
 .mc-acc summary { cursor: pointer; padding: 11px 0; font-size: .88rem; font-weight: 700; }
 .mc-acc summary small { color: var(--mc-muted); font-weight: 600; margin-left: 4px; }

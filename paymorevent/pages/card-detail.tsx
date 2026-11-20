@@ -3,25 +3,44 @@ import {useState} from 'react';
 import {sitePath} from '@/lib/site-path';
 import {SiteHeader, SiteFooter} from '@/components/customer-shell';
 import {CardArt, IssuerTile} from '@/components/mc-ui';
-import {cardFamilyKey, dedupeOffers, eventPath, formatPicking, linkedOffers, offerLinkLabel, pickingOptions} from '@/lib/catalog-model';
-import {ELIGIBILITY_THEMES, paymentEligibility} from '@/lib/card-themes';
+import {cardFamilyKey, dedupeOffers, eventPath, formatPicking, linkedOffers, offerLinkLabel, pickingExcluded, pickingOptions} from '@/lib/catalog-model';
+import {PAYMENT_CHECKS, paymentCheck, type PaymentCheck} from '@/lib/card-themes';
 import {annualFeeRows, cardPath} from '@/lib/card-presentation';
 import {customerLines} from '@/lib/customer-copy';
 import {pendingValet, valetHotelResults, valetMapPath, valetQuota, valetRules} from '@/lib/hotel-valet';
 import {cleanBenefits, dday, eventSummary, spendLabel, won, ymd} from '@/lib/mc-text';
 import type {Card, Offer} from '@/lib/catalog-types';
 
-const VERDICT = {allowed: ['○', 'ok'], excluded: ['✕', 'no'], unknown: ['—', 'na']} as const;
+const SPEND_WORD = {allowed: '실적 인정', excluded: '실적 제외', unknown: '실적 ?'} as const;
+const BENEFIT_WORD = {allowed: '혜택 가능', excluded: '혜택 제외', unknown: '혜택 ?'} as const;
+const TONE = {allowed: 'ok', excluded: 'no', unknown: 'na'} as const;
+
+function PayRow({label, hint, check}: {label: string; hint?: string; check: PaymentCheck}) {
+  const head = <>
+    <span className="mc-pay-name"><span className="mc-pay-label">{label}</span>{hint && <small>{hint}</small>}</span>
+    <span className={'mc-pay-v ' + TONE[check.spend]}>{SPEND_WORD[check.spend]}</span>
+    {check.benefit === 'na' ? <span className="mc-pay-v blank"/> : <span className={'mc-pay-v ' + TONE[check.benefit]}>{BENEFIT_WORD[check.benefit]}</span>}
+  </>;
+  const evidence = (check.spendEvidence && check.spendEvidence === check.benefitEvidence ? [['실적·혜택', check.spendEvidence]]
+    : [check.spendEvidence && ['실적', check.spendEvidence], check.benefitEvidence && ['혜택', check.benefitEvidence]].filter(Boolean)) as [string, string][];
+  if (!evidence.length) return <li className="mc-pay-row"><div className="mc-pay-head">{head}</div></li>;
+  return <li className="mc-pay-row"><details><summary className="mc-pay-head">{head}</summary>
+    {evidence.map(([k, t]) => <p key={k} className="mc-pay-ev"><b>{k} 원문</b> {t}</p>)}
+  </details></li>;
+}
 
 export default function CardDetail({card, catalog}: {card: Card; catalog: {cards: Card[]; events: Offer[]}}) {
   const variants = catalog.cards.filter(c => cardFamilyKey(c) === cardFamilyKey(card));
   const family = variants.length ? variants : [card];
   const offers = dedupeOffers(family.flatMap(c => linkedOffers(c, catalog.events)));
   const benefits = cleanBenefits(card);
-  const picks = pickingOptions(card).sort((a, b) => b.value - a.value).slice(0, 3);
+  const picks = pickingOptions(card).sort((a, b) => b.value - a.value)
+    .filter((p, i, all) => all.findIndex(q => q.value.toFixed(2) === p.value.toFixed(2) && q.scenario.minimumEligibleSpend === p.scenario.minimumEligibleSpend) === i).slice(0, 3);
+  const nicheDropped = pickingExcluded(card);
   const valet = valetRules(card.id), valetPending = pendingValet(card.id);
   const services = (card.networkServices ?? []).filter(s => s.category !== 'hotel_valet');
-  const elig = ELIGIBILITY_THEMES.map(t => [t, paymentEligibility(card, t)] as const).filter(([, e]) => e.spend !== 'unknown' || e.benefit !== 'unknown');
+  const checks = PAYMENT_CHECKS.map(item => ({...item, check: paymentCheck(card, item.key)}))
+    .filter(({check}) => check.spend !== 'unknown' || (check.benefit !== 'unknown' && check.benefit !== 'na'));
   const fees = annualFeeRows(card).filter(r => r.amount !== '미확인');
   const desc = customerLines(card.description ?? '').join(' ').trim();
   const [allBenefits, setAllBenefits] = useState(false);
@@ -96,21 +115,25 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
       })}{valetPending && <li><div className="mc-b-top"><b>{valetPending.brand}</b><span className="mc-pill">확인 중</span></div><p className="mc-b-hotels">{valetPending.note}</p></li>}</ul>
     </section>}
 
-    {elig.length > 0 && <section className="mc-sec">
+    {checks.length > 0 && <section className="mc-sec" id="pay-checks">
       <h2>이렇게 써도 될까?</h2>
-      <table className="mc-table"><thead><tr><th>결제 항목</th><th>전월실적 인정</th><th>혜택 적용</th></tr></thead>
-        <tbody>{elig.map(([t, e]) => <tr key={t}><th>{t === '상품권 가능' ? '상품권·선불 충전' : t}</th>
-          {(['spend', 'benefit'] as const).map(k => <td key={k} className={VERDICT[e[k]][1]}>{VERDICT[e[k]][0]}</td>)}</tr>)}</tbody></table>
-      <p className="mc-note">○ 인정 · ✕ 제외 · — 원문 미확인</p>
+      <p className="mc-sub">전월실적에 들어가는지, 할인·적립을 받는지 카드사 원문의 제외 목록으로 확인했어요. 눌러서 원문을 볼 수 있어요.</p>
+      <ul className="mc-pay">{checks.map(({key, label, check, ...rest}) => <PayRow key={key} label={label} hint={'hint' in rest ? rest.hint : undefined} check={check}/>)}</ul>
+      <p className="mc-note">‘혜택 가능’은 할인·적립 제외 대상이 아니라는 뜻이에요. 그 결제가 이 카드의 혜택 영역이 아니면 받을 혜택이 없을 수 있어요. ‘?’는 원문에서 확인하지 못한 항목이에요.</p>
     </section>}
 
     {picks.length > 0 && <section className="mc-sec">
       <h2>피킹률 계산 근거</h2>
       <ul className="mc-benefits">{picks.map((p, i) => <li key={i}>
         <div className="mc-b-top"><b>{p.scenario.benefitScope ?? p.scenario.label}</b><span className="mc-pill strong">{formatPicking(p.value)}%</span></div>
-        <div className="mc-b-meta">{p.scenario.minimumEligibleSpend ? <span>전월 {won(p.scenario.minimumEligibleSpend)} 이용 시</span> : null}{p.scenario.monthlyBenefit ? <span>월 {won(p.scenario.monthlyBenefit)} 혜택</span> : null}</div>
-        {p.scenario.assumptions.length > 0 && <ul className="mc-b-lines">{p.scenario.assumptions.filter(Boolean).slice(0, 2).map((a, j) => <li key={j}>{a}</li>)}</ul>}
+        <div className="mc-b-meta">
+          {p.scenario.minimumEligibleSpend ? <span>전월 {won(p.scenario.minimumEligibleSpend)} 이상</span> : <span>무실적</span>}
+          {p.scenario.totalSpend && p.scenario.totalSpend !== p.scenario.minimumEligibleSpend ? <span>총 {won(p.scenario.totalSpend)} 결제 기준</span> : null}
+          {p.scenario.monthlyBenefit ? <span>월 {won(Math.round(p.scenario.monthlyBenefit))} 혜택</span> : null}
+        </div>
+        {p.scenario.assumptions.length > 0 && <ul className="mc-b-lines">{p.scenario.assumptions.filter(Boolean).slice(0, p.scenario.components && p.scenario.components.length > 1 ? 7 : 3).map((a, j) => <li key={j}>{a}</li>)}</ul>}
       </li>)}</ul>
+      <p className="mc-note">피킹률 = 한 달 혜택 ÷ 그 혜택을 받으려고 쓴 돈. 혜택받은 결제가 전월실적에서 빠지는 카드는 그만큼 더 쓴다고 보고, 구독료는 월 3만원까지만 쓴다고 계산해요.{nicheDropped.length > 0 && <> 놀이공원·스포츠 경기·골프처럼 자주 쓰지 않는 혜택({nicheDropped.join(', ')})은 뺐어요.</>}</p>
     </section>}
 
     <section className="mc-sec">
