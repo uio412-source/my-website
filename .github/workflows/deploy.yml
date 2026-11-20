@@ -36,6 +36,9 @@ jobs:
         run: |
           pip install --quiet numpy pandas
           python tools/ungjup/build.py
+      - name: 수집 데이터 합치기 (data/inbox → 이벤트 DB, docs/data-update.md)
+        # 양식이 틀린 파일은 빼고 합칩니다. 결과는 배포본에만 들어가고 저장소에는 커밋하지 않습니다.
+        run: python tools/data/inbox.py merge
       - name: Mr. Travel 혜택 요약 (Mr. Cards 카드사 이벤트에서 해외·여행만)
         continue-on-error: true
         run: python tools/travel/benefits.py
