@@ -1,9 +1,11 @@
 import {mkdir, readFile, writeFile} from 'node:fs/promises';
 import {gunzipSync} from 'node:zlib';
 import {CARD_LIST_FILE, CARD_SEARCH_FILE} from './card-list.mjs';
+import {applyVerifiedCardRules, readVerifiedCardRules} from './verified-card-rules.mjs';
 
 const dist = new URL('../dist/', import.meta.url);
-const cards = JSON.parse(gunzipSync(await readFile(new URL('../data/cards.json.gz', import.meta.url))));
+const rules = readVerifiedCardRules();
+const cards = applyVerifiedCardRules(JSON.parse(gunzipSync(await readFile(new URL('../data/cards.json.gz', import.meta.url)))), rules);
 const events = JSON.parse(await readFile(new URL('../data/events.json', import.meta.url), 'utf8'));
 const page = await readFile(new URL('index.html', dist), 'utf8');
 const snapshot = JSON.parse(await readFile(new URL('catalog-snapshot.json', dist), 'utf8'));
