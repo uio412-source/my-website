@@ -6,7 +6,7 @@
 
   // 새로고침 버튼(main.js)을 누른 뒤에는 캐시를 건너뛰고 받음
   const getData = (file) => window.MS.getJSON(DATA + file + "?schema=2");
-  const state = { assets: [], cache: {}, cur: null, range: 3, log: false, view: null };
+  const state = { assets: [], cache: {}, cur: null, range: 3, log: false, view: null, crashBase: "trough" };
 
   const ZONE_LABEL = ["평상시", "관심 (옅은 음영)", "줍줍 구간 (진한 음영)"];
   const ZONE_SHORT = ["평상시", "관심", "줍줍"];
@@ -177,7 +177,170 @@
       </div>`;
     }).join("");
     renderSpectrum();
+    renderCrash();
   }
+
+  // 3) 주요 하락장: 세로 = 고점→저점 낙폭, 가로 = 이후 1·3·6·12개월 수익률
+  // [이름, 사건일, 고점을 찾기 시작하는 날, 저점을 찾는 마지막 날] — 계산은 선택한 자산의 종가로 함
+  const CRASHES = [
+    ["아시아 외환위기", "1997-10-27", "1997-10-01", "1998-01-31"],
+    ["러시아 디폴트·LTCM", "1998-08-17", "1998-07-01", "1998-10-31"],
+    ["닷컴버블 붕괴", "2000-03-10", "2000-01-01", "2002-12-31"],
+    ["9·11 테러", "2001-09-11", "2001-08-01", "2001-10-31"],
+    ["리먼 브라더스 파산", "2008-09-15", "2007-07-01", "2009-06-30"],
+    ["유럽 재정위기", "2010-05-06", "2010-04-01", "2010-08-31"],
+    ["미국 신용등급 강등", "2011-08-05", "2011-04-01", "2011-12-31"],
+    ["차이나 쇼크", "2015-08-11", "2015-05-01", "2016-02-29"],
+    ["미중 무역전쟁", "2018-10-10", "2018-09-01", "2018-12-31"],
+    ["코로나19 팬데믹", "2020-02-24", "2020-01-01", "2020-04-30"],
+    ["연준 긴축 쇼크", "2022-01-05", "2021-11-01", "2022-12-31"],
+    ["SVB 파산", "2023-03-10", "2023-02-01", "2023-03-31"],
+    ["엔캐리 청산", "2024-08-05", "2024-07-01", "2024-08-31"],
+    ["트럼프 관세 쇼크", "2025-04-02", "2025-02-01", "2025-05-31"],
+  ];
+  const HORIZONS = [1, 3, 6, 12];
+  const lowerBound = (a, v) => { let lo = 0, hi = a.length; while (lo < hi) { const m = (lo + hi) >> 1; a[m] < v ? (lo = m + 1) : (hi = m); } return lo; };
+  const upperBound = (a, v) => { let lo = 0, hi = a.length; while (lo < hi) { const m = (lo + hi) >> 1; a[m] <= v ? (lo = m + 1) : (hi = m); } return lo; };
+  const addMonths = (s, m) => {
+    const [y, mo, d] = s.split("-").map(Number);
+    const t = new Date(Date.UTC(y, mo - 1 + m, 1));
+    const last = new Date(Date.UTC(t.getUTCFullYear(), t.getUTCMonth() + 1, 0)).getUTCDate();
+    t.setUTCDate(Math.min(d, last));
+    return t.toISOString().slice(0, 10);
+  };
+
+  function crashStats(R) {
+    const D = R.d, C = R.c, n = D.length;
+    const fwd = (i) => HORIZONS.map((m) => {
+      const j = lowerBound(D, addMonths(D[i], m));
+      return j < n && C[j] != null && C[i] ? C[j] / C[i] - 1 : null;
+    });
+    const list = [];
+    let skipped = 0;
+    CRASHES.forEach(([name, d, from, to]) => {
+      const base = lowerBound(D, d) - 1; // 사건 직전 거래일
+      if (D[0] > from || base < 0 || D[n - 1] < d) { skipped++; return; }
+      const end = upperBound(D, to);
+      let t = -1, p = -1;
+      for (let i = base; i < end; i++) if (C[i] != null && (t < 0 || C[i] < C[t])) t = i;
+      for (let i = lowerBound(D, from); i <= t; i++) if (C[i] != null && (p < 0 || C[i] > C[p])) p = i;
+      if (t < 0 || p < 0) { skipped++; return; }
+      list.push({ name, d, peak: D[p], trough: D[t], dd: C[t] / C[p] - 1, trough_f: fwd(t), event_f: fwd(base) });
+    });
+    return { list, skipped };
+  }
+
+  const depthBand = (x) => (x < 0.15 ? "b0" : x < 0.25 ? "b1" : x < 0.4 ? "b2" : "b3");
+  const ymd = (s) => s.slice(2).replace(/-/g, ".");
+  const fmtRet = (v) => {
+    if (v == null) return "–";
+    const a = Math.abs(v) * 100;
+    return (v > 0.0005 ? "+" : v < -0.0005 ? "−" : "") + (a < 10 ? a.toFixed(1) : Math.round(a));
+  };
+  const retBg = (v) => {
+    if (v == null || Math.abs(v) < 0.005) return "var(--color-bg-alt)";
+    const a = Math.round(10 + Math.min(1, Math.abs(v) / 0.6) * 48);
+    return `color-mix(in srgb, var(${v > 0 ? "--color-up" : "--color-down"}) ${a}%, var(--color-bg))`;
+  };
+  const span = (a, b) => {
+    const days = (new Date(b) - new Date(a)) / 864e5;
+    return days < 60 ? Math.max(1, Math.round(days)) + "일" : Math.round(days / 30.44) + "개월";
+  };
+
+  function renderCrash() {
+    const pack = state.cache[state.cur];
+    if (!pack) return;
+    const { meta } = pack;
+    const box = $("crash");
+    const st = pack.crash || (pack.crash = crashStats(pack.rows));
+    const fromEvent = state.crashBase === "event";
+    const key = fromEvent ? "event_f" : "trough_f";
+    const curD = meta.last.dd52 != null ? Math.abs(meta.last.dd52) : null;
+    $("crash-asset").textContent = meta.name;
+
+    const items = st.list.map((e) => ({ ...e, x: Math.abs(e.dd) }));
+    if (curD != null) items.push({ now: true, x: curD });
+    items.sort((a, b) => a.x - b.x || (a.now ? -1 : 1));
+    if (!st.list.length) {
+      box.innerHTML = `<p class="crash-empty">이 자산은 데이터 기간 안에 표시할 사건이 없어요.</p>`;
+      $("crash-note").textContent = "";
+      return;
+    }
+
+    // 세로축(낙폭) — 행은 낙폭 순서대로 고르게 놓고, 실제 깊이는 왼쪽 눈금에 점과 선으로 이어 줌
+    const cs = getComputedStyle(box);
+    const RW = parseFloat(cs.getPropertyValue("--rw")) || 90;
+    const RH = parseFloat(cs.getPropertyValue("--rh")) || 50;
+    const H = items.length * RH;
+    const maxX = Math.max(0.2, Math.ceil(Math.max(...items.map((i) => i.x)) * 10) / 10);
+    const yTop = 6, yBot = H - 6;
+    const yAt = (x) => yTop + (x / maxX) * (yBot - yTop);
+    const tx = Math.round(RW * 0.44), tw = 6, lx = tx + tw;
+    const stepT = maxX > 0.6 ? 0.2 : 0.1;
+    let svg = `<defs><linearGradient id="crash-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" style="stop-color:var(--lv-low)"/><stop offset="${Math.min(1, 0.25 / maxX)}" style="stop-color:var(--lv-mid)"/>
+      <stop offset="${Math.min(1, 0.45 / maxX)}" style="stop-color:var(--lv-high)"/><stop offset="1" style="stop-color:var(--lv-high)"/></linearGradient></defs>
+      <rect x="${tx}" y="${yTop}" width="${tw}" height="${yBot - yTop}" rx="3" fill="url(#crash-grad)" opacity=".85"/>`;
+    for (let v = 0; v <= maxX + 1e-9; v += stepT) {
+      const y = yAt(v);
+      svg += `<line class="crash-tick" x1="${tx - 4}" x2="${tx}" y1="${y}" y2="${y}"/>
+        <text class="crash-tickt" x="${tx - 6}" y="${y}">${v ? "−" + Math.round(v * 100) : "0"}</text>`;
+    }
+    items.forEach((it, k) => {
+      const y = yAt(it.x), ry = k * RH + RH / 2, c = it.now ? "now" : depthBand(it.x);
+      const mx = (lx + RW) / 2;
+      svg += `<path class="crash-lead ${c}" d="M${lx} ${y} C${mx} ${y} ${mx} ${ry} ${RW} ${ry}"/>`;
+      svg += it.now
+        ? `<line class="crash-nowline" x1="${tx - 4}" x2="${lx + 3}" y1="${y}" y2="${y}"/><circle class="crash-dot now" cx="${tx + tw / 2}" cy="${y}" r="5.5"/>`
+        : `<circle class="crash-dot ${c}" cx="${tx + tw / 2}" cy="${y}" r="3.8"/>`;
+    });
+
+    const rows = items.map((it) => {
+      if (it.now) {
+        return `<div class="crash-row now">
+          <div class="ev"><div class="ev-n">지금</div><div class="ev-s"><b>−${(it.x * 100).toFixed(1)}%</b><span class="wide"> · 52주 고점 대비 · ${ymd(meta.last.date)}</span></div></div>
+          ${HORIZONS.map(() => `<div class="cell q">?</div>`).join("")}</div>`;
+      }
+      const near = curD != null && Math.abs(it.x - curD) <= 0.05;
+      const f = it[key];
+      return `<div class="crash-row ${depthBand(it.x)}${near ? " near" : ""}" title="${it.name} · 사건 ${it.d} · 고점 ${it.peak} → 저점 ${it.trough}">
+        <div class="ev"><div class="ev-n">${it.name}${near ? '<span class="crash-tag">비슷</span>' : ""}</div>
+          <div class="ev-s"><b>−${(it.x * 100).toFixed(1)}%</b><span class="slim"> · ’${it.d.slice(2, 4)}</span><span class="wide"> · ${ymd(it.d)} · 저점 ${ymd(it.trough)} (고점부터 ${span(it.peak, it.trough)})</span></div></div>
+        ${f.map((v) => `<div class="cell${v == null ? " na" : ""}" style="background:${retBg(v)}">${fmtRet(v)}</div>`).join("")}</div>`;
+    }).join("");
+
+    // 아래 요약: 중앙값 · 오른 확률
+    const cols = HORIZONS.map((_, h) => st.list.map((e) => e[key][h]).filter((v) => v != null).sort((a, b) => a - b));
+    const med = (a) => (a.length ? (a.length % 2 ? a[a.length >> 1] : (a[a.length / 2 - 1] + a[a.length / 2]) / 2) : null);
+    const upRate = (a) => (a.length ? a.filter((v) => v > 0).length / a.length : null);
+
+    box.innerHTML = `
+      <div class="crash-cap"><span>낙폭 %</span><span>${fromEvent ? "사건 직전 종가" : "저점"}에서 샀다면 · 수익률 %</span></div>
+      <div class="crash-hd"><span>사건 <small>(낙폭 작은 순)</small></span>${HORIZONS.map((m) => `<span>${m}개월</span>`).join("")}</div>
+      <div class="crash-body">
+        <svg class="crash-axis" width="${RW}" height="${H}" viewBox="0 0 ${RW} ${H}" aria-hidden="true">${svg}</svg>
+        <div class="crash-rows">${rows}</div>
+      </div>
+      <div class="crash-ft">
+        <div><span class="lab">중앙값</span>${cols.map((a) => { const v = med(a); return `<span class="cell" style="background:${retBg(v)}">${fmtRet(v)}</span>`; }).join("")}</div>
+        <div><span class="lab">오른 확률</span>${cols.map((a) => { const r = upRate(a); return `<span class="rate"><b>${r == null ? "–" : Math.round(r * 100) + "%"}</b><i><em style="width:${(r ?? 0) * 100}%"></em></i></span>`; }).join("")}</div>
+      </div>`;
+
+    const notes = [
+      "낙폭은 사건 전후 고점 → 저점(종가 기준), 지금은 52주 고점 대비입니다.",
+      fromEvent ? "사건 직전 거래일 종가에 샀을 때의 수익률이에요." : "저점은 지나고 나서야 알 수 있으니 '최선의 경우'로 보세요.",
+    ];
+    if (st.skipped) notes.push(`${meta.name} 데이터는 ${ymd(pack.rows.d[0])}부터라 그 전 사건 ${st.skipped}개는 빠졌어요.`);
+    $("crash-note").textContent = notes.join(" ");
+  }
+
+  $("crash-base").addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    $("crash-base").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
+    state.crashBase = b.dataset.base;
+    renderCrash();
+  });
 
   // ---------- 컨트롤 ----------
   function seg(id, key, parse) {
@@ -450,7 +613,7 @@
   new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(draw, 80); }).observe(wrap);
   window.addEventListener("themechange", () => { renderCards(); select(state.cur, false); });
   let sw;
-  window.addEventListener("resize", () => { clearTimeout(sw); sw = setTimeout(() => state.cur && state.cache[state.cur] && renderSpectrum(), 120); });
+  window.addEventListener("resize", () => { clearTimeout(sw); sw = setTimeout(() => { if (state.cur && state.cache[state.cur]) { renderSpectrum(); renderCrash(); } }, 120); });
 
   // 키보드: 좌우 화살표로 자산 이동
   $("uj-carousel").addEventListener("keydown", (e) => {

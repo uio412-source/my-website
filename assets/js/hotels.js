@@ -179,6 +179,7 @@
   function pickProgram(allowed) {
     const fromHash = location.hash.slice(1).toLowerCase();
     if (allowed.includes(fromHash)) return fromHash;
+    const saved = store.get(STORE_P);
     return allowed.includes(saved) ? saved : allowed[0];
   }
   function pickTier(id) {

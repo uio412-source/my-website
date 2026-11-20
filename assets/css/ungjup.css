@@ -124,6 +124,56 @@
 .band-foot { display: flex; justify-content: space-between; gap: 6px; font-size: .72rem; color: var(--color-muted); }
 .band-foot b { font-weight: 700; }
 
+/* 주요 하락장 — 세로: 낙폭 눈금, 가로: 이후 1·3·6·12개월 수익률 */
+.crash-headrow { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 14px; }
+.crash-headrow .ref-title { margin: 0; }
+.crash { --rw: 96px; --cw: 64px; --rh: 52px; font-variant-numeric: tabular-nums; }
+.crash-cap { display: flex; justify-content: space-between; gap: 8px; font-size: .68rem; color: var(--color-muted); margin-bottom: 4px; }
+.crash-cap span:first-child { width: var(--rw); flex: none; }
+.crash-hd, .crash-row, .crash-ft > div { display: grid; grid-template-columns: minmax(0, 1fr) repeat(4, minmax(var(--cw), 108px)); gap: 6px; align-items: center; }
+.crash-hd { margin-left: var(--rw); padding-bottom: 6px; border-bottom: 1px solid var(--color-border); font-size: .74rem; font-weight: 700; color: var(--color-muted); }
+.crash-hd span:not(:first-child) { text-align: center; }
+.crash-hd small { font-weight: 500; font-size: .66rem; }
+.crash-body { position: relative; }
+.crash-axis { position: absolute; left: 0; top: 0; overflow: visible; }
+.crash-tick { stroke: var(--chart-axis); stroke-width: 1; }
+.crash-tickt { fill: var(--chart-axis); font-size: 10px; text-anchor: end; dominant-baseline: middle; }
+.crash-lead { fill: none; stroke: var(--band); stroke-width: 1.3; opacity: .55; }
+.crash-lead.now { stroke: var(--lv-high); stroke-width: 1.8; stroke-dasharray: 3 2; opacity: 1; }
+.crash-dot { fill: var(--band); stroke: var(--color-bg); stroke-width: 1.5; }
+.crash-dot.now { fill: var(--lv-high); stroke-width: 2; }
+.crash-nowline { stroke: var(--lv-high); stroke-width: 2; }
+.crash-rows { margin-left: var(--rw); }
+.crash-row { height: var(--rh); border-bottom: 1px solid var(--color-border); }
+.crash-row .ev { position: relative; min-width: 0; padding-left: 11px; }
+.crash-row .ev::before { content: ""; position: absolute; left: 0; top: 3px; bottom: 3px; width: 3px; border-radius: 2px; background: var(--band); }
+.ev-n { font-size: .86rem; font-weight: 700; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ev-s { font-size: .7rem; line-height: 1.35; color: var(--color-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ev-s b { color: var(--band); font-weight: 800; }
+.ev-s .slim { display: none; }
+.crash-tag {
+  display: inline-block; margin-left: 5px; padding: 0 6px; border-radius: 999px; vertical-align: 1px;
+  font-size: .62rem; font-weight: 700; line-height: 1.5; color: var(--lv-high); border: 1px solid var(--lv-high);
+}
+.crash .cell {
+  height: calc(var(--rh) - 14px); display: flex; align-items: center; justify-content: center; border-radius: 8px;
+  font-size: .84rem; font-weight: 700; color: var(--color-text); letter-spacing: -.01em;
+}
+.crash .cell.na { color: var(--color-muted); font-weight: 500; }
+.crash-row.near { background: color-mix(in srgb, var(--lv-high) 5%, transparent); }
+.crash-row.now { --band: var(--lv-high); background: color-mix(in srgb, var(--lv-high) 10%, transparent); }
+.crash-row.now .ev-n { color: var(--lv-high); }
+.crash .cell.q { border: 1.5px dashed color-mix(in srgb, var(--lv-high) 60%, transparent); color: var(--lv-high); background: transparent; }
+.crash-ft { margin-left: var(--rw); padding-top: 8px; }
+.crash-ft > div { min-height: 36px; }
+.crash-ft .lab { font-size: .76rem; font-weight: 800; padding-left: 11px; }
+.crash-ft .cell { height: 28px; }
+.crash-ft .rate { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: .78rem; }
+.crash-ft .rate i { display: block; width: 70%; height: 4px; border-radius: 2px; background: var(--color-border); overflow: hidden; }
+.crash-ft .rate em { display: block; height: 100%; background: var(--color-up); }
+.crash-note { margin: 12px 0 0; font-size: .7rem; line-height: 1.6; color: var(--color-muted); }
+.crash-empty { color: var(--color-muted); font-size: .82rem; margin: 0; }
+
 @media (max-width: 720px) {
   .uj-card { flex-basis: 42%; }
   .uj-panel { padding: 12px; margin: 0 -4px; }
@@ -139,6 +189,19 @@
   .band-big { font-size: 1.8rem; }
   .spec-pin { font-size: .68rem; padding: 4px 7px; }
   .spec-bands span { font-size: .62rem; }
+  .crash { --rw: 46px; --cw: 41px; --rh: 50px; }
+  .crash-hd, .crash-row, .crash-ft > div { gap: 3px; grid-template-columns: minmax(0, 1fr) repeat(4, var(--cw)); }
+  .crash-hd { font-size: .66rem; }
+  .crash-hd small { display: none; }
+  .crash-row .ev { padding-left: 8px; }
+  .ev-n { font-size: .76rem; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .ev-s { font-size: .64rem; }
+  .ev-s .wide { display: none; }
+  .ev-s .slim { display: inline; }
+  .crash-tag { display: none; }
+  .crash .cell { font-size: .72rem; border-radius: 6px; letter-spacing: -.03em; }
+  .crash-ft .lab { font-size: .68rem; padding-left: 8px; }
+  .crash-ft .rate { font-size: .7rem; }
 }
 @media (max-width: 420px) {
   .uj-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
