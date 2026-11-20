@@ -3,7 +3,8 @@ export type CardDocument = {url:string;kind:'product'|'terms'|'brand'|'service';
 export type EligibilityRule = import('./card-themes').PaymentEligibility & {item:string;scope:string;basis:'explicit'|'full_exclusion_list'|'manual'|'extracted';checkedAt:string};
 export type DatabaseAudit = {documentsRead:number;pdfRead:number;spendSections:number;benefitSections:number;reviewStatus:'reviewed'|'partial'|'unreviewed';checkedAt:string;processedAt?:string;note:string};
 export type FeeWaiver = {label:string;rate:number|null;minimumSpend:number|null;channel:string;sourceUrl:string;note:string;verified:boolean};
-export type RewardRate = {label:string;spendUnit:number;rewardUnits:number;rewardUnit:string;unitValue:number;minimumSpend:number;monthlyCapValue:number|null;sourceUrl:string;note:string;verified:boolean;feeWaiver?:FeeWaiver;fallbackRewardUnits?:number;additionalMonthlyCapValue?:number;additionalMonthlyCapUnits?:number;monthlyCapUnits?:number;specialRewardCapUnits?:number;minimumSpendScope?:string;minimumSpendInclusive?:boolean;maximumSpendExclusive?:number;eligibilityRequirement?:string;sharedCapGroup?:string;yearlyCapUnits?:number;serviceTitle?:string;channel?:string};
+export type RewardRate = {label:string;spendUnit:number;rewardUnits:number;rewardUnit:string;unitValue:number;minimumSpend:number;monthlyCapValue:number|null;sourceUrl:string;note:string;verified:boolean;feeWaiver?:FeeWaiver;fallbackRewardUnits?:number;additionalMonthlyCapValue?:number;additionalMonthlyCapUnits?:number;monthlyCapUnits?:number;specialRewardCapUnits?:number;minimumSpendScope?:string;minimumSpendInclusive?:boolean;maximumSpendExclusive?:number;eligibilityRequirement?:string;sharedCapGroup?:string;yearlyCapUnits?:number;serviceTitle?:string;channel?:string;
+ /** 이 혜택을 받은 결제는 전월실적에서 빠짐 (picking-review.json) */ spendExcluded?:boolean};
 export type NetworkService = {
   id:string;network:string;tier:string;provider:'international_network'|'issuer_selection'|'issuer_card';
   category:'airport_lounge'|'airport_valet'|'hotel_valet'|'airport_transfer'|'dining'|'other';title:string;
@@ -28,7 +29,8 @@ export type Card = {
   searchAliases?:string[];
   themeTags?:string[]; paymentEligibility?:Record<string,import('./card-themes').PaymentEligibility>;
   familyId?: string; familyName?: string;
-  issuerGroup?: string; benefitKinds?: string[]; conditionEvidence?: {url:string; checkedAt:string; spendStatus:string; benefitStatus:string}; pickingScenarios?: PickingScenario[];
+  issuerGroup?: string; benefitKinds?: string[];
+  /** 할인·적립받은 결제 전체가 전월실적에서 빠지는 카드 (picking-review.json) */ benefitSpendExcluded?: boolean; conditionEvidence?: {url:string; checkedAt:string; spendStatus:string; benefitStatus:string}; pickingScenarios?: PickingScenario[];
   id: string; issuer: string; name: string; type: "credit" | "debit";
   annualFeeMin: number | null; annualFeeText: string; brands: string[];
   benefits: Benefit[]; minimumSpend: number | null; spendExclusions: string[];
@@ -58,5 +60,5 @@ export type Offer = {
   verifiedAt: string; verificationNote: string;
 };
 export type Reward = {kind:"cash"|"gift"|"point"|"coupon"; label:string; amount:number; unitValue:1; verified:boolean; sourceUrl:string; conditions:string[]; choiceGroup?:string; annualFee?:boolean};
-export type PickingScenario = {label:string; monthlySpend:number|null; monthlyBenefit:number|null; annualFee:number; annualServiceValue?:number; miles?:number|null; sourceUrl:string; assumptions:string[]; verified:boolean; maximumVerified?:boolean; basis?:"minimum-tier"; minimumEligibleSpend?:number; benefitScope?:string; grossBenefitRate?:number; status?:string; calculation?:"tier-cap"|"unit-rate"; components?:{label:string;amount:number;cap:string}[]};
+export type PickingScenario = {label:string; monthlySpend:number|null; monthlyBenefit:number|null; annualFee:number; annualServiceValue?:number; miles?:number|null; sourceUrl:string; assumptions:string[]; verified:boolean; maximumVerified?:boolean; basis?:"minimum-tier"; minimumEligibleSpend?:number; benefitScope?:string; grossBenefitRate?:number; status?:string; calculation?:"tier-cap"|"unit-rate"; components?:{label:string;amount:number;cap:string}[]; totalSpend?:number; excluded?:string[]};
 export type Coverage = {issuer: string; sourceUrl: string; listedCount: number; fullyEnumerated: boolean; notes: string};

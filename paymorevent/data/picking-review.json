@@ -1,0 +1,116 @@
+{
+  "reviewedAt": "2026-11-20",
+  "about": "피킹률 검수 결과. verified-card-rules.json.gz 위에 덮어씁니다. 놀이공원·스포츠 경기 같은 이용률 낮은 혜택 제외와 구독료 상한은 lib/catalog-model.ts의 NICHE_PICKING·SUBSCRIPTION에서 정합니다.",
+  "benefitSpendExcluded": {
+    "why": "카드사 원문에 '할인(혜택) 받은 이용금액 전체는 전월실적에서 제외'라고 적힌 카드. 혜택받은 결제는 실적 밖에서 따로 쓴다고 보고 분모에 더합니다.",
+    "cards": [
+      "kb-04290", "kb-04348", "kb-02083", "kb-04241", "kb-04366", "kb-04288", "kb-04367", "kb-04368", "kb-04345",
+      "kb-04320", "kb-02210", "kb-04331", "kb-04324", "kb-04485", "kb-02171", "kb-04336", "kb-04325", "kb-04351",
+      "nh-90010051", "nh-90010179",
+      "hyundai-lgehc", "hyundai-skihc", "hyundai-kwwlshc", "hyundai-nxtrhc", "hyundai-bdfrhc", "hyundai-crmhc",
+      "hyundai-chhhc", "hyundai-cwyhc", "hyundai-cckhc", "hyundai-hdqhc"
+    ]
+  },
+  "rules": [
+    {
+      "why": "렌탈·구독료는 월 8천/1.2만/1.6만원 정액 할인인데 2%처럼 저장돼 있었음",
+      "cards": ["hyundai-lgehc", "hyundai-skihc", "hyundai-kwwlshc", "hyundai-nxtrhc", "hyundai-bdfrhc", "hyundai-crmhc", "hyundai-chhhc", "hyundai-cwyhc", "hyundai-cckhc", "hyundai-hdqhc"],
+      "label": "^렌탈·구독료",
+      "set": {"spendUnit": 1, "rewardUnits": 1}
+    },
+    {
+      "why": "영화는 건당 2천원·월 1회 → 월 2천원",
+      "cards": ["nh-90010172", "nh-90010152"],
+      "label": "^영화 건당2천원$",
+      "set": {"monthlyCapValue": 2000}
+    },
+    {
+      "why": "대중교통 5%는 월 최대 2천원",
+      "cards": ["nh-90010172", "nh-90010152"],
+      "label": "^대중교통5%$",
+      "set": {"monthlyCapValue": 2000}
+    },
+    {
+      "why": "해외 3%는 해외 100만원까지, 초과분은 2%. 해외 적립은 월 10만P 한도",
+      "cards": ["nh-90010184"],
+      "label": "^해외 총3%$",
+      "set": {"fallbackRewardUnits": 2, "specialRewardCapUnits": 30000, "monthlyCapValue": 100000}
+    },
+    {
+      "why": "해외 5%는 해외 100만원까지, 초과분은 2%. 해외 적립은 월 10만P 한도",
+      "cards": ["nh-90010184"],
+      "label": "^해외 총5%$",
+      "set": {"fallbackRewardUnits": 2, "specialRewardCapUnits": 50000, "monthlyCapValue": 100000}
+    },
+    {
+      "why": "4대보험·전기요금 이용금액은 전월실적에서 제외",
+      "cards": ["nh-90010119", "nh-90010118", "nh-90010120"],
+      "label": "^4대",
+      "set": {"spendExcluded": true}
+    }
+  ],
+  "plans": [
+    {
+      "why": "4대보험·전기 5%와 스타벅스·넷플릭스·멜론 30%는 통합 월 1만원 한도. 4대보험·전기는 실적 제외",
+      "card": "nh-90010119",
+      "plan": "전월 50만원 최적 배분",
+      "groups": [{"id": "special", "cap": 10000}],
+      "rules": {"bill": {"groupIds": ["special"], "spendExcluded": true}, "life": {"groupIds": ["special"]}}
+    },
+    {
+      "why": "4대보험·전기요금은 실적 제외",
+      "card": "nh-90010118",
+      "plan": "전월 50만원 최적 배분",
+      "rules": {"bill": {"spendExcluded": true}}
+    },
+    {
+      "why": "4대사회보험·전기요금은 실적 제외",
+      "card": "nh-90010120",
+      "plan": "전월 30만원 구간 · 특별 10만원 + 기본 20만원",
+      "rules": {"special": {"spendExcluded": true}}
+    },
+    {
+      "why": "할인PACK 4개 영역(생활·건강·교통·여가)을 영역마다 8천원씩 더해 8%가 나왔음. 원문에서 영역별 한도인지 확인되지 않아 통합 8천원으로 보수적으로 계산",
+      "card": "nh-90010604",
+      "plan": "전월 40만원 할인PACK 최적 배분",
+      "groups": [{"id": "pack", "cap": 8000}],
+      "rules": {"life": {"groupIds": ["pack"]}, "health": {"groupIds": ["pack"]}, "traffic": {"groupIds": ["pack"]}, "leisure": {"groupIds": ["pack"]}}
+    },
+    {
+      "why": "MEMBERSHIP(OTT·온라인 멤버십) 7%로 통합 한도를 다 채운다고 계산했음(멤버십에 월 28만원). 멤버십은 월 3만원까지만 쓰고 나머지 한도는 LIVING 1.5%로 채움",
+      "card": "ibk-102475",
+      "plan": "전월 50만원 구간 우대회원 최적 배분",
+      "add": [{"id": "living-500000", "label": "LIVING 우대", "ratePercent": 1.5, "monthlyCap": null, "groupIds": ["special"], "sourceUrl": "https://www.banksalad.com/product/cards/CARD004232", "note": "LIVING 1.5%, MEMBERSHIP과 통합 한도."}]
+    },
+    {
+      "why": "위와 같음",
+      "card": "ibk-102475",
+      "plan": "전월 70만원 구간 우대회원 최적 배분",
+      "add": [{"id": "living-700000", "label": "LIVING 우대", "ratePercent": 1.5, "monthlyCap": null, "groupIds": ["special"], "sourceUrl": "https://www.banksalad.com/product/cards/CARD004232", "note": "LIVING 1.5%, MEMBERSHIP과 통합 한도."}]
+    },
+    {
+      "why": "위와 같음",
+      "card": "ibk-102475",
+      "plan": "전월 100만원 구간 우대회원 최적 배분",
+      "add": [{"id": "living-1000000", "label": "LIVING 우대", "ratePercent": 1.5, "monthlyCap": null, "groupIds": ["special"], "sourceUrl": "https://www.banksalad.com/product/cards/CARD004232", "note": "LIVING 1.5%, MEMBERSHIP과 통합 한도."}]
+    },
+    {
+      "why": "NH pay 건당 1천원은 다른 영역 결제에 겹쳐 받는 할인이라 결제를 따로 더하지 않음",
+      "card": "nh-90010051",
+      "plan": "전월 30만원 최적 배분",
+      "rules": {"nhpay": {"spendExcluded": false}}
+    },
+    {
+      "why": "'생활 할인' 적용 금액과 후불교통 이용금액은 전월실적에서 제외",
+      "card": "woori-102864",
+      "plan": "전월 40만원 구간 최적 배분",
+      "rules": {"life-400000": {"spendExcluded": true}, "transit-400000": {"spendExcluded": true}}
+    },
+    {
+      "why": "위와 같음",
+      "card": "woori-102864",
+      "plan": "전월 80만원 구간 최적 배분",
+      "rules": {"life-800000": {"spendExcluded": true}, "transit-800000": {"spendExcluded": true}}
+    }
+  ]
+}

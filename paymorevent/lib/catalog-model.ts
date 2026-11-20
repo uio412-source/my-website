@@ -1,7 +1,7 @@
 import {sitePath} from './site-path';
 import {eventSourceKey} from './event-identity';
 import {applyRewardValuations} from './reward-valuation';
-import type {Card, Offer, PickingScenario} from './catalog-types';
+import type {Card, Offer, PickingScenario, RewardRate} from './catalog-types';
 import {cardThemes,ELIGIBILITY_THEMES,paymentEligibility} from './card-themes';
 import {rewardAtSpend} from './reward-calculation';
 import {allocateSpending} from './spending-allocation';
@@ -18,34 +18,83 @@ export function picking(s:PickingScenario){
  if(s.calculation!=='tier-cap'||s.basis!=='minimum-tier'||!s.minimumEligibleSpend||s.monthlyBenefit===null||s.monthlyBenefit<0)return null;
  return s.monthlyBenefit/s.minimumEligibleSpend*100;
 }
+/** 놀이공원·스포츠 경기·골프처럼 흔하지 않고 이용률이 낮은 혜택. 피킹률 계산에서 뺍니다. */
+export const NICHE_PICKING=/놀이공원|테마파크|에버랜드|롯데월드|서울랜드|워터파크|캐리비안|아쿠아리움|동물원|입장권|경기\s*관람|야구|축구|농구|배구|구단|(?<![A-Z])FC(?![A-Z])|메가스토어|골프|스키장|리프트|공연|뮤지컬|박물관|미술관|아카데미|문화센터|호텔스닷컴|익스피디아|아고다|심야|동시\s*충족/i;
+/** 구독·멤버십 영역은 한 달에 쓸 수 있는 돈이 정해져 있어, 이 금액까지만 쓴다고 봅니다. */
+const SUBSCRIPTION=/멤버십|MEMBERSHIP|OTT|스트리밍|디지털\s*(?:구독|콘텐츠)|넷플릭스|유튜브|유료앱|티빙|웨이브/i;
+export const SUBSCRIPTION_SPEND=30000;
+/** 전월실적 조건은 없지만 월 한도가 작은 혜택은 이 금액을 쓸 때로 계산합니다. */
+export const REFERENCE_SPEND=300000;
+const isNiche=(...t:(string|undefined)[])=>NICHE_PICKING.test(t.filter(Boolean).join(' '));
+const wonText=(n:number)=>Math.round(n).toLocaleString('ko-KR')+'원';
+function rateCap(r:RewardRate){return r.monthlyCapUnits!==undefined?r.monthlyCapUnits*r.unitValue:r.monthlyCapValue;}
+/** 피킹률에서 뺀 혜택 이름 (화면 안내용) */
+export function pickingExcluded(c:Card){
+ const names=[...(c.pickingScenarios??[]).map(s=>s.label),...(c.spendingPlans??[]).flatMap(p=>p.rules.map(r=>r.label)),...(c.rewardRates??[]).filter(r=>r.verified).map(r=>isNiche(r.label,r.serviceTitle)?r.label:'')];
+ return [...new Set(names.filter(n=>n&&isNiche(n)))];
+}
 export function pickingOptions(c:Card){
  c=applyRewardValuations(c);
  if(c.sourceReviewPending)return [];
  if(c.rewardCoveragePending)return [];
  // An unresolved purchase fee component can change the maximum. Do not publish an understated total.
  if(c.feeWaivers?.some(f=>!f.verified)||(c.feeWaivers===undefined&&c.rewardComponentsPending)||c.rewardRates?.some(r=>r.feeWaiver&&!r.feeWaiver.verified))return [];
- const legacy=(c.pickingScenarios??[]).map(s=>({scenario:s,value:picking(s)})).filter((x):x is {scenario:PickingScenario;value:number}=>x.value!==null);
- for(const plan of c.spendingPlans??[]){const result=allocateSpending(plan);if(result)legacy.push({value:result.percentage,scenario:{label:plan.label,monthlySpend:plan.budget,monthlyBenefit:result.benefit,annualFee:0,verified:true,maximumVerified:true,calculation:'tier-cap',basis:'minimum-tier',minimumEligibleSpend:plan.minimumSpend,sourceUrl:plan.sourceUrl,assumptions:[...plan.notes,...result.allocations.map(a=>`${a.label}: ${Math.round(a.spend).toLocaleString('ko-KR')}원 사용 → ${Math.round(a.benefit).toLocaleString('ko-KR')}원 혜택`),`총 ${plan.budget.toLocaleString('ko-KR')}원 소비 내에서 영역·통합 한도를 적용한 배분입니다. 전월실적 인정 여부와 당월 혜택 사용액은 별도입니다.`],components:result.allocations.map(a=>({label:a.label,amount:a.benefit,cap:a.cap===null?'한도 없음':`${a.cap.toLocaleString('ko-KR')}원`}))}});}
- const rates=(c.rewardRates??[]).filter(r=>r.verified&&r.spendUnit>0&&r.unitValue>0&&r.rewardUnits>=0);
+ const legacy=(c.pickingScenarios??[]).filter(s=>!isNiche(s.label)).map(s=>{
+  // A fixed monthly discount whose bill does not count toward the requirement:
+  // the bill is paid on top of the prior-month spend.
+  if(c.benefitSpendExcluded&&/정액/.test(s.label)&&s.monthlyBenefit&&s.minimumEligibleSpend){const total=s.minimumEligibleSpend+s.monthlyBenefit;return {scenario:{...s,totalSpend:total,assumptions:[`할인받는 요금 ${wonText(s.monthlyBenefit)}은 전월실적에 안 들어가서, 실적 ${wonText(s.minimumEligibleSpend)} + ${wonText(s.monthlyBenefit)} = ${wonText(total)} 기준으로 계산했어요.`,...s.assumptions]},value:s.monthlyBenefit/total*100};}
+  return {scenario:s,value:picking(s)};
+ }).filter((x):x is {scenario:PickingScenario;value:number}=>x.value!==null);
+ for(const plan of c.spendingPlans??[]){
+  const dropped=plan.rules.filter(r=>isNiche(r.label)).map(r=>r.label);
+  const rules=plan.rules.filter(r=>!isNiche(r.label)).map(r=>({...r,spendExcluded:r.spendExcluded??c.benefitSpendExcluded,maxSpend:r.maxSpend??(SUBSCRIPTION.test(r.label)?SUBSCRIPTION_SPEND:undefined)}));
+  const result=rules.length?allocateSpending({...plan,rules}):null;if(!result||result.benefit<=0)continue;
+  legacy.push({value:result.percentage,scenario:{label:plan.label,monthlySpend:result.totalSpend,monthlyBenefit:result.benefit,annualFee:0,verified:true,maximumVerified:true,calculation:'tier-cap',basis:'minimum-tier',minimumEligibleSpend:plan.minimumSpend,totalSpend:result.totalSpend,excluded:dropped,sourceUrl:plan.sourceUrl,assumptions:[
+   result.extraSpend?`혜택받은 결제 ${wonText(result.extraSpend)}은 전월실적에 안 들어가서, 실적 ${wonText(plan.budget)}을 따로 채운다고 보고 총 ${wonText(result.totalSpend)} 기준으로 나눴어요.`:`총 ${wonText(plan.budget)} 결제 안에서 영역·통합 한도를 적용했어요.`,
+   ...result.allocations.map(a=>`${a.label}: ${wonText(a.spend)} 결제 → ${wonText(a.benefit)}${a.outside?' (실적 미포함)':''}`),
+   ...(dropped.length?[`이용률이 낮은 ${dropped.join(', ')}은 계산에서 뺐어요.`]:[]),...plan.notes],
+   components:result.allocations.map(a=>({label:a.label,amount:a.benefit,cap:a.cap===null?'한도 없음':wonText(a.cap)}))}});
+ }
+ const rates=(c.rewardRates??[]).filter(r=>r.verified&&r.spendUnit>0&&r.unitValue>0&&r.rewardUnits>=0&&!isNiche(r.label,r.serviceTitle));
  // If a tiered service reaches its cap, a complete budget allocation is needed
  // to prove the card maximum. A basic unit rate alone would understate it.
  if(!c.rewardModelComplete&&rates.some(r=>r.minimumSpend>0&&r.monthlyCapValue!==null&&r.monthlyCapValue<r.minimumSpend*r.rewardUnits*r.unitValue/r.spendUnit))return legacy;
  // With a no-spend basic benefit, unit earning rates replace division by zero.
  // Each special rate retains its own prior-month requirement and cap; rates are alternatives.
  if(c.rewardModelComplete||rates.some(r=>r.minimumSpend===0))for(const r of rates){
+  const rate=r.rewardUnits*r.unitValue/r.spendUnit,cap=rateCap(r);
+  const fixed=rate>=1,sub=SUBSCRIPTION.test(r.label),excluded=r.spendExcluded??c.benefitSpendExcluded??false;
   // A complete model may have an actual total or additional earning cap at
   // the minimum tier. Apply it to that spending amount instead of publishing
   // either the headline rate or cap/minimum without checking achievable value.
-  if(r.minimumSpend>0&&(c.rewardModelComplete||r.additionalMonthlyCapValue!==undefined)){
-   const result=rewardAtSpend(r,r.minimumSpend);if(!result)continue;
-   legacy.push({value:result.percentage,scenario:{label:r.label,monthlySpend:r.minimumSpend,monthlyBenefit:result.benefit,annualFee:0,verified:true,maximumVerified:true,calculation:'tier-cap',basis:'minimum-tier',minimumEligibleSpend:r.minimumSpend,benefitScope:r.label,sourceUrl:r.sourceUrl,assumptions:[r.note,`전월 ${r.minimumSpend.toLocaleString('ko-KR')}원 조건을 충족하고 당월 같은 금액을 해당 대상에 사용한 경우.`,...(result.fee?[`동일 결제 수수료 면제 ${formatPicking(result.fee/r.minimumSpend*100)}% 포함.`,r.feeWaiver!.note]:[]),'영역별 요율은 대안입니다. 같은 거래의 기본·추가 적립만 합산하며 연회비·바우처·연간 보너스는 제외합니다.'],components:[{label:'적립·할인',amount:result.earning,cap:r.monthlyCapValue===null?'총 한도 없음':`${r.monthlyCapValue.toLocaleString('ko-KR')}원`},...(result.fee?[{label:'동일 거래 수수료 면제',amount:result.fee,cap:'적용 조건 참조'}]:[])]}});continue;
+  if(r.minimumSpend>0&&(c.rewardModelComplete||r.additionalMonthlyCapValue!==undefined||fixed)){
+   if(fixed&&cap===null)continue;
+   const fill=cap===null?Infinity:cap/rate;
+   let spend=fixed?cap!:r.minimumSpend;
+   if(sub)spend=Math.min(spend,SUBSCRIPTION_SPEND);
+   const outside=excluded&&Number.isFinite(fill);
+   if(outside)spend=Math.min(fill,sub?SUBSCRIPTION_SPEND:Infinity);
+   const result=rewardAtSpend(r,spend);if(!result)continue;
+   const total=outside?r.minimumSpend+spend:r.minimumSpend;
+   legacy.push({value:result.benefit/total*100,scenario:{label:r.label,monthlySpend:total,monthlyBenefit:result.benefit,annualFee:0,verified:true,maximumVerified:true,calculation:'tier-cap',basis:'minimum-tier',minimumEligibleSpend:r.minimumSpend,totalSpend:total,benefitScope:r.label,sourceUrl:r.sourceUrl,assumptions:[
+    outside?`이 혜택을 받은 결제 ${wonText(spend)}은 전월실적에 안 들어가서, 실적 ${wonText(r.minimumSpend)} + ${wonText(spend)} = ${wonText(total)} 기준으로 계산했어요.`
+     :spend<r.minimumSpend?`전월 ${wonText(r.minimumSpend)} 중 ${wonText(spend)}만 이 영역에 쓴다고 봤어요${sub?' (구독료는 월 3만원까지)':''}.`
+     :`전월 ${wonText(r.minimumSpend)} 조건을 채우고 같은 금액을 이 영역에 쓴 경우.`,
+    r.note,...(result.fee?[`동일 결제 수수료 면제 ${formatPicking(result.fee/spend*100)}% 포함.`,r.feeWaiver!.note]:[]),'영역별 요율은 대안입니다. 연회비·바우처·연간 보너스는 빼고 계산해요.'],components:[{label:'적립·할인',amount:result.earning,cap:cap===null?'총 한도 없음':wonText(cap)},...(result.fee?[{label:'동일 거래 수수료 면제',amount:result.fee,cap:'적용 조건 참조'}]:[])]}});continue;
   }
-  const earning=r.rewardUnits*r.unitValue/r.spendUnit*100;
+  const earning=rate*100;
   const waiver=r.feeWaiver?.verified&&r.feeWaiver.rate!==null&&r.feeWaiver.minimumSpend!==null&&r.feeWaiver.minimumSpend<=r.minimumSpend?r.feeWaiver:null;
-  const value=earning+(waiver?.rate??0);
   // A capped headline rate is not the maximum at the required spend tier.
   // Such products need a complete allocation scenario, including fallback rewards.
-  if(r.minimumSpend>0&&r.monthlyCapValue!==null&&r.monthlyCapValue<r.minimumSpend*earning/100)continue;
+  if(r.minimumSpend>0&&cap!==null&&cap<r.minimumSpend*earning/100)continue;
+  // No spend requirement but a small monthly cap: "10% (월 3천원)" is not a card
+  // maximum. Value it at a typical month's spending instead.
+  if(r.minimumSpend===0&&cap!==null&&cap/rate<REFERENCE_SPEND){
+   const result=rewardAtSpend(r,REFERENCE_SPEND);if(!result)continue;
+   legacy.push({value:result.percentage,scenario:{label:r.label,monthlySpend:REFERENCE_SPEND,monthlyBenefit:result.benefit,annualFee:0,verified:true,maximumVerified:true,calculation:'tier-cap',basis:'minimum-tier',minimumEligibleSpend:0,totalSpend:REFERENCE_SPEND,benefitScope:r.label,sourceUrl:r.sourceUrl,assumptions:[`전월실적 조건은 없지만 월 한도(${wonText(cap)})가 작아서, 한 달 ${wonText(REFERENCE_SPEND)} 결제 기준으로 계산했어요.`,r.note],components:[{label:'적립·할인',amount:result.benefit,cap:wonText(cap)}]}});
+   continue;
+  }
+  const value=earning+(waiver?.rate??0);
   legacy.push({value,scenario:{label:r.label,monthlySpend:null,monthlyBenefit:null,annualFee:0,verified:true,maximumVerified:true,calculation:'unit-rate',basis:'minimum-tier',minimumEligibleSpend:r.minimumSpend,grossBenefitRate:value,benefitScope:r.label,sourceUrl:r.sourceUrl,assumptions:[`${r.spendUnit.toLocaleString('ko-KR')}원당 ${r.rewardUnits} ${r.rewardUnit} × ${r.unitValue}원 = ${formatPicking(earning)}%.`,...(waiver?[`동일 해외 결제 수수료 면제 ${formatPicking(waiver.rate!)}%를 더해 ${formatPicking(value)}%.`,waiver.note,`수수료 면제 공식 원문: ${waiver.sourceUrl}`]:[]),r.note,r.minimumSpend===0?'전월실적 조건 없음. 사용금액당 적립률로 계산합니다.':`해당 혜택 전월실적 ${r.minimumSpend.toLocaleString('ko-KR')}원 조건.`, '연회비·바우처·연간 기프트·보너스 및 비금전 서비스 가치는 제외.'],components:[]}});
  }
  return legacy;

@@ -11,6 +11,42 @@ export function paymentEligibility(c:Card,theme:string):PaymentEligibility{
  const re=patterns[theme];if(!re)return {spend:'unknown',benefit:'unknown',sourceUrl:c.sourceUrl,note:'자료 미확인'};
  return {spend:c.spendExclusions.some(x=>re.test(x))?'excluded':'unknown',benefit:c.benefitExclusions.some(x=>re.test(x))?'excluded':'unknown',sourceUrl:c.conditionEvidence?.url??c.sourceUrl,note:'원문에서 제외 여부를 확인합니다. 일부 발췌에 단어가 없다는 이유로 가능 판정하지 않습니다.'};
 }
+/** "이렇게 써도 될까?" 표에 보여 줄 결제 항목. 사람들이 가장 많이 묻는 순서. */
+export const PAYMENT_CHECKS=[
+ {key:'관리비',label:'아파트 관리비'},
+ {key:'4대보험',label:'4대보험',hint:'건강·연금·고용·산재'},
+ {key:'국세',label:'국세',hint:'소득세·부가세 등'},
+ {key:'지방세',label:'지방세',hint:'재산세·자동차세 등'},
+ {key:'공과금',label:'전기·가스·수도'},
+ {key:'자동차 구매',label:'자동차 구매',hint:'딜러 카드결제 한도는 따로 확인'},
+ {key:'상품권 가능',label:'상품권·선불 충전'},
+ {key:'등록금',label:'등록금·학교 납입금'},
+ {key:'임대료',label:'월세·임대료'},
+ {key:'무이자할부',label:'무이자할부'},
+ {key:'할인받은 이용금액',label:'혜택받은 결제',hint:'할인·적립받은 결제도 실적에 들어가는지',spendOnly:true},
+] as const;
+const CHECK_PATTERNS:Record<string,RegExp>={
+ '4대보험':/4대\s*(?:사회\s*)?보험|사회\s*보험|국민건강보험|건강보험료|국민연금|고용보험|산재보험/,
+ '공과금':/전기\s*요금|도시가스|상하수도|수도\s*요금|공과금/,
+ '자동차 구매':/자동차\s*(?:구매|구입|매매|판매)|신차\s*구매|중고차|차량\s*(?:구매|구입)/,
+ '등록금':/등록금|학교\s*납입금|학부모\s*(?:부담|분담)금|수업료/,
+ '임대료':/임대료|월세/,
+ '무이자할부':/무이자\s*할부/,
+ '할인받은 이용금액':/(?:할인|적립|혜택)[^,，。;\n]{0,25}(?:받은|적용(?:된|받은)?|제공된)\s*(?:전체\s*)?(?:이용|매출|결제|금액|건|전표)/,
+};
+export type PaymentCheck={spend:PaymentEligibility['spend'];benefit:PaymentEligibility['benefit']|'na';spendEvidence?:string;benefitEvidence?:string};
+const snippet=(texts:string[],re:RegExp)=>{for(const t of texts){const m=re.exec(t);if(m){const a=Math.max(0,m.index-40),b=Math.min(t.length,m.index+m[0].length+40);return (a?'…':'')+t.slice(a,b).replace(/\s+/g,' ').trim()+(b<t.length?'…':'');}}return undefined;};
+/** 저장된 판정(상품권·관리비·국세·지방세)은 그대로 쓰고, 나머지는 원문 제외 목록에서 찾습니다.
+ * 제외 목록 전체를 확인한 카드(full_exclusion_list)만 '목록에 없음 = 인정'으로 봅니다. */
+export function paymentCheck(c:Card,key:string):PaymentCheck{
+ const spendOnly=key==='할인받은 이용금액';
+ const re=CHECK_PATTERNS[key];
+ if(!re){const e=paymentEligibility(c,key),lines=(e.evidence??'').split('\n'),pr=patterns[key]??/$^/;return {spend:e.spend,benefit:e.benefit,spendEvidence:e.spend==='excluded'?snippet(lines.slice(0,1),pr)??snippet(c.spendExclusions,pr):undefined,benefitEvidence:e.benefit==='excluded'?snippet(lines.slice(-1),pr)??snippet(c.benefitExclusions,pr):undefined};}
+ const complete=Object.values(c.paymentEligibility??{}).some(e=>e.basis==='full_exclusion_list');
+ const spendEvidence=snippet(c.spendExclusions,re),benefitEvidence=spendOnly?undefined:snippet(c.benefitExclusions,re);
+ const spend=spendEvidence||(spendOnly&&c.benefitSpendExcluded)?'excluded':complete?'allowed':'unknown';
+ return {spend,benefit:spendOnly?'na':benefitEvidence?'excluded':complete?'allowed':'unknown',spendEvidence,benefitEvidence};
+}
 export function scopedPaymentEligibility(c:Card,theme:string):PaymentEligibility[]{
  const re=patterns[theme];
  return (c.eligibilityRules??[]).filter(rule=>rule.item===theme||aliases[theme]?.includes(rule.item)||!!re?.test(rule.item));

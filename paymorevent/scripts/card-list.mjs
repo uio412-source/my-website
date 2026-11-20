@@ -19,7 +19,7 @@ const LIST_FIELDS = [
   // Benefit chips and hashtags (browseThemes, featureTags, cardThemes, benefitKinds)
   'tags', 'themeTags', 'benefitKinds', 'networkServices',
   // Picking rate (pickingOptions)
-  'pickingScenarios', 'spendingPlans', 'rewardModelComplete', 'rewardCoveragePending', 'rewardComponentsPending', 'sourceReviewPending',
+  'pickingScenarios', 'spendingPlans', 'benefitSpendExcluded', 'rewardModelComplete', 'rewardCoveragePending', 'rewardComponentsPending', 'sourceReviewPending',
 ];
 const BENEFIT_FIELDS = ['category', 'title', 'detail', 'kind'];
 // Explanations attached to reward rules. The picking rate calculation never reads them.
