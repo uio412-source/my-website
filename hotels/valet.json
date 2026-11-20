@@ -1,0 +1,1186 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-20",
+  "hotels": [
+    {
+      "id": "pullman",
+      "name": "앰배서더 서울 풀만",
+      "district": "중구",
+      "aliases": [
+        "앰배서더 서울 - 풀만 호텔"
+      ],
+      "directoryIds": [
+        "0966"
+      ]
+    },
+    {
+      "id": "walkerhill",
+      "name": "그랜드 워커힐 서울",
+      "district": "광진구"
+    },
+    {
+      "id": "swiss",
+      "name": "스위스 그랜드 호텔",
+      "district": "서대문구"
+    },
+    {
+      "id": "mayfield",
+      "name": "메이필드 호텔 서울",
+      "district": "강서구"
+    },
+    {
+      "id": "novotel-gangnam",
+      "name": "노보텔 앰배서더 서울 강남",
+      "district": "강남구",
+      "directoryIds": [
+        "1633"
+      ]
+    },
+    {
+      "id": "lescape",
+      "name": "레스케이프 서울 명동",
+      "district": "중구",
+      "aliases": [
+        "레스케이프 럭셔리 컬렉션"
+      ]
+    },
+    {
+      "id": "plaza",
+      "name": "더 플라자 서울",
+      "district": "중구",
+      "aliases": [
+        "더플라자",
+        "THE PLAZA"
+      ],
+      "closure": {
+        "from": "2026-09-30",
+        "note": "리모델링으로 영업 중단. 호텔 공지상 2029년 재개 예정.",
+        "source": "https://www.marriott.com/en-us/hotels/selak-the-plaza-seoul-autograph-collection/overview/"
+      }
+    },
+    {
+      "id": "naru",
+      "name": "호텔 나루 서울 엠갤러리",
+      "district": "마포구",
+      "aliases": [
+        "엠갤러리 컬렉션"
+      ],
+      "directoryIds": [
+        "B5E0"
+      ]
+    },
+    {
+      "id": "mondrian",
+      "name": "몬드리안 서울 이태원",
+      "district": "용산구",
+      "directoryIds": [
+        "B771"
+      ]
+    },
+    {
+      "id": "mea",
+      "name": "메리어트 이그제큐티브 아파트먼트 서울",
+      "district": "영등포구",
+      "aliases": [
+        "여의도 파크센터",
+        "MEA 서울"
+      ]
+    },
+    {
+      "id": "ac-gangnam",
+      "name": "AC 호텔 바이 메리어트 서울 강남",
+      "district": "강남구"
+    },
+    {
+      "id": "vista",
+      "name": "비스타 워커힐 서울",
+      "district": "광진구"
+    },
+    {
+      "id": "shilla",
+      "name": "서울신라호텔",
+      "district": "중구",
+      "aliases": [
+        "신라호텔 서울",
+        "서울 신라 호텔"
+      ]
+    },
+    {
+      "id": "novotel-ddm",
+      "name": "노보텔 앰배서더 서울 동대문",
+      "district": "중구",
+      "aliases": [
+        "노보텔 동대문 호텔 & 레지던스",
+        "레지던스 앰배서더 서울"
+      ],
+      "directoryIds": [
+        "A5U6"
+      ]
+    },
+    {
+      "id": "garden",
+      "name": "서울가든호텔",
+      "district": "마포구",
+      "aliases": [
+        "서울 가든 호텔"
+      ]
+    },
+    {
+      "id": "oakwood",
+      "name": "오크우드 프리미어 코엑스 센터",
+      "district": "강남구",
+      "aliases": [
+        "오크우드 코엑스"
+      ]
+    },
+    {
+      "id": "glad",
+      "name": "글래드 강남 코엑스센터",
+      "district": "강남구"
+    },
+    {
+      "id": "jw-seoul",
+      "name": "JW 메리어트 호텔 서울",
+      "district": "서초구",
+      "aliases": [
+        "JW 메리어트 서울 강남",
+        "JW 메리어트 반포"
+      ]
+    },
+    {
+      "id": "dragon-city",
+      "name": "서울드래곤시티",
+      "district": "용산구",
+      "aliases": [
+        "서울 드래곤 시티",
+        "노보텔 용산",
+        "노보텔 스위트 용산",
+        "이비스 스타일 용산",
+        "더 26"
+      ],
+      "directoryIds": [
+        "9472",
+        "9473",
+        "9469"
+      ],
+      "note": "카드 안내장에 서울드래곤시티로 표기된 복합시설입니다. 이용 건물과 업장의 영수증 인정 여부는 호텔에 확인하세요."
+    },
+    {
+      "id": "andaz",
+      "name": "안다즈 서울 강남",
+      "district": "강남구"
+    },
+    {
+      "id": "conrad",
+      "name": "콘래드 서울",
+      "district": "영등포구"
+    },
+    {
+      "id": "jw-ddm",
+      "name": "JW 메리어트 동대문 스퀘어 서울",
+      "district": "종로구",
+      "aliases": [
+        "JW 동대문"
+      ]
+    },
+    {
+      "id": "grand-hyatt",
+      "name": "그랜드 하얏트 서울",
+      "district": "용산구"
+    },
+    {
+      "id": "ic-parnas",
+      "name": "그랜드 인터컨티넨탈 서울 파르나스",
+      "district": "강남구",
+      "aliases": [
+        "인터컨티넨탈 파르나스"
+      ],
+      "directoryIds": [
+        "seoha"
+      ]
+    },
+    {
+      "id": "fairmont",
+      "name": "페어몬트 앰배서더 서울",
+      "district": "영등포구",
+      "directoryIds": [
+        "B200"
+      ]
+    },
+    {
+      "id": "meridien",
+      "name": "르메르디앙 서울 명동",
+      "district": "중구"
+    },
+    {
+      "id": "banyan",
+      "name": "반얀트리 클럽 앤 스파 서울",
+      "district": "중구",
+      "aliases": [
+        "반얀 트리 클럽 앤 스파 서울"
+      ],
+      "directoryIds": [
+        "B1V3"
+      ]
+    },
+    {
+      "id": "courtyard-ts",
+      "name": "코트야드 메리어트 서울 타임스퀘어",
+      "district": "영등포구",
+      "aliases": [
+        "코트야드 타임스퀘어"
+      ]
+    },
+    {
+      "id": "park-hyatt",
+      "name": "파크 하얏트 서울",
+      "district": "강남구"
+    },
+    {
+      "id": "four-seasons",
+      "name": "포시즌스 호텔 서울",
+      "district": "종로구"
+    },
+    {
+      "id": "hilton-garden",
+      "name": "힐튼 가든 인 서울 강남",
+      "district": "서초구"
+    },
+    {
+      "id": "sofitel",
+      "name": "소피텔 앰배서더 서울",
+      "district": "송파구",
+      "aliases": [
+        "소피텔 앰배서더 서울 호텔 & 서비스드 레지던스",
+        "소피텔 잠실"
+      ],
+      "directoryIds": [
+        "B220"
+      ]
+    },
+    {
+      "id": "mercure-yongsan",
+      "name": "그랜드 머큐어 앰배서더 서울 용산",
+      "district": "용산구",
+      "aliases": [
+        "그랜드 머큐어 서울",
+        "그랜드 머큐어 앰배서더 호텔 앤 레지던스 서울 용산"
+      ],
+      "directoryIds": [
+        "9470"
+      ]
+    },
+    {
+      "id": "koreana",
+      "name": "호텔 코리아나",
+      "district": "중구",
+      "aliases": [
+        "코리아나 호텔"
+      ]
+    },
+    {
+      "id": "moxy",
+      "name": "목시 서울 명동",
+      "district": "중구"
+    },
+    {
+      "id": "mercure-gangnam",
+      "name": "그랜드 머큐어 임페리얼 팰리스 서울",
+      "district": "강남구",
+      "directoryIds": [
+        "C3E4"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "id": "shinhan-signature-shared",
+      "issuer": "신한카드",
+      "provider": "issuer_selection",
+      "brand": "Visa",
+      "tier": "Signature",
+      "minimumSpend": 300000,
+      "spendScope": "전월 본인·가족 일시불·할부 합산",
+      "spendExclusions": "카드대출·수수료·이자·거래취소",
+      "monthlyLimit": 5,
+      "quotaScope": "hotel_shared",
+      "familyQuota": true,
+      "grace": "카드 사용등록 다음 달 말까지 유예",
+      "parking": "호텔별 2~3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
+      "notes": [],
+      "source": "https://www.shinhancard.com/pconts/download/card/MO_26_00770_visa_signature_2_best.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "pullman",
+        "walkerhill",
+        "swiss",
+        "mayfield",
+        "novotel-gangnam",
+        "lescape",
+        "plaza",
+        "naru",
+        "mondrian",
+        "mea",
+        "ac-gangnam",
+        "vista",
+        "shilla",
+        "novotel-ddm",
+        "garden",
+        "oakwood",
+        "glad",
+        "jw-seoul",
+        "dragon-city",
+        "andaz",
+        "conrad",
+        "jw-ddm",
+        "grand-hyatt"
+      ],
+      "cards": [
+        {
+          "key": "bonvoy-best",
+          "name": "메리어트 본보이 더 베스트 신한카드",
+          "catalogId": "shinhan-202102020001"
+        },
+        {
+          "key": "the-best-f",
+          "name": "신한카드 The BEST-F",
+          "catalogId": null
+        },
+        {
+          "key": "the-best-plus",
+          "name": "신한카드 The BEST+",
+          "catalogId": "shinhan-201902270001"
+        }
+      ]
+    },
+    {
+      "id": "shinhan-signature-hotel",
+      "issuer": "신한카드",
+      "provider": "issuer_selection",
+      "brand": "Visa",
+      "tier": "Signature",
+      "minimumSpend": 300000,
+      "spendScope": "전월 본인·가족 일시불·할부 합산",
+      "spendExclusions": "카드대출·수수료·이자·거래취소",
+      "monthlyLimit": 5,
+      "quotaScope": "per_hotel",
+      "familyQuota": true,
+      "grace": "카드 사용등록 다음 달 말까지 유예",
+      "parking": "호텔별 2~3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
+      "notes": [],
+      "source": "https://www.shinhancard.com/pconts/download/card/MO_26_00770_visa_signature_2_best.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "pullman",
+        "walkerhill",
+        "swiss",
+        "mayfield",
+        "novotel-gangnam",
+        "lescape",
+        "plaza",
+        "naru",
+        "mondrian",
+        "mea",
+        "ac-gangnam",
+        "vista",
+        "shilla",
+        "novotel-ddm",
+        "garden",
+        "oakwood",
+        "glad",
+        "jw-seoul",
+        "dragon-city",
+        "andaz",
+        "conrad",
+        "jw-ddm",
+        "grand-hyatt"
+      ],
+      "cards": [
+        {
+          "key": "the-best",
+          "name": "신한카드 The BEST",
+          "catalogId": null
+        },
+        {
+          "key": "the-lady-best",
+          "name": "신한카드 The LADY BEST",
+          "catalogId": null
+        }
+      ]
+    },
+    {
+      "id": "shinhan-platinum-shared",
+      "issuer": "신한카드",
+      "provider": "issuer_selection",
+      "brand": "Visa",
+      "tier": "Platinum",
+      "minimumSpend": 300000,
+      "spendScope": "전월 본인·가족 일시불·할부 합산",
+      "spendExclusions": "카드대출·수수료·이자·거래취소",
+      "monthlyLimit": 3,
+      "quotaScope": "hotel_shared",
+      "familyQuota": true,
+      "grace": "등록월에는 제공되지 않음",
+      "parking": "호텔별 2~3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
+      "notes": [],
+      "source": "https://www.shinhancard.com/pconts/download/card/PC_26_00776_visa_platinum_1_new.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "pullman",
+        "mea",
+        "walkerhill",
+        "ac-gangnam",
+        "swiss",
+        "vista",
+        "mayfield",
+        "novotel-ddm",
+        "novotel-gangnam",
+        "glad",
+        "lescape",
+        "dragon-city",
+        "plaza",
+        "garden"
+      ],
+      "cards": [
+        {
+          "key": "air-platinum",
+          "name": "신한카드 Air Platinum#",
+          "catalogId": "shinhan-201507300002"
+        },
+        {
+          "key": "rpm-plus",
+          "name": "신한카드 RPM+ Platinum#",
+          "catalogId": "shinhan-201604270001"
+        },
+        {
+          "key": "the-dr",
+          "name": "신한카드 The Dr.",
+          "catalogId": null
+        },
+        {
+          "key": "deep-dream-plus",
+          "name": "신한카드 Deep Dream Platinum+",
+          "catalogId": null
+        },
+        {
+          "key": "boon-vip",
+          "name": "신한카드 THE BOON VIP",
+          "catalogId": null
+        },
+        {
+          "key": "deep-taking",
+          "name": "신한카드 Deep Taking",
+          "catalogId": "shinhan-201907110001"
+        },
+        {
+          "key": "deep-making",
+          "name": "신한카드 Deep Making",
+          "catalogId": "shinhan-201907110002"
+        },
+        {
+          "key": "hondi",
+          "name": "신한카드 혼디모앙",
+          "catalogId": "shinhan-202102220003"
+        },
+        {
+          "key": "bonvoy-classic",
+          "name": "메리어트 본보이 더 클래식 신한카드",
+          "catalogId": null
+        },
+        {
+          "key": "point-plan-plus",
+          "name": "신한카드 Point Plan+",
+          "catalogId": "shinhan-202407110001"
+        }
+      ]
+    },
+    {
+      "id": "shinhan-platinum-hotel",
+      "issuer": "신한카드",
+      "provider": "issuer_selection",
+      "brand": "Visa",
+      "tier": "Platinum",
+      "minimumSpend": 300000,
+      "spendScope": "전월 본인·가족 일시불·할부 합산",
+      "spendExclusions": "카드대출·수수료·이자·거래취소",
+      "monthlyLimit": 3,
+      "quotaScope": "per_hotel",
+      "familyQuota": true,
+      "grace": "카드 사용등록 다음 달 말까지 유예",
+      "parking": "호텔별 2~3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
+      "notes": [],
+      "source": "https://www.shinhancard.com/pconts/download/card/PC_26_00776_visa_platinum_1_new.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "pullman",
+        "mea",
+        "walkerhill",
+        "ac-gangnam",
+        "swiss",
+        "vista",
+        "mayfield",
+        "novotel-ddm",
+        "novotel-gangnam",
+        "glad",
+        "lescape",
+        "dragon-city",
+        "plaza",
+        "garden"
+      ],
+      "cards": [
+        {
+          "key": "cube",
+          "name": "신한카드 Cube Platinum#",
+          "catalogId": null
+        },
+        {
+          "key": "simple",
+          "name": "신한카드 Simple Platinum#",
+          "catalogId": null
+        },
+        {
+          "key": "naemirae",
+          "name": "내미래 Simple Platinum#",
+          "catalogId": null
+        }
+      ]
+    },
+    {
+      "id": "shinhan-classic-visa",
+      "issuer": "신한카드",
+      "provider": "issuer_selection",
+      "brand": "Visa",
+      "tier": "Platinum",
+      "minimumSpend": 300000,
+      "spendScope": "전월 본인·가족 일시불·할부 합산",
+      "spendExclusions": "카드대출·수수료·이자·거래취소",
+      "monthlyLimit": 3,
+      "quotaScope": "hotel_shared",
+      "familyQuota": true,
+      "grace": "등록월에는 제공되지 않음",
+      "parking": "호텔별 2~3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
+      "notes": [
+        "안내장의 그랜드강남호텔은 현재 운영 시설 이름을 확인 중입니다."
+      ],
+      "source": "https://www.shinhancard.com/pconts/download/card/MO_26_00781_visa_platinum_4_classic.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "pullman",
+        "walkerhill",
+        "swiss",
+        "mayfield",
+        "novotel-gangnam",
+        "lescape",
+        "plaza",
+        "mea",
+        "ac-gangnam",
+        "vista",
+        "novotel-ddm",
+        "dragon-city",
+        "garden"
+      ],
+      "cards": [
+        {
+          "key": "classic-y",
+          "name": "신한카드 The CLASSIC-Y",
+          "catalogId": null
+        }
+      ]
+    },
+    {
+      "id": "shinhan-classic-master",
+      "issuer": "신한카드",
+      "provider": "issuer_selection",
+      "brand": "Mastercard",
+      "tier": "Platinum",
+      "minimumSpend": 300000,
+      "spendScope": "전월 본인·가족 일시불·할부 합산",
+      "spendExclusions": "카드대출·수수료·이자·거래취소",
+      "monthlyLimit": 3,
+      "quotaScope": "hotel_shared",
+      "familyQuota": true,
+      "grace": "등록월에는 제공되지 않음",
+      "parking": "호텔별 2~3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
+      "notes": [
+        "안내장 표기만으로 시설을 특정하기 어려운 메리어트 항목은 지도 목록에서 보류했습니다."
+      ],
+      "source": "https://www.shinhancard.com/pconts/download/card/MO_26_00789_master_platinum_2_classics.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "jw-seoul",
+        "walkerhill",
+        "grand-hyatt",
+        "novotel-gangnam",
+        "novotel-ddm",
+        "koreana",
+        "mayfield",
+        "mondrian",
+        "vista",
+        "garden",
+        "dragon-city",
+        "shilla",
+        "swiss",
+        "pullman"
+      ],
+      "cards": [
+        {
+          "key": "classic-y",
+          "name": "신한카드 The CLASSIC-Y",
+          "catalogId": null
+        },
+        {
+          "key": "classic-l",
+          "name": "신한카드 The CLASSIC-L",
+          "catalogId": null
+        }
+      ],
+      "hotelOverrides": {
+        "jw-seoul": {
+          "monthlyLimit": 1,
+          "note": "이 호텔은 월 1회까지 이용 가능하며 호텔 통합 월 3회에 포함됩니다."
+        }
+      }
+    },
+    {
+      "id": "shinhan-classic-visa-grace",
+      "issuer": "신한카드",
+      "provider": "issuer_selection",
+      "brand": "Visa",
+      "tier": "Platinum",
+      "minimumSpend": 300000,
+      "spendScope": "전월 본인·가족 일시불·할부 합산",
+      "spendExclusions": "카드대출·수수료·이자·거래취소",
+      "monthlyLimit": 3,
+      "quotaScope": "hotel_shared",
+      "familyQuota": true,
+      "grace": "카드 사용등록 다음 달 말까지 유예",
+      "parking": "호텔별 2~3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
+      "notes": [
+        "안내장의 그랜드강남호텔은 현재 운영 시설 이름을 확인 중입니다."
+      ],
+      "source": "https://www.shinhancard.com/pconts/download/card/MO_26_00781_visa_platinum_4_classic.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "pullman",
+        "walkerhill",
+        "swiss",
+        "mayfield",
+        "novotel-gangnam",
+        "lescape",
+        "plaza",
+        "mea",
+        "ac-gangnam",
+        "vista",
+        "novotel-ddm",
+        "dragon-city",
+        "garden"
+      ],
+      "cards": [
+        {
+          "key": "classic-s",
+          "name": "신한카드 The CLASSIC-S",
+          "catalogId": null
+        },
+        {
+          "key": "classic-v",
+          "name": "신한카드 The CLASSIC-V",
+          "catalogId": null
+        }
+      ]
+    },
+    {
+      "id": "shinhan-classic-mastercard-grace",
+      "issuer": "신한카드",
+      "provider": "issuer_selection",
+      "brand": "Mastercard",
+      "tier": "Platinum",
+      "minimumSpend": 300000,
+      "spendScope": "전월 본인·가족 일시불·할부 합산",
+      "spendExclusions": "카드대출·수수료·이자·거래취소",
+      "monthlyLimit": 3,
+      "quotaScope": "hotel_shared",
+      "familyQuota": true,
+      "grace": "카드 사용등록 다음 달 말까지 유예",
+      "parking": "호텔별 2~3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
+      "notes": [
+        "안내장 표기만으로 시설을 특정하기 어려운 메리어트 항목은 지도 목록에서 보류했습니다."
+      ],
+      "source": "https://www.shinhancard.com/pconts/download/card/MO_26_00789_master_platinum_2_classics.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "jw-seoul",
+        "walkerhill",
+        "grand-hyatt",
+        "novotel-gangnam",
+        "novotel-ddm",
+        "koreana",
+        "mayfield",
+        "mondrian",
+        "vista",
+        "garden",
+        "dragon-city",
+        "shilla",
+        "swiss",
+        "pullman"
+      ],
+      "cards": [
+        {
+          "key": "classic-s",
+          "name": "신한카드 The CLASSIC-S",
+          "catalogId": null
+        },
+        {
+          "key": "classic-v",
+          "name": "신한카드 The CLASSIC-V",
+          "catalogId": null
+        }
+      ],
+      "hotelOverrides": {
+        "jw-seoul": {
+          "monthlyLimit": 1,
+          "note": "이 호텔은 월 1회까지 이용 가능하며 호텔 통합 월 3회에 포함됩니다."
+        }
+      }
+    },
+    {
+      "id": "shinhan-classic-unionpay",
+      "issuer": "신한카드",
+      "provider": "issuer_selection",
+      "brand": "UnionPay",
+      "tier": "Platinum",
+      "minimumSpend": 300000,
+      "spendScope": "전월 본인·가족 일시불·할부 합산",
+      "spendExclusions": "카드대출·수수료·이자·거래취소",
+      "monthlyLimit": 3,
+      "quotaScope": "hotel_shared",
+      "familyQuota": true,
+      "grace": "등록월에는 제공되지 않음",
+      "parking": "호텔별 2~3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "차량보관증과 대상 UnionPay 실물카드 제시",
+      "notes": [
+        "출차할 때 차량보관증과 대상 UnionPay 카드를 제시합니다. 당일 이용 영수증 요건은 호텔에 확인하세요."
+      ],
+      "source": "https://www.shinhancard.com/pconts/download/card/PC_26_00802_upi_platinum_1_classics_bestt.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "grand-hyatt",
+        "banyan",
+        "novotel-gangnam",
+        "swiss",
+        "novotel-ddm",
+        "koreana",
+        "meridien",
+        "moxy",
+        "courtyard-ts",
+        "mondrian"
+      ],
+      "cards": [
+        {
+          "key": "classic-y",
+          "name": "신한카드 The CLASSIC-Y",
+          "catalogId": null
+        },
+        {
+          "key": "the-lady-classic",
+          "name": "신한카드 The LADY CLASSIC",
+          "catalogId": null
+        },
+        {
+          "key": "classic-lite",
+          "name": "신한카드 The CLASSIC-Lite",
+          "catalogId": null
+        },
+        {
+          "key": "the-best-t",
+          "name": "신한카드 The BEST-T",
+          "catalogId": null
+        }
+      ]
+    },
+    {
+      "id": "hyundai-amex-platinum-ed2",
+      "issuer": "현대카드",
+      "provider": "issuer_selection",
+      "brand": "American Express",
+      "tier": "The Platinum",
+      "minimumSpend": 500000,
+      "spendScope": "전월 본인·가족 동일상품 일시불·할부 합산",
+      "spendExclusions": "카드대출·연회비·제수수료·이자. 취소 이용액은 반영 기준에 따라 차감.",
+      "monthlyLimit": 5,
+      "quotaScope": "hotel_airport",
+      "familyQuota": true,
+      "grace": "발급월 포함 3개월 유예",
+      "parking": "1일 3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "실물카드·주차권 제시. 당일 이용 영수증을 요청할 수 있음.",
+      "notes": [],
+      "source": "https://www.hyundaicard.com/upload/card/26%EB%85%84%20AMEX%20THE%20PLATINUM_PLATINUM%20Ed2_2610.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "jw-ddm",
+        "jw-seoul",
+        "walkerhill",
+        "grand-hyatt",
+        "novotel-gangnam",
+        "novotel-ddm",
+        "fairmont",
+        "naru",
+        "meridien",
+        "mea",
+        "mayfield",
+        "mondrian",
+        "banyan",
+        "vista",
+        "garden",
+        "dragon-city",
+        "shilla",
+        "andaz",
+        "pullman",
+        "courtyard-ts",
+        "conrad",
+        "park-hyatt",
+        "four-seasons",
+        "hilton-garden",
+        "sofitel",
+        "ic-parnas",
+        "oakwood"
+      ],
+      "cards": [
+        {
+          "key": "amex-platinum-ed2",
+          "name": "현대 아멕스 플래티넘 Edition2",
+          "catalogId": "hyundai-ampte2"
+        }
+      ],
+      "validThrough": "2026-12-31"
+    },
+    {
+      "id": "hyundai-amex-gold-ed2",
+      "issuer": "현대카드",
+      "provider": "issuer_selection",
+      "brand": "American Express",
+      "tier": "Platinum Elite",
+      "minimumSpend": 500000,
+      "spendScope": "전월 본인·가족 동일상품 일시불·할부 합산",
+      "spendExclusions": "카드대출·연회비·제수수료·이자. 취소 이용액은 반영 기준에 따라 차감.",
+      "monthlyLimit": 5,
+      "quotaScope": "hotel_airport",
+      "familyQuota": true,
+      "grace": "발급월 포함 3개월 유예",
+      "parking": "1일 3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "실물카드·주차권 제시. 당일 이용 영수증을 요청할 수 있음.",
+      "notes": [],
+      "source": "https://www.hyundaicard.com/upload/card/26%EB%85%84%20AMEX%20PLATINUM%20ELITE%20%EC%84%A0%ED%83%9D%EC%A0%9C%EA%B3%B5%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%95%88%EB%82%B4%EC%84%9C_%EA%B3%A8%EB%93%9CEd2_2610.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "jw-ddm",
+        "jw-seoul",
+        "walkerhill",
+        "grand-hyatt",
+        "novotel-gangnam",
+        "novotel-ddm",
+        "fairmont",
+        "naru",
+        "meridien",
+        "mea",
+        "mayfield",
+        "mondrian",
+        "banyan",
+        "vista",
+        "garden",
+        "dragon-city",
+        "shilla",
+        "andaz",
+        "pullman",
+        "courtyard-ts",
+        "conrad",
+        "park-hyatt",
+        "four-seasons",
+        "hilton-garden",
+        "sofitel"
+      ],
+      "cards": [
+        {
+          "key": "amex-gold-ed2",
+          "name": "현대 아멕스 골드 Edition2",
+          "catalogId": "hyundai-amgle2"
+        }
+      ],
+      "validThrough": "2026-12-31"
+    },
+    {
+      "id": "hyundai-amex-gold-ed1",
+      "issuer": "현대카드",
+      "provider": "issuer_selection",
+      "brand": "American Express",
+      "tier": "Platinum Elite",
+      "minimumSpend": 500000,
+      "spendScope": "전월 본인·가족 동일상품 일시불·할부 합산",
+      "spendExclusions": "카드대출·연회비·제수수료·이자. 취소 이용액은 반영 기준에 따라 차감.",
+      "monthlyLimit": 5,
+      "quotaScope": "hotel_airport",
+      "familyQuota": true,
+      "grace": "발급월 포함 3개월 유예",
+      "parking": "1일 3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "실물카드·주차권 제시. 당일 이용 영수증을 요청할 수 있음.",
+      "notes": [
+        "안내장에 표기가 불분명한 마지막 제휴 호텔은 현재 호텔명 확인 중입니다."
+      ],
+      "source": "https://www.hyundaicard.com/upload/card/26%EB%85%84%20AMEX%20PLATINUM%20ELITE%20%EC%84%A0%ED%83%9D%EC%A0%9C%EA%B3%B5%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%95%88%EB%82%B4%EC%84%9C_%EA%B3%A8%EB%93%9CEd1_2610.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "jw-ddm",
+        "jw-seoul",
+        "walkerhill",
+        "grand-hyatt",
+        "novotel-gangnam",
+        "novotel-ddm",
+        "fairmont",
+        "naru",
+        "meridien",
+        "mea",
+        "mayfield",
+        "mondrian",
+        "banyan",
+        "vista",
+        "garden",
+        "dragon-city",
+        "shilla",
+        "andaz",
+        "pullman",
+        "courtyard-ts",
+        "conrad",
+        "park-hyatt",
+        "four-seasons",
+        "hilton-garden"
+      ],
+      "cards": [
+        {
+          "key": "amex-gold-ed1",
+          "name": "현대 아멕스 골드 Edition1",
+          "catalogId": null
+        }
+      ],
+      "validThrough": "2026-12-31"
+    },
+    {
+      "id": "hyundai-amex-green-ed1",
+      "issuer": "현대카드",
+      "provider": "issuer_selection",
+      "brand": "American Express",
+      "tier": "Platinum Elite",
+      "minimumSpend": 500000,
+      "spendScope": "전월 본인·가족 동일상품 일시불·할부 합산",
+      "spendExclusions": "카드대출·연회비·제수수료·이자. 취소 이용액은 반영 기준에 따라 차감.",
+      "monthlyLimit": 2,
+      "quotaScope": "hotel_airport",
+      "familyQuota": true,
+      "grace": "발급월 포함 3개월 유예",
+      "parking": "1일 3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "실물카드·주차권 제시. 당일 이용 영수증을 요청할 수 있음.",
+      "notes": [
+        "타임스퀘어 제휴점은 안내장 표기와 현재 호텔명을 대조 중입니다."
+      ],
+      "source": "https://www.hyundaicard.com/upload/card/26%EB%85%84%20AMEX%20PLATINUM%20ELITE%20%EC%84%A0%ED%83%9D%EC%A0%9C%EA%B3%B5%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%95%88%EB%82%B4%EC%84%9C_%EA%B7%B8%EB%A6%B0Ed1_2610.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "jw-ddm",
+        "jw-seoul",
+        "walkerhill",
+        "grand-hyatt",
+        "novotel-gangnam",
+        "novotel-ddm",
+        "naru",
+        "mercure-yongsan",
+        "mea",
+        "mayfield",
+        "mondrian",
+        "banyan",
+        "vista",
+        "garden",
+        "dragon-city",
+        "shilla",
+        "andaz",
+        "pullman",
+        "conrad",
+        "park-hyatt",
+        "four-seasons",
+        "hilton-garden",
+        "sofitel"
+      ],
+      "cards": [
+        {
+          "key": "amex-green-ed1",
+          "name": "현대 아멕스 그린 Edition1",
+          "catalogId": null
+        }
+      ],
+      "validThrough": "2026-12-31"
+    },
+    {
+      "id": "shinhan-master-world",
+      "issuer": "신한카드",
+      "provider": "issuer_selection",
+      "brand": "Mastercard",
+      "tier": "World",
+      "minimumSpend": 300000,
+      "spendScope": "전월 본인·가족 일시불·할부 합산",
+      "spendExclusions": "카드대출·수수료·이자·거래취소",
+      "monthlyLimit": 5,
+      "quotaScope": "hotel_shared",
+      "familyQuota": true,
+      "grace": "카드 사용등록 다음 달 말까지 유예",
+      "parking": "호텔별 2~3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
+      "notes": [
+        "안내장의 노보텔 표기가 혼재된 한 지점은 별도 확인 중입니다."
+      ],
+      "source": "https://www.shinhancard.com/pconts/download/card/MO_26_00814_master_world_3_bestplus.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "jw-seoul",
+        "walkerhill",
+        "grand-hyatt",
+        "novotel-gangnam",
+        "lescape",
+        "mea",
+        "koreana",
+        "mayfield",
+        "mondrian",
+        "vista",
+        "garden",
+        "dragon-city",
+        "shilla",
+        "swiss",
+        "pullman"
+      ],
+      "cards": [
+        {
+          "key": "the-best-plus",
+          "name": "신한카드 The BEST+",
+          "catalogId": "shinhan-201902270001"
+        },
+        {
+          "key": "labe",
+          "name": "신한카드 LABE",
+          "catalogId": null
+        },
+        {
+          "key": "krisflyer-best",
+          "name": "싱가포르항공 크리스플라이어 더 베스트 신한카드",
+          "catalogId": "shinhan-202308030001"
+        }
+      ]
+    },
+    {
+      "id": "hana-visa-signature-02",
+      "issuer": "하나카드",
+      "provider": "issuer_selection",
+      "brand": "Visa",
+      "tier": "Signature 02",
+      "minimumSpend": 500000,
+      "spendScope": "전월 국내외 일시불·할부",
+      "spendExclusions": "이 안내장의 호텔 발레파킹 항목에 별도 목록 없음",
+      "monthlyLimit": 2,
+      "quotaScope": "hotel_shared",
+      "familyQuota": null,
+      "grace": "최초 카드 사용등록 다음 달 말까지 유예",
+      "parking": "1일 3시간 무료 · 초과 유료",
+      "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "proof": "주차권과 대상 Visa 실물카드 제시. 당일 영수증은 호텔별 확인.",
+      "notes": [
+        "일부 호텔은 당일 일정 금액의 이용 영수증이 필요합니다. 호텔별 최소금액은 공식 안내장에 기재되지 않았습니다."
+      ],
+      "source": "https://m.hanacard.co.kr/leaflet/VS/VS002_20260317.pdf",
+      "checkedAt": "2026-11-20",
+      "hotelIds": [
+        "walkerhill",
+        "grand-hyatt",
+        "swiss",
+        "novotel-gangnam",
+        "plaza",
+        "dragon-city",
+        "novotel-ddm",
+        "banyan",
+        "vista",
+        "shilla",
+        "oakwood",
+        "mercure-gangnam",
+        "jw-ddm",
+        "pullman",
+        "mayfield",
+        "jw-seoul",
+        "park-hyatt",
+        "meridien",
+        "moxy"
+      ],
+      "cards": [
+        {
+          "key": "jade-classic",
+          "name": "하나카드 JADE Classic",
+          "catalogId": "hana-17503"
+        },
+        {
+          "key": "jade-prime",
+          "name": "하나카드 JADE Prime",
+          "catalogId": "hana-17766"
+        },
+        {
+          "key": "club-premier",
+          "name": "하나카드 CLUB Premier",
+          "catalogId": null
+        },
+        {
+          "key": "club-signature",
+          "name": "하나카드 CLUB Signature",
+          "catalogId": null
+        },
+        {
+          "key": "mg-black",
+          "name": "MG+ BLACK 하나카드",
+          "catalogId": null
+        }
+      ],
+      "validThrough": "2026-12-31"
+    }
+  ],
+  "pending": [
+    {
+      "catalogId": "woori-103187",
+      "name": "ALL 우리카드 Infinite",
+      "issuer": "우리카드",
+      "brand": "Visa",
+      "source": "https://pc.wooricard.com/dcpc/yh1/bnf/bnf02/prgevnt/movePrgEvntDtl.do?evntSrno=30005131",
+      "note": "Visa Infinite 호텔 발레파킹 제공 확인. 서울 제휴 호텔과 상품별 실적·한도를 확인 중입니다."
+    },
+    {
+      "catalogId": null,
+      "name": "메리어트 본보이 더 프레스티지 삼성카드",
+      "issuer": "삼성카드",
+      "brand": "Visa",
+      "source": "https://www.samsungcard.com/home/card/cardinfo/PGHPPCCCardCardinfoDetails001?code=AAP1908",
+      "note": "Visa Infinite 호텔 발레파킹 안내 확인. 제휴 호텔별 이용 조건을 확인 중입니다."
+    }
+  ]
+}
