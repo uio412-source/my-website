@@ -1,4 +1,17 @@
-// 공통: 다크/라이트 모드 전환 (선택은 이 브라우저에만 저장)
+// ---------- 공통: 데이터 불러오기 ----------
+// 평소에는 브라우저 캐시를 쓰고, 새로고침 버튼을 누른 뒤에는 캐시를 건너뛰고 서버의 최신 파일을 받음
+window.MS = window.MS || {};
+MS.bust = 0;
+MS.getJSON = (url) => {
+  const u = MS.bust ? url + (url.includes("?") ? "&" : "?") + "v=" + MS.bust : url;
+  return fetch(u, MS.bust ? { cache: "no-store" } : {}).then((r) => {
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  });
+};
+
+(() => {
+// ---------- 공통: 다크/라이트 모드 전환 (선택은 이 브라우저에만 저장) ----------
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("theme-btn");
   if (!btn) return;
@@ -17,52 +30,67 @@ document.addEventListener("DOMContentLoaded", () => {
   sysDark.addEventListener("change", () => { label(); window.dispatchEvent(new Event("themechange")); });
 });
 
-// 공통: 오른쪽 위 자료기준일·갱신 시각 배지
+// ---------- 공통: 시간 표시 도우미 ----------
+const DAYS = ["일", "월", "화", "수", "목", "금", "토"];
+const p2 = (n) => String(n).padStart(2, "0");
+const kst = (d) => new Date(d.getTime() + 9 * 3600e3); // getUTC*로 한국시간 읽기
+const fmtUpd = (d) => {
+  const k = kst(d);
+  return `${p2(k.getUTCMonth() + 1)}.${p2(k.getUTCDate())} ${p2(k.getUTCHours())}:${p2(k.getUTCMinutes())}`;
+};
+const agoStr = (d) => {
+  const min = Math.max(0, Math.round((Date.now() - d) / 60000));
+  if (min < 60) return `${min}분 전`;
+  if (min < 1440) return `${Math.floor(min / 60)}시간 전`;
+  return `${Math.floor(min / 1440)}일 전`;
+};
+const parseUpd = (s) => {
+  const m = /(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})/.exec(s || "");
+  return m ? new Date(Date.UTC(+m[1], m[2] - 1, +m[3], +m[4], +m[5])) : null;
+};
+// 다음 자동 갱신 (매일 한국시간 06:40, 16:40)
+const nextAuto = () => {
+  const k = kst(new Date());
+  const now = k.getUTCHours() * 60 + k.getUTCMinutes();
+  const slot = [400, 1000].find((t) => t > now);
+  return slot ? `오늘 ${p2(Math.floor(slot / 60))}:${p2(slot % 60)}` : "내일 06:40";
+};
+
+// ---------- 공통: 오른쪽 위 자료기준일·갱신 시각 배지 ----------
 // - 갱신: data/ungjup/index.json의 updated(UTC) → 한국시간
 // - 기준일: 차트 = 지수 데이터 마지막 거래일, 보유종목·자산 = data/holdings.json의 asof
-document.addEventListener("DOMContentLoaded", async () => {
+let stampTimer = null;
+let lastUpdated = null; // index.json의 updated 문자열 (새로고침 전후 비교용)
+async function buildStamp() {
   const right = document.querySelector(".head-right");
   if (!right) return;
-  const DAYS = ["일", "월", "화", "수", "목", "금", "토"];
-  const p2 = (n) => String(n).padStart(2, "0");
-  const get = (u) => fetch(u, { cache: "no-cache" }).then((r) => r.json()).catch(() => null);
+  const get = (u) => MS.getJSON(u).catch(() => null);
   const isPortfolio = /holdings|wealth/.test(location.pathname);
-
   const [idx, hold] = await Promise.all([
     get("data/ungjup/index.json"),
     isPortfolio ? get("data/holdings.json") : null,
   ]);
+  if (!idx && !hold) throw new Error("데이터 없음");
+  lastUpdated = idx && idx.updated;
 
-  // 기준일 (YYYY-MM-DD)
   let asof = isPortfolio ? hold && hold.asof : null;
   if (!isPortfolio && idx && idx.assets) {
     asof = idx.assets.map((a) => a.last && a.last.date).filter(Boolean).sort().pop();
   }
-  // 갱신 시각 ("YYYY-MM-DD HH:MM UTC")
-  let upd = null;
-  const m = idx && /(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})/.exec(idx.updated || "");
-  if (m) upd = new Date(Date.UTC(+m[1], m[2] - 1, +m[3], +m[4], +m[5]));
+  const upd = parseUpd(idx && idx.updated);
   if (!asof && !upd) return;
-
-  const kst = (d) => new Date(d.getTime() + 9 * 3600e3); // getUTC*로 한국시간 읽기
   const fmtAsof = (s) => {
     const d = new Date(s + "T00:00:00Z");
     return `${p2(d.getUTCMonth() + 1)}.${p2(d.getUTCDate())} (${DAYS[d.getUTCDay()]})`;
   };
-  const fmtUpd = (d) => {
-    const k = kst(d);
-    return `${p2(k.getUTCMonth() + 1)}.${p2(k.getUTCDate())} ${p2(k.getUTCHours())}:${p2(k.getUTCMinutes())}`;
-  };
-  const ago = (d) => {
-    const min = Math.max(0, Math.round((Date.now() - d) / 60000));
-    if (min < 60) return `${min}분 전`;
-    if (min < 1440) return `${Math.floor(min / 60)}시간 전`;
-    return `${Math.floor(min / 1440)}일 전`;
-  };
 
-  const el = document.createElement("div");
-  el.className = "data-stamp";
-  el.setAttribute("role", "status");
+  let el = right.querySelector(".data-stamp");
+  if (!el) {
+    el = document.createElement("div");
+    el.className = "data-stamp";
+    el.setAttribute("role", "status");
+    right.insertBefore(el, right.querySelector(".theme-btn"));
+  }
   el.innerHTML =
     `<i class="ds-ico" aria-hidden="true"></i><span class="ds-k">기준</span><b>${asof ? fmtAsof(asof) : "—"}</b>` +
     `<i class="ds-dot" aria-hidden="true"></i><span class="ds-k">갱신</span><b>${upd ? fmtUpd(upd) : "—"}</b>`;
@@ -75,12 +103,75 @@ document.addEventListener("DOMContentLoaded", async () => {
     const k = kst(upd);
     el.title =
       `자료기준일 ${asof || "—"}` +
-      `\n데이터 갱신 ${k.getUTCFullYear()}-${p2(k.getUTCMonth() + 1)}-${p2(k.getUTCDate())} ${p2(k.getUTCHours())}:${p2(k.getUTCMinutes())} (${ago(upd)})` +
+      `\n데이터 갱신 ${k.getUTCFullYear()}-${p2(k.getUTCMonth() + 1)}-${p2(k.getUTCDate())} ${p2(k.getUTCHours())}:${p2(k.getUTCMinutes())} (${agoStr(upd)})` +
       `\n매일 06:40 · 16:40 자동 갱신`;
     el.setAttribute("aria-label", el.title.replace(/\n/g, ", "));
   };
   paint();
-  setInterval(paint, 60000);
+  clearInterval(stampTimer);
+  stampTimer = setInterval(paint, 60000);
+}
+document.addEventListener("DOMContentLoaded", () => { buildStamp().catch(() => {}); });
 
-  right.insertBefore(el, right.querySelector(".theme-btn"));
+// ---------- 공통: 오른쪽 아래 새로고침 버튼 (데이터 최신화) ----------
+// 누르면 캐시를 건너뛰고 서버의 최신 데이터 파일을 다시 받아 지금 화면을 그대로 다시 그림.
+// 각 페이지는 "datarefresh" 이벤트를 받아 detail.tasks에 자기 작업(Promise)을 넣음.
+const RUN_URL = "https://github.com/uio412-source/my-website/actions/workflows/deploy.yml";
+document.addEventListener("DOMContentLoaded", () => {
+  if (!document.querySelector(".site-header")) return;
+  const fab = document.createElement("button");
+  fab.type = "button";
+  fab.className = "fab-refresh";
+  fab.setAttribute("aria-label", "데이터 최신화");
+  fab.title = "데이터 최신화";
+  fab.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>';
+  const toast = document.createElement("div");
+  toast.className = "ms-toast";
+  toast.setAttribute("role", "status");
+  toast.setAttribute("aria-live", "polite");
+  document.body.append(fab, toast);
+
+  let hideT;
+  const show = (html, kind) => {
+    toast.innerHTML = html;
+    toast.dataset.kind = kind;
+    toast.classList.add("on");
+    clearTimeout(hideT);
+    hideT = setTimeout(() => toast.classList.remove("on"), 6000);
+  };
+  toast.addEventListener("mouseenter", () => clearTimeout(hideT));
+  toast.addEventListener("mouseleave", () => { hideT = setTimeout(() => toast.classList.remove("on"), 2500); });
+
+  let busy = false;
+  fab.addEventListener("click", async () => {
+    if (busy) return;
+    busy = true;
+    fab.classList.add("spin");
+    fab.setAttribute("aria-busy", "true");
+    const before = lastUpdated;
+    const started = Date.now();
+
+    MS.bust = Date.now();
+    const tasks = [buildStamp()];
+    window.dispatchEvent(new CustomEvent("datarefresh", { detail: { tasks } }));
+    const res = await Promise.allSettled(tasks);
+    // 너무 빨리 끝나도 돌아가는 모습이 잠깐은 보이게
+    await new Promise((r) => setTimeout(r, Math.max(0, 700 - (Date.now() - started))));
+
+    fab.classList.remove("spin");
+    fab.removeAttribute("aria-busy");
+    busy = false;
+
+    const upd = parseUpd(lastUpdated);
+    const when = upd ? `${fmtUpd(upd)} (${agoStr(upd)})` : "—";
+    const runLink = `<a href="${RUN_URL}" target="_blank" rel="noopener">서버에서 지금 다시 계산 ↗</a>`;
+    if (res.some((r) => r.status === "rejected")) {
+      show(`<b>데이터를 불러오지 못했어요</b><span>잠시 후 다시 눌러 주세요.</span>`, "err");
+    } else if (before && lastUpdated && lastUpdated !== before) {
+      show(`<b>새 데이터로 바꿨어요</b><span>${when} 갱신</span>`, "new");
+    } else {
+      show(`<b>이미 최신 데이터예요</b><span>${when} 갱신 · 다음 자동 갱신 ${nextAuto()}</span>${runLink}`, "same");
+    }
+  });
 });
+})();
