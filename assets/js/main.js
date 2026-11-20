@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     '<div class="site-switch-menu" hidden>' +
     `<a href="${siteRoot}ungjup.html"${isHotels ? "" : ' aria-current="true"'}><b>Mr. <span>Stocks</span></b><small>줍줍 차트 · 관심종목 · 배당</small></a>` +
     `<a href="${siteRoot}paymorevent/"><b>Mr. <span>Cards</span></b><small>카드상품 · 발급이벤트 · 카드사 이벤트</small></a>` +
-    `<a href="${siteRoot}hotels/"${isHotels ? ' aria-current="true"' : ""}><b>Mr. <span>Hotels</span></b><small>서울 호텔 · 멤버십 혜택</small></a>` +
+    `<a href="${siteRoot}hotels/"${isHotels ? ' aria-current="true"' : ""}><b>Mr. <span>Hotels</span></b><small>티어 · 호텔 · 이벤트</small></a>` +
     "</div>";
   box.prepend(logo);
   const btn = box.querySelector(".site-switch-btn");
