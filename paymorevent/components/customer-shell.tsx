@@ -1,0 +1,3 @@
+import {sitePath} from '@/lib/site-path';
+export function SiteHeader(){return <header className="pm-header"><div><a className="pm-brand" href={sitePath()} aria-label="페이모먼트 홈"><span>p.</span>paymorevent</a><span className="pm-header-tagline">일상과 여행의 혜택</span></div></header>;}
+export function SiteFooter(){return <footer className="pm-footer"><a href={sitePath()} className="pm-footer-brand">paymorevent</a><p>카드와 여행, 필요한 혜택을 한곳에서.</p><div><span>최종 이용 조건은 카드사·호텔 안내를 확인하세요.</span><a href={sitePath('downloads/paymorevent-card-database.xlsx')} download className="pm-db-link">카드 DB 엑셀</a></div></footer>;}

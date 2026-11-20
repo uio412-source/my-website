@@ -1,0 +1,13 @@
+{
+  "revision": "user-2026-10-10",
+  "basis": "사용자 지정 평가 가치 · 실제 환전율과 구분",
+  "programs": [
+    {"id":"accor","label":"아코르 ALL","unit":"포인트","value":30},
+    {"id":"hilton","label":"힐튼 Honors","unit":"포인트","value":6},
+    {"id":"marriott","label":"매리어트 Bonvoy","unit":"포인트","value":8},
+    {"id":"unimile","label":"유니마일","unit":"마일","value":1},
+    {"id":"skypass","label":"대한항공 스카이패스","unit":"마일","value":20},
+    {"id":"other-airline","label":"크리스플라이어·기타 항공 마일리지","unit":"마일","value":12},
+    {"id":"cash","label":"현금성 포인트·캐시백","unit":"포인트/원","value":1}
+  ]
+}
