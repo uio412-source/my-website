@@ -1,0 +1,48 @@
+{
+  "groups": [
+    {"id": "kr", "name": "국내", "items": [
+      {"name": "TIGER 미국나스닥100타겟데일리커버드콜", "symbol": "486290.KS", "news_q": "486290 OR (TIGER 나스닥100 커버드콜)"},
+      {"name": "KODEX 200타겟위클리커버드콜", "symbol": "498400.KS"},
+      {"name": "삼성전자", "symbol": "005930.KS"},
+      {"name": "KODEX 미국나스닥100데일리커버드콜OTM", "symbol": "494300.KS", "news_q": "494300 OR (KODEX 나스닥100 OTM 커버드콜)"},
+      {"name": "LS ELECTRIC", "symbol": "010120.KS"},
+      {"name": "한화오션", "symbol": "042660.KS"},
+      {"name": "카카오뱅크", "symbol": "323410.KS"},
+      {"name": "두산에너빌리티", "symbol": "034020.KS"},
+      {"name": "우리금융지주", "symbol": "316140.KS"}
+    ]},
+    {"id": "us", "name": "해외", "items": [
+      {"name": "QQQ 2배 프로셰어즈 ETF", "symbol": "QLD", "news_q": "QLD OR (프로셰어즈 나스닥 2배)"},
+      {"name": "코어위브", "symbol": "CRWV"},
+      {"name": "엔비디아", "symbol": "NVDA"},
+      {"name": "SOXX", "symbol": "SOXX"},
+      {"name": "QTUM", "symbol": "QTUM", "news_q": "QTUM OR \"디파이언스 퀀텀\""},
+      {"name": "QCLN", "symbol": "QCLN", "news_q": "QCLN OR \"퍼스트트러스트 클린에너지\""},
+      {"name": "ROBO", "symbol": "ROBO", "news_q": "(ROBO ETF) OR \"로보 글로벌\""},
+      {"name": "URA", "symbol": "URA"},
+      {"name": "NASA", "symbol": "NASA"},
+      {"name": "AIPO", "symbol": "AIPO", "news_q": "AIPO OR (디파이언스 전력 인프라 ETF)"},
+      {"name": "AMD", "symbol": "AMD"},
+      {"name": "네비우스 그룹", "symbol": "NBIS"},
+      {"name": "브로드컴", "symbol": "AVGO"},
+      {"name": "코카콜라", "symbol": "KO"},
+      {"name": "스페이스X", "symbol": "SPCX"},
+      {"name": "애플", "symbol": "AAPL"},
+      {"name": "맥도날드", "symbol": "MCD"},
+      {"name": "애브비", "symbol": "ABBV"},
+      {"name": "에이알엠 홀딩스(ADR)", "symbol": "ARM"},
+      {"name": "비자", "symbol": "V"},
+      {"name": "아마존닷컴", "symbol": "AMZN"},
+      {"name": "넥스트에라 에너지", "symbol": "NEE"},
+      {"name": "알파벳 A", "symbol": "GOOGL"},
+      {"name": "유나이티드헬스 그룹", "symbol": "UNH"},
+      {"name": "제이피모간 체이스", "symbol": "JPM"},
+      {"name": "캐터필러", "symbol": "CAT"},
+      {"name": "블랙스톤", "symbol": "BX"},
+      {"name": "S&P 글로벌", "symbol": "SPGI"},
+      {"name": "마이크로소프트", "symbol": "MSFT"},
+      {"name": "블룸 에너지", "symbol": "BE"},
+      {"name": "버크셔 해서웨이 Class B", "symbol": "BRK-B", "news_q": "\"버크셔 해서웨이\" OR \"버크셔해서웨이\""}
+    ]}
+  ]
+}

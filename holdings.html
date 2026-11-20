@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#11151c" media="(prefers-color-scheme: dark)">
-  <title>보유종목 | Mr. Stocks</title>
-  <meta name="description" content="보유종목과 종목별 웅줍LV.">
+  <title>관심종목 | Mr. Stocks</title>
+  <meta name="description" content="관심종목 시세, 전일 대비 등락률, 웅줍LV와 종목별 뉴스.">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/portfolio.css">
   <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
@@ -19,8 +19,7 @@
       <nav class="nav" aria-label="메인 메뉴">
         <ul>
           <li><a href="ungjup.html">차트</a></li>
-          <li><a href="holdings.html" aria-current="page">보유종목</a></li>
-          <li><a href="wealth.html">자산</a></li>
+          <li><a href="holdings.html" aria-current="page">관심종목</a></li>
         </ul>
       </nav>
         <button class="theme-btn" id="theme-btn" type="button" aria-label="다크 모드 전환" title="다크/라이트 모드">
@@ -34,26 +33,21 @@
   <main class="page">
     <div class="container">
       <div class="page-head">
-        <h1>보유종목</h1>
+        <h1>관심종목</h1>
         <button class="add-btn" id="add-btn" type="button">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>종목 추가
         </button>
       </div>
 
-      <div class="news" id="news" hidden>
-        <span class="news-tag">뉴스</span>
-        <div class="news-viewport"><div class="news-track" id="news-track"></div></div>
-      </div>
-
       <div class="h-tools">
         <div class="uj-seg" id="h-sort" role="group" aria-label="정렬">
-          <button data-sort="default" class="on">기본</button>
-          <button data-sort="value">금액</button>
-          <button data-sort="pnl">수익률</button>
-          <button data-sort="lv">LV</button>
+          <button type="button" data-sort="default" aria-pressed="true">기본</button>
+          <button type="button" data-sort="change" aria-pressed="false">등락률</button>
+          <button type="button" data-sort="lv" aria-pressed="false">웅줍LV</button>
         </div>
       </div>
-      <div id="h-list"></div>
+      <p id="watch-status" class="sr-only" role="status"></p>
+      <div id="h-list"><p class="sheet-hint" role="status">관심종목을 불러오는 중…</p></div>
     </div>
   </main>
 
@@ -64,36 +58,18 @@
     </div>
 
     <div class="sheet-step" id="step-search">
-      <input class="sheet-input" id="q" type="search" placeholder="종목명 또는 티커 (예: 삼성전자, NVDA, 애플)" autocomplete="off" enterkeyhint="search">
+      <input class="sheet-input" id="q" type="search" aria-label="종목명 또는 티커" placeholder="종목명 또는 티커 (예: 삼성전자, NVDA, 애플)" autocomplete="off" enterkeyhint="search">
       <ul class="sym-list" id="sym-list"></ul>
       <p class="sheet-hint" id="sym-hint">미국·한국 상장 종목과 ETF를 찾을 수 있어요.</p>
     </div>
 
-    <form class="sheet-step" id="step-form" hidden>
-      <button class="picked" type="button" id="picked"></button>
-      <label class="fld"><span>보유 수량 (주)</span><input id="f-qty" type="number" step="any" min="0" inputmode="decimal" required></label>
-      <label class="fld"><span>평가금액 (원)</span><input id="f-value" type="number" step="1" min="0" inputmode="numeric" required></label>
-      <label class="fld"><span>평가손익 (원, 손실은 -)</span><input id="f-pnl" type="number" step="1" inputmode="numeric" value="0"></label>
-      <label class="fld"><span>유형</span>
-        <select id="f-type">
-          <option>개별 종목</option><option>테마·섹터 ETF</option><option>레버리지 ETF</option><option>커버드콜 ETF</option><option>기타 투자</option>
-        </select>
-      </label>
-      <div class="sheet-btns">
-        <button type="button" class="btn-ghost danger" id="f-del" hidden>삭제</button>
-        <button type="submit" class="btn-solid" id="f-save">저장</button>
-      </div>
-      <p class="sheet-hint">이 브라우저에만 저장돼요. 웅줍LV는 저장소의 보유종목에 반영해야 계산됩니다.
-        <button type="button" class="link-btn" id="f-export">반영용 JSON 복사</button></p>
-    </form>
   </dialog>
 
   <nav class="tabbar" aria-label="메인 메뉴">
     <a href="ungjup.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg><span>차트</span></a>
-    <a href="holdings.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg><span>보유종목</span></a>
-    <a href="wealth.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9v9z"/><path d="M12 3a9 9 0 0 1 9 9h-9z"/></svg><span>자산</span></a>
+    <a href="holdings.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg><span>관심종목</span></a>
   </nav>
-  <script src="assets/js/portfolio.js"></script>
+  <script src="assets/js/watchlist.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
