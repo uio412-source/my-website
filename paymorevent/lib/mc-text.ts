@@ -205,6 +205,8 @@ export function benefitRow(b: CleanBenefit): BenefitRow {
     .replace(/\s*(?:일|월|연)\s*\d+\s*회.*$/, '').replace(/\s*※.*$/, '').replace(/[,·]\s*$/, '').trim();
   // 할인율 칸과 겹치는 끝부분("… 10% 할인")은 빼고 어디서 쓰는지만
   if (b.rate) where = where.replace(new RegExp(String.raw`\s*` + b.rate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + String.raw`\s*(?:결제일\s*)?(?:할인|적립|캐시백)?(?:\(청구할인\))?$`), '').trim();
+  // 조건 칸과 겹치는 문장("전월 이용실적 20만원 이상 시 제공")·표 머리글 같은 조각("공항· 라운지", "놀이공원명· 제공 서비스")은 버림
+  if (/^(?:전월|직전|실적|이용\s*실적)/.test(where) || /(?:명|서비스|구분|내용|대상|기준)$/.test(where) || (!/\d/.test(where) && where.split('·').length >= 2 && where.split('·').every(w => w.trim().length <= 7) && where.split('·').some(w => /(?:종류|대상|가맹점|적립률|할인율|명|서비스|구분|라운지|한도)$/.test(w.trim())))) where = '';
   if (where === name || name.includes(where) || where.length < 4) where = '';
-  return {group: g ? g[1] : null, name, where: short(where, 70), value: valueLabel(b, text), conds: [...new Set(conds)].slice(0, 4), tiers: cap.tiers, lines: b.lines};
+  return {group: g ? g[1] : null, name, where: short(where, 44), value: valueLabel(b, text), conds: [...new Set(conds)].slice(0, 4), tiers: cap.tiers, lines: b.lines};
 }
