@@ -157,9 +157,10 @@
       ],
     },
     marriott: {
-      condition: '조식 선택은 해당 브랜드의 웰컴 기프트 기준입니다. 라운지는 참여 호텔에서 동일 객실의 회원과 동반 1인 기준입니다. 객실 업그레이드는 가용 시 적용되며 레이트 체크아웃은 약관의 브랜드·호텔 예외를 따릅니다.',
+      condition: '조식 선택은 해당 브랜드의 웰컴 기프트 기준입니다(리츠칼튼·에디션·불가리는 조식 선택 없음으로 표시). 라운지는 참여 호텔에서 동일 객실의 회원과 동반 1인 기준이며, 해외 호텔은 공식 정보에서 확인된 곳만 라운지로 표시했습니다. 객실 업그레이드는 가용 시 적용되며 레이트 체크아웃은 약관의 브랜드·호텔 예외를 따릅니다.',
       sources: [
         ['Marriott 한국 공식 호텔 목록', 'https://www.marriott.com/en-us/hotel-sitemap/south-korea-hotel-sitemap'],
+        ['Marriott 도쿄·오사카·방콕·다낭·싱가포르·괌 호텔', 'https://www.marriott.com/en-us/destinations/japan/tokyo.mi'],
         ['브랜드별 웰컴 기프트 및 라운지 보장', 'https://www.marriott.com/loyalty/member-benefits/guarantee.mi'],
         ['국내 라운지 운영 호텔', 'https://www.marriott.com/ko/offers/packages/lounge.mi'],
       ],
@@ -296,7 +297,10 @@
       $('sources').innerHTML = [...li.sources, ['공식 등급 혜택·약관', info.terms],
         ['호텔업 등급결정 현황', 'https://www.hotelrating.or.kr/hotel']]
         .map(([t, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join('');
-      $('checked').textContent = '목록 대조일 ' + data.updated.replaceAll('-', '.') + ' · 성급은 호텔·공개 등급 자료 기준 · 사진은 각 호텔 공식 사이트 이미지입니다.';
+      const abroad = data.countries[country.selectedIndex].name !== '한국';
+      $('checked').textContent = '목록 대조일 ' + data.updated.replaceAll('-', '.') +
+        (abroad ? ' · 해외 성급은 브랜드 등급 기준 추정 · 해외 라운지는 호텔 공식 정보 기준이며 바뀔 수 있습니다' : ' · 성급은 호텔·공개 등급 자료 기준') +
+        ' · 사진은 각 호텔 공식 사이트 이미지입니다.';
       render();
     }
 
@@ -309,12 +313,14 @@
       const n = (k) => rows.filter((r) => r.f[k]).length;
       $('sub').textContent = `${ct.name} · ${info.name} ${rows.length}곳` + (info.noTier ? ' · 혜택 포함 요금 기준' : ` · ${info.tiers[t].n} 기준`);
       if (!rows.length) {
-        $('list').innerHTML = '<div class="wl-rows"><p class="wl-empty">이 도시에 등록된 호텔이 없습니다.</p></div>';
+        const has = list.filter((id) => (ct.programs[id] || []).length).map((id) => P[id].name);
+        $('list').innerHTML = `<div class="wl-rows"><p class="wl-empty">${esc(ct.name)}에는 아직 정리한 ${esc(info.name)} 호텔이 없습니다.${has.length ? ` (${esc(has.join(' · '))} 목록은 있어요)` : ''}</p></div>`;
         return;
       }
       const sum = `<p class="hx-sum">${DOT.map(([k, l]) => `<span><i class="hx-pink" aria-hidden="true"></i>${l} <b>${n(k)}</b>곳</span>`).join('')}</p>`;
       const head = `<div class="hx-h hx-head" aria-hidden="true"><span></span><span>호텔명</span><span>성급</span><span>위치</span>${DOT.map(([, l]) => `<span>${l}</span>`).join('')}</div>`;
-      const cityLabel = ct.name.endsWith('시') ? ct.name : ct.name + '시';
+      const korea = data.countries[country.selectedIndex].name === '한국';
+      const cityLabel = !korea ? ct.name : ct.name.endsWith('시') ? ct.name : ct.name + '시';
       $('list').innerHTML = sum + `<div class="wl-rows hx-table">${head}${rows.map(({ h, f }) => {
         const img = imageOf(current, h);
         const star = h.stars ? h.stars + '성' : '—';
@@ -333,8 +339,14 @@
     const pick = (id) => { current = id; setHash(id); selectProgram(); };
     opts(country, data.countries.map((c, i) => [String(i), c.name]), '0');
     fillCities();
-    country.addEventListener('change', () => { fillCities(); selectProgram(); });
-    citySel.addEventListener('change', selectProgram);
+    // 도시를 바꿨는데 지금 프로그램 호텔이 없으면 목록이 있는 프로그램으로 옮김
+    const fitProgram = () => {
+      if ((city().programs[current] || []).length) return;
+      const next = list.find((id) => (city().programs[id] || []).length);
+      if (next) { current = next; setHash(next); }
+    };
+    country.addEventListener('change', () => { fillCities(); fitProgram(); selectProgram(); });
+    citySel.addEventListener('change', () => { fitProgram(); selectProgram(); });
     tierSel.addEventListener('change', () => { store.set(STORE_T + current, tierSel.value); render(); });
     window.addEventListener('hashchange', () => { current = pickProgram(list); selectProgram(); });
     selectProgram();
