@@ -1,4 +1,6 @@
-# Paymorevent 페이모먼트
+# Mr. Cards
+
+(폴더 이름과 주소는 예전 이름인 `paymorevent`를 그대로 씁니다.)
 
 카드 혜택·연회비, 발급 캐시백, 카드사 이벤트와 호텔 멤버십을 조회하는 GitHub Pages 사이트입니다.
 

@@ -1,0 +1,85 @@
+/* Mr. Cards — Mr. Stocks와 같은 톤앤매너 (assets/css/style.css의 헤더·탭바·로고·제목 규칙과 같은 값)
+   마지막에 불러와서 기존 스타일 위에 덮어씁니다. */
+:root {
+  --mc-bg: #ffffff;
+  --mc-bg-alt: #f5f7fa;
+  --mc-text: #1c2330;
+  --mc-muted: #5b6575;
+  --mc-primary: #2456e8;
+  --mc-primary-dark: #1a3fb0;
+  --mc-border: #e3e7ee;
+  --mc-font: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+  /* shadcn 토큰도 같은 값으로 */
+  --background: var(--mc-bg);
+  --foreground: var(--mc-text);
+  --card-foreground: var(--mc-text);
+  --popover-foreground: var(--mc-text);
+  --primary: var(--mc-primary);
+  --ring: var(--mc-primary);
+  --muted-foreground: var(--mc-muted);
+  --border: var(--mc-border);
+  --input: var(--mc-border);
+  --radius: .75rem;
+  --font-sans: var(--mc-font);
+}
+body { font-family: var(--mc-font); background: var(--mc-bg); color: var(--mc-text); }
+.pm-site {
+  --pm-blue: var(--mc-primary);
+  --pm-text: var(--mc-text);
+  --pm-muted: var(--mc-muted);
+  --pm-line: var(--mc-border);
+  font-family: var(--mc-font);
+  background: var(--mc-bg);
+}
+
+/* ----- 헤더: 한 줄 · 로고 왼쪽 · 메뉴 오른쪽 ----- */
+.mc-container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+.mc-header {
+  position: sticky; top: 0; z-index: 30;
+  background: color-mix(in srgb, var(--mc-bg) 90%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--mc-border);
+}
+.mc-header .mc-container { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.mc-logo { font-weight: 800; font-size: 1.2rem; color: var(--mc-text); text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
+.mc-logo span, .pm-footer-brand span { color: var(--mc-primary); }
+.mc-nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
+.mc-nav a { color: var(--mc-text); text-decoration: none; font-weight: 500; font-size: 1rem; white-space: nowrap; }
+.mc-nav a:hover, .mc-nav a[aria-current="page"] { color: var(--mc-primary); }
+.mc-tabbar { display: none; }
+
+/* ----- 본문 폭과 제목: Mr. Stocks 페이지 머리와 같은 크기 ----- */
+.pm-main { max-width: 1080px; padding: 24px 16px 64px; }
+.pm-intro { margin: 0 0 16px; }
+.pm-intro h1 { font-size: 1.5rem; line-height: 1.3; letter-spacing: -.02em; margin: 0; }
+.pm-intro p { font-size: .85rem; color: var(--mc-muted); margin-top: 4px; }
+
+/* ----- 바닥글 ----- */
+.pm-footer { max-width: 1048px; padding: 24px 0 40px; color: var(--mc-muted); }
+.pm-footer-brand { color: var(--mc-text); font-size: 1.1rem; letter-spacing: -.01em; }
+.mc-family { color: var(--mc-primary); font-weight: 600; text-decoration: none; }
+.mc-family:hover { text-decoration: underline; }
+
+/* ----- 휴대폰: 위 메뉴 대신 하단 탭바 (Mr. Stocks와 같은 높이·글자·색) ----- */
+@media (max-width: 720px) {
+  .mc-header .mc-container { height: 56px; }
+  .mc-nav { display: none; }
+  .pm-site { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+  .mc-tabbar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: color-mix(in srgb, var(--mc-bg) 92%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--mc-border);
+  }
+  .mc-tabbar a {
+    flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 0 10px;
+    color: var(--mc-muted); text-decoration: none; font-size: .72rem; font-weight: 600; white-space: nowrap;
+  }
+  .mc-tabbar a svg { width: 22px; height: 22px; }
+  .mc-tabbar a[aria-current="page"] { color: var(--mc-primary); }
+  .pm-main { padding: 20px 16px 40px; }
+  .pm-chips { margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; } /* 본문 여백 16px에 맞춤 */
+  .pm-intro h1 { font-size: 1.35rem; }
+  .pm-footer { padding: 20px 16px 28px; }
+}
