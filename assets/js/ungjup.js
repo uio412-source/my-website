@@ -5,18 +5,22 @@
   const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
   // 새로고침 버튼(main.js)을 누른 뒤에는 캐시를 건너뛰고 받음
-  const getJSON = (u) => (window.MS && MS.getJSON ? MS.getJSON(u) : fetch(u).then((r) => r.json()));
+  const getData = (file) => window.MS.getJSON(DATA + file + "?schema=2");
   const state = { assets: [], cache: {}, cur: null, range: 3, log: false, view: null };
 
   const ZONE_LABEL = ["평상시", "관심 (옅은 음영)", "웅줍 구간 (진한 음영)"];
   const ZONE_SHORT = ["평상시", "관심", "웅줍"];
-  const fmtNum = (v, unit) => {
+  const fmtNum = (v, unit, d = Math.abs(v) >= 1000 ? 0 : 2) => {
     if (v == null) return "-";
-    const d = Math.abs(v) >= 1000 ? 0 : 2;
     const s = v.toLocaleString("ko-KR", { minimumFractionDigits: d, maximumFractionDigits: d });
     return unit === "₩" ? s + "원" : (unit || "") + s;
   };
   const pct = (v, d = 1) => (v == null ? "-" : (v > 0 ? "+" : "") + (v * 100).toFixed(d) + "%");
+  const fmtPrice = (v, unit) => fmtNum(v, unit, unit === "$" ? 2 : 0);
+  const changeLabel = (change) => {
+    const trend = change > 0 ? " up" : change < 0 ? " down" : "";
+    return `<span class="uj-change${trend}">${pct(change, 2)}</span>`;
+  };
   const LV_MAX = 1000;
   const lvColor = (lv) => (lv >= 900 ? css("--lv-high") : lv >= 400 ? css("--lv-mid") : css("--lv-low"));
 
@@ -33,7 +37,8 @@
       b.innerHTML = `
         <div class="nm">${a.name}<span class="uj-chip z${L.zone}">${ZONE_SHORT[L.zone]}</span></div>
         <div class="lv"><small>LV</small>${L.lv ?? "-"}</div>
-        <div class="bar"><i style="width:${(L.lv ?? 0) / LV_MAX * 100}%;background:${lvColor(L.lv)}"></i></div>`;
+        <div class="bar"><i style="width:${(L.lv ?? 0) / LV_MAX * 100}%;background:${lvColor(L.lv)}"></i></div>
+        <div class="uj-quote" title="${a.desc} · 전일 대비"><span>${fmtPrice(L.close, a.unit)}</span>${changeLabel(L.change)}</div>`;
       b.addEventListener("click", () => select(a.id, true));
       box.appendChild(b);
     });
@@ -77,7 +82,7 @@
     });
     try { history.replaceState(null, "", "#" + id); } catch (e) {}
     if (!state.cache[id]) {
-      state.cache[id] = await getJSON(DATA + id + ".json");
+      state.cache[id] = await getData(id + ".json");
     }
     if (state.cur !== id) return;
     renderSummary();
@@ -91,7 +96,7 @@
     const L = meta.last, u = meta.unit;
     const items = [
       ["웅줍LV", `<span style="color:${lvColor(L.lv)}">${L.lv ?? "-"}</span>`, ZONE_SHORT[L.zone]],
-      ["종가", fmtNum(L.close, u), L.date.slice(5).replace("-", ".")],
+      ["현재가", fmtPrice(L.close, u), `전일 대비 ${changeLabel(L.change)} · ${L.date.slice(5).replace("-", ".")}`],
       ["RSI", L.rsi?.toFixed(1) ?? "-", ""],
       ["200일선", pct(L.gap200), ""],
     ];
@@ -452,24 +457,24 @@
     step(e.key === "ArrowRight" ? 1 : -1);
   });
 
-  // ---------- 시작 ----------
-  getJSON(DATA + "index.json")
-    .then((idx) => {
-      state.assets = idx.assets.map((m) => ({ ...m, last: m.last }));
-      renderCards();
-      const want = location.hash.slice(1);
-      select(state.assets.some((a) => a.id === want) ? want : state.assets[0].id, true);
-    })
-    .catch(() => {
-      $("uj-panel").innerHTML = '<p class="uj-err">데이터를 불러오지 못했습니다.</p>';
-    });
+  async function loadAssets(scrollCard) {
+    const idx = await getData("index.json");
+    // 이전 배포 데이터가 캐시에 남아 있더라도 교체된 종목은 표시하지 않는다.
+    const assets = idx.assets.filter((asset) => asset.id !== "ndx" && asset.id !== "qld");
+    if (!assets.length) throw new Error("차트 데이터 없음");
+    const requested = state.cur || location.hash.slice(1);
+    const preferred = requested === "ndx" ? "qqq" : requested;
+    const id = assets.find((asset) => asset.id === preferred)?.id ?? assets[0].id;
 
-  // 오른쪽 아래 새로고침 버튼: 지수 목록과 지금 보는 지수 데이터를 최신 파일로 다시 그림
-  window.addEventListener("datarefresh", (e) => e.detail.tasks.push((async () => {
-    const idx = await getJSON(DATA + "index.json");
-    state.assets = idx.assets;
+    state.assets = assets;
     state.cache = {};
     renderCards();
-    await select(state.cur && state.assets.some((a) => a.id === state.cur) ? state.cur : state.assets[0].id, false);
-  })()));
+    await select(id, scrollCard);
+    $("uj-error").hidden = true;
+  }
+
+  loadAssets(true).catch(() => { $("uj-error").hidden = false; });
+
+  // 오른쪽 아래 새로고침 버튼: 지수 목록과 지금 보는 지수 데이터를 최신 파일로 다시 그림
+  window.addEventListener("datarefresh", (e) => e.detail.tasks.push(loadAssets(false)));
 })();

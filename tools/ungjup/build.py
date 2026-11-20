@@ -32,9 +32,8 @@ RSI_N, RSI_T = 14, 33
 # min_dd: 하락장으로 볼 최소 하락폭, 바닥 대비 2배(min_dd*2) 반등하면 하락장 종료
 # year: 52주에 해당하는 봉 수 (비트코인은 주말에도 거래)
 ASSETS = [
-    {"id": "ndx",   "symbol": "^NDX",      "name": "나스닥100",  "desc": "미국 기술주 대표 지수",       "min_dd": 0.10, "year": 252, "unit": ""},
+    {"id": "qqq",   "symbol": "QQQ",       "name": "QQQ",       "desc": "나스닥100 추종 ETF",          "min_dd": 0.10, "year": 252, "unit": "$"},
     {"id": "spy",   "symbol": "SPY",       "name": "SPY",       "desc": "S&P500 추종 ETF",            "min_dd": 0.10, "year": 252, "unit": "$"},
-    {"id": "qld",   "symbol": "QLD",       "name": "QLD",       "desc": "나스닥100 2배 레버리지 ETF",  "min_dd": 0.20, "year": 252, "unit": "$"},
     {"id": "gld",   "symbol": "GLD",       "name": "GLD",       "desc": "금 현물 ETF",                "min_dd": 0.10, "year": 252, "unit": "$"},
     {"id": "ks200", "symbol": "069500.KS", "name": "코스피200",  "desc": "KODEX 200 ETF 기준",         "min_dd": 0.10, "year": 252, "unit": "₩"},
     {"id": "btc",   "symbol": "BTC-USD",   "name": "비트코인",   "desc": "BTC/USD",                    "min_dd": 0.25, "year": 365, "unit": "$"},
@@ -205,9 +204,10 @@ def index_json(asset, df, eps):
         "z": [int(v) for v in out["zone"]],
     }
     lt = df.iloc[-1]
+    change = r(lt.close / df["close"].iloc[-2] - 1, 6) if len(df) >= 2 else None
     meta = {k: asset[k] for k in ("id", "symbol", "name", "desc", "unit")}
     meta.update({
-        "last": {"date": df.index[-1].strftime("%Y-%m-%d"), "close": r(lt.close, 2), "sma20": r(lt.sma20, 2),
+        "last": {"date": df.index[-1].strftime("%Y-%m-%d"), "close": r(lt.close, 2), "change": change, "sma20": r(lt.sma20, 2),
                  "sma200": r(lt.sma200, 2), "rsi": r(lt.rsi, 1), "ujline": r(lt.ujline, 2),
                  "lv": None if math.isnan(lt.lv) else int(round(lt.lv)), "zone": int(lt.zone),
                  "dd52": r(lt.dd52, 4), "gap200": r(lt.gap200, 4)},
