@@ -232,6 +232,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--fit", action="store_true", help="기준표·변동성을 다시 만듦")
     ap.add_argument("--symbols", action="store_true", help="종목 검색 목록을 7일이 안 됐어도 새로 받음")
+    ap.add_argument("--dividends", action="store_true", help="배당 데이터를 20시간이 안 됐어도 새로 받음")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
 
@@ -318,6 +319,13 @@ def main():
     sys.path.insert(0, str(Path(__file__).parent))
     import extras
     extras.main(WATCHLIST, OUT, force_symbols=args.symbols)
+
+    # 6) 배당 페이지용 종목별 주당 배당금
+    import dividends
+    try:
+        dividends.main(force=args.dividends)
+    except Exception as e:
+        print(f"[배당 실패] {e}", file=sys.stderr)
 
 
 if __name__ == "__main__":

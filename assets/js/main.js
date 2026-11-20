@@ -65,7 +65,7 @@ async function buildStamp() {
   const right = document.querySelector(".head-right");
   if (!right) return;
   const get = (u) => MS.getJSON(u).catch(() => null);
-  const isWatchlist = location.pathname.endsWith("/holdings.html");
+  const isWatchlist = /\/(holdings|dividend)\.html$/.test(location.pathname);
   const data = await get(isWatchlist ? "data/ungjup/holdings_lv.json" : "data/ungjup/index.json");
   if (!data) throw new Error("데이터 없음");
   lastUpdated = data.updated;

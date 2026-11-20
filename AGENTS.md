@@ -4,7 +4,7 @@
 
 ## 프로젝트 개요
 - **Mr. Stocks**: 줍줍 지표 차트와 관심종목 시세을 보여 주는 **정적 웹사이트**입니다. 빌드 도구나 프레임워크 없이 HTML, CSS, JS만 씁니다.
-- 모바일 우선입니다. 폭 720px 이하에서는 위 메뉴 대신 하단 탭바(차트 · 관심종목)가 나옵니다.
+- 모바일 우선입니다. 폭 720px 이하에서는 위 메뉴 대신 하단 탭바(차트 · 관심종목 · 배당)가 나옵니다.
 - `main` 브랜치에 merge되면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages로 자동 배포합니다.
 
 ## 폴더 구조
@@ -12,16 +12,21 @@
 index.html            ungjup.html로 이동만 함
 ungjup.html           차트 (지수별 줍줍 구간·줍줍LV, 참고자료)
 holdings.html         관심종목 (시세·등락률·줍줍LV·뉴스)
+dividend.html         배당 (보유 종목별 예상 배당금·배당률, 월별 배당)
 wealth.html           이전 주소에서 관심종목으로 이동
 assets/css/style.css  공통 스타일·색상 변수 (색은 :root 변수에서만 변경)
 assets/css/ungjup.css 차트 페이지 스타일
-assets/css/portfolio.css 관심종목 페이지 스타일
+assets/css/portfolio.css 관심종목 페이지 스타일 (배당 페이지도 목록·시트·타일에 함께 씀)
+assets/css/dividend.css 배당 페이지 스타일
 assets/js/main.js     공통 스크립트
 assets/js/ungjup.js   차트 (캔버스, 외부 라이브러리 없음)
 assets/js/watchlist.js 관심종목 페이지
+assets/js/dividend.js  배당 페이지
 tools/ungjup/build.py 데이터 생성기 (Yahoo Finance → data/ungjup/*.json)
 tools/ungjup/extras.py 종목 검색 목록(symbols.json)·종목별 뉴스(news.json) 생성
+tools/ungjup/dividends.py 종목별 최근 12개월 주당 배당금(dividends.json) 생성
 data/watchlist.json   기본 관심종목 목록 (종목명과 티커)
+data/dividend_extra.json (선택) 배당 데이터를 꼭 계산할 추가 티커 목록 ["SCHD", "005930.KS"]
 data/ungjup/          생성된 지수 데이터, 종목별 시세·LV(holdings_lv.json), 줍줍LV 기준표(lv_model.json), symbols.json, news.json
 assets/img/           이미지
 ```
@@ -43,6 +48,12 @@ assets/img/           이미지
 - 종목 검색 목록은 미국의 Nasdaq Trader 공식 목록과 국내 네이버 증권 시가총액 목록으로 구성합니다. 7일마다 새로 받고 `--symbols`로 강제 갱신할 수 있습니다. 미국 종목 한글 이름은 `extras.py`의 `US_KO`에 추가하세요.
 - 화면 구성: 오늘 등락 분포 → 보기 탭(전체·국내·해외·줍줍권)·정렬 → 한 줄 목록. 종목을 누르면 상세 시트(줍줍LV 게이지·RSI·52주 고점/200일선 대비·뉴스·삭제)가 열립니다. 뉴스 피드는 종목당 최대 2건, 최신 12건이며 데스크톱은 오른쪽 열, 모바일은 가로로 넘기는 카드입니다.
 - 화면에서 추가하거나 삭제한 관심종목은 브라우저의 `mrstocks.watchlist.v1`에 저장됩니다. 배포 데이터에 없는 종목은 시세와 뉴스 검색 링크로 연결됩니다.
+
+## 배당
+- 보유 종목(종목·수량·취득가)은 브라우저 `mrstocks.dividend.v1`에만 저장됩니다. 취득가를 비우면 현재가로 계산합니다. 세전/세후 선택은 `mrstocks.dividend.tax`.
+- 주당 배당금은 배포 때 `dividends.py`가 Yahoo 배당 이력으로 계산합니다: 최근 365일 배당락 기준 합계(상장 1년 미만은 평균 × 지급 주기로 연환산). 하루 한 번만 새로 받고 `build.py --dividends`로 강제 갱신.
+- 계산 대상(배당 유니버스): 관심종목 + `data/dividend_extra.json` + 코스피 시총 상위 200·코스닥 40 + 이름에 배당·커버드콜·인컴·리츠 등이 들어간 국내 ETF + `dividends.py`의 `US_DIV`. 목록에 없는 종목은 화면에서 연간 주당 배당금을 직접 입력합니다.
+- 화면: 요약(투자금 | 연 배당금 | 배당률, 월 평균·현재가 기준 배당률) → 월별 예상 배당금(배당락 월 기준) → 보유 종목(연 배당금 순). 미국 종목은 오늘 환율(`fx.USDKRW`)로 원화 환산, 세후는 국내 15.4%·미국 15% 단순 적용.
 
 ## 줍줍 지표
 - 데이터는 배포 워크플로가 하루 두 번(한국시간 06:40, 16:40) `tools/ungjup/build.py`로 갱신합니다.
