@@ -5,12 +5,12 @@ export type DatabaseAudit = {documentsRead:number;pdfRead:number;spendSections:n
 export type FeeWaiver = {label:string;rate:number|null;minimumSpend:number|null;channel:string;sourceUrl:string;note:string;verified:boolean};
 export type RewardRate = {label:string;spendUnit:number;rewardUnits:number;rewardUnit:string;unitValue:number;minimumSpend:number;monthlyCapValue:number|null;sourceUrl:string;note:string;verified:boolean;feeWaiver?:FeeWaiver;fallbackRewardUnits?:number;additionalMonthlyCapValue?:number;additionalMonthlyCapUnits?:number;monthlyCapUnits?:number;specialRewardCapUnits?:number;minimumSpendScope?:string;minimumSpendInclusive?:boolean;maximumSpendExclusive?:number;eligibilityRequirement?:string;sharedCapGroup?:string;yearlyCapUnits?:number;serviceTitle?:string;channel?:string};
 export type NetworkService = {
-  id:string;network:string;tier:string;provider:'international_network'|'issuer_selection';
-  category:'airport_lounge'|'airport_valet'|'hotel_valet'|'dining'|'other';title:string;
+  id:string;network:string;tier:string;provider:'international_network'|'issuer_selection'|'issuer_card';
+  category:'airport_lounge'|'airport_valet'|'hotel_valet'|'airport_transfer'|'dining'|'other';title:string;
   scope:'domestic_airports'|'worldwide_airports'|'incheon_airport'|'domestic_hotels'|'domestic'|'other';
-  coverageText:string;holderIncluded:boolean|null;guestCount:number|null;
+  coverageText:string;benefitMode?:'free'|'discount'|'paid';holderIncluded:boolean|null;guestCount:number|null;
   matinaGold:'included'|'discounted'|'excluded'|'unknown'|'not_applicable';
-  minimumSpend:number|null;dailyLimit:number|null;monthlyLimit:number|null;annualLimit:number|null;
+  minimumSpend:number|null;minimumSpendBasis?:string;usageCountBasis?:string;dailyLimit:number|null;monthlyLimit:number|null;annualLimit:number|null;
   sharedLimitGroup:string|null;conditions:string[];sourceUrl:string;verifiedAt:string;verified:boolean;
 };
 export type Card = {

@@ -3,6 +3,8 @@ import {fileURLToPath} from 'node:url';
 import react from '@vitejs/plugin-react';
 import {defineConfig, type Plugin} from 'vite';
 import {buildCardFiles} from './scripts/card-list.mjs';
+import {bestPicking} from './lib/catalog-model';
+import {applyVerifiedCardRules, readVerifiedCardRules} from './scripts/verified-card-rules.mjs';
 
 const base = '/my-website/paymorevent/';
 
@@ -10,7 +12,12 @@ const base = '/my-website/paymorevent/';
 // from public/catalog-snapshot.json. See scripts/card-list.mjs.
 function cardListFiles(): Plugin {
   const readJSON = (path: string) => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
-  const build = () => buildCardFiles(readJSON('./public/catalog-snapshot.json'), readJSON('./data/card-images.json'));
+  const build = () => {
+    const snapshot = readJSON('./public/catalog-snapshot.json');
+    const cards = applyVerifiedCardRules(snapshot.cards, readVerifiedCardRules(), {summary: true});
+    const files = buildCardFiles({...snapshot, cards}, readJSON('./data/card-images.json'));
+    return {...files, catalog: {...snapshot, cards, stats: {...snapshot.stats, pickingCount: cards.filter(bestPicking).length}}};
+  };
   const initial = build();
   return {
     name: 'mr-cards-card-list',
@@ -27,6 +34,7 @@ function cardListFiles(): Plugin {
     },
     generateBundle() {
       for (const [fileName, source] of Object.entries(initial.files)) this.emitFile({type: 'asset', fileName, source});
+      this.emitFile({type: 'asset', fileName: 'catalog-snapshot.json', source: JSON.stringify(initial.catalog)});
     },
   };
 }

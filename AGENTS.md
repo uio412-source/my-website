@@ -10,7 +10,12 @@
   - **첫 화면 속도**: `pages/main.tsx`는 화면(목록·카드 상세·이벤트 상세)과 큰 데이터(`data/events.json`, `data/home-cards.json`)를 `import()`로 나눠 받습니다. 이 파일들을 다시 맨 위 `import`로 불러오지 마세요(첫 화면 JS가 다시 2.5MB가 됩니다).
   - **카드 목록 데이터**: 원본은 `public/catalog-snapshot.json`이고, 앱은 빌드 때 여기서 만든 `card-list.json`(목록·상세 공통)·`card-search.json`(목록 검색)만 받습니다. 요약 카드에서 새 필드를 읽으려면 `scripts/card-list.mjs`의 `LIST_FIELDS`에 추가하세요.
   - **사이트 전환 메뉴**(로고 옆 ▾): Mr. Stocks는 `assets/js/main.js`, Mr. Cards는 `components/customer-shell.tsx`에 있습니다. 문구를 바꾸면 두 곳을 같이 고치세요.
-  - **호텔 기능 제거**: 호텔 칩·`#호텔` 해시태그·'호텔제휴' 필터는 없습니다. 호텔·리조트가 직접 주는 혜택 이벤트(호텔 체인·특급호텔 다이닝·객실 패키지 등)는 `lib/hotel-offers.mjs` 기준으로 목록·상세 주소에서 빼고, 아고다·호텔스닷컴 같은 여행 예약 사이트 할인은 남깁니다. 호텔 관련 화면 요소를 다시 추가하지 마세요.
+  - **호텔 기능 제거**: 호텔 칩·`#호텔` 해시태그·'호텔제휴' 필터는 없습니다. 호텔·리조트가 직접 주는 혜택 이벤트(호텔 체인·특급호텔 다이닝·객실 패키지 등)는 `lib/hotel-offers.mjs` 기준으로 목록·상세 주소에서 빼고, 아고다·호텔스닷컴 같은 여행 예약 사이트 할인은 남깁니다. 호텔 정보는 Mr. Hotels(`hotels/`)에 있으니 Mr. Cards에 호텔 화면 요소를 다시 추가하지 마세요.
+- **Mr. Hotels**: `hotels/` 폴더, `/my-website/hotels/`에 배포. 메뉴는 **티어 · 호텔 · 이벤트** 세 가지(`index.html` · `list.html` · `events.html`)이며 헤더·하단 탭바는 Mr. Stocks와 같은 마크업을 각 HTML에 복사해 씁니다. 화면은 `assets/js/hotels.js`(body의 `data-page`로 분기), 스타일은 `portfolio.css`의 `wl-*`(탭·목록·타일)에 `assets/css/hotels.css`를 더합니다.
+  - 등급 기준·혜택·제휴카드는 `hotels.js`의 `P`(등급별 `card`, 프로그램별 `cards`·`cardNote`), 호텔별 조식·라운지·룸업글 여부와 메모는 `flags`, 호텔 목록은 `hotels/directory.json`, 이벤트는 `hotels/events.json`(공식 프로모션을 요약해 화면에서 바로 읽게 함. `endsAt`이 지난 행사는 자동으로 숨김)에서 고칩니다.
+  - 호텔 화면: 국가·도시·나의 등급을 고르면 `호텔명 | 성급 | 위치 | 조식 | 라운지 | 룸업글`을 핑크 점으로 보여 줍니다. 대표 이미지는 호텔의 `image` → `hotels/images.json` → `same`(다른 체인 목록의 같은 호텔) 순서로 찾고, 없거나 깨지면 성급 타일을 보여 줍니다.
+  - `hotels/images.json`은 배포 때 `tools/hotels/images.py`가 `image`가 없는 호텔(Marriott, HOTELLUX 독립 호텔은 `site`)의 공식 페이지 og:image를 찾아 채웁니다. 실패해도 배포는 계속됩니다.
+  - 선택한 프로그램·등급은 브라우저 `mrhotels.program`, `mrhotels.tier.<프로그램>`에 저장해 세 화면이 같이 씁니다.
 - `main` 브랜치에 merge되면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages로 자동 배포합니다.
 
 ## 폴더 구조
