@@ -1,0 +1,9 @@
+[
+ {"issuer":"우리카드","label":"꾹 혜택","url":"https://m.wooricard.com/dcmw/yh1/bnf/bnf08/M1BNF208S00.do","personalized":true},
+ {"issuer":"신한카드","label":"마이샵","url":"https://www.shinhancard.com/mob/MOBFM501N/MOBFM501R31.shc","personalized":true},
+ {"issuer":"현대카드","label":"3층 선물","url":"https://www.hyundaicard.com/docfiles/cms/card/thfl/thFlSys/PCCAR000100_01.html","personalized":true},
+ {"issuer":"KB국민카드","label":"KB Pay 할인팩","url":"https://mkbpay.kbcard.com/webApp/coupon-index/WBVCP01.html","personalized":true},
+ {"issuer":"BC카드","label":"페이북 마이태그","url":"https://web.paybooc.co.kr/web/use-tip/my-tag-guid","personalized":true},
+ {"issuer":"하나카드","label":"하나 Pick","url":"https://www.hanacard.co.kr/OPY31000010M.web?schID=pcd","personalized":true},
+ {"issuer":"삼성카드","label":"LINK","url":"https://www.samsungcard.com/personal/services/link/UHPPBE0401M0.jsp?click=benefitmain_logout_link","personalized":true}
+]

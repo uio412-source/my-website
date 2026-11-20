@@ -38,9 +38,25 @@ jobs:
           python tools/ungjup/build.py
       - name: 배포 버전 표시 (오래된 페이지 자동 새로고침용)
         run: python tools/stamp_version.py "${GITHUB_SHA::7}"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: paymorevent/package-lock.json
+      - name: 페이모먼트 정적 사이트 빌드
+        working-directory: paymorevent
+        run: |
+          npm ci
+          npm run build
+      - name: GitHub Pages 배포 파일 준비
+        run: |
+          pages="$RUNNER_TEMP/pages"
+          mkdir -p "$pages/paymorevent"
+          rsync -a --exclude='/.git/' --exclude='/.github/' --exclude='/paymorevent/' ./ "$pages/"
+          cp -a paymorevent/dist/. "$pages/paymorevent/"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ${{ runner.temp }}/pages
       - id: deployment
         uses: actions/deploy-pages@v4
