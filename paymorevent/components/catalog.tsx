@@ -20,7 +20,7 @@ const matches=(str:string,query:string)=>!query.trim()||query.trim().split(/\s+/
 const won=(n:number)=>n===0?'없음':n>=10000?`${Number((n/10000).toFixed(2))}만원`:`${n.toLocaleString('ko-KR')}원`;
 const sections=[{id:'cards',label:'카드상품 검색'},{id:'cashback',label:'발급이벤트'},{id:'events',label:'카드사 이벤트'}];
 function SelectFilter({label,value,set,options}:{label:string;value:string;set:(v:string)=>void;options:{value:string;label:string}[]}){return <label className="pm-select"><span>{label}</span><select value={value} onChange={e=>set(e.target.value)}>{options.map(o=><option key={o.value} value={o.value}>{o.label}</option>)}</select></label>;}
-export default function Catalog({initialCards,initialEvents}:{initialCards:Card[];initialEvents:Offer[]}){
+export default function Catalog({initialCards,initialEvents,eventsLoading=false}:{initialCards:Card[];initialEvents:Offer[];eventsLoading?:boolean}){
   const [cards,setCards]=useState(initialCards);
   const events=useMemo(()=>dedupeOffers(initialEvents),[initialEvents]);
   const [eligibilityMode,setEligibilityMode]=useState("benefit");const [onlyEvents,setOnlyEvents]=useState(false);const [entryOnly,setEntryOnly]=useState(false);
@@ -103,9 +103,9 @@ export default function Catalog({initialCards,initialEvents}:{initialCards:Card[
       {(['events','cashback'] as const).includes(tab as 'events'|'cashback')&&<>
         <>
           <div className="pm-event-card-filter"><SelectFilter label="내 카드로 찾기" value={selectedEventCard?(eventCardOptions.find(g=>g.variants.some(v=>v.id===selectedEventCard.id))?.card.id??eventCard):'all'} set={setEventCard} options={[{value:'all',label:'모든 카드'},...eventCardOptions.map(g=>({value:g.card.id,label:g.card.issuer+' · '+(g.card.familyName??g.card.name)}))]}/>{eventCard!=='all'&&<p>카드별 응모·발급 경로·브랜드 조건을 확인하세요.</p>}</div>
-          <div className="pm-toolbar">{tab==='cashback'?<SelectFilter label="발급 채널" value={channel} set={setChannel} options={[{value:'all',label:'모든 채널'},...Array.from(new Set(events.filter(o=>o.kind==='cashback'&&visibleOffer(o)).map(o=>o.channel??'공식'))).map(i=>({value:i,label:i}))]}/>:<label className="pm-check"><input type="checkbox" checked={entryOnly} onChange={e=>setEntryOnly(e.target.checked)}/>응모 이벤트</label>}{hasFilters&&<button className="pm-reset" onClick={reset}>초기화</button>}<span className="pm-toolbar-end" aria-live="polite">{filteredEvents.length}개 이벤트</span></div>
-          {tab==='cashback'?<CashbackGroups offers={filteredEvents}/>:<EventBoard offers={filteredEvents}/>}
-          {!filteredEvents.length&&<div className="pm-empty"><h2>조건에 맞는 이벤트가 없어요</h2><button onClick={reset}>전체 이벤트 보기</button></div>}
+          <div className="pm-toolbar">{tab==='cashback'?<SelectFilter label="발급 채널" value={channel} set={setChannel} options={[{value:'all',label:'모든 채널'},...Array.from(new Set(events.filter(o=>o.kind==='cashback'&&visibleOffer(o)).map(o=>o.channel??'공식'))).map(i=>({value:i,label:i}))]}/>:<label className="pm-check"><input type="checkbox" checked={entryOnly} onChange={e=>setEntryOnly(e.target.checked)}/>응모 이벤트</label>}{hasFilters&&<button className="pm-reset" onClick={reset}>초기화</button>}<span className="pm-toolbar-end" aria-live="polite">{eventsLoading?'불러오는 중':`${filteredEvents.length}개 이벤트`}</span></div>
+          {eventsLoading?<div className="pm-empty" role="status"><h2>이벤트를 불러오고 있어요</h2></div>:tab==='cashback'?<CashbackGroups offers={filteredEvents}/>:<EventBoard offers={filteredEvents}/>}
+          {!eventsLoading&&!filteredEvents.length&&<div className="pm-empty"><h2>조건에 맞는 이벤트가 없어요</h2><button onClick={reset}>전체 이벤트 보기</button></div>}
           {tab==='events'&&<PersonalBenefits issuer={issuer}/>}
         </>
       </>}
