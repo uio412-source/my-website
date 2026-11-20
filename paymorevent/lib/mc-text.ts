@@ -123,3 +123,46 @@ export function searchScore(q: string, fields: [string, number][]) {
   if (name.startsWith(norm(q))) score += 50;
   return score;
 }
+
+// ---------- 카드 상세: 혜택 한 줄 요약과 조건 칩 ----------
+const AMOUNT = String.raw`[\d,.]+\s*(?:만\s*)?(?:천\s*)?(?:원|P|포인트|점|마일)`;
+/** 원문에서 "월 한도·횟수·건당 최소금액·전월실적"만 뽑아 칩으로, 앞부분은 한 줄 요약으로 */
+export function benefitFacts(b: CleanBenefit) {
+  const text = [b.cap ?? '', ...b.lines].join(' ');
+  const chips: string[] = [];
+  const cap = new RegExp(String.raw`월\s*(?:통합\s*)?(?:할인|적립)?\s*한도\s*[:：]?\s*(` + AMOUNT + ')').exec(text);
+  if (cap) chips.push('월 ' + cap[1].replace(/\s+/g, '') + ' 한도');
+  else if (b.cap && b.cap.length <= 14) chips.push(b.cap === '한도 없음' ? '한도 없음' : b.cap);
+  const counts = new Set<string>();
+  for (const m of text.matchAll(/(일|월|연)\s*(\d+)\s*회/g)) { counts.add(`${m[1]} ${m[2]}회`); if (counts.size >= 2) break; }
+  chips.push(...counts);
+  const per = /(?:이용\s*)?건당\s*([\d,.]+\s*(?:만\s*)?(?:천\s*)?원)\s*이상/.exec(text);
+  if (per) chips.push(per[1].replace(/\s+/g, '') + ' 이상 결제');
+  if (b.spend && b.spend !== '무실적') chips.push(b.spend);
+  const first = b.lines[0] ?? '';
+  let summary = first.split(' / ')[0];
+  const cut = summary.search(/\s(?:일|월|연)\s*\d+\s*회|\s(?:이용\s*)?건당|\s※|\s\*|\s월\s*(?:통합\s*)?한도/);
+  if (cut > 8) summary = summary.slice(0, cut);
+  summary = summary.replace(/[,·]\s*$/, '').trim();
+  if (summary === b.title || b.title.includes(summary)) summary = '';
+  const flat = summary.replace(/\s+/g, '');
+  return {summary: short(summary, 64), chips: [...new Set(chips)].filter(c => !flat.includes(c.replace(/\s+/g, ''))).slice(0, 4)};
+}
+
+/** 카드 전월실적: 카드 값이 없으면 혜택별 조건 중 가장 낮은 값 (여러 개면 "부터") */
+export function cardMinimumSpend(card: Card): {value: number | null; varies: boolean} {
+  if (card.minimumSpend !== null && card.minimumSpend !== undefined) return {value: card.minimumSpend, varies: false};
+  const vals = [
+    ...card.benefits.filter(b => b.minimumSpendVerified && b.minimumSpend !== null).map(b => b.minimumSpend as number),
+    ...(card.rewardRates ?? []).filter(r => r.verified).map(r => r.minimumSpend),
+    ...(card.spendingPlans ?? []).map(p => p.minimumSpend),
+  ].filter(v => Number.isFinite(v));
+  if (!vals.length) return {value: null, varies: false};
+  const positive = vals.filter(v => v > 0);
+  if (!positive.length || vals.includes(0)) return {value: 0, varies: positive.length > 0};
+  const min = Math.min(...positive);
+  return {value: min, varies: new Set(positive).size > 1 || vals.includes(0)};
+}
+
+/** 피킹률 시나리오 이름을 사람이 읽기 쉽게: "전월 30만원 최적 배분" → "전월 30만원 · 영역별 한도를 다 채울 때" */
+export const pickLabel = (label: string) => label.replace(/\s*(?:구간\s*)?(?:·\s*)?(?:우대회원\s*)?최적\s*배분$/, ' · 영역별 한도를 다 채울 때').replace(/^\s*·\s*/, '');
