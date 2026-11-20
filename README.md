@@ -32,4 +32,9 @@ python tools/ungjup/build.py
 
 ## Mr. Hotels
 
-`hotels/`에서 Accor, IHG, HOTELLUX, Marriott, Hilton의 서울 호텔과 등급별 혜택을 비교합니다. 종목 화면과 카드 화면에서는 로고 옆 사이트 전환 메뉴로 이동할 수 있습니다.
+`hotels/`는 메뉴 **티어 · 호텔 · 이벤트** 세 가지입니다(데스크톱은 위 메뉴, 모바일은 하단 탭바).
+- **티어** (`hotels/index.html`): Accor·IHG·Marriott·Hilton 등급별 달성 기준·보너스 적립·조식/라운지/업그레이드/체크아웃
+- **호텔** (`hotels/list.html`): 서울 호텔별 등급 혜택 (`hotels/directory.json`)
+- **이벤트** (`hotels/events.html`): 호텔 체인 공식 프로모션 (`hotels/events.json`)
+
+종목 화면과 카드 화면에서는 로고 옆 사이트 전환 메뉴로 이동할 수 있습니다.

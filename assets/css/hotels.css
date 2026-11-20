@@ -1,80 +1,126 @@
-.hotel-page { max-width: 960px; padding-top: clamp(20px, 4vw, 38px); padding-bottom: 36px; }
-.hotel-page h1 { margin: 0 0 16px; font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -.035em; }
-.hotel-programs {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 3px;
-  padding: 4px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  background: var(--color-bg-alt);
+/* Mr. Hotels — 티어 · 호텔 · 이벤트. 머리·탭·목록은 portfolio.css(관심종목)의 wl-* 를 같이 씀. 색은 style.css 변수만 사용 */
+
+/* style.css의 section 기본 여백(64px) 제거 */
+.hx section { padding: 0; }
+
+/* ----- 프로그램 탭 ----- */
+.hx-programs { margin-bottom: 14px; }
+
+/* ----- 타일 색 (등급·성급·기타 브랜드) ----- */
+.tile[data-tone="t0"], .tile[data-tone="s0"], .tile[data-tone="o"] { --t: var(--color-muted); }
+.tile[data-tone="t1"] { --t: var(--cat-1); }
+.tile[data-tone="t2"] { --t: var(--cat-4); }
+.tile[data-tone="t3"] { --t: var(--lv-mid); }
+.tile[data-tone="t4"], .tile[data-tone="t5"] { --t: var(--lv-high); }
+.tile[data-tone="s3"] { --t: var(--cat-3); }
+.tile[data-tone="s4"] { --t: var(--cat-1); }
+.tile[data-tone="s5"] { --t: var(--lv-mid); }
+
+/* ----- 혜택 칩 ----- */
+.hx-perks { display: flex; flex-wrap: wrap; gap: 4px 5px; min-width: 0; }
+.hx-perk {
+  display: inline-flex; align-items: baseline; gap: 5px; max-width: 100%;
+  font-size: .74rem; font-weight: 600; line-height: 1.5; color: var(--color-text);
+  padding: 1px 8px; border-radius: 6px; background: var(--color-bg-alt);
 }
-.hotel-programs a {
-  display: grid;
-  align-items: center;
-  min-height: 40px;
-  border-radius: 8px;
-  color: var(--color-muted);
-  font-size: .875rem;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
+.hx-perk b { font-weight: 800; color: var(--color-muted); }
+.hx-perk[data-k="bf"] b { color: var(--cat-2); }
+.hx-perk[data-k="lounge"] b { color: var(--lv-mid); }
+.hx-perk[data-k="up"] b { color: var(--cat-1); }
+.hx-perk[data-k="out"] b { color: var(--cat-3); }
+.hx-perk[data-k="base"] { color: var(--color-muted); }
+
+/* ----- 티어 ----- */
+.hx-glance {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;
+  padding: 12px 14px; border-radius: 16px; background: var(--color-bg-alt); margin-bottom: 16px;
 }
-.hotel-programs a:hover { color: var(--color-primary); }
-.hotel-programs a[aria-current] {
-  background: var(--color-bg);
-  color: var(--color-primary);
-  box-shadow: 0 0 0 1px var(--color-border);
+.hx-glance div { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.hx-glance span { font-size: .72rem; font-weight: 700; color: var(--color-muted); }
+.hx-glance b { font-size: .88rem; font-weight: 800; letter-spacing: -.02em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.hx-tier { grid-template-columns: 40px minmax(0, 1fr) auto; text-decoration: none; row-gap: 8px; }
+.hx-tier .hx-perks { grid-column: 2 / -1; }
+.hx-tier[aria-current="true"] { background: color-mix(in srgb, var(--color-primary) 6%, transparent); }
+.hx-mine {
+  margin-left: 6px; font-style: normal; font-size: .66rem; font-weight: 800; vertical-align: 2px;
+  padding: 1px 6px; border-radius: 999px; color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 12%, transparent);
 }
-.hotel-filters {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, auto)) minmax(148px, 1fr);
-  gap: 8px;
-  margin: 16px 0 13px;
+.hx-bonus {
+  display: flex; flex-direction: column; align-items: flex-end; line-height: 1.2;
+  font-size: .95rem; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--color-up);
 }
-.hotel-filters label { min-width: 0; color: var(--color-muted); font-size: .8125rem; font-weight: 700; }
-.hotel-filters select, .hotel-filters input {
-  display: block;
-  width: 100%;
-  min-width: 0;
-  min-height: 42px;
-  margin-top: 3px;
-  padding: 7px 9px;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  background: var(--color-bg);
-  color: var(--color-text);
-  font: inherit;
-  font-size: 1rem;
-  font-weight: 500;
+.hx-bonus small { font-size: .66rem; font-weight: 600; color: var(--color-muted); }
+.hx-bonus.none { color: var(--color-muted); font-size: .82rem; }
+.hx-foot { margin: 12px 4px 0; font-size: .78rem; line-height: 1.6; color: var(--color-muted); }
+.hx-foot a { font-weight: 700; text-decoration: none; white-space: nowrap; }
+
+/* ----- 호텔 ----- */
+.hx-controls { display: flex; gap: 6px; margin-bottom: 16px; }
+.hx-controls .wl-sort select { max-width: 150px; }
+.hx-search { flex: 1 1 auto; min-width: 0; }
+.hx-search input {
+  width: 100%; font: inherit; font-size: .82rem; font-weight: 500;
+  padding: 6px 12px; border-radius: 999px; border: 1px solid var(--color-border);
+  background: var(--color-bg); color: var(--color-text);
 }
-.hotel-filters select { padding-right: 2px; }
-.hotel-list-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 8px; font-size: .875rem; }
-.hotel-list-heading p { margin: 0; font-weight: 700; }
-.hotel-list-heading a, .hotel-notes a { text-underline-offset: 2px; }
-.hotel-table-wrap { border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
-.hotel-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .875rem; text-align: left; }
-.hotel-table .district-col { width: 11%; }
-.hotel-table .hotel-col { width: 34%; }
-.hotel-table .star-col { width: 9%; }
-.hotel-table th, .hotel-table td { padding: 10px 12px; overflow-wrap: anywhere; }
-.hotel-table th { background: var(--color-bg-alt); color: var(--color-muted); font-weight: 700; }
-.hotel-table td { border-top: 1px solid var(--color-border); vertical-align: top; }
-.hotel-table td:nth-child(1), .hotel-table td:nth-child(3) { color: var(--color-muted); }
-.hotel-table td a { color: var(--color-text); font-weight: 700; text-decoration: none; }
-.hotel-table td a:hover { color: var(--color-primary); text-decoration: underline; }
-.hotel-notes { margin-top: 14px; font-size: .875rem; color: var(--color-muted); }
-.hotel-notes summary { width: fit-content; padding: 6px 0; cursor: pointer; font-weight: 700; }
-.hotel-notes p { margin: 7px 0; }
-.hotel-notes ul { margin: 8px 0; padding-left: 20px; }
-.hotel-notes li + li { margin-top: 4px; }
-#hotel-empty { margin: 0; padding: 22px 12px; text-align: center; color: var(--color-muted); }
-@media (max-width: 600px) {
-  .hotel-page { padding-left: 12px; padding-right: 12px; }
-  .hotel-programs a { font-size: .8125rem; }
-  .hotel-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hotel-filters .hotel-search { grid-column: 1 / -1; }
-  .hotel-table .district-col { width: 14%; }
-  .hotel-table .star-col { width: 11%; }
-  .hotel-table th, .hotel-table td { padding: 9px 5px; }
+.hx-search input:focus, .hx-controls select:focus { outline: 2px solid var(--color-primary); outline-offset: 1px; }
+.hx-hotel, .hx-hub { text-decoration: none; }
+.hx-hotel .wl-id { gap: 5px; }
+.hx-hotel .nm { white-space: normal; line-height: 1.35; }
+.hx-hotel.off .nm, .hx-hotel.off .hx-perk { color: var(--color-muted); }
+.hx-go { width: 16px; height: 16px; color: var(--color-muted); flex-shrink: 0; }
+@media (hover: hover) { .wl-row:hover .hx-go { color: var(--color-primary); } }
+
+.hx-notes { margin-top: 18px; font-size: .8rem; color: var(--color-muted); }
+.hx-notes summary { width: fit-content; padding: 4px 0; cursor: pointer; font-weight: 700; }
+.hx-notes p { margin: 6px 0; }
+.hx-notes ul { margin: 6px 0; padding-left: 18px; }
+.hx-notes a { text-decoration: none; }
+
+/* ----- 이벤트 ----- */
+.hx-sec + .hx-sec { margin-top: 26px; }
+.hx-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.hx-card {
+  display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 16px;
+  border: 1px solid var(--color-border); background: var(--color-bg);
+}
+.hx-card-top { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.hx-card-top .tile { width: 30px; height: 30px; border-radius: 9px; font-size: .62rem; }
+.hx-brand { flex: 1 1 auto; min-width: 0; font-size: .75rem; font-weight: 700; color: var(--color-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hx-dday {
+  flex-shrink: 0; font-size: .72rem; font-weight: 800; font-variant-numeric: tabular-nums;
+  padding: 1px 8px; border-radius: 999px; color: var(--color-muted); background: var(--color-bg-alt);
+}
+.hx-dday.soon { color: var(--color-up); background: color-mix(in srgb, var(--color-up) 12%, transparent); }
+.hx-card h3 { font-size: 1rem; margin: 4px 0 0; letter-spacing: -.02em; }
+.hx-benefit { margin: 0; font-size: .92rem; font-weight: 800; color: var(--color-primary); }
+.hx-desc { margin: 0; font-size: .82rem; line-height: 1.55; color: var(--color-text); }
+.hx-period { margin: 0; font-size: .74rem; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.hx-req { font-size: .78rem; }
+.hx-req summary { width: fit-content; cursor: pointer; font-weight: 700; color: var(--color-muted); }
+.hx-req ul { margin: 6px 0 0; padding-left: 18px; color: var(--color-muted); line-height: 1.55; }
+.hx-cta {
+  align-self: flex-start; margin-top: 6px; padding: 7px 14px; border-radius: 999px;
+  font-size: .8rem; font-weight: 700; text-decoration: none;
+  background: var(--color-primary); color: var(--color-action-text);
+}
+@media (hover: hover) { .hx-cta:hover { background: var(--color-primary-dark); } }
+.hx-hub-desc { display: block !important; white-space: normal; line-height: 1.45; }
+
+/* ----- 모바일 ----- */
+@media (max-width: 720px) {
+  .hx-glance { gap: 4px; padding: 10px 12px; }
+  .hx-glance b { font-size: .8rem; white-space: normal; line-height: 1.3; }
+  .hx-tier { grid-template-columns: 38px minmax(0, 1fr) auto; }
+  .hx-controls { flex-wrap: wrap; }
+  .hx-controls .wl-sort { flex: 1 1 0; min-width: 0; }
+  .hx-controls .wl-sort select { width: 100%; max-width: none; }
+  .hx-search { flex-basis: 100%; }
+  .hx-search input { font-size: 1rem; padding: 7px 12px; } /* iOS 확대 방지 */
+  .hx-cards { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 380px) {
+  .hx-tier .hx-perks { grid-column: 1 / -1; }
 }
