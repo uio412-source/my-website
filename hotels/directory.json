@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "countries": [
     {
       "name": "한국",
@@ -98,6 +98,23 @@
         {
           "name": "도쿄",
           "programs": {
+            "accor": [
+              {"id": "B6R8", "name": "페어몬트 도쿄", "district": "시바우라", "stars": 5, "url": "https://all.accor.com/hotel/B6R8/index.ko.shtml", "profile": "fairmont"},
+              {"id": "B137", "name": "풀만 도쿄 다마치", "district": "다마치", "stars": 5, "url": "https://all.accor.com/hotel/B137/index.ko.shtml", "profile": "regular"},
+              {"id": "C1F1", "name": "머큐어 도쿄 히비야", "district": "히비야", "stars": 4, "url": "https://all.accor.com/hotel/C1F1/index.ko.shtml", "profile": "regular"},
+              {"id": "B7G7", "name": "머큐어 도쿄 하네다 공항", "district": "하네다", "stars": 4, "url": "https://all.accor.com/hotel/B7G7/index.ko.shtml", "profile": "regular"},
+              {"id": "B9H6", "name": "이비스 스타일 도쿄 긴자", "district": "긴자", "stars": 3, "url": "https://all.accor.com/hotel/B9H6/index.ko.shtml", "profile": "noUpgrade"},
+              {"id": "C185", "name": "이비스 스타일 도쿄 긴자 이스트", "district": "긴자", "stars": 3, "url": "https://all.accor.com/hotel/C185/index.ko.shtml", "profile": "noUpgrade"},
+              {"id": "B2X6", "name": "이비스 스타일 도쿄 베이", "district": "신우라야스", "stars": 3, "url": "https://all.accor.com/hotel/B2X6/index.ko.shtml", "profile": "noUpgrade"}
+            ],
+            "ihg": [
+              {"id": "tyohc", "name": "ANA 인터컨티넨탈 도쿄", "district": "아카사카", "stars": 5, "url": "https://www.ihg.com/intercontinental/hotels/us/en/tokyo/tyohc/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "tyose", "name": "인터컨티넨탈 더 스트링스 도쿄", "district": "시나가와", "stars": 5, "url": "https://www.ihg.com/intercontinental/hotels/us/en/tokyo/tyose/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "tyohb", "name": "인터컨티넨탈 도쿄 베이", "district": "다케시바", "stars": 5, "url": "https://www.ihg.com/intercontinental/hotels/us/en/tokyo/tyohb/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "tyosj", "name": "킴튼 신주쿠 도쿄", "district": "니시신주쿠", "stars": 5, "url": "https://www.ihg.com/kimptonhotels/hotels/us/en/shinjuku-hotel-tokyo-japan/tyosj/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "hndsh", "name": "호텔 인디고 도쿄 시부야", "district": "시부야", "stars": 4, "url": "https://www.ihg.com/hotelindigo/hotels/us/en/shibuyaku/hndsh/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "tyots", "name": "ANA 홀리데이 인 도쿄 베이", "district": "시나가와", "stars": 4, "url": "https://www.ihg.com/holidayinn/hotels/us/en/shinagawa/tyots/hoteldetail", "profile": "breakfastChoice"}
+            ],
             "marriott": [
               {"id": "tyorz", "name": "더 리츠칼튼 도쿄", "district": "롯폰기", "stars": 5, "url": "https://www.ritzcarlton.com/en/hotels/tyorz-the-ritz-carlton-tokyo/overview/", "profile": "welcome"},
               {"id": "tyobt", "name": "불가리 호텔 도쿄", "district": "야에스", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/travel/tyobt-bvlgari-hotel-tokyo", "profile": "excluded"},
@@ -111,12 +128,36 @@
               {"id": "tyoar", "name": "AC 호텔 도쿄 긴자", "district": "긴자", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/travel/tyoar-ac-hotel-tokyo-ginza", "profile": "foodCredit"},
               {"id": "tyoal", "name": "알로프트 도쿄 긴자", "district": "긴자", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/travel/tyoal-aloft-tokyo-ginza", "profile": "breakfastChoice"},
               {"id": "tyosw", "name": "포포인츠 플렉스 도쿄 시부야 웨스트", "district": "시부야구", "stars": 3, "url": "https://www.marriott.com/en-us/hotels/travel/tyosw-four-points-flex-tokyo-shibuya-west", "profile": "series"}
+            ],
+            "hilton": [
+              {"id": "tyocici", "name": "콘래드 도쿄", "district": "시오도메", "stars": 5, "url": "https://www.hilton.com/en/hotels/tyocici-conrad-tokyo/", "profile": "noLounge"},
+              {"id": "tyohitw", "name": "힐튼 도쿄", "district": "니시신주쿠", "stars": 5, "url": "https://www.hilton.com/en/hotels/tyohitw-hilton-tokyo/", "profile": "noLounge"},
+              {"id": "tyotohi", "name": "힐튼 도쿄 오다이바", "district": "오다이바", "stars": 5, "url": "https://www.hilton.com/en/hotels/tyotohi-hilton-tokyo-odaiba/", "profile": "noLounge"},
+              {"id": "tyotbtw", "name": "힐튼 도쿄 베이", "district": "마이하마", "stars": 4, "url": "https://www.hilton.com/en/hotels/tyotbtw-hilton-tokyo-bay/", "profile": "noLounge"},
+              {"id": "tyoardi", "name": "더블트리 바이 힐튼 도쿄 아리아케", "district": "아리아케", "stars": 4, "url": "https://www.hilton.com/en/hotels/tyoardi-doubletree-tokyo-ariake/", "profile": "noLounge"},
+              {"id": "hndtslx", "name": "도쿄 스테이션 호텔, SLH", "district": "마루노우치", "stars": 5, "url": "https://www.hilton.com/en/hotels/hndtslx-the-tokyo-station-hotel/", "profile": "slh"},
+              {"id": "nrtthlx", "name": "다카나와 하나코로, SLH", "district": "다카나와", "stars": 5, "url": "https://www.hilton.com/en/hotels/nrtthlx-takanawa-hanakohro/", "profile": "slh"},
+              {"id": "tyoyoyh", "name": "요텔 도쿄 긴자", "district": "긴자", "stars": 3, "url": "https://www.hilton.com/en/hotels/tyoyoyh-yotel-tokyo-ginza/", "profile": "noLounge"}
             ]
           }
         },
         {
           "name": "오사카",
           "programs": {
+            "accor": [
+              {"id": "A5C3", "name": "스위소텔 난카이 오사카", "district": "난바", "stars": 5, "url": "https://all.accor.com/hotel/A5C3/index.ko.shtml", "profile": "regular"},
+              {"id": "B9I7", "name": "머큐어 도큐 스테이 오사카 난바", "district": "난바", "stars": 4, "url": "https://all.accor.com/hotel/B9I7/index.ko.shtml", "profile": "regular"},
+              {"id": "A5U8", "name": "이비스 오사카 우메다", "district": "우메다", "stars": 3, "url": "https://all.accor.com/hotel/A5U8/index.ko.shtml", "profile": "noUpgrade"}
+            ],
+            "ihg": [
+              {"id": "osaha", "name": "인터컨티넨탈 오사카", "district": "우메다", "stars": 5, "url": "https://www.ihg.com/intercontinental/hotels/us/en/osaka/osaha/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "osavi", "name": "리가 로열 호텔 오사카, 비네트 컬렉션", "district": "나카노시마", "stars": 5, "url": "https://www.ihg.com/vignettecollection/hotels/us/en/osaka/osavi/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "osakn", "name": "보코 오사카 센트럴", "district": "혼마치", "stars": 4, "url": "https://www.ihg.com/voco/hotels/us/en/osaka/osakn/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "osana", "name": "홀리데이 인 오사카 난바", "district": "난바", "stars": 4, "url": "https://www.ihg.com/holidayinn/hotels/us/en/osaka/osana/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "osaso", "name": "홀리데이 인 앤 스위트 신오사카", "district": "신오사카", "stars": 4, "url": "https://www.ihg.com/holidayinn/hotels/us/en/osaka/osaso/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "osams", "name": "홀리데이 인 익스프레스 오사카 시티 센터 미도스지", "district": "혼마치", "stars": 3, "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/osaka/osams/hoteldetail", "profile": "breakfastIncluded"},
+              {"id": "osahw", "name": "가너 호텔 오사카 혼마치 미도스지", "district": "혼마치", "stars": 3, "url": "https://www.ihg.com/garner-hotels/hotels/us/en/osaka/osahw/hoteldetail", "profile": "breakfastChoice"}
+            ],
             "marriott": [
               {"id": "osarz", "name": "더 리츠칼튼 오사카", "district": "우메다", "stars": 5, "url": "https://www.ritzcarlton.com/en/hotels/osarz-the-ritz-carlton-osaka/overview/", "profile": "welcome"},
               {"id": "osaxr", "name": "세인트 레지스 오사카", "district": "혼마치", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/travel/osaxr-the-st-regis-osaka", "profile": "breakfastChoice"},
@@ -130,6 +171,102 @@
               {"id": "osaoo", "name": "목시 오사카 우메다", "district": "우메다", "stars": 3, "url": "https://www.marriott.com/en-us/hotels/travel/osaoo-moxy-osaka-umeda", "profile": "foodCredit"},
               {"id": "osaku", "name": "포포인츠 플렉스 오사카 기타하마", "district": "기타하마", "stars": 3, "url": "https://www.marriott.com/en-us/hotels/travel/osaku-four-points-flex-osaka-kitahama", "profile": "series"},
               {"id": "osauu", "name": "포포인츠 플렉스 오사카 우메다", "district": "우메다", "stars": 3, "url": "https://www.marriott.com/en-us/hotels/travel/osauu-four-points-flex-osaka-umeda", "profile": "series"}
+            ],
+            "hilton": [
+              {"id": "osawawa", "name": "월도프 아스토리아 오사카", "district": "우메다", "stars": 5, "url": "https://www.hilton.com/en/hotels/osawawa-waldorf-astoria-osaka/", "profile": "noLounge"},
+              {"id": "osacici", "name": "콘래드 오사카", "district": "나카노시마", "stars": 5, "url": "https://www.hilton.com/en/hotels/osacici-conrad-osaka/", "profile": "noLounge"},
+              {"id": "osahitw", "name": "힐튼 오사카", "district": "우메다", "stars": 5, "url": "https://www.hilton.com/en/hotels/osahitw-hilton-osaka/", "profile": "noLounge"},
+              {"id": "osaocdi", "name": "더블트리 바이 힐튼 오사카 캐슬", "district": "오사카성", "stars": 4, "url": "https://www.hilton.com/en/hotels/osaocdi-doubletree-osaka-castle/", "profile": "noLounge"},
+              {"id": "osapypy", "name": "캐노피 바이 힐튼 오사카 우메다", "district": "우메다", "stars": 4, "url": "https://www.hilton.com/en/hotels/osapypy-canopy-osaka-umeda/", "profile": "noLounge"},
+              {"id": "itmcjlx", "name": "퀴베 J2 호텔 오사카, SLH", "district": "난바", "stars": 4, "url": "https://www.hilton.com/en/hotels/itmcjlx-cuvee-j2-hotel-osaka-by-onko-chishin/", "profile": "slh"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "홍콩",
+      "cities": [
+        {
+          "name": "홍콩",
+          "programs": {
+            "accor": [
+              {"id": "B7J3", "name": "몬드리안 홍콩", "district": "침사추이", "stars": 5, "url": "https://all.accor.com/hotel/B7J3/index.ko.shtml", "profile": "regular"},
+              {"id": "B5L5", "name": "AKI 호텔 홍콩 – 엠갤러리 컬렉션", "district": "완차이", "stars": 4, "url": "https://all.accor.com/hotel/B5L5/index.ko.shtml", "profile": "regular"},
+              {"id": "A4A4", "name": "실베리 홍콩 – 엠갤러리 컬렉션", "district": "퉁청", "stars": 5, "url": "https://all.accor.com/hotel/A4A4/index.ko.shtml", "profile": "regular"},
+              {"id": "3562", "name": "노보텔 센추리 홍콩", "district": "완차이", "stars": 4, "url": "https://all.accor.com/hotel/3562/index.ko.shtml", "profile": "regular"},
+              {"id": "6239", "name": "노보텔 홍콩 시티게이트", "district": "퉁청", "stars": 4, "url": "https://all.accor.com/hotel/6239/index.ko.shtml", "profile": "regular"},
+              {"id": "7606", "name": "이비스 홍콩 센트럴 앤 성완", "district": "성완", "stars": 3, "url": "https://all.accor.com/hotel/7606/index.ko.shtml", "profile": "noUpgrade"},
+              {"id": "3563", "name": "이비스 홍콩 노스포인트", "district": "노스포인트", "stars": 3, "url": "https://all.accor.com/hotel/3563/index.ko.shtml", "profile": "noUpgrade"}
+            ],
+            "ihg": [
+              {"id": "hkghc", "name": "리젠트 홍콩", "district": "침사추이", "stars": 5, "url": "https://www.ihg.com/regent/hotels/us/en/hong-kong/hkghc/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "hkghb", "name": "인터컨티넨탈 그랜드 스탠퍼드 홍콩", "district": "침사추이 동쪽", "stars": 5, "url": "https://www.ihg.com/intercontinental/hotels/us/en/hong-kong/hkghb/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "hkgkh", "name": "킴튼 침사추이 홍콩", "district": "침사추이", "stars": 5, "url": "https://www.ihg.com/kimptonhotels/hotels/us/en/hong-kong/hkgkh/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "hkgth", "name": "더 하리 홍콩, 비네트 컬렉션", "district": "완차이", "stars": 5, "url": "https://www.ihg.com/vignettecollection/hotels/us/en/hong-kong/hkgth/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "hkglr", "name": "크라운 플라자 홍콩 코즈웨이 베이", "district": "코즈웨이 베이", "stars": 4, "url": "https://www.ihg.com/crowneplaza/hotels/us/en/hong-kong/hkglr/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "hkgin", "name": "호텔 인디고 홍콩 아일랜드", "district": "완차이", "stars": 4, "url": "https://www.ihg.com/hotelindigo/hotels/us/en/hong-kong/hkgin/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "hkgkl", "name": "홀리데이 인 골든 마일 홍콩", "district": "침사추이", "stars": 4, "url": "https://www.ihg.com/holidayinn/hotels/us/en/hong-kong/hkgkl/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "hkgcw", "name": "홀리데이 인 익스프레스 홍콩 코즈웨이 베이", "district": "코즈웨이 베이", "stars": 3, "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/hong-kong/hkgcw/hoteldetail", "profile": "breakfastIncluded"},
+              {"id": "hkgmk", "name": "홀리데이 인 익스프레스 홍콩 몽콕", "district": "몽콕", "stars": 3, "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/hong-kong/hkgmk/hoteldetail", "profile": "breakfastIncluded"}
+            ],
+            "marriott": [
+              {"id": "hkgxr", "name": "세인트 레지스 홍콩", "district": "완차이", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/hkgxr-the-st-regis-hong-kong/overview/", "profile": "breakfastChoice"},
+              {"id": "hkgkw", "name": "더 리츠칼튼 홍콩", "district": "침사추이 서쪽", "stars": 5, "url": "https://www.ritzcarlton.com/en/hotels/hkgkw-the-ritz-carlton-hong-kong/overview/", "profile": "welcome"},
+              {"id": "hkgdt", "name": "JW 메리어트 호텔 홍콩", "district": "애드미럴티", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/hkgdt-jw-marriott-hotel-hong-kong/overview/", "profile": "breakfastChoice"},
+              {"id": "hkgwh", "name": "W 홍콩", "district": "침사추이 서쪽", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/hkgwh-w-hong-kong/overview/", "profile": "breakfastChoice"},
+              {"id": "hkgsi", "name": "쉐라톤 홍콩 호텔 앤 타워", "district": "침사추이", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/hkgsi-sheraton-hong-kong-hotel-and-towers/overview/", "profile": "breakfastChoice"},
+              {"id": "hkgak", "name": "더 파크 레인 홍콩, 오토그래프 컬렉션", "district": "코즈웨이 베이", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/hkgak-the-park-lane-hong-kong-autograph-collection/overview/", "profile": "breakfastChoice"},
+              {"id": "hkgop", "name": "홍콩 오션 파크 메리어트", "district": "오션 파크", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/hkgop-hong-kong-ocean-park-marriott-hotel/overview/", "profile": "breakfastChoice"},
+              {"id": "hkgap", "name": "홍콩 스카이시티 메리어트", "district": "공항", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/hkgap-hong-kong-skycity-marriott-hotel/overview/", "profile": "breakfastChoice"},
+              {"id": "hkgmd", "name": "르 메르디앙 홍콩 사이버포트", "district": "사이버포트", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/hkgmd-le-meridien-hong-kong-cyberport/overview/", "profile": "breakfastChoice"},
+              {"id": "hkgmr", "name": "더 미라 홍콩, 디자인 호텔스", "district": "침사추이", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/hkgmr-the-mira-hong-kong-a-member-of-design-hotels/overview/", "profile": "design"},
+              {"id": "hkgmm", "name": "미라 문 홍콩, 디자인 호텔스", "district": "완차이", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/hkgmm-mira-moon-hong-kong-a-member-of-design-hotels/overview/", "profile": "design"},
+              {"id": "hkgcy", "name": "코트야드 홍콩", "district": "사이잉푼", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/hkgcy-courtyard-hong-kong/overview/", "profile": "courtyard"},
+              {"id": "hkgst", "name": "코트야드 홍콩 샤틴", "district": "샤틴", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/hkgst-courtyard-hong-kong-sha-tin/overview/", "profile": "courtyard"}
+            ],
+            "hilton": [
+              {"id": "hkghcci", "name": "콘래드 홍콩", "district": "애드미럴티", "stars": 5, "url": "https://www.hilton.com/en/hotels/hkghcci-conrad-hong-kong/", "profile": "noLounge"},
+              {"id": "hkgupup", "name": "더 란콰이퐁, 태피스트리 컬렉션", "district": "란콰이퐁", "stars": 4, "url": "https://www.hilton.com/en/hotels/hkgupup-the-lan-kwai-fong/", "profile": "noLounge"},
+              {"id": "hkglplx", "name": "랜슨 플레이스 코즈웨이 베이, SLH", "district": "코즈웨이 베이", "stars": 5, "url": "https://www.hilton.com/en/hotels/hkglplx-lanson-place-causeway-bay/", "profile": "slh"},
+              {"id": "hkgmsgi", "name": "힐튼 가든 인 홍콩 몽콕", "district": "몽콕", "stars": 4, "url": "https://www.hilton.com/en/hotels/hkgmsgi-hilton-garden-inn-hong-kong-mongkok/", "profile": "garden"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "대만",
+      "cities": [
+        {
+          "name": "타이베이",
+          "programs": {
+            "ihg": [
+              {"id": "tperg", "name": "리젠트 타이베이", "district": "중산", "stars": 5, "url": "https://www.ihg.com/regent/hotels/us/en/taipei/tperg/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "tpepi", "name": "인터컨티넨탈 타이베이", "district": "중산", "stars": 5, "url": "https://www.ihg.com/intercontinental/hotels/us/en/taipei/tpepi/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "tpekm", "name": "킴튼 다안 호텔", "district": "다안", "stars": 5, "url": "https://www.ihg.com/kimptonhotels/hotels/us/en/da-an-hotel-taipei/tpekm/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "tpetc", "name": "화럭스 타이베이", "district": "신이", "stars": 5, "url": "https://www.ihg.com/hotels/us/en/taipei/tpetc/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "tpent", "name": "호텔 인디고 타이베이 노스", "district": "중산", "stars": 4, "url": "https://www.ihg.com/hotelindigo/hotels/us/en/taipei/tpent/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "tpett", "name": "홀리데이 인 익스프레스 타이베이 트레인 스테이션", "district": "중정", "stars": 3, "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/taipei/tpett/hoteldetail", "profile": "breakfastIncluded"}
+            ],
+            "marriott": [
+              {"id": "tpewh", "name": "W 타이베이", "district": "신이", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/tpewh-w-taipei/overview/", "profile": "breakfastChoice"},
+              {"id": "tpedm", "name": "르 메르디앙 타이베이", "district": "신이", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/tpedm-le-meridien-taipei/overview/", "profile": "breakfastChoice"},
+              {"id": "tpetm", "name": "타이베이 메리어트", "district": "다즈", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/tpetm-taipei-marriott-hotel/overview/", "profile": "breakfastChoice"},
+              {"id": "tpest", "name": "쉐라톤 그랜드 타이베이", "district": "중정", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/tpest-sheraton-grand-taipei-hotel/overview/", "profile": "breakfastChoice"},
+              {"id": "tpemt", "name": "매디슨 타이베이, 트리뷰트 포트폴리오", "district": "다안", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/tpemt-madison-taipei-a-tribute-portfolio-hotel/overview/", "profile": "breakfastChoice"},
+              {"id": "tpesc", "name": "수즈 앤 카토르제 타이베이, 트리뷰트 포트폴리오", "district": "중산", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/tpesc-suz-and-catorze-taipei-a-tribute-portfolio-hotel/overview/", "profile": "breakfastChoice"},
+              {"id": "tpesh", "name": "르네상스 타이베이 스린", "district": "스린", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/tpesh-renaissance-taipei-shihlin-hotel/overview/", "profile": "breakfastChoice"},
+              {"id": "tpeds", "name": "호텔 프로버브스 타이베이, 디자인 호텔스", "district": "다안", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/tpeds-hotel-proverbs-taipei-a-member-of-design-hotels/overview/", "profile": "design"},
+              {"id": "tpeal", "name": "알로프트 타이베이 중산", "district": "중산", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/tpeal-aloft-taipei-zhongshan/overview/", "profile": "breakfastChoice"},
+              {"id": "tpecd", "name": "코트야드 타이베이 다운타운", "district": "중산", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/tpecd-courtyard-taipei-downtown/overview/", "profile": "courtyard"},
+              {"id": "tpecy", "name": "코트야드 타이베이", "district": "난강", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/tpecy-courtyard-taipei/overview/", "profile": "courtyard"}
+            ],
+            "hilton": [
+              {"id": "tsaqqqq", "name": "험블 하우스 타이베이, 큐리오 컬렉션", "district": "신이", "stars": 5, "url": "https://www.hilton.com/en/hotels/tsaqqqq-humble-house-taipei/", "profile": "noLounge"},
+              {"id": "tsaupup", "name": "호텔 레조넌스 타이베이, 태피스트리 컬렉션", "district": "중산", "stars": 4, "url": "https://www.hilton.com/en/hotels/tsaupup-hotel-resonance-taipei/", "profile": "noLounge"},
+              {"id": "tsatpdi", "name": "더블트리 바이 힐튼 타이베이 중산", "district": "중산", "stars": 4, "url": "https://www.hilton.com/en/hotels/tsatpdi-doubletree-taipei-zhongshan/", "profile": "noLounge"},
+              {"id": "tpegvlx", "name": "그랜드 빅토리아 호텔, SLH", "district": "네이후", "stars": 5, "url": "https://www.hilton.com/en/hotels/tpegvlx-grand-victoria-hotel/", "profile": "slh"}
             ]
           }
         }
@@ -141,6 +278,26 @@
         {
           "name": "방콕",
           "programs": {
+            "accor": [
+              {"id": "5213", "name": "소피텔 방콕 수쿰윗", "district": "아속", "stars": 5, "url": "https://all.accor.com/hotel/5213/index.ko.shtml", "profile": "regular"},
+              {"id": "3616", "name": "풀만 방콕 호텔 G", "district": "실롬", "stars": 5, "url": "https://all.accor.com/hotel/3616/index.ko.shtml", "profile": "regular"},
+              {"id": "6323", "name": "풀만 방콕 킹 파워", "district": "랑남", "stars": 5, "url": "https://all.accor.com/hotel/6323/index.ko.shtml", "profile": "regular"},
+              {"id": "6469", "name": "비 호텔 방콕 – 엠갤러리 컬렉션", "district": "랏차테위", "stars": 5, "url": "https://all.accor.com/hotel/6469/index.ko.shtml", "profile": "regular"},
+              {"id": "C0Q6", "name": "머큐어 방콕 수라웡", "district": "수라웡", "stars": 4, "url": "https://all.accor.com/hotel/C0Q6/index.ko.shtml", "profile": "regular"},
+              {"id": "C0I3", "name": "머큐어 방콕 시암 랏차테위", "district": "랏차테위", "stars": 4, "url": "https://all.accor.com/hotel/C0I3/index.ko.shtml", "profile": "regular"},
+              {"id": "7026", "name": "이비스 방콕 리버사이드", "district": "짜오프라야 강변", "stars": 3, "url": "https://all.accor.com/hotel/7026/index.ko.shtml", "profile": "noUpgrade"}
+            ],
+            "ihg": [
+              {"id": "bkkhb", "name": "인터컨티넨탈 방콕", "district": "칫롬", "stars": 5, "url": "https://www.ihg.com/intercontinental/hotels/us/en/bangkok/bkkhb/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "bkktl", "name": "인터컨티넨탈 방콕 수쿰윗", "district": "아속", "stars": 5, "url": "https://www.ihg.com/intercontinental/hotels/us/en/bangkok/bkktl/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "bkkls", "name": "킴튼 마알라이 방콕", "district": "랑수언", "stars": 5, "url": "https://www.ihg.com/kimptonhotels/hotels/us/en/maa-lai-bangkok-thailand/bkkls/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "bkksn", "name": "신톤 미드타운 호텔 방콕, 비네트 컬렉션", "district": "랑수언", "stars": 5, "url": "https://www.ihg.com/vignettecollection/hotels/us/en/bangkok/bkksn/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "bkkcp", "name": "크라운 플라자 방콕 룸피니 파크", "district": "실롬", "stars": 4, "url": "https://www.ihg.com/crowneplaza/hotels/us/en/bangkok/bkkcp/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "bkkin", "name": "호텔 인디고 방콕 와이어리스 로드", "district": "플런칫", "stars": 4, "url": "https://www.ihg.com/hotelindigo/hotels/us/en/bangkok/bkkin/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "bkkaa", "name": "보코 방콕 수라웡", "district": "수라웡", "stars": 4, "url": "https://www.ihg.com/voco/hotels/us/en/bangkok/bkkaa/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "bkkhi", "name": "홀리데이 인 방콕 수쿰윗", "district": "수쿰윗", "stars": 4, "url": "https://www.ihg.com/holidayinn/hotels/us/en/bangkok/bkkhi/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "bkkrb", "name": "홀리데이 인 익스프레스 방콕 시암", "district": "시암", "stars": 3, "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/bangkok/bkkrb/hoteldetail", "profile": "breakfastIncluded"}
+            ],
             "marriott": [
               {"id": "bkkxr", "name": "세인트 레지스 방콕", "district": "라차담리", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/travel/bkkxr-the-st-regis-bangkok", "profile": "breakfastChoice"},
               {"id": "bkkla", "name": "디 아테네 호텔, 럭셔리 컬렉션 방콕", "district": "플른칫", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/travel/bkkla-the-athenee-hotel-a-luxury-collection-hotel-bangkok", "profile": "breakfastChoice"},
@@ -154,6 +311,18 @@
               {"id": "bkkpu", "name": "포포인츠 바이 쉐라톤 방콕 플른칫 수쿰윗", "district": "플른칫", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/travel/bkkpu-four-points-bangkok-ploenchit-sukhumvit", "profile": "breakfastChoice"},
               {"id": "bkkox", "name": "목시 방콕 라차프라송", "district": "라차프라송", "stars": 3, "url": "https://www.marriott.com/en-us/hotels/travel/bkkox-moxy-bangkok-ratchaprasong", "profile": "foodCredit"},
               {"id": "bkkea", "name": "사톤 비스타, 메리어트 이그제큐티브 아파트먼트", "district": "사톤", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/travel/bkkea-sathorn-vista-bangkok-marriott-executive-apartments", "profile": "apartments"}
+            ],
+            "hilton": [
+              {"id": "bkkwawa", "name": "월도프 아스토리아 방콕", "district": "랏차담리", "stars": 5, "url": "https://www.hilton.com/en/hotels/bkkwawa-waldorf-astoria-bangkok/", "profile": "noLounge"},
+              {"id": "bkkcici", "name": "콘래드 방콕", "district": "플런칫", "stars": 5, "url": "https://www.hilton.com/en/hotels/bkkcici-conrad-bangkok/", "profile": "noLounge"},
+              {"id": "bkkqpci", "name": "콘래드 방콕 수쿰윗 퀸스 파크", "district": "프롬퐁", "stars": 5, "url": "https://www.hilton.com/en/hotels/bkkqpci-conrad-bangkok-sukhumvit-queens-park/", "profile": "noLounge"},
+              {"id": "bkkhitw", "name": "밀레니엄 힐튼 방콕", "district": "짜오프라야 강변", "stars": 5, "url": "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/", "profile": "noLounge"},
+              {"id": "bkkashi", "name": "힐튼 방콕 그란데 아속", "district": "아속", "stars": 5, "url": "https://www.hilton.com/en/hotels/bkkashi-hilton-bangkok-grande-asoke/", "profile": "noLounge"},
+              {"id": "bkksblx", "name": "더 수코타이 방콕, SLH", "district": "사톤", "stars": 5, "url": "https://www.hilton.com/en/hotels/bkksblx-the-sukhothai-bangkok/", "profile": "slh"},
+              {"id": "bkksodi", "name": "더블트리 바이 힐튼 방콕 플런칫", "district": "플런칫", "stars": 4, "url": "https://www.hilton.com/en/hotels/bkksodi-doubletree-bangkok-ploenchit/", "profile": "noLounge"},
+              {"id": "bkkthpy", "name": "캐노피 바이 힐튼 방콕 수쿰윗", "district": "수쿰윗", "stars": 4, "url": "https://www.hilton.com/en/hotels/bkkthpy-canopy-bangkok-sukhumvit/", "profile": "noLounge"},
+              {"id": "bkksigi", "name": "힐튼 가든 인 방콕 실롬", "district": "실롬", "stars": 4, "url": "https://www.hilton.com/en/hotels/bkksigi-hilton-garden-inn-bangkok-silom/", "profile": "garden"},
+              {"id": "bkkcpgi", "name": "힐튼 가든 인 방콕 리버사이드", "district": "짜오프라야 강변", "stars": 4, "url": "https://www.hilton.com/en/hotels/bkkcpgi-hilton-garden-inn-bangkok-riverside/", "profile": "garden"}
             ]
           }
         }
@@ -165,6 +334,18 @@
         {
           "name": "다낭",
           "programs": {
+            "accor": [
+              {"id": "8838", "name": "풀만 다낭 비치 리조트", "district": "박미안 해변", "stars": 5, "url": "https://all.accor.com/hotel/8838/index.ko.shtml", "profile": "regular"},
+              {"id": "7821", "name": "그랜드 머큐어 다낭", "district": "한강", "stars": 5, "url": "https://all.accor.com/hotel/7821/index.ko.shtml", "profile": "regular"},
+              {"id": "8287", "name": "노보텔 다낭 프리미어 한 리버", "district": "한강", "stars": 5, "url": "https://all.accor.com/hotel/8287/index.ko.shtml", "profile": "regular"},
+              {"id": "8488", "name": "머큐어 다낭 프렌치 빌리지 바나힐", "district": "바나힐", "stars": 4, "url": "https://all.accor.com/hotel/8488/index.ko.shtml", "profile": "regular"}
+            ],
+            "ihg": [
+              {"id": "dadha", "name": "인터컨티넨탈 다낭 선 페닌슐라 리조트", "district": "선짜 반도", "stars": 5, "url": "https://www.ihg.com/intercontinental/hotels/us/en/danang-city/dadha/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "dadcc", "name": "크라운 플라자 다낭 시티 센터", "district": "한강", "stars": 4, "url": "https://www.ihg.com/crowneplaza/hotels/us/en/da-nang/dadcc/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "dadch", "name": "크라운 플라자 다낭", "district": "논느억 해변", "stars": 5, "url": "https://www.ihg.com/crowneplaza/hotels/us/en/danang/dadch/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "dadmb", "name": "보코 마벨 다낭", "district": "미케 해변", "stars": 4, "url": "https://www.ihg.com/voco/hotels/us/en/da-nang-city/dadmb/hoteldetail", "profile": "breakfastChoice"}
+            ],
             "marriott": [
               {"id": "dadsi", "name": "쉐라톤 그랜드 다낭 비치 리조트 & 스파", "district": "논느억", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/travel/dadsi-sheraton-grand-danang-beach-resort-and-spa", "profile": "clubChoice", "checkout": "availability"},
               {"id": "dadmr", "name": "다낭 메리어트 리조트 & 스파", "district": "논느억", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/travel/dadmr-danang-marriott-resort-and-spa", "profile": "breakfastChoice", "checkout": "availability", "loungeUnconfirmed": true},
@@ -174,6 +355,10 @@
               {"id": "dadfp", "name": "포포인츠 바이 쉐라톤 다낭", "district": "미케비치", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/travel/dadfp-four-points-danang", "profile": "breakfastChoice"},
               {"id": "dadcy", "name": "코트야드 다낭 한리버", "district": "한강변", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/travel/dadcy-courtyard-danang-han-river", "profile": "courtyard"},
               {"id": "dader", "name": "메리어트 이그제큐티브 아파트먼트 다낭 한리버", "district": "한강변", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/travel/dader-marriott-executive-apartments-danang-han-river", "profile": "apartments"}
+            ],
+            "hilton": [
+              {"id": "daddvhi", "name": "힐튼 다낭", "district": "한강", "stars": 5, "url": "https://www.hilton.com/en/hotels/daddvhi-hilton-da-nang/", "profile": "noLounge"},
+              {"id": "daddagi", "name": "힐튼 가든 인 다낭", "district": "미케 해변", "stars": 4, "url": "https://www.hilton.com/en/hotels/daddagi-hilton-garden-inn-da-nang/", "profile": "garden"}
             ]
           }
         }
@@ -185,6 +370,31 @@
         {
           "name": "싱가포르",
           "programs": {
+            "accor": [
+              {"id": "A5E1", "name": "래플스 싱가포르", "district": "시티 홀", "stars": 5, "url": "https://all.accor.com/hotel/A5E1/index.ko.shtml", "profile": "regular"},
+              {"id": "A5G8", "name": "페어몬트 싱가포르", "district": "시티 홀", "stars": 5, "url": "https://all.accor.com/hotel/A5G8/index.ko.shtml", "profile": "fairmont"},
+              {"id": "A5D3", "name": "스위소텔 더 스탬퍼드 싱가포르", "district": "시티 홀", "stars": 5, "url": "https://all.accor.com/hotel/A5D3/index.ko.shtml", "profile": "regular"},
+              {"id": "A152", "name": "소피텔 싱가포르 시티 센터", "district": "탄종 파가", "stars": 5, "url": "https://all.accor.com/hotel/A152/index.ko.shtml", "profile": "regular"},
+              {"id": "9474", "name": "소피텔 싱가포르 센토사", "district": "센토사", "stars": 5, "url": "https://all.accor.com/hotel/9474/index.ko.shtml", "profile": "regular"},
+              {"id": "B5L7", "name": "풀만 싱가포르 힐 스트리트", "district": "클라크 키", "stars": 5, "url": "https://all.accor.com/hotel/B5L7/index.ko.shtml", "profile": "regular"},
+              {"id": "B9H8", "name": "풀만 싱가포르 오차드", "district": "오차드", "stars": 5, "url": "https://all.accor.com/hotel/B9H8/index.ko.shtml", "profile": "regular"},
+              {"id": "B7F8", "name": "몬드리안 싱가포르 덕스턴", "district": "탄종 파가", "stars": 5, "url": "https://all.accor.com/hotel/B7F8/index.ko.shtml", "profile": "regular"},
+              {"id": "C7F0", "name": "노보텔 싱가포르 로버트슨 키", "district": "로버트슨 키", "stars": 4, "url": "https://all.accor.com/hotel/C7F0/index.ko.shtml", "profile": "regular"},
+              {"id": "9543", "name": "노보텔 싱가포르 온 스티븐스", "district": "오차드", "stars": 4, "url": "https://all.accor.com/hotel/9543/index.ko.shtml", "profile": "regular"},
+              {"id": "A0D7", "name": "머큐어 싱가포르 부기스", "district": "부기스", "stars": 4, "url": "https://all.accor.com/hotel/A0D7/index.ko.shtml", "profile": "regular"},
+              {"id": "6657", "name": "이비스 싱가포르 온 벤쿨렌", "district": "부기스", "stars": 3, "url": "https://all.accor.com/hotel/6657/index.ko.shtml", "profile": "noUpgrade"},
+              {"id": "B6I1", "name": "이비스 스타일 싱가포르 앨버트", "district": "부기스", "stars": 3, "url": "https://all.accor.com/hotel/B6I1/index.ko.shtml", "profile": "noUpgrade"}
+            ],
+            "ihg": [
+              {"id": "sinic", "name": "인터컨티넨탈 싱가포르 로버트슨 키", "district": "로버트슨 키", "stars": 5, "url": "https://www.ihg.com/intercontinental/hotels/us/en/singapore/sinic/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "sinor", "name": "보코 오차드 싱가포르", "district": "오차드", "stars": 4, "url": "https://www.ihg.com/voco/hotels/us/en/singapore/sinor/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "sinki", "name": "호텔 인디고 싱가포르 카통", "district": "카통", "stars": 4, "url": "https://www.ihg.com/hotelindigo/hotels/us/en/singapore/sinki/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "sincp", "name": "크라운 플라자 창이 에어포트", "district": "창이 공항", "stars": 4, "url": "https://www.ihg.com/crowneplaza/hotels/us/en/singapore/sincp/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "sinpv", "name": "홀리데이 인 싱가포르 오차드 시티 센터", "district": "오차드", "stars": 4, "url": "https://www.ihg.com/holidayinn/hotels/us/en/singapore/sinpv/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "sinhi", "name": "홀리데이 인 싱가포르 아트리움", "district": "아웃람", "stars": 4, "url": "https://www.ihg.com/holidayinn/hotels/us/en/singapore/sinhi/hoteldetail", "profile": "breakfastChoice"},
+              {"id": "sinex", "name": "홀리데이 인 익스프레스 싱가포르 오차드 로드", "district": "오차드", "stars": 3, "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/singapore/sinex/hoteldetail", "profile": "breakfastIncluded"},
+              {"id": "sincq", "name": "홀리데이 인 익스프레스 싱가포르 클라크 키", "district": "클라크 키", "stars": 3, "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/singapore/sincq/hoteldetail", "profile": "breakfastIncluded"}
+            ],
             "marriott": [
               {"id": "sinrz", "name": "더 리츠칼튼 밀레니아 싱가포르", "district": "마리나베이", "stars": 5, "url": "https://www.ritzcarlton.com/en/hotels/sinrz-the-ritz-carlton-millenia-singapore/overview/", "profile": "excluded"},
               {"id": "sinxr", "name": "세인트 레지스 싱가포르", "district": "탕린", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/travel/sinxr-the-st-regis-singapore", "profile": "breakfastChoice"},
@@ -197,6 +407,14 @@
               {"id": "sinfp", "name": "포포인츠 바이 쉐라톤 싱가포르 리버뷰", "district": "로버트슨키", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/travel/sinfp-four-points-singapore-riverview", "profile": "breakfastChoice"},
               {"id": "sinnv", "name": "알로프트 싱가포르 노베나", "district": "노베나", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/travel/sinnv-aloft-singapore-novena", "profile": "breakfastChoice"},
               {"id": "sinox", "name": "목시 싱가포르 클락키", "district": "클락키", "stars": 3, "url": "https://www.marriott.com/en-us/hotels/travel/sinox-moxy-singapore-clarke-quay", "profile": "foodCredit"}
+            ],
+            "hilton": [
+              {"id": "sincici", "name": "콘래드 싱가포르 마리나 베이", "district": "마리나 베이", "stars": 5, "url": "https://www.hilton.com/en/hotels/sincici-conrad-singapore-marina-bay/", "profile": "noLounge"},
+              {"id": "sinodci", "name": "콘래드 싱가포르 오차드", "district": "오차드", "stars": 5, "url": "https://www.hilton.com/en/hotels/sinodci-conrad-singapore-orchard/", "profile": "noLounge"},
+              {"id": "sinorhi", "name": "힐튼 싱가포르 오차드", "district": "오차드", "stars": 5, "url": "https://www.hilton.com/en/hotels/sinorhi-hilton-singapore-orchard/", "profile": "noLounge"},
+              {"id": "sinndnd", "name": "노매드 싱가포르", "district": "오차드", "stars": 5, "url": "https://www.hilton.com/en/hotels/sinndnd-nomad-singapore/", "profile": "noLounge"},
+              {"id": "sindidi", "name": "더블트리 바이 힐튼 싱가포르 로버트슨 키", "district": "로버트슨 키", "stars": 4, "url": "https://www.hilton.com/en/hotels/sindidi-doubletree-singapore-robertson-quay/", "profile": "noLounge"},
+              {"id": "singigi", "name": "힐튼 가든 인 싱가포르 세랑군", "district": "리틀 인디아", "stars": 4, "url": "https://www.hilton.com/en/hotels/singigi-hilton-garden-inn-singapore-serangoon/", "profile": "garden"}
             ]
           }
         }
@@ -208,8 +426,50 @@
         {
           "name": "괌",
           "programs": {
+            "ihg": [
+              {"id": "gumcr", "name": "크라운 플라자 리조트 괌", "district": "투몬", "stars": 4, "url": "https://www.ihg.com/crowneplaza/hotels/us/en/tamuning/gumcr/hoteldetail", "profile": "breakfastChoice"}
+            ],
             "marriott": [
               {"id": "gumwi", "name": "더 웨스틴 리조트 괌", "district": "투몬", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/travel/gumwi-the-westin-resort-guam", "profile": "breakfastChoice", "checkout": "availability", "loungeUnconfirmed": true}
+            ],
+            "hilton": [
+              {"id": "gumhitw", "name": "힐튼 괌 리조트 앤 스파", "district": "투몬", "stars": 5, "url": "https://www.hilton.com/en/hotels/gumhitw-hilton-guam-resort-and-spa/", "profile": "noLounge"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "미국",
+      "cities": [
+        {
+          "name": "호놀룰루(하와이)",
+          "programs": {
+            "accor": [
+              {"id": "B3H7", "name": "알라모아나 호놀룰루 바이 만트라", "district": "알라모아나", "stars": 4, "url": "https://all.accor.com/hotel/B3H7/index.ko.shtml", "profile": "regular"}
+            ],
+            "ihg": [
+              {"id": "hnlka", "name": "홀리데이 인 익스프레스 와이키키", "district": "와이키키", "stars": 3, "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/honolulu/hnlka/hoteldetail", "profile": "breakfastIncluded"}
+            ],
+            "marriott": [
+              {"id": "hnllc", "name": "더 로열 하와이언, 럭셔리 컬렉션", "district": "와이키키", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/hnllc-the-royal-hawaiian-a-luxury-collection-resort-waikiki/overview/", "profile": "breakfastChoice"},
+              {"id": "hnlwi", "name": "모아나 서프라이더, 웨스틴 리조트", "district": "와이키키", "stars": 5, "url": "https://www.marriott.com/en-us/hotels/hnlwi-moana-surfrider-a-westin-resort-and-spa-waikiki-beach/overview/", "profile": "breakfastChoice"},
+              {"id": "hnlws", "name": "쉐라톤 와이키키 비치 리조트", "district": "와이키키", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/hnlws-sheraton-waikiki-beach-resort/overview/", "profile": "breakfastChoice"},
+              {"id": "hnlks", "name": "쉐라톤 프린세스 카이울라니", "district": "와이키키", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/hnlks-sheraton-princess-kaiulani-waikiki-beach/overview/", "profile": "breakfastChoice"},
+              {"id": "hnlmc", "name": "와이키키 비치 메리어트 리조트 앤 스파", "district": "와이키키", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/hnlmc-waikiki-beach-marriott-resort-and-spa/overview/", "profile": "breakfastChoice"},
+              {"id": "hnlak", "name": "더 레이로우 와이키키, 오토그래프 컬렉션", "district": "와이키키", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/hnlak-the-laylow-waikiki-autograph-collection/overview/", "profile": "breakfastChoice"},
+              {"id": "hnlbr", "name": "르네상스 호놀룰루 호텔 앤 스파", "district": "알라모아나", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/hnlbr-renaissance-honolulu-hotel-and-spa/overview/", "profile": "breakfastChoice"},
+              {"id": "hnlow", "name": "코트야드 와이키키 비치", "district": "와이키키", "stars": 3, "url": "https://www.marriott.com/en-us/hotels/hnlow-courtyard-waikiki-beach/overview/", "profile": "courtyard"},
+              {"id": "hnlac", "name": "AC 호텔 호놀룰루", "district": "카카아코", "stars": 4, "url": "https://www.marriott.com/en-us/hotels/hnlac-ac-hotel-honolulu/overview/", "profile": "foodCredit"}
+            ],
+            "hilton": [
+              {"id": "hnlhvhh", "name": "힐튼 하와이언 빌리지 와이키키 비치 리조트", "district": "와이키키", "stars": 4, "url": "https://www.hilton.com/en/hotels/hnlhvhh-hilton-hawaiian-village-waikiki-beach-resort/", "profile": "noLounge"},
+              {"id": "hnlwiol", "name": "카라이 와이키키 비치, LXR", "district": "와이키키", "stars": 5, "url": "https://www.hilton.com/en/hotels/hnlwiol-ka-lai-waikiki-beach/", "profile": "noLounge"},
+              {"id": "hnlwahf", "name": "힐튼 와이키키 비치 리조트 앤 스파", "district": "와이키키", "stars": 4, "url": "https://www.hilton.com/en/hotels/hnlwahf-hilton-waikiki-beach-resort-and-spa/", "profile": "noLounge"},
+              {"id": "hnleses", "name": "엠버시 스위트 바이 힐튼 와이키키 비치 워크", "district": "와이키키", "stars": 4, "url": "https://www.hilton.com/en/hotels/hnleses-embassy-suites-waikiki-beach-walk/", "profile": "noLounge"},
+              {"id": "hnlkadt", "name": "더블트리 바이 힐튼 알라나 와이키키 비치", "district": "와이키키", "stars": 4, "url": "https://www.hilton.com/en/hotels/hnlkadt-doubletree-alana-waikiki-beach/", "profile": "noLounge"},
+              {"id": "wklahup", "name": "앰배서더 호텔 오브 와이키키, 태피스트리 컬렉션", "district": "와이키키", "stars": 3, "url": "https://www.hilton.com/en/hotels/wklahup-the-ambassador-hotel-of-waikiki/", "profile": "noLounge"},
+              {"id": "hnlkugi", "name": "힐튼 가든 인 와이키키 비치", "district": "와이키키", "stars": 3, "url": "https://www.hilton.com/en/hotels/hnlkugi-hilton-garden-inn-waikiki-beach/", "profile": "garden"}
             ]
           }
         }

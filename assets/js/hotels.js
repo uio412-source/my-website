@@ -131,6 +131,8 @@
       const dr = t === 4 ? '오후 4시 체크아웃' : '';
       if (pr === 'slh') return { bf: t >= 2, lounge: false, up: t >= 2, note: t >= 2 ? 'SLH 2인 컨티넨털 조식' : 'SLH 전용 약관' };
       if (pr === 'garden') return { bf: t >= 2, lounge: false, up: false, note: join(t >= 2 && 'MyWay 조식 선택', dr) };
+      // 해외: 이그제큐티브 라운지 운영 여부를 공식 목록에서 확인하지 못한 호텔
+      if (pr === 'noLounge') return { bf: t >= 2, lounge: false, up: t >= 2, note: join(t >= 3 && '라운지 운영 여부는 호텔 확인', dr) };
       return { bf: t >= 2, lounge: t >= 3, up: t >= 2, note: join(t === 2 && '라운지 층 객실로 업그레이드되면 입장', dr) };
     },
   };
