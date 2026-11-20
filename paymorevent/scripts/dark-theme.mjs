@@ -95,7 +95,7 @@ function dark(hex) {
 
 // ---------- 3) 다크 스타일 파일 ----------
 const vars = [...used].sort().map(h => `--d-${h}:${dark(h)};`).join('');
-const tokens = `--mc-bg:#11151c;--mc-bg-alt:#181e27;--mc-text:#e8ecf2;--mc-muted:#9aa4b4;--mc-primary:#5b85ff;--mc-primary-dark:#87a6ff;--mc-border:#2a3240;color-scheme:dark;`;
+const tokens = `--mc-bg:#11151c;--mc-bg-alt:#181e27;--mc-text:#e8ecf2;--mc-muted:#9aa4b4;--mc-primary:#5b85ff;--mc-primary-dark:#87a6ff;--mc-border:#2a3240;--mc-blue:#3987e5;--mc-orange:#d95926;--mc-green:#199e70;--mc-yellow:#c98500;--mc-pink:#f06292;--mc-purple:#9085e9;--mc-up:#ff6b6b;--mc-on-primary:#11151c;color-scheme:dark;`;
 const css = `/* 자동 생성 파일 — 직접 고치지 말고 \`npm run theme\`을 실행하세요. (scripts/dark-theme.mjs) */
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){${tokens}${vars}}}
 :root[data-theme="dark"]{${tokens}${vars}}
