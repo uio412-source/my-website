@@ -39,6 +39,28 @@ function Status({message}: {message: string}) {
   </div>;
 }
 
+// 불러오는 동안 화면 뼈대를 먼저 보여 줘서 레이아웃이 덜 흔들리게 함 (글자는 화면 낭독기용)
+function Loading({message, kind}: {message: string; kind: 'list' | 'detail'}) {
+  const tab = /^#(cards|cashback|events)$/.exec(location.hash)?.[1] ?? 'cards';
+  return <div className={kind === 'list' ? 'pm-site' : 'pm-site pm-detail'}>
+    <SiteHeader current={kind === 'list' ? tab : undefined} />
+    <main className={kind === 'list' ? 'pm-main' : 'pm-detail-main'} aria-busy="true">
+      <p role="status" className="sr-only">{message}</p>
+      {kind === 'list'
+        ? <div className="mc-skel-list" aria-hidden="true">
+            <i className="mc-skel mc-skel-title" /><i className="mc-skel mc-skel-line" /><i className="mc-skel mc-skel-search" />
+            <div className="mc-skel-chips">{Array.from({length: 6}, (_, i) => <i key={i} className="mc-skel" />)}</div>
+            <div className="mc-skel-grid">{Array.from({length: 6}, (_, i) => <i key={i} className="mc-skel mc-skel-card" />)}</div>
+          </div>
+        : <div className="mc-skel-detail" aria-hidden="true">
+            <i className="mc-skel mc-skel-line" /><i className="mc-skel mc-skel-hero" /><i className="mc-skel mc-skel-title" />
+            <i className="mc-skel mc-skel-line" /><i className="mc-skel mc-skel-line" /><i className="mc-skel mc-skel-block" />
+          </div>}
+    </main>
+    <SiteFooter />
+  </div>;
+}
+
 function Detail({kind, id}: {kind: 'cards' | 'events'; id: string}) {
   const [data, setData] = useState<{cards: Card[]; card: Card | null; events: Offer[]} | null>(null);
   const [failed, setFailed] = useState(false);
@@ -58,8 +80,8 @@ function Detail({kind, id}: {kind: 'cards' | 'events'; id: string}) {
   }, [kind, id]);
 
   if (failed) return <Status message="상세 정보를 불러오지 못했습니다." />;
-  if (!data) return <Status message="상세 정보를 불러오고 있습니다." />;
-  const loading = <Status message="상세 정보를 불러오고 있습니다." />;
+  const loading = <Loading kind="detail" message="상세 정보를 불러오고 있습니다." />;
+  if (!data) return loading;
   if (kind === 'events') {
     const offer = data.events.find(event => event.id === id);
     if (!offer) return <Status message="이벤트를 찾을 수 없습니다." />;
@@ -85,7 +107,7 @@ function Home() {
     return () => { mounted = false; };
   }, []);
   if (failed) return <Status message="화면을 불러오지 못했습니다. 새로고침해 주세요." />;
-  const loading = <Status message="카드 목록을 불러오고 있습니다." />;
+  const loading = <Loading kind="list" message="카드 목록을 불러오고 있습니다." />;
   if (!cards) return loading;
   return <Suspense fallback={loading}><Catalog initialCards={cards} initialEvents={events ?? NO_EVENTS} eventsLoading={!events} /></Suspense>;
 }

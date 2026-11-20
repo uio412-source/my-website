@@ -1,11 +1,15 @@
 import {applyRewardValuations,rewardValuation} from '@/lib/reward-valuation';
 import type {Card} from '@/lib/catalog-types';
 import {bestPicking,formatPicking,pickingRange} from '@/lib/catalog-model';
-export function PickingDetail({card}:{card:Card}){
- card=applyRewardValuations(card);
+/** 카드 상세의 피킹률(바우처성 혜택 제외). 상단 요약과 아래 피킹률 칸이 같은 값을 씀 */
+export function pickingSummary(input:Card){
+ const card=applyRewardValuations(input);
  const voucherTitles=card.benefits.filter(b=>b.kind==='voucher'||/바우처|연간\s*기프트|기프트\s*제공|선택\s*서비스/i.test(b.category+' '+b.title)).map(b=>b.title);
  const pickingCard={...card,rewardRates:card.rewardRates?.filter(r=>!voucherTitles.some(title=>(r.serviceTitle??r.label).includes(title)))};
- const best=bestPicking(pickingCard),range=pickingRange(pickingCard);
+ return {card,pickingCard,best:bestPicking(pickingCard),range:pickingRange(pickingCard)};
+}
+export function PickingDetail({card:input}:{card:Card}){
+ const {card,pickingCard,best,range}=pickingSummary(input);
  const pendingReason=card.sourceReviewPending?'변경된 공식 원문 대조 필요':!(card.rewardRates?.length||card.spendingPlans?.length)?'적립·할인 수치 모델 미등록':card.rewardCoveragePending?'전체 금전 혜택 모델·한도 대조 미완료':'실적 구간·공유 한도·수수료 조건 추가 검증 필요';
  const program=rewardValuation('포인트',card.name);
  const valuations=Array.from(new Set((card.rewardRates??[]).filter(r=>r.verified&&r.rewardUnit!=='원').map(r=>`${r.rewardUnit} 1단위 = ${r.unitValue.toLocaleString('ko-KR')}원`)));

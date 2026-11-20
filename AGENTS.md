@@ -8,6 +8,7 @@
 - **Mr. Cards**(옛 이름 페이모먼트): 같은 저장소의 `paymorevent/` 폴더에 있는 카드 혜택 사이트로 `/my-website/paymorevent/`에 배포됩니다. 메뉴는 **카드상품 검색 · 발급이벤트 · 카드사 이벤트** 세 가지입니다. 호텔 기능은 제거했습니다: 호텔 칩·해시태그·'호텔제휴' 필터는 없고, 호텔·리조트가 직접 주는 혜택 이벤트(호텔 체인·특급호텔 다이닝·객실 패키지 등)는 `lib/hotel-offers.mjs` 기준으로 목록·상세 주소에서 뺍니다. 아고다·호텔스닷컴 같은 여행 예약 사이트 할인은 남깁니다. 호텔 관련 화면 요소를 다시 추가하지 마세요. React·Vite로 빌드하며(`npm ci`, `npm run build`), 링크·이미지 경로는 `lib/site-path.ts`의 함수를 씁니다. 헤더·하단 탭바·글꼴·색은 Mr. Stocks와 같게 `paymorevent/app/mr-cards.css`와 `components/customer-shell.tsx`에서 맞춥니다.
   - **다크 모드**: Mr. Stocks와 같은 `theme` 저장값을 같이 씁니다(한쪽에서 바꾸면 다른 쪽도 같음). `app/*.css`의 색은 `var(--d-색, 원래색)`으로 감싸 두었고 다크 값은 `app/mr-cards-dark.css`(자동 생성)에 있습니다. CSS에 색을 추가·변경했다면 `paymorevent/`에서 `npm run theme`을 실행해 함께 커밋하세요.
   - **첫 화면 속도**: `pages/main.tsx`는 화면(목록·카드 상세·이벤트 상세)과 큰 데이터(`data/events.json`, `data/home-cards.json`)를 `import()`로 나눠 받습니다. 이 파일들을 다시 맨 위 `import`로 불러오지 마세요(첫 화면 JS가 다시 2.5MB가 됩니다).
+  - **화면 규칙**: 카드·이벤트 목록은 24개씩 보여 주고 "더 보기"(남은 개수 표시)로 늘립니다. 휴대폰에서 카드사 선택과 칩은 옆으로 넘기는 한 줄입니다. 새 스타일은 `app/mr-cards.css` 끝의 "UI/UX 개선" 부분에 `--mc-*` 변수만 써서 넣으면 다크 모드가 따로 손대지 않아도 맞습니다.
   - **사이트 전환 메뉴**(로고 옆 ▾): Mr. Stocks는 `assets/js/main.js`, Mr. Cards는 `components/customer-shell.tsx`에 있습니다. 문구를 바꾸면 두 곳을 같이 고치세요.
 - `main` 브랜치에 merge되면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages로 자동 배포합니다.
 
