@@ -4,6 +4,8 @@
   const $ = (id) => document.getElementById(id);
   const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
+  // 새로고침 버튼(main.js)을 누른 뒤에는 캐시를 건너뛰고 받음
+  const getJSON = (u) => (window.MS && MS.getJSON ? MS.getJSON(u) : fetch(u).then((r) => r.json()));
   const state = { assets: [], cache: {}, cur: null, range: 3, log: false, view: null };
 
   const ZONE_LABEL = ["평상시", "관심 (옅은 음영)", "웅줍 구간 (진한 음영)"];
@@ -35,6 +37,8 @@
       b.addEventListener("click", () => select(a.id, true));
       box.appendChild(b);
     });
+    if (box.dataset.bound) return; // 이벤트는 한 번만 연결
+    box.dataset.bound = "1";
     // 가운데로 스크롤된 카드를 자동 선택 (손가락으로 밀었을 때)
     let t;
     box.addEventListener("scroll", () => {
@@ -73,8 +77,7 @@
     });
     try { history.replaceState(null, "", "#" + id); } catch (e) {}
     if (!state.cache[id]) {
-      const r = await fetch(DATA + id + ".json");
-      state.cache[id] = await r.json();
+      state.cache[id] = await getJSON(DATA + id + ".json");
     }
     if (state.cur !== id) return;
     renderSummary();
@@ -450,8 +453,7 @@
   });
 
   // ---------- 시작 ----------
-  fetch(DATA + "index.json")
-    .then((r) => r.json())
+  getJSON(DATA + "index.json")
     .then((idx) => {
       state.assets = idx.assets.map((m) => ({ ...m, last: m.last }));
       renderCards();
@@ -461,4 +463,13 @@
     .catch(() => {
       $("uj-panel").innerHTML = '<p class="uj-err">데이터를 불러오지 못했습니다.</p>';
     });
+
+  // 오른쪽 아래 새로고침 버튼: 지수 목록과 지금 보는 지수 데이터를 최신 파일로 다시 그림
+  window.addEventListener("datarefresh", (e) => e.detail.tasks.push((async () => {
+    const idx = await getJSON(DATA + "index.json");
+    state.assets = idx.assets;
+    state.cache = {};
+    renderCards();
+    await select(state.cur && state.assets.some((a) => a.id === state.cur) ? state.cur : state.assets[0].id, false);
+  })()));
 })();

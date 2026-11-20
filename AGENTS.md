@@ -57,6 +57,8 @@ assets/img/           이미지
 - 구간 이름: 1~399 평온 · 400~699 조정 · 700~899 깊은 조정 · 900~1000 웅줍권
 - 기준표와 자산별 평소 변동성은 `data/ungjup/lv_model.json`에 고정되어 있습니다. 다시 만들 때만 `python tools/ungjup/build.py --fit`을 실행하고 PR에 이유를 적으세요. 상장 200일 미만 종목은 있는 기간으로 200일선을 근사하고 "추정"으로 표시합니다.
 - 차트 색은 `style.css`의 `--chart-*`, `--lv-*` 변수를 씁니다. 웅줍 음영은 핑크(`--chart-zone1/2`, 진한 구간 하단 띠 `--chart-zone-strip`)입니다.
+- **오른쪽 아래 새로고침 버튼**(`main.js`): 누르면 캐시를 건너뛰고(`?v=시각`, `cache: no-store`) 서버의 최신 데이터 파일을 다시 받아 지금 화면을 그대로 다시 그립니다. 결과는 토스트로 알려 주고, 이미 최신이면 GitHub Actions 배포 페이지(지금 다시 계산) 링크를 보여 줍니다.
+  - 페이지 스크립트는 데이터를 `window.MS.getJSON(url)`로 불러오고, `datarefresh` 이벤트를 받으면 `e.detail.tasks.push(Promise)`로 다시 그리는 작업을 넣으세요. 이벤트 연결은 한 번만 하세요(다시 그릴 때 중복되지 않게).
 - 다크/라이트 모드는 오른쪽 위 버튼으로 바꾸며 `<html data-theme>`과 localStorage에 저장됩니다. 색을 추가할 때는 `style.css`의 다크 블록 두 곳(시스템 설정용, `data-theme="dark"`용)에 모두 넣으세요.
 
 ## 로컬 미리보기

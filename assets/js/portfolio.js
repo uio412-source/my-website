@@ -13,14 +13,16 @@
   const CHART = { QLD: "qld", SPY: "spy", GLD: "gld", "^NDX": "ndx", "BTC-USD": "btc" };
 
   // 직접 추가한 종목 (이 브라우저에만 저장)
+  // 새로고침 버튼(main.js)을 누른 뒤에는 캐시를 건너뛰고 받음
+  const getJSON = (u) => (window.MS && MS.getJSON ? MS.getJSON(u) : fetch(u).then((r) => r.json()));
   const KEY = "mrstocks.added.v1";
   const readAdded = () => { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } };
   const writeAdded = (list) => { try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {} };
 
   async function load() {
     const [h, lv] = await Promise.all([
-      fetch("data/holdings.json").then((r) => r.json()),
-      fetch("data/ungjup/holdings_lv.json").then((r) => r.json()).catch(() => ({ items: {} })),
+      getJSON("data/holdings.json"),
+      getJSON("data/ungjup/holdings_lv.json").catch(() => ({ items: {} })),
     ]);
     readAdded().forEach((a) => {
       const g = h.groups.find((x) => x.id === (a.market === "US" ? "us" : "kr")) || h.groups[0];
@@ -41,7 +43,7 @@
   };
   async function news() {
     let d;
-    try { d = await fetch("data/ungjup/news.json").then((r) => r.json()); } catch (e) { return; }
+    try { d = await getJSON("data/ungjup/news.json"); } catch (e) { return; }
     if (!d.items?.length) return;
     const one = d.items.map((n) => `<a class="news-item" href="${esc(n.link)}" target="_blank" rel="noopener">
         <b class="${n.symbol ? "" : "mkt"}">${esc(n.label)}</b>${esc(n.title)}<span class="src">${esc(n.source)} · ${ago(n.time)}</span></a>`).join("");
@@ -53,9 +55,10 @@
   }
 
   // ---------- 보유종목 ----------
+  let H = null, sort = "default", bound = false;
   function holdings(d) {
-    const { h } = d;
-    let sort = "default";
+    H = d.h;
+    const h = H;
     const render = () => {
       const sorter = {
         default: (a, b) => a.order - b.order,
@@ -99,14 +102,17 @@
       }).join("") + `<p class="h-foot">${h.asof} 기준 · LV 배지는 웅줍LV(1~1000), 900 이상이 웅줍권</p>`;
       $("h-list").querySelectorAll("[data-edit]").forEach((b) => b.addEventListener("click", () => openSheet(b.dataset.edit)));
     };
+    holdings.render = render;
+    render();
+    if (bound) return; // 이벤트는 한 번만 연결 (새로고침 때 다시 그려도 중복되지 않게)
+    bound = true;
     $("h-sort").addEventListener("click", (e) => {
       const b = e.target.closest("button");
       if (!b) return;
       $("h-sort").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
       sort = b.dataset.sort;
-      render();
+      holdings.render();
     });
-    render();
     setupSheet();
   }
 
@@ -296,11 +302,14 @@
       </div>`;
   }
 
-  load().then((d) => {
+  const show = (d) => {
     if ($("h-list")) { holdings(d); news(); }
     if ($("w-root")) wealth(d);
-  }).catch(() => {
+  };
+  load().then(show).catch(() => {
     const el = $("h-list") || $("w-root");
     if (el) el.innerHTML = '<p class="h-foot">데이터를 불러오지 못했습니다.</p>';
   });
+  // 오른쪽 아래 새로고침 버튼: 최신 파일로 다시 그림 (정렬·스크롤 위치는 그대로)
+  window.addEventListener("datarefresh", (e) => e.detail.tasks.push(load().then(show)));
 })();
