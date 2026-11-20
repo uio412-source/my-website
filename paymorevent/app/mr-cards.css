@@ -8,6 +8,15 @@
   --mc-primary: #2456e8;
   --mc-primary-dark: #1a3fb0;
   --mc-border: #e3e7ee;
+  /* 강조색 (Mr. Stocks style.css의 --cat-*, --lv-* 와 같은 값) */
+  --mc-blue: #2a78d6;
+  --mc-orange: #eb6834;
+  --mc-green: #1baf7a;
+  --mc-yellow: #eda100;
+  --mc-pink: #c2185b;
+  --mc-purple: #6250d6;
+  --mc-up: #e0322f;
+  --mc-on-primary: #ffffff;
   --mc-font: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
   /* shadcn 토큰도 같은 값으로 */
   --background: var(--mc-bg);

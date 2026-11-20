@@ -1,5 +1,0 @@
-import {IssuerLogo} from '@/components/issuer-logos';
-import type {Offer} from '@/lib/catalog-types';
-import {eventPath,eventCategory,offerStatus,requiresEntry,dedupeOffers,offerLinkLabel} from '@/lib/catalog-model';
-import {ArrowUpRight} from 'lucide-react';
-export function EventBoard({offers}:{offers:Offer[]}){return <div className="pm-event-grid">{dedupeOffers(offers).map(o=><a className="pm-event" key={o.id} href={eventPath(o.id)}><div className="pm-event-meta"><IssuerLogo issuer={o.issuer}/><span className={offerStatus(o)==='예정'?'pm-status-upcoming':'pm-status'}>{offerStatus(o)}</span></div><span className="pm-event-category">{eventCategory(o)}{requiresEntry(o)?' · 응모':''}</span><h3>{o.title}</h3>{(o.cardTarget||o.cardIds?.length)&&<span className="pm-event-target">{o.cardNames?.[0]??offerLinkLabel(o)}{o.eligibilityLabel?' · '+o.eligibilityLabel:''}</span>}{o.benefitText!==o.title&&<p>{o.benefitText}</p>}<div className="pm-event-bottom"><span>{o.endsAt?o.endsAt.replaceAll('-','.')+'까지':''}</span><ArrowUpRight size={18} aria-hidden="true"/></div></a>)}</div>;}

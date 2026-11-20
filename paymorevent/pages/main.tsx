@@ -4,14 +4,9 @@ import {SiteHeader, SiteFooter} from '@/components/customer-shell';
 import type {Card, Offer} from '@/lib/catalog-types';
 import {sitePath} from '@/lib/site-path';
 import {readCard, readCardSummaries} from './data';
-import '@/app/globals.css';
-import '@/app/responsive.css';
-import '@/app/customer-update.css';
-import '@/app/customer.css';
-import '@/app/database.css';
-import '@/app/issuer-ui.css';
 import '@/app/mr-cards.css';
 import '@/app/mr-cards-dark.css';
+import '@/app/mc.css';
 
 // 첫 화면을 빨리 띄우려고 화면 코드와 큰 데이터(이벤트 2MB, 첫 카드 목록)는 따로 받습니다.
 // 머리글·바닥글과 공통 CSS만 먼저 오고, 나머지는 필요한 화면에서 동시에 내려받습니다.
@@ -27,11 +22,11 @@ const readHomeCards = () => import('@/data/home-cards.json').then(module => modu
 const catalogRoute = /^(cards|events)\/([a-zA-Z0-9][a-zA-Z0-9._-]*)\/?$/;
 
 function Status({message}: {message: string}) {
-  return <div className="pm-site pm-detail">
+  return <div className="pm-site mc">
     <SiteHeader />
-    <main className="pm-detail-main">
-      <h1 role="status">{message}</h1>
-      <a className="pm-back" href={sitePath()}>Mr. Cards 홈으로</a>
+    <main className="mc-main mc-detail">
+      <p className="mc-empty" role="status">{message}</p>
+      <a className="mc-back" href={sitePath()}>← Mr. Cards 홈으로</a>
     </main>
     <SiteFooter />
   </div>;
