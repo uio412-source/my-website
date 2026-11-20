@@ -1,13 +1,12 @@
 import type {MouseEvent} from 'react';
-import {BadgePercent, CreditCard, Hotel, Ticket} from 'lucide-react';
+import {BadgePercent, CreditCard, Ticket} from 'lucide-react';
 import {sitePath} from '@/lib/site-path';
 
 // Mr. Stocks와 같은 틀: 위는 한 줄 헤더(로고 · 메뉴), 휴대폰은 하단 탭바
 export const SECTIONS = [
-  {id: 'cards', label: '카드 찾기', Icon: CreditCard},
-  {id: 'cashback', label: '발급 캐시백', Icon: BadgePercent},
-  {id: 'events', label: '카드 이벤트', Icon: Ticket},
-  {id: 'hotels', label: '호텔 혜택', Icon: Hotel},
+  {id: 'cards', label: '카드상품 검색', Icon: CreditCard},
+  {id: 'cashback', label: '발급이벤트', Icon: BadgePercent},
+  {id: 'events', label: '카드사 이벤트', Icon: Ticket},
 ] as const;
 
 type NavProps = {current?: string; onNav?: (id: string) => void};
@@ -55,9 +54,9 @@ export function SiteHeader(props: NavProps = {}) {
 export function SiteFooter() {
   return <footer className="pm-footer">
     <a href={sitePath()} className="pm-footer-brand">Mr. <span>Cards</span></a>
-    <p>카드와 여행, 필요한 혜택을 한곳에서.</p>
+    <p>카드 상품과 이벤트를 한곳에서.</p>
     <div>
-      <span>최종 이용 조건은 카드사·호텔 안내를 확인하세요.</span>
+      <span>최종 이용 조건은 카드사 안내를 확인하세요.</span>
       <a href={sitePath('downloads/paymorevent-card-database.xlsx')} download="Mr.Cards-카드DB.xlsx" className="pm-db-link">카드 DB 엑셀</a>
       <a href={sitePath('../ungjup.html')} className="mc-family">Mr. Stocks 바로가기</a>
     </div>

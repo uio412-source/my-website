@@ -5,7 +5,7 @@
 ## 프로젝트 개요
 - **Mr. Stocks**: 줍줍 지표 차트와 관심종목 시세을 보여 주는 **정적 웹사이트**입니다. 빌드 도구나 프레임워크 없이 HTML, CSS, JS만 씁니다.
 - 모바일 우선입니다. 폭 720px 이하에서는 위 메뉴 대신 하단 탭바(차트 · 관심종목 · 배당)가 나옵니다.
-- **Mr. Cards**(옛 이름 페이모먼트): 같은 저장소의 `paymorevent/` 폴더에 있는 카드 혜택 사이트로 `/my-website/paymorevent/`에 배포됩니다. React·Vite로 빌드하며(`npm ci`, `npm run build`), 링크·이미지 경로는 `lib/site-path.ts`의 함수를 씁니다. 헤더·하단 탭바·글꼴·색은 Mr. Stocks와 같게 `paymorevent/app/mr-cards.css`와 `components/customer-shell.tsx`에서 맞춥니다.
+- **Mr. Cards**(옛 이름 페이모먼트): 같은 저장소의 `paymorevent/` 폴더에 있는 카드 혜택 사이트로 `/my-website/paymorevent/`에 배포됩니다. 메뉴는 **카드상품 검색 · 발급이벤트 · 카드사 이벤트** 세 가지입니다(호텔 기능은 제거). React·Vite로 빌드하며(`npm ci`, `npm run build`), 링크·이미지 경로는 `lib/site-path.ts`의 함수를 씁니다. 헤더·하단 탭바·글꼴·색은 Mr. Stocks와 같게 `paymorevent/app/mr-cards.css`와 `components/customer-shell.tsx`에서 맞춥니다.
 - `main` 브랜치에 merge되면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages로 자동 배포합니다.
 
 ## 폴더 구조
