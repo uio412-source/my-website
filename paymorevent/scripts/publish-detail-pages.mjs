@@ -1,5 +1,6 @@
 import {mkdir, readFile, writeFile} from 'node:fs/promises';
 import {gunzipSync} from 'node:zlib';
+import {CARD_LIST_FILE, CARD_SEARCH_FILE} from './card-list.mjs';
 
 const dist = new URL('../dist/', import.meta.url);
 const cards = JSON.parse(gunzipSync(await readFile(new URL('../data/cards.json.gz', import.meta.url))));
@@ -23,6 +24,14 @@ const cardIds = validateIds(cards);
 validateIds(events);
 for (const summary of snapshot.cards) {
   if (!cardIds.has(summary.id)) throw new Error(`Missing card details: ${summary.id}`);
+}
+
+// The app reads the list from these files, built from the snapshot by vite.config.ts.
+const list = JSON.parse(await readFile(new URL(CARD_LIST_FILE, dist), 'utf8'));
+const search = JSON.parse(await readFile(new URL(CARD_SEARCH_FILE, dist), 'utf8'));
+if (list.cards.map(card => card.id).join('\n') !== snapshot.cards.map(card => card.id).join('\n')) throw new Error(`${CARD_LIST_FILE} does not match catalog-snapshot.json`);
+if (Object.keys(search.searchText).length !== snapshot.cards.length || snapshot.cards.some(card => typeof search.searchText[card.id] !== 'string' || !Object.hasOwn(search.searchText, card.id))) {
+  throw new Error(`${CARD_SEARCH_FILE} does not match catalog-snapshot.json`);
 }
 
 async function createPage(collection, id) {

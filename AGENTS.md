@@ -8,6 +8,7 @@
 - **Mr. Cards**(옛 이름 페이모먼트): 같은 저장소의 `paymorevent/` 폴더에 있는 카드 혜택 사이트로 `/my-website/paymorevent/`에 배포됩니다. 메뉴는 **카드상품 검색 · 발급이벤트 · 카드사 이벤트** 세 가지입니다(호텔 기능은 제거). React·Vite로 빌드하며(`npm ci`, `npm run build`), 링크·이미지 경로는 `lib/site-path.ts`의 함수를 씁니다. 헤더·하단 탭바·글꼴·색은 Mr. Stocks와 같게 `paymorevent/app/mr-cards.css`와 `components/customer-shell.tsx`에서 맞춥니다.
   - **다크 모드**: Mr. Stocks와 같은 `theme` 저장값을 같이 씁니다(한쪽에서 바꾸면 다른 쪽도 같음). `app/*.css`의 색은 `var(--d-색, 원래색)`으로 감싸 두었고 다크 값은 `app/mr-cards-dark.css`(자동 생성)에 있습니다. CSS에 색을 추가·변경했다면 `paymorevent/`에서 `npm run theme`을 실행해 함께 커밋하세요.
   - **첫 화면 속도**: `pages/main.tsx`는 화면(목록·카드 상세·이벤트 상세)과 큰 데이터(`data/events.json`, `data/home-cards.json`)를 `import()`로 나눠 받습니다. 이 파일들을 다시 맨 위 `import`로 불러오지 마세요(첫 화면 JS가 다시 2.5MB가 됩니다).
+  - **카드 목록 데이터**: 원본은 `public/catalog-snapshot.json`이고, 앱은 빌드 때 여기서 만든 `card-list.json`(목록·상세 공통)·`card-search.json`(목록 검색)만 받습니다. 요약 카드에서 새 필드를 읽으려면 `scripts/card-list.mjs`의 `LIST_FIELDS`에 추가하세요.
   - **사이트 전환 메뉴**(로고 옆 ▾): Mr. Stocks는 `assets/js/main.js`, Mr. Cards는 `components/customer-shell.tsx`에 있습니다. 문구를 바꾸면 두 곳을 같이 고치세요.
 - `main` 브랜치에 merge되면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages로 자동 배포합니다.
 
