@@ -36,6 +36,8 @@ jobs:
         run: |
           pip install --quiet numpy pandas
           python tools/ungjup/build.py
+      - name: 배포 버전 표시 (오래된 페이지 자동 새로고침용)
+        run: python tools/stamp_version.py "${GITHUB_SHA::7}"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
