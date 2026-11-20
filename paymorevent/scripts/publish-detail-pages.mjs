@@ -1,6 +1,6 @@
+import {isHotelOffer} from '../lib/hotel-offers.mjs';
 import {mkdir, readFile, writeFile} from 'node:fs/promises';
 import {gunzipSync} from 'node:zlib';
-import {isHotelOffer} from '../lib/hotel-offers.mjs';
 
 const dist = new URL('../dist/', import.meta.url);
 const cards = JSON.parse(gunzipSync(await readFile(new URL('../data/cards.json.gz', import.meta.url))));
