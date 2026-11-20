@@ -19,10 +19,16 @@
       terms: 'https://all.accor.com/a/en/loyalty-program/legal/terms-and-conditions-limitless.html',
       tierNote: '연간(1–12월) 스테이터스 박수 또는 스테이터스 포인트(SP) 중 먼저 채운 기준으로 달성합니다. 다이아몬드는 SP로만 달성합니다. 조식·라운지는 참여 호텔 기준이며 업그레이드와 얼리·레이트는 가능 시 적용됩니다.',
       defaultTier: 3,
+      cards: [
+        { name: 'ALL 우리카드 Infinite', issuer: '우리카드', fee: '연회비 50만원', grant: '골드 자동 부여',
+          perks: ['14,000 ALL 포인트 기프트(연 1회)', '아코르 플러스 트래블러 멤버십 자동 가입(숙박·식음 할인)', '전년 2천만원 이상 이용 시 5,000P 보너스', '3천원당 국내 1.3P · 아코르 호텔 5P · 해외 3P'] },
+        { name: 'ALL 우리카드 Premium', issuer: '우리카드', fee: '연회비 15만원', grant: '실버 부여',
+          perks: ['4,000 ALL 포인트 기프트(연 1회)', '이용 조건 충족 시 2,000P 보너스', '3천원당 국내 1P · 아코르 호텔 3P · 해외 등 2P'] },
+      ],
       tiers: [
         { n: '클래식', a: 'C', req: '가입 시' },
-        { n: '실버', a: 'S', req: '10박 또는 2,000 SP', bonus: 24, perks: { out: '레이트(가능 시)' } },
-        { n: '골드', a: 'G', req: '30박 또는 7,000 SP', bonus: 48, perks: { up: '가능 시', out: '얼리 또는 레이트' } },
+        { n: '실버', a: 'S', req: '10박 또는 2,000 SP', card: 'ALL 우리카드 Premium 발급', bonus: 24, perks: { out: '레이트(가능 시)' } },
+        { n: '골드', a: 'G', req: '30박 또는 7,000 SP', card: 'ALL 우리카드 Infinite 발급', bonus: 48, perks: { up: '가능 시', out: '얼리 또는 레이트' } },
         { n: '플래티넘', a: 'P', req: '60박 또는 14,000 SP', bonus: 76, perks: { bf: '참여 호텔', lounge: '참여 호텔', up: '가능 시', out: '얼리·레이트' } },
         { n: '다이아몬드', a: 'D', req: '26,000 SP (SP로만 달성)', bonus: 76, perks: { bf: '참여 호텔 · 주말 조식', lounge: '페어몬트 골드 포함', up: '가능 시', out: '얼리·레이트', etc: '골드 등급 선물' } },
       ],
@@ -32,6 +38,8 @@
       terms: 'https://www.ihg.com/content/kr/ko/customer-care/member-tc/2nd-page',
       tierNote: '연간 적격 숙박일수 또는 적격 포인트로 달성합니다. 라운지는 등급 혜택이 아니라 40박 마일스톤 리워드에서 고르는 연간 라운지 멤버십입니다.',
       defaultTier: 4,
+      cards: [],
+      cardNote: '국내에서 발급되는 IHG 제휴카드는 없습니다(미국 Chase 카드만 있음).',
       tiers: [
         { n: '클럽', a: 'C', req: '가입 시' },
         { n: '실버', a: 'S', req: '10박', bonus: 20, perks: { out: '레이트(가능 시)' } },
@@ -49,11 +57,16 @@
       terms: 'https://www.marriott.com/loyalty/terms/default.mi',
       tierNote: '연간 엘리트 숙박일수로 달성하며 앰배서더는 연 US$23,000 적격 지출이 추가로 필요합니다. 조식은 플래티넘 이상 웰컴 혜택에서 고르며 브랜드마다 다릅니다.',
       defaultTier: 3,
+      cards: [
+        { name: '메리어트 본보이 더 베스트', issuer: '신한카드', fee: '연회비 26.4만원(해외겸용 26.7만원)', grant: '골드 자동 · 연 6천만원 이용 시 플래티넘',
+          perks: ['연 10 엘리트 숙박 크레딧', '무료 숙박권 연 1회(1박 35,000P 이하 호텔)', '1천원당 기본 1P · 메리어트 호텔 5P · 해외·항공·카페·택시 3P'] },
+      ],
+      cardNote: '실버를 주던 메리어트 본보이 더 클래식 신한카드는 2026년 4월 23일 단종됐습니다. 6천만원 기준은 연회비 청구 주기 안의 본인·가족카드 합산 이용액입니다.',
       tiers: [
         { n: '멤버', a: 'M', req: '가입 시' },
         { n: '실버', a: 'S', req: '10박', bonus: 10, perks: { out: '우선 레이트(가능 시)' } },
-        { n: '골드', a: 'G', req: '25박', bonus: 25, perks: { up: '가능 시', out: '오후 2시(가능 시)' } },
-        { n: '플래티넘', a: 'P', req: '50박', bonus: 50, perks: { bf: '웰컴 혜택 선택', lounge: '참여 호텔', up: '일부 스위트까지', out: '오후 4시' } },
+        { n: '골드', a: 'G', req: '25박', card: '신한 더 베스트 발급 시 자동', bonus: 25, perks: { up: '가능 시', out: '오후 2시(가능 시)' } },
+        { n: '플래티넘', a: 'P', req: '50박', card: '신한 더 베스트 연 6천만원 이용', bonus: 50, perks: { bf: '웰컴 혜택 선택', lounge: '참여 호텔', up: '일부 스위트까지', out: '오후 4시' } },
         { n: '티타늄', a: 'T', req: '75박', bonus: 75, perks: { bf: '웰컴 혜택 선택', lounge: '참여 호텔', up: '일부 스위트까지', out: '오후 4시' } },
         { n: '앰배서더', a: 'A', req: '100박 + 연 US$23,000', bonus: 75, perks: { bf: '웰컴 혜택 선택', lounge: '참여 호텔', up: '일부 스위트까지', out: '오후 4시', etc: '앰배서더 전담 서비스' } },
       ],
@@ -63,11 +76,18 @@
       terms: 'https://www.hilton.com/en/hilton-honors/member-benefits/',
       tierNote: '2026년부터 박수·투숙 횟수·적격 지출(US$) 중 하나로 달성합니다(다이아몬드 리저브는 박수 또는 횟수에 더해 지출 필요). 조식은 브랜드·지역에 따라 식음 크레딧으로 대신 제공됩니다.',
       defaultTier: 3,
+      cards: [
+        { name: '힐튼 아너스 아멕스 프리미엄', issuer: '롯데카드', fee: '연회비 50만원', grant: '골드 부여 · 연 2,400만원 이용 시 다이아몬드',
+          perks: ['연 2,400만원 이상 이용 시 전 세계 힐튼 주말 무료 숙박권 2매', '1,500원당 국내 2P · 면세점·대한항공·아시아나 6P · 해외·힐튼 8P'] },
+        { name: '힐튼 아너스 아멕스', issuer: '롯데카드', fee: '연회비 25만원', grant: '실버 부여 · 연 1,200만원 이용 시 골드',
+          perks: ['연 1,200만원 이상 이용 시 주말 무료 숙박권 1매', '1,500원당 국내 2P · 면세점·항공·해외·힐튼 4P'] },
+      ],
+      cardNote: '무료 숙박권과 등급 업그레이드는 연간 이용실적 기준이 같아 한 번에 받습니다. 숙박권은 받은 날부터 12개월, 금·토·일에 씁니다.',
       tiers: [
         { n: '멤버', a: 'M', req: '가입 시' },
-        { n: '실버', a: 'S', req: '10박 · 4회 또는 US$2,500', bonus: 20, perks: { out: '레이트(요청 시)' } },
-        { n: '골드', a: 'G', req: '25박 · 15회 또는 US$6,000', bonus: 80, perks: { bf: '조식 또는 식음 크레딧', up: '이그제큐티브 룸까지', out: '레이트(요청 시)' } },
-        { n: '다이아몬드', a: 'D', req: '50박 · 25회 또는 US$11,500', bonus: 100, perks: { bf: '조식 또는 식음 크레딧', lounge: '이그제큐티브 라운지', up: '1베드 스위트까지', out: '레이트(요청 시)' } },
+        { n: '실버', a: 'S', req: '10박 · 4회 또는 US$2,500', card: '롯데 힐튼 아너스 아멕스 발급', bonus: 20, perks: { out: '레이트(요청 시)' } },
+        { n: '골드', a: 'G', req: '25박 · 15회 또는 US$6,000', card: '아멕스 프리미엄 발급 · 아멕스 연 1,200만원', bonus: 80, perks: { bf: '조식 또는 식음 크레딧', up: '이그제큐티브 룸까지', out: '레이트(요청 시)' } },
+        { n: '다이아몬드', a: 'D', req: '50박 · 25회 또는 US$11,500', card: '아멕스 프리미엄 연 2,400만원', bonus: 100, perks: { bf: '조식 또는 식음 크레딧', lounge: '이그제큐티브 라운지', up: '1베드 스위트까지', out: '레이트(요청 시)' } },
         { n: '다이아몬드 리저브', a: 'DR', req: '80박 또는 40회 + US$18,000', bonus: 120, perks: { bf: '조식 또는 식음 크레딧', lounge: '라운지 · 프리미엄 클럽', up: '확정 업그레이드 1회', out: '오후 4시 보장' } },
       ],
     },
@@ -75,56 +95,44 @@
   const ORDER = ['accor', 'ihg', 'hotelux', 'marriott', 'hilton'];
   const PERKS = [['bf', '조식'], ['lounge', '라운지'], ['up', '업그레이드'], ['out', '체크아웃'], ['etc', '기타']];
 
-  // ---------- 호텔별 혜택 문구 (등급 번호, 호텔 profile) ----------
-  const benefit = {
-    accor(tier, profile) {
-      if (profile === 'excluded') return 'ALL Accor 멤버십 미참여';
-      if (tier === 0) return '회원 요금 · 포인트 적립';
-      if (tier === 1) return '레이트 체크아웃(가능 시)';
-      if (tier === 2) return '객실 업그레이드 · 얼리 또는 레이트(가능 시)';
-      const lounge = profile === 'club' ? ' · 라운지' :
-        profile === 'fairmont' ? (tier >= 4 ? ' · 페어몬트 골드 라운지' : ' · 골드 라운지는 다이아몬드부터') : '';
-      return '조식(참여 시)' + lounge + ' · 업그레이드 · 얼리·레이트(가능 시)';
+  // ---------- 호텔별 혜택 (등급 번호, 호텔 profile) → 조식·라운지·룸 업그레이드 여부와 짧은 메모 ----------
+  const flags = {
+    accor(t, pr) {
+      if (pr === 'excluded') return { note: 'ALL Accor 멤버십 미참여' };
+      const lounge = (pr === 'club' && t >= 3) || (pr === 'fairmont' && t >= 4);
+      return { bf: t >= 3, lounge, up: t >= 2,
+        note: pr === 'fairmont' && t === 3 ? '페어몬트 골드 라운지는 다이아몬드부터' : '' };
     },
-    ihg(tier, profile) {
-      const perks = [];
-      if (profile === 'breakfastIncluded') perks.push('기본 조식 포함');
-      else if (tier === 4) perks.push('웰컴 혜택으로 2인 조식 선택');
-      if (profile === 'loungeMilestone') perks.push('별도 연간 라운지 멤버십 사용 가능');
-      if (tier >= 3) perks.push('업그레이드·얼리(가능 시)');
-      perks.push('레이트(가능 시)');
-      return perks.join(' · ');
+    ihg(t, pr) {
+      const incl = pr === 'breakfastIncluded';
+      return { bf: incl || t === 4, lounge: false, up: t >= 3,
+        note: incl ? '모든 등급 기본 조식 포함' : pr === 'loungeMilestone' ? '라운지는 별도 연간 라운지 멤버십' : t === 4 ? '웰컴 혜택으로 2인 조식 선택' : '' };
     },
-    hotelux(tier, profile) {
-      return profile === 'sofitelExample' ? '요금 예시: 매일 조식 · US$100 호텔 크레딧 · 업그레이드(가능 시)' :
-        '요금별 조식·크레딧 및 업그레이드·얼리·레이트 조건 확인';
+    hotelux(t, pr) {
+      return { bf: true, lounge: false, up: true,
+        note: pr === 'sofitelExample' ? '혜택 요금: 매일 조식 · US$100 크레딧' : '혜택 포함 요금으로 예약 시' };
     },
-    marriott(tier, profile) {
-      if (profile === 'apartments') return '이그제큐티브 아파트먼트 별도 적립·혜택 조건';
-      if (tier === 0) return '회원 요금 · 포인트 적립';
-      if (tier === 1) return '우선 레이트 체크아웃(가능 시)';
-      if (tier === 2) return '객실 업그레이드 · 오후 2시 체크아웃(가능 시)';
-      const perks = {
-        breakfastChoice: '웰컴 혜택으로 2인 조식 선택',
-        foodCredit: '웰컴 혜택으로 식음 크레딧 선택',
-        courtyard: '웰컴 혜택으로 식음 크레딧 선택',
-        courtyardClub: '라운지 조식 · 미운영 시 레스토랑 조식',
-        club: '라운지',
-        clubChoice: '라운지 · 웰컴 혜택으로 조식 선택',
-        series: '웰컴 혜택으로 조식 선택(레스토랑 운영 조건)',
-        welcome: '웰컴 혜택(포인트 또는 지정 어메니티)',
-      };
-      return perks[profile] + ' · 업그레이드(가능 시) · 오후 4시 체크아웃';
+    marriott(t, pr) {
+      if (pr === 'apartments') return { note: '이그제큐티브 아파트먼트 별도 혜택 조건' };
+      if (t < 3) return { bf: false, lounge: false, up: t >= 2, note: t === 2 ? '오후 2시 레이트 체크아웃(가능 시)' : '' };
+      const bf = ['breakfastChoice', 'clubChoice', 'series', 'courtyardClub', 'club'].includes(pr);
+      const lounge = ['club', 'clubChoice', 'courtyardClub'].includes(pr);
+      const note = {
+        breakfastChoice: '웰컴 혜택으로 2인 조식 선택', clubChoice: '웰컴 혜택으로 조식 선택', series: '조식 선택(레스토랑 운영 시)',
+        club: '라운지에서 조식', courtyardClub: '라운지 조식 · 미운영 시 레스토랑', foodCredit: '조식 대신 식음 크레딧 선택',
+        courtyard: '조식 대신 식음 크레딧 선택', welcome: '웰컴 혜택: 포인트 또는 어메니티',
+      }[pr] || '';
+      return { bf, lounge, up: true, note };
     },
-    hilton(tier, profile) {
-      if (profile === 'slh') return tier >= 2 ? 'SLH 2인 컨티넨털 조식 · 업그레이드·레이트(가능 시)' : 'SLH 레이트 체크아웃(가능 시)';
-      if (tier <= 1) return tier === 1 ? '포인트 20% 추가 적립' : '회원 요금 · 포인트 적립';
-      const reserve = tier === 4 ? ' · 오후 4시 체크아웃(참여 호텔)' : '';
-      if (profile === 'garden') return 'MyWay 조식 선택' + reserve;
-      return '조식 · 업그레이드(가능 시)' +
-        (tier >= 3 ? ' · 이그제큐티브 라운지' : ' · 업그레이드로 라운지 대상 객실 배정 시 입장') + reserve;
+    hilton(t, pr) {
+      const join = (...a) => a.filter(Boolean).join(' · ');
+      const dr = t === 4 ? '오후 4시 체크아웃' : '';
+      if (pr === 'slh') return { bf: t >= 2, lounge: false, up: t >= 2, note: t >= 2 ? 'SLH 2인 컨티넨털 조식' : 'SLH 전용 약관' };
+      if (pr === 'garden') return { bf: t >= 2, lounge: false, up: false, note: join(t >= 2 && 'MyWay 조식 선택', dr) };
+      return { bf: t >= 2, lounge: t >= 3, up: t >= 2, note: join(t === 2 && '라운지 층 객실로 업그레이드되면 입장', dr) };
     },
   };
+
   const listInfo = {
     accor: {
       condition: '적격 예약 기준입니다. 업그레이드와 얼리 체크인·레이트 체크아웃은 객실 상황에 따릅니다. 플래티넘 이상 아시아·태평양 조식은 참여 호텔과 요금 조건을 확인하세요.',
@@ -212,14 +220,13 @@
     function draw() {
       const info = P[current];
       store.set(STORE_P, current);
-      $('sub').textContent = `${info.name} · 등급 ${info.tiers.length - 1}단계 · 2026년 기준`;
+      $('sub').textContent = `${info.name} · 등급별 달성 방법·제휴카드·혜택 · 2026년 기준`;
 
       // 한눈에: 혜택별 시작 등급
-      const glance = PERKS.slice(0, 4).map(([k, label]) => {
+      $('glance').innerHTML = PERKS.slice(0, 4).map(([k, label]) => {
         const i = info.tiers.findIndex((t) => t.perks && t.perks[k]);
         return `<div><span>${label}</span><b>${i < 0 ? '없음' : esc(info.tiers[i].n) + '부터'}</b></div>`;
       }).join('');
-      $('glance').innerHTML = glance;
       $('glance').hidden = false;
 
       const saved = store.get(STORE_T + current);
@@ -228,14 +235,25 @@
         const perks = t.perks ? PERKS.filter(([k]) => t.perks[k]).map(([k, label]) =>
           `<span class="hx-perk" data-k="${k}"><b>${label}</b>${esc(t.perks[k])}</span>`).join('') :
           '<span class="hx-perk" data-k="base">회원 요금 · 포인트 적립</span>';
+        const how = `<span class="hx-how"><span><b>숙박</b>${esc(t.req)}</span>${t.card ? `<span class="via"><b>카드</b>${esc(t.card)}</span>` : ''}</span>`;
         return `<a class="wl-row hx-tier" href="list.html?t=${i}#${current}" data-i="${i}"${i === mine ? ' aria-current="true"' : ''}>
           ${tile(t.a, 't' + Math.min(i, 5))}
-          <span class="wl-id"><span class="nm">${esc(t.n)}${i === mine ? '<em class="hx-mine">선택한 등급</em>' : ''}</span><small>${esc(t.req)}</small></span>
+          <span class="wl-id"><span class="nm">${esc(t.n)}${i === mine ? '<em class="hx-mine">나의 등급</em>' : ''}</span>${how}</span>
           <span class="hx-bonus${t.bonus ? '' : ' none'}">${t.bonus ? '+' + t.bonus + '%' : '—'}<small>보너스 적립</small></span>
           <span class="hx-perks">${perks}</span>
         </a>`;
       }).join('');
       $('foot').innerHTML = `${esc(info.tierNote)} 등급을 누르면 그 등급으로 서울 호텔별 혜택을 볼 수 있어요. <a href="${info.terms}" target="_blank" rel="noopener">공식 약관 ↗</a>`;
+
+      const cards = info.cards || [];
+      $('cardsec').innerHTML = `<section class="hx-sec"><div class="wl-sec-head"><h2>${info.name} 제휴카드</h2><span>국내 발급 · 등급 혜택 요약</span></div>` +
+        (cards.length ? `<div class="hx-cards">${cards.map((c) => `<article class="hx-card hx-cc">
+          <div class="hx-card-top"><span class="hx-brand">${esc(c.issuer)}</span><span class="hx-fee">${esc(c.fee)}</span></div>
+          <h3>${esc(c.name)}</h3>
+          <p class="hx-benefit">${esc(c.grant)}</p>
+          <ul class="hx-list">${c.perks.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+        </article>`).join('')}</div>` : '') +
+        (info.cardNote ? `<p class="hx-foot">${esc(info.cardNote)}</p>` : '') + '</section>';
     }
     $('tiers').addEventListener('click', (e) => {
       const a = e.target.closest('a[data-i]');
@@ -247,120 +265,121 @@
   }
 
   // ---------- 호텔 ----------
+  const DOT = [['bf', '조식'], ['lounge', '라운지'], ['up', '룸업글']];
   async function listPage() {
-    const data = await MS.getJSON('directory.json');
-    const city = data.countries[0].cities[0];
+    const [data, found] = await Promise.all([MS.getJSON('directory.json'), MS.getJSON('images.json').catch(() => ({}))]);
+    const country = $('country'), citySel = $('city'), tierSel = $('tier');
     const list = ids(ORDER);
-    const counts = Object.fromEntries(list.map((id) => [id, (city.programs[id] || []).length]));
     let current = pickProgram(list);
-    const tierSel = $('tier'), distSel = $('district'), query = $('query');
 
-    const opts = (sel, values, selected) => {
-      sel.replaceChildren(...values.map(([v, t]) => new Option(t, v, false, v === selected)));
-    };
+    const opts = (sel, values, selected) => sel.replaceChildren(...values.map(([v, t]) => new Option(t, v, false, v === selected)));
+    const city = () => data.countries[country.selectedIndex].cities[citySel.selectedIndex];
+    // 대표 이미지: 호텔에 적힌 image → 배포 때 찾은 images.json → 같은 호텔(same)의 이미지
+    const byKey = {};
+    for (const c of data.countries) for (const ct of c.cities) for (const [pg, hs] of Object.entries(ct.programs)) for (const h of hs) byKey[pg + ':' + h.id] = h;
+    const imageOf = (pg, h, depth = 0) => h.image || found[pg + ':' + h.id] ||
+      (h.same && depth < 2 && byKey[h.same] ? imageOf(h.same.split(':')[0], byKey[h.same], depth + 1) : '');
+
+    function fillCities() {
+      opts(citySel, data.countries[country.selectedIndex].cities.map((c, i) => [String(i), c.name]), '0');
+    }
     function selectProgram() {
       const info = P[current];
       store.set(STORE_P, current);
+      const counts = Object.fromEntries(list.map((id) => [id, (city().programs[id] || []).length]));
+      renderTabs(list, current, counts, pick);
       $('tier-field').hidden = !!info.noTier;
-      if (!info.noTier) opts(tierSel, info.tiers.map((t, i) => [String(i), t.n + ' 혜택']), String(pickTier(current)));
-      const hotels = city.programs[current] || [];
-      const districts = [...new Set(hotels.map((h) => h.district))].sort((a, b) => a.localeCompare(b, 'ko'));
-      opts(distSel, [['', '전체 구'], ...districts.map((d) => [d, d])], '');
+      if (!info.noTier) opts(tierSel, info.tiers.map((t, i) => [String(i), t.n]), String(pickTier(current)));
       const li = listInfo[current];
       $('conditions').textContent = li.condition;
       $('sources').innerHTML = [...li.sources, ['공식 등급 혜택·약관', info.terms],
         ['호텔업 등급결정 현황', 'https://www.hotelrating.or.kr/hotel']]
         .map(([t, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join('');
-      $('checked').textContent = '목록 대조일 ' + data.updated.replaceAll('-', '.') + ' · 성급은 호텔·공개 등급 자료 기준입니다.';
+      $('checked').textContent = '목록 대조일 ' + data.updated.replaceAll('-', '.') + ' · 성급은 호텔·공개 등급 자료 기준 · 사진은 각 호텔 공식 사이트 이미지입니다.';
       render();
     }
 
-    const norm = (v) => v.toLocaleLowerCase('ko').replace(/[^\p{L}\p{N}]/gu, '');
     function render() {
-      const info = P[current];
+      const info = P[current], ct = city();
       const t = info.noTier ? 0 : Number(tierSel.value);
-      const words = query.value.trim().split(/\s+/).filter(Boolean).map(norm);
-      const hotels = (city.programs[current] || []).filter((h) => {
-        const name = norm(h.name + h.district);
-        return (!distSel.value || h.district === distSel.value) && words.every((w) => name.includes(w));
-      }).sort((a, b) => a.district.localeCompare(b.district, 'ko') || (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name, 'ko'));
-      $('sub').textContent = `${city.name} · ${info.name} ${hotels.length}곳` + (info.noTier ? ' · 요금별 혜택' : ` · ${info.tiers[t].n} 기준`);
-
-      if (!hotels.length) {
-        $('list').innerHTML = '<div class="wl-rows"><p class="wl-empty">검색 조건에 맞는 호텔이 없습니다.</p></div>';
+      const rows = (ct.programs[current] || []).map((h) => ({ h, f: flags[current](t, h.profile) }));
+      const score = (f) => (f.bf ? 1 : 0) + (f.lounge ? 1 : 0) + (f.up ? 1 : 0);
+      rows.sort((a, b) => score(b.f) - score(a.f) || (b.h.stars || 0) - (a.h.stars || 0) || a.h.name.localeCompare(b.h.name, 'ko'));
+      const n = (k) => rows.filter((r) => r.f[k]).length;
+      $('sub').textContent = `${ct.name} · ${info.name} ${rows.length}곳` + (info.noTier ? ' · 혜택 포함 요금 기준' : ` · ${info.tiers[t].n} 기준`);
+      if (!rows.length) {
+        $('list').innerHTML = '<div class="wl-rows"><p class="wl-empty">이 도시에 등록된 호텔이 없습니다.</p></div>';
         return;
       }
-      const groups = new Map();
-      for (const h of hotels) (groups.get(h.district) || groups.set(h.district, []).get(h.district)).push(h);
-      $('list').innerHTML = [...groups].map(([d, hs]) => `<section class="wl-block">
-        <h2 class="wl-block-head">${esc(d)}<span>${hs.length}</span></h2>
-        <div class="wl-rows">${hs.map((h) => {
-          const text = benefit[current](t, h.profile);
-          const off = h.profile === 'excluded';
-          const chips = text.split(' · ').map((c) => `<span class="hx-perk">${esc(c)}</span>`).join('');
-          return `<a class="wl-row hx-hotel${off ? ' off' : ''}" href="${esc(h.url)}" target="_blank" rel="noopener">
-            ${tile(h.stars ? h.stars + '성' : '—', 's' + (h.stars || 0))}
-            <span class="wl-id"><span class="nm">${esc(h.name)}</span><span class="hx-perks">${chips}</span></span>
-            <svg class="hx-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-          </a>`;
-        }).join('')}</div></section>`).join('');
+      const sum = `<p class="hx-sum">${DOT.map(([k, l]) => `<span><i class="hx-pink" aria-hidden="true"></i>${l} <b>${n(k)}</b>곳</span>`).join('')}</p>`;
+      const head = `<div class="hx-h hx-head" aria-hidden="true"><span></span><span>호텔명</span><span>성급</span><span>위치</span>${DOT.map(([, l]) => `<span>${l}</span>`).join('')}</div>`;
+      const cityLabel = ct.name.endsWith('시') ? ct.name : ct.name + '시';
+      $('list').innerHTML = sum + `<div class="wl-rows hx-table">${head}${rows.map(({ h, f }) => {
+        const img = imageOf(current, h);
+        const star = h.stars ? h.stars + '성' : '—';
+        return `<a class="hx-h${f.bf || f.lounge || f.up ? '' : ' off'}" href="${esc(h.url)}" target="_blank" rel="noopener">
+          <span class="hx-img">${img ? `<img src="${esc(img)}" alt="${esc(h.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ''}<span class="hx-ph" aria-hidden="true">${esc(star)}</span></span>
+          <span class="hx-name"><b>${esc(h.name)}</b>${f.note ? `<small>${esc(f.note)}</small>` : ''}</span>
+          <span class="hx-star">${esc(star)}</span>
+          <span class="hx-loc"><span class="m">${esc(star)} · </span>${esc(cityLabel)} ${esc(h.district)}</span>
+          ${DOT.map(([k, l]) => `<span class="hx-dot" data-k="${k}"${f[k] ? ' data-on' : ''} aria-label="${l} ${f[k] ? '있음' : '없음'}"><i aria-hidden="true"></i><em>${l}</em></span>`).join('')}
+        </a>`;
+      }).join('')}</div>`;
     }
+    // 사진을 못 불러오면 성급 타일로 대신 보여 줌
+    $('list').addEventListener('error', (e) => { if (e.target.tagName === 'IMG') e.target.remove(); }, true);
 
-    renderTabs(list, current, counts, (id) => { current = id; setHash(id); query.value = ''; selectProgram(); });
+    const pick = (id) => { current = id; setHash(id); selectProgram(); };
+    opts(country, data.countries.map((c, i) => [String(i), c.name]), '0');
+    fillCities();
+    country.addEventListener('change', () => { fillCities(); selectProgram(); });
+    citySel.addEventListener('change', selectProgram);
     tierSel.addEventListener('change', () => { store.set(STORE_T + current, tierSel.value); render(); });
-    distSel.addEventListener('change', render);
-    query.addEventListener('input', render);
-    window.addEventListener('hashchange', () => { current = pickProgram(list); renderTabs(list, current, counts, $('programs')._pick); selectProgram(); });
+    window.addEventListener('hashchange', () => { current = pickProgram(list); selectProgram(); });
     selectProgram();
     if (location.search) setHash(current); // 티어 화면에서 넘어온 ?t= 는 한 번만 쓰고 주소에서 지움
   }
 
-  // ---------- 이벤트 ----------
+  // ---------- 이벤트 (공식 프로모션을 요약해 화면에서 바로 읽음) ----------
   async function eventsPage() {
     const data = await MS.getJSON('events.json');
     const KST = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
-    const events = data.events.filter((e) => !e.endsAt || e.endsAt >= KST);
+    const events = data.events.filter((e) => !e.endsAt || e.endsAt >= KST)
+      .sort((a, b) => (a.endsAt || '9999').localeCompare(b.endsAt || '9999'));
     const groupOf = (e) => (P[e.program] ? e.program : 'other');
     const list = ['all', ...ids(ORDER).filter((id) => events.some((e) => groupOf(e) === id)), ...(events.some((e) => groupOf(e) === 'other') ? ['other'] : [])];
     const counts = { all: events.length };
     for (const e of events) counts[groupOf(e)] = (counts[groupOf(e)] || 0) + 1;
     let current = list.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'all';
 
-    const dfmt = (s) => s.slice(5).replace('-', '.');
+    const dfmt = (s) => s.slice(2).replaceAll('-', '.');
     const dday = (s) => Math.round((Date.parse(s) - Date.parse(KST)) / 864e5);
     const brandTile = (e) => P[e.program] ? tile(P[e.program].abbr, P[e.program].tone) :
-      tile(e.brand.includes('Hyatt') ? 'WOH' : e.brand.includes('롯데') ? '롯데' : e.brand.includes('신라') ? '신라' : e.brand.slice(0, 2), 'o');
+      tile(e.brand.includes('Hyatt') ? 'WOH' : e.brand.includes('신라') ? '신라' : e.brand.slice(0, 3), 'o');
+    const period = (e) => {
+      const rows = [];
+      if (e.bookBy) rows.push(['예약', `~ ${dfmt(e.bookBy)}`]);
+      if (e.stayFrom || e.stayTo) rows.push(['투숙', `${e.stayFrom ? dfmt(e.stayFrom) : ''} ~ ${e.stayTo ? dfmt(e.stayTo) : ''}`]);
+      if (!rows.length) rows.push(['기간', '상시 · 예약 화면 기준']);
+      return rows;
+    };
 
     function draw() {
       const shown = events.filter((e) => current === 'all' || groupOf(e) === current);
-      const active = shown.filter((e) => e.status === 'active');
-      const hubs = shown.filter((e) => e.status !== 'active');
-      $('sub').textContent = `진행 중 ${active.length} · 공식 오퍼 ${hubs.length} · 확인일 ${data.updated.replaceAll('-', '.')}`;
-      let html = '';
-      if (active.length) {
-        html += `<section class="hx-sec"><div class="wl-sec-head"><h2>진행 중인 이벤트</h2><span>기간 한정</span></div><div class="hx-cards">` +
-          active.map((e) => {
-            const d = e.endsAt ? dday(e.endsAt) : null;
-            return `<article class="hx-card">
-              <div class="hx-card-top">${brandTile(e)}<span class="hx-brand">${esc(e.chain)}</span>${d != null ? `<span class="hx-dday${d <= 14 ? ' soon' : ''}">${d === 0 ? '오늘 마감' : 'D-' + d}</span>` : ''}</div>
-              <h3>${esc(e.title)}</h3>
-              ${e.benefit ? `<p class="hx-benefit">${esc(e.benefit)}</p>` : ''}
-              <p class="hx-desc">${esc(e.description)}</p>
-              <p class="hx-period">${e.startsAt ? dfmt(e.startsAt) : ''} ~ ${e.endsAt ? dfmt(e.endsAt) : '상시'}${e.tags.length ? ' · ' + e.tags.map(esc).join(' · ') : ''}</p>
-              ${e.requirements.length ? `<details class="hx-req"><summary>참여 조건 ${e.requirements.length}</summary><ul>${e.requirements.map((r) => `<li>${esc(r)}</li>`).join('')}</ul></details>` : ''}
-              <a class="hx-cta" href="${esc(e.url)}" target="_blank" rel="noopener">공식 페이지에서 등록 ↗</a>
-            </article>`;
-          }).join('') + '</div></section>';
-      }
-      if (hubs.length) {
-        html += `<section class="hx-sec"><div class="wl-sec-head"><h2>공식 오퍼 모음</h2><span>체인별 상시 페이지</span></div><div class="wl-rows">` +
-          hubs.map((e) => `<a class="wl-row hx-hub" href="${esc(e.url)}" target="_blank" rel="noopener">
-            ${brandTile(e)}
-            <span class="wl-id"><span class="nm">${esc(e.title)}</span><small class="hx-hub-desc">${esc(e.description)}</small></span>
-            <svg class="hx-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-          </a>`).join('') + '</div></section>';
-      }
-      $('events').innerHTML = html || '<div class="wl-rows"><p class="wl-empty">진행 중인 이벤트가 없습니다.</p></div>';
+      const soon = shown.filter((e) => e.endsAt && dday(e.endsAt) <= 14).length;
+      $('sub').textContent = `${shown.length}건 · 2주 안에 마감 ${soon}건 · ${data.updated.replaceAll('-', '.')} 확인`;
+      $('events').innerHTML = shown.length ? `<div class="hx-cards">${shown.map((e) => {
+        const d = e.endsAt ? dday(e.endsAt) : null;
+        return `<article class="hx-card">
+          <div class="hx-card-top">${brandTile(e)}<span class="hx-brand">${esc(e.brand)}</span>${d != null ? `<span class="hx-dday${d <= 14 ? ' soon' : ''}">${d === 0 ? '오늘 마감' : 'D-' + d}</span>` : ''}</div>
+          <h3>${esc(e.title)}</h3>
+          <p class="hx-benefit">${esc(e.benefit)}</p>
+          <div class="hx-tags"><span>${esc(e.kind)}</span>${e.register ? '<span class="reg">사전 등록 필요</span>' : ''}<span>${esc(e.region)}</span></div>
+          <dl class="hx-period">${period(e).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+          <ul class="hx-list">${e.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+          <a class="hx-src" href="${esc(e.url)}" target="_blank" rel="noopener">출처 · 공식 페이지 ↗</a>
+        </article>`;
+      }).join('')}</div>` : '<div class="wl-rows"><p class="wl-empty">진행 중인 이벤트가 없습니다.</p></div>';
     }
     renderTabs(list, current, counts, (id) => { current = id; setHash(id); if (P[id]) store.set(STORE_P, id); draw(); });
     draw();
