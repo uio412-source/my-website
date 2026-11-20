@@ -1,0 +1,187 @@
+/* Mr. Travel — 혜택 · 여행지. 머리·탭·목록은 portfolio.css(관심종목)의 wl-* 를 같이 씀. 색은 style.css 변수만 사용 */
+
+.tv section { padding: 0; }
+.tv-tabs { margin-bottom: 12px; }
+
+/* 성수기(진한 핑크) · 보통(보라) · 비수기(파랑) */
+.s2 { --s: var(--lv-high); }
+.s1 { --s: var(--lv-mid); }
+.s0 { --s: var(--color-down); }
+
+/* ----- 혜택: 검색 · 칩 ----- */
+.tv-search {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 12px; padding: 0 14px;
+  border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-bg);
+}
+.tv-search:focus-within { border-color: var(--color-primary); }
+.tv-search svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--color-muted); }
+.tv-search input {
+  flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--color-text);
+  font: inherit; font-size: .92rem; padding: 11px 0;
+}
+.tv-filters { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+.tv-chiprow, .tv-chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.tv-chiprow::-webkit-scrollbar, .tv-chips::-webkit-scrollbar { display: none; }
+.tv-chip {
+  flex-shrink: 0; font: inherit; font-size: .78rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+  padding: 4px 10px; border-radius: 8px; border: 1px solid transparent;
+  background: var(--color-bg-alt); color: var(--color-muted);
+}
+.tv-chip span { margin-left: 4px; font-size: .7rem; opacity: .8; font-variant-numeric: tabular-nums; }
+.tv-chip[aria-pressed="true"] { color: var(--color-primary); border-color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 8%, var(--color-bg)); }
+.tv-chiprow[data-f="issuer"] .tv-chip { font-size: .74rem; }
+
+/* ----- 혜택: 목록 ----- */
+.tv-ev, .tv-card { align-items: start; cursor: default; }
+.tv-ev-body { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.tv-ev-title { font-size: .93rem; font-weight: 700; line-height: 1.4; color: var(--color-text); text-decoration: none; }
+.tv-ev-title:hover { color: var(--color-primary); }
+.tv-ev-text {
+  margin: 0; font-size: .78rem; line-height: 1.5; color: var(--color-muted);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.tv-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
+.tv-tags span {
+  font-size: .68rem; font-weight: 700; line-height: 1.6; padding: 0 7px; border-radius: 6px;
+  color: var(--color-muted); background: var(--color-bg-alt); white-space: nowrap;
+}
+.tv-tags .k { color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 10%, transparent); }
+.tv-tags .iss { color: var(--color-text); background: transparent; padding-left: 0; }
+.tv-tags .warn { color: var(--lv-high); background: color-mix(in srgb, var(--lv-high) 12%, transparent); }
+.tv-ev-side {
+  display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.tv-ev-side .dd { font-size: .8rem; font-weight: 800; color: var(--color-text); }
+.tv-ev-side .dd.soon { color: var(--lv-high); }
+.tv-ev-side small { font-size: .7rem; color: var(--color-muted); }
+.tv-ev-side a { margin-top: 4px; font-size: .72rem; font-weight: 700; text-decoration: none; }
+.tv-sub2 { font-size: .74rem; color: var(--color-muted); }
+.tv-perks { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
+.tv-perks span { font-size: .7rem; font-weight: 700; line-height: 1.6; padding: 0 8px; border-radius: 6px; white-space: nowrap; }
+.tv-perks .on { color: var(--cat-3); background: color-mix(in srgb, var(--cat-3) 13%, transparent); }
+.tv-perks .off { color: var(--color-muted); background: var(--color-bg-alt); }
+.wl-block-head a { margin-left: 4px; font-weight: 700; text-decoration: none; }
+.tv-foot { margin: 14px 4px 0; font-size: .76rem; line-height: 1.6; color: var(--color-muted); }
+.tv-foot a { font-weight: 700; text-decoration: none; }
+
+/* ----- 여행지: 지도 ----- */
+.tv-map {
+  position: relative; border: 1px solid var(--color-border); border-radius: 16px; overflow: hidden;
+  background: var(--color-bg-alt); margin-bottom: 10px;
+}
+.tv-svg { display: block; width: 100%; height: auto; aspect-ratio: 1000 / 470; touch-action: manipulation; }
+.tv-land { fill: none; stroke: var(--color-text); stroke-opacity: .55; stroke-width: .9; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.tv-borders { fill: none; stroke: var(--color-muted); stroke-opacity: .28; stroke-width: .6; vector-effect: non-scaling-stroke; }
+.tv-shape { fill: color-mix(in srgb, var(--color-primary) 16%, transparent); stroke: none; }
+.tv-pin { cursor: pointer; outline: none; }
+.tv-pin .hit { fill: transparent; }
+.tv-pin .dot { fill: var(--color-primary); stroke: var(--color-bg); stroke-width: 1.6; transition: r .15s; }
+.tv-pin .lab {
+  font-size: 11px; font-weight: 700; fill: var(--color-text); paint-order: stroke; stroke: var(--color-bg-alt);
+  stroke-width: 3px; stroke-linejoin: round; display: none; pointer-events: none;
+}
+.tv-svg.zoomed .tv-pin .lab { display: block; }
+.tv-pin.on .dot { fill: var(--chart-zone-strip); r: 7; }
+.tv-pin.on .lab { display: block; font-size: 12.5px; fill: var(--chart-zone-strip); }
+.tv-pin:focus-visible .dot { stroke: var(--color-primary); stroke-width: 3; }
+@media (hover: hover) { .tv-pin:hover .dot { r: 6.5; } .tv-pin:hover .lab { display: block; } }
+.tv-chips { margin-bottom: 18px; }
+
+/* ----- 여행지: 상세 + 월별 ----- */
+.tv-place-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.tv .tv-detail, .tv .tv-months { border: 1px solid var(--color-border); border-radius: 16px; padding: 16px; background: var(--color-bg); min-width: 0; }
+.tv-d-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.tv-flag { font-size: 2.2rem; line-height: 1; }
+.tv-d-title { flex: 1; min-width: 0; }
+.tv-d-title h2 { font-size: 1.25rem; margin: 0; }
+.tv-d-title h2 small { font-size: .8rem; font-weight: 600; color: var(--color-muted); margin-left: 4px; }
+.tv-d-title p { margin: 2px 0 0; font-size: .76rem; color: var(--color-muted); line-height: 1.5; }
+.tv-now {
+  flex-shrink: 0; font-size: .74rem; font-weight: 800; padding: 3px 10px; border-radius: 999px;
+  color: var(--s); background: color-mix(in srgb, var(--s) 13%, transparent);
+}
+.tv-sec-k { font-size: .78rem; font-weight: 800; color: var(--color-muted); margin-bottom: 8px; }
+.tv-sec-k small { font-weight: 600; margin-left: 4px; }
+.tv-season { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 3px; }
+.tv-season .m {
+  height: 38px; border-radius: 7px; display: grid; place-items: end center; padding-bottom: 3px;
+  background: color-mix(in srgb, var(--s) var(--a, 70%), transparent);
+}
+.tv-season .m.s1 { --a: 32%; }
+.tv-season .m.s0 { --a: 22%; }
+.tv-season .m b { font-size: .68rem; font-weight: 800; color: var(--color-text); font-variant-numeric: tabular-nums; }
+.tv-season .m.s2 b { color: var(--color-action-text); }
+.tv-season .m.now, .tv-mrow .m.now { box-shadow: 0 0 0 2px var(--color-text); }
+.tv-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: 8px; font-size: .7rem; color: var(--color-muted); }
+.tv-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.tv-legend span::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: color-mix(in srgb, var(--s) var(--a, 70%), transparent); }
+.tv-legend .s1 { --a: 32%; }
+.tv-legend .s0 { --a: 22%; }
+.tv-legend em { font-style: normal; margin-left: auto; }
+.tv-note { margin: 10px 0 16px; font-size: .82rem; line-height: 1.6; }
+
+.tv-meters { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.tv-meter { padding: 12px; border-radius: 12px; background: var(--color-bg-alt); min-width: 0; }
+.tv-meter.air { --c: var(--cat-1); }
+.tv-meter.hotel { --c: var(--cat-2); }
+.tv-meter .k { font-size: .74rem; font-weight: 800; color: var(--color-muted); }
+.tv-meter .k small { display: block; font-weight: 600; font-size: .66rem; }
+.tv-meter .v { font-size: 1.12rem; font-weight: 800; letter-spacing: -.02em; margin: 4px 0 8px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tv-meter .bar { position: relative; height: 8px; border-radius: 4px; background: var(--color-border); overflow: hidden; }
+.tv-meter .bar i {
+  position: absolute; top: 0; bottom: 0; border-radius: 4px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--c) 45%, transparent), var(--c));
+}
+.tv-meter .scale { display: flex; justify-content: space-between; margin-top: 3px; font-size: .62rem; color: var(--color-muted); }
+
+.tv-facts { margin: 0 0 14px; }
+.tv-facts div { display: grid; grid-template-columns: 44px 1fr; gap: 8px; font-size: .8rem; }
+.tv-facts dt { font-weight: 800; color: var(--color-muted); }
+.tv-facts dd { margin: 0; }
+.tv-bn {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 11px 14px; border-radius: 12px;
+  text-decoration: none; color: var(--color-text); font-size: .86rem; font-weight: 700;
+  background: color-mix(in srgb, var(--color-primary) 8%, var(--color-bg)); border: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+.tv-bn b { color: var(--color-primary); white-space: nowrap; }
+.tv-bn-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: .78rem; }
+.tv-bn-list li { display: flex; gap: 6px; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--color-muted); }
+.tv-bn-list li span { flex-shrink: 0; font-weight: 800; color: var(--color-text); }
+
+.tv-off { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin: 0 0 10px; font-size: .76rem; }
+.tv-off b { color: var(--color-down); margin-right: 2px; }
+.tv-off button {
+  font: inherit; font-size: .74rem; font-weight: 700; cursor: pointer; padding: 1px 8px; border-radius: 6px; border: 0;
+  color: var(--color-text); background: color-mix(in srgb, var(--color-down) 12%, transparent);
+}
+.tv-mgrid { display: flex; flex-direction: column; gap: 3px; }
+.tv-mrow {
+  display: grid; grid-template-columns: 92px repeat(12, minmax(0, 1fr)); gap: 3px; align-items: center;
+  width: 100%; padding: 2px 4px; border: 0; border-radius: 8px; background: transparent; color: inherit; font: inherit; cursor: pointer; text-align: left;
+}
+.tv-mrow.head { cursor: default; padding-top: 0; padding-bottom: 0; }
+.tv-mrow.head .m { font-size: .62rem; font-weight: 700; color: var(--color-muted); text-align: center; border-radius: 4px; }
+.tv-mrow.head .m.now { box-shadow: none; color: var(--color-text); font-weight: 900; }
+.tv-mrow .nm { font-size: .76rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tv-mrow:not(.head) .m { height: 16px; border-radius: 4px; background: color-mix(in srgb, var(--s) var(--a, 70%), transparent); }
+.tv-mrow .m.s1 { --a: 32%; }
+.tv-mrow .m.s0 { --a: 22%; }
+.tv-mrow[aria-current="true"] { background: color-mix(in srgb, var(--color-primary) 9%, transparent); }
+.tv-mrow[aria-current="true"] .nm { color: var(--color-primary); }
+@media (hover: hover) { .tv-mrow:not(.head):hover { background: var(--color-bg-alt); } }
+
+@media (max-width: 860px) {
+  .tv-place-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .tv .tv-detail, .tv .tv-months { padding: 14px 12px; }
+  .tv-svg { aspect-ratio: 4 / 3; }
+  .tv-ev-side small { display: none; }
+  .tv-season .m { height: 32px; }
+  .tv-meters { gap: 8px; }
+  .tv-meter { padding: 10px; }
+  .tv-meter .v { font-size: .98rem; }
+  .tv-mrow { grid-template-columns: 74px repeat(12, minmax(0, 1fr)); gap: 2px; padding: 2px; }
+  .tv-mrow .nm { font-size: .7rem; }
+}
