@@ -2,6 +2,8 @@ import {applyRewardValuations} from './reward-valuation';
 import type {Card} from './catalog-types';
 export const ELIGIBILITY_THEMES=['상품권 가능','관리비','국세','지방세'] as const;
 const ELIGIBILITY_SEARCH_TAGS=new Set<string>([...ELIGIBILITY_THEMES,'상품권','세금']);
+// 호텔 기능은 제거했습니다(lib/hotel-offers.mjs). 예전 데이터에 남은 호텔 테마도 보여 주지 않습니다.
+export const REMOVED_THEMES=new Set<string>(['호텔','호텔제휴']);
 export const PAYMENT_RULE_THEMES=['상품권·선불카드 충전','아파트 관리비','국세','지방세','공과금','4대보험','등록금','무이자할부','연회비·수수료','할인받은 이용금액'] as const;
 export type PaymentEligibility={spend:'allowed'|'excluded'|'unknown';benefit:'allowed'|'excluded'|'unknown';sourceUrl:string;note:string;scope?:string;checkedAt?:string;basis?:'explicit'|'full_exclusion_list'|'manual'|'extracted';evidence?:string;limit?:string;channel?:string};
 const aliases:Record<string,string[]>={'상품권·선불카드 충전':['상품권 가능','상품권'],'아파트 관리비':['관리비']};
@@ -21,11 +23,10 @@ export function matchesPaymentEligibility(c:Card,theme:string,mode:'spend'|'bene
 }
 export function cardThemes(c:Card):string[]{
  // Cached themes must never override edited eligibility values.
- const cached=c.themeTags?.filter(t=>!ELIGIBILITY_SEARCH_TAGS.has(t));
- const benefits=c.benefits.filter(b=>b.kind!=='voucher');const t=benefits.map(b=>b.title+' '+b.detail).join(' '),name=c.name;const hotelText=c.benefits.map(b=>b.title+' '+b.detail).join(' ');const themes:string[]=[];
+ const cached=c.themeTags?.filter(t=>!ELIGIBILITY_SEARCH_TAGS.has(t)&&!REMOVED_THEMES.has(t));
+ const benefits=c.benefits.filter(b=>b.kind!=='voucher');const t=benefits.map(b=>b.title+' '+b.detail).join(' '),name=c.name;const themes:string[]=[];
  for(const theme of ELIGIBILITY_THEMES)if(matchesPaymentEligibility(c,theme,'any'))themes.push(theme);
  if(benefits.some(b=>/대한항공|아시아나|스카이패스|SKYPASS|ANA|JAL|KrisFlyer|항공\s*마일/i.test(b.title+' '+b.detail)&&/마일|miles/i.test(b.title+' '+b.detail)))themes.push('마일리지');
- if(/메리어트|Marriott|힐튼|Hilton|아코르|Accor|ALL\s*우리|IHG|하얏트|Hyatt|American\s*Express|아메리칸\s*익스프레스|아멕스/i.test(name)&&/메리어트|Marriott|힐튼|Hilton|아코르|Accor|IHG|하얏트|Hyatt|F[&＆]B|Fine Hotels|FHR|Fine\s*Hotels\s*&\s*Resorts|호텔\s*멤버십/i.test(name+' '+hotelText))themes.push('호텔');
  if(benefits.some(b=>/해외|외화/.test(b.title+' '+b.category)&&/적립|할인|캐시백|수수료\s*(면제|우대)/.test(b.title+' '+b.detail)))themes.push('해외');
  if(!/wiz|위즈/i.test(name)&&/(?:CLUB\s*SK|클럽\s*SK|SK패밀리|\bKT\b|\bSKT\b|SK\s*텔레콤|T[-\s]?라이트|T[-\s]?프리미엄|T[-\s]?이코노미|T[-\s]?삼성|LG\s*(?:U|유플러스)|U\+|유플러스|알뜰폰|통신비|통신요금)/i.test(name)&&/통신|휴대폰|이동전화|알뜰폰/.test(t)&&/할인/.test(t))themes.push('통신');
  return [...new Set([...(cached??[]),...themes])];

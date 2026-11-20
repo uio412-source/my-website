@@ -18,7 +18,6 @@ export {default as Coffee} from "lucide-react/dist/esm/icons/coffee.mjs";
 export {default as CreditCard} from "lucide-react/dist/esm/icons/credit-card.mjs";
 export {default as FileText} from "lucide-react/dist/esm/icons/file-text.mjs";
 export {default as GripVerticalIcon} from "lucide-react/dist/esm/icons/grip-vertical.mjs";
-export {default as Hotel} from "lucide-react/dist/esm/icons/hotel.mjs";
 export {default as InfoIcon} from "lucide-react/dist/esm/icons/info.mjs";
 export {default as LinkIcon} from "lucide-react/dist/esm/icons/link.mjs";
 export {default as Loader2Icon} from "lucide-react/dist/esm/icons/loader-circle.mjs";

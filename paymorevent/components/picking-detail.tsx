@@ -4,8 +4,9 @@ import {formatPicking,pickingOptions} from '@/lib/catalog-model';
 
 const money=(amount:number)=>amount.toLocaleString('ko-KR',{maximumFractionDigits:0})+'원';
 
-export function PickingDetail({card}:{card:Card}){
- card=applyRewardValuations(card);
+/** 전월 실적 구간별 최대 피킹률(바우처성 혜택 제외). 카드 상세 위쪽의 최고피킹률과 아래 표가 같은 값을 씀 */
+export function pickingSummary(input:Card){
+ const card=applyRewardValuations(input);
  const voucherTitles=card.benefits.filter(b=>b.kind==='voucher'||/바우처|연간\s*기프트|기프트\s*제공/.test(b.category+' '+b.title)).map(b=>b.title);
  const options=pickingOptions({...card,rewardRates:card.rewardRates?.filter(rule=>!voucherTitles.some(title=>(rule.serviceTitle??rule.label).includes(title)))});
  const byTier=new Map<number,typeof options[number]>();
@@ -16,6 +17,11 @@ export function PickingDetail({card}:{card:Card}){
   if(!previous||option.value>previous.value)byTier.set(threshold,option);
  }
  const tiers=[...byTier].sort(([a],[b])=>a-b);
+ return {card,tiers,max:tiers.length?Math.max(...tiers.map(([,option])=>option.value)):null};
+}
+
+export function PickingDetail({card:input}:{card:Card}){
+ const {card,tiers}=pickingSummary(input);
  const valuations=[...new Set((card.rewardRates??[]).filter(r=>r.verified&&r.rewardUnit!=='원').map(r=>r.rewardUnit+' 1단위 = '+r.unitValue.toLocaleString('ko-KR')+'원'))];
  const reason=card.sourceReviewPending?'변경된 공식 원문 대조 필요':card.rewardCoveragePending?'금전 혜택 모델·한도 대조 필요':'실적·공유 한도·수수료 조건 확인 필요';
  return <section className="pm-section picking-section pm-picking-simple" id="picking">
