@@ -26,6 +26,10 @@ const SECTIONS: Record<Tab, {title: string; sub: string}> = {
 const THEMES = ['무실적', '쇼핑', '커피', '교통', 'K패스', '통신', '해외', '마일리지', '라운지', '마티나골드', '호텔', '상품권 가능', '관리비', '국세', '지방세', '혜자카드', '호텔 발레'] as const;
 const PAGE = 30;
 const groupOf = (issuer: string) => issuerGroup(issuer);
+// 카드사 줄 칩: 카드사 타일을 붙여 혜택 칩과 구분
+const ISSUER_NAME: Record<string, string> = {삼성: '삼성카드', 국민: 'KB국민카드', 신한: '신한카드', 우리: '우리카드', 하나: '하나카드', 현대: '현대카드', 롯데: '롯데카드', 농협: 'NH농협카드', BC: 'BC카드'};
+const issuerItems = (groups: string[], counts?: Record<string, number>) =>
+  groups.map(g => ({value: g, label: issuerFilterLabel(g), issuer: ISSUER_NAME[g], count: counts?.[g]}));
 
 export default function Catalog({initialCards, initialEvents, eventsLoading = false}: {initialCards: Card[]; initialEvents: Offer[]; eventsLoading?: boolean}) {
   const [cards, setCards] = useState(initialCards);
@@ -54,6 +58,7 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
       <div className="mc-head"><h1>{SECTIONS[tab].title}</h1><p>{SECTIONS[tab].sub}</p></div>
       {loadFailed && <div className="mc-alert" role="status">전체 카드 목록을 불러오지 못했어요. <button type="button" onClick={() => { setLoadFailed(false); setAttempt(a => a + 1); }}>다시 불러오기</button></div>}
       {tab === 'cards' && <CardsView cards={cards} events={events}/>}
+      {tab !== 'cards' && !eventsLoading && <Freshness events={events}/>}
       {tab !== 'cards' && (eventsLoading
         ? <Empty title="이벤트를 불러오고 있어요…"/>
         : tab === 'cashback' ? <CashbackView events={events}/> : <EventsView events={events} cards={cards}/>)}
@@ -62,11 +67,20 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
   </div>;
 }
 
+/** 이벤트 데이터가 언제 기준인지. 2주 넘게 안 바뀌었으면 새 이벤트가 빠져 있을 수 있다고 알림 */
+function Freshness({events}: {events: Offer[]}) {
+  const asOf = events.reduce((m, o) => o.verifiedAt > m ? o.verifiedAt : m, '');
+  if (!asOf) return null;
+  const days = Math.round((Date.parse(today()) - Date.parse(asOf)) / 864e5);
+  return <p className={'mc-fresh' + (days > 14 ? ' old' : '')}>카드사 공지 {ymd(asOf)} 기준{days > 14 ? ` · ${days}일 전 정보라 그 뒤에 새로 나온 이벤트는 아직 없어요` : ''}</p>;
+}
+
 // ======================= 카드상품 검색 =======================
 function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
   const [q, setQ] = useState('');
   const query = useDeferredValue(q);
-  const [themes, setThemes] = useState<string[]>(() => new URLSearchParams(location.search).get('valet') ? ['호텔 발레'] : []);
+  // 혜택은 한 번에 하나만 (다시 누르면 해제)
+  const [theme, setTheme] = useState<string>(() => new URLSearchParams(location.search).get('valet') ? '호텔 발레' : 'all');
   const [issuer, setIssuer] = useState('all');
   const [type, setType] = useState<'all' | 'credit' | 'debit'>('all');
   const [fee, setFee] = useState('all'), [spend, setSpend] = useState('all'), [brand, setBrand] = useState('all'), [kind, setKind] = useState('all');
@@ -111,7 +125,8 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       if (brand !== 'all' && !c.brands.includes(brand)) continue;
       if (kind !== 'all' && !benefitKinds(c).includes(kind)) continue;
       if (withEvents && !m.events) continue;
-      if (!themes.every(t => t === '혜자카드' ? m.best !== null : t === '호텔 발레' ? valetRules(c.id).length > 0
+      const t = theme;
+      if (t !== 'all' && !(t === '혜자카드' ? m.best !== null : t === '호텔 발레' ? valetRules(c.id).length > 0
         : (ELIGIBILITY_THEMES as readonly string[]).includes(t) ? matchesPaymentEligibility(c, t, 'any') : m.themes.includes(t))) continue;
       const score = searchScore(query, m.text);
       if (!score) continue;
@@ -124,23 +139,25 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       events: (a, b) => meta.get(b.c.id)!.events - meta.get(a.c.id)!.events,
       name: (a, b) => a.c.name.localeCompare(b.c.name, 'ko'),
     };
-    out.sort(themes.includes('혜자카드') ? by.picking : by[sort]);
+    out.sort(theme === '혜자카드' ? by.picking : by[sort]);
     // 같은 카드의 브랜드·디자인 변형은 하나로
     const seen = new Set<string>();
     return out.filter(({c}) => { const k = cardFamilyKey(c); if (seen.has(k)) return false; seen.add(k); return true; }).map(x => x.c);
-  }, [cards, meta, query, themes, issuer, type, fee, spend, brand, kind, withEvents, sort]);
-  useEffect(() => setMore(PAGE), [query, themes, issuer, type, fee, spend, brand, kind, withEvents, sort]);
+  }, [cards, meta, query, theme, issuer, type, fee, spend, brand, kind, withEvents, sort]);
+  useEffect(() => setMore(PAGE), [query, theme, issuer, type, fee, spend, brand, kind, withEvents, sort]);
 
-  const toggleTheme = (t: string) => setThemes(p => p.includes(t) ? p.filter(x => x !== t) : [...p, t]);
+  const pickTheme = (t: string) => setTheme(p => p === t && t !== 'all' ? 'all' : t);
   const advanced = [fee, spend, brand, kind].filter(v => v !== 'all').length + Number(withEvents);
-  const anything = !!q || themes.length > 0 || issuer !== 'all' || type !== 'all' || advanced > 0;
-  const reset = () => { setQ(''); setThemes([]); setIssuer('all'); setType('all'); setFee('all'); setSpend('all'); setBrand('all'); setKind('all'); setWithEvents(false); };
+  const anything = !!q || theme !== 'all' || issuer !== 'all' || type !== 'all' || advanced > 0;
+  const reset = () => { setQ(''); setTheme('all'); setIssuer('all'); setType('all'); setFee('all'); setSpend('all'); setBrand('all'); setKind('all'); setWithEvents(false); };
   const families = useMemo(() => new Set(cards.map(cardFamilyKey)).size, [cards]);
 
   return <>
     <SearchBox value={q} onChange={setQ} placeholder="카드 이름·혜택 검색 (예: 스타벅스, 해외 수수료, ㅅㅎ)"/>
-    <Chips label="혜택" items={THEMES.map(t => ({value: t, label: t}))} value={themes} onChange={toggleTheme} multi/>
-    <Chips label="카드사" items={[{value: 'all', label: '전체 카드사'}, ...ISSUER_FILTERS.map(g => ({value: g, label: issuerFilterLabel(g)}))]} value={issuer} onChange={setIssuer}/>
+    <div className="mc-filters">
+      <Chips label="혜택" items={[{value: 'all', label: '전체'}, ...THEMES.map(t => ({value: t, label: t}))]} value={theme} onChange={pickTheme}/>
+      <Chips label="카드사" issuers items={[{value: 'all', label: '전체'}, ...issuerItems(ISSUER_FILTERS)]} value={issuer} onChange={setIssuer}/>
+    </div>
     <div className="mc-bar">
       <Tabs label="카드 종류" items={[{value: 'all', label: '전체'}, {value: 'credit', label: '신용'}, {value: 'debit', label: '체크'}]} value={type} onChange={setType}/>
       <button type="button" className="mc-btn" aria-expanded={panel} onClick={() => setPanel(p => !p)}>필터{advanced > 0 && <b>{advanced}</b>}</button>
@@ -158,7 +175,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       <Field label="브랜드" value={brand} set={setBrand} options={[['all', '전체'], ...brands.map(b => [b, b] as [string, string])]}/>
       <label className="mc-check"><input type="checkbox" checked={withEvents} onChange={e => setWithEvents(e.target.checked)}/>진행 중 이벤트 있는 카드만</label>
     </div>}
-    {themes.includes('호텔 발레') && <p className="mc-note">서울 호텔별로 어떤 카드가 되는지는 <a href={sitePath('../hotels/valet.html')}>Mr. Hotels 발레파킹 지도</a>에서 볼 수 있어요.</p>}
+    {theme === '호텔 발레' && <p className="mc-note">서울 호텔별로 어떤 카드가 되는지는 <a href={sitePath('../hotels/valet.html')}>Mr. Hotels 발레파킹 지도</a>에서 볼 수 있어요.</p>}
 
     {filtered.length ? <div className="mc-rows">{filtered.slice(0, more).map(c => {
       const m = meta.get(c.id)!;
@@ -229,8 +246,10 @@ function CashbackView({events}: {events: Offer[]}) {
   const counts = useMemo(() => base.reduce((m, o) => { const g = groupOf(o.issuer); m[g] = (m[g] ?? 0) + 1; return m; }, {} as Record<string, number>), [base]);
   return <>
     <SearchBox value={q} onChange={setQ} placeholder="카드·카드사 검색"/>
-    <Chips label="카드사" items={[{value: 'all', label: '전체', count: base.length}, ...ISSUER_FILTERS.filter(g => counts[g]).map(g => ({value: g, label: issuerFilterLabel(g), count: counts[g]}))]} value={issuer} onChange={setIssuer}/>
-    {channels.length > 1 && <Chips label="발급 채널" items={[{value: 'all', label: '모든 채널'}, ...channels.map(c => ({value: c, label: c}))]} value={channel} onChange={setChannel}/>}
+    <div className="mc-filters">
+      <Chips label="카드사" issuers items={[{value: 'all', label: '전체', count: base.length}, ...issuerItems(ISSUER_FILTERS.filter(g => counts[g]), counts)]} value={issuer} onChange={setIssuer}/>
+      {channels.length > 1 && <Chips label="채널" items={[{value: 'all', label: '전체'}, ...channels.map(c => ({value: c, label: c}))]} value={channel} onChange={setChannel}/>}
+    </div>
     <div className="mc-bar">
       <span className="mc-count">{list.length}<small>건</small></span>
       <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}><option value="amount">혜택 큰 순</option><option value="end">마감 임박순</option></select>
@@ -292,8 +311,10 @@ function EventsView({events, cards}: {events: Offer[]; cards: Card[]}) {
           {suggestions.length > 0 && <ul className="mc-suggest">{suggestions.map(c => <li key={c.id}><button type="button" onClick={() => pickMine(c)}><IssuerTile issuer={c.issuer} size="sm"/>{c.familyName ?? c.name}<small>{c.type === 'credit' ? '신용' : '체크'}</small></button></li>)}</ul>}
         </div>}
     </div>
-    <Chips label="이벤트 종류" items={[{value: 'all', label: '전체', count: base.length}, ...EVENT_CATEGORIES.filter(c => catCount[c]).map(c => ({value: c, label: c, count: catCount[c]}))]} value={cat} onChange={setCat}/>
-    <Chips label="카드사" items={[{value: 'all', label: '전체 카드사'}, ...ISSUER_FILTERS.filter(g => issCount[g]).map(g => ({value: g, label: issuerFilterLabel(g), count: issCount[g]}))]} value={issuer} onChange={setIssuer}/>
+    <div className="mc-filters">
+      <Chips label="종류" items={[{value: 'all', label: '전체', count: base.length}, ...EVENT_CATEGORIES.filter(c => catCount[c]).map(c => ({value: c, label: c, count: catCount[c]}))]} value={cat} onChange={setCat}/>
+      <Chips label="카드사" issuers items={[{value: 'all', label: '전체'}, ...issuerItems(ISSUER_FILTERS.filter(g => issCount[g]), issCount)]} value={issuer} onChange={setIssuer}/>
+    </div>
     <div className="mc-bar">
       <label className="mc-check"><input type="checkbox" checked={soon} onChange={e => setSoon(e.target.checked)}/>7일 안 마감</label>
       <label className="mc-check"><input type="checkbox" checked={entry} onChange={e => setEntry(e.target.checked)}/>응모 필요</label>

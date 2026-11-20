@@ -5,7 +5,7 @@ import {assetPath} from '@/lib/site-path';
 import {issuerTile} from '@/lib/mc-text';
 import type {Card} from '@/lib/catalog-types';
 
-export function IssuerTile({issuer, size}: {issuer: string; size?: 'sm' | 'lg'}) {
+export function IssuerTile({issuer, size}: {issuer: string; size?: 'xs' | 'sm' | 'lg'}) {
   const [label, tone] = issuerTile(issuer);
   return <span className={'mc-tile' + (size ? ' ' + size : '')} data-tone={tone} data-len={Math.min(label.length, 4)} aria-hidden="true">{label}</span>;
 }
@@ -26,14 +26,20 @@ export function CardArt({card, large}: {card: Pick<Card, 'id' | 'name' | 'imageU
   </span>;
 }
 
-export function Chips<T extends string>({items, value, onChange, label, multi}: {
-  items: {value: T; label: string; count?: number}[]; value: T | T[]; onChange: (v: T) => void; label: string; multi?: boolean;
+export function Chips<T extends string>({items, value, onChange, label, multi, issuers}: {
+  items: {value: T; label: string; count?: number; issuer?: string}[]; value: T | T[]; onChange: (v: T) => void; label: string; multi?: boolean;
+  /** 카드사 줄: 칩마다 카드사 타일을 붙여 혜택 칩과 한눈에 구분 */
+  issuers?: boolean;
 }) {
   const on = (v: T) => Array.isArray(value) ? value.includes(v) : value === v;
-  return <div className="mc-chips" role="group" aria-label={label} data-multi={multi ? '' : undefined}>
-    {items.map(it => <button key={it.value} type="button" aria-pressed={on(it.value)} onClick={() => onChange(it.value)}>
-      {it.label}{it.count !== undefined && <span>{it.count.toLocaleString('ko-KR')}</span>}
-    </button>)}
+  return <div className={'mc-chiprow' + (issuers ? ' issuers' : '')}>
+    <span className="mc-chiprow-label" aria-hidden="true">{label}</span>
+    <div className="mc-chips" role="group" aria-label={label} data-multi={multi ? '' : undefined}>
+      {items.map(it => <button key={it.value} type="button" aria-pressed={on(it.value)} onClick={() => onChange(it.value)}>
+        {issuers && it.issuer && <IssuerTile issuer={it.issuer} size="xs"/>}
+        {it.label}{it.count !== undefined && <span>{it.count.toLocaleString('ko-KR')}</span>}
+      </button>)}
+    </div>
   </div>;
 }
 
