@@ -32,7 +32,7 @@ export default function Catalog({initialCards,initialEvents,eventsLoading=false}
   const [cards,setCards]=useState(initialCards);
   const events=useMemo(()=>dedupeOffers(initialEvents),[initialEvents]);
   const [eligibilityMode,setEligibilityMode]=useState("benefit");const [onlyEvents,setOnlyEvents]=useState(false);const [entryOnly,setEntryOnly]=useState(false);
-  const [tab,setTab]=useState("cards"),[query,setQuery]=useState(""),[selectedTags,setTags]=useState<string[]>([]);
+  const [tab,setTab]=useState(()=>{const hash=location.hash.slice(1);return sections.some(section=>section.id===hash)?hash:"cards";}),[query,setQuery]=useState(""),[selectedTags,setTags]=useState<string[]>([]);
   const [issuer,setIssuer]=useState("all"),[type,setType]=useState("all"),[brand,setBrand]=useState("all"),[fee,setFee]=useState("all"),[spend,setSpend]=useState("all"),[verified,setVerified]=useState(false),[docs,setDocs]=useState(false),[sort,setSort]=useState("complete");
   const [eventCard,setEventCard]=useState('all');
   const [benefitKind,setBenefitKind]=useState("all"),[eventType,setEventType]=useState("all"),[channel,setChannel]=useState("all");

@@ -1,8 +1,9 @@
 import {sitePath} from '@/lib/site-path';
-import type {Card, Offer} from '@/lib/catalog-types';
+import type {Offer} from '@/lib/catalog-types';
+import type {RelatedCard} from './data';
 import {IssuerLogo} from '@/components/issuer-logos';
 import {SiteHeader,SiteFooter} from '@/components/customer-shell';
-import {eventCategory,offerStatus,rewardValue,offerApplies,groupCards,issuerGroup,requiresEntry,offerLinkLabel} from '@/lib/catalog-model';
+import {eventCategory,offerStatus,rewardValue,requiresEntry,offerLinkLabel} from '@/lib/catalog-model';
 import {cardPath} from '@/lib/card-presentation';
 import {ArrowLeft,ArrowUpRight} from 'lucide-react';
 import {useState} from 'react';
@@ -10,12 +11,13 @@ import {customerLines} from '@/lib/customer-copy';
 const day=(value:string)=>/^\d{4}-\d{2}-\d{2}$/.test(value)?value.replaceAll('-','.'):value;
 const FIRST_CARDS=12;
 // 연결된 카드가 많으면(카드사 공통 이벤트는 100종이 넘기도 함) 처음 12종만 보여 주고 나머지는 펼쳐 봄
-function LinkedCards({groups}:{groups:{card:Card}[]}){
+function LinkedCards({groups}:{groups:RelatedCard[]}){
  const [all,setAll]=useState(false);const shown=all?groups:groups.slice(0,FIRST_CARDS);
- return <><div className="pm-linked-cards">{shown.map(g=><a key={g.card.id} href={cardPath(g.card.id)}>{g.card.familyName??g.card.name}</a>)}</div>{groups.length>FIRST_CARDS&&<button type="button" className="pm-linked-cards-more" aria-expanded={all} onClick={()=>setAll(!all)}>{all?'접기':`${groups.length}종 모두 보기`}</button>}</>;
+ return <><div className="pm-linked-cards">{shown.map(card=><a key={card.id} href={cardPath(card.id)}>{card.familyName??card.name}</a>)}</div>{groups.length>FIRST_CARDS&&<button type="button" className="pm-linked-cards-more" aria-expanded={all} onClick={()=>setAll(!all)}>{all?'접기':`${groups.length}종 모두 보기`}</button>}</>;
 }
-export default function EventDetail({offer: o, cards}:{offer:Offer;cards:Card[]}) {
- const related=groupCards(cards.filter(c=>offerApplies(c,o)));const amount=rewardValue(o);const list=sitePath(o.kind==='cashback'?'#cashback':'#events');
+// 연결된 카드(related)는 빌드 때 offerApplies·groupCards로 미리 계산해 event-data/<id>.json에 들어 있음 (scripts/page-data.ts)
+export default function EventDetail({offer: o, related}:{offer:Offer;related:RelatedCard[]}) {
+ const amount=rewardValue(o);const list=sitePath(o.kind==='cashback'?'#cashback':'#events');
  const requirements=[...new Set(o.requirements.flatMap(customerLines))];
  return <div className="pm-site pm-detail"><SiteHeader current="events"/><main className="pm-detail-main"><a className="pm-back" href={list}><ArrowLeft size={16}/>이벤트 목록</a><section className="pm-event-hero"><div className="pm-event-meta"><IssuerLogo issuer={o.issuer}/><span className="pm-status">{offerStatus(o)}</span></div><span className="pm-kicker">{eventCategory(o)}</span><h1>{o.title}</h1>{o.benefitText!==o.title&&<p>{o.benefitText}</p>}<a className="pm-primary" href={o.sourceUrl} target="_blank" rel="noopener noreferrer">{offerStatus(o)==='종료'?'종료 이벤트 원문 보기':o.status==='needs_review'?'공식 조건 확인하기':'이벤트 참여하기'}<ArrowUpRight size={17}/></a></section>
   <section className="pm-section"><h2>혜택과 참여 방법</h2><table className="pm-info-table"><tbody>

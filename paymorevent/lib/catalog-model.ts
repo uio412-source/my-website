@@ -1,5 +1,6 @@
 import {sitePath} from './site-path';
-import {eventSourceKey} from './event-identity';
+import {offerContentKey,offerSourceKey,requiresEntry} from './offer-keys';
+export {requiresEntry};
 import {applyRewardValuations} from './reward-valuation';
 import type {Card, Offer, PickingScenario} from './catalog-types';
 import {cardThemes,ELIGIBILITY_THEMES,paymentEligibility} from './card-themes';
@@ -59,7 +60,6 @@ export function eventCategory(o:Offer){
  const t=o.title+' '+o.benefitText;
  return /국세|지방세|세금/.test(t)?'국세 / 지방세':/해외|여행|항공|호텔|숙박/.test(t)?'해외/여행':/통신|제휴|SKT|KT|LG U/.test(t)?'통신사 등 제휴':/포인트|캐시백|머니/.test(t)?'포인트/캐시백':o.kind==='card'&&!!o.cardNames?.length?'통신사 등 제휴':'기타';
 }
-export function requiresEntry(o:Offer){return o.entryRequired??/응모|추첨|랜덤|출석/.test(o.title+' '+(o.participation??o.requirements).join(' '));}
 export function offerStatus(o:Offer,today=new Date(Date.now()+9*3600000).toISOString().slice(0,10)){
  if(o.status==='needs_review')return '조건 재확인';if(o.status==='official_hub')return '공식 이벤트 목록';
  if(o.status==='expired'||(o.endsAt&&o.endsAt<today))return '종료';
@@ -106,13 +106,14 @@ export function linkedOffers(c:Card,offers:Offer[]){return dedupeOffers(offers.f
 export function dedupeOffers(offers:Offer[]){
  const bySource=new Map<string,Offer>();
  for(const o of offers){
-  const source=eventSourceKey(o);const key=source.includes('|')?o.issuer+'|'+source:JSON.stringify([o.issuer,o.kind,o.title,o.startsAt,o.endsAt,o.benefitText,o.requirements,o.cardIds??[],o.channel??'']);const prior=bySource.get(key);
+  // 가벼운 목록(event-list.json)은 빌드 때 같은 함수로 계산한 열쇠(keys)를 갖고 옴
+  const key=o.keys?.[0]??offerSourceKey(o);const prior=bySource.get(key);
   if(!prior){bySource.set(key,o);continue;}
   const newer=o.verifiedAt>prior.verifiedAt;
   const samePeriod=o.startsAt===prior.startsAt&&o.endsAt===prior.endsAt;
   if(newer||(samePeriod&&o.verificationLevel==='official_detail'&&prior.verificationLevel!=='official_detail'))bySource.set(key,o);
  }
- const seen=new Set<string>();return [...bySource.values()].filter(o=>{const key=JSON.stringify([o.issuer,o.kind,o.title,o.startsAt,o.endsAt,o.benefitText,o.requirements,o.cardIds??[],o.channel??'']);if(seen.has(key))return false;seen.add(key);return true;});
+ const seen=new Set<string>();return [...bySource.values()].filter(o=>{const key=o.keys?.[1]??offerContentKey(o);if(seen.has(key))return false;seen.add(key);return true;});
 }
 export function databaseChecklist(c:Card){
  if(c.documents===undefined&&c.databaseChecks)return c.databaseChecks;
