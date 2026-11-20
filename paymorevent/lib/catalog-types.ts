@@ -45,12 +45,14 @@ export type Offer = {
   linkLabel?:string; eligibilityLabel?:string;
   activation?:{method:string;cycle:"once"|"quarterly";url?:string};
   evidenceDigest?:string;
+  /** 빌드가 넣는 [원문 열쇠, 내용 열쇠]의 짧은 해시(가벼운 이벤트 목록 전용, lib/offer-keys.ts) */
+  keys?:[string,string];
   sourceDetailUrl?: string;
   category?: "응모형" | "해외/여행" | "포인트/캐시백" | "국세 / 지방세" | "통신사 등 제휴" | "기타";
   rewards?: Reward[]; annualFeeOnly?: boolean; entryRequired?: boolean;
   cardTarget?: {scope:"issuer"|"family"; familyIds?:string[]; types?: ("credit"|"debit")[]; brands?: string[]; excludedNames?: string[]; excludedBrands?: string[]};
   channel?: string; cashbackAmount?: number | null; cashbackIsMaximum?:boolean; cardIds?: string[]; cardNames?: string[]; participation?: string[];
-  id: string; kind: "card" | "hotel" | "cashback"; issuer: string; chain: string | null;
+  id: string; kind: "card" | "cashback"; issuer: string; chain: string | null;
   title: string; description: string; benefitText: string; tags: string[];
   startsAt: string | null; endsAt: string | null; bookingEndsAt: string | null;
   stayEndsAt: string | null; requirements: string[]; sourceUrl: string;

@@ -1,4 +1,5 @@
-import {mkdir, readFile, writeFile} from 'node:fs/promises';
+import {isHotelOffer} from '../lib/hotel-offers.mjs';
+import {mkdir, readFile, readdir, writeFile} from 'node:fs/promises';
 import {gunzipSync} from 'node:zlib';
 import {CARD_LIST_FILE, CARD_SEARCH_FILE} from './card-list.mjs';
 import {applyVerifiedCardRules, readVerifiedCardRules} from './verified-card-rules.mjs';
@@ -42,13 +43,26 @@ async function createPage(collection, id) {
   await writeFile(new URL('index.html', directory), page);
 }
 
+// 카드 상세는 같은 카드 묶음을 vite.config.ts(scripts/page-data.ts)가 만든 card-family/<id>.json에서 받습니다.
+const families = new Set((await readdir(new URL('card-family/', dist))).map(file => file.replace(/\.json$/, '')));
+if (families.size !== cards.length || cards.some(card => !families.has(card.id))) {
+  throw new Error('card-family/*.json does not match data/cards.json.gz');
+}
+
 const cardDirectory = new URL('card-data/', dist);
 await mkdir(cardDirectory, {recursive: true});
 for (const card of cards) {
   await writeFile(new URL(`${card.id}.json`, cardDirectory), JSON.stringify(card));
   await createPage('cards', card.id);
 }
-for (const event of events) {
+// 호텔 자체 혜택 이벤트는 앱에서 숨기므로 상세 주소도 만들지 않습니다.
+const published = events.filter(event => !isHotelOffer(event));
+// 이벤트 상세는 vite.config.ts(scripts/page-data.ts)가 만든 event-data/<id>.json 하나만 받습니다.
+const eventData = new Set((await readdir(new URL('event-data/', dist))).map(file => file.replace(/\.json$/, '')));
+if (eventData.size !== published.length || published.some(event => !eventData.has(event.id))) {
+  throw new Error('event-data/*.json does not match the published events');
+}
+for (const event of published) {
   await createPage('events', event.id);
 }
-console.log(`Published ${cards.length} card and ${events.length} event detail routes.`);
+console.log(`Published ${cards.length} card and ${published.length} event detail routes (${events.length - published.length} hotel offers hidden).`);

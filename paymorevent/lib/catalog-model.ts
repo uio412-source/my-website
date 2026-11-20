@@ -1,17 +1,18 @@
 import {sitePath} from './site-path';
-import {eventSourceKey} from './event-identity';
+import {offerContentKey,offerSourceKey,requiresEntry} from './offer-keys';
+export {requiresEntry};
 import {applyRewardValuations} from './reward-valuation';
 import type {Card, Offer, PickingScenario} from './catalog-types';
 import {cardThemes,ELIGIBILITY_THEMES,paymentEligibility} from './card-themes';
 import {rewardAtSpend} from './reward-calculation';
 import {allocateSpending} from './spending-allocation';
 export const ISSUERS=['삼성','국민','신한','우리','하나','현대','롯데','농협','BC'];
-export const BENEFIT_KINDS=['적립','할인','마일리지','호텔제휴','통신 및 제휴','K패스'];
+export const BENEFIT_KINDS=['적립','할인','마일리지','통신 및 제휴','K패스'];
 export function issuerGroup(issuer:string){
  if(/삼성/.test(issuer))return '삼성';if(/국민|KB/.test(issuer))return '국민';if(/신한/.test(issuer))return '신한';if(/우리/.test(issuer))return '우리';if(/하나/.test(issuer))return '하나';if(/현대/.test(issuer))return '현대';if(/롯데/.test(issuer))return '롯데';if(/농협|NH/.test(issuer))return '농협';
  if(/BC|기업|IBK|iM뱅크|대구|경남|부산|새마을|신협/.test(issuer))return 'BC';return '기타';
 }
-export function benefitKinds(c:Card){if(c.benefitKinds)return c.benefitKinds;const text=[c.name,...c.benefits.map(b=>b.title+' '+b.category)].join(' ');return BENEFIT_KINDS.filter(k=>k==='적립'?/적립|포인트|캐시백/.test(text):k==='할인'?/할인/.test(text):k==='마일리지'?/마일|스카이패스/.test(text):k==='호텔제휴'?/호텔|리조트|메리어트|힐튼|아코르/.test(text):k==='통신 및 제휴'?/통신|SKT|KT|LG U|제휴/.test(text):/K[- ]?패스|K[- ]?PASS/i.test(text));}
+export function benefitKinds(c:Card){if(c.benefitKinds)return c.benefitKinds.filter(k=>BENEFIT_KINDS.includes(k));const text=[c.name,...c.benefits.map(b=>b.title+' '+b.category)].join(' ');return BENEFIT_KINDS.filter(k=>k==='적립'?/적립|포인트|캐시백/.test(text):k==='할인'?/할인/.test(text):k==='마일리지'?/마일|스카이패스/.test(text):k==='통신 및 제휴'?/통신|SKT|KT|LG U|제휴/.test(text):/K[- ]?패스|K[- ]?PASS/i.test(text));}
 export function picking(s:PickingScenario){
  if(!s.verified||!s.maximumVerified)return null;
  if(s.calculation==='unit-rate')return typeof s.grossBenefitRate==='number'&&Number.isFinite(s.grossBenefitRate)&&s.grossBenefitRate>=0?s.grossBenefitRate:null;
@@ -59,7 +60,6 @@ export function eventCategory(o:Offer){
  const t=o.title+' '+o.benefitText;
  return /국세|지방세|세금/.test(t)?'국세 / 지방세':/해외|여행|항공|호텔|숙박/.test(t)?'해외/여행':/통신|제휴|SKT|KT|LG U/.test(t)?'통신사 등 제휴':/포인트|캐시백|머니/.test(t)?'포인트/캐시백':o.kind==='card'&&!!o.cardNames?.length?'통신사 등 제휴':'기타';
 }
-export function requiresEntry(o:Offer){return o.entryRequired??/응모|추첨|랜덤|출석/.test(o.title+' '+(o.participation??o.requirements).join(' '));}
 export function offerStatus(o:Offer,today=new Date(Date.now()+9*3600000).toISOString().slice(0,10)){
  if(o.status==='needs_review')return '조건 재확인';if(o.status==='official_hub')return '공식 이벤트 목록';
  if(o.status==='expired'||(o.endsAt&&o.endsAt<today))return '종료';
@@ -106,13 +106,14 @@ export function linkedOffers(c:Card,offers:Offer[]){return dedupeOffers(offers.f
 export function dedupeOffers(offers:Offer[]){
  const bySource=new Map<string,Offer>();
  for(const o of offers){
-  const source=eventSourceKey(o);const key=source.includes('|')?o.issuer+'|'+source:JSON.stringify([o.issuer,o.kind,o.title,o.startsAt,o.endsAt,o.benefitText,o.requirements,o.cardIds??[],o.channel??'']);const prior=bySource.get(key);
+  // 가벼운 목록(event-list.json)은 빌드 때 같은 함수로 계산한 열쇠(keys)를 갖고 옴
+  const key=o.keys?.[0]??offerSourceKey(o);const prior=bySource.get(key);
   if(!prior){bySource.set(key,o);continue;}
   const newer=o.verifiedAt>prior.verifiedAt;
   const samePeriod=o.startsAt===prior.startsAt&&o.endsAt===prior.endsAt;
   if(newer||(samePeriod&&o.verificationLevel==='official_detail'&&prior.verificationLevel!=='official_detail'))bySource.set(key,o);
  }
- const seen=new Set<string>();return [...bySource.values()].filter(o=>{const key=JSON.stringify([o.issuer,o.kind,o.title,o.startsAt,o.endsAt,o.benefitText,o.requirements,o.cardIds??[],o.channel??'']);if(seen.has(key))return false;seen.add(key);return true;});
+ const seen=new Set<string>();return [...bySource.values()].filter(o=>{const key=o.keys?.[1]??offerContentKey(o);if(seen.has(key))return false;seen.add(key);return true;});
 }
 export function databaseChecklist(c:Card){
  if(c.documents===undefined&&c.databaseChecks)return c.databaseChecks;

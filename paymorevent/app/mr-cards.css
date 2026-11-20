@@ -119,3 +119,94 @@ body { font-family: var(--mc-font); background: var(--mc-bg); color: var(--mc-te
   :root:not([data-theme="light"]) .theme-btn .sun { display: none; }
   :root:not([data-theme="light"]) .theme-btn .moon { display: inline; }
 }
+
+/* ===== UI/UX 개선 (2026-11) — 색은 위의 --mc-* 변수만 씀(다크 모드 자동) ===== */
+
+/* 카드사 선택: 휴대폰에서는 4줄 격자 대신 옆으로 넘기는 한 줄 */
+.issuer-logo-filter .issuer-logo-name, .issuer-all { white-space: nowrap; }
+@media (max-width: 720px) {
+  .issuer-picker { margin: 14px 0 6px; }
+  .issuer-picker-heading { margin-bottom: 6px; }
+  .issuer-logo-filter {
+    display: flex; flex-wrap: nowrap; gap: 6px; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity;
+    margin: 0 -16px; padding: 2px 16px 6px; scroll-padding-inline: 16px;
+  }
+  .issuer-logo-filter::-webkit-scrollbar { display: none; }
+  .issuer-logo-filter button { flex: 0 0 auto; min-height: 42px; padding: 6px 14px; scroll-snap-align: start; }
+  .issuer-logo-filter .issuer-logo-mark { width: 64px; flex-basis: 64px; height: 24px; }
+  .issuer-logo-filter .issuer-logo-mark img { max-width: 62px; max-height: 20px; }
+  .issuer-logo-filter .issuer-logo-fallback .issuer-logo-mark { width: 20px; flex-basis: 20px; }
+  .issuer-selection { right: 3px; top: 3px; }
+  .issuer-selection svg { width: 12px; height: 12px; }
+  /* 옆으로 넘기는 줄은 오른쪽 끝을 흐리게 해서 더 있다는 걸 알려 주고, 끝 칸도 흐린 곳 밖으로 나오게 여백을 둠 */
+  .pm-chips, .issuer-logo-filter {
+    -webkit-mask-image: linear-gradient(90deg, var(--mc-text) calc(100% - 28px), transparent);
+    mask-image: linear-gradient(90deg, var(--mc-text) calc(100% - 28px), transparent);
+  }
+  .pm-chips::after, .issuer-logo-filter::after { content: ""; flex: 0 0 16px; }
+}
+
+/* 더 보기: 남은 개수 */
+.pm-more-rest { font-weight: 500; font-size: .85em; color: var(--mc-muted); }
+
+/* 이벤트 카드: 긴 제목·설명은 세 줄까지만 */
+.pm-event h3, .pm-event p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+
+/* 발급이벤트: 금액이 확인되지 않은 혜택은 짧게 */
+.pm-cashback-value strong.pm-cashback-text { font-size: 17px; line-height: 1.35; }
+
+/* 최근 끝난 발급이벤트(접힘) */
+.pm-ended { margin-top: 28px; border: 1px solid var(--mc-border); border-radius: 14px; background: var(--mc-bg-alt); overflow: hidden; }
+.pm-ended > summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding: 16px 44px 16px 18px; position: relative; list-style: none; cursor: pointer; font-weight: 700; }
+.pm-ended > summary::-webkit-details-marker { display: none; }
+.pm-ended > summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-size: 20px; font-weight: 400; color: var(--mc-muted); }
+.pm-ended[open] > summary::after { content: "−"; }
+.pm-ended > summary small { font-weight: 400; font-size: .8rem; color: var(--mc-muted); }
+.pm-ended[open] > summary { border-bottom: 1px solid var(--mc-border); }
+.pm-ended .pm-cashback-groups { padding: 12px; }
+.pm-ended .pm-cashback-value strong { color: var(--mc-muted); }
+
+/* 카드 상세: 연회비·전월실적 옆에 최고피킹률 */
+.pm-hero-facts { flex-wrap: wrap; gap: 16px 34px; }
+.pm-hero-picking { display: grid; gap: 5px; color: inherit; text-decoration: none; }
+.pm-hero-picking strong { color: var(--mc-primary); }
+.pm-hero-picking:hover span, .pm-hero-picking:focus-visible span { text-decoration: underline; }
+@media (max-width: 720px) {
+  .pm-hero-facts { gap: 14px 26px; }
+  .pm-hero-facts strong { font-size: 20px; }
+}
+/* 결제 항목별 인정 여부는 표가 길어서 접어 둠 (펼친 머리말이 제목 역할) */
+.pm-eligibility-details .pm-eligibility-heading h3 { display: none; }
+.pm-eligibility-details > .pm-eligibility-matrix { padding-bottom: 18px; }
+
+/* 이벤트 상세: 연결된 카드는 작은 칩으로, 많으면 12종만 먼저 */
+.pm-linked-cards { display: flex; flex-wrap: wrap; gap: 8px; padding: 4px 0 14px; }
+.pm-linked-cards a {
+  padding: 8px 12px; border: 1px solid var(--mc-border); border-radius: 999px; background: var(--mc-bg);
+  color: var(--mc-text); font-size: 13px; line-height: 1.3; text-decoration: none; overflow-wrap: anywhere;
+}
+.pm-linked-cards a:hover { border-color: var(--mc-primary); color: var(--mc-primary); }
+.pm-linked-cards-more {
+  margin: 0 0 18px; padding: 9px 14px; min-height: 40px; border: 1px solid var(--mc-border); border-radius: 10px;
+  background: var(--mc-bg-alt); color: var(--mc-text); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.pm-linked-cards-more:hover { border-color: var(--mc-primary); color: var(--mc-primary); }
+
+/* 불러오는 동안의 화면 뼈대 */
+.mc-skel {
+  display: block; border-radius: 10px;
+  background: linear-gradient(90deg, var(--mc-bg-alt) 25%, color-mix(in srgb, var(--mc-border) 65%, var(--mc-bg-alt)) 50%, var(--mc-bg-alt) 75%);
+  background-size: 200% 100%; animation: mc-shimmer 1.3s ease-in-out infinite;
+}
+@keyframes mc-shimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+.mc-skel-title { width: 180px; max-width: 60%; height: 30px; margin-bottom: 10px; }
+.mc-skel-line { width: 360px; max-width: 85%; height: 14px; margin-bottom: 18px; }
+.mc-skel-search { height: 58px; border-radius: 14px; margin-bottom: 20px; }
+.mc-skel-chips { display: flex; gap: 7px; overflow: hidden; margin-bottom: 24px; }
+.mc-skel-chips .mc-skel { flex: 0 0 78px; height: 39px; border-radius: 24px; }
+.mc-skel-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.mc-skel-card { height: 300px; border-radius: 14px; }
+.mc-skel-hero { height: 320px; border-radius: 18px; margin-bottom: 22px; }
+.mc-skel-block { height: 220px; border-radius: 14px; margin-top: 12px; }
+@media (max-width: 1000px) { .mc-skel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .mc-skel-grid { grid-template-columns: 1fr; } .mc-skel-card { height: 250px; } .mc-skel-hero { height: 240px; } }

@@ -1,17 +1,17 @@
 import type {Card,Benefit} from './catalog-types';
-import {cardThemes,paymentEligibility} from './card-themes';
-const cleanTag=(value:string)=>value.replace(/^#+/,'').trim();
+import {cardThemes,paymentEligibility,REMOVED_THEMES} from './card-themes';
+// 카드 데이터의 '여행/숙박' 태그는 '여행'으로 보여 줍니다(호텔 기능 제거).
+const cleanTag=(value:string)=>{const tag=value.replace(/^#+/,'').trim();return tag==='여행/숙박'?'여행':tag;};
 export function featureTags(card:Card){
  const benefitText=card.benefits.map(b=>b.category+' '+b.title+' '+b.detail).join(' ');
  const serviceText=JSON.stringify(card.networkServices??[]);
  const text=[card.name,benefitText,serviceText].join(' ');
  const controlled=new Set(['상품권','상품권 가능','관리비','국세','지방세','세금']);
- const tags=new Set([...card.tags.map(cleanTag).filter(tag=>tag&&!controlled.has(tag)),...cardThemes(card)].map(cleanTag).filter(Boolean));
+ const tags=new Set([...card.tags.map(cleanTag).filter(tag=>tag&&!controlled.has(tag)),...cardThemes(card)].map(cleanTag).filter(tag=>tag&&!REMOVED_THEMES.has(tag)));
  if(card.minimumSpend===0)tags.add('무실적');
  if(/마티나\s*골드/i.test(text))tags.add('마티나골드');
  if(/K[-\s]?패스|K[-\s]?PASS/i.test(text))tags.add('K패스');
  if(/해외|외화/.test(benefitText+' '+serviceText))tags.add('해외');
- if(/호텔|리조트|숙박/.test(benefitText+' '+serviceText))tags.add('호텔');
  if(/라운지/.test(benefitText+' '+serviceText))tags.add('라운지');
  const gift=paymentEligibility(card,'상품권 가능');
  if(gift.spend==='allowed'||gift.benefit==='allowed'){tags.add('상품권');tags.add('상품권 가능');}
