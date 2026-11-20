@@ -1,0 +1,303 @@
+[
+  {
+    "id": "c217a4b40a5332f679e72114",
+    "issuer": "신한카드",
+    "kind": "product_list",
+    "url": "https://www.shinhancard.com/pconts/html/card/CONFM70045/CONFM70045R01.html",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "3f4bc3bd3325765f91bf4196",
+    "issuer": "KB국민카드",
+    "kind": "product_list",
+    "url": "https://card.kbcard.com/CRD/DVIEW/HCAM0101",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "a36540cd0f6b2305f1fe8fee",
+    "issuer": "삼성카드",
+    "kind": "product_list",
+    "url": "https://www.samsungcard.com/home/card/cardinfo/PGHPPCCCardCardinfoRecommend001",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "ebe11027d6e5eea340f4c0ac",
+    "issuer": "현대카드",
+    "kind": "product_list",
+    "url": "https://www.hyundaicard.com/cpc/ma/CPCMA0101_01.hc",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "418b364270476d0898ab389b",
+    "issuer": "우리카드",
+    "kind": "product_list",
+    "url": "https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD201S00.do",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "e566b1e3e30e5e84e6a51668",
+    "issuer": "하나카드",
+    "kind": "product_list",
+    "url": "https://m.hanacard.co.kr/MKCDPD1000M.web",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "b8415140edb5a87efaa0d10c",
+    "issuer": "NH농협카드",
+    "kind": "product_list",
+    "url": "https://card.nonghyup.com/servlet/IpCc1411R.act",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "20bc3886f6679ae9deee1b1c",
+    "issuer": "BC 바로카드",
+    "kind": "product_list",
+    "url": "https://www.bccard.com/app/card/CreditCardMain.do",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "b23df806f477c26e861fec24",
+    "issuer": "IBK기업은행",
+    "kind": "product_list",
+    "url": "https://www.bccard.com/app/card/CreditSearch.do?retKey=json&pageNo=1&mbNo=003&sortType=rcissu",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "2cf7e0f029daefe44a1468ed",
+    "issuer": "롯데카드",
+    "kind": "product_list",
+    "url": "https://www.lottecard.co.kr/app/LPCDADA_V100.lc",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "acd71651e94e417e0a121e33",
+    "issuer": "카카오뱅크",
+    "kind": "product_list",
+    "url": "https://www.kakaobank.com/products/checkcard",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "b9914603429ac2f7568b4d2f",
+    "issuer": "토스뱅크",
+    "kind": "product_list",
+    "url": "https://tossbank.com/product-service/card/check-card",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "0a84c2762f0725ebac10c9d7",
+    "issuer": "케이뱅크",
+    "kind": "product_list",
+    "url": "https://www.kbanknow.com/web/product/card/one-card",
+    "note": "기존 공식 목록의 변경 감지. 동적 목록·페이지네이션은 별도 대조 필요."
+  },
+  {
+    "id": "4126360a1271a71e87c00a6e",
+    "issuer": "BC 바로카드",
+    "kind": "disclosure",
+    "url": "https://www.bccard.com/app/card/ContentsLinkActn.do?pgm_id=ind0760",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. 상품공시실"
+  },
+  {
+    "id": "7bc271c6f1c2b035dd43dc51",
+    "issuer": "BC 바로카드",
+    "kind": "disclosure",
+    "url": "https://www.bccard.com/app/card/ServiceChangeListActn.do",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. 서비스 변경안내"
+  },
+  {
+    "id": "9633a1abb4371bd7f51d4eeb",
+    "issuer": "IBK기업은행",
+    "kind": "disclosure",
+    "url": "https://www.bccard.com/app/card/ContentsLinkActn.do?pgm_id=ind0760",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. 상품공시실"
+  },
+  {
+    "id": "4c31bf8a8a4b3d91b428970d",
+    "issuer": "IBK기업은행",
+    "kind": "disclosure",
+    "url": "https://www.bccard.com/app/card/ServiceChangeListActn.do",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. 서비스 변경안내"
+  },
+  {
+    "id": "57648dc92151be243de7c092",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/SVC/DVIEW/HSHMCXCRSZZC0004",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. 상품공시실"
+  },
+  {
+    "id": "6c72be2e466cf39bcf818b43",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0072",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. 탄탄대로 MizMr 선택서비스 변경"
+  },
+  {
+    "id": "ccc0cf3662483f1c1ee249c0",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/SVC/DVIEW/HSDMCXPRISVC0254",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. KB국민 청춘대로카드 선택서비스 변경"
+  },
+  {
+    "id": "c8e75727032f56422d60db4b",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/SVC/DVIEW/HSDMCXPRISVCD0029",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. EVO 티타늄카드 선택서비스 변경"
+  },
+  {
+    "id": "66891b2ab02974d07b62fa8e",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/SVC/DVIEW/HSDMCXPRISVS0035",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. Easy ring 티타늄카드 선택서비스 변경"
+  },
+  {
+    "id": "63697c25e5e9ada38a8a1327",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/SVC/DVIEW/HSDMCXPRISVS0066",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. KB국민 탄탄대로BIZ카드 선택서비스 변경"
+  },
+  {
+    "id": "b926f64cd306537d49d6028f",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/SVC/DVIEW/HSDMCXPRISVSD0003",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. Easy pick카드 선택서비스 변경"
+  },
+  {
+    "id": "51f42a370becd894eb9f826b",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/SVC/DVIEW/HSDMCXPRISVCD0035",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. Easy All 카드 선택서비스 변경"
+  },
+  {
+    "id": "4fcfe1297533e61e1a05a859",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/SVC/DVIEW/HSDMCXPRISVCD0036",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. Easy link 티타늄카드 선택서비스 변경"
+  },
+  {
+    "id": "d828ec5ad1ec05a2d4bcf31f",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/SVC/DVIEW/HSDMCXPRISVCD0037",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. Easy pick 티타늄카드 선택서비스 변경"
+  },
+  {
+    "id": "ac943bb3d1a75a425f98a9b9",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/SVC/DVIEW/HSDMCXPRISVS0051",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. KB국민 골든라이프카드 선택서비스 변경"
+  },
+  {
+    "id": "a6cdb9c5090bb61d33d3bfdd",
+    "issuer": "KB국민카드",
+    "kind": "disclosure",
+    "url": "https://card.kbcard.com/SVC/DVIEW/HSDMCXPRISVS0052",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. KB국민 다담카드 선택서비스 변경"
+  },
+  {
+    "id": "7dff71d0737b496fe01b61e3",
+    "issuer": "SC제일은행",
+    "kind": "product_sample",
+    "url": "https://www.standardchartered.co.kr/np/kr/pl/cd/CardDetail.jsp?cardKind=2&id=4753",
+    "note": "상품목록 진입 URL 추가 확인 필요. 개별 상품으로 전체 목록 확인을 대체하지 않음."
+  },
+  {
+    "id": "3a2fff9add7c78375020c42c",
+    "issuer": "iM뱅크",
+    "kind": "product_sample",
+    "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=310402&mbkNo=031",
+    "note": "상품목록 진입 URL 추가 확인 필요. 개별 상품으로 전체 목록 확인을 대체하지 않음."
+  },
+  {
+    "id": "5fd03c8d8d074207006ea88a",
+    "issuer": "iM뱅크",
+    "kind": "disclosure",
+    "url": "https://www.bccard.com/app/card/ContentsLinkActn.do?pgm_id=ind0760",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. 상품공시실"
+  },
+  {
+    "id": "7fb2c9cf64950f9554abe562",
+    "issuer": "iM뱅크",
+    "kind": "disclosure",
+    "url": "https://www.bccard.com/app/card/ServiceChangeListActn.do",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. 서비스 변경안내"
+  },
+  {
+    "id": "17d0afd99d712b352e44e2ca",
+    "issuer": "경남은행",
+    "kind": "product_sample",
+    "url": "https://www.knbank.co.kr/ib20/mnu/FPMCRD060101000?FNC_PRD_DIS_CD=05&FNC_PRD_NO=0000204104&ib20_wc=FPMCRD210LSTV00M%3AFPMCRD220DETV00M",
+    "note": "상품목록 진입 URL 추가 확인 필요. 개별 상품으로 전체 목록 확인을 대체하지 않음."
+  },
+  {
+    "id": "fda64c0cce61a94c66d6c576",
+    "issuer": "광주은행",
+    "kind": "product_sample",
+    "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20191107001",
+    "note": "상품목록 진입 URL 추가 확인 필요. 개별 상품으로 전체 목록 확인을 대체하지 않음."
+  },
+  {
+    "id": "dfb054ee14bab026b65017f1",
+    "issuer": "부산은행",
+    "kind": "product_sample",
+    "url": "https://www.busanbank.co.kr/ib20/mnu/FPMCRD122010000?ibs_current_page=1",
+    "note": "상품목록 진입 URL 추가 확인 필요. 개별 상품으로 전체 목록 확인을 대체하지 않음."
+  },
+  {
+    "id": "af9427732472b5e2c649d1d4",
+    "issuer": "수협은행",
+    "kind": "product_sample",
+    "url": "https://www.suhyup-bank.com/ib20/mnu/FPD00040",
+    "note": "상품목록 진입 URL 추가 확인 필요. 개별 상품으로 전체 목록 확인을 대체하지 않음."
+  },
+  {
+    "id": "7fc51a46ae699560cbcf82e5",
+    "issuer": "신협",
+    "kind": "product_sample",
+    "url": "https://www.cu.co.kr/product/ad/card/selectCard.do?cardSn=1040&mi=100253",
+    "note": "상품목록 진입 URL 추가 확인 필요. 개별 상품으로 전체 목록 확인을 대체하지 않음."
+  },
+  {
+    "id": "899f22595421b6fd99d907ed",
+    "issuer": "우리카드",
+    "kind": "disclosure",
+    "url": "https://pc.wooricard.com/dcpc/yh1/cct/cct11/prdntc/H1CCT211S00.do",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. 상품공시실"
+  },
+  {
+    "id": "9117585053633807ec461c56",
+    "issuer": "우체국예금",
+    "kind": "product_sample",
+    "url": "https://mall.epostbank.go.kr/IPCDCC0003.do",
+    "note": "상품목록 진입 URL 추가 확인 필요. 개별 상품으로 전체 목록 확인을 대체하지 않음."
+  },
+  {
+    "id": "abb5a1349dd673e0cf76666e",
+    "issuer": "전북은행",
+    "kind": "product_sample",
+    "url": "https://m.jbbank.co.kr/JBN/P_M_CARD_MALL",
+    "note": "상품목록 진입 URL 추가 확인 필요. 개별 상품으로 전체 목록 확인을 대체하지 않음."
+  },
+  {
+    "id": "3ff6d672e169c162c7622d53",
+    "issuer": "카카오뱅크",
+    "kind": "disclosure",
+    "url": "https://www.kakaobank.com/Help/Documents/ProductDeclaration/Manual",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. 상품공시"
+  },
+  {
+    "id": "11eb6315efcee5cd07e36688",
+    "issuer": "카카오뱅크",
+    "kind": "disclosure",
+    "url": "https://kakaobank.com/Help/Documents/ProductDeclaration",
+    "note": "공식 페이지에서 관측한 공시·서비스변경 진입 링크. 상품공시실"
+  }
+]

@@ -1,0 +1,1 @@
+export default function CardNotFound(){return <main className="card-not-found"><div className="eyebrow">PAYMOREVENT</div><h1>상품을 찾을 수 없어요.</h1><p>상품 주소를 확인하거나 카드 목록에서 다시 찾아주세요.</p><a className="primary-button" href="/">카드 목록으로</a></main>;}

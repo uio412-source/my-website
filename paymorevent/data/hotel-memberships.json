@@ -1,0 +1,2797 @@
+[
+  {
+    "id": "marriott",
+    "name": "메리어트",
+    "program": "Marriott Bonvoy",
+    "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+    "brands": [
+      "The Ritz-Carlton",
+      "Ritz-Carlton Reserve",
+      "St. Regis",
+      "EDITION",
+      "The Luxury Collection",
+      "W Hotels",
+      "JW Marriott",
+      "Marriott Hotels",
+      "Sheraton",
+      "Westin",
+      "Renaissance",
+      "Le Méridien",
+      "Delta Hotels",
+      "Autograph Collection",
+      "Tribute Portfolio",
+      "Design Hotels",
+      "Courtyard",
+      "Four Points",
+      "Four Points Flex",
+      "Fairfield",
+      "AC Hotels",
+      "Aloft",
+      "Moxy",
+      "SpringHill Suites",
+      "Residence Inn",
+      "TownePlace Suites",
+      "Element",
+      "City Express",
+      "Gaylord Hotels",
+      "Apartments by Marriott Bonvoy",
+      "StudioRes",
+      "Marriott Executive Apartments",
+      "Outdoor Collection",
+      "Series by Marriott",
+      "citizenM"
+    ],
+    "notes": [
+      "연간 등급 기준은 적격 숙박의 Elite Night Credit(ENC). 단순 실제박수와 항상 같지 않음: City Express·Four Points Flex·Protea는0.5 ENC/박,StudioRes는ENC없음; Series는지역별 차이",
+      "직접 적격 예약·본인 투숙이 전제; 브랜드 목록은 공식 참여약관의 주요 브랜드이며 시설별 참여 예외 있음",
+      "Lifetime Silver250박+5년,Gold400박+7년,Platinum600박+10년; Lifetime Titanium 신규달성은2018년말 종료"
+    ],
+    "tiers": [
+      {
+        "id": "member",
+        "name": "Member",
+        "qualification": "무료 가입",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "엘리트 보너스0%",
+            "conditions": [
+              "적격요금 기본포인트는 브랜드별 상이; StudioRes는엘리트보너스없음"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "조식포함 요금 또는 브랜드 자체 조식과 구분"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 라운지 없음",
+            "conditions": [
+              "별도 Club 포함 객실/요금은 예외"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "등급 업그레이드 없음",
+            "conditions": [
+              "호텔 자발적 제공과 구분"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "정해진 시간 보장 없음",
+            "conditions": [
+              "호텔과 개별 협의"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "등급 보장 없음",
+            "conditions": [
+              "호텔과 개별 협의"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "회원요금·적격 직접예약 Wi-Fi",
+            "conditions": [
+              "참여 시설·요금 조건"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "기본등급 연간 선택혜택 없음",
+            "conditions": [
+              "적립포인트 사용 및 별도 카드 바우처는 별도"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          }
+        ]
+      },
+      {
+        "id": "silver",
+        "name": "Silver Elite",
+        "qualification": "연10 ENC",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+10%",
+            "conditions": [
+              "적격 숙박; 브랜드 예외"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/member-benefits/silver.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "브랜드 자체 조식은 별도"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 라운지 없음",
+            "conditions": [
+              "별도 Club 요금은 별도"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "등급 업그레이드 없음",
+            "conditions": [
+              "호텔 자발적 제공은 별도"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "정해진 시간 보장 없음",
+            "conditions": [
+              "개별 요청"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "우선 요청, 시간 미지정",
+            "conditions": [
+              "가용성 기준; Vacation Club 계열·Ritz-Carlton Reserve 등 제외"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "Ultimate Reservation Guarantee",
+            "conditions": [
+              "예약번호에 회원번호와 유효카드; 운영호텔이 예약 불이행 시 인근 숙박/브랜드별 보상",
+              "Ritz-Carlton·Reserve·St. Regis는Titanium이상만; Design·Vacation Club 계열 제외"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "등급만으로 연간 선택혜택 없음",
+            "conditions": [
+              "50/75 ENC 조건 별도"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          }
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold Elite",
+        "qualification": "연25 ENC",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+25%",
+            "conditions": [
+              "적격 숙박; 브랜드 예외"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/member-benefits/gold.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "웰컴포인트와 조식은 다름"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 라운지 없음",
+            "conditions": [
+              "Executive층 업그레이드가 Club 접근을 자동 보장하지 않음"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "전망·고층 등 개선객실",
+            "conditions": [
+              "도착 시 가용성; 본인객실1개; 스위트 보장 없음",
+              "Vacation Club·Grand Residence Club·Sheraton/Westin Vacation Club·Ritz-Carlton Reserve·The Phoenician Residences 등 제외; StudioRes는 업그레이드 제외",
+              "Design Hotels·MGM·올인클루시브·Yacht·Homes & Villas는 별도 참여 약관 적용"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "정해진 시간 보장 없음",
+            "conditions": [
+              "개별 요청"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "오후2시 요청",
+            "conditions": [
+              "가용성 기준; Vacation Club 계열·Reserve 등 제외"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "Silver 예약보장 +웰컴포인트·고속Wi-Fi",
+            "conditions": [
+              "웰컴포인트250/500P 등 브랜드 차이; 예약보장 브랜드 예외 유지"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "등급만으로 연간 선택혜택 없음",
+            "conditions": [
+              "50/75 ENC 달성 별도"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          }
+        ]
+      },
+      {
+        "id": "platinum",
+        "name": "Platinum Elite",
+        "qualification": "연50 ENC",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+50%",
+            "conditions": [
+              "적격 숙박; 브랜드 예외"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/member-benefits/platinum.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "브랜드별 웰컴기프트 선택 또는 라운지 조식; 전 브랜드 무료 조식 아님",
+            "conditions": [
+              "회원+동일 객실 동반1인; 포인트/어메니티 선택 시 해당 조식 선택 혜택과 중복되지 않음",
+              "St. Regis·Luxury Collection·W·Westin·Sheraton·Le Méridien·Tribute Portfolio는 레스토랑 조식 선택 가능",
+              "Marriott·JW·Renaissance·Autograph·Delta는 지역/리조트 및 라운지 정책으로 달라짐; Courtyard는 지역별 F&B 크레딧 또는 라운지 조식",
+              "Ritz-Carlton·EDITION·Design Hotels·Apartments 등은 조식 선택 대신 포인트; 유료 Club 권한과 별개"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "지정 브랜드 라운지 회원+동반1인",
+            "conditions": [
+              "JW·Marriott·Sheraton·Westin·Renaissance·Le Méridien·Autograph·Delta 지정 시설; 미국/캐나다 외 Courtyard 라운지 포함",
+              "JW·Marriott·Renaissance·Autograph·Delta 리조트 제외; Ritz-Carlton·St. Regis·W·Luxury Collection·EDITION 등은 등급 라운지 미제공",
+              "미국/캐나다 지정5브랜드 라운지 폐쇄/미보유 시 조식 또는750P/박; 유럽 지정5브랜드 미보유 시 동일 대안; Sheraton·Westin·Le Méridien은 폐쇄 시 대안 보장 없음"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "도착 시 가용 객실, 일부 스위트 포함",
+            "conditions": [
+              "체류 전체 기간 재고와 호텔 판단에 따름; 본인 객실1개만",
+              "Ritz-Carlton Club 직접 접근 객실 제외",
+              "Vacation Club·Grand Residence Club·Sheraton/Westin Vacation Club·Ritz-Carlton Reserve·The Phoenician Residences 등 제외; StudioRes는 업그레이드 제외",
+              "Design Hotels·MGM·올인클루시브·Yacht·Homes & Villas는 별도 참여 약관 적용"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "일반 시간 보장 없음",
+            "conditions": [
+              "개별 호텔 요청"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "오후4시까지 보장, 예외 시설은 재고 기준",
+            "conditions": [
+              "리조트·컨벤션·Design Hotels·StudioRes는 가용성에 따름",
+              "Apartments by Marriott Bonvoy는 오후2시 보장,4시는 가용성; Vacation Club 계열·Ritz-Carlton Reserve·Phoenician Residences 제외",
+              "예약/체크인/체류 중 요청 필요"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "지정 브랜드 웰컴기프트·라운지·객실유형 보장",
+            "conditions": [
+              "브랜드별 규정과 보상액 차이; 미제공 보상은체크아웃 전에 현장 요청 필요",
+              "라운지가 모든 브랜드에 있는 것은 아님"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "50 ENC 달성: 연간 선택혜택1개",
+            "conditions": [
+              "5 Nightly Upgrade Awards·침대US$1000할인·US$100기부·Silver 선물·5 ENC 중1개",
+              "신용카드로 Platinum을 보유하더라도50 ENC를 실제 충족해야 함",
+              "Nightly Upgrade Awards는 지정 숙박·브랜드와 객실 재고에 따라 사전 승인; 등급 자체의 확정 스위트 보장 아님"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/member-benefits/platinum.mi",
+            "availability": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "titanium",
+        "name": "Titanium Elite",
+        "qualification": "연75 ENC",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+75%",
+            "conditions": [
+              "적격 숙박; 브랜드 예외"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/member-benefits/titanium.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "브랜드별 웰컴기프트 선택 또는 라운지 조식; 전 브랜드 무료 조식 아님",
+            "conditions": [
+              "회원+동일 객실 동반1인; 포인트/어메니티 선택 시 해당 조식 선택 혜택과 중복되지 않음",
+              "St. Regis·Luxury Collection·W·Westin·Sheraton·Le Méridien·Tribute Portfolio는 레스토랑 조식 선택 가능",
+              "Marriott·JW·Renaissance·Autograph·Delta는 지역/리조트 및 라운지 정책으로 달라짐; Courtyard는 지역별 F&B 크레딧 또는 라운지 조식",
+              "Ritz-Carlton·EDITION·Design Hotels·Apartments 등은 조식 선택 대신 포인트; 유료 Club 권한과 별개"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "지정 브랜드 라운지 회원+동반1인",
+            "conditions": [
+              "JW·Marriott·Sheraton·Westin·Renaissance·Le Méridien·Autograph·Delta 지정 시설; 미국/캐나다 외 Courtyard 라운지 포함",
+              "JW·Marriott·Renaissance·Autograph·Delta 리조트 제외; Ritz-Carlton·St. Regis·W·Luxury Collection·EDITION 등은 등급 라운지 미제공",
+              "미국/캐나다 지정5브랜드 라운지 폐쇄/미보유 시 조식 또는750P/박; 유럽 지정5브랜드 미보유 시 동일 대안; Sheraton·Westin·Le Méridien은 폐쇄 시 대안 보장 없음"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "도착 시 가용 객실, 일부 스위트 포함",
+            "conditions": [
+              "체류 전체 기간 재고와 호텔 판단에 따름; 본인 객실1개만",
+              "Ritz-Carlton Club 직접 접근 객실 제외",
+              "Vacation Club·Grand Residence Club·Sheraton/Westin Vacation Club·Ritz-Carlton Reserve·The Phoenician Residences 등 제외; StudioRes는 업그레이드 제외",
+              "Design Hotels·MGM·올인클루시브·Yacht·Homes & Villas는 별도 참여 약관 적용"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "일반 시간 보장 없음",
+            "conditions": [
+              "개별 호텔 요청"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "오후4시까지 보장, 예외 시설은 재고 기준",
+            "conditions": [
+              "리조트·컨벤션·Design Hotels·StudioRes는 가용성에 따름",
+              "Apartments by Marriott Bonvoy는 오후2시 보장,4시는 가용성; Vacation Club 계열·Ritz-Carlton Reserve·Phoenician Residences 제외",
+              "예약/체크인/체류 중 요청 필요"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "48시간 전 유상 표준객실 가용성 보장",
+            "conditions": [
+              "도착48시간 전 현지오후3시까지 예약, 일반 적용요금; 포인트/할인요금 제외",
+              "특수수요일·25실이하·리조트·Design·MGM·Outdoor·Reserve·Vacation Club·StudioRes 등 제외",
+              "Residence Inn·TownePlace는 스튜디오 객실만"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "50 ENC 선택혜택 +75 ENC 추가 선택혜택1개",
+            "conditions": [
+              "75박:5 Nightly Upgrade Awards·침대US$1000할인·US$100기부·Gold 선물·5 ENC·40,000P 한도 무료숙박권 중1개",
+              "다음해2월1일 미 동부23:59까지 선택, 미선택 시5 NUA; 무료숙박권은 다음해12월31일까지 숙박,최대25,000P 보충 가능",
+              "50·75 ENC 달성이 전제; 등급 보유만으로 자동 바우처 부여되지 않음"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "ambassador",
+        "name": "Ambassador Elite",
+        "qualification": "연100 ENC AND 연간 적격지출US$23,000",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+75%",
+            "conditions": [
+              "적격지출은완료숙박 Qualifying Charges, 향후 연도 선결제 제외"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/member-benefits/ambassador.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "브랜드별 웰컴기프트 선택 또는 라운지 조식; 전 브랜드 무료 조식 아님",
+            "conditions": [
+              "회원+동일 객실 동반1인; 포인트/어메니티 선택 시 해당 조식 선택 혜택과 중복되지 않음",
+              "St. Regis·Luxury Collection·W·Westin·Sheraton·Le Méridien·Tribute Portfolio는 레스토랑 조식 선택 가능",
+              "Marriott·JW·Renaissance·Autograph·Delta는 지역/리조트 및 라운지 정책으로 달라짐; Courtyard는 지역별 F&B 크레딧 또는 라운지 조식",
+              "Ritz-Carlton·EDITION·Design Hotels·Apartments 등은 조식 선택 대신 포인트; 유료 Club 권한과 별개"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "지정 브랜드 라운지 회원+동반1인",
+            "conditions": [
+              "JW·Marriott·Sheraton·Westin·Renaissance·Le Méridien·Autograph·Delta 지정 시설; 미국/캐나다 외 Courtyard 라운지 포함",
+              "JW·Marriott·Renaissance·Autograph·Delta 리조트 제외; Ritz-Carlton·St. Regis·W·Luxury Collection·EDITION 등은 등급 라운지 미제공",
+              "미국/캐나다 지정5브랜드 라운지 폐쇄/미보유 시 조식 또는750P/박; 유럽 지정5브랜드 미보유 시 동일 대안; Sheraton·Westin·Le Méridien은 폐쇄 시 대안 보장 없음"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "도착 시 가용 객실, 일부 스위트 포함",
+            "conditions": [
+              "체류 전체 기간 재고와 호텔 판단에 따름; 본인 객실1개만",
+              "Ritz-Carlton Club 직접 접근 객실 제외",
+              "Vacation Club·Grand Residence Club·Sheraton/Westin Vacation Club·Ritz-Carlton Reserve·The Phoenician Residences 등 제외; StudioRes는 업그레이드 제외",
+              "Design Hotels·MGM·올인클루시브·Yacht·Homes & Villas는 별도 참여 약관 적용"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "Your24: 원하는 입실시간 요청",
+            "conditions": [
+              "Ambassador Service로 도착2일전 현지15시까지 신청; 승인 시 퇴실도같은 시각",
+              "가용성 기준; Design·MGM·StudioRes·Vacation Club계열·일부지정호텔 제외"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "오후4시까지 보장, 예외 시설은 재고 기준",
+            "conditions": [
+              "리조트·컨벤션·Design Hotels·StudioRes는 가용성에 따름",
+              "Apartments by Marriott Bonvoy는 오후2시 보장,4시는 가용성; Vacation Club 계열·Ritz-Carlton Reserve·Phoenician Residences 제외",
+              "예약/체크인/체류 중 요청 필요"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "Ambassador Service 및Titanium48시간 보장",
+            "conditions": [
+              "100 ENC+US$40,000이면 동일주소 배우자/동반자 Ambassador 선물 가능; 기본승급US$23,000과 구분",
+              "도착48시간 전 현지오후3시까지 예약, 일반 적용요금; 포인트/할인요금 제외",
+              "특수수요일·25실이하·리조트·Design·MGM·Outdoor·Reserve·Vacation Club·StudioRes 등 제외",
+              "Residence Inn·TownePlace는 스튜디오 객실만"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "conditional"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "50 ENC 선택혜택 +75 ENC 추가 선택혜택1개",
+            "conditions": [
+              "75박:5 Nightly Upgrade Awards·침대US$1000할인·US$100기부·Gold 선물·5 ENC·40,000P 한도 무료숙박권 중1개",
+              "다음해2월1일 미 동부23:59까지 선택, 미선택 시5 NUA; 무료숙박권은 다음해12월31일까지 숙박,최대25,000P 보충 가능",
+              "50·75 ENC 달성이 전제; 등급 보유만으로 자동 바우처 부여되지 않음"
+            ],
+            "sourceUrl": "https://www.marriott.com/loyalty/terms/default.mi",
+            "availability": "conditional"
+          }
+        ]
+      }
+    ],
+    "verifiedAt": "2026-10-06"
+  },
+  {
+    "id": "accor",
+    "name": "아코르",
+    "program": "ALL Accor",
+    "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+    "brands": [
+      "Raffles",
+      "Fairmont",
+      "Sofitel Legend",
+      "Sofitel",
+      "SO/",
+      "Delano",
+      "MGallery",
+      "Pullman",
+      "Swissôtel",
+      "Mövenpick",
+      "Grand Mercure",
+      "Novotel",
+      "Mercure",
+      "The Hoxton",
+      "Mama Shelter",
+      "ibis",
+      "ibis Styles",
+      "ibis budget",
+      "greet",
+      "JO&JOE",
+      "Adagio",
+      "Adagio Access",
+      "Adagio Premium",
+      "Mantra",
+      "Peppers",
+      "BreakFree"
+    ],
+    "notes": [
+      "Status P 승급과Reward P사용은별도;보너스율을Status P에적용하면안됨",
+      "표시유로금액은공식안내의예시 환산으로브랜드별적립률에따라 실제필요지출달라짐;Diamond는숙박수만으로승급불가",
+      "Accor+·ALL PLUS 유료구독,카드제휴등급과기본ALL등급을구분;브랜드·호텔참여예외 존재"
+    ],
+    "tiers": [
+      {
+        "id": "classic",
+        "name": "Classic",
+        "qualification": "무료 가입",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "엘리트 Reward 보너스0%",
+            "conditions": [
+              "Status P와Reward P는다름; 기본적립과유로환산은브랜드별 차이"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "요금·브랜드 자체혜택 별도"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 라운지 없음",
+            "conditions": [
+              "요금·브랜드 자체혜택 별도"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "등급 업그레이드 없음",
+            "conditions": [
+              "요금·브랜드 자체혜택 별도"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "등급 얼리체크인 없음",
+            "conditions": [
+              "시간 고정 보장 없음; 재고·호텔승인 필요"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "등급 레이트체크아웃 없음",
+            "conditions": [
+              "시간 고정 보장 없음; 호텔재고 기준"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "판매객실 가용성 보장 없음",
+            "conditions": [
+              "지정 제외일 있음; 리조트·Thalassa·Adagio는7박이상 숙박만",
+              "Silver이상 우선웰컴·웰컴음료,Gold이상웰컴어메니티는브랜드예외"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "등급 스위트바우처 없음",
+            "conditions": [
+              "요금·브랜드 자체혜택 별도"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          }
+        ]
+      },
+      {
+        "id": "silver",
+        "name": "Silver",
+        "qualification": "연10박 OR2,000 Status P(공식예시€800)",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "Reward 포인트 기본대비+24%",
+            "conditions": [
+              "Status P와Reward P는다름; 기본적립과유로환산은브랜드별 차이"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "요금·브랜드 자체혜택 별도"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 라운지 없음",
+            "conditions": [
+              "요금·브랜드 자체혜택 별도"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "등급 업그레이드 없음",
+            "conditions": [
+              "요금·브랜드 자체혜택 별도"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "등급 얼리체크인 없음",
+            "conditions": [
+              "시간 고정 보장 없음; 재고·호텔승인 필요"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "레이트체크아웃 요청",
+            "conditions": [
+              "시간 고정 보장 없음; 호텔재고 기준"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "판매객실 가용성 보장 없음",
+            "conditions": [
+              "지정 제외일 있음; 리조트·Thalassa·Adagio는7박이상 숙박만",
+              "Silver이상 우선웰컴·웰컴음료,Gold이상웰컴어메니티는브랜드예외"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "등급 스위트바우처 없음",
+            "conditions": [
+              "요금·브랜드 자체혜택 별도"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          }
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "qualification": "연30박 OR7,000 Status P(공식예시€2,800)",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "Reward 포인트 기본대비+48%",
+            "conditions": [
+              "Status P와Reward P는다름; 기본적립과유로환산은브랜드별 차이"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "요금·브랜드 자체혜택 별도"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 라운지 없음",
+            "conditions": [
+              "요금·브랜드 자체혜택 별도"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "다음객실 등급으로 업그레이드",
+            "conditions": [
+              "체크인 시 재고; 특수·Presidential·고유스위트·빌라 제외; 없으면 동일등급 개선객실",
+              "ibis·ibis Styles·Adagio계열·JO&JOE 등 객실등급 없는시설 제외; Fairmont Gold층 제외; Raffles는Junior Suite까지"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "얼리체크인 또는 레이트체크아웃 중 요청",
+            "conditions": [
+              "시간 고정 보장 없음; 재고·호텔승인 필요"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "얼리 또는 레이트 중 요청",
+            "conditions": [
+              "시간 고정 보장 없음; 호텔재고 기준"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "3일전 예약 객실 가용성 보장",
+            "conditions": [
+              "지정 제외일 있음; 리조트·Thalassa·Adagio는7박이상 숙박만",
+              "Silver이상 우선웰컴·웰컴음료,Gold이상웰컴어메니티는브랜드예외"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "등급 스위트바우처 없음",
+            "conditions": [
+              "요금·브랜드 자체혜택 별도"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "not_included"
+          }
+        ]
+      },
+      {
+        "id": "platinum",
+        "name": "Platinum",
+        "qualification": "연60박 OR14,000 Status P(공식예시€5,600)",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "Reward 포인트 기본대비+76%",
+            "conditions": [
+              "Status P와Reward P는다름; 기본적립과유로환산은브랜드별 차이"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "아시아태평양 매일 조식",
+            "conditions": [
+              "ALL 웹/앱·콜센터·호텔직접 적격예약,동일객실 등록투숙객 표준조식",
+              "Georgia·Kazakhstan은아시아태평양 매일조식 제외; 식당없는호텔/조식만포함요금 제외; 룸서비스·팁 제외",
+              "The Hoxton은breakfast bag; Fairmont Gold Lounge는Diamond이상"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "라운지 보유호텔 접근, Fairmont Gold 제외",
+            "conditions": [
+              "시설있는참여호텔;Fairmont Gold는Diamond이상 성인2+어린이2 범위"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "다음객실 등급으로 업그레이드",
+            "conditions": [
+              "체크인 시 재고; 특수·Presidential·고유스위트·빌라 제외; 없으면 동일등급 개선객실",
+              "ibis·ibis Styles·Adagio계열·JO&JOE 등 객실등급 없는시설 제외; Fairmont Gold층 제외; Raffles는Junior Suite까지"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "얼리체크인과 레이트체크아웃 요청",
+            "conditions": [
+              "시간 고정 보장 없음; 재고·호텔승인 필요"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "얼리와 레이트 모두 요청",
+            "conditions": [
+              "시간 고정 보장 없음; 호텔재고 기준"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "2일전 예약 객실 가용성 보장",
+            "conditions": [
+              "지정 제외일 있음; 리조트·Thalassa·Adagio는7박이상 숙박만",
+              "Silver이상 우선웰컴·웰컴음료,Gold이상웰컴어메니티는브랜드예외"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "60박 또는14,000 Status P에 Suite Night Upgrade2장",
+            "conditions": [
+              "18,000 Status P부터4,000P마다1장 추가;1장=스위트확정업그레이드1박",
+              "참여호텔 지정 객실/스위트·전용재고 필요; 신규예약 때 사용, 기존예약 추가 불가",
+              "발급다음해12월31일까지유효; 예약·숙박 유효기간은현행약관9.4 확인",
+              "Suite Night Upgrade 연간최대12장;유효기간안예약한경우다음연도숙박가능하나체크아웃이그다음연도12월31일전이어야함",
+              "Suite Night Upgrade 연간최대12장;유효기간안예약한경우다음연도숙박가능하나체크아웃이그다음연도12월31일전이어야함",
+              "Suite Night Upgrade 연간최대12장;유효기간안예약한경우다음연도숙박가능하나체크아웃이그다음연도12월31일전이어야함"
+            ],
+            "sourceUrl": "https://all.accor.com/a/en/loyalty-program/legal/terms-and-conditions.html",
+            "availability": "confirmed_after_redemption"
+          }
+        ]
+      },
+      {
+        "id": "diamond",
+        "name": "Diamond",
+        "qualification": "연26,000 Status P(공식예시€10,400);숙박수대안없음",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "Reward 포인트 기본대비+100%",
+            "conditions": [
+              "Status P와Reward P는다름; 기본적립과유로환산은브랜드별 차이"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "아시아태평양 매일 +그 외 전세계주말 조식",
+            "conditions": [
+              "ALL 웹/앱·콜센터·호텔직접 적격예약,동일객실 등록투숙객 표준조식",
+              "Georgia·Kazakhstan은아시아태평양 매일조식 제외; 식당없는호텔/조식만포함요금 제외; 룸서비스·팁 제외",
+              "The Hoxton은breakfast bag; Fairmont Gold Lounge는Diamond이상",
+              "주말은국가별차이:Qatar·Bahrain·Jordan·Egypt·Algeria·Oman·Saudi Arabia·Kuwait·Iraq·Syria·Sudan·Libya·Comoros는목/금숙박후금/토조식,그외는금/토숙박후토/일조식"
+            ],
+            "sourceUrl": "https://all.accor.com/a/en/loyalty-program/legal/terms-and-conditions.html",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "라운지 접근 +Fairmont Gold Lounge",
+            "conditions": [
+              "시설있는참여호텔;Fairmont Gold는Diamond이상 성인2+어린이2 범위"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "다음객실 등급으로 업그레이드",
+            "conditions": [
+              "체크인 시 재고; 특수·Presidential·고유스위트·빌라 제외; 없으면 동일등급 개선객실",
+              "ibis·ibis Styles·Adagio계열·JO&JOE 등 객실등급 없는시설 제외; Fairmont Gold층 제외; Raffles는Junior Suite까지"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "얼리체크인과 레이트체크아웃 요청",
+            "conditions": [
+              "시간 고정 보장 없음; 재고·호텔승인 필요"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "얼리와 레이트 모두 요청",
+            "conditions": [
+              "시간 고정 보장 없음; 호텔재고 기준"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "2일전 예약 객실 가용성 보장",
+            "conditions": [
+              "지정 제외일 있음; 리조트·Thalassa·Adagio는7박이상 숙박만",
+              "Silver이상 우선웰컴·웰컴음료,Gold이상웰컴어메니티는브랜드예외"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "60박 또는14,000 Status P에 Suite Night Upgrade2장",
+            "conditions": [
+              "18,000 Status P부터4,000P마다1장 추가;1장=스위트확정업그레이드1박",
+              "참여호텔 지정 객실/스위트·전용재고 필요; 신규예약 때 사용, 기존예약 추가 불가",
+              "발급다음해12월31일까지유효; 예약·숙박 유효기간은현행약관9.4 확인",
+              "Suite Night Upgrade 연간최대12장;유효기간안예약한경우다음연도숙박가능하나체크아웃이그다음연도12월31일전이어야함",
+              "Suite Night Upgrade 연간최대12장;유효기간안예약한경우다음연도숙박가능하나체크아웃이그다음연도12월31일전이어야함",
+              "Suite Night Upgrade 연간최대12장;유효기간안예약한경우다음연도숙박가능하나체크아웃이그다음연도12월31일전이어야함"
+            ],
+            "sourceUrl": "https://all.accor.com/a/en/loyalty-program/legal/terms-and-conditions.html",
+            "availability": "confirmed_after_redemption"
+          },
+          {
+            "key": "dining_spa",
+            "label": "식음·스파 바우처",
+            "value": "Dining & Spa Rewards €100 상당",
+            "conditions": [
+              "연26,000 Status P 달성 시€10권10장; 투숙중 참여호텔프런트에서 식음/스파 차감",
+              "현금과교환 아님; Diamond는Gold선물,Limitless는Platinum선물"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "limitless",
+        "name": "Limitless",
+        "qualification": "초청만 가능;공개 숙박/지출 기준없음",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "Reward 포인트 기본대비+100%",
+            "conditions": [
+              "Status P와Reward P는다름; 기본적립과유로환산은브랜드별 차이"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "아시아태평양 매일 +그 외 전세계주말 조식",
+            "conditions": [
+              "ALL 웹/앱·콜센터·호텔직접 적격예약,동일객실 등록투숙객 표준조식",
+              "Georgia·Kazakhstan은아시아태평양 매일조식 제외; 식당없는호텔/조식만포함요금 제외; 룸서비스·팁 제외",
+              "The Hoxton은breakfast bag; Fairmont Gold Lounge는Diamond이상",
+              "주말은국가별차이:Qatar·Bahrain·Jordan·Egypt·Algeria·Oman·Saudi Arabia·Kuwait·Iraq·Syria·Sudan·Libya·Comoros는목/금숙박후금/토조식,그외는금/토숙박후토/일조식"
+            ],
+            "sourceUrl": "https://all.accor.com/a/en/loyalty-program/legal/terms-and-conditions.html",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "라운지 접근 +Fairmont Gold Lounge",
+            "conditions": [
+              "시설있는참여호텔;Fairmont Gold는Diamond이상 성인2+어린이2 범위"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "다음객실 등급으로 업그레이드",
+            "conditions": [
+              "체크인 시 재고; 특수·Presidential·고유스위트·빌라 제외; 없으면 동일등급 개선객실",
+              "ibis·ibis Styles·Adagio계열·JO&JOE 등 객실등급 없는시설 제외; Fairmont Gold층 제외; Raffles는Junior Suite까지"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "얼리체크인과 레이트체크아웃 요청",
+            "conditions": [
+              "시간 고정 보장 없음; 재고·호텔승인 필요"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "얼리와 레이트 모두 요청",
+            "conditions": [
+              "시간 고정 보장 없음; 호텔재고 기준"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "2일전 예약 객실 가용성 보장",
+            "conditions": [
+              "지정 제외일 있음; 리조트·Thalassa·Adagio는7박이상 숙박만",
+              "Silver이상 우선웰컴·웰컴음료,Gold이상웰컴어메니티는브랜드예외"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "60박 또는14,000 Status P에 Suite Night Upgrade2장",
+            "conditions": [
+              "18,000 Status P부터4,000P마다1장 추가;1장=스위트확정업그레이드1박",
+              "참여호텔 지정 객실/스위트·전용재고 필요; 신규예약 때 사용, 기존예약 추가 불가",
+              "발급다음해12월31일까지유효; 예약·숙박 유효기간은현행약관9.4 확인",
+              "Suite Night Upgrade 연간최대12장;유효기간안예약한경우다음연도숙박가능하나체크아웃이그다음연도12월31일전이어야함",
+              "Suite Night Upgrade 연간최대12장;유효기간안예약한경우다음연도숙박가능하나체크아웃이그다음연도12월31일전이어야함",
+              "Suite Night Upgrade 연간최대12장;유효기간안예약한경우다음연도숙박가능하나체크아웃이그다음연도12월31일전이어야함"
+            ],
+            "sourceUrl": "https://all.accor.com/a/en/loyalty-program/legal/terms-and-conditions.html",
+            "availability": "confirmed_after_redemption"
+          },
+          {
+            "key": "dining_spa",
+            "label": "식음·스파 바우처",
+            "value": "Dining & Spa Rewards €100 상당",
+            "conditions": [
+              "연26,000 Status P 달성 시€10권10장; 투숙중 참여호텔프런트에서 식음/스파 차감",
+              "현금과교환 아님; Diamond는Gold선물,Limitless는Platinum선물"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "conditional"
+          },
+          {
+            "key": "concierge",
+            "label": "전담 지원",
+            "value": "24/7 전담 컨시어지·포인트 이전",
+            "conditions": [
+              "초청회원;세부서비스및이전조건 현행약관"
+            ],
+            "sourceUrl": "https://all.accor.com/loyalty-program/cards-status-benefits-details/index.en.shtml",
+            "availability": "conditional"
+          }
+        ]
+      }
+    ],
+    "verifiedAt": "2026-10-06"
+  },
+  {
+    "id": "ihg",
+    "name": "IHG",
+    "program": "IHG One Rewards",
+    "sourceUrl": "https://www.ihg.com/onerewards/content/us/en/tier-benefits",
+    "brands": [
+      "Six Senses",
+      "Regent",
+      "InterContinental",
+      "Vignette Collection",
+      "Kimpton",
+      "Hotel Indigo",
+      "voco",
+      "HUALUXE",
+      "Crowne Plaza",
+      "EVEN Hotels",
+      "Holiday Inn",
+      "Holiday Inn Express",
+      "Holiday Inn Club Vacations",
+      "Holiday Inn Resorts",
+      "Garner",
+      "avid hotels",
+      "Atwell Suites",
+      "Staybridge Suites",
+      "Candlewood Suites",
+      "Ruby",
+      "Iberostar Beachfront Resorts"
+    ],
+    "notes": [
+      "Silver10박,Gold20박/40,000Elite Qualifying P,Platinum40박/60,000P,Diamond70박/120,000P;모든보너스포인트가승급포인트인것은아님",
+      "직접IHG·공식Iberostar·호텔예약및본인투숙전제;Ruby는2026년부터순차가입이라호텔참여확인",
+      "InterContinental Ambassador(유료)·Royal Ambassador(초청)·Kimpton Inner Circle은One Rewards등급표와별도;Platinum무료조식으로오해하면안됨",
+      "Gold이상전년초과박이월은승급용,마일스톤용아님;브랜드별기본조식과엘리트조식구분"
+    ],
+    "tiers": [
+      {
+        "id": "club",
+        "name": "Club Member",
+        "qualification": "무료 가입",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "엘리트 보너스0%",
+            "conditions": [
+              "적격숙박기본적립에만적용;대부분US$1=10P,Staybridge·Candlewood5P 등브랜드예외"
+            ],
+            "sourceUrl": "https://www.ihg.com/onerewards/content/us/en/tier-benefits",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "Holiday Inn Express 등브랜드기본조식·요금포함조식과구분;Greater China Atwell은전회원+1인예외"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 자체의 무료라운지 없음",
+            "conditions": [
+              "Diamond도자동라운지없음;40/70박 Milestone에서Annual Lounge Membership을별도로선택",
+              "Club객실로재량업그레이드되어도 Club서비스는포함되지않음"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "등급 업그레이드 없음",
+            "conditions": [
+              "호텔자발적제공·별도객실요금제와구분"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "등급 얼리체크인 없음",
+            "conditions": [
+              "Platinum·Diamond만;호텔재고와호텔이정한시간,보장없음"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "오후2시까지 요청",
+            "conditions": [
+              "모든회원;요청과호텔가용성필수,보장아님"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "객실가용성 보장 없음",
+            "conditions": [
+              "Platinum·Diamond만;Customer Care예약+유효카드,Best Flexible Rate,본인1객실",
+              "Reward Nights·Six Senses제외;특수수요일·최소숙박조건가능"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "20~100 적격박,10박마다 Milestone Rewards 선택",
+            "conditions": [
+              "20박:5,000P/식음권2장/확정스위트1장 중1;30박:5,000P/식음권2장 중1",
+              "40·70박은2개선택,라운지연간회원권 선택가능;40박확정스위트1장·70박2장 옵션은해당구간1회만선택",
+              "식음권1장은최대US$20(국가별권면통화),선택후12개월;스위트권도12개월·최대5박·도착14일~24시간전 Customer Care확정",
+              "라운지권은달성연도잔여기간+다음해,회원+동반1인;라운지보유호텔/적격요금·포인트숙박,Macau Alliance제외",
+              "90일내선택;등급달성과별개 실제연간Elite Qualifying Nights 기준,전년이월박은마일스톤불산입",
+              "스위트권:OTA·직원·일부선결제·Free Night Certificate·Ambassador Weekend Night 등 제외;Six Senses·Ruby·IHG Residences·avid·Atwell·Army·Iberostar·Macau Alliance제외"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "choice_with_conditions"
+          }
+        ]
+      },
+      {
+        "id": "silver",
+        "name": "Silver Elite",
+        "qualification": "연10 Elite Qualifying Nights;포인트대안없음",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+20%",
+            "conditions": [
+              "적격숙박기본적립에만적용;대부분US$1=10P,Staybridge·Candlewood5P 등브랜드예외"
+            ],
+            "sourceUrl": "https://www.ihg.com/onerewards/content/us/en/tier-benefits",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "Holiday Inn Express 등브랜드기본조식·요금포함조식과구분;Greater China Atwell은전회원+1인예외"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 자체의 무료라운지 없음",
+            "conditions": [
+              "Diamond도자동라운지없음;40/70박 Milestone에서Annual Lounge Membership을별도로선택",
+              "Club객실로재량업그레이드되어도 Club서비스는포함되지않음"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "등급 업그레이드 없음",
+            "conditions": [
+              "호텔자발적제공·별도객실요금제와구분"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "등급 얼리체크인 없음",
+            "conditions": [
+              "Platinum·Diamond만;호텔재고와호텔이정한시간,보장없음"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "오후2시까지 요청",
+            "conditions": [
+              "모든회원;요청과호텔가용성필수,보장아님"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "객실가용성 보장 없음",
+            "conditions": [
+              "Platinum·Diamond만;Customer Care예약+유효카드,Best Flexible Rate,본인1객실",
+              "Reward Nights·Six Senses제외;특수수요일·최소숙박조건가능"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "20~100 적격박,10박마다 Milestone Rewards 선택",
+            "conditions": [
+              "20박:5,000P/식음권2장/확정스위트1장 중1;30박:5,000P/식음권2장 중1",
+              "40·70박은2개선택,라운지연간회원권 선택가능;40박확정스위트1장·70박2장 옵션은해당구간1회만선택",
+              "식음권1장은최대US$20(국가별권면통화),선택후12개월;스위트권도12개월·최대5박·도착14일~24시간전 Customer Care확정",
+              "라운지권은달성연도잔여기간+다음해,회원+동반1인;라운지보유호텔/적격요금·포인트숙박,Macau Alliance제외",
+              "90일내선택;등급달성과별개 실제연간Elite Qualifying Nights 기준,전년이월박은마일스톤불산입",
+              "스위트권:OTA·직원·일부선결제·Free Night Certificate·Ambassador Weekend Night 등 제외;Six Senses·Ruby·IHG Residences·avid·Atwell·Army·Iberostar·Macau Alliance제외"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "choice_with_conditions"
+          }
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold Elite",
+        "qualification": "연20박 OR40,000 Elite Qualifying P",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+40%",
+            "conditions": [
+              "적격숙박기본적립에만적용;대부분US$1=10P,Staybridge·Candlewood5P 등브랜드예외"
+            ],
+            "sourceUrl": "https://www.ihg.com/onerewards/content/us/en/tier-benefits",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "Holiday Inn Express 등브랜드기본조식·요금포함조식과구분;Greater China Atwell은전회원+1인예외"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 자체의 무료라운지 없음",
+            "conditions": [
+              "Diamond도자동라운지없음;40/70박 Milestone에서Annual Lounge Membership을별도로선택",
+              "Club객실로재량업그레이드되어도 Club서비스는포함되지않음"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "등급 업그레이드 없음",
+            "conditions": [
+              "호텔자발적제공·별도객실요금제와구분"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "등급 얼리체크인 없음",
+            "conditions": [
+              "Platinum·Diamond만;호텔재고와호텔이정한시간,보장없음"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "오후2시까지 요청",
+            "conditions": [
+              "모든회원;요청과호텔가용성필수,보장아님"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "객실가용성 보장 없음",
+            "conditions": [
+              "Platinum·Diamond만;Customer Care예약+유효카드,Best Flexible Rate,본인1객실",
+              "Reward Nights·Six Senses제외;특수수요일·최소숙박조건가능"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "20~100 적격박,10박마다 Milestone Rewards 선택",
+            "conditions": [
+              "20박:5,000P/식음권2장/확정스위트1장 중1;30박:5,000P/식음권2장 중1",
+              "40·70박은2개선택,라운지연간회원권 선택가능;40박확정스위트1장·70박2장 옵션은해당구간1회만선택",
+              "식음권1장은최대US$20(국가별권면통화),선택후12개월;스위트권도12개월·최대5박·도착14일~24시간전 Customer Care확정",
+              "라운지권은달성연도잔여기간+다음해,회원+동반1인;라운지보유호텔/적격요금·포인트숙박,Macau Alliance제외",
+              "90일내선택;등급달성과별개 실제연간Elite Qualifying Nights 기준,전년이월박은마일스톤불산입",
+              "스위트권:OTA·직원·일부선결제·Free Night Certificate·Ambassador Weekend Night 등 제외;Six Senses·Ruby·IHG Residences·avid·Atwell·Army·Iberostar·Macau Alliance제외"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "choice_with_conditions"
+          }
+        ]
+      },
+      {
+        "id": "platinum",
+        "name": "Platinum Elite",
+        "qualification": "연40박 OR60,000 Elite Qualifying P",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+60%",
+            "conditions": [
+              "적격숙박기본적립에만적용;대부분US$1=10P,Staybridge·Candlewood5P 등브랜드예외"
+            ],
+            "sourceUrl": "https://www.ihg.com/onerewards/content/us/en/tier-benefits",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "Holiday Inn Express 등브랜드기본조식·요금포함조식과구분;Greater China Atwell은전회원+1인예외"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 자체의 무료라운지 없음",
+            "conditions": [
+              "Diamond도자동라운지없음;40/70박 Milestone에서Annual Lounge Membership을별도로선택",
+              "Club객실로재량업그레이드되어도 Club서비스는포함되지않음"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "가용객실 업그레이드,스위트포함가능",
+            "conditions": [
+              "호텔재량·본인객실만;Club룸업그레이드가라운지/Club서비스를포함하지않음",
+              "Ruby·IHG Residences등일부시설제외"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "얼리체크인 요청",
+            "conditions": [
+              "Platinum·Diamond만;호텔재고와호텔이정한시간,보장없음"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "오후2시까지 요청",
+            "conditions": [
+              "모든회원;요청과호텔가용성필수,보장아님"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "72시간전 유상객실가용성 보장",
+            "conditions": [
+              "Platinum·Diamond만;Customer Care예약+유효카드,Best Flexible Rate,본인1객실",
+              "Reward Nights·Six Senses제외;특수수요일·최소숙박조건가능"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "20~100 적격박,10박마다 Milestone Rewards 선택",
+            "conditions": [
+              "20박:5,000P/식음권2장/확정스위트1장 중1;30박:5,000P/식음권2장 중1",
+              "40·70박은2개선택,라운지연간회원권 선택가능;40박확정스위트1장·70박2장 옵션은해당구간1회만선택",
+              "식음권1장은최대US$20(국가별권면통화),선택후12개월;스위트권도12개월·최대5박·도착14일~24시간전 Customer Care확정",
+              "라운지권은달성연도잔여기간+다음해,회원+동반1인;라운지보유호텔/적격요금·포인트숙박,Macau Alliance제외",
+              "90일내선택;등급달성과별개 실제연간Elite Qualifying Nights 기준,전년이월박은마일스톤불산입",
+              "스위트권:OTA·직원·일부선결제·Free Night Certificate·Ambassador Weekend Night 등 제외;Six Senses·Ruby·IHG Residences·avid·Atwell·Army·Iberostar·Macau Alliance제외"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "choice_with_conditions"
+          }
+        ]
+      },
+      {
+        "id": "diamond",
+        "name": "Diamond Elite",
+        "qualification": "연70박 OR120,000 Elite Qualifying P",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+100%",
+            "conditions": [
+              "적격숙박기본적립에만적용;대부분US$1=10P,Staybridge·Candlewood5P 등브랜드예외"
+            ],
+            "sourceUrl": "https://www.ihg.com/onerewards/content/us/en/tier-benefits",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "웰컴어메니티로 매일조식 선택,회원+동반1인",
+            "conditions": [
+              "체크인시포인트/음료/조식중선택;적격숙박,동일객실등록",
+              "REGENT·InterContinental·Vignette·HUALUXE·Indigo·voco·Crowne Plaza·EVEN·Holiday Inn·Kimpton·지정Garner참여",
+              "룸서비스·특수레스토랑·주류·일부특선메뉴제외;Dubai Festival City Residence Suites·Doha Residences·Macau Alliance제외",
+              "Iberostar·Royal Resorts는호텔크레딧/포인트, Ruby는포인트;디지털체크인은포인트만부여될수있음"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "choice_with_conditions"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 자체의 무료라운지 없음",
+            "conditions": [
+              "Diamond도자동라운지없음;40/70박 Milestone에서Annual Lounge Membership을별도로선택",
+              "Club객실로재량업그레이드되어도 Club서비스는포함되지않음"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "가용객실 업그레이드,스위트포함가능",
+            "conditions": [
+              "호텔재량·본인객실만;Club룸업그레이드가라운지/Club서비스를포함하지않음",
+              "Ruby·IHG Residences등일부시설제외"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "얼리체크인 요청",
+            "conditions": [
+              "Platinum·Diamond만;호텔재고와호텔이정한시간,보장없음"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "오후2시까지 요청",
+            "conditions": [
+              "모든회원;요청과호텔가용성필수,보장아님"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "72시간전 유상객실가용성 보장",
+            "conditions": [
+              "Platinum·Diamond만;Customer Care예약+유효카드,Best Flexible Rate,본인1객실",
+              "Reward Nights·Six Senses제외;특수수요일·최소숙박조건가능"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "20~100 적격박,10박마다 Milestone Rewards 선택",
+            "conditions": [
+              "20박:5,000P/식음권2장/확정스위트1장 중1;30박:5,000P/식음권2장 중1",
+              "40·70박은2개선택,라운지연간회원권 선택가능;40박확정스위트1장·70박2장 옵션은해당구간1회만선택",
+              "식음권1장은최대US$20(국가별권면통화),선택후12개월;스위트권도12개월·최대5박·도착14일~24시간전 Customer Care확정",
+              "라운지권은달성연도잔여기간+다음해,회원+동반1인;라운지보유호텔/적격요금·포인트숙박,Macau Alliance제외",
+              "90일내선택;등급달성과별개 실제연간Elite Qualifying Nights 기준,전년이월박은마일스톤불산입",
+              "스위트권:OTA·직원·일부선결제·Free Night Certificate·Ambassador Weekend Night 등 제외;Six Senses·Ruby·IHG Residences·avid·Atwell·Army·Iberostar·Macau Alliance제외"
+            ],
+            "sourceUrl": "https://www.ihg.com/content/us/en/customer-care/member-tc/2nd-page",
+            "availability": "choice_with_conditions"
+          }
+        ]
+      }
+    ],
+    "verifiedAt": "2026-10-06"
+  },
+  {
+    "id": "hilton",
+    "name": "힐튼",
+    "program": "Hilton Honors",
+    "sourceUrl": "https://www.hilton.com/en/hilton-honors/member-benefits/",
+    "brands": [
+      "Waldorf Astoria",
+      "LXR",
+      "Conrad",
+      "NoMad",
+      "Signia by Hilton",
+      "Hilton Hotels & Resorts",
+      "Canopy",
+      "Curio Collection",
+      "Graduate Hotels",
+      "DoubleTree",
+      "Tapestry Collection",
+      "Tempo",
+      "Motto",
+      "Embassy Suites",
+      "Hilton Garden Inn",
+      "Hampton",
+      "Tru",
+      "Spark",
+      "Homewood Suites",
+      "Home2 Suites",
+      "LivSmart Studios",
+      "Apartment Collection",
+      "Outset Collection",
+      "YOTEL",
+      "Hilton Grand Vacations"
+    ],
+    "notes": [
+      "2026.01.01부터Gold25박·Diamond50박과Eligible Spend승급대안적용;과거40/60박기준사용불가",
+      "Diamond Reserve=(80박 OR40stays) ANDUS$18,000;신용카드Diamond부여만으로Reserve가되지않음",
+      "Stay는같은호텔연속숙박,체크아웃/재입실로분리불가;본인투숙·적격직접예약,OTA숙박은적립·승급·혜택제외",
+      "2025초과박은2026에만이월,2026박수는2027이월안됨",
+      "Lifetime Diamond:Diamond10년 AND(평생1,000박 OR적격지출US$200,000),일반Diamond혜택;Lifetime Diamond Reserve없음",
+      "Lifetime Diamond의10년은연속일필요없음. Eligible Spend는세금등제외,단순신용카드사용액이아님."
+    ],
+    "tiers": [
+      {
+        "id": "member",
+        "name": "Member",
+        "qualification": "무료 가입",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "엘리트 보너스0%",
+            "conditions": [
+              "대부분US$1=10Base P;Home2·Homewood·Spark·Tru·Apartment Collection·YOTEL은5P,LivSmart3P 등예외",
+              "일부브랜드에일반등급보너스예외있어총적립을모든호텔에일률환산하지않음;승급은2026년부터Eligible Spend기준"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "브랜드자체조식과요금포함조식은별도"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 라운지없음",
+            "conditions": [
+              "Gold는라운지포함Executive룸으로업그레이드되면회원+1인접근;재고기준",
+              "특수Premium Club은별도권한"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "등급 업그레이드 없음",
+            "conditions": [
+              "별도객실예약·호텔자발혜택과구분"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "등급별고정 얼리체크인 보장없음",
+            "conditions": [
+              "디지털체크인은입실시간보장과다름;호텔협의"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "레이트체크아웃 요청,시간보장없음",
+            "conditions": [
+              "프런트요청·가용성기준;일반Diamond도4시보장아님"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "판매객실48시간보장없음",
+            "conditions": [
+              "Diamond·Reserve한정,지정예약기한·호텔브랜드·특수수요일제한",
+              "포인트/프로모션숙박·일부파트너/지정시설제외;일반객실보장과업그레이드보장은다름"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "기본등급5박째무료혜택없음",
+            "conditions": [
+              "무료숙박카드권·별도행사는각약관"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          }
+        ]
+      },
+      {
+        "id": "silver",
+        "name": "Silver",
+        "qualification": "연10박 OR4stays OREligible Spend US$2,500",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+20%",
+            "conditions": [
+              "대부분US$1=10Base P;Home2·Homewood·Spark·Tru·Apartment Collection·YOTEL은5P,LivSmart3P 등예외",
+              "일부브랜드에일반등급보너스예외있어총적립을모든호텔에일률환산하지않음;승급은2026년부터Eligible Spend기준"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "브랜드자체조식과요금포함조식은별도"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 라운지없음",
+            "conditions": [
+              "Gold는라운지포함Executive룸으로업그레이드되면회원+1인접근;재고기준",
+              "특수Premium Club은별도권한"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "등급 업그레이드 없음",
+            "conditions": [
+              "별도객실예약·호텔자발혜택과구분"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "등급별고정 얼리체크인 보장없음",
+            "conditions": [
+              "디지털체크인은입실시간보장과다름;호텔협의"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "레이트체크아웃 요청,시간보장없음",
+            "conditions": [
+              "프런트요청·가용성기준;일반Diamond도4시보장아님"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "판매객실48시간보장없음",
+            "conditions": [
+              "Diamond·Reserve한정,지정예약기한·호텔브랜드·특수수요일제한",
+              "포인트/프로모션숙박·일부파트너/지정시설제외;일반객실보장과업그레이드보장은다름"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "표준객실100%포인트 연속숙박5박째무료",
+            "conditions": [
+              "Silver이상;현금혼합·Premium객실제외;포인트예약의숙박기간규정적용",
+              "엘리트등급부여만으로무료숙박쿠폰이발행되지는않음"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "qualification": "연25박 OR15stays OREligible Spend US$6,000",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+80%",
+            "conditions": [
+              "대부분US$1=10Base P;Home2·Homewood·Spark·Tru·Apartment Collection·YOTEL은5P,LivSmart3P 등예외",
+              "일부브랜드에일반등급보너스예외있어총적립을모든호텔에일률환산하지않음;승급은2026년부터Eligible Spend기준"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "MyWay:일일F&B크레딧 또는컨티넨털조식",
+            "conditions": [
+              "미국지정브랜드와전세계Motto는F&B크레딧,미국외지정브랜드(단Motto제외)는컨티넨털조식",
+              "회원+동일객실등록1인;브랜드·지역·MyWay선택조건에따라달라짐",
+              "조식제공Executive Lounge 접근시F&B크레딧중복불가;전체브랜드Full뷔페보장아님"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "brand_and_region_specific"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "Gold만으로자동접근없음",
+            "conditions": [
+              "Gold는라운지포함Executive룸으로업그레이드되면회원+1인접근;재고기준",
+              "특수Premium Club은별도권한"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "Executive층까지 가용객실 업그레이드",
+            "conditions": [
+              "체크인시체류전체기간재고,회원본인1객실;Executive suite·빌라·특수층·Club별도",
+              "Embassy Suites·Garden Inn·Hampton·LivSmart·Tru·Spark·Homewood·Home2·Grand Vacations·Motto는무료업그레이드없음",
+              "Napua Tower·Rome Cavalieri Imperial Floor·Waldorf Maldives·Conrad Maldives·Hilton Maldives Amingiri 및일부파트너제외"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "등급별고정 얼리체크인 보장없음",
+            "conditions": [
+              "디지털체크인은입실시간보장과다름;호텔협의"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "레이트체크아웃 요청,시간보장없음",
+            "conditions": [
+              "프런트요청·가용성기준;일반Diamond도4시보장아님"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "판매객실48시간보장없음",
+            "conditions": [
+              "Diamond·Reserve한정,지정예약기한·호텔브랜드·특수수요일제한",
+              "포인트/프로모션숙박·일부파트너/지정시설제외;일반객실보장과업그레이드보장은다름"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "표준객실100%포인트 연속숙박5박째무료",
+            "conditions": [
+              "Silver이상;현금혼합·Premium객실제외;포인트예약의숙박기간규정적용",
+              "엘리트등급부여만으로무료숙박쿠폰이발행되지는않음"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "40박10,000P,이후10박마다10,000P;60박추가30,000P",
+            "conditions": [
+              "연간적격박수,최대180박구간;포인트숙박도적격박수인정,객실여러개여도1객실박수",
+              "120박에는추가30,000P 또는 Confirmable Upgrade Reward선택;등급보유만으로마일스톤부여아님"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "diamond",
+        "name": "Diamond",
+        "qualification": "연50박 OR25stays OREligible Spend US$11,500",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+100%",
+            "conditions": [
+              "대부분US$1=10Base P;Home2·Homewood·Spark·Tru·Apartment Collection·YOTEL은5P,LivSmart3P 등예외",
+              "일부브랜드에일반등급보너스예외있어총적립을모든호텔에일률환산하지않음;승급은2026년부터Eligible Spend기준"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "MyWay:일일F&B크레딧 또는컨티넨털조식",
+            "conditions": [
+              "미국지정브랜드와전세계Motto는F&B크레딧,미국외지정브랜드(단Motto제외)는컨티넨털조식",
+              "회원+동일객실등록1인;브랜드·지역·MyWay선택조건에따라달라짐",
+              "조식제공Executive Lounge 접근시F&B크레딧중복불가;전체브랜드Full뷔페보장아님"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "brand_and_region_specific"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "Executive Lounge 접근",
+            "conditions": [
+              "회원+동일객실등록1인;시설있는호텔",
+              "Diamond는Premium Club·Sakura Club·Club Signia·Citrus Club등별도;Reserve는Premium Clubs포함",
+              "All-Inclusive Enclave는기존예약도Enclave급인경우만;접근시일일F&B크레딧중복불가"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "1베드룸스위트까지 가용업그레이드",
+            "conditions": [
+              "체크인시체류전체기간재고,회원본인1객실;Executive suite·빌라·특수층·Club별도",
+              "Embassy Suites·Garden Inn·Hampton·LivSmart·Tru·Spark·Homewood·Home2·Grand Vacations·Motto는무료업그레이드없음",
+              "Napua Tower·Rome Cavalieri Imperial Floor·Waldorf Maldives·Conrad Maldives·Hilton Maldives Amingiri 및일부파트너제외"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "등급별고정 얼리체크인 보장없음",
+            "conditions": [
+              "디지털체크인은입실시간보장과다름;호텔협의"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "레이트체크아웃 요청,시간보장없음",
+            "conditions": [
+              "프런트요청·가용성기준;일반Diamond도4시보장아님"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "48시간전 유상객실보장",
+            "conditions": [
+              "Diamond·Reserve한정,지정예약기한·호텔브랜드·특수수요일제한",
+              "포인트/프로모션숙박·일부파트너/지정시설제외;일반객실보장과업그레이드보장은다름"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "표준객실100%포인트 연속숙박5박째무료",
+            "conditions": [
+              "Silver이상;현금혼합·Premium객실제외;포인트예약의숙박기간규정적용",
+              "엘리트등급부여만으로무료숙박쿠폰이발행되지는않음"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "40박10,000P,이후10박마다10,000P;60박추가30,000P",
+            "conditions": [
+              "연간적격박수,최대180박구간;포인트숙박도적격박수인정,객실여러개여도1객실박수",
+              "120박에는추가30,000P 또는 Confirmable Upgrade Reward선택;등급보유만으로마일스톤부여아님"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "status_gifting",
+            "label": "등급 선물",
+            "value": "60박Gold선물,100박Diamond선물",
+            "conditions": [
+              "달력연도적격박수조건;등급자체와별개"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          }
+        ]
+      },
+      {
+        "id": "diamond_reserve",
+        "name": "Diamond Reserve",
+        "qualification": "(연80박 OR40stays) ANDEligible Spend US$18,000",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+120%",
+            "conditions": [
+              "대부분US$1=10Base P;Home2·Homewood·Spark·Tru·Apartment Collection·YOTEL은5P,LivSmart3P 등예외",
+              "일부브랜드에일반등급보너스예외있어총적립을모든호텔에일률환산하지않음;승급은2026년부터Eligible Spend기준"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "MyWay:일일F&B크레딧 또는컨티넨털조식",
+            "conditions": [
+              "미국지정브랜드와전세계Motto는F&B크레딧,미국외지정브랜드(단Motto제외)는컨티넨털조식",
+              "회원+동일객실등록1인;브랜드·지역·MyWay선택조건에따라달라짐",
+              "조식제공Executive Lounge 접근시F&B크레딧중복불가;전체브랜드Full뷔페보장아님"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "brand_and_region_specific"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "Executive Lounge +Premium Club 접근",
+            "conditions": [
+              "회원+동일객실등록1인;시설있는호텔",
+              "Diamond는Premium Club·Sakura Club·Club Signia·Citrus Club등별도;Reserve는Premium Clubs포함",
+              "All-Inclusive Enclave는기존예약도Enclave급인경우만;접근시일일F&B크레딧중복불가"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "최우선 가용업그레이드,1베드룸스위트까지",
+            "conditions": [
+              "체크인시체류전체기간재고,회원본인1객실;Executive suite·빌라·특수층·Club별도",
+              "Embassy Suites·Garden Inn·Hampton·LivSmart·Tru·Spark·Homewood·Home2·Grand Vacations·Motto는무료업그레이드없음",
+              "Napua Tower·Rome Cavalieri Imperial Floor·Waldorf Maldives·Conrad Maldives·Hilton Maldives Amingiri 및일부파트너제외"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "등급별고정 얼리체크인 보장없음",
+            "conditions": [
+              "디지털체크인은입실시간보장과다름;호텔협의"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "not_included"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "오후4시 보장",
+            "conditions": [
+              "본인명의적격숙박1객실;Hilton브랜드와AutoCamp,일부파트너숙소제외",
+              "Diamond Reserve한정;일반Diamond와구분"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "48시간전 유상객실보장",
+            "conditions": [
+              "Diamond·Reserve한정,지정예약기한·호텔브랜드·특수수요일제한",
+              "포인트/프로모션숙박·일부파트너/지정시설제외;일반객실보장과업그레이드보장은다름"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "표준객실100%포인트 연속숙박5박째무료",
+            "conditions": [
+              "Silver이상;현금혼합·Premium객실제외;포인트예약의숙박기간규정적용",
+              "엘리트등급부여만으로무료숙박쿠폰이발행되지는않음"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "40박10,000P,이후10박마다10,000P;60박추가30,000P",
+            "conditions": [
+              "연간적격박수,최대180박구간;포인트숙박도적격박수인정,객실여러개여도1객실박수",
+              "120박에는추가30,000P 또는 Confirmable Upgrade Reward선택;등급보유만으로마일스톤부여아님"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "status_gifting",
+            "label": "등급 선물",
+            "value": "60박Gold선물,100박Diamond선물",
+            "conditions": [
+              "달력연도적격박수조건;등급자체와별개"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "conditional"
+          },
+          {
+            "key": "confirmable_upgrade",
+            "label": "예약시 확정 업그레이드",
+            "value": "Reserve달성시 Confirmable Upgrade Reward1장",
+            "conditions": [
+              "예약시재고확정,최대7박·1베드룸스위트·본인1객실;12개월내체크아웃",
+              "도착36시간이전디지털체크인전 앱/Customer Care사용;기존예약은전화",
+              "Waldorf·LXR·Conrad·NoMad·Signia·Canopy·Tempo·Hilton·Curio·Graduate·DoubleTree·Outset·YOTEL·Tapestry지정시설만",
+              "Napua·Imperial Floor·Maldives3지정시설및일부파트너제외;7박초과숙박불가;양도가능"
+            ],
+            "sourceUrl": "https://www.hilton.com/en/hilton-honors/terms/",
+            "availability": "confirmed_after_redemption"
+          }
+        ]
+      }
+    ],
+    "verifiedAt": "2026-10-06"
+  },
+  {
+    "id": "hyatt",
+    "name": "하얏트",
+    "program": "World of Hyatt",
+    "sourceUrl": "https://world.hyatt.com/content/gp/en/tiers-and-benefits.html",
+    "brands": [
+      "Park Hyatt",
+      "Grand Hyatt",
+      "Hyatt Regency",
+      "Hyatt",
+      "Andaz",
+      "Hyatt Centric",
+      "Alila",
+      "Thompson Hotels",
+      "The Unbound Collection",
+      "JdV by Hyatt",
+      "Destination by Hyatt",
+      "The Standard",
+      "The StandardX",
+      "Bunkhouse",
+      "Dream",
+      "Unscripted by Hyatt",
+      "Caption by Hyatt",
+      "Hyatt Place",
+      "Hyatt House",
+      "Hyatt Studios",
+      "Hyatt Select",
+      "Me and All Hotels",
+      "Miraval",
+      "Hyatt Vacation Club",
+      "Hyatt Ziva",
+      "Hyatt Zilara",
+      "Hyatt Vivid",
+      "Impression by Secrets",
+      "Secrets",
+      "Dreams",
+      "Breathless",
+      "Zoëtry",
+      "Alua",
+      "Sunscape",
+      "Bahia Principe"
+    ],
+    "notes": [
+      "실제연간등급Member·Discoverist·Explorist·Globalist;Silver/Gold/Platinum/Diamond로치환금지",
+      "연간적격박수 또는Base P만승급;독립된지출액승급대안없음;보너스·카드포인트를Base P처럼계산금지",
+      "등급카드/패스트트랙Globalist와60박Milestone바우처는별개;Globalist만있다고스위트권·무료숙박권자동부여되지않음",
+      "Lifetime Globalist=평생1,000,000Base P.매년3월4스위트권+Cat1–7숙박권1장+Guest of Honor5장과My Hyatt Concierge;연간마일스톤과별도",
+      "2026.08.24약관및2026.09.09 AA관계종료공지확인.직접HTTP는429였으나웹검색서비스에서공식등급표·공식약관본문을확인;브랜드목록은주요참여브랜드,개별시설예외있음"
+    ],
+    "tiers": [
+      {
+        "id": "member",
+        "name": "Member",
+        "qualification": "무료 가입",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "엘리트 보너스0%",
+            "conditions": [
+              "적격요금·부대요금의Base P에만보너스;대부분US$1=5Base P,Hyatt Studios는2.5Base P",
+              "구매·제휴·엘리트보너스는승급Base P불산입"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "브랜드기본조식·요금포함조식·Club Access Award사용은별도"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 자체라운지 없음",
+            "conditions": [
+              "Globalist에한해라운지보유참여호텔;없거나폐쇄시위조식혜택",
+              "Discoverist·Explorist는유효Club Access Award또는별도Club예약필요;등급만으로라운지없음"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "등급 업그레이드 없음",
+            "conditions": [
+              "호텔자발혜택·별도요금구분"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_included"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "고정시간 얼리체크인 보장없음",
+            "conditions": [
+              "Globalist우선배정은빈객실없는상황에서얼리입실보장아님;별도호텔협의"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_guaranteed"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "등급 시간보장없음",
+            "conditions": [
+              "적격호텔일반보장;리조트·카지노·Destination Residences는가용성기준",
+              "Hyatt Vacation Club은제외;현지시간·사전요청"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_included"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "판매객실 가용성보장없음",
+            "conditions": [
+              "표준요금본인객실,특수수요일·Blackout제외;포인트·할인/단체요금제외",
+              "리조트·카지노·Destination Residences·Grand Hyatt Deer Valley Residences등제외",
+              "Globalist는적격유상/무료숙박 리조트·Destination·Facility Fee면제,무료숙박주차는객실계정청구가능시설에한함"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_included"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "등급과별도 Milestone Rewards:20박/35,000Base P부터",
+            "conditions": [
+              "20박:2K Next Stay·Club Access2장·FIND US$25중선택;30박/50,000Base P:Cat1–4무료숙박권+선택혜택",
+              "40박/65,000Base P:Guest of Honor1장+5,000P/스위트1장/FIND US$150중선택;50박/80,000P:5,000P/스위트2장/FIND US$150중선택",
+              "60박/100,000Base P:Guest of Honor2장+Cat1–7숙박권+스위트2장+My Hyatt Concierge;70~150박추가구간은박수기준",
+              "확정스위트권은최대7연박,적격유상요금·포인트표준/Club·Points+Cash지정숙박,호텔별스위트재고필수;카드무료숙박권·Cat숙박권등에는스위트권불가",
+              "Club권은라운지있는지정호텔;레지던스·Vacation Club·Place·House·Caption·Studios·Select·Miraval·다수All-inclusive등제외",
+              "Guest of Honor는본인/타인에게최대7박 Globalist혜택;사용·선택기간및브랜드예외는계정/현행약관확인",
+              "AA쿠폰/등급선택옵션은2026.11.15계정연동마감및2027년마일스톤종료공지있어고정등급혜택에포함하지않음"
+            ],
+            "sourceUrl": "https://world.hyatt.com/content/gp/en/tiers-and-benefits.html",
+            "availability": "choice_with_conditions"
+          }
+        ]
+      },
+      {
+        "id": "discoverist",
+        "name": "Discoverist",
+        "qualification": "연10 Tier-Qualifying Nights OR25,000Base P",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+10%",
+            "conditions": [
+              "적격요금·부대요금의Base P에만보너스;대부분US$1=5Base P,Hyatt Studios는2.5Base P",
+              "구매·제휴·엘리트보너스는승급Base P불산입"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "브랜드기본조식·요금포함조식·Club Access Award사용은별도"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 자체라운지 없음",
+            "conditions": [
+              "Globalist에한해라운지보유참여호텔;없거나폐쇄시위조식혜택",
+              "Discoverist·Explorist는유효Club Access Award또는별도Club예약필요;등급만으로라운지없음"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "예약동일객실타입 내선호객실",
+            "conditions": [
+              "체류전체재고·호텔재량;Discoverist는가격등급업그레이드아님",
+              "Caption·Place·House·Me and All·Studios·Select·Destination Residences·Vacation Club·Grand Hyatt Deer Valley Residences등브랜드/시설예외",
+              "Globalist도Premium·Presidential·특수스위트제외;확정스위트권과도착시업그레이드는다름"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "고정시간 얼리체크인 보장없음",
+            "conditions": [
+              "Globalist우선배정은빈객실없는상황에서얼리입실보장아님;별도호텔협의"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_guaranteed"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "요청시오후2시",
+            "conditions": [
+              "적격호텔일반보장;리조트·카지노·Destination Residences는가용성기준",
+              "Hyatt Vacation Club은제외;현지시간·사전요청"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "판매객실 가용성보장없음",
+            "conditions": [
+              "표준요금본인객실,특수수요일·Blackout제외;포인트·할인/단체요금제외",
+              "리조트·카지노·Destination Residences·Grand Hyatt Deer Valley Residences등제외",
+              "Globalist는적격유상/무료숙박 리조트·Destination·Facility Fee면제,무료숙박주차는객실계정청구가능시설에한함"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_included"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "등급과별도 Milestone Rewards:20박/35,000Base P부터",
+            "conditions": [
+              "20박:2K Next Stay·Club Access2장·FIND US$25중선택;30박/50,000Base P:Cat1–4무료숙박권+선택혜택",
+              "40박/65,000Base P:Guest of Honor1장+5,000P/스위트1장/FIND US$150중선택;50박/80,000P:5,000P/스위트2장/FIND US$150중선택",
+              "60박/100,000Base P:Guest of Honor2장+Cat1–7숙박권+스위트2장+My Hyatt Concierge;70~150박추가구간은박수기준",
+              "확정스위트권은최대7연박,적격유상요금·포인트표준/Club·Points+Cash지정숙박,호텔별스위트재고필수;카드무료숙박권·Cat숙박권등에는스위트권불가",
+              "Club권은라운지있는지정호텔;레지던스·Vacation Club·Place·House·Caption·Studios·Select·Miraval·다수All-inclusive등제외",
+              "Guest of Honor는본인/타인에게최대7박 Globalist혜택;사용·선택기간및브랜드예외는계정/현행약관확인",
+              "AA쿠폰/등급선택옵션은2026.11.15계정연동마감및2027년마일스톤종료공지있어고정등급혜택에포함하지않음"
+            ],
+            "sourceUrl": "https://world.hyatt.com/content/gp/en/tiers-and-benefits.html",
+            "availability": "choice_with_conditions"
+          }
+        ]
+      },
+      {
+        "id": "explorist",
+        "name": "Explorist",
+        "qualification": "연30 Tier-Qualifying Nights OR50,000Base P",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+20%",
+            "conditions": [
+              "적격요금·부대요금의Base P에만보너스;대부분US$1=5Base P,Hyatt Studios는2.5Base P",
+              "구매·제휴·엘리트보너스는승급Base P불산입"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "등급 무료조식 없음",
+            "conditions": [
+              "브랜드기본조식·요금포함조식·Club Access Award사용은별도"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_included"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "등급 자체라운지 없음",
+            "conditions": [
+              "Globalist에한해라운지보유참여호텔;없거나폐쇄시위조식혜택",
+              "Discoverist·Explorist는유효Club Access Award또는별도Club예약필요;등급만으로라운지없음"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_included"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "가용개선객실,스위트·Club접근룸제외",
+            "conditions": [
+              "체류전체재고·호텔재량;Discoverist는가격등급업그레이드아님",
+              "Caption·Place·House·Me and All·Studios·Select·Destination Residences·Vacation Club·Grand Hyatt Deer Valley Residences등브랜드/시설예외",
+              "Globalist도Premium·Presidential·특수스위트제외;확정스위트권과도착시업그레이드는다름"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "고정시간 얼리체크인 보장없음",
+            "conditions": [
+              "Globalist우선배정은빈객실없는상황에서얼리입실보장아님;별도호텔협의"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_guaranteed"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "요청시오후2시",
+            "conditions": [
+              "적격호텔일반보장;리조트·카지노·Destination Residences는가용성기준",
+              "Hyatt Vacation Club은제외;현지시간·사전요청"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "72시간전 유상객실보장",
+            "conditions": [
+              "표준요금본인객실,특수수요일·Blackout제외;포인트·할인/단체요금제외",
+              "리조트·카지노·Destination Residences·Grand Hyatt Deer Valley Residences등제외",
+              "Globalist는적격유상/무료숙박 리조트·Destination·Facility Fee면제,무료숙박주차는객실계정청구가능시설에한함"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "등급과별도 Milestone Rewards:20박/35,000Base P부터",
+            "conditions": [
+              "20박:2K Next Stay·Club Access2장·FIND US$25중선택;30박/50,000Base P:Cat1–4무료숙박권+선택혜택",
+              "40박/65,000Base P:Guest of Honor1장+5,000P/스위트1장/FIND US$150중선택;50박/80,000P:5,000P/스위트2장/FIND US$150중선택",
+              "60박/100,000Base P:Guest of Honor2장+Cat1–7숙박권+스위트2장+My Hyatt Concierge;70~150박추가구간은박수기준",
+              "확정스위트권은최대7연박,적격유상요금·포인트표준/Club·Points+Cash지정숙박,호텔별스위트재고필수;카드무료숙박권·Cat숙박권등에는스위트권불가",
+              "Club권은라운지있는지정호텔;레지던스·Vacation Club·Place·House·Caption·Studios·Select·Miraval·다수All-inclusive등제외",
+              "Guest of Honor는본인/타인에게최대7박 Globalist혜택;사용·선택기간및브랜드예외는계정/현행약관확인",
+              "AA쿠폰/등급선택옵션은2026.11.15계정연동마감및2027년마일스톤종료공지있어고정등급혜택에포함하지않음"
+            ],
+            "sourceUrl": "https://world.hyatt.com/content/gp/en/tiers-and-benefits.html",
+            "availability": "choice_with_conditions"
+          }
+        ]
+      },
+      {
+        "id": "globalist",
+        "name": "Globalist",
+        "qualification": "연60 Tier-Qualifying Nights OR100,000Base P",
+        "benefits": [
+          {
+            "key": "points_bonus",
+            "label": "포인트 보너스",
+            "value": "기본포인트+30%",
+            "conditions": [
+              "적격요금·부대요금의Base P에만보너스;대부분US$1=5Base P,Hyatt Studios는2.5Base P",
+              "구매·제휴·엘리트보너스는승급Base P불산입"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "conditional"
+          },
+          {
+            "key": "breakfast",
+            "label": "조식",
+            "value": "라운지조식 또는레스토랑 Full Breakfast",
+            "conditions": [
+              "Club Lounge가있으면라운지접근,없거나폐쇄시동일객실성인최대2+어린이2명",
+              "기본식사/표준뷔페·주스·커피·세금·팁·서비스료포함;룸서비스와체크인당일조식제외",
+              "Caption은elevated coffee+small plate;Me and All은light buffet;좌석식당없는Unscripted는grab-and-go;Bethesda는continental",
+              "Vacation Club·대부분Destination Residences·Regency Madrid/Grand Hyatt Kuwait Residences·Centric Waikiki·Laurel Inn·Ventana Campground등제외",
+              "Hyatt Place/House는지역별조식기준·기본제공조식과중복혜택없음;조식포함패키지에추가혜택없음"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "lounge",
+            "label": "라운지",
+            "value": "Club Lounge 접근",
+            "conditions": [
+              "Globalist에한해라운지보유참여호텔;없거나폐쇄시위조식혜택",
+              "Discoverist·Explorist는유효Club Access Award또는별도Club예약필요;등급만으로라운지없음"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "brand_specific"
+          },
+          {
+            "key": "upgrade",
+            "label": "객실 업그레이드",
+            "value": "체크인시최상가용객실,Standard Suite까지",
+            "conditions": [
+              "체류전체재고·호텔재량;Discoverist는가격등급업그레이드아님",
+              "Caption·Place·House·Me and All·Studios·Select·Destination Residences·Vacation Club·Grand Hyatt Deer Valley Residences등브랜드/시설예외",
+              "Globalist도Premium·Presidential·특수스위트제외;확정스위트권과도착시업그레이드는다름"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "subject_to_availability"
+          },
+          {
+            "key": "early_checkin",
+            "label": "얼리 체크인",
+            "value": "예약객실준비 시우선배정",
+            "conditions": [
+              "Globalist우선배정은빈객실없는상황에서얼리입실보장아님;별도호텔협의"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "not_guaranteed"
+          },
+          {
+            "key": "late_checkout",
+            "label": "레이트 체크아웃",
+            "value": "요청시오후4시",
+            "conditions": [
+              "적격호텔일반보장;리조트·카지노·Destination Residences는가용성기준",
+              "Hyatt Vacation Club은제외;현지시간·사전요청"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "guarantee",
+            "label": "보장·우선 지원",
+            "value": "48시간전 유상객실보장",
+            "conditions": [
+              "표준요금본인객실,특수수요일·Blackout제외;포인트·할인/단체요금제외",
+              "리조트·카지노·Destination Residences·Grand Hyatt Deer Valley Residences등제외",
+              "Globalist는적격유상/무료숙박 리조트·Destination·Facility Fee면제,무료숙박주차는객실계정청구가능시설에한함"
+            ],
+            "sourceUrl": "https://www.hyatt.com/help/terms/world-of-hyatt?cat_id=90000789&content_id=90005278",
+            "availability": "guaranteed_with_exclusions"
+          },
+          {
+            "key": "awards",
+            "label": "바우처·마일스톤",
+            "value": "등급과별도 Milestone Rewards:20박/35,000Base P부터",
+            "conditions": [
+              "20박:2K Next Stay·Club Access2장·FIND US$25중선택;30박/50,000Base P:Cat1–4무료숙박권+선택혜택",
+              "40박/65,000Base P:Guest of Honor1장+5,000P/스위트1장/FIND US$150중선택;50박/80,000P:5,000P/스위트2장/FIND US$150중선택",
+              "60박/100,000Base P:Guest of Honor2장+Cat1–7숙박권+스위트2장+My Hyatt Concierge;70~150박추가구간은박수기준",
+              "확정스위트권은최대7연박,적격유상요금·포인트표준/Club·Points+Cash지정숙박,호텔별스위트재고필수;카드무료숙박권·Cat숙박권등에는스위트권불가",
+              "Club권은라운지있는지정호텔;레지던스·Vacation Club·Place·House·Caption·Studios·Select·Miraval·다수All-inclusive등제외",
+              "Guest of Honor는본인/타인에게최대7박 Globalist혜택;사용·선택기간및브랜드예외는계정/현행약관확인",
+              "AA쿠폰/등급선택옵션은2026.11.15계정연동마감및2027년마일스톤종료공지있어고정등급혜택에포함하지않음"
+            ],
+            "sourceUrl": "https://world.hyatt.com/content/gp/en/tiers-and-benefits.html",
+            "availability": "choice_with_conditions"
+          }
+        ]
+      }
+    ],
+    "verifiedAt": "2026-10-06"
+  }
+]

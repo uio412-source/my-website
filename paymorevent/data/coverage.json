@@ -1,0 +1,156 @@
+[
+  {
+    "issuer": "신한카드",
+    "sourceUrl": "https://www.shinhancard.com/pconts/html/card/CONFM70045/CONFM70045R01.html",
+    "listedCount": 292,
+    "fullyEnumerated": false,
+    "notes": "['All reachable pages of the public general credit/debit search plus fixed credit/debit/coalition/government/premium/character catalogs were enumerated and deduplicated by official entry ID: 287 distinct entries. Five additional premium entries explicitly displayed on the official main/card-finder pages were added using linked detail API responses, for 292 total entries.', 'Card types 0/1 in the official API were mapped to personal credit/debit. 189 credit and 98 debit in the initial union; additional premium entries are credit. Group, employer, government, fuel-subsidy, partner, and design variants remain separate with application/eligibility notes. Corporate business-site cards were not scraped.', 'The fixed catalog reports totalSize values that can exceed the number returned on individual pages; all reachable pages were requested, but completeness across all restricted, branch-only, and partner distribution channels cannot be established. Several premium products appear on the main/card finder and are omitted from the fixed premium catalog.', '54 linked detail pages were parsed for additional benefits, minimum spending conditions, caps, exclusions, and eligibility. Other entries use the issuer catalog fee, image, and headline benefits, with unknown detail conditions left null/empty.', 'Application status is confirmed only when the official catalog exposes a enabled full/simple/phone application flag or linked official offered detail. This is evidence of an application route, not universal applicant eligibility.', 'Document links are only included when actual PDF URLs were observed; some are international-brand service guides rather than complete product-specific terms.']"
+  },
+  {
+    "issuer": "KB국민카드",
+    "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAM0101",
+    "listedCount": 148,
+    "fullyEnumerated": false,
+    "notes": "['The union of all 10 displayed credit benefit categories and all 8 displayed debit benefit categories yielded 134 product entries. Main-page-only entries, seven HERITAGE premium products, three BeV products, and two platinum products were then added. The personal subsidy card 보탬e전용카드 is included because official detail text explicitly describes eligible individual subsidy recipients. 148 total unique cooperation codes.', 'All 148 linked product detail pages were fetched. Official headline benefits were extracted for every product, 145 observed product-document links were captured, and available fees were extracted where unambiguous. Some spend thresholds and caps remain null when detail tables cannot be associated safely with a particular benefit.', 'The available benefit lists lack an authoritative complete total, and student-ID, branch-only, partner-specific, or restricted distributions may exist outside them. Completeness is therefore not asserted. Corporate cards from the separate business site were not included; personal business-owner/fuel-subsidy/group cards from the personal catalog are retained.', 'General-card and available mobile-only fees were observed and the minimum offered personal fee is used. Product detail is preferred over category listing when they disagree. LFmall credit card shows a catalog/detail annual-fee discrepancy (15,000원 versus 25,000원), explicitly recorded on the entry.', 'Special eligibility and application restrictions observed in product pages are retained in eligibility. Application controls are availability evidence, subject to issuer conditions.']"
+  },
+  {
+    "issuer": "삼성카드",
+    "sourceUrl": "https://www.samsungcard.com/home/card/cardinfo/PGHPPCCCardCardinfoRecommend001",
+    "listedCount": 146,
+    "fullyEnumerated": true,
+    "notes": "공개 신용카드 추천 목록의 모든 134 상품 코드 및 SFC/개인사업자 변형을 확인. pdSellYn=N인 4개 제외; 신용카드 130개 저장. 기관/기업 법인카드는 제외. 모든 저장 카드의 상세 판매 플래그 및 혜택 문서 확인."
+  },
+  {
+    "issuer": "현대카드",
+    "sourceUrl": "https://www.hyundaicard.com/cpc/ma/CPCMA0101_01.hc",
+    "listedCount": 132,
+    "fullyEnumerated": true,
+    "notes": "현재 전체 목록의 직접 상품 84개와 14개 제휴/차량/은행 그룹 상세 목록 48개를 모두 펼쳐 총 132개 고유 상품 코드 저장. MY BUSINESS는 개인사업자 상품으로 포함. 2026-04-28 종료된 일반 M/X CHECK 및 HYBRID는 현재 목록에 없어 제외; 별도로 현재 목록에 있는 SC제일은행/경차/국민행복 체크상품은 포함. 새 카드 출시 및 지점 전용 상품까지 전체 시장을 완전 보장하는 의미는 아님."
+  },
+  {
+    "issuer": "우리카드",
+    "sourceUrl": "https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD201S00.do",
+    "listedCount": 95,
+    "fullyEnumerated": true,
+    "notes": "공식 개인카드 화면의 17개 관측 카테고리를 모두 조회하고 상품코드로 중복 제거: 신용 72종·체크 23종. 개별 상세조건 완전확인 상품은 전체 목록의 일부이며 별도로 표시. 전체 상품의 공식 상세 데이터를 추가 확인. 연회비·브랜드·관측한 PDF 문서 링크 보강. 공통 회원약관 링크는 verificationNote에 명시. 혜택별 실적 조건은 해당 혜택에서 확인된 경우만 수록. 전체 상품의 공식 상세 데이터를 추가 확인. 연회비·브랜드·관측한 PDF 문서 링크 보강. 공통 회원약관 링크는 verificationNote에 명시. 혜택별 실적 조건은 해당 혜택에서 확인된 경우만 수록."
+  },
+  {
+    "issuer": "하나카드",
+    "sourceUrl": "https://m.hanacard.co.kr/MKCDPD1000M.web",
+    "listedCount": 114,
+    "fullyEnumerated": true,
+    "notes": "신용 8개 카테고리 및 체크 4개 카테고리의 공식 목록을 전수 조회: 신용 67개·체크 47개 상품코드. 같은 이름의 별도 발급 대상/디자인 상품코드는 구분해 수록. 전체 상품의 공식 상세 데이터를 추가 확인. 연회비·브랜드·관측한 PDF 문서 링크 보강. 공통 회원약관 링크는 verificationNote에 명시. 혜택별 실적 조건은 해당 혜택에서 확인된 경우만 수록. 전체 상품의 공식 상세 데이터를 추가 확인. 연회비·브랜드·관측한 PDF 문서 링크 보강. 공통 회원약관 링크는 verificationNote에 명시. 혜택별 실적 조건은 해당 혜택에서 확인된 경우만 수록."
+  },
+  {
+    "issuer": "NH농협카드",
+    "sourceUrl": "https://card.nonghyup.com/servlet/IpCc1411R.act",
+    "listedCount": 162,
+    "fullyEnumerated": true,
+    "notes": "공식 키워드검색의 빈 검색 조건 결과 168개 항목을 전부 열거했습니다. 기프트카드 및 e나라도움 보조금 결제 전용 카드 6개를 제외한 개인 신용·체크 162개입니다. SOHO 등 개인사업자용, 공무원·지역·복지 자격 한정 상품을 포함합니다. 온라인 신청 버튼 유무를 confirmed/catalog로 구분했으며 catalog는 신규발급 확정이 아닙니다. 공식 공개 목록의 완전성만 의미하며 비공개 영업점 상품까지 전체 시장이라고 보장하지 않습니다."
+  },
+  {
+    "issuer": "BC 바로카드",
+    "sourceUrl": "https://www.bccard.com/app/card/CreditCardMain.do",
+    "listedCount": 24,
+    "fullyEnumerated": true,
+    "notes": "공식 CreditSearch.do 및 CheckSearch.do의 mbNo=050, retKey=json 결과를 PAGE_COUNT 끝까지 열거: 신용22, 체크2. 공식 상품공시 ind0836의 발급 중단일과 상세페이지 브랜드 중단 안내도 확인했습니다. 법인 전용 상품은 제외합니다. 5종 신세계 제휴카드의 발급중단 VISA 브랜드는 제외했습니다. 공개 API 발급사 범위의 전체목록이며 BC회원사 다른 은행 상품은 해당 발급사로 분리했습니다."
+  },
+  {
+    "issuer": "IBK기업은행",
+    "sourceUrl": "https://www.bccard.com/app/card/CreditSearch.do?retKey=json&pageNo=1&mbNo=003&sortType=rcissu",
+    "listedCount": 58,
+    "fullyEnumerated": true,
+    "notes": "IBK 자체 공개 목록은 135개(기업 및 판매중지 포함)를 보여주지만 원문 요청이 반복502로 실패했습니다. 대신 BC카드 공식 IBK회원사 공개 API mbNo=003를 모든 페이지까지 열거: 신용32, 체크26. BC공식 상세페이지의 IBK 발급대상·혜택·신청 링크를 확인했습니다. 완전성은 현재 BC 공식 IBK회원사 공개목록에 한하며 IBK의 전체 오프라인·비BC 제품까지 확인한 것은 아닙니다. 대한항공 I-Mileage 상세 안내에 남은 발급중단 아시아나 변형은 제외했습니다."
+  },
+  {
+    "issuer": "롯데카드",
+    "sourceUrl": "https://www.lottecard.co.kr/app/LPCDADA_V100.lc",
+    "listedCount": 142,
+    "fullyEnumerated": true,
+    "notes": "공식 일반신용 LPCDADA_A100(5페이지), 제휴신용 A101(8페이지), 프리미엄 A102(2페이지), 체크 LPCDAEA_A100(3페이지)를 끝까지 열거하고 vtCdKndC로 중복 제거했습니다. 상세페이지 신규발급 중단이 확인된 나인걸·지금샵 2종을 제외했습니다. 카드명에 법인이 명시된 상품을 제외하고 개인사업자 카드는 포함합니다. 최종142개 중2건은 상세 오류페이지로 catalog 상태를 유지하며 신규발급 확정이 아닙니다. 일부 오래된 제휴상품을 목록이 보유하므로 완전성은 공식 공개 목록 범위입니다."
+  },
+  {
+    "issuer": "SC제일은행",
+    "sourceUrl": null,
+    "listedCount": 20,
+    "fullyEnumerated": true,
+    "notes": "['현행 신용/체크 × 현대/삼성/BC 6개 목록을 모두 조회했습니다.', '발급중단 및 사업자 전용 상품 제외. 디자인별 재발급 전용 카드는 포함하지 않았습니다.']"
+  },
+  {
+    "issuer": "신협",
+    "sourceUrl": null,
+    "listedCount": 19,
+    "fullyEnumerated": true,
+    "notes": "['체크 15종 중 법인 3종 제외, 제휴 신용 7종 수록. 제휴 신용카드 실제 신규발급 가능 여부는 추가 확인 필요.']"
+  },
+  {
+    "issuer": "광주은행",
+    "sourceUrl": null,
+    "listedCount": 35,
+    "fullyEnumerated": true,
+    "notes": "['공식 개인 신용 23종 및 체크 12종 필터 결과를 모두 수록. 모바일카드 필터는 빈 결과.', '오일모아/에듀플러스/기아 챔피언스 신용카드 연회비 원문 숫자 단위가 불일치하여 최소연회비를 비워 두었습니다.']"
+  },
+  {
+    "issuer": "부산은행",
+    "sourceUrl": null,
+    "listedCount": 19,
+    "fullyEnumerated": true,
+    "notes": "['현재 원문 25종을 3페이지 모두 조회. 기업/사업자/선불/하이패스 전용 제외. 검색 인덱스에는 이전 상품 27/30종이 남아 있으므로 원문 기준을 적용.']"
+  },
+  {
+    "issuer": "경남은행",
+    "sourceUrl": null,
+    "listedCount": 18,
+    "fullyEnumerated": true,
+    "notes": "['현재 개인발급 가능 목록 19종 중 기업 표시 상품 1종 제외. 서비스 상태 필터 02 및 발급가능 플래그 확인. 안내장 이미지 OCR은 수행하지 않아 세부조건 다수 미확인.']"
+  },
+  {
+    "issuer": "수협은행",
+    "sourceUrl": null,
+    "listedCount": 35,
+    "fullyEnumerated": false,
+    "notes": "['공식 신용24종/체크12종 목록 모두 확인하고 기업·사업자·정부구매 제외. 지역사랑 체크 14종은 공식 명칭을 각각 수록. 해외 IP 제한으로 상세 열람·실제 발급 여부는 미확인. 제주도 보조금카드는 개인/법인 구분 불명확하여 보류.']"
+  },
+  {
+    "issuer": "전북은행",
+    "sourceUrl": null,
+    "listedCount": 24,
+    "fullyEnumerated": false,
+    "notes": "['공식 모바일 카탈로그 검색 인덱스 24종(신용15/체크9) 수록. 직접 목록 오류로 현행 목록 전체가 빠짐없다고 보증하지 않습니다. 제휴 특수 카드 등 데스크톱 별도 목록 미확인.']"
+  },
+  {
+    "issuer": "iM뱅크",
+    "sourceUrl": null,
+    "listedCount": 28,
+    "fullyEnumerated": false,
+    "notes": "['BC카드 공식 현행 iM뱅크 신용17/체크13종 2페이지씩 전부 조회. 선불형2종 제외하여 개인28종 수록. 모든 개별 상세의 연회비·혜택·신청 버튼을 확인했으며 발급중단 문구는 관측되지 않음.', 'BC catalog fully enumerated. 은행 자체 전체 목록이 봇 차단을 반환하여 비BC 제휴 카드 누락 여부는 확정하지 못했습니다. 구 개별 상세에서만 발견된 PRESTIGE+/우리독도는 현행 목록에 없어 제외했습니다.']"
+  },
+  {
+    "issuer": "우체국예금",
+    "sourceUrl": null,
+    "listedCount": 13,
+    "fullyEnumerated": false,
+    "notes": "['최신 공식 메인 추천·프로모션과 실제 관측한 개별 상품명만 수록. 동적 목록이 빈 데이터 및 과거 2021년 템플릿을 반환하여 전체 현행 체크/지역/제휴카드 목록은 확인하지 못했습니다. 미확인 카드와 브랜드/교통 디자인 변형을 임의 생성하지 않았습니다.']"
+  },
+  {
+    "issuer": "카카오뱅크",
+    "sourceUrl": "https://www.kakaobank.com/products/checkcard",
+    "listedCount": 3,
+    "fullyEnumerated": false,
+    "notes": "공식 프렌즈·모임·개인사업자 체크카드 수록. K-패스 디자인은 프렌즈 상품의 혜택 변형이며 선불 mini카드는 제외. 제휴 신용카드는 실제 발급사 목록과 중복 수록하지 않음."
+  },
+  {
+    "issuer": "토스뱅크",
+    "sourceUrl": "https://tossbank.com/product-service/card/check-card",
+    "listedCount": 4,
+    "fullyEnumerated": false,
+    "notes": "공식 체크·K-패스·모임·개인사업자 카드 수록. 일부 접힌 안내에서 연회비·브랜드·제외 조건이 미확인. 제휴 신용카드는 실제 발급사 목록 수록."
+  },
+  {
+    "issuer": "케이뱅크",
+    "sourceUrl": "https://www.kbanknow.com/web/product/card/one-card",
+    "listedCount": 5,
+    "fullyEnumerated": true,
+    "notes": "공식 메뉴의 체크카드 5종을 수집. 히든 신용카드는 BC 바로카드 발급 상품으로 해당 발급사에 수록. 시즌 혜택은 JSON-LD가 아닌 현재 본문을 우선 반영."
+  }
+]

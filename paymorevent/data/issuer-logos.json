@@ -1,0 +1,47 @@
+{
+  "삼성": {
+    "image": "/issuers/samsung.png",
+    "sourceUrl": "https://www.samsungcard.com/_nuxt/img/foot_logo.7fb3fed.png",
+    "checkedAt": "2026-10-06"
+  },
+  "국민": {
+    "image": "/issuers/kb.png",
+    "sourceUrl": "https://card.kbcard.com/CMN/images/kb-kookmin-card-official-logo.png",
+    "checkedAt": "2026-10-06"
+  },
+  "신한": {
+    "image": "/issuers/shinhan.png",
+    "sourceUrl": "https://www.shinhancard.com/pconts/images/dx/landing/bestcard_sh_logo_bi_2.png",
+    "checkedAt": "2026-10-06"
+  },
+  "우리": {
+    "image": "/issuers/woori.png",
+    "sourceUrl": "https://pc.wooricard.com/dcpc/img/pc/common/h1_logo.png",
+    "checkedAt": "2026-10-06"
+  },
+  "하나": {
+    "image": "/issuers/hana.svg",
+    "sourceUrl": "https://m.hanacard.co.kr/images/common/footer-logo.svg",
+    "checkedAt": "2026-10-06"
+  },
+  "현대": {
+    "image": "/issuers/hyundai.svg",
+    "sourceUrl": "https://www.hyundaicard.com/docfiles/resources/pc/images/common/logo/logo_hyundaicard_scr.svg",
+    "checkedAt": "2026-10-06"
+  },
+  "롯데": {
+    "image": "/issuers/lotte.png",
+    "sourceUrl": "https://image.lottecard.co.kr/webapp/pc/images/common/logo_default.png",
+    "checkedAt": "2026-10-06"
+  },
+  "농협": {
+    "image": "/issuers/nh.png",
+    "sourceUrl": "https://card.nonghyup.com/images/IP/cc/layout/n_logo.png",
+    "checkedAt": "2026-10-06"
+  },
+  "BC": {
+    "image": "/issuers/bc.gif",
+    "sourceUrl": "https://www.bccard.com/images/individual/2016/common/gnb/h1_logo.gif",
+    "checkedAt": "2026-10-06"
+  }
+}

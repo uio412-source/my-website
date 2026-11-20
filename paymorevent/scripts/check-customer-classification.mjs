@@ -1,0 +1,21 @@
+import './ensure-card-data.mjs';
+import assert from 'node:assert/strict';import fs from 'node:fs';
+import {cardThemes,paymentEligibility} from '../lib/card-themes.ts';import {bestPicking,picking,summarize} from '../lib/catalog-model.ts';
+const cards=JSON.parse(fs.readFileSync('data/cards.json','utf8'));
+const base=cards.find(c=>c.id==='bc-102040');
+const b={category:'호텔',title:'호텔 10% 할인',detail:'국내 호텔 예약',minimumSpend:300000,rate:'10%',cap:null};
+assert(!cardThemes({...base,themeTags:undefined,paymentEligibility:undefined,name:'일반 생활카드',benefits:[b],tags:['호텔','상품권','통신','마일리지']}).includes('호텔'));
+assert(!cardThemes({...base,themeTags:undefined,name:'일반 생활카드',benefits:[{...b,category:'통신',title:'이동통신 10% 할인'}]}).includes('통신'));
+assert(cardThemes({...base,themeTags:undefined,name:'KT 알뜰폰 카드',benefits:[{...b,category:'통신',title:'알뜰폰 통신요금 할인'}]}).includes('통신'));
+assert(!cardThemes({...base,themeTags:undefined,name:'참! 좋은 kt wiz카드',benefits:[{...b,category:'통신',title:'통신요금 할인'}]}).includes('통신'));
+assert(!cardThemes({...base,themeTags:undefined,benefits:[{...b,title:'호텔 포인트 적립',detail:'메리어트 포인트'}]}).includes('마일리지'));
+assert.equal(paymentEligibility({...base,paymentEligibility:undefined,spendExclusions:[],benefitExclusions:[]},'상품권 가능').spend,'unknown');
+assert.equal(bestPicking(cards.find(c=>c.id==='samsung-aap1483')).value,35000/300000*100);
+assert.equal(bestPicking(base).value,5);
+assert.equal(picking({...base.pickingScenarios[0],annualFee:999999,annualServiceValue:999999,miles:999999,monthlySpend:999999}),5,'Excluded values must not affect the requested rate');
+assert.equal(picking({...base.pickingScenarios[0],maximumVerified:false}),null);
+assert.equal(picking({...base.pickingScenarios[0],minimumEligibleSpend:0}),null);
+assert.deepEqual(summarize(base).themeTags,cardThemes(base));assert.deepEqual(summarize(base).paymentEligibility,base.paymentEligibility);
+for(const c of cards)for(const t of ['상품권 가능','관리비','국세','지방세'])if(cardThemes(c).includes(t)){const e=paymentEligibility(c,t);assert(e.spend==='allowed'||e.benefit==='allowed');assert(e.sourceUrl.startsWith('https:'));}
+const ranked=cards.filter(c=>bestPicking(c)).sort((a,b)=>bestPicking(b).value-bestPicking(a).value);assert.equal(ranked[0].id,'samsung-aap1483');
+console.log(JSON.stringify({status:'passed',classificationBoundaries:true,unknownExcluded:true,minimumTierRate:true,verifiedRanking:ranked.length}));

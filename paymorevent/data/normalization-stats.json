@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 4,
+  "cards": 1536,
+  "stages": {
+    "complete": 14,
+    "rules_needed": 1427,
+    "source_needed": 95
+  },
+  "rows": {
+    "products": 1536,
+    "services": 5327,
+    "constraints": 19091,
+    "tiers": 3549,
+    "models": 388,
+    "paymentRules": 16241,
+    "documents": 3733,
+    "sourceTables": 3677,
+    "networkServices": 26
+  },
+  "pickingAvailable": 30,
+  "revision": "ae5ca9232e45a78227ae56b5e7dc3799c2ca643145bd566a79299565a491aae7",
+  "updatedAt": "2026-10-11T00:32:40.288Z"
+}

@@ -1,0 +1,11 @@
+{
+  "cardCount": 1536,
+  "issuerCount": 10,
+  "confirmedCount": 1335,
+  "documentCount": 565,
+  "spendConditionCount": 1183,
+  "benefitConditionCount": 1260,
+  "bothConditionCount": 1052,
+  "pickingCount": 30,
+  "productPdfCount": 291
+}

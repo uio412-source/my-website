@@ -1,0 +1,865 @@
+{
+  "revision": "kb-travelers-2026-10-17-v1",
+  "events": [
+    {
+      "id": "event-a8968cc",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "트체 시즌2 축하! 라쿠텐트래블 30% 할인",
+      "description": "일본 숙소 30% 즉시할인 · 최대 USD 100",
+      "benefitText": "일본 숙소 30% 즉시할인 · 최대 USD 100",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-10-31",
+      "bookingEndsAt": "2026-10-31",
+      "stayEndsAt": "2027-01-31",
+      "requirements": [
+        "예약 2026.10.1~10.31 / 투숙 2026.10.1~2027.1.31.",
+        "행사 전용 링크에서 쿠폰 다운로드·코드 등록 후 대상카드로 USD 결제.",
+        "ID당 선착순 1회. 다른 프로모션·웰컴 쿠폰 중복 불가.",
+        "결제 후 소급 적용 불가. 취소·환불 시 쿠폰 사용 처리. 예산 소진 시 조기 종료."
+      ],
+      "participation": [
+        "예약 2026.10.1~10.31 / 투숙 2026.10.1~2027.1.31.",
+        "행사 전용 링크에서 쿠폰 다운로드·코드 등록 후 대상카드로 USD 결제.",
+        "ID당 선착순 1회. 다른 프로모션·웰컴 쿠폰 중복 불가."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001534",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001534",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/250214_rakuten_olive.png",
+      "status": "active",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "KB국민카드 공식 행사 본문과 대상·기간·제외조건을 2026-10-17 대조.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [
+        "트래블러스 체크카드"
+      ],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "family",
+        "familyIds": [
+          "family-kb-09563"
+        ],
+        "types": [
+          "debit"
+        ],
+        "brands": [
+          "Mastercard"
+        ]
+      },
+      "linkLabel": "트래블러스 전용",
+      "eligibilityLabel": "Mastercard형",
+      "rewards": [],
+      "entryRequired": false,
+      "evidenceDigest": "348339cc",
+      "activation": {
+        "method": "전용 링크에서 할인쿠폰 등록",
+        "cycle": "once",
+        "url": "https://travel.rakuten.com/contents/kor/ko-kr/campaign/kbcard/2026/"
+      }
+    },
+    {
+      "id": "event-c896bf2",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "일본 돈키호테 트래블러스로 천엔 득템!",
+      "description": "돈키호테 건당 2만엔 이상 → 1천엔 페이백 · 월 1회",
+      "benefitText": "돈키호테 건당 2만엔 이상 → 1천엔 페이백 · 월 1회",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-08-01",
+      "endsAt": "2026-12-31",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "KB국민 트래블러스 Mastercard형 대상. 일본 돈키호테 현지 엔화 결제.",
+        "행사 응모 필수. 페이백 지급일 전까지 응모.",
+        "월 1회 1천엔 상당 KB Pay 머니. 이용 다음 달 말까지 지급.",
+        "온라인·ATM·상품권·충전·취소·14일 안에 미매입된 거래 제외.",
+        "MTR 1천엔은 별도 등록·활성화 조건. 돈키호테 통합 미션 안내의 Mission 2와 같은 혜택이므로 중복 합산하지 않음."
+      ],
+      "participation": [
+        "KB국민 트래블러스 Mastercard형 대상. 일본 돈키호테 현지 엔화 결제.",
+        "행사 응모 필수. 페이백 지급일 전까지 응모.",
+        "월 1회 1천엔 상당 KB Pay 머니. 이용 다음 달 말까지 지급."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001536",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001536",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/260710_travelJPY_blue.png",
+      "status": "active",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "KB국민카드 공식 행사 본문과 대상·기간·제외조건을 2026-10-17 대조.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [
+        "트래블러스 체크카드"
+      ],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "family",
+        "familyIds": [
+          "family-kb-09563"
+        ],
+        "types": [
+          "debit"
+        ],
+        "brands": [
+          "Mastercard"
+        ]
+      },
+      "linkLabel": "트래블러스 전용",
+      "eligibilityLabel": "Mastercard형",
+      "rewards": [],
+      "entryRequired": true,
+      "evidenceDigest": "2be85e89"
+    },
+    {
+      "id": "event-3621e976",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "마스터카드라면 돈키호테 월 최대 4천엔 혜택",
+      "description": "돈키호테 3개 미션 합산 월 최대 4천엔 · 분기 혜택 포함",
+      "benefitText": "돈키호테 3개 미션 합산 월 최대 4천엔 · 분기 혜택 포함",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-09-01",
+      "endsAt": "2026-12-31",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "Mission 1: KB Mastercard 신용·체크로 건당 2만엔 이상, 본 행사 응모 → 월 2천엔.",
+        "Mission 2: 트래블러스 Mastercard로 건당 2만엔 이상, 별도 트래블러스 행사 응모 → 월 1천엔.",
+        "Mission 3: MTR 등록·활성화 후 건당 1만엔 이상 → 분기 1회 1천엔.",
+        "4천엔은 Mission 3을 아직 받지 않은 해당 분기에만 가능. 매월 4천엔 보장 아님.",
+        "일본 돈키호테 현지 엔화 결제. Mission 1·2는 다음 달 말까지, Mission 3은 이용일부터 14일 안에 제공.",
+        "개별 돈키호테·MTR 행사와 같은 혜택을 묶은 안내이며 별도 추가 혜택으로 더하지 않음."
+      ],
+      "participation": [
+        "Mission 1: KB Mastercard 신용·체크로 건당 2만엔 이상, 본 행사 응모 → 월 2천엔.",
+        "Mission 2: 트래블러스 Mastercard로 건당 2만엔 이상, 별도 트래블러스 행사 응모 → 월 1천엔.",
+        "Mission 3: MTR 등록·활성화 후 건당 1만엔 이상 → 분기 1회 1천엔."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001842",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001842",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/260116_payback_red.png",
+      "status": "active",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "KB국민카드 공식 행사 본문과 대상·기간·제외조건을 2026-10-17 대조.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [
+        "트래블러스 체크카드"
+      ],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "family",
+        "familyIds": [
+          "family-kb-09563"
+        ],
+        "types": [
+          "debit"
+        ],
+        "brands": [
+          "Mastercard"
+        ]
+      },
+      "linkLabel": "Mastercard 제휴",
+      "eligibilityLabel": "Mastercard형",
+      "rewards": [],
+      "entryRequired": true,
+      "evidenceDigest": "89d42742",
+      "activation": {
+        "method": "MTR 카드 등록·혜택 활성화",
+        "cycle": "quarterly",
+        "url": "https://mtr.mastercardservices.com/ko-KR/"
+      }
+    },
+    {
+      "id": "event-5bce4cfc",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "돈키호테 1천엔(JPY) 캐시백",
+      "description": "돈키호테 건당 1만엔 이상 → 1천엔 캐시백 · 분기 1회",
+      "benefitText": "돈키호테 건당 1만엔 이상 → 1천엔 캐시백 · 분기 1회",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-12-31",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "기간 중 카드당 1회. 돈키호테 미션 안내의 Mission 3과 동일 혜택.",
+        "MTR에 대상카드를 등록하고 행사별 혜택을 활성화한 뒤 이용. 분기마다 재활성화가 필요한 행사는 각각 다시 설정.",
+        "일본 현지에서 실물카드로 엔화 결제. 온라인·취소·미매입·환불 거래 제외.",
+        "이용일부터 14일 안에 캐시백 금액만큼 취소전표 매입. 가맹점명 MastercardTravel.",
+        "예산 소진 시 조기 종료. 카드 재발급·교체로 카드번호 변경 시 지급 제외될 수 있음."
+      ],
+      "participation": [
+        "기간 중 카드당 1회. 돈키호테 미션 안내의 Mission 3과 동일 혜택.",
+        "MTR에 대상카드를 등록하고 행사별 혜택을 활성화한 뒤 이용. 분기마다 재활성화가 필요한 행사는 각각 다시 설정.",
+        "일본 현지에서 실물카드로 엔화 결제. 온라인·취소·미매입·환불 거래 제외."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1000599",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1000599",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/241213_Donquijote_brown.png",
+      "status": "active",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "KB국민카드 공식 행사 본문과 대상·기간·제외조건을 2026-10-17 대조.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [
+        "트래블러스 체크카드"
+      ],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "family",
+        "familyIds": [
+          "family-kb-09563"
+        ],
+        "types": [
+          "debit"
+        ],
+        "brands": [
+          "Mastercard"
+        ]
+      },
+      "linkLabel": "Mastercard 제휴",
+      "eligibilityLabel": "Mastercard형",
+      "rewards": [],
+      "entryRequired": false,
+      "evidenceDigest": "343ed297",
+      "activation": {
+        "method": "MTR 카드 등록·혜택 활성화",
+        "cycle": "quarterly",
+        "url": "https://mtr.mastercardservices.com/ko-KR/"
+      }
+    },
+    {
+      "id": "event-6ee3406b",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "빅카메라 2천엔(JPY) 캐시백",
+      "description": "빅카메라 건당 3만엔 이상 → 2천엔 캐시백",
+      "benefitText": "빅카메라 건당 3만엔 이상 → 2천엔 캐시백",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-12-31",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "행사 기간 중 카드당 1회. MTR 대상 가맹점 확인.",
+        "MTR에 대상카드를 등록하고 행사별 혜택을 활성화한 뒤 이용. 분기마다 재활성화가 필요한 행사는 각각 다시 설정.",
+        "일본 현지에서 실물카드로 엔화 결제. 온라인·취소·미매입·환불 거래 제외.",
+        "이용일부터 14일 안에 캐시백 금액만큼 취소전표 매입. 가맹점명 MastercardTravel.",
+        "예산 소진 시 조기 종료. 카드 재발급·교체로 카드번호 변경 시 지급 제외될 수 있음."
+      ],
+      "participation": [
+        "행사 기간 중 카드당 1회. MTR 대상 가맹점 확인.",
+        "MTR에 대상카드를 등록하고 행사별 혜택을 활성화한 뒤 이용. 분기마다 재활성화가 필요한 행사는 각각 다시 설정.",
+        "일본 현지에서 실물카드로 엔화 결제. 온라인·취소·미매입·환불 거래 제외."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1000600",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1000600",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/250724_big-camera_orange.png",
+      "status": "active",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "KB국민카드 공식 행사 본문과 대상·기간·제외조건을 2026-10-17 대조.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [
+        "트래블러스 체크카드"
+      ],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "family",
+        "familyIds": [
+          "family-kb-09563"
+        ],
+        "types": [
+          "debit"
+        ],
+        "brands": [
+          "Mastercard"
+        ]
+      },
+      "linkLabel": "Mastercard 제휴",
+      "eligibilityLabel": "Mastercard형",
+      "rewards": [],
+      "entryRequired": false,
+      "evidenceDigest": "6079f872",
+      "activation": {
+        "method": "MTR 카드 등록·혜택 활성화",
+        "cycle": "quarterly",
+        "url": "https://mtr.mastercardservices.com/ko-KR/"
+      }
+    },
+    {
+      "id": "event-6de33ed8",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "일본 백화점 최대 8천엔(JPY) 캐시백",
+      "description": "일본 백화점별 1,250~8,000엔 캐시백",
+      "benefitText": "일본 백화점별 1,250~8,000엔 캐시백",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-12-31",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "이세탄·미츠코시: 건당 8만엔 이상 → 8천엔.",
+        "한큐 지정점: 건당 3만엔 이상 → 2천엔, 식품관·식료품 제외.",
+        "다이마루·마츠자카야: 건당 5만엔 이상 → 3천엔.",
+        "다이마루 후쿠오카 텐진 / 세이부·소고: 건당 3만엔 이상 → 3천엔.",
+        "DFS Japan: 건당 2.5만엔 이상 → 1,250엔. 각 혜택 기간 중 1회.",
+        "MTR에 대상카드를 등록하고 행사별 혜택을 활성화한 뒤 이용. 분기마다 재활성화가 필요한 행사는 각각 다시 설정.",
+        "일본 현지에서 실물카드로 엔화 결제. 온라인·취소·미매입·환불 거래 제외.",
+        "이용일부터 14일 안에 캐시백 금액만큼 취소전표 매입. 가맹점명 MastercardTravel.",
+        "예산 소진 시 조기 종료. 카드 재발급·교체로 카드번호 변경 시 지급 제외될 수 있음."
+      ],
+      "participation": [
+        "이세탄·미츠코시: 건당 8만엔 이상 → 8천엔.",
+        "한큐 지정점: 건당 3만엔 이상 → 2천엔, 식품관·식료품 제외.",
+        "다이마루·마츠자카야: 건당 5만엔 이상 → 3천엔."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1000601",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1000601",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/250723_department-store_pink.png",
+      "status": "active",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "KB국민카드 공식 행사 본문과 대상·기간·제외조건을 2026-10-17 대조.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [
+        "트래블러스 체크카드"
+      ],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "family",
+        "familyIds": [
+          "family-kb-09563"
+        ],
+        "types": [
+          "debit"
+        ],
+        "brands": [
+          "Mastercard"
+        ]
+      },
+      "linkLabel": "Mastercard 제휴",
+      "eligibilityLabel": "Mastercard형",
+      "rewards": [],
+      "entryRequired": false,
+      "evidenceDigest": "5ea7e9d8",
+      "activation": {
+        "method": "MTR 카드 등록·혜택 활성화",
+        "cycle": "quarterly",
+        "url": "https://mtr.mastercardservices.com/ko-KR/"
+      }
+    },
+    {
+      "id": "event-af014444",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "일본 미츠이 아울렛 2천엔(JPY) 캐시백",
+      "description": "미츠이 아울렛 지정점 건당 8만엔 이상 → 2천엔 캐시백",
+      "benefitText": "미츠이 아울렛 지정점 건당 8만엔 이상 → 2천엔 캐시백",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-12-31",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "키사라즈·마쿠하리·삿포로 키타히로시마·오사카 카도마·재즈드림 나가시마 대상.",
+        "본문은 지점별 1회, 공통 유의사항은 카드당 1회로 표기되어 있어 여러 지점 합산 수령 전 MTR에서 한도 확인.",
+        "MTR에 대상카드를 등록하고 행사별 혜택을 활성화한 뒤 이용. 분기마다 재활성화가 필요한 행사는 각각 다시 설정.",
+        "일본 현지에서 실물카드로 엔화 결제. 온라인·취소·미매입·환불 거래 제외.",
+        "이용일부터 14일 안에 캐시백 금액만큼 취소전표 매입. 가맹점명 MastercardTravel.",
+        "예산 소진 시 조기 종료. 카드 재발급·교체로 카드번호 변경 시 지급 제외될 수 있음."
+      ],
+      "participation": [
+        "키사라즈·마쿠하리·삿포로 키타히로시마·오사카 카도마·재즈드림 나가시마 대상.",
+        "본문은 지점별 1회, 공통 유의사항은 카드당 1회로 표기되어 있어 여러 지점 합산 수령 전 MTR에서 한도 확인.",
+        "MTR에 대상카드를 등록하고 행사별 혜택을 활성화한 뒤 이용. 분기마다 재활성화가 필요한 행사는 각각 다시 설정."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001435",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001435",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/260630-cashback-orange.png",
+      "status": "active",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "KB국민카드 공식 행사 본문과 대상·기간·제외조건을 2026-10-17 대조.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [
+        "트래블러스 체크카드"
+      ],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "family",
+        "familyIds": [
+          "family-kb-09563"
+        ],
+        "types": [
+          "debit"
+        ],
+        "brands": [
+          "Mastercard"
+        ]
+      },
+      "linkLabel": "Mastercard 제휴",
+      "eligibilityLabel": "Mastercard형",
+      "rewards": [],
+      "entryRequired": false,
+      "evidenceDigest": "76e2689e",
+      "activation": {
+        "method": "MTR 카드 등록·혜택 활성화",
+        "cycle": "quarterly",
+        "url": "https://mtr.mastercardservices.com/ko-KR/"
+      }
+    },
+    {
+      "id": "event-1068070c",
+      "kind": "cashback",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "체크 신규 시 3만원 해외여행 필수 트래블러스",
+      "description": "신규 체크카드 고객 3만원 이용 → 3만원 캐시백",
+      "benefitText": "신규 체크카드 고객 3만원 이용 → 3만원 캐시백",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-10-31",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "발급 2026.10.1~10.31 / 이용 2026.10.1~11.10.",
+        "행사 페이지에서 온라인 신규 발급 필수. 최초 체크 신규·전체 유효기간 만료·2026.8.31 이전 체크 회원 탈회 후 신규 중 해당 고객.",
+        "발급 시점 KB 체크카드 미보유 고객. 기존 고객의 추가·교체 발급은 제외.",
+        "은행 영업점·직원번호·KB스타뱅킹·카드플래너 발급 제외.",
+        "상품권·선불충전·포인트리충전·카카오톡 선물하기·현금IC·취소 거래 제외.",
+        "다른 체크 신규 행사와 중복 불가. 2026.11.30까지 출금계좌로 지급."
+      ],
+      "participation": [
+        "발급 2026.10.1~10.31 / 이용 2026.10.1~11.10.",
+        "행사 페이지에서 온라인 신규 발급 필수. 최초 체크 신규·전체 유효기간 만료·2026.8.31 이전 체크 회원 탈회 후 신규 중 해당 고객.",
+        "발급 시점 KB 체크카드 미보유 고객. 기존 고객의 추가·교체 발급은 제외."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1002229",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1002229",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/260922-travelers-khaki.png",
+      "status": "active",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "KB국민카드 공식 행사 본문과 대상·기간·제외조건을 2026-10-17 대조.",
+      "verificationLevel": "official_detail",
+      "cardIds": [
+        "kb-09562",
+        "kb-09565"
+      ],
+      "cardNames": [
+        "트래블러스 체크카드(스페셜)",
+        "트래블러스 체크카드(토심이)"
+      ],
+      "cashbackAmount": 30000,
+      "detailVerifiedAt": "2026-10-17",
+      "linkLabel": "트래블러스 전용",
+      "eligibilityLabel": "신규 고객·행사 페이지 발급 한정",
+      "rewards": [
+        {
+          "kind": "cash",
+          "label": "신규 발급 캐시백",
+          "amount": 30000,
+          "unitValue": 1,
+          "verified": true,
+          "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1002229",
+          "conditions": [
+            "행사 페이지 신규 발급",
+            "기존 체크카드 미보유",
+            "기간 중 3만원 이용"
+          ]
+        }
+      ],
+      "entryRequired": false,
+      "evidenceDigest": "423dc018",
+      "usageEndsAt": "2026-11-10"
+    },
+    {
+      "id": "event-b93f39c3",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "쓰는 순간, 캐시백 ON! 최대 5%!",
+      "description": "중국 현지 1,000위안 이상 결제 → 50위안 외화머니",
+      "benefitText": "중국 현지 1,000위안 이상 결제 → 50위안 외화머니",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-09-01",
+      "endsAt": "2026-10-31",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "KB 개인 신용·체크 국내외겸용(K-World 포함) 대상. 기업·KB BC·마에스트로 제외.",
+        "행사 응모 후 중국 오프라인 이용액 합산 1,000위안 이상. 응모·이용 순서는 무관.",
+        "2026.11.15까지 매입된 해외 거래. 온라인·카카오페이 국내 승인·취소 거래 제외.",
+        "2026년 11월 말까지 외화머니 제공. 다른 행사와 중복 가능."
+      ],
+      "participation": [
+        "KB 개인 신용·체크 국내외겸용(K-World 포함) 대상. 기업·KB BC·마에스트로 제외.",
+        "행사 응모 후 중국 오프라인 이용액 합산 1,000위안 이상. 응모·이용 순서는 무관.",
+        "2026.11.15까지 매입된 해외 거래. 온라인·카카오페이 국내 승인·취소 거래 제외."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001885",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001885",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/250523_cashback_purple.png",
+      "status": "active",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "KB국민카드 공식 행사 본문과 대상·기간·제외조건을 2026-10-17 대조.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "issuer",
+        "types": [
+          "credit",
+          "debit"
+        ],
+        "brands": [
+          "Mastercard",
+          "Visa",
+          "UnionPay",
+          "JCB",
+          "Amex",
+          "K-World"
+        ],
+        "excludedNames": [
+          "기업",
+          "비씨",
+          "BC"
+        ],
+        "excludedBrands": [
+          "Maestro"
+        ]
+      },
+      "linkLabel": "KB 카드 공통",
+      "eligibilityLabel": "해외겸용·중국 현지 결제",
+      "rewards": [],
+      "entryRequired": true,
+      "evidenceDigest": "9b5b8f4f"
+    },
+    {
+      "id": "event-17681211",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "웹투어에서 국내선 체크 최대 10% 캐시백",
+      "description": "웹투어 국내선 항공권 최대 10% 캐시백",
+      "benefitText": "웹투어 국내선 항공권 최대 10% 캐시백",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-10-31",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "KB 개인 체크카드 대상. 신용·기업·KB BC·선불 제외.",
+        "결제 2026.10.1~10.31 / 탑승 2026.10.1~11.30.",
+        "웹투어 전용 경로에서 카드 소유주 포함 결제·탑승 완료 필요.",
+        "네이버페이 등 간편결제·발권대행 수수료 제외. 적용 항공편별 요율은 웹투어 확인.",
+        "2026.12.31까지 제공 예정."
+      ],
+      "participation": [
+        "KB 개인 체크카드 대상. 신용·기업·KB BC·선불 제외.",
+        "결제 2026.10.1~10.31 / 탑승 2026.10.1~11.30.",
+        "웹투어 전용 경로에서 카드 소유주 포함 결제·탑승 완료 필요."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1002226",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1002226",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/250326-nori2-blue.png",
+      "status": "active",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "KB국민카드 공식 행사 본문과 대상·기간·제외조건을 2026-10-17 대조.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "issuer",
+        "types": [
+          "debit"
+        ],
+        "excludedNames": [
+          "기업",
+          "비씨",
+          "BC"
+        ]
+      },
+      "linkLabel": "KB 체크카드 공통",
+      "eligibilityLabel": "웹투어 직접 결제·본인 탑승",
+      "rewards": [],
+      "entryRequired": false,
+      "evidenceDigest": "e0371d89"
+    },
+    {
+      "id": "event-a9f4a6b9",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "트래블러스체크카드 캐시백 혜택모음.zip",
+      "description": "트래블러스 Mastercard 해외 캐시백 모음",
+      "benefitText": "트래블러스 Mastercard 해외 캐시백 모음",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-09-01",
+      "endsAt": "2027-09-30",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "2026.10~12월 등 분기별 제공. 행사별 MTR 등록·혜택 활성화가 필요할 수 있음.",
+        "돈키호테·빅카메라·일본 백화점·미츠이 아울렛 등 가맹점별 기준 금액·한도는 개별 행사에서 확인.",
+        "캐시백 모음의 혜택은 개별 MTR 행사와 동일하며 합산 계산하지 않음.",
+        "공식 본문 내 일부 온라인 예약 행사에 온라인 제외 문구가 함께 있어 해당 행사는 조건 재확인으로 표시."
+      ],
+      "participation": [
+        "2026.10~12월 등 분기별 제공. 행사별 MTR 등록·혜택 활성화가 필요할 수 있음.",
+        "돈키호테·빅카메라·일본 백화점·미츠이 아울렛 등 가맹점별 기준 금액·한도는 개별 행사에서 확인.",
+        "캐시백 모음의 혜택은 개별 MTR 행사와 동일하며 합산 계산하지 않음."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1002011",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1002011",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/250805_travelerscashback_purple.png",
+      "status": "active",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "KB국민카드 공식 행사 본문과 대상·기간·제외조건을 2026-10-17 대조.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [
+        "트래블러스 체크카드"
+      ],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "family",
+        "familyIds": [
+          "family-kb-09563"
+        ],
+        "types": [
+          "debit"
+        ],
+        "brands": [
+          "Mastercard"
+        ]
+      },
+      "linkLabel": "Mastercard 제휴",
+      "eligibilityLabel": "Mastercard형",
+      "rewards": [],
+      "entryRequired": false,
+      "evidenceDigest": "161f63a5",
+      "activation": {
+        "method": "MTR 카드 등록·혜택 활성화",
+        "cycle": "quarterly",
+        "url": "https://mtr.mastercardservices.com/ko-KR/"
+      }
+    },
+    {
+      "id": "event-1b964f82",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "워너브라더스 스튜디오도쿄 4% 캐시백",
+      "description": "온라인 예약 조건과 온라인 제외 문구가 함께 있어 확인 필요",
+      "benefitText": "온라인 예약 조건과 온라인 제외 문구가 함께 있어 확인 필요",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-12-31",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "공식 내용은 온라인 예약 시 캐시백, 공통 유의사항은 온라인 가맹점 제외로 표기되어 있습니다.",
+        "등록·결제 전 MTR에서 해당 가맹점 적용 채널을 확인하세요."
+      ],
+      "participation": [
+        "공식 내용은 온라인 예약 시 캐시백, 공통 유의사항은 온라인 가맹점 제외로 표기되어 있습니다.",
+        "등록·결제 전 MTR에서 해당 가맹점 적용 채널을 확인하세요."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001569",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1001569",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/260708-warnerbros-orange.png",
+      "status": "needs_review",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "공식 상세 내 온라인 적용 조건이 상충하여 진행 중 혜택 추천에서 보류.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [
+        "트래블러스 체크카드"
+      ],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "family",
+        "familyIds": [
+          "family-kb-09563"
+        ],
+        "types": [
+          "debit"
+        ],
+        "brands": [
+          "Mastercard"
+        ]
+      },
+      "linkLabel": "Mastercard 제휴",
+      "eligibilityLabel": "적용 채널 재확인",
+      "rewards": [],
+      "entryRequired": false,
+      "evidenceDigest": "19856210",
+      "activation": {
+        "method": "MTR 카드 등록·혜택 활성화",
+        "cycle": "quarterly",
+        "url": "https://mtr.mastercardservices.com/ko-KR/"
+      }
+    },
+    {
+      "id": "event-72e346b7",
+      "kind": "card",
+      "issuer": "KB국민카드",
+      "chain": null,
+      "title": "오사카 레고랜드 온라인 예약 5% 캐시백",
+      "description": "온라인 예약 조건과 온라인 제외 문구가 함께 있어 확인 필요",
+      "benefitText": "온라인 예약 조건과 온라인 제외 문구가 함께 있어 확인 필요",
+      "tags": [
+        "트래블러스",
+        "해외",
+        "여행"
+      ],
+      "category": "해외/여행",
+      "channel": "카드사 공식",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-12-31",
+      "bookingEndsAt": null,
+      "stayEndsAt": null,
+      "requirements": [
+        "공식 내용은 온라인 예약 시 캐시백, 공통 유의사항은 온라인 가맹점 제외로 표기되어 있습니다.",
+        "등록·결제 전 MTR에서 해당 가맹점 적용 채널을 확인하세요."
+      ],
+      "participation": [
+        "공식 내용은 온라인 예약 시 캐시백, 공통 유의사항은 온라인 가맹점 제외로 표기되어 있습니다.",
+        "등록·결제 전 MTR에서 해당 가맹점 적용 채널을 확인하세요."
+      ],
+      "sourceUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1000604",
+      "sourceDetailUrl": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1000604",
+      "imageUrl": "https://img1.kbcard.com/ST/img/ubb/mgr/event/251217_legoland_brown.png",
+      "status": "needs_review",
+      "verifiedAt": "2026-10-17",
+      "verificationNote": "공식 상세 내 온라인 적용 조건이 상충하여 진행 중 혜택 추천에서 보류.",
+      "verificationLevel": "official_detail",
+      "cardIds": [],
+      "cardNames": [
+        "트래블러스 체크카드"
+      ],
+      "cashbackAmount": null,
+      "detailVerifiedAt": "2026-10-17",
+      "cardTarget": {
+        "scope": "family",
+        "familyIds": [
+          "family-kb-09563"
+        ],
+        "types": [
+          "debit"
+        ],
+        "brands": [
+          "Mastercard"
+        ]
+      },
+      "linkLabel": "Mastercard 제휴",
+      "eligibilityLabel": "적용 채널 재확인",
+      "rewards": [],
+      "entryRequired": false,
+      "evidenceDigest": "f9ca1e4e",
+      "activation": {
+        "method": "MTR 카드 등록·혜택 활성화",
+        "cycle": "quarterly",
+        "url": "https://mtr.mastercardservices.com/ko-KR/"
+      }
+    }
+  ]
+}

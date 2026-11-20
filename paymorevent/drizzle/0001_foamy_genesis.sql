@@ -1,0 +1,1 @@
+ALTER TABLE `catalog_cards` ADD `summary_payload` text DEFAULT '{}' NOT NULL;

@@ -1,0 +1,77 @@
+{
+  "downloaded": {
+    "retrieved": "2026-10-05",
+    "assets": [
+      {
+        "brand": "Visa",
+        "files": [
+          "visa.svg",
+          "visa.png"
+        ],
+        "source_page": "https://globalclient.visa.com/brand-mark-ty",
+        "download_url": "https://usa.visa.com/content/dam/VCOM/Brand/visa-brand-mark-digital-2025.zip",
+        "archive_member": "Visa Brand Mark DIGITAL 2025/Visa Brand Mark DIGITAL/VBM_digital_2025/blue/VBM_bluRGB_2025.svg",
+        "notes": "Unmodified official blue RGB 2025 mark; contains substantial built-in transparent clearspace."
+      },
+      {
+        "brand": "Mastercard",
+        "files": [
+          "mastercard.svg"
+        ],
+        "source_page": "https://www.mastercard.com/brandcenter/us/en/download-artwork.html",
+        "download_url": "https://www.mastercard.com/content/dam/brandcenter/assets/downloads/mc_symbol_SVG.zip",
+        "archive_member": "Mastercard Symbol - SVG/Artwork/ma_symbol.svg",
+        "notes": "Official Mastercard Symbol, light/dark backgrounds."
+      },
+      {
+        "brand": "UnionPay",
+        "files": [
+          "unionpay.png"
+        ],
+        "source_page": "https://www.unionpayintl.com/en/mediaCenter/brandCenter/artworkDownloadCenter/identification.shtml",
+        "download_url": "https://www.unionpayintl.com/en/mediaCenter/brandCenter/artworkDownloadCenter/zip/RGB-en.zip",
+        "archive_member": "Brand logos-RGB-en.png",
+        "notes": "Unmodified official primary English RGB mark; 1512x945 PNG."
+      },
+      {
+        "brand": "American Express",
+        "files": [
+          "amex.svg",
+          "amex.png"
+        ],
+        "source_page": "https://www.americanexpress.com/it/merchant/materiale-puntovendita/materialidigitali.html",
+        "download_url": "https://www.americanexpress.com/content/dam/amex/us/merchant/supplies-uplift/product/digital/WEBLOGO1IT.zip",
+        "archive_member": "WEBLOGO1IT/AXP_BlueBoxLogo_Alternate_SMALLscale_RGB_DIGITAL_80x80.svg",
+        "notes": "Official 80x80 small-scale alternate blue box; original SVG is UTF-16 encoded."
+      },
+      {
+        "brand": "JCB",
+        "files": [
+          "jcb.png"
+        ],
+        "source_page": "https://www.global.jcb/en/about-us/brand-concept/agreement/index.html",
+        "download_url": "https://jcb.sitecorecontenthub.cloud/api/public/content/105660_pic_logo_01.gif",
+        "notes": "Official 134x104 tricolor emblem GIF converted losslessly to RGBA PNG. JCB USA TIFF ZIP returned HTTP 403."
+      },
+      {
+        "brand": "Diners Club",
+        "files": [
+          "diners.png"
+        ],
+        "source_page": "https://www.dinersclub.com/about-us/press/",
+        "download_url": "https://www.dinersclub.com/content/dam/discover/en_us/diners-club/static/zip/about-us/press/2026_Media_Kit_Logos.zip",
+        "archive_member": "2026 Media Kit Logos/Diners Club Network Acceptance Mark/DCI_Acceptance Mark_Color.eps",
+        "notes": "Official color acceptance mark rendered from EPS at 144 dpi with EPS bounding box; 540x395 PNG."
+      }
+    ],
+    "domestic_only": "No universal network brand mark; render a clearly labelled generic 국내전용 badge, not an official logo."
+  },
+  "domestic": {
+    "path": "/brands/domestic.svg",
+    "type": "generic-label",
+    "note": "국내전용을 나타내는 공용 안내 배지. 특정 결제망의 공식 로고가 아님."
+  },
+  "displayAdjustment": {
+    "visa": "SVG viewBox reduced around transparent clearspace; official artwork paths unchanged."
+  }
+}

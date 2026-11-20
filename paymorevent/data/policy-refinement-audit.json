@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-10-10",
+  "cards": 1536,
+  "fullPolicyCards": 727,
+  "judgmentChanges": {
+    "상품권 가능": 707,
+    "관리비": 692,
+    "국세": 699,
+    "지방세": 700
+  },
+  "benefitFieldsFilled": 0,
+  "falseExclusionSectionsRemoved": 1,
+  "knownJudgments": {
+    "상품권 가능": {
+      "spend": {
+        "excluded": 969,
+        "allowed": 25,
+        "unknown": 542
+      },
+      "benefit": {
+        "excluded": 886,
+        "unknown": 634,
+        "allowed": 16
+      }
+    },
+    "관리비": {
+      "spend": {
+        "excluded": 775,
+        "allowed": 112,
+        "unknown": 649
+      },
+      "benefit": {
+        "allowed": 60,
+        "unknown": 1073,
+        "excluded": 403
+      }
+    },
+    "국세": {
+      "spend": {
+        "allowed": 59,
+        "excluded": 939,
+        "unknown": 538
+      },
+      "benefit": {
+        "allowed": 16,
+        "unknown": 976,
+        "excluded": 544
+      }
+    },
+    "지방세": {
+      "spend": {
+        "allowed": 35,
+        "excluded": 969,
+        "unknown": 532
+      },
+      "benefit": {
+        "allowed": 14,
+        "unknown": 899,
+        "excluded": 623
+      }
+    }
+  }
+}

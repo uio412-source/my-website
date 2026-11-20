@@ -1,0 +1,11 @@
+import './ensure-card-data.mjs';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import {gzipSync} from 'node:zlib';
+import {summarize,bestPicking,groupCards} from '../lib/catalog-model.ts';
+const cards=JSON.parse(fs.readFileSync('data/cards.json','utf8')),events=JSON.parse(fs.readFileSync('data/events.json','utf8'));
+fs.writeFileSync('data/card-seed.json',JSON.stringify(gzipSync(JSON.stringify(cards)).toString('base64')));
+const summaries=cards.map(summarize),stats=JSON.parse(fs.readFileSync('data/stats.json','utf8'));
+stats.pickingCount=cards.filter(c=>bestPicking(c)).length;
+fs.writeFileSync('data/summaries.json',JSON.stringify(summaries));fs.writeFileSync('data/home-cards.json',JSON.stringify(groupCards([...summaries].sort((a,b)=>(b.normalization?.qualityScore??0)-(a.normalization?.qualityScore??0))).slice(0,24).map(g=>g.card)));fs.writeFileSync('data/stats.json',JSON.stringify(stats,null,2));fs.writeFileSync('public/catalog-snapshot.json',JSON.stringify({cards:summaries,stats}));fs.writeFileSync('data/revision.json',JSON.stringify({value:crypto.createHash('sha256').update(JSON.stringify([cards,events])).digest('hex')}));
+console.log(JSON.stringify({cards:cards.length,minimumScenarios:stats.pickingCount}));

@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {normalizeBundle} from '../lib/normalized-card.ts';
+const c={id:'test-payment',issuer:'테스트',name:'테스트 카드',type:'credit',brands:[],annualFeeMin:0,annualFeeText:'없음',benefits:[],spendExclusions:[],benefitExclusions:[],sourceUrl:'https://card.kbcard.com/',termsUrl:null,issuanceStatus:'confirmed',paymentEligibility:{관리비:{spend:'excluded',benefit:'excluded',sourceUrl:'https://card.kbcard.com/',scope:'지정 자동납부',basis:'explicit',checkedAt:'2026-10-18',evidence:'지정 요금 자동납부 한정',note:'재검토'}}};
+const prior={paymentRules:[{id:'old-summary',cardId:c.id,item:'관리비',scope:'검색 대표 판정',spend:'excluded',benefit:'unknown',status:'candidate'},{id:'annual-rule',cardId:c.id,item:'관리비',scope:'연간 멤버십 실적',spend:'allowed',benefit:'unknown',status:'verified'}]};
+const first=normalizeBundle(c,prior);
+const summary=first.entities.paymentRules.filter(r=>r.representation==='summary');
+assert.equal(summary.length,1);assert.equal(summary[0].benefit,'excluded');assert.equal(summary[0].status,'verified');
+assert(!first.entities.paymentRules.some(r=>r.id==='old-summary'));
+assert.deepEqual(first.entities.paymentRules.find(r=>r.id==='annual-rule'),prior.paymentRules[1]);
+const second=normalizeBundle(c,first.entities);
+assert.deepEqual(second.entities.paymentRules,first.entities.paymentRules);
+const unknown=normalizeBundle({...c,paymentEligibility:{관리비:{...c.paymentEligibility.관리비,benefit:'unknown'}}},second.entities);
+assert.equal(unknown.entities.paymentRules.find(r=>r.representation==='summary').benefit,'unknown');
+assert.equal(unknown.entities.paymentRules.find(r=>r.representation==='summary').status,'unknown');
+const {paymentEligibility,...without}=c;
+assert.deepEqual(normalizeBundle(without,prior).entities.paymentRules,prior.paymentRules);
+console.log('Normalized payment rules: changed judgments, scoped preservation, idempotence and unknowns passed.');

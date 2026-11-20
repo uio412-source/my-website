@@ -1,0 +1,816 @@
+[
+  {
+    "id": "family-ibk-104311",
+    "name": "I-Campus",
+    "issuer": "IBK기업은행",
+    "type": "debit",
+    "cardIds": [
+      "ibk-104311",
+      "ibk-104310"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-kb-09306",
+    "name": "BeV Ⅴ카드",
+    "issuer": "KB국민카드",
+    "type": "credit",
+    "cardIds": [
+      "kb-09306",
+      "kb-09305"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-kb-07972",
+    "name": "노리2 체크카드",
+    "issuer": "KB국민카드",
+    "type": "debit",
+    "cardIds": [
+      "kb-07972",
+      "kb-07964",
+      "kb-07986"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-kb-09247",
+    "name": "마이핏카드",
+    "issuer": "KB국민카드",
+    "type": "credit",
+    "cardIds": [
+      "kb-09247",
+      "kb-09248"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-kb-09563",
+    "name": "트래블러스 체크카드",
+    "issuer": "KB국민카드",
+    "type": "debit",
+    "cardIds": [
+      "kb-09563",
+      "kb-09562",
+      "kb-09565"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-kb-09659",
+    "name": "틴업 체크카드",
+    "issuer": "KB국민카드",
+    "type": "debit",
+    "cardIds": [
+      "kb-09659",
+      "kb-09677",
+      "kb-09678",
+      "kb-09676",
+      "kb-09679",
+      "kb-09675",
+      "kb-09674"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-nh-90010172",
+    "name": "NH FIT 신용할인형",
+    "issuer": "NH농협카드",
+    "type": "credit",
+    "cardIds": [
+      "nh-90010172",
+      "nh-90010152"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-nh-90010173",
+    "name": "NH FIT 체크할인형",
+    "issuer": "NH농협카드",
+    "type": "debit",
+    "cardIds": [
+      "nh-90010173",
+      "nh-90010153"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-nh-90010008",
+    "name": "NH농협 올바른LIFE카드",
+    "issuer": "NH농협카드",
+    "type": "credit",
+    "cardIds": [
+      "nh-90010008",
+      "nh-90010009"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-nh-90010058",
+    "name": "ON PLATINUM카드",
+    "issuer": "NH농협카드",
+    "type": "credit",
+    "cardIds": [
+      "nh-90010058",
+      "nh-90010059",
+      "nh-90010057"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-nh-90000081",
+    "name": "공무원연금체크카드",
+    "issuer": "NH농협카드",
+    "type": "debit",
+    "cardIds": [
+      "nh-90000081",
+      "nh-90000198"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-nh-90000056",
+    "name": "공무원연금카드",
+    "issuer": "NH농협카드",
+    "type": "credit",
+    "cardIds": [
+      "nh-90000056",
+      "nh-90000199"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-nh-90010133",
+    "name": "올바른NEW HAVE체크카드",
+    "issuer": "NH농협카드",
+    "type": "debit",
+    "cardIds": [
+      "nh-90010133",
+      "nh-90010036"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-nh-90000387",
+    "name": "올바른TRAVEL카드",
+    "issuer": "NH농협카드",
+    "type": "credit",
+    "cardIds": [
+      "nh-90000387",
+      "nh-90000388"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-nh-90010023",
+    "name": "위 레아카드",
+    "issuer": "NH농협카드",
+    "type": "credit",
+    "cardIds": [
+      "nh-90010023",
+      "nh-90010024",
+      "nh-90010022"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-nh-90010026",
+    "name": "위 테라카드",
+    "issuer": "NH농협카드",
+    "type": "credit",
+    "cardIds": [
+      "nh-90010026",
+      "nh-90010027",
+      "nh-90010028"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-sc-6266",
+    "name": "SC제일은행-현대카드 ZERO Edition3",
+    "issuer": "SC제일은행",
+    "type": "credit",
+    "cardIds": [
+      "sc-6266",
+      "sc-6267"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-sc-4231",
+    "name": "THE 1",
+    "issuer": "SC제일은행",
+    "type": "credit",
+    "cardIds": [
+      "sc-4231",
+      "sc-5350"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-im-310839",
+    "name": "Y+체크카드",
+    "issuer": "iM뱅크",
+    "type": "debit",
+    "cardIds": [
+      "im-310839",
+      "im-311091"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-im-554132",
+    "name": "대백-iM 뱅크카드",
+    "issuer": "iM뱅크",
+    "type": "credit",
+    "cardIds": [
+      "im-554132",
+      "im-554242"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-kj-CDR20250922003",
+    "name": "대한항공SKYPASS카드",
+    "issuer": "광주은행",
+    "type": "credit",
+    "cardIds": [
+      "kj-CDR20250922003",
+      "kj-CDR20250922004"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-lotte-P15672-A15672",
+    "name": "DIGILOCA SKYPASS",
+    "issuer": "롯데카드",
+    "type": "credit",
+    "cardIds": [
+      "lotte-P15672-A15672",
+      "lotte-P15673-A15673"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-lotte-P14430-A14430",
+    "name": "Trip to 로카",
+    "issuer": "롯데카드",
+    "type": "credit",
+    "cardIds": [
+      "lotte-P14430-A14430",
+      "lotte-P15667-A15667",
+      "lotte-P15668-A15668",
+      "lotte-P15669-A15669",
+      "lotte-P15678-A15678"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-lotte-P15862-A15862",
+    "name": "YBM X 디지로카_와옹",
+    "issuer": "롯데카드",
+    "type": "credit",
+    "cardIds": [
+      "lotte-P15862-A15862",
+      "lotte-P15861-A15861"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-lotte-C00041-A00041",
+    "name": "롯데체크카드",
+    "issuer": "롯데카드",
+    "type": "debit",
+    "cardIds": [
+      "lotte-C00041-A00041",
+      "lotte-C00041-B13358"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-lotte-P15754-A15754",
+    "name": "에듀윌X디지로카",
+    "issuer": "롯데카드",
+    "type": "credit",
+    "cardIds": [
+      "lotte-P15754-A15754",
+      "lotte-P15756-A15756",
+      "lotte-P15758-A15758"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-samsung-aap1686",
+    "name": "SK인텔릭스 삼성카드",
+    "issuer": "삼성카드",
+    "type": "credit",
+    "cardIds": [
+      "samsung-aap1686",
+      "samsung-aap1687"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-samsung-aap1728",
+    "name": "삼성 SFC iD ALL 카드",
+    "issuer": "삼성카드",
+    "type": "credit",
+    "cardIds": [
+      "samsung-aap1728",
+      "samsung-aap1730"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-samsung-aap1727",
+    "name": "삼성 iD ALL 카드",
+    "issuer": "삼성카드",
+    "type": "credit",
+    "cardIds": [
+      "samsung-aap1727",
+      "samsung-aap1729"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-samsung-aap1856",
+    "name": "삼성 iD STATION 카드",
+    "issuer": "삼성카드",
+    "type": "credit",
+    "cardIds": [
+      "samsung-aap1856",
+      "samsung-aap1897",
+      "samsung-aap1855"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-samsung-aap1708",
+    "name": "웰스 삼성카드",
+    "issuer": "삼성카드",
+    "type": "credit",
+    "cardIds": [
+      "samsung-aap1708",
+      "samsung-aap1709"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202102250001",
+    "name": "신세계 신한카드",
+    "issuer": "신한카드",
+    "type": "credit",
+    "cardIds": [
+      "shinhan-202102250001",
+      "shinhan-201704010001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202401040001",
+    "name": "K-패스 신한카드",
+    "issuer": "신한카드",
+    "type": "credit",
+    "cardIds": [
+      "shinhan-202401040001",
+      "shinhan-202411280001",
+      "shinhan-202407220001",
+      "shinhan-202504080001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202401040002",
+    "name": "K-패스 신한카드 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-202401040002",
+      "shinhan-202411280004",
+      "shinhan-202411280002",
+      "shinhan-202407220002"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202201070002",
+    "name": "땡겨요 신한카드 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-202201070002",
+      "shinhan-202201070003"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-201904080001",
+    "name": "성남사랑 신한카드 Deep Dream 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-201904080001",
+      "shinhan-202103230001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202211300002",
+    "name": "신세계사이먼 프리미엄 아울렛 신한카드",
+    "issuer": "신한카드",
+    "type": "credit",
+    "cardIds": [
+      "shinhan-202211300002",
+      "shinhan-202309070004",
+      "shinhan-202309070003"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-201709220001",
+    "name": "신한카드 Deep Dream 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-201709220001",
+      "shinhan-201709220003"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-201807100001",
+    "name": "신한카드 Deep Store",
+    "issuer": "신한카드",
+    "type": "credit",
+    "cardIds": [
+      "shinhan-201807100001",
+      "shinhan-202408120003"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202006020001",
+    "name": "신한카드 Hey Young 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-202006020001",
+      "shinhan-202505210001",
+      "shinhan-202309140003",
+      "shinhan-202309140004",
+      "shinhan-202509090002"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202107060003",
+    "name": "신한카드 My TeenS",
+    "issuer": "신한카드",
+    "type": "credit",
+    "cardIds": [
+      "shinhan-202107060003",
+      "shinhan-202310160002"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202112220002",
+    "name": "신한카드 On 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-202112220002",
+      "shinhan-202205240001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202309260001",
+    "name": "신한카드 Pick I 체크 캐릭터형",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-202309260001",
+      "shinhan-202402190001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202402020001",
+    "name": "신한카드 Point Plan",
+    "issuer": "신한카드",
+    "type": "credit",
+    "cardIds": [
+      "shinhan-202402020001",
+      "shinhan-202502140001",
+      "shinhan-202501150001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202402020002",
+    "name": "신한카드 Point Plan 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-202402020002",
+      "shinhan-202502040001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-201405080001",
+    "name": "신한카드 S-Line 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-201405080001",
+      "shinhan-201405080004",
+      "shinhan-201405080002",
+      "shinhan-202207070002"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202409110004",
+    "name": "신한카드 SOL글로벌 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-202409110004",
+      "shinhan-202410250001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202409110003",
+    "name": "신한카드 SOL글로벌U 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-202409110003",
+      "shinhan-202410250002"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202406130001",
+    "name": "신한카드 SOL트래블",
+    "issuer": "신한카드",
+    "type": "credit",
+    "cardIds": [
+      "shinhan-202406130001",
+      "shinhan-202407100001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202112220001",
+    "name": "신한카드 Way 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-202112220001",
+      "shinhan-202307210002",
+      "shinhan-202205240002"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202511280001",
+    "name": "신한카드 나라사랑카드 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-202511280001",
+      "shinhan-202606170001",
+      "shinhan-202608120001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202404150001",
+    "name": "신한카드 처음",
+    "issuer": "신한카드",
+    "type": "credit",
+    "cardIds": [
+      "shinhan-202404150001",
+      "shinhan-202408190001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202507090001",
+    "name": "신한카드 처음 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-202507090001",
+      "shinhan-202509090003"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-202211280002",
+    "name": "신한카드 플리",
+    "issuer": "신한카드",
+    "type": "credit",
+    "cardIds": [
+      "shinhan-202211280002",
+      "shinhan-202205190001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-shinhan-201503090002",
+    "name": "신한카드 하이패스 체크",
+    "issuer": "신한카드",
+    "type": "debit",
+    "cardIds": [
+      "shinhan-201503090002",
+      "shinhan-201503090001"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-post-660109442101",
+    "name": "우체국 개이득 체크카드",
+    "issuer": "우체국예금",
+    "type": "debit",
+    "cardIds": [
+      "post-660109442101",
+      "post-660109442401"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-jb-debit-5",
+    "name": "1ST TRIPLE 체크",
+    "issuer": "전북은행",
+    "type": "debit",
+    "cardIds": [
+      "jb-debit-5",
+      "jb-debit-6"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hana-12781",
+    "name": "모두의 일상 체크카드",
+    "issuer": "하나카드",
+    "type": "debit",
+    "cardIds": [
+      "hana-12781",
+      "hana-18141"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hana-18704",
+    "name": "하나 나라사랑카드",
+    "issuer": "하나카드",
+    "type": "debit",
+    "cardIds": [
+      "hana-18704",
+      "hana-18754",
+      "hana-18755"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-hmhc",
+    "name": "Hyundai Mobility카드",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-hmhc",
+      "hyundai-hschcr",
+      "hyundai-hschc",
+      "hyundai-hmlsb",
+      "hyundai-hmcv"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-mrdsc",
+    "name": "Kia Members 경차전용카드",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-mrdsc",
+      "hyundai-mrdscr"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-mzrosce3",
+    "name": "SC제일은행-현대카드 ZERO Edition3",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-mzrosce3",
+      "hyundai-zrosce3"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-mzrscmbe3",
+    "name": "SC제일은행-현대카드MY BUSINESS ZERO Edition3",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-mzrscmbe3",
+      "hyundai-zroscmbe3"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-mskte3",
+    "name": "SKT-현대카드M Edition3",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-mskte3",
+      "hyundai-mskte3tp"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-mkte3",
+    "name": "kt-현대카드M Edition3",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-mkte3",
+      "hyundai-mkte3p",
+      "hyundai-mkte3tp"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-mzrup",
+    "name": "현대카드 ZERO Up",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-mzrup",
+      "hyundai-zrup"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-msce2",
+    "name": "현대카드M-경차전용카드 Edition2",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-msce2",
+      "hyundai-mscre2"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-mbmzro",
+    "name": "현대카드MY BUSINESS ZERO Edition3",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-mbmzro",
+      "hyundai-mbzro"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-mbmzrup",
+    "name": "현대카드MY BUSINESS ZERO Up",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-mbmzrup",
+      "hyundai-mbzrup"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-lsbsoilx",
+    "name": "현대카드X-화물차유가보조금카드",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-lsbsoilx",
+      "hyundai-lsbskenx"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  },
+  {
+    "id": "family-hyundai-mzroe3",
+    "name": "현대카드ZERO Edition3",
+    "issuer": "현대카드",
+    "type": "credit",
+    "cardIds": [
+      "hyundai-mzroe3",
+      "hyundai-zroe3"
+    ],
+    "basis": "동일 발급기관·신용/체크 구분 안에서 공식 상품명의 공통 본명 기준으로 묶음. 각 상품의 혜택·약관·자격은 별도로 유지."
+  }
+]

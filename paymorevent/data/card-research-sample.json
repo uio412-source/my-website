@@ -1,0 +1,1201 @@
+[
+  {
+    "id": "bc-102040",
+    "name": "BC 바로 On＆Off 카드",
+    "issuer": "BC 바로카드",
+    "checkedAt": "2026-10-06",
+    "status": "verified",
+    "spendExclusions": [
+      "전월 실적 제외 항목 - 단기카드대출(현금서비스), 장기카드대출(카드론), 연회비, 연체료, 제수수료/이자, 아파트 관리비, 상하수도/전기/도시가스 요금, 상품권 구매금액, 선불카드/선불 전자 지급수단 구매 및 충전금액"
+    ],
+    "benefitExclusions": [
+      "- 무이자할부 이용금액은 결제일 할인 제외",
+      "할인 제외 항목 - 무이자할부(Light 할부, 부분 무이자할부 포함) 이용금액 - 상품권 구매금액, 선불카드/선불 전자 지급수단 구매 및 충전금액 발급 시 유의 사항 닫기 열기"
+    ],
+    "evidence": [
+      {
+        "field": "benefitExclusions",
+        "excerpt": "- 무이자할부 이용금액은 결제일 할인 제외",
+        "line": 255,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102040&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "spendExclusions",
+        "excerpt": "전월 실적 제외 항목 - 단기카드대출(현금서비스), 장기카드대출(카드론), 연회비, 연체료, 제수수료/이자, 아파트 관리비, 상하수도/전기/도시가스 요금, 상품권 구매금액, 선불카드/선불 전자 지급수단 구매 및 충전금액",
+        "line": 346,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102040&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "할인 제외 항목 - 무이자할부(Light 할부, 부분 무이자할부 포함) 이용금액 - 상품권 구매금액, 선불카드/선불 전자 지급수단 구매 및 충전금액 발급 시 유의 사항 닫기 열기",
+        "line": 348,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102040&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102040&mbkNo=050",
+        "resolvedUrl": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102040&mbkNo=050",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 77050,
+        "kind": "productPage",
+        "textLines": 395,
+        "spendSections": 1,
+        "benefitSections": 2
+      }
+    ],
+    "spendExclusionsStatus": "source_excerpt",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "busan-0600000115",
+    "name": "2030 언택트 체크카드",
+    "issuer": "부산은행",
+    "checkedAt": "2026-10-06",
+    "status": "missing",
+    "spendExclusions": [],
+    "benefitExclusions": [],
+    "evidence": [],
+    "documents": [
+      {
+        "url": "https://www.busanbank.co.kr/ib20/mnu/FPMCRD122010000?ibs_current_page=1",
+        "resolvedUrl": "https://www.busanbank.co.kr/ib20/mnu/FPMCRD122010000?ibs_current_page=1",
+        "httpStatus": 200,
+        "contentType": "text/html;charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 183403,
+        "kind": "productPage",
+        "textLines": 751,
+        "spendSections": 0,
+        "benefitSections": 0
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "not_confirmed",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "cu-1040",
+    "name": "Air Money",
+    "issuer": "신협",
+    "checkedAt": "2026-10-06",
+    "status": "partial",
+    "spendExclusions": [],
+    "benefitExclusions": [
+      "Air Money 적립대상에서 제외됩니다."
+    ],
+    "evidence": [
+      {
+        "field": "benefitExclusions",
+        "excerpt": "Air Money 적립대상에서 제외됩니다.",
+        "line": 15,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.cu.co.kr/product/ad/card/selectCard.do?cardSn=1040&mi=100253",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.cu.co.kr/product/ad/card/selectCard.do?cardSn=1040&mi=100253",
+        "resolvedUrl": "https://www.cu.co.kr/product/ad/card/selectCard.do?cardSn=1040&mi=100253",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 31339,
+        "kind": "productPage",
+        "textLines": 42,
+        "spendSections": 0,
+        "benefitSections": 1
+      },
+      {
+        "url": "https://www.cu.co.kr/common/fileDownload.do?fileKey=82888",
+        "resolvedUrl": "https://www.cu.co.kr/common/fileDownload.do?fileKey=82888",
+        "httpStatus": 200,
+        "contentType": "application/octet-stream;charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 4131174,
+        "kind": "terms",
+        "textLines": 172,
+        "spendSections": 0,
+        "benefitSections": 0
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "hana-15446",
+    "name": "#MY WAY(샵 마이웨이) 카드",
+    "issuer": "하나카드",
+    "checkedAt": "2026-10-06",
+    "status": "verified",
+    "spendExclusions": [
+      "2. 실적 제외 대상 커피/편의점/디지털구독/주유,충전/쇼핑/생활요금 할인영역 서비스로 할인받은 매출 제외 국세, 지방세, 공과금(인터넷/모바일앱을통한 공과금 납부금액 포함), 국민연금/고용보험료/산재보험료/건강보험료 납부금액, 상품권 및 기프트카드 구매, 선불카드 및 선불전자지급수단(하나머니 등) 충전금액, 수도/전기요금, 아파트관리비, 부동산임대료, 스쿨뱅킹, 도시가스, 대학등록금, 대학원등록금, 초·중·고 학교납입금, 무이자 할부 매출"
+    ],
+    "benefitExclusions": [
+      "커피/편의점/디지털구독/주유,충전/쇼핑/생활요금 할인영역 서비스로 할인받은 매출 제외",
+      "가맹점 정보가 해당 업체가 아닌 결제대행업체(PG) 또는 간편결제 전용 가맹점으로 확인되는 경우 '결제대행업체' 또는 '간편결제' 가맹점으로 분류되어 서비스 대상에서 제외됨",
+      "청구할인 제외 대상 국세, 지방세, 공과금(인터넷/모바일앱을 통한 공과금 납부 금액 포함), 국민연금/고용보험료/산재보험료/건강보험료 납부금액, 상품권 및 기프트 카드 구매, 선불카드 및 선불전자지급수단(하나머니 등) 충전금액, 수도 요금, 자동이체 납부하지 않은 전기/도시가스요금, 아파트 관리비,부동산 임대료, 스쿨뱅킹, 대학등록금, 대학원등록금, 초·중·고 학교납입금, 무이자 할부 매출",
+      "대중교통 할인 제외 대상 : 시외버스, 고속버스 통신, 전기/도시가스 요금은 자동이체 이용건에 한하여 제공 통신 : 알뜰폰 통신요금 및 자동이체로 납부하지 않은 통신요금 제외 전기/도시가스 : 자동이체로 납부하지 않은 전기요금/도시가스 요금 제외 커피, 편의점 할인 제외 대상 : 대형시설물 입점 점포(백화점, 할인점, 쇼핑몰,휴게소, 공항, 호텔, 리조트) EV충전 적립 매출은 적립 대상 사업자 충전기에서 발생한 충전 요금에 한함 EV충전 적립 상세 가맹점은 하나카드 홈페이지(www.hanacard.co.kr)에서 반드시 확인하시기 바랍니다. 무이자 할부 국내 가맹점 2~3개월 무이자 할부",
+      "커피, 편의점 할인 제외 대상 : 대형시설물 입점 점포(백화점, 할인점, 쇼핑몰,휴게소, 공항, 호텔, 리조트) EV충전 적립 매출은 적립 대상 사업자 충전기에서 발생한 충전 요금에 한함 EV충전 적립 상세 가맹점은 하나카드 홈페이지(www.hanacard.co.kr)에서 반드시 확인하시기 바랍니다. 무이자 할부 국내 가맹점 2~3개월 무이자 할부 5만원 이상 결제건에 한함 카드 신청하기 카드바로발급이란? 레이어 닫기"
+    ],
+    "evidence": [
+      {
+        "field": "spendExclusions",
+        "excerpt": "2. 실적 제외 대상 커피/편의점/디지털구독/주유,충전/쇼핑/생활요금 할인영역 서비스로 할인받은 매출 제외 국세, 지방세, 공과금(인터넷/모바일앱을통한 공과금 납부금액 포함), 국민연금/고용보험료/산재보험료/건강보험료 납부금액, 상품권 및 기프트카드 구매, 선불카드 및 선불전자지급수단(하나머니 등) 충전금액, 수도/전기요금, 아파트관리비, 부동산임대료, 스쿨뱅킹, 도시가스, 대학등록금, 대학원등록금, 초·중·고 학교납입금, 무이자 할부 매출",
+        "line": 252,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=15446",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "커피/편의점/디지털구독/주유,충전/쇼핑/생활요금 할인영역 서비스로 할인받은 매출 제외",
+        "line": 253,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=15446",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "가맹점 정보가 해당 업체가 아닌 결제대행업체(PG) 또는 간편결제 전용 가맹점으로 확인되는 경우 '결제대행업체' 또는 '간편결제' 가맹점으로 분류되어 서비스 대상에서 제외됨",
+        "line": 263,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=15446",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "청구할인 제외 대상 국세, 지방세, 공과금(인터넷/모바일앱을 통한 공과금 납부 금액 포함), 국민연금/고용보험료/산재보험료/건강보험료 납부금액, 상품권 및 기프트 카드 구매, 선불카드 및 선불전자지급수단(하나머니 등) 충전금액, 수도 요금, 자동이체 납부하지 않은 전기/도시가스요금, 아파트 관리비,부동산 임대료, 스쿨뱅킹, 대학등록금, 대학원등록금, 초·중·고 학교납입금, 무이자 할부 매출",
+        "line": 267,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=15446",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "대중교통 할인 제외 대상 : 시외버스, 고속버스 통신, 전기/도시가스 요금은 자동이체 이용건에 한하여 제공 통신 : 알뜰폰 통신요금 및 자동이체로 납부하지 않은 통신요금 제외 전기/도시가스 : 자동이체로 납부하지 않은 전기요금/도시가스 요금 제외 커피, 편의점 할인 제외 대상 : 대형시설물 입점 점포(백화점, 할인점, 쇼핑몰,휴게소, 공항, 호텔, 리조트) EV충전 적립 매출은 적립 대상 사업자 충전기에서 발생한 충전 요금에 한함 EV충전 적립 상세 가맹점은 하나카드 홈페이지(www.hanacard.co.kr)에서 반드시 확인하시기 바랍니다. 무이자 할부 국내 가맹점 2~3개월 무이자 할부",
+        "line": 439,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=15446",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "커피, 편의점 할인 제외 대상 : 대형시설물 입점 점포(백화점, 할인점, 쇼핑몰,휴게소, 공항, 호텔, 리조트) EV충전 적립 매출은 적립 대상 사업자 충전기에서 발생한 충전 요금에 한함 EV충전 적립 상세 가맹점은 하나카드 홈페이지(www.hanacard.co.kr)에서 반드시 확인하시기 바랍니다. 무이자 할부 국내 가맹점 2~3개월 무이자 할부 5만원 이상 결제건에 한함 카드 신청하기 카드바로발급이란? 레이어 닫기",
+        "line": 443,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=15446",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=15446",
+        "resolvedUrl": "https://m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=15446",
+        "httpStatus": 200,
+        "contentType": "text/html;charset=EUC-KR",
+        "checkedAt": "2026-10-06",
+        "bytes": 314075,
+        "kind": "productPage",
+        "textLines": 585,
+        "spendSections": 1,
+        "benefitSections": 5
+      }
+    ],
+    "spendExclusionsStatus": "source_excerpt",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "hyundai-ampte2",
+    "name": "American Express The Platinum Card® Edition2",
+    "issuer": "현대카드",
+    "checkedAt": "2026-10-06",
+    "status": "partial",
+    "spendExclusions": [],
+    "benefitExclusions": [
+      "* 본인 카드 소지 시 혜택 제공(가족 카드 제외)"
+    ],
+    "evidence": [
+      {
+        "field": "benefitExclusions",
+        "excerpt": "* 본인 카드 소지 시 혜택 제공(가족 카드 제외)",
+        "line": 22,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03186",
+        "checkedAt": "2026-10-06",
+        "documentKind": "terms"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=AMPTE2",
+        "resolvedUrl": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=AMPTE2",
+        "httpStatus": 200,
+        "contentType": "text/html;charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 185916,
+        "kind": "productPage",
+        "textLines": 67,
+        "spendSections": 0,
+        "benefitSections": 0
+      },
+      {
+        "url": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03186",
+        "resolvedUrl": "https://www.hyundaicard.com/upload/card/26%EB%85%84%20AMEX%20THE%20PLATINUM_PLATINUM%20Ed2_2607.pdf",
+        "httpStatus": 200,
+        "contentType": "application/pdf",
+        "checkedAt": "2026-10-06",
+        "bytes": 817655,
+        "kind": "terms",
+        "textLines": 334,
+        "spendSections": 0,
+        "benefitSections": 1
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "ibk-756118",
+    "name": "AK IBK 체크카드",
+    "issuer": "IBK기업은행",
+    "checkedAt": "2026-10-06",
+    "status": "verified",
+    "spendExclusions": [
+      "단, 주유(유류, LPG포함), 제세공과금, 등록금, 상품권 구매금액, 교통카드 이용실적 제외",
+      "단, 제세공과금, 상품권 구입액, 교통카드 이용실적은 제외",
+      "카드수령일로부터 익월말까지 이용실적과 관계없이 제공하고, 이후부터는 전월(1일~말일) 국내가맹점(일시불/할부) 이용실적이 30만원 이상인 경우 제공. 단, 제세공과금, 상품권 구매금액, 교통카드 이용금액은 제외"
+    ],
+    "benefitExclusions": [
+      "- 백화점 및 할인(아울렛)점 입점 매장은 제외될 수 있음",
+      "- 상품권 구매금액은 할인 제외",
+      "- 상품권 구매 금액은 할인 제외"
+    ],
+    "evidence": [
+      {
+        "field": "spendExclusions",
+        "excerpt": "단, 주유(유류, LPG포함), 제세공과금, 등록금, 상품권 구매금액, 교통카드 이용실적 제외",
+        "line": 245,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756118&mbkNo=003",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "- 백화점 및 할인(아울렛)점 입점 매장은 제외될 수 있음",
+        "line": 269,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756118&mbkNo=003",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "- 상품권 구매금액은 할인 제외",
+        "line": 270,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756118&mbkNo=003",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "- 상품권 구매 금액은 할인 제외",
+        "line": 282,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756118&mbkNo=003",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "spendExclusions",
+        "excerpt": "단, 제세공과금, 상품권 구입액, 교통카드 이용실적은 제외",
+        "line": 327,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756118&mbkNo=003",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "spendExclusions",
+        "excerpt": "카드수령일로부터 익월말까지 이용실적과 관계없이 제공하고, 이후부터는 전월(1일~말일) 국내가맹점(일시불/할부) 이용실적이 30만원 이상인 경우 제공. 단, 제세공과금, 상품권 구매금액, 교통카드 이용금액은 제외",
+        "line": 412,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756118&mbkNo=003",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756118&mbkNo=003",
+        "resolvedUrl": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756118&mbkNo=003",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 72087,
+        "kind": "productPage",
+        "textLines": 416,
+        "spendSections": 3,
+        "benefitSections": 3
+      }
+    ],
+    "spendExclusionsStatus": "source_excerpt",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "im-310402",
+    "name": "DGB 단디 그린체크카드",
+    "issuer": "iM뱅크",
+    "checkedAt": "2026-10-06",
+    "status": "verified",
+    "spendExclusions": [
+      "- 전월 이용실적 20만원(후불교통 이용금액 제외) 이상시 월 10회 면제",
+      "영화할인, 외식할인, 놀이공원할인, 프로스포츠할인, 서적할인, 금융수수료 감면서비스는 전월 국내가맹점 이용실적이 20만원(후불교통 이용금액 제외)이상인 경우에 제공됩니다."
+    ],
+    "benefitExclusions": [
+      "(단, 금융수수료 감면서비스 및 놀이공원 할인/무료입장 서비스는 제외)"
+    ],
+    "evidence": [
+      {
+        "field": "spendExclusions",
+        "excerpt": "- 전월 이용실적 20만원(후불교통 이용금액 제외) 이상시 월 10회 면제",
+        "line": 283,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=310402&mbkNo=031",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "spendExclusions",
+        "excerpt": "영화할인, 외식할인, 놀이공원할인, 프로스포츠할인, 서적할인, 금융수수료 감면서비스는 전월 국내가맹점 이용실적이 20만원(후불교통 이용금액 제외)이상인 경우에 제공됩니다.",
+        "line": 453,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=310402&mbkNo=031",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "(단, 금융수수료 감면서비스 및 놀이공원 할인/무료입장 서비스는 제외)",
+        "line": 455,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=310402&mbkNo=031",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=310402&mbkNo=031",
+        "resolvedUrl": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=310402&mbkNo=031",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 82187,
+        "kind": "productPage",
+        "textLines": 462,
+        "spendSections": 2,
+        "benefitSections": 1
+      }
+    ],
+    "spendExclusionsStatus": "source_excerpt",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "internet-10",
+    "name": "KT멤버십 더블혜택 체크카드",
+    "issuer": "케이뱅크",
+    "checkedAt": "2026-10-06",
+    "status": "verified",
+    "spendExclusions": [
+      "전월이용금액은 전월 1일부터 말일까지 국내가맹점 이용금액을 합산하여 산정하며 전월이용금액 산정 시 대학등록금, 아파트관리비, 상품권 및 기프트카드 결제금액, 제세공과금, 사회보험료, 교통카드 이용금액은 제외됩니다."
+    ],
+    "benefitExclusions": [
+      "해당카드로 KT멤버십 할인적용 및 잔여금액 결제를 동시에 진행한 건들에 대해 적용된 멤버십 혜택금액만큼 결제계좌로 캐시백 됩니다. 단, 결제가 동반되지 않은 할인, 쿠폰할인은 제외 됩니다.",
+      "은행의 노력에도 제휴업체가 일방적으로 부가서비스 변경을 통보한 경우(단, 다른 제휴업체를 통해 유사한 수준의 부가서비스 제공이 가능한 경우는 제외)"
+    ],
+    "evidence": [
+      {
+        "field": "benefitExclusions",
+        "excerpt": "해당카드로 KT멤버십 할인적용 및 잔여금액 결제를 동시에 진행한 건들에 대해 적용된 멤버십 혜택금액만큼 결제계좌로 캐시백 됩니다. 단, 결제가 동반되지 않은 할인, 쿠폰할인은 제외 됩니다.",
+        "line": 246,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.kbanknow.com/web/product/card/kt-membership-card",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "spendExclusions",
+        "excerpt": "전월이용금액은 전월 1일부터 말일까지 국내가맹점 이용금액을 합산하여 산정하며 전월이용금액 산정 시 대학등록금, 아파트관리비, 상품권 및 기프트카드 결제금액, 제세공과금, 사회보험료, 교통카드 이용금액은 제외됩니다.",
+        "line": 264,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.kbanknow.com/web/product/card/kt-membership-card",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "은행의 노력에도 제휴업체가 일방적으로 부가서비스 변경을 통보한 경우(단, 다른 제휴업체를 통해 유사한 수준의 부가서비스 제공이 가능한 경우는 제외)",
+        "line": 315,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.kbanknow.com/web/product/card/kt-membership-card",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.kbanknow.com/web/product/card/kt-membership-card",
+        "resolvedUrl": "https://www.kbanknow.com/web/product/card/kt-membership-card",
+        "httpStatus": 200,
+        "contentType": "text/html",
+        "checkedAt": "2026-10-06",
+        "bytes": 197514,
+        "kind": "productPage",
+        "textLines": 328,
+        "spendSections": 1,
+        "benefitSections": 2
+      }
+    ],
+    "spendExclusionsStatus": "source_excerpt",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "internet-2",
+    "name": "개인사업자 체크카드",
+    "issuer": "카카오뱅크",
+    "checkedAt": "2026-10-06",
+    "status": "verified",
+    "spendExclusions": [
+      "전월 이용실적 제외 대상 대학(대학원) 등록금, 각종 수수료 및 이자, 상품권/기프티콘/선불카드/선불전자지급수단 등 유가증권 구매/충전 금액, 선물하기(상품권업종), 정부지원금, 사회보험료, 제세공과금(국세, 지방세, 아파트관리비, 도시가스/전기/상하수도 요금 등), 교통카드/RF유통기관 이용금액, 연체료, 결제취소금액 해외이용 및 후불교통 안내 해외이용 · 해외 이용 시(해외 사이트 및 해외 ATM 포함) 미화(USD) 기준"
+    ],
+    "benefitExclusions": [
+      "· 캐시백은 KB국민카드에 등록된 가맹점 업종코드를 기준으로 제공되며, 결제한 가맹점 정보가 실제와 다른 경우 캐시백 대상에 포함되거나 제외될 수 있습니다.",
+      "캐시백 제외 대상 대학(대학원) 등록금, 각종 수수료 및 이자, 상품권/기프티콘/선불카드/선불전자지급수단 등 유가증권 구매/충전 금액, 선물하기(상품권업종), 정부지원금, 사회보험료, 제세공과금(국세, 지방세, 아파트관리비, 도시가스/전기/상하수도 요금 등), 교통카드/RF유통기관 이용금액, 연체료, 결제취소금액 상품 상세정보 상품안내 상품명"
+    ],
+    "evidence": [
+      {
+        "field": "benefitExclusions",
+        "excerpt": "· 캐시백은 KB국민카드에 등록된 가맹점 업종코드를 기준으로 제공되며, 결제한 가맹점 정보가 실제와 다른 경우 캐시백 대상에 포함되거나 제외될 수 있습니다.",
+        "line": 79,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.kakaobank.com/products/sohoCheckCard",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "캐시백 제외 대상 대학(대학원) 등록금, 각종 수수료 및 이자, 상품권/기프티콘/선불카드/선불전자지급수단 등 유가증권 구매/충전 금액, 선물하기(상품권업종), 정부지원금, 사회보험료, 제세공과금(국세, 지방세, 아파트관리비, 도시가스/전기/상하수도 요금 등), 교통카드/RF유통기관 이용금액, 연체료, 결제취소금액 상품 상세정보 상품안내 상품명",
+        "line": 84,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://www.kakaobank.com/products/sohoCheckCard",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "spendExclusions",
+        "excerpt": "전월 이용실적 제외 대상 대학(대학원) 등록금, 각종 수수료 및 이자, 상품권/기프티콘/선불카드/선불전자지급수단 등 유가증권 구매/충전 금액, 선물하기(상품권업종), 정부지원금, 사회보험료, 제세공과금(국세, 지방세, 아파트관리비, 도시가스/전기/상하수도 요금 등), 교통카드/RF유통기관 이용금액, 연체료, 결제취소금액 해외이용 및 후불교통 안내 해외이용 · 해외 이용 시(해외 사이트 및 해외 ATM 포함) 미화(USD) 기준",
+        "line": 112,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://www.kakaobank.com/products/sohoCheckCard",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.kakaobank.com/products/sohoCheckCard",
+        "resolvedUrl": "https://www.kakaobank.com/products/sohoCheckCard",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 78062,
+        "kind": "productPage",
+        "textLines": 174,
+        "spendSections": 1,
+        "benefitSections": 2
+      }
+    ],
+    "spendExclusionsStatus": "source_excerpt",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "internet-4",
+    "name": "토스뱅크 K-패스 체크카드",
+    "issuer": "토스뱅크",
+    "checkedAt": "2026-10-06",
+    "status": "missing",
+    "spendExclusions": [],
+    "benefitExclusions": [],
+    "evidence": [],
+    "documents": [
+      {
+        "url": "https://www.tossbank.com/card/k-pass",
+        "resolvedUrl": "https://www.tossbank.com/card/k-pass",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 236656,
+        "kind": "productPage",
+        "textLines": 43,
+        "spendSections": 0,
+        "benefitSections": 0
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "not_confirmed",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "jb-debit-5",
+    "name": "1ST TRIPLE 체크(기본)",
+    "issuer": "전북은행",
+    "checkedAt": "2026-10-06",
+    "status": "missing",
+    "spendExclusions": [],
+    "benefitExclusions": [],
+    "evidence": [],
+    "documents": [
+      {
+        "url": "https://m.jbbank.co.kr/JBN/P_M_CARD_MALL",
+        "checkedAt": "2026-10-06",
+        "error": "IncompleteRead(0 bytes read)",
+        "kind": "productPage",
+        "textLines": 0,
+        "spendSections": 0,
+        "benefitSections": 0,
+        "identityWarning": "Shared catalog page does not identify this product."
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "not_confirmed",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "kb-04444",
+    "name": "AK KB국민카드",
+    "issuer": "KB국민카드",
+    "checkedAt": "2026-10-06",
+    "status": "verified",
+    "spendExclusions": [
+      "전월 실적 제외 대상 AK KB국민카드로 할인 매출 건(해당매출 전체, 단 현장할인 제외) 단기카드대출(현금서비스), 장기카드대출(카드론), 각종 세금 및 공과금, 각종 수수료 및 이자, 연체료, 연회비, 상품권 및 선불카드 구입/충전금액, 취소금액"
+    ],
+    "benefitExclusions": [
+      "AK PLAZA내 이용 시 멤버스 마일리지 0.2% 적립(AK mall제외 단 AK가 제공하는 기본 멤버스 마일리지는 제공)",
+      "가맹점 정보가 해당 업체가 아닌 결제대행업체(PG) 전용 가맹점으로 확인되는 경우 '결제대행업체'로 분류되어 할인 대상에서 제외됩니다.",
+      "호텔, 백화점, 대형마트, 철도역사 등에 입점한 가맹점이나 상품권 구매시 할인 대상에서 제외됩니다.",
+      "가맹점이 복수의 가맹점 업종을 소유하여 카드결제가 승인된 가맹점의 혜택 제공업종에 해당되지 않는 경우, 할인 대상에서 제외 됩니다.",
+      "할인(적립)서비스 제외매출 할인(적립) 서비스 제외매출은 다음과 같으며, 카드별 별도 조건은 해당 카드 안내를 참조하시기 바랍니다. 무이자할부 이용금액, 단기카드대출(현금서비스), 장기카드대출(카드론), 지방세, 정부지원금, 대학(대학원)등록금, 각종 수수료 및 이자, 연체료, 연회비, 상품권 및 선불카드(선불전자지급수단 포함) 구입/충전금액, 취소금액 연체이자율 연체이자율 : 회원별/이용상품별 정상이자율 +3%p, 최고 연 20% 단, 연체발생시점에 정상이자율이 없는 경우 아래와 같이 적용함 일시불 거래 연체시 : 거래발생시점의 최소기간(2개월) 유이자 할부 수수료율 적용 무이자할부 거래 연체시 : 거래발생시점의 동일한 할부계약기간의 유이자할부수수료율 적용 그 외의 경우: 정상이자율은 상법상 상사법정이율과 상호금융 가계자금대출금리* 중 높은 금리 적용",
+      "할인(적립) 서비스 제외매출은 다음과 같으며, 카드별 별도 조건은 해당 카드 안내를 참조하시기 바랍니다. 무이자할부 이용금액, 단기카드대출(현금서비스), 장기카드대출(카드론), 지방세, 정부지원금, 대학(대학원)등록금, 각종 수수료 및 이자, 연체료, 연회비, 상품권 및 선불카드(선불전자지급수단 포함) 구입/충전금액, 취소금액 연체이자율 연체이자율 : 회원별/이용상품별 정상이자율 +3%p, 최고 연 20% 단, 연체발생시점에 정상이자율이 없는 경우 아래와 같이 적용함 일시불 거래 연체시 : 거래발생시점의 최소기간(2개월) 유이자 할부 수수료율 적용 무이자할부 거래 연체시 : 거래발생시점의 동일한 할부계약기간의 유이자할부수수료율 적용 그 외의 경우: 정상이자율은 상법상 상사법정이율과 상호금융 가계자금대출금리* 중 높은 금리 적용 * 한국은행에서 매월 발표하는 가장 최근의 비은행 금융기관 가중평균대출금리(신규대출 기준)",
+      "AK KB국민카드로 할인 매출 건(해당매출 전체, 단 현장할인 제외) 단기카드대출(현금서비스), 장기카드대출(카드론), 각종 세금 및 공과금, 각종 수수료 및 이자, 연체료, 연회비, 상품권 및 선불카드 구입/충전금액, 취소금액",
+      "할인 제외 대상 상품권 및 선불카드 구입/충전금액 기타 AK KB국민카드는 본인 회원 기준으로 월간 할인한도가 제공되며, 할인한도는 매월 1일~말일까지(승인시점 기준) 이용금액으로 적용됩니다. 월간 잔여할인한도는 이월되지 않습니다. 할인 받은 이용 건을 취소할 경우 취소전표가 실시간 접수되지 않아 할인 한도가 즉시 복원되지 않을 수 있습니다. AK KB국민카드의 할인서비스는 해당 가맹점이 KB국민카드의 가맹점 업종코드상 할인 대상 가맹점 업종으로 등록된 경우에 한하여 제공됩니다. AK KB국민카드는 기본 포인트리가 적립되지 않습니다. 단, KB국민카드 스타샵 가맹점에서 제공해드리는 포인트리는 적립됩니다. 결제계좌 개설기관의 영업 마감시간(16시) 이후 결제계좌에 입금된 금액에 대해서는 결제계좌 개설 기관의 사정에 따라 당일 출금되지 못하여 연체로 처리될 수 있으므로 유의하시기 바랍니다. 자동이체 업무 마감시간 이후 당사 홈페이지/모바일* 등에서 바로출금(즉시결제) 또는 가상계좌 입금(송금납부)을 통해 당일 결제가 가능합니다. 세부내용 : KB국민카드 홈페이지 > MY KB > 바로출금 또는 가상계좌 참조",
+      "Master 1.0%)와 KB국민카드가 부과하는 해외서비스 수수료(0.25%)를 포함하여 원화로 청구됩니다.이 경우 KB국민카드의 해외서비스 수수료는 국제 브랜드 수수료를 제외하고 산정됩니다.",
+      "( 단, 해외 이용 단기 카드대출(현금서비스)는 할인 제외)",
+      "AK KB국민카드(2017년 10월 24일 출시)를 이용하는 경우 제공되는 포인트 및 할인혜택 등의 부가서비스는 다음 각 호를 제외하고는 변경할 수 없습니다.(단, 회원의 권익을 증진하거나 부담을 완화하는 경우는 제외합니다)."
+    ],
+    "evidence": [
+      {
+        "field": "benefitExclusions",
+        "excerpt": "AK PLAZA내 이용 시 멤버스 마일리지 0.2% 적립(AK mall제외 단 AK가 제공하는 기본 멤버스 마일리지는 제공)",
+        "line": 1383,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "가맹점 정보가 해당 업체가 아닌 결제대행업체(PG) 전용 가맹점으로 확인되는 경우 '결제대행업체'로 분류되어 할인 대상에서 제외됩니다.",
+        "line": 1441,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "호텔, 백화점, 대형마트, 철도역사 등에 입점한 가맹점이나 상품권 구매시 할인 대상에서 제외됩니다.",
+        "line": 1443,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "가맹점이 복수의 가맹점 업종을 소유하여 카드결제가 승인된 가맹점의 혜택 제공업종에 해당되지 않는 경우, 할인 대상에서 제외 됩니다.",
+        "line": 1446,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "할인(적립)서비스 제외매출 할인(적립) 서비스 제외매출은 다음과 같으며, 카드별 별도 조건은 해당 카드 안내를 참조하시기 바랍니다. 무이자할부 이용금액, 단기카드대출(현금서비스), 장기카드대출(카드론), 지방세, 정부지원금, 대학(대학원)등록금, 각종 수수료 및 이자, 연체료, 연회비, 상품권 및 선불카드(선불전자지급수단 포함) 구입/충전금액, 취소금액 연체이자율 연체이자율 : 회원별/이용상품별 정상이자율 +3%p, 최고 연 20% 단, 연체발생시점에 정상이자율이 없는 경우 아래와 같이 적용함 일시불 거래 연체시 : 거래발생시점의 최소기간(2개월) 유이자 할부 수수료율 적용 무이자할부 거래 연체시 : 거래발생시점의 동일한 할부계약기간의 유이자할부수수료율 적용 그 외의 경우: 정상이자율은 상법상 상사법정이율과 상호금융 가계자금대출금리* 중 높은 금리 적용",
+        "line": 1452,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "할인(적립) 서비스 제외매출은 다음과 같으며, 카드별 별도 조건은 해당 카드 안내를 참조하시기 바랍니다. 무이자할부 이용금액, 단기카드대출(현금서비스), 장기카드대출(카드론), 지방세, 정부지원금, 대학(대학원)등록금, 각종 수수료 및 이자, 연체료, 연회비, 상품권 및 선불카드(선불전자지급수단 포함) 구입/충전금액, 취소금액 연체이자율 연체이자율 : 회원별/이용상품별 정상이자율 +3%p, 최고 연 20% 단, 연체발생시점에 정상이자율이 없는 경우 아래와 같이 적용함 일시불 거래 연체시 : 거래발생시점의 최소기간(2개월) 유이자 할부 수수료율 적용 무이자할부 거래 연체시 : 거래발생시점의 동일한 할부계약기간의 유이자할부수수료율 적용 그 외의 경우: 정상이자율은 상법상 상사법정이율과 상호금융 가계자금대출금리* 중 높은 금리 적용 * 한국은행에서 매월 발표하는 가장 최근의 비은행 금융기관 가중평균대출금리(신규대출 기준)",
+        "line": 1453,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "spendExclusions",
+        "excerpt": "전월 실적 제외 대상 AK KB국민카드로 할인 매출 건(해당매출 전체, 단 현장할인 제외) 단기카드대출(현금서비스), 장기카드대출(카드론), 각종 세금 및 공과금, 각종 수수료 및 이자, 연체료, 연회비, 상품권 및 선불카드 구입/충전금액, 취소금액",
+        "line": 1483,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "AK KB국민카드로 할인 매출 건(해당매출 전체, 단 현장할인 제외) 단기카드대출(현금서비스), 장기카드대출(카드론), 각종 세금 및 공과금, 각종 수수료 및 이자, 연체료, 연회비, 상품권 및 선불카드 구입/충전금액, 취소금액",
+        "line": 1484,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "할인 제외 대상 상품권 및 선불카드 구입/충전금액 기타 AK KB국민카드는 본인 회원 기준으로 월간 할인한도가 제공되며, 할인한도는 매월 1일~말일까지(승인시점 기준) 이용금액으로 적용됩니다. 월간 잔여할인한도는 이월되지 않습니다. 할인 받은 이용 건을 취소할 경우 취소전표가 실시간 접수되지 않아 할인 한도가 즉시 복원되지 않을 수 있습니다. AK KB국민카드의 할인서비스는 해당 가맹점이 KB국민카드의 가맹점 업종코드상 할인 대상 가맹점 업종으로 등록된 경우에 한하여 제공됩니다. AK KB국민카드는 기본 포인트리가 적립되지 않습니다. 단, KB국민카드 스타샵 가맹점에서 제공해드리는 포인트리는 적립됩니다. 결제계좌 개설기관의 영업 마감시간(16시) 이후 결제계좌에 입금된 금액에 대해서는 결제계좌 개설 기관의 사정에 따라 당일 출금되지 못하여 연체로 처리될 수 있으므로 유의하시기 바랍니다. 자동이체 업무 마감시간 이후 당사 홈페이지/모바일* 등에서 바로출금(즉시결제) 또는 가상계좌 입금(송금납부)을 통해 당일 결제가 가능합니다. 세부내용 : KB국민카드 홈페이지 > MY KB > 바로출금 또는 가상계좌 참조",
+        "line": 1485,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "Master 1.0%)와 KB국민카드가 부과하는 해외서비스 수수료(0.25%)를 포함하여 원화로 청구됩니다.이 경우 KB국민카드의 해외서비스 수수료는 국제 브랜드 수수료를 제외하고 산정됩니다.",
+        "line": 1497,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "( 단, 해외 이용 단기 카드대출(현금서비스)는 할인 제외)",
+        "line": 1503,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "AK KB국민카드(2017년 10월 24일 출시)를 이용하는 경우 제공되는 포인트 및 할인혜택 등의 부가서비스는 다음 각 호를 제외하고는 변경할 수 없습니다.(단, 회원의 권익을 증진하거나 부담을 완화하는 경우는 제외합니다).",
+        "line": 1508,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "resolvedUrl": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 389675,
+        "kind": "productPage",
+        "textLines": 1756,
+        "spendSections": 1,
+        "benefitSections": 11
+      }
+    ],
+    "spendExclusionsStatus": "source_excerpt",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "kj-CDR20191107001",
+    "name": "1st A - Check 카드",
+    "issuer": "광주은행",
+    "checkedAt": "2026-10-06",
+    "status": "verified",
+    "spendExclusions": [
+      "캐시백 제외 및 전월실적 제외 대상 제수수료(SMS수수료, 해외사용수수료 등), 상품권, 선불카드 구입·충전금액, 아파트관리비, 국세, 지방세, 공과금, 4대보험, 각종 등록금(대학(원),초,중,고) 캐시백 지급일자 캐시백은 익월 10일(휴일인 경우 익영업일)에 결제계좌로 지급됩니다. 추가 캐시백 + 특별 캐시백 월간 통합 캐시백 한도"
+    ],
+    "benefitExclusions": [
+      "가맹점이 해당 업종으로 등록되어 있지 않은 경우 서비스 적용 제외됩니다.",
+      "해외 이용 시(해외사이트 거래 포함) 미화(USD)기준 거래금액에 접수일의 광주은행 최초고시 전신환 매도율을 적용한 후, 국제브랜드사가 부과하는 국제브랜드 수수료(Master 1%)와 KJ카드가 부과하는 해외서비스수수료(0.2%)를 포함하여 원화로 청구됩니다. 이 경우 KJ카드의 해외서비스 수수료는 국제브랜드수수료를 제외하고 산정됩니다."
+    ],
+    "evidence": [
+      {
+        "field": "spendExclusions",
+        "excerpt": "캐시백 제외 및 전월실적 제외 대상 제수수료(SMS수수료, 해외사용수수료 등), 상품권, 선불카드 구입·충전금액, 아파트관리비, 국세, 지방세, 공과금, 4대보험, 각종 등록금(대학(원),초,중,고) 캐시백 지급일자 캐시백은 익월 10일(휴일인 경우 익영업일)에 결제계좌로 지급됩니다. 추가 캐시백 + 특별 캐시백 월간 통합 캐시백 한도",
+        "line": 106,
+        "isFullPolicySection": true,
+        "sourceUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20191107001",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "가맹점이 해당 업종으로 등록되어 있지 않은 경우 서비스 적용 제외됩니다.",
+        "line": 120,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20191107001",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "해외 이용 시(해외사이트 거래 포함) 미화(USD)기준 거래금액에 접수일의 광주은행 최초고시 전신환 매도율을 적용한 후, 국제브랜드사가 부과하는 국제브랜드 수수료(Master 1%)와 KJ카드가 부과하는 해외서비스수수료(0.2%)를 포함하여 원화로 청구됩니다. 이 경우 KJ카드의 해외서비스 수수료는 국제브랜드수수료를 제외하고 산정됩니다.",
+        "line": 131,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20191107001",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20191107001",
+        "resolvedUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20191107001",
+        "httpStatus": 200,
+        "contentType": "text/html;charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 85489,
+        "kind": "productPage",
+        "textLines": 203,
+        "spendSections": 1,
+        "benefitSections": 2
+      }
+    ],
+    "spendExclusionsStatus": "source_excerpt",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "kn-0000204104",
+    "name": "ANY카드",
+    "issuer": "경남은행",
+    "checkedAt": "2026-10-06",
+    "status": "partial",
+    "spendExclusions": [],
+    "benefitExclusions": [
+      "· 할인제외업종 : 무이자할부, 제세공과금, 초중고교납입금, 대학등록금, 수수료, 이자, 연회비, 상품권"
+    ],
+    "evidence": [
+      {
+        "field": "benefitExclusions",
+        "excerpt": "· 할인제외업종 : 무이자할부, 제세공과금, 초중고교납입금, 대학등록금, 수수료, 이자, 연회비, 상품권",
+        "line": 474,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.knbank.co.kr/ib20/mnu/FPMCRD060101000?FNC_PRD_DIS_CD=05&FNC_PRD_NO=0000204104&ib20_wc=FPMCRD210LSTV00M%3AFPMCRD220DETV00M",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.knbank.co.kr/ib20/mnu/FPMCRD060101000?FNC_PRD_DIS_CD=05&FNC_PRD_NO=0000204104&ib20_wc=FPMCRD210LSTV00M%3AFPMCRD220DETV00M",
+        "resolvedUrl": "https://www.knbank.co.kr/ib20/mnu/FPMCRD060101000?FNC_PRD_DIS_CD=05&FNC_PRD_NO=0000204104&ib20_wc=FPMCRD210LSTV00M%3AFPMCRD220DETV00M",
+        "httpStatus": 200,
+        "contentType": "text/html;charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 222138,
+        "kind": "productPage",
+        "textLines": 618,
+        "spendSections": 0,
+        "benefitSections": 1
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "lotte-P02117-A02117",
+    "name": "B롯데카드",
+    "issuer": "롯데카드",
+    "checkedAt": "2026-10-06",
+    "status": "verified",
+    "spendExclusions": [
+      "상기 이용금액기준은 전월 청구서상 'B롯데카드' 이용금액(일시불,할부)에 따라 당월(1일~말일) 할인율 및 할인한도가 적용됩니다.(단, 단기카드대출(현금서비스) 및 장기카드대출(카드론) 제외)",
+      "지난달(1일~말일) 일시불 및 할부 이용실적이 20만원 이상 시 혜택 제공/장기카드 대출(카드론)제외"
+    ],
+    "benefitExclusions": [
+      "롯데면세점 5~10%, 신라아이파크면세점 10~15% 현장할인(일부브랜드 제외)",
+      "백화점,대형마트(몰),호텔 내 입점 매장은 할인 대상에서 제외되오니 매장에 사전 확인하시기 바랍니다.",
+      "단, 롯데카드에서 제공하는 L.POINT 및 SK주유포인트 적립 서비스 제외"
+    ],
+    "evidence": [
+      {
+        "field": "spendExclusions",
+        "excerpt": "상기 이용금액기준은 전월 청구서상 'B롯데카드' 이용금액(일시불,할부)에 따라 당월(1일~말일) 할인율 및 할인한도가 적용됩니다.(단, 단기카드대출(현금서비스) 및 장기카드대출(카드론) 제외)",
+        "line": 229,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P02117-A02117",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "롯데면세점 5~10%, 신라아이파크면세점 10~15% 현장할인(일부브랜드 제외)",
+        "line": 239,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P02117-A02117",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "spendExclusions",
+        "excerpt": "지난달(1일~말일) 일시불 및 할부 이용실적이 20만원 이상 시 혜택 제공/장기카드 대출(카드론)제외",
+        "line": 259,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P02117-A02117",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "백화점,대형마트(몰),호텔 내 입점 매장은 할인 대상에서 제외되오니 매장에 사전 확인하시기 바랍니다.",
+        "line": 260,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P02117-A02117",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      },
+      {
+        "field": "benefitExclusions",
+        "excerpt": "단, 롯데카드에서 제공하는 L.POINT 및 SK주유포인트 적립 서비스 제외",
+        "line": 280,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P02117-A02117",
+        "checkedAt": "2026-10-06",
+        "documentKind": "productPage"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P02117-A02117",
+        "resolvedUrl": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P02117-A02117",
+        "httpStatus": 200,
+        "contentType": "text/html;charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 206148,
+        "kind": "productPage",
+        "textLines": 446,
+        "spendSections": 2,
+        "benefitSections": 3
+      }
+    ],
+    "spendExclusionsStatus": "source_excerpt",
+    "benefitExclusionsStatus": "source_excerpt",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "nh-90000233",
+    "name": "#ing(샵핑)카드",
+    "issuer": "NH농협카드",
+    "checkedAt": "2026-10-06",
+    "status": "missing",
+    "spendExclusions": [],
+    "benefitExclusions": [],
+    "evidence": [],
+    "documents": [
+      {
+        "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90000233&WRS_TUP_C=M11001",
+        "resolvedUrl": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90000233&WRS_TUP_C=M11001",
+        "httpStatus": 200,
+        "contentType": "text/html;charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 198652,
+        "kind": "productPage",
+        "textLines": 825,
+        "spendSections": 0,
+        "benefitSections": 0
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "not_confirmed",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "post-everrich",
+    "name": "에버리치 삼성체크카드",
+    "issuer": "우체국예금",
+    "checkedAt": "2026-10-06",
+    "status": "missing",
+    "spendExclusions": [],
+    "benefitExclusions": [],
+    "evidence": [],
+    "documents": [
+      {
+        "url": "https://mall.epostbank.go.kr/IPCDCC0003.do",
+        "resolvedUrl": "https://mall.epostbank.go.kr/IPCDCC0003.do",
+        "httpStatus": 200,
+        "contentType": "text/html;charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 87831,
+        "kind": "productPage",
+        "textLines": 75,
+        "spendSections": 0,
+        "benefitSections": 0
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "not_confirmed",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "samsung-aap1671",
+    "name": "American Express Blue",
+    "issuer": "삼성카드",
+    "checkedAt": "2026-10-06",
+    "status": "missing",
+    "spendExclusions": [],
+    "benefitExclusions": [],
+    "evidence": [],
+    "documents": [
+      {
+        "url": "https://www.samsungcard.com/home/card/cardinfo/PGHPPCCCardCardinfoDetails001?code=AAP1671",
+        "resolvedUrl": "https://www.samsungcard.com/home/card/cardinfo/PGHPPCCCardCardinfoDetails001?code=AAP1671",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 303005,
+        "kind": "productPage",
+        "textLines": 56,
+        "spendSections": 0,
+        "benefitSections": 0
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "not_confirmed",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "sc-4753",
+    "name": "SC제일은행 글로벌 삼성체크카드",
+    "issuer": "SC제일은행",
+    "checkedAt": "2026-10-06",
+    "status": "partial",
+    "spendExclusions": [
+      "* 전월 이용금액 산정 시, 국내외 CD/ATM(입출금기) 인출금액은 제외됩니다."
+    ],
+    "benefitExclusions": [],
+    "evidence": [
+      {
+        "field": "spendExclusions",
+        "excerpt": "* 전월 이용금액 산정 시, 국내외 CD/ATM(입출금기) 인출금액은 제외됩니다.",
+        "line": 71,
+        "isFullPolicySection": false,
+        "sourceUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218278_S_ch_Global.pdf",
+        "checkedAt": "2026-10-06",
+        "documentKind": "terms"
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.standardchartered.co.kr/np/kr/pl/cd/CardDetail.jsp?cardKind=2&id=4753",
+        "resolvedUrl": "https://www.standardchartered.co.kr/np/kr/pl/cd/CardDetail.jsp?cardKind=2&id=4753",
+        "httpStatus": 200,
+        "contentType": "text/html;charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 222925,
+        "kind": "productPage",
+        "textLines": 20,
+        "spendSections": 0,
+        "benefitSections": 0
+      },
+      {
+        "url": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218278_S_ch_Global.pdf",
+        "resolvedUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218278_S_ch_Global.pdf",
+        "httpStatus": 200,
+        "contentType": "application/pdf",
+        "checkedAt": "2026-10-06",
+        "bytes": 288874,
+        "kind": "terms",
+        "textLines": 177,
+        "spendSections": 1,
+        "benefitSections": 0
+      }
+    ],
+    "spendExclusionsStatus": "source_excerpt",
+    "benefitExclusionsStatus": "not_confirmed",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "shinhan-202102250001",
+    "name": "(대전신세계 엑스포점)신세계 신한카드",
+    "issuer": "신한카드",
+    "checkedAt": "2026-10-06",
+    "status": "missing",
+    "spendExclusions": [],
+    "benefitExclusions": [],
+    "evidence": [],
+    "documents": [
+      {
+        "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1200588_2207.html",
+        "resolvedUrl": "https://www.shinhancard.com/pconts/html/card/apply/credit/1200588_2207.html",
+        "httpStatus": 200,
+        "contentType": "text/html",
+        "checkedAt": "2026-10-06",
+        "bytes": 43525,
+        "kind": "productPage",
+        "textLines": 168,
+        "spendSections": 0,
+        "benefitSections": 0
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "not_confirmed",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "suhyup-941",
+    "name": "All드림",
+    "issuer": "수협은행",
+    "checkedAt": "2026-10-06",
+    "status": "missing",
+    "spendExclusions": [],
+    "benefitExclusions": [],
+    "evidence": [],
+    "documents": [
+      {
+        "url": "https://www.suhyup-bank.com/ib20/mnu/FPD00040",
+        "resolvedUrl": "https://www.suhyup-bank.com/ib20/mnu/FPD00040",
+        "httpStatus": 200,
+        "contentType": "text/html;charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 142184,
+        "kind": "productPage",
+        "textLines": 301,
+        "spendSections": 0,
+        "benefitSections": 0
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "not_confirmed",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  },
+  {
+    "id": "woori-103187",
+    "name": "ALL 우리카드 Infinite",
+    "issuer": "우리카드",
+    "checkedAt": "2026-10-06",
+    "status": "missing",
+    "spendExclusions": [],
+    "benefitExclusions": [],
+    "evidence": [],
+    "documents": [
+      {
+        "url": "https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD101S02.do?cdPrdCd=103187",
+        "resolvedUrl": "https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD101S02.do?cdPrdCd=103187",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "checkedAt": "2026-10-06",
+        "bytes": 99732,
+        "kind": "productPage",
+        "textLines": 78,
+        "spendSections": 0,
+        "benefitSections": 0
+      },
+      {
+        "url": "https://pc.wooricard.com/upload/cardClause/2025/9/18/7689d854-bd1f-41ea-9ffe-05e782a40f58.pdf",
+        "resolvedUrl": "https://pc.wooricard.com/error.html",
+        "httpStatus": 200,
+        "contentType": "text/html",
+        "checkedAt": "2026-10-06",
+        "bytes": 4878,
+        "kind": "terms",
+        "textLines": 5,
+        "spendSections": 0,
+        "benefitSections": 0
+      }
+    ],
+    "spendExclusionsStatus": "not_confirmed",
+    "benefitExclusionsStatus": "not_confirmed",
+    "pickingStatus": "not_verified",
+    "pickingScenarios": [],
+    "researchNote": "공식 원문에서 상품 조건의 문맥을 추출했습니다. 원문 발췌에는 혜택별 조건이 포함될 수 있습니다. 미확인은 제외 항목 없음이라는 뜻이 아닙니다."
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-10",
+  "ids": [
+    "bc-102603",
+    "bc-102040"
+  ],
+  "sources": [
+    {
+      "cardId": "bc-102603",
+      "sourceUrl": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102603&mbkNo=050",
+      "scope": "기본·특별 할인",
+      "quote": "국내 0.7%, 특별 1.7%, 아카데미 2.7%. 전월실적 조건 및 할인한도 없음. 중복 불가."
+    },
+    {
+      "cardId": "bc-102040",
+      "sourceUrl": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102040&mbkNo=050",
+      "scope": "한도표·건별 조건",
+      "quote": "국내30/60/90만원: 영역5천/1만/1만5천원·통합1만/2만/3만5천원. 해외월5천원. 국내건당최대1천원. 버스·지하철각월최대2천원."
+    }
+  ]
+}

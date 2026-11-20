@@ -1,0 +1,334 @@
+[
+  {
+    "id": "shinhan-201509030001",
+    "name": "신한카드 Mr.Life",
+    "checkedAt": "2026-10-06",
+    "benefitScope": "월납·TIME·주말 생활할인의 최초 30만원 이상~50만원 미만 구간",
+    "minimumEligibleSpend": 300000,
+    "monthlySpend": 300000,
+    "monthlyBenefit": 16000,
+    "miles": 0,
+    "annualFee": 15000,
+    "assumptions": [
+      "매월 전월실적 인정액 300,000원을 유지하는 반복 이용 기준입니다. 전월과 당월이 같은 지출 구조라고 가정합니다.",
+      "월납 공과금 30,000원×10%=3,000원, TIME 온라인쇼핑 10,000원씩 10회×10%=10,000원, 주말 마트30,000원×10%=3,000원입니다.",
+      "TIME 온라인쇼핑은 오후9시~오전9시에 서로 다른10일에 공식 대상가맹점에서 결제하여 일1회·월10회·건당1,000원 한도를 지킵니다.",
+      "할인 대상 소비160,000원과 나머지 일반 실적 인정소비140,000원을 합쳐 실제소비300,000원입니다. 할인받은 거래전체가 실적제외라는 규정은 없습니다.",
+      "국내 S& 본인 연회비15,000원을12개월로 나누어 차감합니다.",
+      "전월 유실적 고객 대상 인테이크몰20% 특화혜택은 최초생활구간30만원과 조건이 다르며 이 시나리오에 포함하지 않습니다. 따라서 카드전체 최대피킹률이라는 뜻은 아닙니다."
+    ],
+    "verified": true,
+    "maximumVerified": false,
+    "status": "verified_minimum_scenario",
+    "sourceUrl": "https://www.shinhancard.com/pconts/html/card/apply/credit/1187937_2207.html",
+    "sources": [
+      {
+        "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1187937_2207.html",
+        "checkedAt": "2026-10-06",
+        "field": "minimumTierCaps",
+        "excerpt": "전월 이용금액 30만원 이상 50만원 미만: 월납 할인한도 3천원, TIME 할인한도 1만원, 주말 할인한도 3천원."
+      },
+      {
+        "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1187937_2207.html",
+        "checkedAt": "2026-10-06",
+        "field": "spendExclusions",
+        "excerpt": "장·단기 카드 대출/연회비/각종수수료/이자/기프트카드 구매금액/선불카드 충전금액/거래취소금액은 전월 이용금액에서 제외됩니다."
+      },
+      {
+        "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1187937_2207.html",
+        "checkedAt": "2026-10-06",
+        "field": "otherBenefitScope",
+        "excerpt": "전월 이용금액(일시불+할부) 유실적 고객님께 월 4회까지 20% 할인이 제공됩니다."
+      }
+    ],
+    "pickingRate": 4.916666666666666
+  },
+  {
+    "id": "samsung-aap1483",
+    "name": "삼성카드 taptap O",
+    "checkedAt": "2026-10-06",
+    "benefitScope": "라이프스타일·교통·통신·영화 생활할인 최초 30만원 이상 구간",
+    "minimumEligibleSpend": 300000,
+    "monthlySpend": 501430,
+    "monthlyBenefit": 30000,
+    "miles": 0,
+    "annualFee": 10000,
+    "assumptions": [
+      "스타벅스50%/오픈마켓7% 옵션1을 선택하며 전월실적 인정액300,000원을 매월 별도일반가맹점에서 사용합니다.",
+      "스타벅스20,000원→10,000원, 오픈마켓71,430원→월한도5,000원, 대중교통/택시50,000원→5,000원, 이동통신자동납부50,000원→5,000원입니다.",
+      "영화공식예매10,000원1회→5,000원으로 연12회 한도에 맞춰 매월1회 이용합니다. 연12회와 월2회 한도가 있으므로 매월2회10,000원 할인을12배 하지 않습니다.",
+      "할인받은 거래전체 이용금액 및 대중교통/택시는 전월실적에서 제외됩니다. 실제월소비=실적용300,000+20,000+71,430+50,000+50,000+10,000=501,430원입니다.",
+      "본인연회비10,000원을12개월로 나누어 차감합니다. 일반실적용 소비의 추가포인트는 계산하지 않습니다.",
+      "해외1.3% 빅포인트 적립은 무실적이므로 해당 혜택 자체의 최소실적 기준피킹률에는 임의 소비액을 적용하지 않습니다.",
+      "501,430원은 모든 생활할인 한도를 연중반복 활용하는 검증시나리오의 실제소비입니다. 소수점할인 반올림규칙 미확인으로 전체수학적 최소소비/최대피킹률을 증명하지 않았습니다."
+    ],
+    "verified": true,
+    "maximumVerified": false,
+    "status": "verified_minimum_scenario",
+    "sourceUrl": "https://www.samsungcard.com/home/card/cardinfo/PGHPPCCCardCardinfoDetails001?code=AAP1483",
+    "sources": [
+      {
+        "url": "https://static11.samsungcard.com/wcms/svc/1222167_38558.html",
+        "checkedAt": "2026-10-06",
+        "field": "minimumTierCaps",
+        "excerpt": "할인 : 전월 일시불 및 할부 이용금액 30만원 이상 시 제공. 쇼핑 업종 월 5,000원, 커피 업종 월 10,000원."
+      },
+      {
+        "url": "https://static11.samsungcard.com/wcms/svc/1222167_38558.html",
+        "checkedAt": "2026-10-06",
+        "field": "spendExclusions",
+        "excerpt": "전월 이용금액 산정 시, 할인 혜택이 적용된 이용금액(할인금액이 포함된 총 금액), 국세/지방세/공과금, 아파트 관리비, 대학 등록금, 대중교통, 택시, 상품권 구매, 선불카드 충전건은 제외됩니다."
+      },
+      {
+        "url": "https://static11.samsungcard.com/wcms/svc/1219625_38558.html",
+        "checkedAt": "2026-10-06",
+        "field": "transport",
+        "excerpt": "대중교통·택시10% 결제일할인, 통합월5,000원. 전월일시불및할부이용금액30만원이상시제공."
+      },
+      {
+        "url": "https://static11.samsungcard.com/wcms/svc/1219626_38558.html",
+        "checkedAt": "2026-10-06",
+        "field": "telecom",
+        "excerpt": "SKT·KT·LG U+ 이동통신요금자동납부10% 결제일할인, 월5,000원. 전월30만원이상."
+      },
+      {
+        "url": "https://static11.samsungcard.com/wcms/svc/1219627_38558.html",
+        "checkedAt": "2026-10-06",
+        "field": "annualLimit",
+        "excerpt": "통합 일 1회, 월 2회, 연 12회 제공(연 기준 : 1.1~12.31)."
+      },
+      {
+        "url": "https://static11.samsungcard.com/wcms/svc/3667624_38558.html",
+        "checkedAt": "2026-10-06",
+        "field": "zeroMinimumBenefit",
+        "excerpt": "전월 이용금액에 관계없이, 적립한도 없이 해외 가맹점 및 해외 직접구매 이용건 1.3% 빅포인트 적립."
+      }
+    ],
+    "pickingRate": 5.816697578259511,
+    "monthlyCapOnlyAlternative": {
+      "monthlySpend": 511430,
+      "monthlyBenefit": 35000,
+      "annualRepeatVerified": false,
+      "note": "영화월2회 할인을 적용한 단일월 한도시나리오. 연12회 제한 때문에 해당 월혜택을12배해서 연회비차감 연간피킹률로 표시하면 안 됩니다."
+    }
+  },
+  {
+    "id": "shinhan-201905230001",
+    "name": "신한카드 Air One",
+    "checkedAt": "2026-10-06",
+    "benefitScope": "대한항공 기본·추가적립1·추가적립2 마일리지 최초 50만원 이상 구간",
+    "minimumEligibleSpend": 500000,
+    "monthlySpend": 500000,
+    "monthlyBenefit": 0,
+    "miles": 1000,
+    "annualFee": 49000,
+    "assumptions": [
+      "매월전월실적인정액500,000원을 유지하며 국내항공업종에서 당월500,000원을 일시불결제합니다.",
+      "기본1,000원당1마일500마일+국내항공추가1,000원당1마일500마일=월1,000대한항공마일입니다. 추가적립500마일은 월2,000마일 한도이내입니다.",
+      "대한항공1마일가치는사용자가지정한20원으로환산합니다. 본인연회비49,000원을12개월로나누어차감합니다.",
+      "항공업종매출은전월실적제외목록에해당하지않으므로실적용별도소비를더하지않습니다. 마일적립제외거래및신한카드할인적용거래는이용하지않습니다.",
+      "AMEX 한정 2025-09-01~2026-12-31 플러스혜택① 해외1%포인트는전월실적과관계없이제공되며, 라운지동반자혜택은30만원구간입니다. 본시나리오는기간한정플러스혜택이아닌상시마일서비스의최소구간입니다.",
+      "국내항공업종에한정한재현가능시나리오입니다. 해외수수료·기간한정해외1%포인트·라운지가치는포함하지않으며상품전체최대값이아닙니다."
+    ],
+    "verified": true,
+    "maximumVerified": false,
+    "status": "verified_minimum_scenario",
+    "sourceUrl": "https://www.shinhancard.com/pconts/html/card/apply/credit/1187901_2207.html",
+    "sources": [
+      {
+        "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1187901_2207.html",
+        "checkedAt": "2026-10-06",
+        "field": "minimumTier",
+        "excerpt": "전월(1일~말일)의 거래시점 이용금액이 50만원 이상인 경우, 당월(1일~말일) 이용금액 대하여 기본적립/추가적립1/추가적립2 서비스가 제공됩니다."
+      },
+      {
+        "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1187901_2207.html",
+        "checkedAt": "2026-10-06",
+        "field": "mileage",
+        "excerpt": "기본적립 1천원당 1마일리지+추가적립 1천원당 1마일리지(총 1천원당 2마일리지 적립). 추가적립은 월2천마일까지."
+      },
+      {
+        "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1187901_2207.html",
+        "checkedAt": "2026-10-06",
+        "field": "spendExclusions",
+        "excerpt": "아래 거래는 전월 이용금액에서 제외됩니다. 단기카드대출/장기카드대출, 연회비·각종수수료·이자·거래취소, 선불카드충전및구매(Gift카드포함)."
+      },
+      {
+        "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1187901_2207.html",
+        "checkedAt": "2026-10-06",
+        "field": "otherBenefitScope",
+        "excerpt": "제공 조건 혜택① : 전월 이용 금액과 관계 없이 제공 됩니다. 혜택② : 공항 라운지 동반자 전월30만원이상. 제공기간2025년9월1일~2026년12월31일, AMEX에한함."
+      }
+    ],
+    "pickingRate": 3.183333333333333
+  },
+  {
+    "id": "hyundai-zroe3",
+    "name": "현대카드ZERO Edition3(할인형)",
+    "checkedAt": "2026-10-06",
+    "benefitScope": "실적·한도 제한 없는 국내외 일반가맹점0.8% 할인",
+    "minimumEligibleSpend": 0,
+    "monthlySpend": null,
+    "monthlyBenefit": null,
+    "miles": null,
+    "annualFee": 15000,
+    "assumptions": [
+      "공식실적요건없음(0원)이므로최소실적그자체를분모로피킹률을계산하지않습니다.",
+      "UI문구: 실적요건없음·기준지출입력필요. 사용자기준월지출을입력한뒤대상금액×0.8%에서연회비15,000원/12를차감합니다.",
+      "임의로월100만원을최소구간으로표시하지않습니다. 할인제외거래가포함되면해당금액은혜택대상액에서제외하며실제총소비분모에는포함합니다.",
+      "긴급할인선지급포인트는미상환금이청구되는서비스이므로별도추가현금혜택으로더하지않습니다."
+    ],
+    "verified": true,
+    "maximumVerified": false,
+    "status": "input_required_no_minimum",
+    "sourceUrl": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ZROE3",
+    "sources": [
+      {
+        "url": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03155",
+        "checkedAt": "2026-10-06",
+        "field": "zeroMinimum",
+        "excerpt": "실적ㆍ한도 제한 없이 국내외 가맹점 이용 금액의 0.8% 청구 할인."
+      },
+      {
+        "url": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03155",
+        "checkedAt": "2026-10-06",
+        "field": "annualFee",
+        "excerpt": "국내전용/국내외겸용 연회비15,000원."
+      }
+    ],
+    "pickingRate": null,
+    "grossBenefitRate": 0.8
+  },
+  {
+    "id": "bc-103112",
+    "name": "K-패스 카드",
+    "checkedAt": "2026-10-06",
+    "benefitScope": "BC 카드 자체 결제일 할인 최초 30만원 이상~60만원 미만 구간",
+    "minimumEligibleSpend": 300000,
+    "monthlySpend": 300000,
+    "monthlyBenefit": 10000,
+    "miles": 0,
+    "annualFee": 6000,
+    "assumptions": [
+      "전월실적 인정 소비 300,000원을 매월 유지하고, 국내전용 또는 Mastercard 본인 연회비 6,000원을 12개월로 나누어 차감합니다.",
+      "버스·지하철 후불교통 46,670원의 15% 할인은 대중교통 한도 7,000원까지 받습니다.",
+      "공식 대상 카페에서 6,000원씩 10회 현장 결제하여 총 60,000원의 5%인 3,000원 할인을 받습니다. 건당 3,000원 이상 조건을 충족합니다.",
+      "나머지 193,330원을 일반 실적 인정 가맹점에서 이용하여 실제 소비와 인정 소비 모두 300,000원입니다.",
+      "공식 전월실적 제외 목록에 대중교통·카페·할인받은 거래가 포함되지 않으므로 해당 소비를 실적용 소비와 중복 가산하지 않습니다.",
+      "K-패스 정부 환급은 연령·거주지·횟수 조건별 별도 제도이므로 이 카드 자체 할인 시나리오에는 포함하지 않습니다."
+    ],
+    "verified": true,
+    "maximumVerified": false,
+    "status": "verified_minimum_scenario",
+    "sourceUrl": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103112&mbkNo=050",
+    "sources": [
+      {
+        "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103112&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "field": "minimumTierCaps",
+        "excerpt": "전월실적30만원이상~60만원미만: 통합할인한도10,000원, 통합한도이내대중교통7,000원."
+      },
+      {
+        "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103112&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "field": "benefitRates",
+        "excerpt": "대중교통15% 할인. 카페5% 할인, 건당결제금액3천원이상."
+      },
+      {
+        "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103112&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "field": "spendExclusions",
+        "excerpt": "전월실적제외: 대출, 연회비·연체료·수수료·이자, 제세공과금, 아파트관리비, 학교납입금·등록금, 상품권·선불카드구매충전."
+      }
+    ],
+    "pickingRate": 3.166666666666667
+  },
+  {
+    "id": "bc-103127",
+    "name": "KT 마이알뜰폰 BC 바로카드",
+    "checkedAt": "2026-10-06",
+    "benefitScope": "KT 알뜰폰·SK 주유 최초 30만원 이상~70만원 미만 구간",
+    "minimumEligibleSpend": 300000,
+    "monthlySpend": 300000,
+    "monthlyBenefit": 8000,
+    "miles": 0,
+    "annualFee": 20000,
+    "assumptions": [
+      "전월실적 인정 소비 300,000원을 매월 유지하며 국내전용 또는 Mastercard 본인 연회비 20,000원을 12개월로 나누어 차감합니다.",
+      "KT 알뜰폰 통신요금 20,000원을 자동납부하여 최초구간 월한도 7,000원을 할인받습니다. 요금이 한도보다 작으면 실제 요금만 할인됩니다.",
+      "SK 주유소에서 충전소·LPG가 아닌 주유 100,000원을 이용하여 1%인 월한도 1,000원을 할인받습니다.",
+      "나머지 일반 실적 인정 소비 180,000원을 합쳐 실제 소비 300,000원입니다.",
+      "통신요금·주유·할인받은 거래는 공식 전월실적 제외목록에 없으므로 실적용 소비를 추가로 더하지 않습니다. 실제 사용중인 KT 알뜰폰사업자와 자동이체등록 조건을 충족해야 합니다."
+    ],
+    "verified": true,
+    "maximumVerified": false,
+    "status": "verified_minimum_scenario",
+    "sourceUrl": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103127&mbkNo=050",
+    "sources": [
+      {
+        "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103127&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "field": "minimumTierCaps",
+        "excerpt": "전월국내외가맹점이용금액30만원이상~70만원미만 당월통신할인한도7,000원. 자동이체납부필수."
+      },
+      {
+        "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103127&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "field": "otherBenefit",
+        "excerpt": "SK주유소1% 결제일할인, 전월30만원이상, 월한도1천원."
+      },
+      {
+        "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103127&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "field": "spendExclusions",
+        "excerpt": "전월실적제외: 대출, 연회비·연체료·수수료·이자, 제세공과금, 학교납입금·등록금, 아파트관리비, 상품권·선불카드구매충전."
+      }
+    ],
+    "pickingRate": 2.111111111111111
+  },
+  {
+    "id": "bc-102040",
+    "name": "BC 바로 On＆Off 카드",
+    "checkedAt": "2026-10-06",
+    "benefitScope": "국내·해외 결제일 할인 최초 30만원 이상~60만원 미만 구간",
+    "minimumEligibleSpend": 300000,
+    "monthlySpend": 300600,
+    "monthlyBenefit": 15000,
+    "miles": 0,
+    "annualFee": 5000,
+    "assumptions": [
+      "전월실적 인정 거래 원금 300,000원을 매월 유지하며 Mastercard 본인 연회비 5,000원을 12개월로 나누어 차감합니다.",
+      "온라인·간편결제 10,000원씩5회(총50,000원)에서 영역한도5,000원, 음식점·커피를 간편결제가 아닌 방식으로10,000원씩5회(총50,000원) 이용하여 영역한도5,000원을 받습니다. 국내통합한도10,000원을 충족합니다.",
+      "해외 대상가맹점 거래 원금의 원화환산액50,000원에서10%인 월해외한도5,000원을 할인받습니다. DCC를 사용하지 않습니다.",
+      "해외브랜드수수료1%와BC해외서비스수수료0.2%를 원화환산원금50,000원에 적용한600원을 실제소비분모에 포함합니다. 환율변동·해외ATM·DCC 추가비용은 없는 조건입니다.",
+      "나머지150,000원은 일반실적인정가맹점에서소비합니다. 수수료600원은실적제외이므로 인정실적300,000원과 실제소비300,600원을 구분합니다.",
+      "국내결제건당최대1,000원 할인 조건 및 영역한도·국내통합한도를 모두 지킵니다. 할인거래전체가실적제외되는카드가아니므로 할인용소비를별도로더하지않습니다.",
+      "환율·수수료 청구 반올림 차이와 개별 브랜드 서비스를 별도 가정하지 않았으므로 전체상품의 수학적 최대값 증명은 아닙니다."
+    ],
+    "verified": true,
+    "maximumVerified": false,
+    "status": "verified_minimum_scenario",
+    "sourceUrl": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102040&mbkNo=050",
+    "sources": [
+      {
+        "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102040&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "field": "minimumTierCaps",
+        "excerpt": "국내30만원이상: 영역별5천원, 월통합1만원. 해외30만원이상: 영역없음, 월통합5천원. 국내결제건당최대1천원."
+      },
+      {
+        "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102040&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "field": "fees",
+        "excerpt": "국제브랜드수수료Mastercard1%, BC해외서비스수수료0.2%."
+      },
+      {
+        "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102040&mbkNo=050",
+        "checkedAt": "2026-10-06",
+        "field": "spendExclusions",
+        "excerpt": "전월실적제외: 대출, 연회비·연체료·제수수료·이자, 관리비·상하수도·전기·도시가스, 상품권·선불수단구매충전."
+      }
+    ],
+    "pickingRate": 4.851408294522067
+  }
+]

@@ -1,0 +1,1912 @@
+{
+  "cardsChecked": 1536,
+  "changedAxes": 211,
+  "changes": {
+    "allowed→unknown": 8,
+    "excluded→unknown": 7,
+    "unknown→allowed": 23,
+    "unknown→excluded": 129,
+    "allowed→excluded": 44
+  },
+  "records": [
+    {
+      "id": "ibk-104561",
+      "name": "BLISS Point",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "unknown",
+      "source": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=104561&mbkNo=003"
+    },
+    {
+      "id": "kb-04451",
+      "name": "골든라이프올림카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "excluded",
+      "after": "unknown",
+      "source": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04451&mainCC=a"
+    },
+    {
+      "id": "kb-04451",
+      "name": "골든라이프올림카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "excluded",
+      "after": "unknown",
+      "source": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04451&mainCC=a"
+    },
+    {
+      "id": "kb-09174",
+      "name": "청춘대로 톡톡카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "excluded",
+      "after": "unknown",
+      "source": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09174&mainCC=a"
+    },
+    {
+      "id": "kb-09174",
+      "name": "청춘대로 톡톡카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "excluded",
+      "after": "unknown",
+      "source": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09174&mainCC=a"
+    },
+    {
+      "id": "kb-04423",
+      "name": "코웨이Ⅱ 카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "excluded",
+      "after": "unknown",
+      "source": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04423&mainCC=a"
+    },
+    {
+      "id": "kb-09183",
+      "name": "탄탄대로 Biz카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "excluded",
+      "after": "unknown",
+      "source": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09183&mainCC=a"
+    },
+    {
+      "id": "kb-09183",
+      "name": "탄탄대로 Biz카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "excluded",
+      "after": "unknown",
+      "source": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09183&mainCC=a"
+    },
+    {
+      "id": "nh-90010604",
+      "name": "NH올원더풀카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010604&WRS_TUP_C=F10807"
+    },
+    {
+      "id": "nh-90010515",
+      "name": "zgm 할인카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010515&WRS_TUP_C=F10783"
+    },
+    {
+      "id": "nh-90010569",
+      "name": "서울교육사랑카드(개인체크)",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010569&WRS_TUP_C=F20604"
+    },
+    {
+      "id": "nh-90010570",
+      "name": "서울교육사랑카드_개인신용",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010570&WRS_TUP_C=F10798"
+    },
+    {
+      "id": "nh-90010610",
+      "name": "올바른이음체크카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010610&WRS_TUP_C=F20618"
+    },
+    {
+      "id": "nh-90010611",
+      "name": "올바른이음카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010611&WRS_TUP_C=F10813"
+    },
+    {
+      "id": "im-311744",
+      "name": "부자되세요 아파트카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "unknown",
+      "source": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=311744&mbkNo=031"
+    },
+    {
+      "id": "samsung-aap1894",
+      "name": "롯데마트 삼성카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "unknown",
+      "source": "https://static11.samsungcard.com/wcms/svc/3732649_38558.html"
+    },
+    {
+      "id": "samsung-aap1837",
+      "name": "삼성 iD ONE 카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "unknown",
+      "source": "https://static11.samsungcard.com/wcms/svc/3662585_38558.html"
+    },
+    {
+      "id": "samsung-aap1895",
+      "name": "트라이플러스 삼성카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "unknown",
+      "source": "https://static11.samsungcard.com/wcms/svc/3745251_38558.html"
+    },
+    {
+      "id": "woori-102033",
+      "name": "Diners Club POINT",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=Diners%20Club%20POINT"
+    },
+    {
+      "id": "woori-102033",
+      "name": "Diners Club POINT",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=Diners%20Club%20POINT"
+    },
+    {
+      "id": "woori-102033",
+      "name": "Diners Club POINT",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=Diners%20Club%20POINT"
+    },
+    {
+      "id": "woori-102033",
+      "name": "Diners Club POINT",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=Diners%20Club%20POINT"
+    },
+    {
+      "id": "woori-102033",
+      "name": "Diners Club POINT",
+      "item": "국세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=Diners%20Club%20POINT"
+    },
+    {
+      "id": "woori-102033",
+      "name": "Diners Club POINT",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=Diners%20Club%20POINT"
+    },
+    {
+      "id": "woori-102033",
+      "name": "Diners Club POINT",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=Diners%20Club%20POINT"
+    },
+    {
+      "id": "woori-102033",
+      "name": "Diners Club POINT",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=Diners%20Club%20POINT"
+    },
+    {
+      "id": "woori-835453",
+      "name": "FC EXPRESS 체크",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=FC%20EXPRESS%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-835453",
+      "name": "FC EXPRESS 체크",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=FC%20EXPRESS%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-835453",
+      "name": "FC EXPRESS 체크",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=FC%20EXPRESS%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-835453",
+      "name": "FC EXPRESS 체크",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=FC%20EXPRESS%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-835453",
+      "name": "FC EXPRESS 체크",
+      "item": "국세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=FC%20EXPRESS%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-835453",
+      "name": "FC EXPRESS 체크",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=FC%20EXPRESS%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-835453",
+      "name": "FC EXPRESS 체크",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=FC%20EXPRESS%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-835453",
+      "name": "FC EXPRESS 체크",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=FC%20EXPRESS%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-102864",
+      "name": "K-패스 우리카드",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=K-%ED%8C%A8%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-102864",
+      "name": "K-패스 우리카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=K-%ED%8C%A8%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-102864",
+      "name": "K-패스 우리카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=K-%ED%8C%A8%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-102864",
+      "name": "K-패스 우리카드",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=K-%ED%8C%A8%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500101",
+      "name": "QWERTY 우리카드 체크",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=QWERTY%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-500101",
+      "name": "QWERTY 우리카드 체크",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=QWERTY%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-500101",
+      "name": "QWERTY 우리카드 체크",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=QWERTY%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-500101",
+      "name": "QWERTY 우리카드 체크",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=QWERTY%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-500039",
+      "name": "S-OIL 주유 400 우리카드",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=S-OIL%20%EC%A3%BC%EC%9C%A0%20400%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500039",
+      "name": "S-OIL 주유 400 우리카드",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=S-OIL%20%EC%A3%BC%EC%9C%A0%20400%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500039",
+      "name": "S-OIL 주유 400 우리카드",
+      "item": "국세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=S-OIL%20%EC%A3%BC%EC%9C%A0%20400%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500039",
+      "name": "S-OIL 주유 400 우리카드",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=S-OIL%20%EC%A3%BC%EC%9C%A0%20400%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103757",
+      "name": "SK LPG 화물복지카드",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=SK%20LPG%20%ED%99%94%EB%AC%BC%EB%B3%B5%EC%A7%80%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103757",
+      "name": "SK LPG 화물복지카드",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=SK%20LPG%20%ED%99%94%EB%AC%BC%EB%B3%B5%EC%A7%80%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103757",
+      "name": "SK LPG 화물복지카드",
+      "item": "국세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=SK%20LPG%20%ED%99%94%EB%AC%BC%EB%B3%B5%EC%A7%80%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103757",
+      "name": "SK LPG 화물복지카드",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=SK%20LPG%20%ED%99%94%EB%AC%BC%EB%B3%B5%EC%A7%80%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500049",
+      "name": "the OPUS blue",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20blue"
+    },
+    {
+      "id": "woori-500049",
+      "name": "the OPUS blue",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20blue"
+    },
+    {
+      "id": "woori-500049",
+      "name": "the OPUS blue",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20blue"
+    },
+    {
+      "id": "woori-500049",
+      "name": "the OPUS blue",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20blue"
+    },
+    {
+      "id": "woori-103500",
+      "name": "the OPUS silver",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20silver"
+    },
+    {
+      "id": "woori-103500",
+      "name": "the OPUS silver",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20silver"
+    },
+    {
+      "id": "woori-103500",
+      "name": "the OPUS silver",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20silver"
+    },
+    {
+      "id": "woori-103500",
+      "name": "the OPUS silver",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20silver"
+    },
+    {
+      "id": "woori-500007",
+      "name": "the OPUS silver Biz",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20silver%20Biz"
+    },
+    {
+      "id": "woori-500007",
+      "name": "the OPUS silver Biz",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20silver%20Biz"
+    },
+    {
+      "id": "woori-500007",
+      "name": "the OPUS silver Biz",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20silver%20Biz"
+    },
+    {
+      "id": "woori-500007",
+      "name": "the OPUS silver Biz",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=the%20OPUS%20silver%20Biz"
+    },
+    {
+      "id": "woori-103483",
+      "name": "갤러리아 Platinum 우리카드",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B0%A4%EB%9F%AC%EB%A6%AC%EC%95%84%20Platinum%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103483",
+      "name": "갤러리아 Platinum 우리카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B0%A4%EB%9F%AC%EB%A6%AC%EC%95%84%20Platinum%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103483",
+      "name": "갤러리아 Platinum 우리카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B0%A4%EB%9F%AC%EB%A6%AC%EC%95%84%20Platinum%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103483",
+      "name": "갤러리아 Platinum 우리카드",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B0%A4%EB%9F%AC%EB%A6%AC%EC%95%84%20Platinum%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104140",
+      "name": "국민연금증 우리카드",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EC%A6%9D%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104140",
+      "name": "국민연금증 우리카드",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EC%A6%9D%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104140",
+      "name": "국민연금증 우리카드",
+      "item": "국세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EC%A6%9D%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104140",
+      "name": "국민연금증 우리카드",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EC%A6%9D%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-100860",
+      "name": "국민행복카드S2",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B5%AD%EB%AF%BC%ED%96%89%EB%B3%B5%EC%B9%B4%EB%93%9CS2"
+    },
+    {
+      "id": "woori-100860",
+      "name": "국민행복카드S2",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B5%AD%EB%AF%BC%ED%96%89%EB%B3%B5%EC%B9%B4%EB%93%9CS2"
+    },
+    {
+      "id": "woori-100860",
+      "name": "국민행복카드S2",
+      "item": "국세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B5%AD%EB%AF%BC%ED%96%89%EB%B3%B5%EC%B9%B4%EB%93%9CS2"
+    },
+    {
+      "id": "woori-100860",
+      "name": "국민행복카드S2",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B5%AD%EB%AF%BC%ED%96%89%EB%B3%B5%EC%B9%B4%EB%93%9CS2"
+    },
+    {
+      "id": "woori-227977",
+      "name": "그랑블루 체크카드",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B7%B8%EB%9E%91%EB%B8%94%EB%A3%A8%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-227977",
+      "name": "그랑블루 체크카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B7%B8%EB%9E%91%EB%B8%94%EB%A3%A8%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-227977",
+      "name": "그랑블루 체크카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B7%B8%EB%9E%91%EB%B8%94%EB%A3%A8%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-227977",
+      "name": "그랑블루 체크카드",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EA%B7%B8%EB%9E%91%EB%B8%94%EB%A3%A8%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500095",
+      "name": "바디프랜드 Platinum 우리카드",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EB%B0%94%EB%94%94%ED%94%84%EB%9E%9C%EB%93%9C%20Platinum%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500095",
+      "name": "바디프랜드 Platinum 우리카드",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EB%B0%94%EB%94%94%ED%94%84%EB%9E%9C%EB%93%9C%20Platinum%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500095",
+      "name": "바디프랜드 Platinum 우리카드",
+      "item": "국세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EB%B0%94%EB%94%94%ED%94%84%EB%9E%9C%EB%93%9C%20Platinum%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500095",
+      "name": "바디프랜드 Platinum 우리카드",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EB%B0%94%EB%94%94%ED%94%84%EB%9E%9C%EB%93%9C%20Platinum%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104123",
+      "name": "삼성AI구독 우리카드",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%82%BC%EC%84%B1AI%EA%B5%AC%EB%8F%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104123",
+      "name": "삼성AI구독 우리카드",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%82%BC%EC%84%B1AI%EA%B5%AC%EB%8F%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104123",
+      "name": "삼성AI구독 우리카드",
+      "item": "국세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%82%BC%EC%84%B1AI%EA%B5%AC%EB%8F%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104123",
+      "name": "삼성AI구독 우리카드",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%82%BC%EC%84%B1AI%EA%B5%AC%EB%8F%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104147",
+      "name": "세라젬 구독 우리카드",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%84%B8%EB%9D%BC%EC%A0%AC%20%EA%B5%AC%EB%8F%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104147",
+      "name": "세라젬 구독 우리카드",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%84%B8%EB%9D%BC%EC%A0%AC%20%EA%B5%AC%EB%8F%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104147",
+      "name": "세라젬 구독 우리카드",
+      "item": "국세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%84%B8%EB%9D%BC%EC%A0%AC%20%EA%B5%AC%EB%8F%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104147",
+      "name": "세라젬 구독 우리카드",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%84%B8%EB%9D%BC%EC%A0%AC%20%EA%B5%AC%EB%8F%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104137",
+      "name": "수호천사 동양생명 우리카드",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%88%98%ED%98%B8%EC%B2%9C%EC%82%AC%20%EB%8F%99%EC%96%91%EC%83%9D%EB%AA%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104137",
+      "name": "수호천사 동양생명 우리카드",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%88%98%ED%98%B8%EC%B2%9C%EC%82%AC%20%EB%8F%99%EC%96%91%EC%83%9D%EB%AA%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104137",
+      "name": "수호천사 동양생명 우리카드",
+      "item": "국세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%88%98%ED%98%B8%EC%B2%9C%EC%82%AC%20%EB%8F%99%EC%96%91%EC%83%9D%EB%AA%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104137",
+      "name": "수호천사 동양생명 우리카드",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%88%98%ED%98%B8%EC%B2%9C%EC%82%AC%20%EB%8F%99%EC%96%91%EC%83%9D%EB%AA%85%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104171",
+      "name": "스타트래블 우리카드",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%8A%A4%ED%83%80%ED%8A%B8%EB%9E%98%EB%B8%94%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104171",
+      "name": "스타트래블 우리카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%8A%A4%ED%83%80%ED%8A%B8%EB%9E%98%EB%B8%94%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104171",
+      "name": "스타트래블 우리카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%8A%A4%ED%83%80%ED%8A%B8%EB%9E%98%EB%B8%94%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104171",
+      "name": "스타트래블 우리카드",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%8A%A4%ED%83%80%ED%8A%B8%EB%9E%98%EB%B8%94%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-104172",
+      "name": "아파트아이 우리카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "unknown",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%95%84%ED%8C%8C%ED%8A%B8%EC%95%84%EC%9D%B4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500096",
+      "name": "우리 트래블월렛 체크카드",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9A%B0%EB%A6%AC%20%ED%8A%B8%EB%9E%98%EB%B8%94%EC%9B%94%EB%A0%9B%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500096",
+      "name": "우리 트래블월렛 체크카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9A%B0%EB%A6%AC%20%ED%8A%B8%EB%9E%98%EB%B8%94%EC%9B%94%EB%A0%9B%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500096",
+      "name": "우리 트래블월렛 체크카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9A%B0%EB%A6%AC%20%ED%8A%B8%EB%9E%98%EB%B8%94%EC%9B%94%EB%A0%9B%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-500096",
+      "name": "우리 트래블월렛 체크카드",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9A%B0%EB%A6%AC%20%ED%8A%B8%EB%9E%98%EB%B8%94%EC%9B%94%EB%A0%9B%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103443",
+      "name": "우리 화물차유류구매카드(개인신용)",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9A%B0%EB%A6%AC%20%ED%99%94%EB%AC%BC%EC%B0%A8%EC%9C%A0%EB%A5%98%EA%B5%AC%EB%A7%A4%EC%B9%B4%EB%93%9C%28%EA%B0%9C%EC%9D%B8%EC%8B%A0%EC%9A%A9%29"
+    },
+    {
+      "id": "woori-103490",
+      "name": "위비트래블 J 체크카드",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9C%84%EB%B9%84%ED%8A%B8%EB%9E%98%EB%B8%94%20J%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103490",
+      "name": "위비트래블 J 체크카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9C%84%EB%B9%84%ED%8A%B8%EB%9E%98%EB%B8%94%20J%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103490",
+      "name": "위비트래블 J 체크카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9C%84%EB%B9%84%ED%8A%B8%EB%9E%98%EB%B8%94%20J%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103490",
+      "name": "위비트래블 J 체크카드",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9C%84%EB%B9%84%ED%8A%B8%EB%9E%98%EB%B8%94%20J%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103489",
+      "name": "위비트래블 체크카드",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9C%84%EB%B9%84%ED%8A%B8%EB%9E%98%EB%B8%94%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103489",
+      "name": "위비트래블 체크카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9C%84%EB%B9%84%ED%8A%B8%EB%9E%98%EB%B8%94%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103489",
+      "name": "위비트래블 체크카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9C%84%EB%B9%84%ED%8A%B8%EB%9E%98%EB%B8%94%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103489",
+      "name": "위비트래블 체크카드",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%9C%84%EB%B9%84%ED%8A%B8%EB%9E%98%EB%B8%94%20%EC%B2%B4%ED%81%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103725",
+      "name": "청호나이스 우리카드Ⅱ",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B2%AD%ED%98%B8%EB%82%98%EC%9D%B4%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C%E2%85%A1"
+    },
+    {
+      "id": "woori-103725",
+      "name": "청호나이스 우리카드Ⅱ",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B2%AD%ED%98%B8%EB%82%98%EC%9D%B4%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C%E2%85%A1"
+    },
+    {
+      "id": "woori-103725",
+      "name": "청호나이스 우리카드Ⅱ",
+      "item": "국세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B2%AD%ED%98%B8%EB%82%98%EC%9D%B4%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C%E2%85%A1"
+    },
+    {
+      "id": "woori-103725",
+      "name": "청호나이스 우리카드Ⅱ",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B2%AD%ED%98%B8%EB%82%98%EC%9D%B4%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C%E2%85%A1"
+    },
+    {
+      "id": "woori-102488",
+      "name": "카드의정석 EVERY MILE SKYPASS",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20EVERY%20MILE%20SKYPASS"
+    },
+    {
+      "id": "woori-102488",
+      "name": "카드의정석 EVERY MILE SKYPASS",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20EVERY%20MILE%20SKYPASS"
+    },
+    {
+      "id": "woori-102488",
+      "name": "카드의정석 EVERY MILE SKYPASS",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20EVERY%20MILE%20SKYPASS"
+    },
+    {
+      "id": "woori-102488",
+      "name": "카드의정석 EVERY MILE SKYPASS",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20EVERY%20MILE%20SKYPASS"
+    },
+    {
+      "id": "woori-102488",
+      "name": "카드의정석 EVERY MILE SKYPASS",
+      "item": "국세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20EVERY%20MILE%20SKYPASS"
+    },
+    {
+      "id": "woori-102488",
+      "name": "카드의정석 EVERY MILE SKYPASS",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20EVERY%20MILE%20SKYPASS"
+    },
+    {
+      "id": "woori-102488",
+      "name": "카드의정석 EVERY MILE SKYPASS",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20EVERY%20MILE%20SKYPASS"
+    },
+    {
+      "id": "woori-102488",
+      "name": "카드의정석 EVERY MILE SKYPASS",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20EVERY%20MILE%20SKYPASS"
+    },
+    {
+      "id": "woori-102717",
+      "name": "카드의정석 I&U+",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20I%26U%2B"
+    },
+    {
+      "id": "woori-102717",
+      "name": "카드의정석 I&U+",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20I%26U%2B"
+    },
+    {
+      "id": "woori-102717",
+      "name": "카드의정석 I&U+",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20I%26U%2B"
+    },
+    {
+      "id": "woori-102717",
+      "name": "카드의정석 I&U+",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20I%26U%2B"
+    },
+    {
+      "id": "woori-102490",
+      "name": "카드의정석 K-LIFE CHECK",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20K-LIFE%20CHECK"
+    },
+    {
+      "id": "woori-102490",
+      "name": "카드의정석 K-LIFE CHECK",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20K-LIFE%20CHECK"
+    },
+    {
+      "id": "woori-102490",
+      "name": "카드의정석 K-LIFE CHECK",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20K-LIFE%20CHECK"
+    },
+    {
+      "id": "woori-102490",
+      "name": "카드의정석 K-LIFE CHECK",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20K-LIFE%20CHECK"
+    },
+    {
+      "id": "woori-103686",
+      "name": "카드의정석 TEN",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20TEN"
+    },
+    {
+      "id": "woori-103686",
+      "name": "카드의정석 TEN",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20TEN"
+    },
+    {
+      "id": "woori-103686",
+      "name": "카드의정석 TEN",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20TEN"
+    },
+    {
+      "id": "woori-103686",
+      "name": "카드의정석 TEN",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D%20TEN"
+    },
+    {
+      "id": "woori-102997",
+      "name": "카드의정석2",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2"
+    },
+    {
+      "id": "woori-102997",
+      "name": "카드의정석2",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2"
+    },
+    {
+      "id": "woori-102997",
+      "name": "카드의정석2",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2"
+    },
+    {
+      "id": "woori-102997",
+      "name": "카드의정석2",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2"
+    },
+    {
+      "id": "woori-103755",
+      "name": "카드의정석2 7CORE",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%207CORE"
+    },
+    {
+      "id": "woori-103755",
+      "name": "카드의정석2 7CORE",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%207CORE"
+    },
+    {
+      "id": "woori-103755",
+      "name": "카드의정석2 7CORE",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%207CORE"
+    },
+    {
+      "id": "woori-103755",
+      "name": "카드의정석2 7CORE",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%207CORE"
+    },
+    {
+      "id": "woori-103755",
+      "name": "카드의정석2 7CORE",
+      "item": "국세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%207CORE"
+    },
+    {
+      "id": "woori-103755",
+      "name": "카드의정석2 7CORE",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%207CORE"
+    },
+    {
+      "id": "woori-103755",
+      "name": "카드의정석2 7CORE",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%207CORE"
+    },
+    {
+      "id": "woori-103755",
+      "name": "카드의정석2 7CORE",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%207CORE"
+    },
+    {
+      "id": "woori-500010",
+      "name": "카드의정석2 AUTO",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20AUTO"
+    },
+    {
+      "id": "woori-500010",
+      "name": "카드의정석2 AUTO",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20AUTO"
+    },
+    {
+      "id": "woori-500010",
+      "name": "카드의정석2 AUTO",
+      "item": "국세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20AUTO"
+    },
+    {
+      "id": "woori-500010",
+      "name": "카드의정석2 AUTO",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20AUTO"
+    },
+    {
+      "id": "woori-500058",
+      "name": "카드의정석2 DAILY",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20DAILY"
+    },
+    {
+      "id": "woori-500058",
+      "name": "카드의정석2 DAILY",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20DAILY"
+    },
+    {
+      "id": "woori-500058",
+      "name": "카드의정석2 DAILY",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20DAILY"
+    },
+    {
+      "id": "woori-500058",
+      "name": "카드의정석2 DAILY",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20DAILY"
+    },
+    {
+      "id": "woori-103496",
+      "name": "카드의정석2 ExK 체크",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20ExK%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-103496",
+      "name": "카드의정석2 ExK 체크",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20ExK%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-103496",
+      "name": "카드의정석2 ExK 체크",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20ExK%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-103496",
+      "name": "카드의정석2 ExK 체크",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20ExK%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-104154",
+      "name": "카드의정석2 MILE&POINT",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20MILE%26POINT"
+    },
+    {
+      "id": "woori-104154",
+      "name": "카드의정석2 MILE&POINT",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20MILE%26POINT"
+    },
+    {
+      "id": "woori-104154",
+      "name": "카드의정석2 MILE&POINT",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20MILE%26POINT"
+    },
+    {
+      "id": "woori-104154",
+      "name": "카드의정석2 MILE&POINT",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20MILE%26POINT"
+    },
+    {
+      "id": "woori-104154",
+      "name": "카드의정석2 MILE&POINT",
+      "item": "국세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20MILE%26POINT"
+    },
+    {
+      "id": "woori-104154",
+      "name": "카드의정석2 MILE&POINT",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20MILE%26POINT"
+    },
+    {
+      "id": "woori-104154",
+      "name": "카드의정석2 MILE&POINT",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20MILE%26POINT"
+    },
+    {
+      "id": "woori-104154",
+      "name": "카드의정석2 MILE&POINT",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20MILE%26POINT"
+    },
+    {
+      "id": "woori-500045",
+      "name": "카드의정석2 ROUTINE",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20ROUTINE"
+    },
+    {
+      "id": "woori-500045",
+      "name": "카드의정석2 ROUTINE",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20ROUTINE"
+    },
+    {
+      "id": "woori-500045",
+      "name": "카드의정석2 ROUTINE",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20ROUTINE"
+    },
+    {
+      "id": "woori-104151",
+      "name": "카드의정석2 SHOPPER",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20SHOPPER"
+    },
+    {
+      "id": "woori-102492",
+      "name": "카드의정석2 SHOPPING+",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "unknown",
+      "after": "allowed",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20SHOPPING%2B"
+    },
+    {
+      "id": "woori-500103",
+      "name": "카드의정석2 SPIKE",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20SPIKE"
+    },
+    {
+      "id": "woori-500103",
+      "name": "카드의정석2 SPIKE",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20SPIKE"
+    },
+    {
+      "id": "woori-500103",
+      "name": "카드의정석2 SPIKE",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20SPIKE"
+    },
+    {
+      "id": "woori-500103",
+      "name": "카드의정석2 SPIKE",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20SPIKE"
+    },
+    {
+      "id": "woori-500104",
+      "name": "카드의정석2 SPIKE CHECK",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20SPIKE%20CHECK"
+    },
+    {
+      "id": "woori-500104",
+      "name": "카드의정석2 SPIKE CHECK",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20SPIKE%20CHECK"
+    },
+    {
+      "id": "woori-500104",
+      "name": "카드의정석2 SPIKE CHECK",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20SPIKE%20CHECK"
+    },
+    {
+      "id": "woori-500104",
+      "name": "카드의정석2 SPIKE CHECK",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20SPIKE%20CHECK"
+    },
+    {
+      "id": "woori-500053",
+      "name": "카드의정석2 T-WON 체크",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20T-WON%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-500053",
+      "name": "카드의정석2 T-WON 체크",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20T-WON%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-500053",
+      "name": "카드의정석2 T-WON 체크",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20T-WON%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-500053",
+      "name": "카드의정석2 T-WON 체크",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20T-WON%20%EC%B2%B4%ED%81%AC"
+    },
+    {
+      "id": "woori-500054",
+      "name": "카드의정석2 오하CHECK",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%98%A4%ED%95%98CHECK"
+    },
+    {
+      "id": "woori-500054",
+      "name": "카드의정석2 오하CHECK",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%98%A4%ED%95%98CHECK"
+    },
+    {
+      "id": "woori-500054",
+      "name": "카드의정석2 오하CHECK",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%98%A4%ED%95%98CHECK"
+    },
+    {
+      "id": "woori-500054",
+      "name": "카드의정석2 오하CHECK",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%98%A4%ED%95%98CHECK"
+    },
+    {
+      "id": "woori-500001",
+      "name": "카드의정석2 원더라이프",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%9B%90%EB%8D%94%EB%9D%BC%EC%9D%B4%ED%94%84"
+    },
+    {
+      "id": "woori-500001",
+      "name": "카드의정석2 원더라이프",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%9B%90%EB%8D%94%EB%9D%BC%EC%9D%B4%ED%94%84"
+    },
+    {
+      "id": "woori-500001",
+      "name": "카드의정석2 원더라이프",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%9B%90%EB%8D%94%EB%9D%BC%EC%9D%B4%ED%94%84"
+    },
+    {
+      "id": "woori-500001",
+      "name": "카드의정석2 원더라이프",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%9B%90%EB%8D%94%EB%9D%BC%EC%9D%B4%ED%94%84"
+    },
+    {
+      "id": "woori-500002",
+      "name": "카드의정석2 원더라이프 CHECK",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%9B%90%EB%8D%94%EB%9D%BC%EC%9D%B4%ED%94%84%20CHECK"
+    },
+    {
+      "id": "woori-500002",
+      "name": "카드의정석2 원더라이프 CHECK",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%9B%90%EB%8D%94%EB%9D%BC%EC%9D%B4%ED%94%84%20CHECK"
+    },
+    {
+      "id": "woori-500002",
+      "name": "카드의정석2 원더라이프 CHECK",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%9B%90%EB%8D%94%EB%9D%BC%EC%9D%B4%ED%94%84%20CHECK"
+    },
+    {
+      "id": "woori-500002",
+      "name": "카드의정석2 원더라이프 CHECK",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%9B%90%EB%8D%94%EB%9D%BC%EC%9D%B4%ED%94%84%20CHECK"
+    },
+    {
+      "id": "woori-102482",
+      "name": "카드의정석2 칼퇴 CHECK",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%B9%BC%ED%87%B4%20CHECK"
+    },
+    {
+      "id": "woori-102482",
+      "name": "카드의정석2 칼퇴 CHECK",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%B9%BC%ED%87%B4%20CHECK"
+    },
+    {
+      "id": "woori-102482",
+      "name": "카드의정석2 칼퇴 CHECK",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%B9%BC%ED%87%B4%20CHECK"
+    },
+    {
+      "id": "woori-102482",
+      "name": "카드의정석2 칼퇴 CHECK",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%EC%B9%B4%EB%93%9C%EC%9D%98%EC%A0%95%EC%84%9D2%20%EC%B9%BC%ED%87%B4%20CHECK"
+    },
+    {
+      "id": "woori-102722",
+      "name": "트래블월렛 우리카드",
+      "item": "상품권 가능",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%ED%8A%B8%EB%9E%98%EB%B8%94%EC%9B%94%EB%A0%9B%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-102722",
+      "name": "트래블월렛 우리카드",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%ED%8A%B8%EB%9E%98%EB%B8%94%EC%9B%94%EB%A0%9B%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-102722",
+      "name": "트래블월렛 우리카드",
+      "item": "국세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%ED%8A%B8%EB%9E%98%EB%B8%94%EC%9B%94%EB%A0%9B%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-102722",
+      "name": "트래블월렛 우리카드",
+      "item": "지방세",
+      "axis": "benefit",
+      "before": "unknown",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%ED%8A%B8%EB%9E%98%EB%B8%94%EC%9B%94%EB%A0%9B%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103263",
+      "name": "현대렌탈서비스 우리카드",
+      "item": "상품권 가능",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%ED%98%84%EB%8C%80%EB%A0%8C%ED%83%88%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103263",
+      "name": "현대렌탈서비스 우리카드",
+      "item": "관리비",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%ED%98%84%EB%8C%80%EB%A0%8C%ED%83%88%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103263",
+      "name": "현대렌탈서비스 우리카드",
+      "item": "국세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%ED%98%84%EB%8C%80%EB%A0%8C%ED%83%88%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "woori-103263",
+      "name": "현대렌탈서비스 우리카드",
+      "item": "지방세",
+      "axis": "spend",
+      "before": "allowed",
+      "after": "excluded",
+      "source": "https://m.wooricard.com/dcmw/mobile/totSearch.do?gubn=01&mGubn=M&searchTerm=%ED%98%84%EB%8C%80%EB%A0%8C%ED%83%88%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%9A%B0%EB%A6%AC%EC%B9%B4%EB%93%9C"
+    },
+    {
+      "id": "hana-11747",
+      "name": "하나멤버스 1Q 카드 Special Auto",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "unknown",
+      "source": "https://m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=11747"
+    },
+    {
+      "id": "hana-4987",
+      "name": "하나멤버스 1Q(원큐) 카드 Special",
+      "item": "관리비",
+      "axis": "benefit",
+      "before": "allowed",
+      "after": "unknown",
+      "source": "https://m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=4987"
+    }
+  ]
+}

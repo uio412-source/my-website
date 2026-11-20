@@ -1,0 +1,1180 @@
+{
+  "generatedAt": "2026-10-05",
+  "totalCards": 1536,
+  "availableCards": 1387,
+  "unavailableCards": 149,
+  "uniqueImages": 1373,
+  "totalBytes": 27490466,
+  "averageBytes": 20022,
+  "encoding": {
+    "format": "WebP",
+    "quality": 90,
+    "maximumDimension": 700,
+    "alphaPreserved": true,
+    "animatedSourcesUse": "First original frame"
+  },
+  "byIssuer": {
+    "BC 바로카드": {
+      "total": 24,
+      "available": 24,
+      "unavailable": 0
+    },
+    "IBK기업은행": {
+      "total": 58,
+      "available": 57,
+      "unavailable": 1
+    },
+    "KB국민카드": {
+      "total": 148,
+      "available": 142,
+      "unavailable": 6
+    },
+    "NH농협카드": {
+      "total": 162,
+      "available": 143,
+      "unavailable": 19
+    },
+    "SC제일은행": {
+      "total": 20,
+      "available": 19,
+      "unavailable": 1
+    },
+    "iM뱅크": {
+      "total": 28,
+      "available": 28,
+      "unavailable": 0
+    },
+    "경남은행": {
+      "total": 18,
+      "available": 17,
+      "unavailable": 1
+    },
+    "광주은행": {
+      "total": 35,
+      "available": 34,
+      "unavailable": 1
+    },
+    "롯데카드": {
+      "total": 142,
+      "available": 133,
+      "unavailable": 9
+    },
+    "부산은행": {
+      "total": 19,
+      "available": 18,
+      "unavailable": 1
+    },
+    "삼성카드": {
+      "total": 146,
+      "available": 131,
+      "unavailable": 15
+    },
+    "수협은행": {
+      "total": 35,
+      "available": 33,
+      "unavailable": 2
+    },
+    "신한카드": {
+      "total": 292,
+      "available": 264,
+      "unavailable": 28
+    },
+    "신협": {
+      "total": 19,
+      "available": 19,
+      "unavailable": 0
+    },
+    "우리카드": {
+      "total": 95,
+      "available": 90,
+      "unavailable": 5
+    },
+    "우체국예금": {
+      "total": 13,
+      "available": 0,
+      "unavailable": 13
+    },
+    "전북은행": {
+      "total": 24,
+      "available": 0,
+      "unavailable": 24
+    },
+    "카카오뱅크": {
+      "total": 3,
+      "available": 2,
+      "unavailable": 1
+    },
+    "케이뱅크": {
+      "total": 5,
+      "available": 1,
+      "unavailable": 4
+    },
+    "토스뱅크": {
+      "total": 4,
+      "available": 2,
+      "unavailable": 2
+    },
+    "하나카드": {
+      "total": 114,
+      "available": 105,
+      "unavailable": 9
+    },
+    "현대카드": {
+      "total": 132,
+      "available": 125,
+      "unavailable": 7
+    }
+  },
+  "unavailable": [
+    {
+      "id": "ibk-103828",
+      "issuer": "IBK기업은행",
+      "name": "스폰지밥 체크카드",
+      "imageUrl": "https://www.bccard.com/images/individual/card/renew/list/card_103828.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "kb-01507",
+      "issuer": "KB국민카드",
+      "name": "KT 할부 Plus KB국민카드",
+      "imageUrl": "https://img1.kbcard.com/ST/img/cxc/kbcard/upload/img/product/09328_img.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "kb-09561",
+      "issuer": "KB국민카드",
+      "name": "WE:SH Travel",
+      "imageUrl": "https://img1.kbcard.com/ST/img/cxc/kbcard/upload/img/product/09561_img.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "kb-04451",
+      "issuer": "KB국민카드",
+      "name": "골든라이프올림카드",
+      "imageUrl": "https://img1.kbcard.com/ST/img/cxc/kbcard/upload/img/product/04451_img.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "kb-00236",
+      "issuer": "KB국민카드",
+      "name": "볼트업 KB EV 카드",
+      "imageUrl": "https://img1.kbcard.com/ST/img/cxc/kbcard/upload/img/product/00236_img.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "kb-04351",
+      "issuer": "KB국민카드",
+      "name": "토스모바일 KB국민카드",
+      "imageUrl": "https://img1.kbcard.com/ST/img/cxc/kbcard/upload/img/product/04351_img.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "kb-09231",
+      "issuer": "KB국민카드",
+      "name": "톡톡 Pay카드",
+      "imageUrl": "https://img1.kbcard.com/ST/img/cxc/kbcard/upload/img/product/09231_img.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90000396",
+      "issuer": "NH농협카드",
+      "name": "KT수퍼할부카드(비씨)",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/176303.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010507",
+      "issuer": "NH농협카드",
+      "name": "KT할부 Plus NH농협카드",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/F10779.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90000399",
+      "issuer": "NH농협카드",
+      "name": "T라이트카드",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/M11081.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010511",
+      "issuer": "NH농협카드",
+      "name": "경북 New 다복가정희망카드",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/103473.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010564",
+      "issuer": "NH농협카드",
+      "name": "경상남도교육청 꿈디딤카드(체크)",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/F20607.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90000199",
+      "issuer": "NH농협카드",
+      "name": "공무원연금카드(퇴직)(비씨)",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/113984.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90000207",
+      "issuer": "NH농협카드",
+      "name": "내일배움카드(신용)",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/N10121.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010067",
+      "issuer": "NH농협카드",
+      "name": "올바른SAFE Platinum카드",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/F10055.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010158",
+      "issuer": "NH농협카드",
+      "name": "올바른지구카드",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/F10080.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010181",
+      "issuer": "NH농협카드",
+      "name": "제주교통복지카드(신용)",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/F10103.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010182",
+      "issuer": "NH농협카드",
+      "name": "제주교통복지카드(체크)",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/F20120.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90000184",
+      "issuer": "NH농협카드",
+      "name": "채움 스카이패스(SKYPASS)카드",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/N10038.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90000183",
+      "issuer": "NH농협카드",
+      "name": "채움 아시아나클럽(ASIANA CLUB)카드",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/N10039.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010521",
+      "issuer": "NH농협카드",
+      "name": "춘식이달달체크카드",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/F205870.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010045",
+      "issuer": "NH농협카드",
+      "name": "충남 다자녀행복키움카드(신용)",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/100640.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010046",
+      "issuer": "NH농협카드",
+      "name": "충남 다자녀행복키움카드(체크)",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/100641.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010508",
+      "issuer": "NH농협카드",
+      "name": "폼 체크카드",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/F20573.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010006",
+      "issuer": "NH농협카드",
+      "name": "할인조아카드",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/176471.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "nh-90010518",
+      "issuer": "NH농협카드",
+      "name": "히어로즈 체크카드",
+      "imageUrl": "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/F20586.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "sc-5600",
+      "issuer": "SC제일은행",
+      "name": "SC제일은행 디지털 삼성카드",
+      "imageUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/958038_h_cardmall_img_ss_digital.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "kn-0000017218",
+      "issuer": "경남은행",
+      "name": "Daily＃1 체크카드",
+      "imageUrl": "https://www.knbank.co.kr/upload/FPMfile/image/0000017218/2021110114451330600030.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "kj-CDR20220519002",
+      "issuer": "광주은행",
+      "name": "메가박스 체크카드",
+      "imageUrl": "https://imgs.kjbank.com/resource/img/fpm/card/megaboxCheck_card_5459.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "lotte-P02117-A02117",
+      "issuer": "롯데카드",
+      "name": "B롯데카드",
+      "imageUrl": "https://image.lottecard.co.kr/UploadFiles/ecenterPath/cdInfo/ecenterCdInfoP02117-A02117_nm1.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "lotte-P00276-B01417",
+      "issuer": "롯데카드",
+      "name": "DC Sweet 롯데카드",
+      "imageUrl": "https://image.lottecard.co.kr/UploadFiles/ecenterPath/cdInfo/ecenterCdInfoP00276-B01417_nm1.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "lotte-P15673-A15673",
+      "issuer": "롯데카드",
+      "name": "DIGILOCA SKYPASS",
+      "imageUrl": "https://image.lottecard.co.kr/UploadFiles/ecenterPath/cdInfo/ecenterCdInfoP15673-A15673_nm1_v.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "lotte-P13949-A13949",
+      "issuer": "롯데카드",
+      "name": "LOCA LIKIT Play",
+      "imageUrl": "https://image.lottecard.co.kr/UploadFiles/ecenterPath/cdInfo/ecenterCdInfoP13949-A13949_nm1_v.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "lotte-P15638-A15638",
+      "issuer": "롯데카드",
+      "name": "LOCA X 기후동행카드",
+      "imageUrl": "https://image.lottecard.co.kr/UploadFiles/ecenterPath/cdInfo/ecenterCdInfoP15638-A15638_nm1.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "lotte-P14724-A14724",
+      "issuer": "롯데카드",
+      "name": "디지로카 Monaco",
+      "imageUrl": "https://image.lottecard.co.kr/UploadFiles/ecenterPath/cdInfo/ecenterCdInfoP14724-A14724_nm1_v.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "lotte-P14728-A14728",
+      "issuer": "롯데카드",
+      "name": "디지로카 Paris",
+      "imageUrl": "https://image.lottecard.co.kr/UploadFiles/ecenterPath/cdInfo/ecenterCdInfoP14728-A14728_nm1_v.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "lotte-C00284-A00284",
+      "issuer": "롯데카드",
+      "name": "롯데 포인트플러스 체크카드",
+      "imageUrl": "https://image.lottecard.co.kr/UploadFiles/ecenterPath/cdInfo/ecenterCdInfoC00284-A00284_nm1.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "lotte-P00646-A00646",
+      "issuer": "롯데카드",
+      "name": "롯데카드",
+      "imageUrl": "https://image.lottecard.co.kr/UploadFiles/ecenterPath/cdInfo/ecenterCdInfoP00646-A00646_nm1.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "busan-0600000015",
+      "issuer": "부산은행",
+      "name": "BNK 프렌즈 신용카드",
+      "imageUrl": "https://www.busanbank.co.kr/SSPCTS/LTIV/CARD/0600000015/bnkfriends_s.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1683",
+      "issuer": "삼성카드",
+      "name": "SSG.COM 삼성카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/s_AAP1683.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1869",
+      "issuer": "삼성카드",
+      "name": "T PREMIUM 삼성카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/b_AAP1869.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1667",
+      "issuer": "삼성카드",
+      "name": "taptap DRIVE",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/s_AAP1667.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1825",
+      "issuer": "삼성카드",
+      "name": "삼성 iD PLUG-IN 카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/b_AAP1825.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1746",
+      "issuer": "삼성카드",
+      "name": "삼성 iD POCKET 카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/b_AAP1746.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1921",
+      "issuer": "삼성카드",
+      "name": "삼성 iD 해외 3.5 카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/b_AAP1921.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1865",
+      "issuer": "삼성카드",
+      "name": "삼성라이온즈카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/b_AAP1865_2.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1453",
+      "issuer": "삼성카드",
+      "name": "삼성카드 SFC & MILEAGE PLATINUM (스카이패스)",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/s_AAP1453.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1816",
+      "issuer": "삼성카드",
+      "name": "신세계 신백리워드 SFC 삼성카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/s_AAP1816.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1815",
+      "issuer": "삼성카드",
+      "name": "신세계 신백리워드 삼성카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/s_AAP1815.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1690",
+      "issuer": "삼성카드",
+      "name": "요기요 삼성카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/s_AAP1690.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1594",
+      "issuer": "삼성카드",
+      "name": "전우사랑 패밀리 삼성카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/s_AAP1594.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1818",
+      "issuer": "삼성카드",
+      "name": "청호나이스 삼성카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/b_AAP1818.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1794",
+      "issuer": "삼성카드",
+      "name": "코웨이 삼성카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/s_AAP1794.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "samsung-aap1795",
+      "issuer": "삼성카드",
+      "name": "쿠쿠 삼성카드",
+      "imageUrl": "https://static11.samsungcard.com/wcms/home/scard/image/personal/s_AAP1795.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "suhyup-905",
+      "issuer": "수협은행",
+      "name": "RealReal 1.0",
+      "imageUrl": "https://www.suhyup-bank.com/images/mall_new/product/C00058.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "suhyup-236",
+      "issuer": "수협은행",
+      "name": "S1카드",
+      "imageUrl": "https://www.suhyup-bank.com/images/mall_new/product/C00006.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-201907220002",
+      "issuer": "신한카드",
+      "name": "11번가 신한카드 체크",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BCDBYG_00_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202004090002",
+      "issuer": "신한카드",
+      "name": "LG BEST 모바일 Gold 신한카드",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BOAC5A_00_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202506240002",
+      "issuer": "신한카드",
+      "name": "New T 우주 신한카드",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BTJDTK_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202507040001",
+      "issuer": "신한카드",
+      "name": "Npay biz 신한카드",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BHDDUU_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202501310002",
+      "issuer": "신한카드",
+      "name": "Point Plan 체크(SOL 모임)",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/POBDOV_00_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202401290005",
+      "issuer": "신한카드",
+      "name": "S-OIL LPG 화물복지 신한카드",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/CBADG0_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202004090003",
+      "issuer": "신한카드",
+      "name": "SKT T라이트 신한카드",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BOAC5C_00_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202607020001",
+      "issuer": "신한카드",
+      "name": "SK브로드밴드 신한카드",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BOAE1O_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202511130001",
+      "issuer": "신한카드",
+      "name": "SK인텔릭스 신한카드",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BOADWS_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-201802220002",
+      "issuer": "신한카드",
+      "name": "SOL Deep Dream 신한카드 체크",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BJBBIP_S2_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202605190001",
+      "issuer": "신한카드",
+      "name": "SOL 메이트 신한카드 SOL Plan 체크",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/POIDZR_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-201308020002",
+      "issuer": "신한카드",
+      "name": "국세청 신한카드 GS칼텍스 Shine",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BAEA5X_00_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202006100002",
+      "issuer": "신한카드",
+      "name": "네이버페이 라인프렌즈 신한카드",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BOAC76_E8_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202510100001",
+      "issuer": "신한카드",
+      "name": "더한섬 신한카드 플래티늄",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BOADWK_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-201804090002",
+      "issuer": "신한카드",
+      "name": "리디 신한카드 체크",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BETBFW_00_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-199902110018",
+      "issuer": "신한카드",
+      "name": "메가쇼핑 신한카드",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BE6BZF_00_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202506240001",
+      "issuer": "신한카드",
+      "name": "배민 신한카드 밥친구",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BOADUF_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-201704010002",
+      "issuer": "신한카드",
+      "name": "신세계 신한카드 SKYPASS / Asiana Club",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BEAB7J_00_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202508180003",
+      "issuer": "신한카드",
+      "name": "신한카드 SOL Plan",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/POFDVR_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202409110004",
+      "issuer": "신한카드",
+      "name": "신한카드 SOL글로벌 체크",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BUDDNJ_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202603060001",
+      "issuer": "신한카드",
+      "name": "신한카드 The CLASSIC Air",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/AL6DYK_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202205240002",
+      "issuer": "신한카드",
+      "name": "신한카드 Way 체크(쥬라기)",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BGKCZ8_00_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-201802220001",
+      "issuer": "신한카드",
+      "name": "신한카드 경차사랑 Life",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/CBFBH9_00_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202509090003",
+      "issuer": "신한카드",
+      "name": "신한카드 처음 체크 (마이멜로디)",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BGSDUB_00_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-199902110097",
+      "issuer": "신한카드",
+      "name": "신한카드 치과위생사 Lady",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/ABA221_00_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-201510270002",
+      "issuer": "신한카드",
+      "name": "알뜰주유소 화물운전자복지 신한카드 체크",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/CBBARV_00_h_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202504150002",
+      "issuer": "신한카드",
+      "name": "여댕냥 PET 신한카드 Point Plan 체크",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/POBDS8_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "shinhan-202309140002",
+      "issuer": "신한카드",
+      "name": "카카오페이 신한 춘식이 체크",
+      "imageUrl": "https://www.shinhancard.com/pconts/static/images/card/plate/BGQDBI_E5_v_f_s.webp",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "woori-104137",
+      "issuer": "우리카드",
+      "name": "수호천사 동양생명 우리카드",
+      "imageUrl": "https://pc.wooricard.com/webcontent/cdPrdImgFileList/2026/3/12/042a9b9f-0202-40ab-8100-d8d22ea69d2c.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "woori-103728",
+      "issuer": "우리카드",
+      "name": "예다함 우리카드+",
+      "imageUrl": "https://pc.wooricard.com/webcontent/cdPrdImgFileList/2024/6/24/dc78480e-a838-435c-bbd8-5f3354e6cfb8.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "woori-103490",
+      "issuer": "우리카드",
+      "name": "위비트래블 J 체크카드",
+      "imageUrl": "https://pc.wooricard.com/webcontent/cdPrdImgFileList/2025/10/10/414037d3-1971-4234-9224-7b63b78414d1.gif",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "woori-102717",
+      "issuer": "우리카드",
+      "name": "카드의정석 I&U+",
+      "imageUrl": "https://pc.wooricard.com/webcontent/cdPrdImgFileList/2024/2/13/2556856e-91ff-41cc-ae55-5d6f649d30ad.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "woori-102490",
+      "issuer": "우리카드",
+      "name": "카드의정석 K-LIFE CHECK",
+      "imageUrl": "https://pc.wooricard.com/webcontent/cdPrdImgFileList/2024/5/9/c1e6708e-2fb9-4924-89d8-b9ea4c0bf690.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "post-everrich",
+      "issuer": "우체국예금",
+      "name": "에버리치 삼성체크카드",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-650110242401",
+      "issuer": "우체국예금",
+      "name": "우체국 LUCK-KEY 체크카드(기본형)(비교통)(MASTER)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-myallday",
+      "issuer": "우체국예금",
+      "name": "우체국 MY ALL DAY 체크카드(MASTER)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-mytype-t",
+      "issuer": "우체국예금",
+      "name": "우체국 MY-TYPE 체크카드_T(VISA)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-650103500101",
+      "issuer": "우체국예금",
+      "name": "우체국 多Dream 체크카드(MASTER)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-660109442101",
+      "issuer": "우체국예금",
+      "name": "우체국 개이득 체크카드(교통)(VISA)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-660109442401",
+      "issuer": "우체국예금",
+      "name": "우체국 개이득 체크카드(비교통)(VISA)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-allpass",
+      "issuer": "우체국예금",
+      "name": "우체국 건설올패스 전자카드(비교통)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-600107330301",
+      "issuer": "우체국예금",
+      "name": "우체국 남원사랑 체크카드",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-650103900101",
+      "issuer": "우체국예금",
+      "name": "우체국 드림플러스 아시아나 체크카드(MASTER)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-anywhere-plus",
+      "issuer": "우체국예금",
+      "name": "우체국 어디서나plus 체크카드(비교통)(VISA)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-660110350801",
+      "issuer": "우체국예금",
+      "name": "우체국 어디서나plus 하이브리드카드(VISA)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "post-650108600101",
+      "issuer": "우체국예금",
+      "name": "우체국 행福한 체크카드(MASTER)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-debit-5",
+      "issuer": "전북은행",
+      "name": "1ST TRIPLE 체크(기본)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-debit-6",
+      "issuer": "전북은행",
+      "name": "1ST TRIPLE 체크(먹방이)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-8",
+      "issuer": "전북은행",
+      "name": "1st Link On",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-9",
+      "issuer": "전북은행",
+      "name": "1st TRIPLE",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-10",
+      "issuer": "전북은행",
+      "name": "1st TRIPLE PLATINUM",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-11",
+      "issuer": "전북은행",
+      "name": "1st(레드)",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-12",
+      "issuer": "전북은행",
+      "name": "1st플래티늄",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-1",
+      "issuer": "전북은행",
+      "name": "1st플래티늄+",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-3",
+      "issuer": "전북은행",
+      "name": "4TRACK 신용카드",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-6",
+      "issuer": "전북은행",
+      "name": "JB 골든에이지",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-2",
+      "issuer": "전북은행",
+      "name": "K패스 신용카드",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-debit-2",
+      "issuer": "전북은행",
+      "name": "K패스 체크카드",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-14",
+      "issuer": "전북은행",
+      "name": "LG전자베스트케어",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-debit-4",
+      "issuer": "전북은행",
+      "name": "PLUS YOUNG 체크카드",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-7",
+      "issuer": "전북은행",
+      "name": "SK OIL n LPG",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-debit-8",
+      "issuer": "전북은행",
+      "name": "국민행복",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-debit-1",
+      "issuer": "전북은행",
+      "name": "군산교육체크카드",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-13",
+      "issuer": "전북은행",
+      "name": "내사랑전주카드",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-5",
+      "issuer": "전북은행",
+      "name": "둘과넷",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-debit-7",
+      "issuer": "전북은행",
+      "name": "스마트캐시백체크",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-15",
+      "issuer": "전북은행",
+      "name": "신세계TV쇼핑",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-credit-4",
+      "issuer": "전북은행",
+      "name": "원프렌즈 개인신용",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-debit-3",
+      "issuer": "전북은행",
+      "name": "원프렌즈 개인체크",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "jb-debit-9",
+      "issuer": "전북은행",
+      "name": "해피포인트",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "internet-2",
+      "issuer": "카카오뱅크",
+      "name": "개인사업자 체크카드",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "internet-10",
+      "issuer": "케이뱅크",
+      "name": "KT멤버십 더블혜택 체크카드",
+      "imageUrl": "https://cdnisb.kbanknow.com/resource/img/bim/adm_ktcard.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "internet-8",
+      "issuer": "케이뱅크",
+      "name": "ONE 체크카드(K-패스)",
+      "imageUrl": "https://cdnisb.kbanknow.com/resource/images/card/img_biz_onecheck_apply_detail.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "internet-7",
+      "issuer": "케이뱅크",
+      "name": "모임 체크카드",
+      "imageUrl": "https://cdnisb.kbanknow.com/resource/img/bim/adm_moimcard.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "internet-11",
+      "issuer": "케이뱅크",
+      "name": "알파카드 (ALPHA카드)",
+      "imageUrl": "https://cdnisb.kbanknow.com/resource/img/mmk/common/teen/kv_alpha_card.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "internet-4",
+      "issuer": "토스뱅크",
+      "name": "토스뱅크 K-패스 체크카드",
+      "imageUrl": null,
+      "error": "No image URL in catalog"
+    },
+    {
+      "id": "internet-5",
+      "issuer": "토스뱅크",
+      "name": "토스뱅크 모임카드",
+      "imageUrl": "https://static.toss.im/3d/mo-card-lovesky-gltf-still.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hana-7969",
+      "issuer": "하나카드",
+      "name": "1Q Special+",
+      "imageUrl": "https://m.hanacard.co.kr/ATTACH/NEW_HOMEPAGE/images/cardinfo/card_img/11533.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hana-11306",
+      "issuer": "하나카드",
+      "name": "L.PAY 하나 체크카드",
+      "imageUrl": "https://m.hanacard.co.kr/ATTACH/NEW_MOBILE/images/cardinfo/card_img/12495.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hana-19521",
+      "issuer": "하나카드",
+      "name": "PBA 하나 체크카드",
+      "imageUrl": "https://m.hanacard.co.kr/ATTACH/NEW_MOBILE/images/cardinfo/card_img/15911.gif",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hana-9525",
+      "issuer": "하나카드",
+      "name": "그린 카드",
+      "imageUrl": "https://m.hanacard.co.kr/ATTACH/NEW_HOMEPAGE/images/cardinfo/card_img/02351.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hana-15428",
+      "issuer": "하나카드",
+      "name": "꿈사다리 장학금 Young Hana 체크카드 with Okcashbag",
+      "imageUrl": "https://m.hanacard.co.kr/ATTACH/NEW_MOBILE/images/cardinfo/card_img/13966.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hana-13550",
+      "issuer": "하나카드",
+      "name": "모두의 건강 체크카드",
+      "imageUrl": "https://m.hanacard.co.kr/ATTACH/NEW_MOBILE/images/cardinfo/card_img/13259.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hana-18601",
+      "issuer": "하나카드",
+      "name": "원더 소상공인시장진흥공단",
+      "imageUrl": "https://m.hanacard.co.kr/ATTACH/NEW_MOBILE/images/cardinfo/card_img/14464.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hana-15125",
+      "issuer": "하나카드",
+      "name": "하나 CLUB H 아메리칸 익스프레스 리저브 카드",
+      "imageUrl": "https://m.hanacard.co.kr/ATTACH/NEW_MOBILE/images/cardinfo/card_img/13898.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hana-18704",
+      "issuer": "하나카드",
+      "name": "하나 나라사랑카드(체크)",
+      "imageUrl": "https://m.hanacard.co.kr/ATTACH/NEW_MOBILE/images/cardinfo/card_img/15476.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hyundai-xcsc",
+      "issuer": "현대카드",
+      "name": "SC제일은행-현대카드X CHECK",
+      "imageUrl": "https://img.hyundaicard.com/img/com/card/card_XCSC_h.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hyundai-sge2",
+      "issuer": "현대카드",
+      "name": "SSG.COM카드 Edition2",
+      "imageUrl": "https://img.hyundaicard.com/img/com/card/card_SGE2_h.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hyundai-tge4",
+      "issuer": "현대카드",
+      "name": "the Green Edition4",
+      "imageUrl": "https://img.hyundaicard.com/img/com/card/card_TGE4_h.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hyundai-tre6",
+      "issuer": "현대카드",
+      "name": "the Red",
+      "imageUrl": "https://img.hyundaicard.com/img/com/card/card_TRE6_h.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hyundai-hch",
+      "issuer": "현대카드",
+      "name": "알파벳카드H",
+      "imageUrl": "https://img.hyundaicard.com/img/com/card/card_HCH_h.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hyundai-gmse4",
+      "issuer": "현대카드",
+      "name": "지마켓 꼭 현대카드",
+      "imageUrl": "https://img.hyundaicard.com/img/com/card/card_GMSE4_h.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "id": "hyundai-mxbe2",
+      "issuer": "현대카드",
+      "name": "현대카드 MX Black Edition2",
+      "imageUrl": "https://img.hyundaicard.com/img/com/card/card_MXBE2_h.png",
+      "error": "<urlopen error timed out>"
+    }
+  ],
+  "replacements": [
+    {
+      "id": "internet-1",
+      "reason": "Original URL showed a cashback benefit banner; replaced with official product OG art showing actual card designs",
+      "imageUrl": "https://og.kakaobank.io/view/6154f4b0-5973-4472-857d-0bfb3ec092f1"
+    }
+  ]
+}
