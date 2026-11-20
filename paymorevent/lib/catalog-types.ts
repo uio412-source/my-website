@@ -50,7 +50,7 @@ export type Offer = {
   rewards?: Reward[]; annualFeeOnly?: boolean; entryRequired?: boolean;
   cardTarget?: {scope:"issuer"|"family"; familyIds?:string[]; types?: ("credit"|"debit")[]; brands?: string[]; excludedNames?: string[]; excludedBrands?: string[]};
   channel?: string; cashbackAmount?: number | null; cashbackIsMaximum?:boolean; cardIds?: string[]; cardNames?: string[]; participation?: string[];
-  id: string; kind: "card" | "hotel" | "cashback"; issuer: string; chain: string | null;
+  id: string; kind: "card" | "cashback"; issuer: string; chain: string | null;
   title: string; description: string; benefitText: string; tags: string[];
   startsAt: string | null; endsAt: string | null; bookingEndsAt: string | null;
   stayEndsAt: string | null; requirements: string[]; sourceUrl: string;
