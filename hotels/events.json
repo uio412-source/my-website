@@ -1,213 +1,216 @@
 {
- "updated": "2026-10-05",
+ "updated": "2026-11-20",
+ "note": "체인 공식 프로모션 페이지와 약관을 확인해 요약했습니다. endsAt(마지막 투숙일 또는 예약 마감)이 지나면 화면에서 자동으로 숨깁니다.",
  "events": [
+  {
+   "id": "hilton-more-points-to-play-2026",
+   "program": "hilton",
+   "brand": "Hilton Honors",
+   "title": "More Points to Play 보너스 포인트",
+   "benefit": "숙박 1회당 1,000P · 럭셔리·라이프스타일·리조트 3,000P",
+   "kind": "포인트",
+   "register": true,
+   "stayFrom": "2026-10-15",
+   "stayTo": "2026-12-31",
+   "endsAt": "2026-12-31",
+   "region": "전 세계 힐튼",
+   "points": [
+    "체크아웃 전에 프로모션 등록한 회원만 적립",
+    "1박 숙박도 1회로 인정되어 짧게 여러 번 묵을수록 유리",
+    "콘래드 서울은 럭셔리 브랜드라 3,000P 대상",
+    "보너스는 체크아웃 후 6~8주 안에 들어옴, 제3자 사이트 예약 제외"
+   ],
+   "url": "https://www.hilton.com/en/offers/"
+  },
+  {
+   "id": "hilton-sale-apac-2026",
+   "program": "hilton",
+   "brand": "Hilton Honors",
+   "title": "힐튼 세일 아시아·태평양",
+   "benefit": "아태 지역 참여 호텔 최대 25% 할인",
+   "kind": "할인",
+   "register": false,
+   "bookBy": "2027-01-12",
+   "endsAt": "2027-01-12",
+   "region": "아시아·태평양",
+   "points": [
+    "2027년 1월 12일까지 예약분",
+    "힐튼 공식 홈페이지·앱 직접 예약만 포인트 적립",
+    "투숙 기간·참여 호텔은 호텔별 요금 조건에서 확인"
+   ],
+   "url": "https://www.hilton.com/en/p/hilton-sale/"
+  },
+  {
+   "id": "ihg-4q-2x3x-2026",
+   "program": "ihg",
+   "brand": "IHG One Rewards",
+   "title": "4분기 포인트 2배·3배",
+   "benefit": "두 번째 숙박부터 포인트 2배 · 앱 예약은 3배",
+   "kind": "포인트",
+   "register": true,
+   "stayFrom": "2026-10-01",
+   "stayTo": "2026-12-31",
+   "endsAt": "2026-12-31",
+   "region": "전 세계 IHG",
+   "points": [
+    "등록 후 완료한 숙박만 인정, 첫 숙박은 보너스 없음",
+    "IHG 앱(iOS·Android 등)으로 예약하면 3배, 그 외 직접 예약은 2배",
+    "1박 US$30 초과 요금만 대상, 적립 한도 없음",
+    "리워드 숙박·포인트+현금·제3자 예약 제외"
+   ],
+   "url": "https://www.ihg.com/content/kr/ko/offers"
+  },
+  {
+   "id": "accor-meapac-sale-2026",
+   "program": "accor",
+   "brand": "ALL Accor",
+   "title": "아태·중동·아프리카 연말 세일",
+   "benefit": "참여 호텔 최대 25% 할인 · ALL 회원 추가 할인",
+   "kind": "할인",
+   "register": false,
+   "bookBy": "2026-12-11",
+   "stayTo": "2027-04-19",
+   "endsAt": "2026-12-11",
+   "region": "아시아·태평양 · 중동 · 아프리카",
+   "points": [
+    "2026년 12월 11일까지 예약, 2027년 4월 19일까지 투숙",
+    "최소 1박부터, 비회원 할인에 ALL 회원 할인이 더해짐",
+    "선결제·환불 불가 요금이 섞여 있으니 예약 시 취소 조건 확인"
+   ],
+   "url": "https://all.accor.com/a/ko/deals-corner.html"
+  },
+  {
+   "id": "accor-seoul-gangnam-cinema",
+   "program": "accor",
+   "brand": "ALL Accor",
+   "title": "이비스 스타일 앰배서더 서울 강남 시네마 스테이",
+   "benefit": "객실 + 식사 + 영화(모노플렉스) 패키지",
+   "kind": "서울 패키지",
+   "register": false,
+   "region": "서울 강남",
+   "points": [
+    "객실에 다이닝과 호텔 내 모노플렉스 영화 관람을 묶은 패키지",
+    "판매·투숙 기간과 가격은 예약 화면 기준"
+   ],
+   "url": "https://all.accor.com/a/ko/offers/meapac/hotel-offers/ibis-styles-seoul-gangnam-monoplex-cinema-stay.html"
+  },
+  {
+   "id": "accor-new-hotels-4x",
+   "program": "accor",
+   "brand": "ALL Accor",
+   "title": "신규 오픈 호텔 포인트 4배",
+   "benefit": "새로 연 참여 호텔 숙박 시 리워드 포인트 4배",
+   "kind": "포인트",
+   "register": false,
+   "region": "신규 오픈 참여 호텔",
+   "points": [
+    "ALL 회원 전용",
+    "대상 호텔은 오퍼 페이지의 신규 호텔 목록 기준"
+   ],
+   "url": "https://all.accor.com/a/ko/offers/hotel-bookings-earn-x4-reward-points.html"
+  },
+  {
+   "id": "marriott-korea-packages",
+   "program": "marriott",
+   "brand": "Marriott Bonvoy",
+   "title": "국내 객실 특가 3종",
+   "benefit": "프리미엄 객실 2박 이상 · 10박 이상 장기 투숙 · 호캉스 패키지",
+   "kind": "서울 패키지",
+   "register": false,
+   "region": "서울 · 대전 · 대구 · 부산 · 제주",
+   "points": [
+    "프리미엄 객실 2박 이상 특가와 10박 이상 장기 투숙 특가",
+    "도시별 참여 호텔 호캉스 패키지",
+    "할인율·기간은 호텔·요금마다 달라 예약 화면에서 확인"
+   ],
+   "url": "https://www.marriott.com/ko/offers.mi"
+  },
+  {
+   "id": "hyatt-member-25",
+   "program": "other",
+   "brand": "World of Hyatt",
+   "title": "회원 최대 25% 할인",
+   "benefit": "회원 최대 25% · 비회원 최대 20% 할인",
+   "kind": "할인",
+   "register": false,
+   "stayFrom": "2026-10-31",
+   "stayTo": "2027-04-30",
+   "endsAt": "2027-04-30",
+   "region": "전 세계 참여 하얏트",
+   "points": [
+    "2026년 10월 31일 ~ 2027년 4월 30일 투숙",
+    "World of Hyatt 회원 로그인 시 최대 25%"
+   ],
+   "url": "https://world.hyatt.com/content/gp/ko/offers.html"
+  },
+  {
+   "id": "hyatt-36000-2026",
+   "program": "other",
+   "brand": "World of Hyatt",
+   "title": "3박마다 3,000 보너스 포인트",
+   "benefit": "정규 3박마다 3,000P · 최대 36,000P",
+   "kind": "포인트",
+   "register": true,
+   "stayFrom": "2026-09-29",
+   "stayTo": "2026-12-15",
+   "endsAt": "2026-12-15",
+   "region": "전 세계 참여 하얏트",
+   "points": [
+    "프로모션 등록 필수",
+    "정규 요금 3박 완료마다 3,000P, 최대 36,000P"
+   ],
+   "url": "https://world.hyatt.com/content/gp/ko/offers.html"
+  },
   {
    "id": "hyatt-extended-stay-2026",
    "program": "other",
-   "brand": "Hyatt",
-   "chain": "World of Hyatt",
-   "status": "active",
-   "title": "하얏트 5박 이상 투숙 보너스 포인트",
-   "description": "Hyatt House와 Hyatt Studios에서 등록 후 5박 이상 연속 정규 투숙마다 보너스 포인트를 받을 수 있습니다.",
-   "benefit": "투숙당 5,000 보너스 포인트 · 최대 50,000점",
-   "startsAt": "2026-01-20",
+   "brand": "World of Hyatt",
+   "title": "하얏트 하우스·스튜디오 5박 이상 보너스",
+   "benefit": "5박 이상 투숙마다 5,000P · 최대 50,000P",
+   "kind": "포인트",
+   "register": true,
+   "stayFrom": "2026-01-20",
+   "stayTo": "2026-12-31",
    "endsAt": "2026-12-31",
-   "tags": [
-    "포인트",
-    "장기 투숙",
-    "사전 등록"
+   "region": "Hyatt House · Hyatt Studios",
+   "points": [
+    "투숙 전 등록, 한 호텔에서 5박 이상 연속 정규 투숙",
+    "무료 숙박 어워드 투숙도 인정, 회원 본인 객실만",
+    "2026년 12월 31일까지 체크아웃"
    ],
-   "requirements": [
-    "World of Hyatt 정상 회원으로 투숙 전에 프로모션 등록",
-    "등록 기간: 2026.01.20–2026.12.31",
-    "참여 Hyatt House 또는 Hyatt Studios 한 호텔에서 5박 이상 연속 투숙",
-    "등록 이후의 정규 요금 또는 무료 숙박 어워드 투숙에 한함",
-    "2026.12.31까지 체크아웃 완료",
-    "예약 시 또는 체크아웃 전에 회원번호 제공",
-    "회원 본인이 사용하는 객실만 인정; 전체 보너스 한도 50,000점"
-   ],
-   "url": "https://world.hyatt.com/content/gp/en/offers/extended-stay-offer.html",
-   "verifiedAt": "2026-10-05"
+   "url": "https://world.hyatt.com/content/gp/en/offers/extended-stay-offer.html"
   },
   {
-   "id": "accor-offers",
-   "program": "accor",
-   "brand": "Accor",
-   "chain": "ALL Accor",
-   "status": "hub",
-   "title": "ALL Accor 공식 호텔 오퍼",
-   "description": "Accor 호텔의 특가와 ALL 회원을 위한 혜택을 확인하는 공식 페이지입니다.",
-   "benefit": null,
-   "startsAt": null,
-   "endsAt": null,
-   "tags": [
-    "공식 오퍼",
-    "회원 혜택",
-    "글로벌"
-   ],
-   "requirements": [],
-   "url": "https://all.accor.com/a/ko/deals-corner.html",
-   "verifiedAt": "2026-10-05"
-  },
-  {
-   "id": "ihg-offers",
-   "program": "ihg",
-   "brand": "IHG Hotels & Resorts",
-   "chain": "IHG One Rewards",
-   "status": "hub",
-   "title": "IHG One Rewards 공식 특가·오퍼",
-   "description": "IHG의 호텔 특가와 IHG One Rewards 회원 오퍼를 함께 확인할 수 있습니다.",
-   "benefit": null,
-   "startsAt": null,
-   "endsAt": null,
-   "tags": [
-    "공식 오퍼",
-    "회원 혜택",
-    "포인트"
-   ],
-   "requirements": [],
-   "url": "https://www.ihg.com/content/kr/ko/offers",
-   "verifiedAt": "2026-10-05"
-  },
-  {
-   "id": "marriott-offers",
-   "program": "marriott",
-   "brand": "Marriott International",
-   "chain": "Marriott Bonvoy",
-   "status": "hub",
-   "title": "Marriott Bonvoy 공식 호텔 오퍼",
-   "description": "전 세계 메리어트 호텔의 특가와 Marriott Bonvoy 회원 오퍼를 모아 볼 수 있습니다.",
-   "benefit": null,
-   "startsAt": null,
-   "endsAt": null,
-   "tags": [
-    "공식 오퍼",
-    "회원 혜택",
-    "글로벌"
-   ],
-   "requirements": [],
-   "url": "https://www.marriott.com/ko/offers.mi",
-   "verifiedAt": "2026-10-05"
-  },
-  {
-   "id": "marriott-vacationclub-offers",
-   "program": "marriott",
-   "brand": "Marriott International",
-   "chain": "Marriott Bonvoy",
-   "status": "hub",
-   "title": "Marriott Vacation Club 공식 오퍼",
-   "description": "Marriott Vacation Club 리조트의 회원 특가와 장기 숙박 오퍼를 확인할 수 있습니다.",
-   "benefit": null,
-   "startsAt": null,
-   "endsAt": null,
-   "tags": [
-    "공식 오퍼",
-    "리조트",
-    "회원 혜택"
-   ],
-   "requirements": [],
-   "url": "https://marriottvacationclub.marriott.com/offers",
-   "verifiedAt": "2026-10-05"
-  },
-  {
-   "id": "hilton-offers",
-   "program": "hilton",
-   "brand": "Hilton",
-   "chain": "Hilton Honors",
-   "status": "hub",
-   "title": "Hilton Honors 공식 스페셜 오퍼",
-   "description": "회원 요금, 조식 포함, 호텔 크레딧 등 힐튼의 공식 오퍼를 확인할 수 있습니다.",
-   "benefit": null,
-   "startsAt": null,
-   "endsAt": null,
-   "tags": [
-    "공식 오퍼",
-    "회원 혜택",
-    "조식"
-   ],
-   "requirements": [],
-   "url": "https://www.hilton.com/en/offers/",
-   "verifiedAt": "2026-10-05"
-  },
-  {
-   "id": "hyatt-offers",
+   "id": "hyatt-yearend-sale",
    "program": "other",
-   "brand": "Hyatt",
-   "chain": "World of Hyatt",
-   "status": "hub",
-   "title": "World of Hyatt 공식 프로모션",
-   "description": "하얏트 호텔의 공식 상품과 World of Hyatt 회원 프로모션을 확인할 수 있습니다.",
-   "benefit": null,
-   "startsAt": null,
-   "endsAt": null,
-   "tags": [
-    "공식 오퍼",
-    "회원 혜택",
-    "포인트"
+   "brand": "World of Hyatt",
+   "title": "연말 한정 할인",
+   "benefit": "전 세계 참여 호텔 기간 한정 할인",
+   "kind": "할인",
+   "register": false,
+   "bookBy": "2026-12-08",
+   "endsAt": "2026-12-08",
+   "region": "전 세계 참여 하얏트",
+   "points": [
+    "2026년 12월 8일까지 예약",
+    "할인율·투숙 기간은 호텔별 요금 기준"
    ],
-   "requirements": [],
-   "url": "https://world.hyatt.com/content/gp/ko/offers.html",
-   "verifiedAt": "2026-10-05"
+   "url": "https://world.hyatt.com/content/gp/ko/offers.html"
   },
   {
-   "id": "lotte-hotel-packages",
+   "id": "shilla-santas-knock",
    "program": "other",
-   "brand": "롯데호텔앤리조트",
-   "chain": "LOTTE HOTELS & RESORTS",
-   "status": "hub",
-   "title": "롯데리조트 공식 객실 프로모션",
-   "description": "롯데리조트의 객실 패키지와 스페셜 오퍼를 확인하는 공식 목록입니다.",
-   "benefit": null,
-   "startsAt": null,
-   "endsAt": null,
-   "tags": [
-    "공식 오퍼",
-    "국내 여행",
-    "패키지"
+   "brand": "서울신라호텔",
+   "title": "Santa's Knock 객실 패키지",
+   "benefit": "산타 객실 방문 + 크리스마스 베어 키링 + 호텔 크레딧 15만원",
+   "kind": "서울 패키지",
+   "register": false,
+   "region": "서울신라호텔",
+   "points": [
+    "크리스마스 시즌 객실 패키지",
+    "가격·판매 기간은 예약 화면 기준"
    ],
-   "requirements": [],
-   "url": "https://resort.lottehotel.com/main/ko/package-event/package/list",
-   "verifiedAt": "2026-10-05"
-  },
-  {
-   "id": "shilla-packages",
-   "program": "other",
-   "brand": "호텔신라",
-   "chain": "The Shilla Hotels & Resorts",
-   "status": "hub",
-   "title": "서울신라호텔 공식 객실 패키지",
-   "description": "서울신라호텔의 객실 패키지와 신라리워즈 전용 상품을 확인할 수 있습니다.",
-   "benefit": null,
-   "startsAt": null,
-   "endsAt": null,
-   "tags": [
-    "공식 오퍼",
-    "서울",
-    "패키지"
-   ],
-   "requirements": [],
-   "url": "https://www.shillahotels.com/ko/theshilla/seoul/offers/package.do",
-   "verifiedAt": "2026-10-05"
-  },
-  {
-   "id": "lotte-hotel-eshop-events",
-   "program": "other",
-   "brand": "롯데호텔앤리조트",
-   "chain": "LOTTE HOTELS & RESORTS",
-   "status": "hub",
-   "title": "롯데호텔 공식 이숍 이벤트",
-   "description": "롯데호텔 공식 이숍의 진행 이벤트와 호텔 이용권·상품 프로모션을 확인할 수 있습니다.",
-   "benefit": null,
-   "startsAt": null,
-   "endsAt": null,
-   "tags": [
-    "공식 이벤트",
-    "호텔 이용권",
-    "쇼핑"
-   ],
-   "requirements": [],
-   "url": "https://eshop.lottehotel.com/board/list.php?bdId=eventnew",
-   "verifiedAt": "2026-10-05"
+   "url": "https://www.shillahotels.com/ko/theshilla/seoul/offers/package.do"
   }
  ]
 }
