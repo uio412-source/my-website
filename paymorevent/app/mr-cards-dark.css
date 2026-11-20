@@ -1,0 +1,6 @@
+/* 자동 생성 파일 — 직접 고치지 말고 `npm run theme`을 실행하세요. (scripts/dark-theme.mjs) */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--mc-bg:#11151c;--mc-bg-alt:#181e27;--mc-text:#e8ecf2;--mc-muted:#9aa4b4;--mc-primary:#5b85ff;--mc-primary-dark:#87a6ff;--mc-border:#2a3240;--mc-blue:#3987e5;--mc-orange:#d95926;--mc-green:#199e70;--mc-yellow:#c98500;--mc-pink:#f06292;--mc-purple:#9085e9;--mc-up:#ff6b6b;--mc-on-primary:#11151c;color-scheme:dark;}}
+:root[data-theme="dark"]{--mc-bg:#11151c;--mc-bg-alt:#181e27;--mc-text:#e8ecf2;--mc-muted:#9aa4b4;--mc-primary:#5b85ff;--mc-primary-dark:#87a6ff;--mc-border:#2a3240;--mc-blue:#3987e5;--mc-orange:#d95926;--mc-green:#199e70;--mc-yellow:#c98500;--mc-pink:#f06292;--mc-purple:#9085e9;--mc-up:#ff6b6b;--mc-on-primary:#11151c;color-scheme:dark;}
+/* 카드사·결제 브랜드 로고는 검은 글자가 많아 다크 모드에서 흰 바탕을 깔아 줌 */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) :is(img[src*="/issuers/"],img[src*="/brands/"]){background:#fff;border-radius:4px;box-shadow:0 0 0 3px #fff}}
+:root[data-theme="dark"] :is(img[src*="/issuers/"],img[src*="/brands/"]){background:#fff;border-radius:4px;box-shadow:0 0 0 3px #fff}

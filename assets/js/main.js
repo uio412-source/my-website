@@ -11,6 +11,11 @@ MS.getJSON = (url) => {
 };
 
 (() => {
+// Mr. Hotels·Mr. Travel 같은 하위 사이트는 <html data-site="hotels|travel">이고 폴더 한 단계 아래에 있음
+const subSite = document.documentElement.dataset.site || "";
+const isHotels = subSite !== ""; // 종목 데이터 배지·새로고침 버튼은 Mr. Stocks에서만
+const siteRoot = subSite ? "../" : "";
+
 // ---------- 공통: 다크/라이트 모드 전환 (선택은 이 브라우저에만 저장) ----------
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("theme-btn");
@@ -28,6 +33,31 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatchEvent(new Event("themechange"));
   });
   sysDark.addEventListener("change", () => { label(); window.dispatchEvent(new Event("themechange")); });
+});
+
+// ---------- 공통: 사이트 전환 (Stocks·Hotels·Travel). Mr. Cards 메뉴는 paymorevent/components/customer-shell.tsx ----------
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.querySelector(".site-header .logo");
+  if (!logo) return;
+  const box = document.createElement("div");
+  box.className = "site-switch";
+  logo.replaceWith(box);
+  box.innerHTML =
+    '<button type="button" class="site-switch-btn" aria-label="다른 사이트로 이동" aria-expanded="false" aria-haspopup="true">' +
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>' +
+    '<div class="site-switch-menu" hidden>' +
+    `<a href="${siteRoot}ungjup.html"${subSite ? "" : ' aria-current="true"'}><b>Mr. <span>Stocks</span></b><small>줍줍 차트 · 관심종목 · 배당</small></a>` +
+    `<a href="${siteRoot}paymorevent/"><b>Mr. <span>Cards</span></b><small>카드상품 · 발급이벤트 · 카드사 이벤트</small></a>` +
+    `<a href="${siteRoot}hotels/"${subSite === "hotels" ? ' aria-current="true"' : ""}><b>Mr. <span>Hotels</span></b><small>티어 · 호텔 · 이벤트 · 발레파킹</small></a>` +
+    `<a href="${siteRoot}travel/"${subSite === "travel" ? ' aria-current="true"' : ""}><b>Mr. <span>Travel</span></b><small>해외여행 혜택 · 여행지</small></a>` +
+    "</div>";
+  box.prepend(logo);
+  const btn = box.querySelector(".site-switch-btn");
+  const menu = box.querySelector(".site-switch-menu");
+  const set = (open) => { menu.hidden = !open; btn.setAttribute("aria-expanded", String(open)); };
+  btn.addEventListener("click", () => set(menu.hidden));
+  document.addEventListener("pointerdown", (e) => { if (!box.contains(e.target)) set(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") set(false); });
 });
 
 // ---------- 공통: 시간 표시 도우미 ----------
@@ -62,6 +92,7 @@ const nextAuto = () => {
 let stampTimer = null;
 let lastUpdated = null; // index.json의 updated 문자열 (새로고침 전후 비교용)
 async function buildStamp() {
+  if (isHotels) return;
   const right = document.querySelector(".head-right");
   if (!right) return;
   const get = (u) => MS.getJSON(u).catch(() => null);
@@ -116,7 +147,7 @@ async function reloadIfStale() {
   if (BUILD === "dev") return false; // 로컬 미리보기
   let v = null;
   try {
-    const r = await fetch("version.json?t=" + Date.now(), { cache: "no-store" });
+    const r = await fetch(siteRoot + "version.json?t=" + Date.now(), { cache: "no-store" });
     if (r.ok) v = (await r.json()).v;
   } catch (e) { return false; }
   if (!v || v === BUILD) return false;
@@ -135,7 +166,7 @@ window.addEventListener("pageshow", (e) => { if (e.persisted) reloadIfStale(); }
 // 각 페이지는 "datarefresh" 이벤트를 받아 detail.tasks에 자기 작업(Promise)을 넣음.
 const RUN_URL = "https://github.com/uio412-source/my-website/actions/workflows/deploy.yml";
 document.addEventListener("DOMContentLoaded", () => {
-  if (!document.querySelector(".site-header")) return;
+  if (isHotels || !document.querySelector(".site-header")) return;
   const fab = document.createElement("button");
   fab.type = "button";
   fab.className = "fab-refresh";

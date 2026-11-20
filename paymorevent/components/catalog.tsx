@@ -1,115 +1,312 @@
 "use client";
-import {IssuerLogo,IssuerLogoFilter} from '@/components/issuer-logos';
-import {PersonalBenefits} from '@/components/personal-benefits';
-import {readCardSummaries} from '@/pages/data';
-import {cardThemes,matchesPaymentEligibility,ELIGIBILITY_THEMES} from '@/lib/card-themes';
-import {EventBoard} from '@/components/event-board';
-import {CashbackGroups} from '@/components/cashback-groups';
-import {HotelMemberships} from '@/components/hotel-memberships';
-import {useEffect,useMemo,useState} from 'react';
-import {flushSync} from 'react-dom';
-import {Search,SlidersHorizontal,CreditCard,Plane,ShoppingBag,Smartphone,Hotel,Sparkles,X,FileText,Coffee,Bus,ArrowRight,ChevronDown} from 'lucide-react';
-import type {Card,Offer} from '@/lib/catalog-types';
-import {CardArtwork} from '@/components/card-visuals';
-import {SiteHeader,SiteFooter} from '@/components/customer-shell';
-import {ISSUERS,BENEFIT_KINDS,issuerGroup,benefitKinds,bestPicking,formatPicking,pickingRange,linkedOffers,eventCategory,EVENT_CATEGORIES,activeOffer,currentMonthOffer,visibleOffer,offerTags,requiresEntry,cardFamilyKey,groupCards,dedupeOffers,offerApplies} from '@/lib/catalog-model';
-import {browseThemes,featureTags} from '@/lib/customer-copy';
-import {cardPath,shortText} from '@/lib/card-presentation';
-const categories=[{tag:'전체',icon:Sparkles},{tag:'무실적',icon:CreditCard},{tag:'쇼핑',icon:ShoppingBag},{tag:'커피',icon:Coffee},{tag:'교통',icon:Bus},{tag:'K패스',icon:Bus},{tag:'통신',icon:Smartphone},{tag:'마일리지',icon:Plane},{tag:'라운지',icon:Plane},{tag:'마티나골드',icon:Plane},{tag:'호텔',icon:Hotel},{tag:'해외',icon:Plane},{tag:'상품권 가능',icon:ShoppingBag},{tag:'관리비',icon:CreditCard},{tag:'국세',icon:FileText},{tag:'지방세',icon:FileText},{tag:'혜자카드',icon:Sparkles}];
-const normalize=(s:string)=>s.toLowerCase().replace(/[\s#·_-]/g,'');
-const matches=(str:string,query:string)=>!query.trim()||query.trim().split(/\s+/).every(q=>normalize(str).includes(normalize(q)));
-const won=(n:number)=>n===0?'없음':n>=10000?`${Number((n/10000).toFixed(2))}만원`:`${n.toLocaleString('ko-KR')}원`;
-const sections=[{id:'cards',label:'카드 찾기'},{id:'cashback',label:'발급 캐시백'},{id:'events',label:'카드 이벤트'},{id:'hotels',label:'호텔 혜택'}];
-function SelectFilter({label,value,set,options}:{label:string;value:string;set:(v:string)=>void;options:{value:string;label:string}[]}){return <label className="pm-select"><span>{label}</span><select value={value} onChange={e=>set(e.target.value)}>{options.map(o=><option key={o.value} value={o.value}>{o.label}</option>)}</select></label>;}
-export default function Catalog({initialCards,initialEvents}:{initialCards:Card[];initialEvents:Offer[]}){
-  const [cards,setCards]=useState(initialCards);
-  const events=useMemo(()=>dedupeOffers(initialEvents),[initialEvents]);
-  const [eligibilityMode,setEligibilityMode]=useState("benefit");const [onlyEvents,setOnlyEvents]=useState(false);const [entryOnly,setEntryOnly]=useState(false);
-  const [tab,setTab]=useState("cards"),[query,setQuery]=useState(""),[selectedTags,setTags]=useState<string[]>([]);
-  const [issuer,setIssuer]=useState("all"),[type,setType]=useState("all"),[brand,setBrand]=useState("all"),[fee,setFee]=useState("all"),[spend,setSpend]=useState("all"),[verified,setVerified]=useState(false),[docs,setDocs]=useState(false),[sort,setSort]=useState("complete");
-  const [eventCard,setEventCard]=useState('all');
-  const [benefitKind,setBenefitKind]=useState("all"),[eventType,setEventType]=useState("all"),[channel,setChannel]=useState("all");
-  const [pageWindow,setPageWindow]=useState({key:"",count:24});
-  const [loadFailed,setLoadFailed]=useState(false),[loadAttempt,setLoadAttempt]=useState(0);
+// Mr. Cards 목록 화면: 카드상품 검색 · 발급이벤트 · 카드사 이벤트
+import {useDeferredValue, useEffect, useMemo, useState} from 'react';
+import {readSearchableCards} from '@/pages/data';
+import type {Card, Offer} from '@/lib/catalog-types';
+import {SiteHeader, SiteFooter} from '@/components/customer-shell';
+import {CardArt, Chips, Empty, IssuerTile, SearchBox, Tabs, cardImage} from '@/components/mc-ui';
+import {
+  BENEFIT_KINDS, EVENT_CATEGORIES, activeOffer, benefitKinds, bestPicking, cardFamilyKey, currentMonthOffer, dedupeOffers,
+  eventCategory, eventPath, formatPicking, groupCards, issuerGroup, offerApplies, offerLinkLabel, requiresEntry, rewardValue, visibleOffer,
+} from '@/lib/catalog-model';
+import {ELIGIBILITY_THEMES, matchesPaymentEligibility} from '@/lib/card-themes';
+import {browseThemes} from '@/lib/customer-copy';
+import {cardPath} from '@/lib/card-presentation';
+import {valetRules} from '@/lib/hotel-valet';
+import {sitePath} from '@/lib/site-path';
+import {ISSUER_FILTERS, dday, eventSummary, feeLabel, headlineAmount, highlights, issuerFilterLabel, searchScore, spendLabel, today, won, ymd} from '@/lib/mc-text';
+import sources from '@/data/personal-benefit-sources.json';
+
+type Tab = 'cards' | 'cashback' | 'events';
+const SECTIONS: Record<Tab, {title: string; sub: string}> = {
+  cards: {title: '카드상품 검색', sub: '혜택·카드사·실적 조건으로 내게 맞는 카드를 찾아보세요.'},
+  cashback: {title: '발급이벤트', sub: '새로 만들면 캐시백 주는 카드를 금액 순으로 모았어요.'},
+  events: {title: '카드사 이벤트', sub: '이번 달 진행 중인 카드사 이벤트를 마감 임박 순으로 모았어요.'},
+};
+const THEMES = ['무실적', '쇼핑', '커피', '교통', 'K패스', '통신', '해외', '마일리지', '라운지', '마티나골드', '호텔', '상품권 가능', '관리비', '국세', '지방세', '혜자카드', '호텔 발레'] as const;
+const PAGE = 30;
+const groupOf = (issuer: string) => issuerGroup(issuer);
+
+export default function Catalog({initialCards, initialEvents, eventsLoading = false}: {initialCards: Card[]; initialEvents: Offer[]; eventsLoading?: boolean}) {
+  const [cards, setCards] = useState(initialCards);
+  const [loadFailed, setLoadFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   useEffect(() => {
-    let mounted = true;
-    setLoadFailed(false);
-    readCardSummaries().then(data => {
-      if (mounted) setCards(data);
-    }).catch(() => {
-      if (mounted) setLoadFailed(true);
-    });
-    return () => { mounted = false; };
-  }, [loadAttempt]);
-  useEffect(()=>{const change=()=>{const hash=location.hash.slice(1);const cardId=new URLSearchParams(location.search).get('card');if(cardId)setEventCard(cardId);if(sections.some(section=>section.id===hash))setTab(hash);};change();window.addEventListener('hashchange',change);return()=>window.removeEventListener('hashchange',change);},[]);
-  const [currentDay,setCurrentDay]=useState("");useEffect(()=>{const update=()=>setCurrentDay(new Date(Date.now()+9*3600000).toISOString().slice(0,10));update();const timer=setInterval(update,60000);return()=>clearInterval(timer);},[]);
-  const filterKey=JSON.stringify([query,selectedTags,issuer,type,brand,fee,spend,verified,docs,sort,tab,benefitKind,eventType,channel,onlyEvents,entryOnly,eligibilityMode,eventCard]);
-  const limit=pageWindow.key===filterKey?pageWindow.count:24;
-  const brands=useMemo(()=>Array.from(new Set(cards.flatMap(c=>c.brands))).sort(),[cards]);
+    let on = true;
+    readSearchableCards().then(d => on && setCards(d), () => on && setLoadFailed(true));
+    return () => { on = false; };
+  }, [attempt]);
+  const events = useMemo(() => dedupeOffers(initialEvents), [initialEvents]);
 
-  const toggleTag=(tag:string)=>{if(tag==="전체"){setTags([]);return;}setTags(prev=>prev.includes(tag)?prev.filter(t=>t!==tag):[...prev,tag]);};
-  const reset=()=>{setQuery("");setTags([]);setIssuer("all");setType("all");setBrand("all");setFee("all");setSpend("all");setVerified(false);setDocs(false);setBenefitKind("all");setEventType("all");setChannel("all");setOnlyEvents(false);setEntryOnly(false);setEligibilityMode("benefit");setEventCard("all");const u=new URL(location.href);u.searchParams.delete("card");history.replaceState(null,"",u.pathname+u.search+u.hash);};
-  const filteredCards=useMemo(()=>cards.filter(c=>{
-    const tags=browseThemes(c);
-    return (!onlyEvents||linkedOffers(c,events).length>0)&&matches([c.name,c.issuer,c.searchText??c.description,...tags,...c.brands,...c.benefits.map(b=>`${b.title} ${b.detail}`)].join(" "),query)&&selectedTags.every(t=>t==="혜자카드"?!!bestPicking(c):ELIGIBILITY_THEMES.includes(t as typeof ELIGIBILITY_THEMES[number])?matchesPaymentEligibility(c,t,eligibilityMode as 'spend'|'benefit'|'both'|'any'):tags.includes(t))&&(issuer==="all"||(c.issuerGroup??issuerGroup(c.issuer))===issuer)&&(benefitKind==="all"||benefitKinds(c).includes(benefitKind))&&(type==="all"||c.type===type)&&(brand==="all"||c.brands.includes(brand))&&(fee==="all"||(c.annualFeeMin!==null&&c.annualFeeMin<=Number(fee)))&&(spend==="all"||(c.minimumSpend!==null&&c.minimumSpend<=Number(spend)))&&(!verified||c.issuanceStatus==="confirmed")&&(!docs||!!c.termsUrl);
-  }).sort((a,b)=>(sort==="picking"||selectedTags.includes("혜자카드"))?(bestPicking(b)?.value??-Infinity)-(bestPicking(a)?.value??-Infinity):sort==="fee"?(a.annualFeeMin??Infinity)-(b.annualFeeMin??Infinity):sort==="name"?a.name.localeCompare(b.name,"ko"):(b.normalization?.qualityScore??0)-(a.normalization?.qualityScore??0)||a.name.localeCompare(b.name,"ko")),[cards,events,query,selectedTags,issuer,type,brand,fee,spend,verified,docs,sort,benefitKind,onlyEvents,currentDay,eligibilityMode]);
-  const cardGroups=useMemo(()=>{const all=new Map(groupCards(cards).map(g=>[cardFamilyKey(g.card),g.variants]));return groupCards(filteredCards).map(g=>({...g,variants:all.get(cardFamilyKey(g.card))??g.variants}));},[cards,filteredCards]);
-  const selectedEventCard=cards.find(c=>c.id===eventCard);
-  const eventCardVariants=selectedEventCard?cards.filter(c=>cardFamilyKey(c)===cardFamilyKey(selectedEventCard)):[];
-  const queryCards=useMemo(()=>query.trim()?cards.filter(c=>matches([c.issuer,c.name,c.familyName??'',...(c.searchAliases??[])].join(' '),query)):[],[cards,query]);
-  const eventCardOptions=useMemo(()=>groupCards(cards.filter(c=>issuer==='all'||issuerGroup(c.issuer)===issuer)),[cards,issuer]);
-  const filteredEvents=dedupeOffers(events).filter(o=>(tab==="events"||visibleOffer(o))&&(tab==="hotels"?o.kind==="hotel":tab==="cashback"?o.kind==="cashback":o.kind!=="hotel")&&(tab==="events"?currentMonthOffer(o):activeOffer(o))&&(issuer==="all"||issuerGroup(o.issuer)===issuer)&&(eventType==="all"||eventCategory(o)===eventType)&&(channel==="all"||o.channel===channel)&&(!entryOnly||requiresEntry(o))&&(eventCard==='all'||eventCardVariants.some(c=>offerApplies(c,o)))&&(matches([o.title,o.issuer,o.description,o.benefitText,o.channel??"",...o.tags,...offerTags(o)].join(" "),query)||queryCards.some(c=>offerApplies(c,o)))).sort((a,b)=>(a.endsAt??'').localeCompare(b.endsAt??''));
-  useEffect(()=>{
-    const context=(document as Document & {modelContext?:{registerTool:(tool:unknown,options:unknown)=>void|Promise<void>}}).modelContext;if(!context?.registerTool)return;
-    const lifecycle=new AbortController();
-    const register=context.registerTool({name:"search_mr_cards",title:"Mr. Cards 혜택 검색",description:"카드와 이벤트를 검색하고 화면의 검색어와 탭을 변경합니다.",inputSchema:{type:"object",properties:{query:{type:"string"},section:{type:"string",enum:["cards","cashback","events","hotels"]}},required:["query","section"],additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:true},execute:(input:unknown)=>{if(!input||typeof input!=="object")throw new Error("검색 조건이 필요합니다.");const x=input as {query?:unknown;section?:unknown};if(typeof x.query!=="string"||x.query.length>200||typeof x.section!=="string"||!["cards","cashback","events","hotels"].includes(x.section))throw new Error("올바른 검색어와 섹션을 입력하세요.");flushSync(()=>{setQuery(x.query as string);setTab(x.section as string);setTags([]);setIssuer("all");setType("all");setBrand("all");setFee("all");setSpend("all");setVerified(false);setDocs(false);setEventCard("all");});return {query:x.query,section:x.section};}},{signal:lifecycle.signal});Promise.resolve(register).catch(()=>{});return()=>lifecycle.abort();
-  },[]);
+  const initialTab = (): Tab => { const h = location.hash.slice(1); return h === 'cashback' || h === 'events' ? h : 'cards'; };
+  const [tab, setTab] = useState<Tab>(initialTab);
+  useEffect(() => {
+    const sync = () => setTab(initialTab());
+    window.addEventListener('hashchange', sync);
+    return () => window.removeEventListener('hashchange', sync);
+  }, []);
+  const go = (t: Tab) => { setTab(t); history.replaceState(null, '', location.pathname + location.search + '#' + t); window.scrollTo({top: 0}); };
 
-  const advancedCount=Number(type!=='all')+Number(brand!=='all')+Number(fee!=='all')+Number(spend!=='all')+Number(benefitKind!=='all')+Number(verified)+Number(docs)+Number(onlyEvents);
-  const hasFilters=!!query||selectedTags.length>0||issuer!=='all'||advancedCount>0||eventType!=='all'||channel!=='all'||entryOnly||eventCard!=='all';
-  const changeTab=(id:string)=>{setTab(id);reset();history.replaceState(null,'','#'+id);};
-  return <div className="pm-site">
+  return <div className="pm-site mc">
     <a className="pm-skip" href="#main-content">본문으로 이동</a>
-    <SiteHeader current={tab} onNav={changeTab}/>
-    <main id="main-content" className="pm-main">
-      <div className="pm-intro"><h1>{tab==='cards'?'내 생활에 맞는 카드':tab==='cashback'?'새 카드, 더 큰 혜택':tab==='events'?'지금 챙길 수 있는 이벤트':'여행을 더 편하게'}</h1><p>{tab==='cards'?'원하는 혜택부터 골라보세요.':tab==='cashback'?'카드사와 발급 채널별 혜택을 비교해보세요.':tab==='events'?'할인부터 포인트까지, 필요한 혜택만 골라보세요.':'호텔을 찾고, 멤버십 혜택을 비교하세요.'}</p></div>
-      <div className="pm-search"><Search size={22} aria-hidden="true"/><input aria-label="카드·혜택·이벤트 검색" value={query} onChange={e=>setQuery(e.target.value)} placeholder={tab==='cards'?'카드 이름, 가맹점 또는 혜택 검색':tab==='hotels'?'호텔 이름 또는 도시 검색':'카드사 또는 이벤트 검색'}/>{query&&<button aria-label="검색어 지우기" onClick={()=>setQuery('')}><X size={18}/></button>}</div>
-      {tab==='cards'&&<div className="pm-chips" aria-label="혜택 선택">{categories.map(({tag,icon:Icon})=><button key={tag} aria-pressed={tag==='전체'?selectedTags.length===0:selectedTags.includes(tag)} onClick={()=>toggleTag(tag)}><Icon size={15} aria-hidden="true"/>{tag}</button>)}</div>}
-      {tab==='events'&&<div className="pm-chips" aria-label="이벤트 종류">{['all',...EVENT_CATEGORIES].map(t=><button key={t} aria-pressed={eventType===t} onClick={()=>setEventType(t)}>{t==='all'?'전체':t}</button>)}</div>}
-      {loadFailed&&<div className="pm-load-error" role="status">전체 목록을 불러오지 못했어요.<button onClick={()=>setLoadAttempt(v=>v+1)}>다시 불러오기</button></div>}
-      {['cards','cashback','events'].includes(tab)&&<IssuerLogoFilter value={issuer} onChange={setIssuer}/>}
-      {tab==='cards'&&<>
-        <div className="pm-toolbar">
-
-          <details className="pm-advanced"><summary><SlidersHorizontal size={16}/>상세 필터{advancedCount>0&&<b>{advancedCount}</b>}<ChevronDown size={14}/></summary><div className="pm-advanced-panel">
-            <SelectFilter label="카드 종류" value={type} set={setType} options={[{value:'all',label:'전체'},{value:'credit',label:'신용카드'},{value:'debit',label:'체크카드'}]}/>
-            <SelectFilter label="연회비" value={fee} set={setFee} options={[{value:'all',label:'전체'},{value:'0',label:'연회비 없음'},{value:'20000',label:'2만원 이하'},{value:'50000',label:'5만원 이하'},{value:'100000',label:'10만원 이하'}]}/>
-            <SelectFilter label="전월실적" value={spend} set={setSpend} options={[{value:'all',label:'전체'},{value:'0',label:'무실적'},{value:'300000',label:'30만원 이하'},{value:'500000',label:'50만원 이하'},{value:'1000000',label:'100만원 이하'}]}/>
-            <SelectFilter label="혜택 방식" value={benefitKind} set={setBenefitKind} options={[{value:'all',label:'전체'},...BENEFIT_KINDS.map(i=>({value:i,label:i}))]}/>
-            <SelectFilter label="브랜드" value={brand} set={setBrand} options={[{value:'all',label:'전체'},...brands.map(b=>({value:b,label:b}))]}/>
-            <div className="pm-checks"><label><input type="checkbox" checked={onlyEvents} onChange={e=>setOnlyEvents(e.target.checked)}/>이벤트 있는 카드</label><label><input type="checkbox" checked={verified} onChange={e=>setVerified(e.target.checked)}/>발급 안내 있는 카드</label><label><input type="checkbox" checked={docs} onChange={e=>setDocs(e.target.checked)}/>상품설명서 있는 카드</label></div>
-          </div></details>
-          {hasFilters&&<button className="pm-reset" onClick={reset}>초기화</button>}
-          <div className="pm-toolbar-end"><span aria-live="polite"><strong>{cardGroups.length.toLocaleString('ko-KR')}</strong>개 카드</span><select aria-label="카드 정렬" value={selectedTags.includes('혜자카드')?'picking':sort} disabled={selectedTags.includes('혜자카드')} onChange={e=>setSort(e.target.value)}><option value="complete">기본순</option><option value="picking">피킹률 높은순</option><option value="fee">연회비 낮은순</option><option value="name">이름순</option></select></div>
-        </div>
-        {selectedTags.length>0&&<div className="pm-applied"><span>선택한 혜택</span>{selectedTags.map(t=><button key={t} onClick={()=>toggleTag(t)} aria-label={t+' 필터 해제'}>{t}<X size={12}/></button>)}</div>}
-        {selectedTags.some(t=>ELIGIBILITY_THEMES.includes(t as typeof ELIGIBILITY_THEMES[number]))&&<div className="pm-eligibility"><SelectFilter label="적용 기준" value={eligibilityMode} set={setEligibilityMode} options={[{value:'benefit',label:'적립·할인 제공'},{value:'spend',label:'실적 인정(전월·연간)'},{value:'both',label:'같은 범위에서 실적·혜택 모두'},{value:'any',label:'실적 또는 혜택 가능'}]}/></div>}
-        <div className="pm-card-grid">{cardGroups.slice(0,limit).map(({card})=>{
-          const linkedCount=dedupeOffers(cards.filter(c=>cardFamilyKey(c)===cardFamilyKey(card)).flatMap(c=>linkedOffers(c,events))).length;const best=bestPicking(card);const uniqueBenefits=Array.from(new Map(card.benefits.map(b=>[b.title,b])).values()).slice(0,2);
-          return <a className="pm-card" key={card.id} href={cardPath(card.id)} data-navigation="document"><div className="pm-card-header"><span className="pm-card-issuer"><IssuerLogo issuer={card.issuer}/><i>{card.type==='credit'?'신용':'체크'}</i></span><div className="pm-card-score">{best?<><span>최고피킹률</span><strong>{formatPicking(best.value)}%</strong>{pickingRange(card)?.min!==best.value&&<small>피킹률 {pickingRange(card)?.label}</small>}</>:<span>최고피킹률 확인 중</span>}</div></div><div className="pm-card-top"><CardArtwork card={card}/><div className="pm-card-copy"><h2>{card.familyName??card.name}</h2>{linkedCount>0&&<span className="pm-card-event-count">진행 중 이벤트 {linkedCount}개</span>}<div className="pm-card-benefits">{uniqueBenefits.map((b,i)=><p key={i}>{shortText(b.title,65)}</p>)}</div><div className="pm-card-hashtags">{featureTags(card).slice(0,4).map(tag=><span key={tag}>#{tag}</span>)}</div></div></div><div className="pm-card-bottom"><div><span>연회비</span><strong>{card.annualFeeMin===null?'—':won(card.annualFeeMin)+(card.annualFeeMin>0?'부터':'')}</strong></div><div><span>전월실적</span><strong>{card.minimumSpend===null?'—':card.minimumSpend===0?'무실적':won(card.minimumSpend)+'부터'}</strong></div><ArrowRight size={19} aria-hidden="true"/></div></a>;
-        })}</div>
-        {!filteredCards.length&&<div className="pm-empty"><Search size={28}/><h2>조건에 맞는 카드가 없어요</h2><p>선택한 조건을 조금 줄여보세요.</p><button onClick={reset}>전체 카드 보기</button></div>}
-        {cardGroups.length>limit&&<button className="pm-more" onClick={()=>setPageWindow({key:filterKey,count:limit+24})}>카드 더 보기<ChevronDown size={16}/></button>}
-      </>}
-      {(['events','cashback','hotels'] as const).includes(tab as 'events'|'cashback'|'hotels')&&<>
-        {tab==='hotels'?<><HotelMemberships query={query}/>{filteredEvents.length>0&&<section className="pm-section"><h2>진행 중 호텔 이벤트</h2><EventBoard offers={filteredEvents}/></section>}</>:<>
-          <div className="pm-event-card-filter"><SelectFilter label="내 카드로 찾기" value={selectedEventCard?(eventCardOptions.find(g=>g.variants.some(v=>v.id===selectedEventCard.id))?.card.id??eventCard):'all'} set={setEventCard} options={[{value:'all',label:'모든 카드'},...eventCardOptions.map(g=>({value:g.card.id,label:g.card.issuer+' · '+(g.card.familyName??g.card.name)}))]}/>{eventCard!=='all'&&<p>카드별 응모·발급 경로·브랜드 조건을 확인하세요.</p>}</div>
-          <div className="pm-toolbar">{tab==='cashback'?<SelectFilter label="발급 채널" value={channel} set={setChannel} options={[{value:'all',label:'모든 채널'},...Array.from(new Set(events.filter(o=>o.kind==='cashback'&&visibleOffer(o)).map(o=>o.channel??'공식'))).map(i=>({value:i,label:i}))]}/>:<label className="pm-check"><input type="checkbox" checked={entryOnly} onChange={e=>setEntryOnly(e.target.checked)}/>응모 이벤트</label>}{hasFilters&&<button className="pm-reset" onClick={reset}>초기화</button>}<span className="pm-toolbar-end" aria-live="polite">{filteredEvents.length}개 이벤트</span></div>
-          {tab==='cashback'?<CashbackGroups offers={filteredEvents}/>:<EventBoard offers={filteredEvents}/>}
-          {!filteredEvents.length&&<div className="pm-empty"><h2>조건에 맞는 이벤트가 없어요</h2><button onClick={reset}>전체 이벤트 보기</button></div>}
-          {tab==='events'&&<PersonalBenefits issuer={issuer}/>}
-        </>}
-      </>}
-    </main><SiteFooter/>
+    <SiteHeader current={tab} onNav={id => go(id as Tab)}/>
+    <main id="main-content" className="mc-main">
+      <div className="mc-head"><h1>{SECTIONS[tab].title}</h1><p>{SECTIONS[tab].sub}</p></div>
+      {loadFailed && <div className="mc-alert" role="status">전체 카드 목록을 불러오지 못했어요. <button type="button" onClick={() => { setLoadFailed(false); setAttempt(a => a + 1); }}>다시 불러오기</button></div>}
+      {tab === 'cards' && <CardsView cards={cards} events={events}/>}
+      {tab !== 'cards' && (eventsLoading
+        ? <Empty title="이벤트를 불러오고 있어요…"/>
+        : tab === 'cashback' ? <CashbackView events={events}/> : <EventsView events={events} cards={cards}/>)}
+    </main>
+    <SiteFooter/>
   </div>;
+}
+
+// ======================= 카드상품 검색 =======================
+function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
+  const [q, setQ] = useState('');
+  const query = useDeferredValue(q);
+  const [themes, setThemes] = useState<string[]>(() => new URLSearchParams(location.search).get('valet') ? ['호텔 발레'] : []);
+  const [issuer, setIssuer] = useState('all');
+  const [type, setType] = useState<'all' | 'credit' | 'debit'>('all');
+  const [fee, setFee] = useState('all'), [spend, setSpend] = useState('all'), [brand, setBrand] = useState('all'), [kind, setKind] = useState('all');
+  const [withEvents, setWithEvents] = useState(false);
+  const [sort, setSort] = useState('best');
+  const [more, setMore] = useState(PAGE);
+  const [panel, setPanel] = useState(false);
+
+  // 카드마다 한 번만 계산 (검색할 때마다 다시 하지 않게)
+  const live = useMemo(() => {
+    const byIssuer = new Map<string, Offer[]>();
+    for (const o of events) if (visibleOffer(o) && activeOffer(o)) { const g = groupOf(o.issuer); byIssuer.set(g, [...(byIssuer.get(g) ?? []), o]); }
+    return byIssuer;
+  }, [events]);
+  const meta = useMemo(() => {
+    const m = new Map<string, {themes: string[]; best: number | null; events: number; hl: string[]; rec: number; text: [string, number][]}>();
+    for (const c of cards) {
+      const best = bestPicking(c)?.value ?? null;
+      const hl = highlights(c, 3);
+      const n = (live.get(groupOf(c.issuer)) ?? []).filter(o => offerApplies(c, o)).length;
+      // 추천순: 계산된 피킹률·실물 이미지·정리된 혜택·진행 이벤트가 많을수록 위로 (데이터가 빈약한 카드는 아래로)
+      const rec = (best !== null ? 30 : 0) + (cardImage(c) ? 25 : 0) + Math.min(hl.length, 3) * 6 + Math.min(n, 5) * 3 + (c.normalization?.qualityScore ?? 0) / 10;
+      m.set(c.id, {
+        themes: browseThemes(c), best, events: n, hl, rec,
+        text: [[c.familyName ?? c.name, 100], [(c.searchAliases ?? []).join(' '), 80], [c.issuer + ' ' + groupOf(c.issuer), 40],
+          [c.benefits.map(b => b.title).join(' '), 30], [browseThemes(c).join(' ') + ' ' + c.brands.join(' ') + (c.type === 'credit' ? ' 신용' : ' 체크'), 25],
+          [(c.searchText ?? '') + ' ' + c.benefits.map(b => b.detail).join(' '), 8]],
+      });
+    }
+    return m;
+  }, [cards, live]);
+  const brands = useMemo(() => [...new Set(cards.flatMap(c => c.brands))].filter(b => b && b !== '국내전용').sort(), [cards]);
+
+  const filtered = useMemo(() => {
+    const out: {c: Card; score: number}[] = [];
+    for (const c of cards) {
+      const m = meta.get(c.id)!;
+      if (issuer !== 'all' && groupOf(c.issuer) !== issuer) continue;
+      if (type !== 'all' && c.type !== type) continue;
+      if (fee !== 'all' && !(c.annualFeeMin !== null && c.annualFeeMin <= Number(fee))) continue;
+      if (spend !== 'all' && !(c.minimumSpend !== null && c.minimumSpend <= Number(spend))) continue;
+      if (brand !== 'all' && !c.brands.includes(brand)) continue;
+      if (kind !== 'all' && !benefitKinds(c).includes(kind)) continue;
+      if (withEvents && !m.events) continue;
+      if (!themes.every(t => t === '혜자카드' ? m.best !== null : t === '호텔 발레' ? valetRules(c.id).length > 0
+        : (ELIGIBILITY_THEMES as readonly string[]).includes(t) ? matchesPaymentEligibility(c, t, 'any') : m.themes.includes(t))) continue;
+      const score = searchScore(query, m.text);
+      if (!score) continue;
+      out.push({c, score});
+    }
+    const by: Record<string, (a: {c: Card; score: number}, b: {c: Card; score: number}) => number> = {
+      best: (a, b) => (query ? b.score - a.score : 0) || meta.get(b.c.id)!.rec - meta.get(a.c.id)!.rec || a.c.name.localeCompare(b.c.name, 'ko'),
+      picking: (a, b) => (meta.get(b.c.id)!.best ?? -1) - (meta.get(a.c.id)!.best ?? -1),
+      fee: (a, b) => (a.c.annualFeeMin ?? Infinity) - (b.c.annualFeeMin ?? Infinity),
+      events: (a, b) => meta.get(b.c.id)!.events - meta.get(a.c.id)!.events,
+      name: (a, b) => a.c.name.localeCompare(b.c.name, 'ko'),
+    };
+    out.sort(themes.includes('혜자카드') ? by.picking : by[sort]);
+    // 같은 카드의 브랜드·디자인 변형은 하나로
+    const seen = new Set<string>();
+    return out.filter(({c}) => { const k = cardFamilyKey(c); if (seen.has(k)) return false; seen.add(k); return true; }).map(x => x.c);
+  }, [cards, meta, query, themes, issuer, type, fee, spend, brand, kind, withEvents, sort]);
+  useEffect(() => setMore(PAGE), [query, themes, issuer, type, fee, spend, brand, kind, withEvents, sort]);
+
+  const toggleTheme = (t: string) => setThemes(p => p.includes(t) ? p.filter(x => x !== t) : [...p, t]);
+  const advanced = [fee, spend, brand, kind].filter(v => v !== 'all').length + Number(withEvents);
+  const anything = !!q || themes.length > 0 || issuer !== 'all' || type !== 'all' || advanced > 0;
+  const reset = () => { setQ(''); setThemes([]); setIssuer('all'); setType('all'); setFee('all'); setSpend('all'); setBrand('all'); setKind('all'); setWithEvents(false); };
+  const families = useMemo(() => new Set(cards.map(cardFamilyKey)).size, [cards]);
+
+  return <>
+    <SearchBox value={q} onChange={setQ} placeholder="카드 이름·혜택 검색 (예: 스타벅스, 해외 수수료, ㅅㅎ)"/>
+    <Chips label="혜택" items={THEMES.map(t => ({value: t, label: t}))} value={themes} onChange={toggleTheme} multi/>
+    <Chips label="카드사" items={[{value: 'all', label: '전체 카드사'}, ...ISSUER_FILTERS.map(g => ({value: g, label: issuerFilterLabel(g)}))]} value={issuer} onChange={setIssuer}/>
+    <div className="mc-bar">
+      <Tabs label="카드 종류" items={[{value: 'all', label: '전체'}, {value: 'credit', label: '신용'}, {value: 'debit', label: '체크'}]} value={type} onChange={setType}/>
+      <button type="button" className="mc-btn" aria-expanded={panel} onClick={() => setPanel(p => !p)}>필터{advanced > 0 && <b>{advanced}</b>}</button>
+      {anything && <button type="button" className="mc-link" onClick={reset}>초기화</button>}
+      <span className="mc-count">{filtered.length.toLocaleString('ko-KR')}<small>/{families.toLocaleString('ko-KR')}종</small></span>
+      <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}>
+        <option value="best">{q ? '검색 정확도순' : '추천순'}</option><option value="picking">피킹률 높은순</option>
+        <option value="fee">연회비 낮은순</option><option value="events">이벤트 많은순</option><option value="name">이름순</option>
+      </select>
+    </div>
+    {panel && <div className="mc-panel">
+      <Field label="연회비" value={fee} set={setFee} options={[['all', '전체'], ['0', '없음'], ['20000', '2만원 이하'], ['50000', '5만원 이하'], ['100000', '10만원 이하']]}/>
+      <Field label="전월실적" value={spend} set={setSpend} options={[['all', '전체'], ['0', '무실적'], ['300000', '30만원 이하'], ['500000', '50만원 이하']]}/>
+      <Field label="혜택 방식" value={kind} set={setKind} options={[['all', '전체'], ...BENEFIT_KINDS.map(k => [k, k] as [string, string])]}/>
+      <Field label="브랜드" value={brand} set={setBrand} options={[['all', '전체'], ...brands.map(b => [b, b] as [string, string])]}/>
+      <label className="mc-check"><input type="checkbox" checked={withEvents} onChange={e => setWithEvents(e.target.checked)}/>진행 중 이벤트 있는 카드만</label>
+    </div>}
+    {themes.includes('호텔 발레') && <p className="mc-note">서울 호텔별로 어떤 카드가 되는지는 <a href={sitePath('../hotels/valet.html')}>Mr. Hotels 발레파킹 지도</a>에서 볼 수 있어요.</p>}
+
+    {filtered.length ? <div className="mc-rows">{filtered.slice(0, more).map(c => {
+      const m = meta.get(c.id)!;
+      const facts = [c.type === 'credit' ? '신용' : '체크', feeLabel(c.annualFeeMin), spendLabel(c.minimumSpend)].filter(Boolean);
+      return <a key={c.id} className="mc-row mc-cardrow" href={cardPath(c.id)}>
+        <CardArt card={c}/>
+        <span className="mc-body">
+          <span className="mc-issuer">{c.issuer}</span>
+          <b className="mc-name">{c.familyName ?? c.name}</b>
+          <span className="mc-facts">{facts.join(' · ')}</span>
+          {m.hl.length > 0 && <span className="mc-hl">{m.hl.map(h => <i key={h}>{h}</i>)}</span>}
+        </span>
+        <span className="mc-side">
+          {m.best !== null && <span className="mc-pick"><small>최대</small>{formatPicking(m.best)}%</span>}
+          {m.events > 0 && <span className="mc-pill">이벤트 {m.events}</span>}
+        </span>
+      </a>;
+    })}</div> : <Empty title="조건에 맞는 카드가 없어요. 조건을 줄여 보세요." action={{label: '전체 카드 보기', onClick: reset}}/>}
+    {filtered.length > more && <button type="button" className="mc-more" onClick={() => setMore(n => n + PAGE)}>더 보기 ({(filtered.length - more).toLocaleString('ko-KR')}개 남음)</button>}
+    <p className="mc-note">피킹률 = 전월실적 최소 구간에서 받을 수 있는 최대 혜택 ÷ 실적. 카드사 원문으로 계산이 끝난 카드만 표시해요.</p>
+  </>;
+}
+
+function Field({label, value, set, options}: {label: string; value: string; set: (v: string) => void; options: [string, string][]}) {
+  return <label className="mc-field"><span>{label}</span><select value={value} onChange={e => set(e.target.value)}>{options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select></label>;
+}
+
+// ======================= 공통: 이벤트 행 =======================
+function EventRow({o, amount}: {o: Offer; amount?: number | null}) {
+  const d = dday(o.endsAt);
+  const soon = !!o.endsAt && (Date.parse(o.endsAt) - Date.parse(today())) / 864e5 <= 7;
+  const sum = eventSummary(o);
+  const scope = offerLinkLabel(o);
+  return <a className="mc-row mc-evrow" href={eventPath(o.id)}>
+    <IssuerTile issuer={o.issuer}/>
+    <span className="mc-body">
+      <span className="mc-issuer">{o.issuer}{o.channel && o.channel !== '카드사 공식' ? ` · ${o.channel}` : ''}</span>
+      <b className="mc-name">{o.title}</b>
+      {sum && <span className="mc-sum">{sum}</span>}
+      <span className="mc-tags">
+        {(o.kind === 'cashback' || eventCategory(o) !== '기타') && <i className="k">{o.kind === 'cashback' ? '발급' : eventCategory(o)}</i>}
+        {requiresEntry(o) && <i className="warn">응모</i>}
+        {scope !== '카드사 공통' && <i>{scope}</i>}
+        {o.status === 'needs_review' && <i className="warn">조건 확인 필요</i>}
+      </span>
+    </span>
+    <span className="mc-side">
+      {amount ? <span className="mc-amount"><small>{o.cashbackIsMaximum || /최대/.test(o.title) ? '최대' : ''}</small>{won(amount)}</span> : null}
+      {d && <span className={'mc-dd' + (soon ? ' soon' : '')}>{d}</span>}
+      <small className="mc-end">{o.endsAt ? '~' + ymd(o.endsAt) : '상시'}</small>
+    </span>
+  </a>;
+}
+
+// ======================= 발급이벤트 =======================
+function CashbackView({events}: {events: Offer[]}) {
+  const [q, setQ] = useState('');
+  const [issuer, setIssuer] = useState('all');
+  const [channel, setChannel] = useState('all');
+  const [sort, setSort] = useState('amount');
+  const base = useMemo(() => events.filter(o => o.kind === 'cashback' && visibleOffer(o) && activeOffer(o)), [events]);
+  const channels = useMemo(() => [...new Set(base.map(o => o.channel ?? '카드사 공식'))], [base]);
+  const list = useMemo(() => base
+    .filter(o => (issuer === 'all' || groupOf(o.issuer) === issuer) && (channel === 'all' || (o.channel ?? '카드사 공식') === channel))
+    .map(o => ({o, amount: headlineAmount(o, rewardValue(o)), score: searchScore(q, [[o.title, 100], [o.issuer + ' ' + (o.cardNames ?? []).join(' '), 50], [o.benefitText + ' ' + o.description + ' ' + (o.channel ?? ''), 20], [o.requirements.join(' '), 5]])}))
+    .filter(x => x.score)
+    .sort((a, b) => sort === 'amount' ? b.amount - a.amount : (a.o.endsAt ?? '9').localeCompare(b.o.endsAt ?? '9')), [base, q, issuer, channel, sort]);
+  const counts = useMemo(() => base.reduce((m, o) => { const g = groupOf(o.issuer); m[g] = (m[g] ?? 0) + 1; return m; }, {} as Record<string, number>), [base]);
+  return <>
+    <SearchBox value={q} onChange={setQ} placeholder="카드·카드사 검색"/>
+    <Chips label="카드사" items={[{value: 'all', label: '전체', count: base.length}, ...ISSUER_FILTERS.filter(g => counts[g]).map(g => ({value: g, label: issuerFilterLabel(g), count: counts[g]}))]} value={issuer} onChange={setIssuer}/>
+    {channels.length > 1 && <Chips label="발급 채널" items={[{value: 'all', label: '모든 채널'}, ...channels.map(c => ({value: c, label: c}))]} value={channel} onChange={setChannel}/>}
+    <div className="mc-bar">
+      <span className="mc-count">{list.length}<small>건</small></span>
+      <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}><option value="amount">혜택 큰 순</option><option value="end">마감 임박순</option></select>
+    </div>
+    {list.length ? <div className="mc-rows">{list.map(({o, amount}) => <EventRow key={o.id} o={o} amount={amount}/>)}</div>
+      : <Empty title="지금 진행 중인 발급 이벤트가 없어요."/>}
+    <p className="mc-note">금액은 카드사 공지의 최대 지급액이에요. 직전 이용 이력·발급 경로·이용 금액 조건은 이벤트 상세에서 확인하세요.</p>
+  </>;
+}
+
+// ======================= 카드사 이벤트 =======================
+function EventsView({events, cards}: {events: Offer[]; cards: Card[]}) {
+  const [q, setQ] = useState('');
+  const query = useDeferredValue(q);
+  const [cat, setCat] = useState('all');
+  const [issuer, setIssuer] = useState('all');
+  const [entry, setEntry] = useState(false), [soon, setSoon] = useState(false);
+  const [sort, setSort] = useState('end');
+  const [more, setMore] = useState(PAGE);
+  // 내 카드로 찾기: 이름을 치면 후보가 뜨고, 고르면 그 카드에 해당하는 이벤트만
+  const [mine, setMine] = useState<Card | null>(null);
+  const [mq, setMq] = useState('');
+  useEffect(() => {
+    const id = new URLSearchParams(location.search).get('card');
+    if (id && cards.length && !mine) setMine(cards.find(c => c.id === id) ?? null);
+  }, [cards]);
+  const suggestions = useMemo(() => mq.trim()
+    ? groupCards(cards).map(g => ({c: g.card, s: searchScore(mq, [[g.card.familyName ?? g.card.name, 100], [g.card.issuer + ' ' + (g.card.searchAliases ?? []).join(' '), 40]])}))
+      .filter(x => x.s).sort((a, b) => b.s - a.s).slice(0, 8).map(x => x.c) : [], [cards, mq]);
+  const mineFamily = useMemo(() => mine ? cards.filter(c => cardFamilyKey(c) === cardFamilyKey(mine)) : [], [cards, mine]);
+
+  const base = useMemo(() => events.filter(o => o.kind === 'card' && visibleOffer(o) && currentMonthOffer(o)), [events]);
+  const now = today();
+  const list = useMemo(() => base
+    .filter(o => (cat === 'all' || eventCategory(o) === cat) && (issuer === 'all' || groupOf(o.issuer) === issuer) && (!entry || requiresEntry(o)) &&
+      (!soon || (!!o.endsAt && (Date.parse(o.endsAt) - Date.parse(now)) / 864e5 <= 7)) && (!mine || mineFamily.some(c => offerApplies(c, o))))
+    .map(o => ({o, score: searchScore(query, [[o.title, 100], [o.issuer + ' ' + groupOf(o.issuer) + ' ' + (o.cardNames ?? []).join(' '), 50], [eventCategory(o) + ' ' + o.tags.join(' ') + ' ' + (o.channel ?? ''), 30], [o.benefitText + ' ' + o.description, 20], [o.requirements.join(' '), 5]])}))
+    .filter(x => x.score)
+    .sort((a, b) => (query && sort === 'end' ? b.score - a.score : 0) ||
+      (sort === 'new' ? (b.o.startsAt ?? '').localeCompare(a.o.startsAt ?? '') : sort === 'amount' ? headlineAmount(b.o, rewardValue(b.o)) - headlineAmount(a.o, rewardValue(a.o)) : (a.o.endsAt ?? '9').localeCompare(b.o.endsAt ?? '9')))
+    .map(x => x.o), [base, query, cat, issuer, entry, soon, mine, mineFamily, sort, now]);
+  useEffect(() => setMore(PAGE), [query, cat, issuer, entry, soon, mine, sort]);
+  const catCount = useMemo(() => base.reduce((m, o) => { const c = eventCategory(o); m[c] = (m[c] ?? 0) + 1; return m; }, {} as Record<string, number>), [base]);
+  const issCount = useMemo(() => base.reduce((m, o) => { const g = groupOf(o.issuer); m[g] = (m[g] ?? 0) + 1; return m; }, {} as Record<string, number>), [base]);
+  const pickMine = (c: Card | null) => {
+    setMine(c); setMq('');
+    const u = new URL(location.href); c ? u.searchParams.set('card', c.id) : u.searchParams.delete('card');
+    history.replaceState(null, '', u.pathname + u.search + u.hash);
+  };
+  const reset = () => { setQ(''); setCat('all'); setIssuer('all'); setEntry(false); setSoon(false); pickMine(null); };
+
+  return <>
+    <SearchBox value={q} onChange={setQ} placeholder="이벤트·제휴처 검색 (예: 스타벅스, 아고다, 응모)"/>
+    <div className="mc-mine">
+      {mine
+        ? <div className="mc-mine-on"><span>내 카드</span><b>{mine.familyName ?? mine.name}</b><small>{mine.issuer}</small><button type="button" className="mc-link" onClick={() => pickMine(null)}>해제</button></div>
+        : <div className="mc-mine-q">
+          <input value={mq} onChange={e => setMq(e.target.value)} placeholder="내 카드로 찾기 — 카드 이름 입력" aria-label="내 카드 이름"/>
+          {suggestions.length > 0 && <ul className="mc-suggest">{suggestions.map(c => <li key={c.id}><button type="button" onClick={() => pickMine(c)}><IssuerTile issuer={c.issuer} size="sm"/>{c.familyName ?? c.name}<small>{c.type === 'credit' ? '신용' : '체크'}</small></button></li>)}</ul>}
+        </div>}
+    </div>
+    <Chips label="이벤트 종류" items={[{value: 'all', label: '전체', count: base.length}, ...EVENT_CATEGORIES.filter(c => catCount[c]).map(c => ({value: c, label: c, count: catCount[c]}))]} value={cat} onChange={setCat}/>
+    <Chips label="카드사" items={[{value: 'all', label: '전체 카드사'}, ...ISSUER_FILTERS.filter(g => issCount[g]).map(g => ({value: g, label: issuerFilterLabel(g), count: issCount[g]}))]} value={issuer} onChange={setIssuer}/>
+    <div className="mc-bar">
+      <label className="mc-check"><input type="checkbox" checked={soon} onChange={e => setSoon(e.target.checked)}/>7일 안 마감</label>
+      <label className="mc-check"><input type="checkbox" checked={entry} onChange={e => setEntry(e.target.checked)}/>응모 필요</label>
+      {(q || cat !== 'all' || issuer !== 'all' || entry || soon || mine) && <button type="button" className="mc-link" onClick={reset}>초기화</button>}
+      <span className="mc-count">{list.length}<small>건</small></span>
+      <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}><option value="end">마감 임박순</option><option value="new">새로 시작한 순</option><option value="amount">혜택 큰 순</option></select>
+    </div>
+    {list.length ? <div className="mc-rows">{list.slice(0, more).map(o => <EventRow key={o.id} o={o} amount={rewardValue(o)}/>)}</div>
+      : <Empty title={mine ? '이 카드로 참여할 수 있는 이벤트가 없어요.' : '조건에 맞는 이벤트가 없어요.'} action={{label: '조건 초기화', onClick: reset}}/>}
+    {list.length > more && <button type="button" className="mc-more" onClick={() => setMore(n => n + PAGE)}>더 보기 ({list.length - more}건 남음)</button>}
+    <details className="mc-links">
+      <summary>카드사 앱의 내 맞춤 혜택 바로가기</summary>
+      <div>{sources.filter(s => issuer === 'all' || groupOf(s.issuer) === issuer).map(s => <a key={s.issuer} href={s.url} target="_blank" rel="noopener noreferrer"><IssuerTile issuer={s.issuer} size="sm"/>{s.label} ↗</a>)}</div>
+    </details>
+  </>;
 }

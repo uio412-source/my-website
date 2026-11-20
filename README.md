@@ -29,3 +29,18 @@ Claude, ChatGPT, Gemini 모두 같은 규칙을 따르도록 [AGENTS.md](AGENTS.
 pip install numpy pandas
 python tools/ungjup/build.py
 ```
+
+## Mr. Hotels
+
+`hotels/`는 메뉴 **티어 · 호텔 · 이벤트** 세 가지입니다(데스크톱은 위 메뉴, 모바일은 하단 탭바).
+- **티어** (`hotels/index.html`): Accor·IHG·Marriott·Hilton 등급별 달성 방법(숙박·제휴카드)·보너스 적립·조식/라운지/업그레이드/체크아웃, 국내 제휴카드 요약
+- **호텔** (`hotels/list.html`): 국가·도시·나의 등급 기준 호텔별 조식·라운지·룸업글 (`hotels/directory.json`, 대표 이미지 `hotels/images.json`)
+- **이벤트** (`hotels/events.html`): 호텔 체인 공식 프로모션 요약 (`hotels/events.json`)
+
+종목 화면과 카드 화면에서는 로고 옆 사이트 전환 메뉴로 이동할 수 있습니다.
+
+## Mr. Travel
+
+`travel/`는 메뉴 **혜택 · 여행지** 두 가지입니다.
+- **혜택** (`travel/index.html`): 카드사 해외·여행 이벤트를 **공통 · 나라별 · 트래블카드**로 나눠 검색. Mr. Cards 데이터에서 배포 때 자동으로 골라 요약합니다(`tools/travel/benefits.py` → `travel/benefits.json`).
+- **여행지** (`travel/places.html`): 선으로 그린 세계지도에서 나라를 골라 월별 성수기·비수기, 왕복 항공권, 5성급 호텔 1박 참고 시세, 입국 조건과 그 나라 카드 혜택을 확인 (`travel/places.json`).

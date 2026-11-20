@@ -36,6 +36,14 @@ jobs:
         run: |
           pip install --quiet numpy pandas
           python tools/ungjup/build.py
+      - name: Mr. Travel 혜택 요약 (Mr. Cards 카드사 이벤트에서 해외·여행만)
+        continue-on-error: true
+        run: python tools/travel/benefits.py
+      - name: 호텔 대표 이미지 찾기
+        # Marriott 등 이미지 주소가 정해지지 않은 호텔의 og:image를 찾습니다. 실패해도 배포는 계속합니다.
+        continue-on-error: true
+        timeout-minutes: 5
+        run: python tools/hotels/images.py
       - name: 배포 버전 표시 (오래된 페이지 자동 새로고침용)
         run: python tools/stamp_version.py "${GITHUB_SHA::7}"
       - uses: actions/setup-node@v4
