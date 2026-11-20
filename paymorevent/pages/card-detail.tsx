@@ -9,10 +9,31 @@ import {PAYMENT_CHECKS, paymentCheck, type PaymentCheck} from '@/lib/card-themes
 import {annualFeeRows, cardPath} from '@/lib/card-presentation';
 import {customerLines} from '@/lib/customer-copy';
 import {pendingValet, valetHotelResults, valetMapPath, valetQuota, valetRules} from '@/lib/hotel-valet';
-import {benefitFacts, cardMinimumSpend, cleanBenefits, dday, eventSummary, pickLabel, won, ymd} from '@/lib/mc-text';
+import {benefitRow, cardMinimumSpend, cleanBenefits, dday, eventSummary, pickLabel, won, ymd} from '@/lib/mc-text';
 import type {Card, Offer} from '@/lib/catalog-types';
 
 const MARK = {allowed: ['✓', 'ok', '됨'], excluded: ['✕', 'no', '안 됨'], unknown: ['?', 'na', '확인 안 됨'], na: ['', 'blank', '']} as const;
+
+/** 혜택 표 한 줄: 혜택 | 할인·적립 | 조건. 원문이 있으면 눌러서 펼침 */
+function BenefitRowView({b}: {b: ReturnType<typeof benefitRow>}) {
+  const [open, setOpen] = useState(false);
+  const more = b.lines.length > 1 || b.tiers.length > 0 || (b.lines.length === 1 && !b.where);
+  return <>
+    <tr className={more ? 'cd-bt-has' : undefined} onClick={more ? () => setOpen(v => !v) : undefined} aria-expanded={more ? open : undefined}>
+      <th scope="row">
+        {b.group && <span className="cd-bt-group">{b.group}</span>}
+        <b>{b.name}{more && <i aria-hidden="true">{open ? '−' : '+'}</i>}</b>
+        {b.where && <small>{b.where}</small>}
+      </th>
+      <td className="cd-bt-val">{b.value.main ? <><b>{b.value.main}</b>{b.value.sub && <small>{b.value.sub}</small>}</> : <small>원문 참고</small>}</td>
+      <td className="cd-bt-cond">{b.conds.length ? b.conds.map(c => <span key={c}>{c}</span>) : <small>—</small>}</td>
+    </tr>
+    {open && <tr className="cd-bt-more"><td colSpan={3}>
+      {b.tiers.length > 0 && <div className="cd-bt-tiers"><b>전월실적별 한도</b>{b.tiers.map(t => <span key={t}>{t.replace('→', '·')}</span>)}</div>}
+      {b.lines.length > 0 && <ul>{b.lines.map((l, j) => <li key={j}>{l}</li>)}</ul>}
+    </td></tr>}
+  </>;
+}
 
 function PayRow({label, hint, check}: {label: string; hint?: string; check: PaymentCheck}) {
   const [open, setOpen] = useState(false);
@@ -46,9 +67,9 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
   const spend = cardMinimumSpend(card);
   const desc = customerLines(card.description ?? '').join(' ').trim();
   const [allBenefits, setAllBenefits] = useState(false);
-  const [openB, setOpenB] = useState<number | null>(null);
   const [allPicks, setAllPicks] = useState(false);
-  const shown = allBenefits ? benefits : benefits.slice(0, 6);
+  const SHOW = 10;
+  const shown = (allBenefits ? benefits : benefits.slice(0, SHOW)).map(benefitRow);
   const extras = services.length + valet.length + (valetPending ? 1 : 0);
 
   const sections = [
@@ -85,24 +106,12 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
 
     <section className="cd-sec" id="benefits">
       <h2>혜택 {benefits.length > 0 && <small>{benefits.length}개</small>}</h2>
-      {benefits.length ? <ul className="cd-bens">{shown.map((b, i) => {
-        const facts = benefitFacts(b);
-        const more = b.lines.length > 0;
-        const isOpen = openB === i;
-        return <li key={i} className={isOpen ? 'open' : undefined}>
-          <button type="button" className="cd-ben" onClick={() => more && setOpenB(isOpen ? null : i)} aria-expanded={more ? isOpen : undefined} disabled={!more}>
-            <span className="cd-ben-main">
-              <b>{b.title}</b>
-              {b.rate && b.rate.length > 6 && <span className="cd-rate wide">{b.rate}</span>}
-              {facts.summary && <span className="cd-ben-sum">{facts.summary}</span>}
-              {facts.chips.length > 0 && <span className="cd-ben-chips">{facts.chips.map(c => <i key={c}>{c}</i>)}</span>}
-            </span>
-            {b.rate && b.rate.length <= 6 && <span className="cd-rate">{b.rate}</span>}
-          </button>
-          {isOpen && <ul className="cd-ben-lines">{b.lines.map((l, j) => <li key={j}>{l}</li>)}</ul>}
-        </li>;
-      })}</ul> : <p className="cd-empty">카드사 원문에서 정리된 혜택이 아직 없어요. 카드사 페이지에서 확인해 주세요.</p>}
-      {benefits.length > 6 && <button type="button" className="mc-more" onClick={() => setAllBenefits(v => !v)}>{allBenefits ? '접기' : `혜택 ${benefits.length - 6}개 더 보기`}</button>}
+      {benefits.length ? <table className="cd-btable">
+        <thead><tr><th scope="col">혜택</th><th scope="col">할인·적립</th><th scope="col">조건</th></tr></thead>
+        <tbody>{shown.map((b, i) => <BenefitRowView key={i} b={b}/>)}</tbody>
+      </table> : <p className="cd-empty">카드사 원문에서 정리된 혜택이 아직 없어요. 카드사 페이지에서 확인해 주세요.</p>}
+      {benefits.length > SHOW && <button type="button" className="mc-more" onClick={() => setAllBenefits(v => !v)}>{allBenefits ? '접기' : `혜택 ${benefits.length - SHOW}개 더 보기`}</button>}
+      {shown.some(b => b.lines.length > 1 || b.tiers.length > 0) && <p className="cd-note"><b>+</b>를 누르면 카드사 원문과 실적별 한도가 보여요.</p>}
 
       {extras > 0 && <div className="cd-extras">
         {services.map(s => <div key={s.id} className="cd-extra">

@@ -28,13 +28,13 @@ export const ISSUER_FILTERS = ['삼성', '국민', '신한', '우리', '하나',
 export const issuerFilterLabel = (g: string) => g === '국민' ? 'KB국민' : g === '농협' ? 'NH농협' : g === 'BC' ? 'BC·은행' : g;
 
 // ---------- 혜택 정리 ----------
-const JUNK = /(?:란\s*\?|란$|안내$|안내\s*\(|^연회비|소액신용|하이브리드|체크카드\s*안내|유의\s*사항|이용\s*방법|발급\s*(?:안내|대상|조건)|가족카드|SFC|^기타$|^공통|서비스\s*안내|전월\s*(?:이용)?\s*실적|실적\s*(?:안내|기준|제외|산정)|이용\s*안내|제공\s*기준|후불\s*교통|결제일|결제\s*계좌|카드\s*(?:디자인|신청)|^[0-9.]+\s*$|^혜택\s*요약$|^주요\s*혜택$|^카드\s*혜택$|^부가\s*서비스$|^전월\s*이용\s*(?:금액|실적)|이상\s*시$|^주요\s*서비스$|구간$|^\d+만\s*[/~]|^서비스\s*(?:구분|내용|대상)$|^대상\s*가맹점|^적용\s*대상|^제공\s*(?:한도|조건))/;
+const JUNK = /(?:란\s*\?|란$|안내$|안내\s*\(|^연회비|소액신용|하이브리드|체크카드\s*안내|유의\s*사항|이용\s*방법|발급\s*(?:안내|대상|조건)|가족카드|SFC|^기타$|^공통|서비스\s*안내|전월\s*(?:이용)?\s*실적|실적\s*(?:안내|기준|제외|산정)|이용\s*안내|제공\s*기준|후불\s*교통|결제일|결제\s*계좌|카드\s*(?:디자인|신청)|^[0-9.]+\s*$|^혜택\s*요약$|^주요\s*혜택$|^카드\s*혜택$|^부가\s*서비스$|^전월\s*이용\s*(?:금액|실적)|이상\s*시$|^주요\s*서비스$|구간$|^\d+만\s*[/~]|^서비스\s*(?:구분|내용|대상)$|^대상\s*가맹점|^적용\s*대상|^제공\s*(?:한도|조건)|상세\s*보기$)/;
 const GENERIC_TITLE = /^(?:\d+\.\s*)?(?:국내|해외)?\s*(?:혜택|서비스|할인\s*서비스|적립\s*서비스|기본\s*적립|할인|적립|포인트|청구할인|캐시백)$/;
 const NUMBERED = /^\d+\.\s*/;
 
 export type CleanBenefit = {title: string; lines: string[]; rate: string | null; cap: string | null; spend: string | null; voucher: boolean};
 
-const tidy = (s: string) => s.replace(/\s+/g, ' ').replace(/\s*([·,])\s*/g, '$1 ').replace(/[;:]\s*$/, '').trim();
+const tidy = (s: string) => s.replace(/\s+/g, ' ').replace(/\s*([·,])\s*/g, '$1 ').replace(/(\d), (?=\d{3}(?!\d))/g, '$1,').replace(/[;:]\s*$/, '').trim();
 const short = (s: string, n: number) => s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s;
 
 export function cleanBenefits(card: Pick<Card, 'benefits'>): CleanBenefit[] {
@@ -124,31 +124,6 @@ export function searchScore(q: string, fields: [string, number][]) {
   return score;
 }
 
-// ---------- 카드 상세: 혜택 한 줄 요약과 조건 칩 ----------
-const AMOUNT = String.raw`[\d,.]+\s*(?:만\s*)?(?:천\s*)?(?:원|P|포인트|점|마일)`;
-/** 원문에서 "월 한도·횟수·건당 최소금액·전월실적"만 뽑아 칩으로, 앞부분은 한 줄 요약으로 */
-export function benefitFacts(b: CleanBenefit) {
-  const text = [b.cap ?? '', ...b.lines].join(' ');
-  const chips: string[] = [];
-  const cap = new RegExp(String.raw`월\s*(?:통합\s*)?(?:할인|적립)?\s*한도\s*[:：]?\s*(` + AMOUNT + ')').exec(text);
-  if (cap) chips.push('월 ' + cap[1].replace(/\s+/g, '') + ' 한도');
-  else if (b.cap && b.cap.length <= 14) chips.push(b.cap === '한도 없음' ? '한도 없음' : b.cap);
-  const counts = new Set<string>();
-  for (const m of text.matchAll(/(일|월|연)\s*(\d+)\s*회/g)) { counts.add(`${m[1]} ${m[2]}회`); if (counts.size >= 2) break; }
-  chips.push(...counts);
-  const per = /(?:이용\s*)?건당\s*([\d,.]+\s*(?:만\s*)?(?:천\s*)?원)\s*이상/.exec(text);
-  if (per) chips.push(per[1].replace(/\s+/g, '') + ' 이상 결제');
-  if (b.spend && b.spend !== '무실적') chips.push(b.spend);
-  const first = b.lines[0] ?? '';
-  let summary = first.split(' / ')[0];
-  const cut = summary.search(/\s(?:일|월|연)\s*\d+\s*회|\s(?:이용\s*)?건당|\s※|\s\*|\s월\s*(?:통합\s*)?한도/);
-  if (cut > 8) summary = summary.slice(0, cut);
-  summary = summary.replace(/[,·]\s*$/, '').trim();
-  if (summary === b.title || b.title.includes(summary)) summary = '';
-  const flat = summary.replace(/\s+/g, '');
-  return {summary: short(summary, 64), chips: [...new Set(chips)].filter(c => !flat.includes(c.replace(/\s+/g, ''))).slice(0, 4)};
-}
-
 /** 카드 전월실적: 카드 값이 없으면 혜택별 조건 중 가장 낮은 값 (여러 개면 "부터") */
 export function cardMinimumSpend(card: Card): {value: number | null; varies: boolean} {
   if (card.minimumSpend !== null && card.minimumSpend !== undefined) return {value: card.minimumSpend, varies: false};
@@ -166,3 +141,70 @@ export function cardMinimumSpend(card: Card): {value: number | null; varies: boo
 
 /** 피킹률 시나리오 이름을 사람이 읽기 쉽게: "전월 30만원 최적 배분" → "전월 30만원 · 영역별 한도를 다 채울 때" */
 export const pickLabel = (label: string) => label.replace(/\s*(?:구간\s*)?(?:·\s*)?(?:우대회원\s*)?최적\s*배분$/, ' · 영역별 한도를 다 채울 때').replace(/^\s*·\s*/, '');
+
+
+// ---------- 카드 상세: 혜택 표 한 줄 ----------
+const AMT = String.raw`[\d,.]+\s*(?:만\s*)?(?:천\s*)?(?:\d+\s*천\s*)?(?:\d+\s*백\s*)?(?:원|P|포인트|점|마일)`;
+const compact = (s: string) => s.replace(/\s+/g, '');
+/** 원문 한도를 짧게: 실적 구간별이면 "월 3천~1만원 (실적별)" */
+function capLabel(b: CleanBenefit, text: string): {label: string | null; tiers: string[]} {
+  const cap = b.cap ?? '';
+  const tiers: string[] = [];
+  if (/이상/.test(cap) && cap.includes(';')) {
+    for (const part of cap.split(';')) {
+      const m = /([\d,.]+\s*만\s*원?\s*이상[^/]*)\/\s*(.+)$/.exec(part.trim());
+      if (!m) continue;
+      const lo = compact(m[1]), range = /^([\d,.]+)만원?이상([\d,.]+)만원?미만$/.exec(lo);
+      tiers.push(`${range ? `${range[1]}~${range[2]}만원` : lo.replace(/원?이상.*$/, '') .replace(/만$/, '만원') + ' 이상'} → ${compact(m[2])}`);
+    }
+    if (tiers.length >= 2) {
+      const amts = tiers.map(t => t.split('→ ')[1]);
+      return {label: `월 ${amts[0]}~${amts[amts.length - 1]}`, tiers};
+    }
+  }
+  const m = new RegExp(String.raw`(?:(월|연|일)\s*(?:통합\s*)?(?:할인|적립|캐시백)?\s*)?한도\s*[:：]?\s*(?:통합\s*)?(월|연|일)?\s*(` + AMT + ')').exec(text);
+  if (m) return {label: `${m[1] ?? m[2] ?? '월'} ${compact(m[3])}`, tiers};
+  if (b.cap === '한도 없음') return {label: '한도 없음', tiers};
+  if (b.cap && b.cap.length <= 14) return {label: b.cap, tiers};
+  return {label: null, tiers};
+}
+/** 할인율이 없으면 원문에서 "1,000원 할인", "리터당 60원", "무료" 같은 값을 찾음 */
+function valueLabel(b: CleanBenefit, text: string) {
+  if (b.rate) {
+    const pcts = [...b.rate.matchAll(/([\d.]+)\s*%/g)].map(m => Number(m[1]));
+    if (b.rate.length > 8 && pcts.length > 1) return {main: `${Math.min(...pcts)}~${Math.max(...pcts)}%`, sub: '항목별'};
+    return {main: b.rate, sub: /적립|포인트|마일/.test(b.title + text.slice(0, 80)) ? '적립' : /캐시백/.test(b.title + text.slice(0, 80)) ? '캐시백' : '할인'};
+  }
+  const per = /리터당\s*([\d,]+)\s*원/.exec(text);
+  if (per) return {main: `${per[1]}원`, sub: '리터당'};
+  const amt = /([\d,]+(?:\.\d+)?\s*(?:만\s*)?(?:천\s*)?원)\s*(?:결제일\s*)?(할인|적립|캐시백|청구할인)/.exec(text);
+  if (amt) return {main: compact(amt[1]), sub: amt[2] === '청구할인' ? '할인' : amt[2]};
+  const mile = /([\d,]+)\s*마일/.exec(text);
+  if (mile) return {main: `${mile[1]}마일`, sub: '적립'};
+  if (/면제/.test(b.title + text.slice(0, 80))) return {main: '면제', sub: ''};
+  if (/무료|이용권|제공/.test(b.title + text.slice(0, 80))) return {main: '무료', sub: ''};
+  return {main: '', sub: ''};
+}
+export type BenefitRow = {group: string | null; name: string; where: string; value: {main: string; sub: string}; conds: string[]; tiers: string[]; lines: string[]};
+/** 혜택 하나를 표 한 줄로: 혜택 | 할인·적립 | 조건(전월실적·한도·횟수·건당 최소) */
+export function benefitRow(b: CleanBenefit): BenefitRow {
+  const text = [b.cap ?? '', ...b.lines].join(' ');
+  const g = /^\[([^\]]{1,12})\]\s*/.exec(b.title);
+  const name = g ? b.title.slice(g[0].length) : b.title;
+  const conds: string[] = [];
+  if (b.spend) conds.push(b.spend === '무실적' ? '실적 무관' : b.spend);
+  const cap = capLabel(b, text);
+  if (cap.label) conds.push(/한도/.test(cap.label) ? cap.label : cap.label + ' 한도');
+  const counts = new Set<string>();
+  for (const m of text.matchAll(/(일|월|연)간?\s*(\d+)\s*회/g)) { counts.add(`${m[1]} ${m[2]}회`); if (counts.size >= 2) break; }
+  conds.push(...counts);
+  const per = /(?:이용\s*)?건당\s*([\d,.]+\s*(?:만\s*)?(?:천\s*)?원)\s*이상/.exec(text) ?? /([\d,.]+\s*(?:만\s*)?(?:천\s*)?원)\s*이상\s*(?:결제|이용)?\s*시/.exec(b.lines[0] ?? '');
+  if (per) conds.push(compact(per[1]) + ' 이상 결제');
+  let where = (b.lines[0] ?? '').split(' / ')[0]
+    .replace(/\(\s*(?:월|연)?\s*(?:통합\s*)?(?:할인|적립)?\s*한도[^)]*\)/g, '')
+    .replace(/\s*(?:일|월|연)\s*\d+\s*회.*$/, '').replace(/\s*※.*$/, '').replace(/[,·]\s*$/, '').trim();
+  // 할인율 칸과 겹치는 끝부분("… 10% 할인")은 빼고 어디서 쓰는지만
+  if (b.rate) where = where.replace(new RegExp(String.raw`\s*` + b.rate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + String.raw`\s*(?:결제일\s*)?(?:할인|적립|캐시백)?(?:\(청구할인\))?$`), '').trim();
+  if (where === name || name.includes(where) || where.length < 4) where = '';
+  return {group: g ? g[1] : null, name, where: short(where, 70), value: valueLabel(b, text), conds: [...new Set(conds)].slice(0, 4), tiers: cap.tiers, lines: b.lines};
+}
