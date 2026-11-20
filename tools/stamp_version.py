@@ -12,20 +12,20 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSET = re.compile(r'((?:href|src)=")(assets/[^"?#]+\.(?:css|js))(?:\?[^"#]*)?(")')
+ASSET = re.compile(r'((?:href|src)=")((?:\.\./)?assets/[^"?#]+\.(?:css|js))(?:\?[^"#]*)?(")')
 META = re.compile(r'<meta name="mrs-build" content="[^"]*">')
 
 
 def main(version):
     (ROOT / "version.json").write_text(json.dumps(
         {"v": version, "built": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}))
-    for page in sorted(ROOT.glob("*.html")):
+    for page in sorted([*ROOT.glob("*.html"), ROOT / "hotels" / "index.html"]):
         html = page.read_text(encoding="utf-8")
         tag = f'<meta name="mrs-build" content="{version}">'
         html = META.sub(tag, html) if META.search(html) else html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  ' + tag, 1)
         html = ASSET.sub(lambda m: f"{m.group(1)}{m.group(2)}?v={version}{m.group(3)}", html)
         page.write_text(html, encoding="utf-8")
-        print(f"  {page.name}: {version}")
+        print(f"  {page.relative_to(ROOT)}: {version}")
 
 
 if __name__ == "__main__":
