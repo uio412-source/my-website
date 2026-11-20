@@ -7,14 +7,14 @@ import {EventBoard} from '@/components/event-board';
 import {CashbackGroups} from '@/components/cashback-groups';
 import {useEffect,useMemo,useState} from 'react';
 import {flushSync} from 'react-dom';
-import {Search,SlidersHorizontal,CreditCard,Plane,ShoppingBag,Smartphone,Hotel,Sparkles,X,FileText,Coffee,Bus,ArrowRight,ChevronDown} from 'lucide-react';
+import {Search,SlidersHorizontal,CreditCard,Plane,ShoppingBag,Smartphone,Sparkles,X,FileText,Coffee,Bus,ArrowRight,ChevronDown} from 'lucide-react';
 import type {Card,Offer} from '@/lib/catalog-types';
 import {CardArtwork} from '@/components/card-visuals';
 import {SiteHeader,SiteFooter} from '@/components/customer-shell';
 import {ISSUERS,BENEFIT_KINDS,issuerGroup,benefitKinds,bestPicking,formatPicking,pickingRange,linkedOffers,eventCategory,EVENT_CATEGORIES,activeOffer,currentMonthOffer,visibleOffer,offerTags,requiresEntry,cardFamilyKey,groupCards,dedupeOffers,offerApplies} from '@/lib/catalog-model';
 import {browseThemes,featureTags} from '@/lib/customer-copy';
 import {cardPath,shortText} from '@/lib/card-presentation';
-const categories=[{tag:'전체',icon:Sparkles},{tag:'무실적',icon:CreditCard},{tag:'쇼핑',icon:ShoppingBag},{tag:'커피',icon:Coffee},{tag:'교통',icon:Bus},{tag:'K패스',icon:Bus},{tag:'통신',icon:Smartphone},{tag:'마일리지',icon:Plane},{tag:'라운지',icon:Plane},{tag:'마티나골드',icon:Plane},{tag:'호텔',icon:Hotel},{tag:'해외',icon:Plane},{tag:'상품권 가능',icon:ShoppingBag},{tag:'관리비',icon:CreditCard},{tag:'국세',icon:FileText},{tag:'지방세',icon:FileText},{tag:'혜자카드',icon:Sparkles}];
+const categories=[{tag:'전체',icon:Sparkles},{tag:'무실적',icon:CreditCard},{tag:'쇼핑',icon:ShoppingBag},{tag:'커피',icon:Coffee},{tag:'교통',icon:Bus},{tag:'K패스',icon:Bus},{tag:'통신',icon:Smartphone},{tag:'마일리지',icon:Plane},{tag:'라운지',icon:Plane},{tag:'마티나골드',icon:Plane},{tag:'해외',icon:Plane},{tag:'상품권 가능',icon:ShoppingBag},{tag:'관리비',icon:CreditCard},{tag:'국세',icon:FileText},{tag:'지방세',icon:FileText},{tag:'혜자카드',icon:Sparkles}];
 const normalize=(s:string)=>s.toLowerCase().replace(/[\s#·_-]/g,'');
 const matches=(str:string,query:string)=>!query.trim()||query.trim().split(/\s+/).every(q=>normalize(str).includes(normalize(q)));
 const won=(n:number)=>n===0?'없음':n>=10000?`${Number((n/10000).toFixed(2))}만원`:`${n.toLocaleString('ko-KR')}원`;
@@ -57,7 +57,7 @@ export default function Catalog({initialCards,initialEvents,eventsLoading=false}
   const eventCardVariants=selectedEventCard?cards.filter(c=>cardFamilyKey(c)===cardFamilyKey(selectedEventCard)):[];
   const queryCards=useMemo(()=>query.trim()?cards.filter(c=>matches([c.issuer,c.name,c.familyName??'',...(c.searchAliases??[])].join(' '),query)):[],[cards,query]);
   const eventCardOptions=useMemo(()=>groupCards(cards.filter(c=>issuer==='all'||issuerGroup(c.issuer)===issuer)),[cards,issuer]);
-  const filteredEvents=dedupeOffers(events).filter(o=>(tab==="events"||visibleOffer(o))&&(tab==="cashback"?o.kind==="cashback":o.kind!=="hotel")&&(tab==="events"?currentMonthOffer(o):activeOffer(o))&&(issuer==="all"||issuerGroup(o.issuer)===issuer)&&(eventType==="all"||eventCategory(o)===eventType)&&(channel==="all"||o.channel===channel)&&(!entryOnly||requiresEntry(o))&&(eventCard==='all'||eventCardVariants.some(c=>offerApplies(c,o)))&&(matches([o.title,o.issuer,o.description,o.benefitText,o.channel??"",...o.tags,...offerTags(o)].join(" "),query)||queryCards.some(c=>offerApplies(c,o)))).sort((a,b)=>(a.endsAt??'').localeCompare(b.endsAt??''));
+  const filteredEvents=dedupeOffers(events).filter(o=>(tab==="events"||visibleOffer(o))&&(tab==="cashback"?o.kind==="cashback":o.kind==="card")&&(tab==="events"?currentMonthOffer(o):activeOffer(o))&&(issuer==="all"||issuerGroup(o.issuer)===issuer)&&(eventType==="all"||eventCategory(o)===eventType)&&(channel==="all"||o.channel===channel)&&(!entryOnly||requiresEntry(o))&&(eventCard==='all'||eventCardVariants.some(c=>offerApplies(c,o)))&&(matches([o.title,o.issuer,o.description,o.benefitText,o.channel??"",...o.tags,...offerTags(o)].join(" "),query)||queryCards.some(c=>offerApplies(c,o)))).sort((a,b)=>(a.endsAt??'').localeCompare(b.endsAt??''));
   useEffect(()=>{
     const context=(document as Document & {modelContext?:{registerTool:(tool:unknown,options:unknown)=>void|Promise<void>}}).modelContext;if(!context?.registerTool)return;
     const lifecycle=new AbortController();

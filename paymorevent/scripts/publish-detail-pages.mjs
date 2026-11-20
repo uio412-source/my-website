@@ -1,3 +1,4 @@
+import {isHotelOffer} from '../lib/hotel-offers.mjs';
 import {mkdir, readFile, writeFile} from 'node:fs/promises';
 import {gunzipSync} from 'node:zlib';
 import {CARD_LIST_FILE, CARD_SEARCH_FILE} from './card-list.mjs';
@@ -48,7 +49,9 @@ for (const card of cards) {
   await writeFile(new URL(`${card.id}.json`, cardDirectory), JSON.stringify(card));
   await createPage('cards', card.id);
 }
-for (const event of events) {
+// 호텔 자체 혜택 이벤트는 앱에서 숨기므로 상세 주소도 만들지 않습니다.
+const published = events.filter(event => !isHotelOffer(event));
+for (const event of published) {
   await createPage('events', event.id);
 }
-console.log(`Published ${cards.length} card and ${events.length} event detail routes.`);
+console.log(`Published ${cards.length} card and ${published.length} event detail routes (${events.length - published.length} hotel offers hidden).`);

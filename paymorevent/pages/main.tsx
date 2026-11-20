@@ -3,6 +3,7 @@ import {createRoot} from 'react-dom/client';
 import {SiteHeader, SiteFooter} from '@/components/customer-shell';
 import type {Card, Offer} from '@/lib/catalog-types';
 import {sitePath} from '@/lib/site-path';
+import {withoutHotelOffers} from '@/lib/hotel-offers.mjs';
 import {readCard, readCardSummaries} from './data';
 import '@/app/globals.css';
 import '@/app/responsive.css';
@@ -22,7 +23,8 @@ const Catalog = lazy(loadCatalog);
 const CardDetail = lazy(loadCardDetail);
 const EventDetail = lazy(loadEventDetail);
 let eventsRequest: Promise<Offer[]> | undefined;
-const readEvents = () => eventsRequest ??= import('@/data/events.json').then(module => module.default as Offer[]);
+// 호텔 자체 혜택 이벤트는 목록·카드 상세·이벤트 상세 어디에도 보이지 않게 여기서 뺍니다(lib/hotel-offers.mjs).
+const readEvents = () => eventsRequest ??= import('@/data/events.json').then(module => withoutHotelOffers(module.default as Offer[]));
 const readHomeCards = () => import('@/data/home-cards.json').then(module => module.default as Card[]);
 const catalogRoute = /^(cards|events)\/([a-zA-Z0-9][a-zA-Z0-9._-]*)\/?$/;
 
