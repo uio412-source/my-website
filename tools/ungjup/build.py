@@ -17,7 +17,7 @@ Yahoo Finance 일봉을 받아 자산마다 다음을 계산해 data/ungjup/<id>
   python tools/ungjup/build.py          # 저장된 기준표(lv_model.json)로 데이터만 갱신
   python tools/ungjup/build.py --fit    # 모든 자산 이력으로 기준표·변동성을 다시 만든 뒤 갱신
 """
-import argparse, json, math, sys, time, urllib.request
+import argparse, json, math, sys, time, urllib.parse, urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -59,7 +59,7 @@ def fetch(symbol):
     df.index = df.index.normalize()
     df = df.dropna()
     df = df[df["close"] > 0]
-    return df[~df.index.duplicated(keep="last")]
+    return df[~df.index.duplicated(keep="last")].sort_index()
 
 
 def indicators(df, year, sma_min=200):
@@ -189,6 +189,11 @@ def r(v, nd):
     return None if v is None or (isinstance(v, float) and math.isnan(v)) else round(float(v), nd)
 
 
+def daily_change(df):
+    close = df["close"]
+    return r(close.iloc[-1] / close.iloc[-2] - 1, 6) if len(close) >= 2 else None
+
+
 def index_json(asset, df, eps):
     last = df["close"].iloc[-1]
     nd = 0 if last >= 1000 else 2
@@ -204,10 +209,9 @@ def index_json(asset, df, eps):
         "z": [int(v) for v in out["zone"]],
     }
     lt = df.iloc[-1]
-    change = r(lt.close / df["close"].iloc[-2] - 1, 6) if len(df) >= 2 else None
     meta = {k: asset[k] for k in ("id", "symbol", "name", "desc", "unit")}
     meta.update({
-        "last": {"date": df.index[-1].strftime("%Y-%m-%d"), "close": r(lt.close, 2), "change": change, "sma20": r(lt.sma20, 2),
+        "last": {"date": df.index[-1].strftime("%Y-%m-%d"), "close": r(lt.close, 2), "change": daily_change(df), "sma20": r(lt.sma20, 2),
                  "sma200": r(lt.sma200, 2), "rsi": r(lt.rsi, 1), "ujline": r(lt.ujline, 2),
                  "lv": None if math.isnan(lt.lv) else int(round(lt.lv)), "zone": int(lt.zone),
                  "dd52": r(lt.dd52, 4), "gap200": r(lt.gap200, 4)},
@@ -216,18 +220,12 @@ def index_json(asset, df, eps):
     return meta, rec
 
 
-HOLDINGS = ROOT / "data" / "holdings.json"
+WATCHLIST = ROOT / "data" / "watchlist.json"
 
 
-def holding_symbols():
-    if not HOLDINGS.exists():
-        return []
-    syms = []
-    for g in json.loads(HOLDINGS.read_text())["groups"]:
-        for it in g["items"]:
-            if it.get("symbol") and it["symbol"] not in syms:
-                syms.append(it["symbol"])
-    return syms
+def watch_symbols():
+    groups = json.loads(WATCHLIST.read_text())["groups"]
+    return list(dict.fromkeys(item["symbol"] for group in groups for item in group["items"]))
 
 
 def main():
@@ -237,15 +235,18 @@ def main():
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
 
-    # 1) 모든 자산(지수 + 보유종목) 받아서 지표 계산
+    # 1) 모든 자산(지수 + 관심종목) 받아서 지표 계산
     plan = {a["symbol"]: {"year": a["year"], "asset": a} for a in ASSETS}
-    for s in holding_symbols():
+    symbols = watch_symbols()
+    for s in symbols:
         plan.setdefault(s, {"year": 365 if s.endswith("-USD") else 252, "asset": None})
     model = json.loads(MODEL.read_text()) if MODEL.exists() else None
     series, failed = {}, []
     for s, p in plan.items():
         try:
             raw = fetch(s)
+            if raw.empty:
+                raise ValueError("거래일 데이터 없음")
         except Exception as e:
             print(f"[실패] {s}: {e}", file=sys.stderr)
             failed.append(s)
@@ -289,29 +290,35 @@ def main():
     ipath.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
                                  "assets": index}, ensure_ascii=False, indent=1))
 
-    # 4) 보유종목 웅줍LV
+    # 4) 관심종목 시세와 웅줍LV
     hpath = OUT / "holdings_lv.json"
-    items = json.loads(hpath.read_text())["items"] if hpath.exists() else {}
-    print("보유종목")
-    for s in holding_symbols():
+    old = json.loads(hpath.read_text()) if hpath.exists() else {}
+    previous = old.get("items", {})
+    items = {s: previous[s] for s in symbols if s in previous}
+    print("관심종목")
+    updated = old.get("updated")
+    for s in symbols:
         if s not in series:
             continue
         df, _ = series[s]
         lt = df.iloc[-1]
-        items[s] = {"date": df.index[-1].strftime("%Y-%m-%d"), "close": r(lt.close, 2), "rsi": r(lt.rsi, 1),
+        date = df.index[-1].strftime("%Y-%m-%d")
+        if date < items.get(s, {}).get("date", ""):
+            continue
+        items[s] = {"date": date, "close": r(lt.close, 2),
+                    "change": daily_change(df), "rsi": r(lt.rsi, 1),
                     "lv": None if math.isnan(lt.lv) else int(round(lt.lv)), "zone": int(lt.zone),
                     "dd52": r(lt.dd52, 4), "gap200": r(lt.gap200, 4), "short": plan[s]["short"]}
         print(f"  {s:10s} LV {items[s]['lv'] if items[s]['lv'] is not None else '-':>4}  음영 {items[s]['zone']}"
               f"{'  짧은이력' if plan[s]['short'] else ''}")
-    hpath.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "items": items},
-                                ensure_ascii=False, indent=1))
+        updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    hpath.write_text(json.dumps({"updated": updated, "items": items}, ensure_ascii=False, indent=1))
 
-    # 5) 종목 검색 목록 + 뉴스 자막
+    # 5) 종목 검색 목록과 관심종목 뉴스
     sys.path.insert(0, str(Path(__file__).parent))
     import extras
-    extras.main(HOLDINGS, OUT, force_symbols=args.symbols)
+    extras.main(WATCHLIST, OUT, force_symbols=args.symbols)
 
 
 if __name__ == "__main__":
-    import urllib.parse  # noqa: E402
     main()

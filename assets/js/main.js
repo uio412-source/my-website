@@ -58,26 +58,21 @@ const nextAuto = () => {
 
 // ---------- 공통: 오른쪽 위 자료기준일·갱신 시각 배지 ----------
 // - 갱신: data/ungjup/index.json의 updated(UTC) → 한국시간
-// - 기준일: 차트 = 지수 데이터 마지막 거래일, 보유종목·자산 = data/holdings.json의 asof
+// - 기준일: 차트 = 지수 데이터 마지막 거래일, 관심종목 = 종목 시세의 마지막 거래일
 let stampTimer = null;
 let lastUpdated = null; // index.json의 updated 문자열 (새로고침 전후 비교용)
 async function buildStamp() {
   const right = document.querySelector(".head-right");
   if (!right) return;
   const get = (u) => MS.getJSON(u).catch(() => null);
-  const isPortfolio = /holdings|wealth/.test(location.pathname);
-  const [idx, hold] = await Promise.all([
-    get("data/ungjup/index.json"),
-    isPortfolio ? get("data/holdings.json") : null,
-  ]);
-  if (!idx && !hold) throw new Error("데이터 없음");
-  lastUpdated = idx && idx.updated;
+  const isWatchlist = location.pathname.endsWith("/holdings.html");
+  const data = await get(isWatchlist ? "data/ungjup/holdings_lv.json" : "data/ungjup/index.json");
+  if (!data) throw new Error("데이터 없음");
+  lastUpdated = data.updated;
 
-  let asof = isPortfolio ? hold && hold.asof : null;
-  if (!isPortfolio && idx && idx.assets) {
-    asof = idx.assets.map((a) => a.last && a.last.date).filter(Boolean).sort().pop();
-  }
-  const upd = parseUpd(idx && idx.updated);
+  const rows = isWatchlist ? Object.values(data.items) : data.assets.map((asset) => asset.last);
+  const asof = rows.map((row) => row?.date).filter(Boolean).sort().pop();
+  const upd = parseUpd(data.updated);
   if (!asof && !upd) return;
   const fmtAsof = (s) => {
     const d = new Date(s + "T00:00:00Z");

@@ -1,6 +1,6 @@
 # Mr. Stocks
 
-웅줍 지표 차트와 보유종목·자산 현황을 보여 주는 정적 웹사이트입니다(HTML/CSS/JS). `main` 브랜치에 merge되면 **GitHub Pages로 자동 배포**됩니다.
+웅줍 지표 차트와 관심종목 시세을 보여 주는 정적 웹사이트입니다(HTML/CSS/JS). `main` 브랜치에 merge되면 **GitHub Pages로 자동 배포**됩니다.
 
 ## 처음 한 번만 설정
 1. 저장소 **Settings → Pages → Build and deployment → Source**를 **GitHub Actions**로 바꿉니다.
@@ -20,10 +20,9 @@ Claude, ChatGPT, Gemini 모두 같은 규칙을 따르도록 [AGENTS.md](AGENTS.
 
 ## 페이지
 - **차트** (`ungjup.html`): QQQ, SPY, GLD, 코스피200, 비트코인의 웅줍 구간·웅줍LV와 최근 일봉 기준 가격·전일 대비 등락률
-- **보유종목** (`holdings.html`): 종목별 평가금액·손익과 웅줍LV 태그
-- **자산** (`wealth.html`): 총액·손익, 시장·유형·웅줍LV·상위종목 비중
+- **관심종목** (`holdings.html`): 종목별 최근 일봉 가격·전일 대비 등락률·웅줍LV·뉴스
 
-지수와 웅줍LV 데이터는 GitHub Actions가 매일 자동으로 갱신합니다. 보유 현황은 `data/holdings.json`을 직접 고칩니다.
+시세, 웅줍LV와 뉴스는 GitHub Actions가 한국시간 06:40과 16:40에 갱신합니다. 배포 데이터에 종목을 추가하려면 `data/watchlist.json`을 수정합니다. 화면에서 변경한 관심목록은 해당 브라우저에 저장됩니다.
 직접 데이터를 갱신하려면:
 
 ```

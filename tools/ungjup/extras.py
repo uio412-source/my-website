@@ -1,11 +1,12 @@
-"""보유종목 페이지용 부가 데이터: 종목 검색 목록(symbols.json)과 뉴스 자막(news.json).
+"""관심종목 페이지용 종목 검색 목록(symbols.json)과 뉴스(news.json).
 
 브라우저에서는 외부 사이트를 직접 부를 수 없어(CORS) 배포 때 미리 받아 파일로 둡니다.
   - 종목 목록: 미국 = 나스닥 공식 목록(NYSE·ETF 포함), 한국 = 네이버 증권 시가총액 목록(코스피·코스닥·ETF)
                7일마다 새로 받습니다.
-  - 뉴스: 보유 개별 종목 + 시장(나스닥·코스피)마다 Google 뉴스 한국어 최근 3일 기사
+  - 뉴스: 종목별 Google 뉴스 한국어 최근 7일 기사
 """
 import json, re, sys, time, urllib.parse, urllib.request, xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
@@ -101,10 +102,10 @@ def build_symbols(out):
     print(f"종목 목록: 미국 {us:,} · 한국 {len(rows) - us:,}")
 
 
-def news_for(query, days=3, limit=3):
+def news_for(query, days=7, limit=3):
     q = urllib.parse.quote(f"{query} when:{days}d")
-    xml = get(f"https://news.google.com/rss/search?q={q}&hl=ko&gl=KR&ceid=KR:ko")
-    items = []
+    xml = get(f"https://news.google.com/rss/search?q={q}&hl=ko&gl=KR&ceid=KR:ko", timeout=8)
+    items, titles = [], set()
     for it in ET.fromstring(xml).iter("item"):
         title = it.findtext("title") or ""
         src = it.findtext("source") or ""
@@ -115,43 +116,43 @@ def news_for(query, days=3, limit=3):
             t = parsedate_to_datetime(it.findtext("pubDate")).astimezone(timezone.utc)
         except Exception:
             continue
-        items.append({"title": title.strip(), "source": src, "link": it.findtext("link"), "time": t.strftime("%Y-%m-%dT%H:%M:%SZ")})
+        link = it.findtext("link") or ""
+        key = re.sub(r"\W", "", title).casefold()
+        if not key or key in titles or not link.startswith("https://"):
+            continue
+        titles.add(key)
+        items.append({"title": title.strip(), "source": src, "link": link, "time": t.strftime("%Y-%m-%dT%H:%M:%SZ")})
         if len(items) >= limit:
             break
     return items
 
 
-def build_news(holdings, out):
-    targets = [("시장", "나스닥 증시", None), ("시장", "코스피 증시", None)]
-    seen = set()
-    stocks = [it for g in holdings["groups"] for it in g["items"] if it.get("type") == "개별 종목" or it.get("news_q")]
-    for it in sorted(stocks, key=lambda x: -x["value"]):
-        if it["symbol"] in seen:
-            continue
-        seen.add(it["symbol"])
-        targets.append((it["name"], it.get("news_q") or f'"{it["name"]}"', it["symbol"]))
-    allnews, titles = [], set()
-    for label, q, sym in targets:
+def build_news(watchlist, out):
+    targets = {item["symbol"]: item for group in watchlist["groups"] for item in group["items"]}
+    old = json.loads(out.read_text()) if out.exists() else {}
+    previous = {}
+    for article in old.get("items", []):
+        previous.setdefault(article.get("symbol"), []).append(article)
+
+    def for_symbol(item):
+        label, symbol = item["name"], item["symbol"]
+        query = item.get("news_q") or f'"{label}"' + (" ETF 증시" if label == symbol else "")
         try:
-            got = news_for(q, limit=2 if sym else 3)
+            return [{**article, "label": label, "symbol": symbol} for article in news_for(query)]
         except Exception as e:
             print(f"[뉴스 실패] {label}: {e}", file=sys.stderr)
-            continue
-        for n in got:
-            key = re.sub(r"\W", "", n["title"])[:40]
-            if key in titles:
-                continue
-            titles.add(key)
-            allnews.append({**n, "label": label, "symbol": sym})
-        time.sleep(0.3)
-    allnews.sort(key=lambda n: n["time"], reverse=True)
-    out.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "items": allnews[:40]},
+            return previous.get(symbol, [])
+
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        articles = [article for group in executor.map(for_symbol, targets.values()) for article in group]
+    articles.sort(key=lambda article: article["time"], reverse=True)
+    out.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "items": articles},
                               ensure_ascii=False, indent=1))
-    print(f"뉴스: {len(allnews[:40])}건 (대상 {len(targets)}개)")
+    print(f"뉴스: {len(articles)}건 (대상 {len(targets)}개)")
 
 
-def main(holdings_path, out_dir, force_symbols=False):
-    holdings = json.loads(Path(holdings_path).read_text())
+def main(watchlist_path, out_dir, force_symbols=False):
+    watchlist = json.loads(Path(watchlist_path).read_text())
     sym_path = out_dir / "symbols.json"
     fresh = False
     if sym_path.exists() and not force_symbols:
@@ -163,6 +164,6 @@ def main(holdings_path, out_dir, force_symbols=False):
         except Exception as e:
             print(f"[종목 목록 실패] {e}", file=sys.stderr)
     try:
-        build_news(holdings, out_dir / "news.json")
+        build_news(watchlist, out_dir / "news.json")
     except Exception as e:
         print(f"[뉴스 실패] {e}", file=sys.stderr)

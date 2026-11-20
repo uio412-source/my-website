@@ -9,6 +9,9 @@
   --color-border: #e3e7ee;
   --radius: 12px;
   --max-width: 1080px;
+  --color-action-text: #ffffff;
+  --color-lv-tag: #bc2634;
+  --color-lv-tag-text: #ffffff;
   --color-up: #e0322f;
   --color-down: #2563eb;
   --cat-1: #2a78d6;
@@ -31,6 +34,7 @@
     --color-primary: #5b85ff;
     --color-primary-dark: #87a6ff;
     --color-border: #2a3240;
+    --color-action-text: #11151c;
     --color-up: #ff6b6b;
     --color-down: #6b9bff;
     --cat-1: #3987e5;
@@ -61,6 +65,7 @@
   --color-primary: #5b85ff;
   --color-primary-dark: #87a6ff;
   --color-border: #2a3240;
+  --color-action-text: #11151c;
   --color-up: #ff6b6b;
   --color-down: #6b9bff;
   --cat-1: #3987e5;
