@@ -108,6 +108,28 @@ async function buildStamp() {
 }
 document.addEventListener("DOMContentLoaded", () => { buildStamp().catch(() => {}); });
 
+// ---------- 공통: 새 배포 감지 → 브라우저에 남은 옛 페이지를 자동으로 새로 불러옴 ----------
+// 배포 때 tools/stamp_version.py가 <meta name="mrs-build">와 version.json에 같은 버전을 적어 둠.
+// 지금 보고 있는 페이지의 버전이 서버의 최신 버전과 다르면(= 캐시된 옛 HTML) 한 번 새로고침.
+const BUILD = (document.querySelector('meta[name="mrs-build"]') || {}).content || "dev";
+async function reloadIfStale() {
+  if (BUILD === "dev") return false; // 로컬 미리보기
+  let v = null;
+  try {
+    const r = await fetch("version.json?t=" + Date.now(), { cache: "no-store" });
+    if (r.ok) v = (await r.json()).v;
+  } catch (e) { return false; }
+  if (!v || v === BUILD) return false;
+  const key = "mrs-reloaded-" + v; // 같은 버전으로는 한 번만 (서버가 아직 옛 페이지를 주는 경우 무한 반복 방지)
+  try { if (sessionStorage.getItem(key)) return false; sessionStorage.setItem(key, "1"); } catch (e) { return false; }
+  try { await fetch(location.href, { cache: "reload" }); } catch (e) {}
+  location.reload();
+  return true;
+}
+document.addEventListener("DOMContentLoaded", () => { reloadIfStale(); });
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") reloadIfStale(); });
+window.addEventListener("pageshow", (e) => { if (e.persisted) reloadIfStale(); }); // 뒤로 가기 캐시로 돌아온 경우
+
 // ---------- 공통: 오른쪽 아래 새로고침 버튼 (데이터 최신화) ----------
 // 누르면 캐시를 건너뛰고 서버의 최신 데이터 파일을 다시 받아 지금 화면을 그대로 다시 그림.
 // 각 페이지는 "datarefresh" 이벤트를 받아 detail.tasks에 자기 작업(Promise)을 넣음.
@@ -140,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let busy = false;
   fab.addEventListener("click", async () => {
     if (busy) return;
+    if (await reloadIfStale()) return; // 사이트가 새로 배포됐으면 페이지째 새로 불러옴
     busy = true;
     fab.classList.add("spin");
     fab.setAttribute("aria-busy", "true");

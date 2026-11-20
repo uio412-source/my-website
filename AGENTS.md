@@ -67,6 +67,7 @@ assets/img/           이미지
 - 차트 색은 `style.css`의 `--chart-*`, `--lv-*` 변수를 씁니다. 줍줍 음영은 핑크(`--chart-zone1/2`, 진한 구간 하단 띠 `--chart-zone-strip`)입니다.
 - **오른쪽 아래 새로고침 버튼**(`main.js`): 누르면 캐시를 건너뛰고(`?v=시각`, `cache: no-store`) 서버의 최신 데이터 파일을 다시 받아 지금 화면을 그대로 다시 그립니다. 결과는 토스트로 알려 주고, 이미 최신이면 GitHub Actions 배포 페이지(지금 다시 계산) 링크를 보여 줍니다.
   - 페이지 스크립트는 데이터를 `window.MS.getJSON(url)`로 불러오고, `datarefresh` 이벤트를 받으면 `e.detail.tasks.push(Promise)`로 다시 그리는 작업을 넣으세요. 이벤트 연결은 한 번만 하세요(다시 그릴 때 중복되지 않게).
+- **배포 버전 도장**: 배포 때 `tools/stamp_version.py`가 모든 HTML에 `<meta name="mrs-build">`와 CSS·JS 주소의 `?v=커밋`을 붙이고 `version.json`을 만듭니다. `main.js`가 페이지를 열 때·탭으로 돌아올 때·새로고침 버튼을 누를 때 `version.json`과 비교해, 브라우저에 옛 페이지가 남아 있으면 한 번 자동으로 새로 불러옵니다. 그러니 HTML에 `?v=2` 같은 버전을 직접 붙이지 마세요.
 - 다크/라이트 모드는 오른쪽 위 버튼으로 바꾸며 `<html data-theme>`과 localStorage에 저장됩니다. 색을 추가할 때는 `style.css`의 다크 블록 두 곳(시스템 설정용, `data-theme="dark"`용)에 모두 넣으세요.
 
 ## 로컬 미리보기
