@@ -36,44 +36,43 @@
 
   <main class="page hx hv">
     <div class="container">
-      <header class="hv-heading">
+      <div class="wl-head">
         <div>
-          <p>서울</p>
-          <h1>호텔 발레파킹</h1>
-          <p>호텔이나 카드로 무료 발레파킹과 이용 조건을 찾아보세요.</p>
+          <h1>발레파킹</h1>
+          <p class="wl-sub" id="hv-sub">서울 호텔 · 카드 무료 발레파킹</p>
         </div>
-        <a href="../paymorevent/?valet=all#cards" class="hv-link">Mr. Cards에서 검색</a>
-      </header>
-      <form id="valet-filters" class="hv-filters" role="search">
-        <label class="hv-search"><span>호텔·카드 검색</span><input type="search" id="valet-query" placeholder="예: 서울신라, 메리어트, Classic Y" autocomplete="off"></label>
-        <label><span>카드사</span><select id="valet-issuer"><option value="">전체 카드사</option></select></label>
-        <label><span>카드·브랜드</span><select id="valet-card"><option value="">전체 카드</option></select></label>
-        <label><span>지역</span><select id="valet-district"><option value="">서울 전체</option></select></label>
-        <label class="hv-check"><input type="checkbox" id="valet-my-only"> 저장한 카드만</label>
-        <button type="button" id="valet-reset" class="hv-button">초기화</button>
-      </form>
-      <div class="hv-overview">
-        <section class="hv-map-panel" aria-label="서울 구별 발레파킹 지도">
-          <div class="hv-panel-head"><h2>서울 구별 지도</h2><span>구를 눌러 호텔 보기</span></div>
-          <svg id="valet-map" aria-label="서울 자치구 지도"></svg>
-          <div class="hv-map-meta">
-            <button type="button" id="valet-clear-district" class="hv-button" hidden>서울 전체</button>
-            <a id="valet-map-source" href="https://github.com/southkorea/seoul-maps">지도 경계 출처</a>
-          </div>
+      </div>
+
+      <section class="hv-mine" id="hv-mine" aria-label="내 카드"></section>
+
+      <div class="hv-layout">
+        <section class="hv-mapbox" aria-label="서울 구별 지도">
+          <div class="hv-map" id="hv-map"><p class="wl-empty" role="status">지도를 불러오는 중…</p></div>
+          <div class="hv-legend" id="hv-legend"></div>
         </section>
-        <section class="hv-results" aria-label="호텔별 카드">
-          <div class="hv-panel-head"><h2>호텔별 카드</h2><p id="valet-count" role="status">불러오는 중…</p></div>
-          <div id="valet-results"></div>
+        <section class="hv-listbox" aria-label="호텔 목록">
+          <div class="hv-listhead">
+            <div class="hv-where" id="hv-where"></div>
+            <label class="hv-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="hv-q" placeholder="호텔 검색" autocomplete="off" aria-label="호텔 검색"></label>
+          </div>
+          <div class="wl-rows hv-hotels" id="hv-hotels"><p class="wl-empty" role="status">불러오는 중…</p></div>
         </section>
       </div>
-      <details class="hv-card-list">
-        <summary>카드 전체 목록·저장</summary>
-        <div id="valet-cards"></div>
-      </details>
-      <p id="valet-data-note" class="hv-note"></p>
-      <noscript>호텔 발레파킹을 검색하려면 자바스크립트를 켜 주세요.</noscript>
+      <p class="hv-note" id="hv-note"></p>
+      <noscript>발레파킹 정보를 보려면 자바스크립트를 켜 주세요.</noscript>
     </div>
   </main>
+
+  <dialog class="hv-sheet" id="hv-sheet" aria-labelledby="hv-sheet-title">
+    <form method="dialog" class="hv-sheet-in">
+      <div class="hv-sheet-head">
+        <h2 id="hv-sheet-title">보유 카드 등록</h2>
+        <button type="submit" class="hv-done">완료</button>
+      </div>
+      <label class="hv-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="hv-cq" placeholder="카드 이름 검색 (예: CLASSIC, 아멕스)" autocomplete="off" aria-label="카드 검색"></label>
+      <div class="hv-cardlist" id="hv-cardlist"></div>
+    </form>
+  </dialog>
 
   <nav class="tabbar" aria-label="메인 메뉴">
     <a href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.8-1.3 7.7L12 19l4.8 2.5-1.3-7.7"/></svg><span>티어</span></a>
