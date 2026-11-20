@@ -43,36 +43,37 @@
         </div>
       </div>
 
-      <section class="hv-mine" id="hv-mine" aria-label="내 카드"></section>
+      <section class="hv-step" aria-labelledby="hv-pick-h">
+        <div class="hv-step-h"><span class="hv-n" aria-hidden="true">1</span><h2 id="hv-pick-h">가진 카드를 골라 주세요</h2><span class="hv-step-c" id="hv-pick-c"></span></div>
+        <div class="hv-pickbar">
+          <div class="hv-iss" id="hv-iss" role="tablist" aria-label="카드사"></div>
+          <label class="hv-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="hv-cq" placeholder="카드 이름 (예: CLASSIC, 아멕스)" autocomplete="off" aria-label="카드 검색"></label>
+        </div>
+        <div class="hv-cards" id="hv-cards"><p class="wl-empty" role="status">불러오는 중…</p></div>
+        <p class="hv-pend" id="hv-pend"></p>
+      </section>
 
-      <div class="hv-layout">
-        <section class="hv-mapbox" aria-label="서울 구별 지도">
-          <div class="hv-map" id="hv-map"><p class="wl-empty" role="status">지도를 불러오는 중…</p></div>
-          <div class="hv-legend" id="hv-legend"></div>
-        </section>
-        <section class="hv-listbox" aria-label="호텔 목록">
-          <div class="hv-listhead">
-            <div class="hv-where" id="hv-where"></div>
+      <section class="hv-step" id="hv-mine-box" aria-labelledby="hv-mine-h" hidden>
+        <div class="hv-step-h"><span class="hv-n" aria-hidden="true">2</span><h2 id="hv-mine-h">지난달 실적 채웠나요?</h2></div>
+        <ul class="hv-mine" id="hv-mine"></ul>
+      </section>
+
+      <section class="hv-step hv-result" aria-labelledby="hv-res-h">
+        <div class="hv-step-h"><span class="hv-n" aria-hidden="true" id="hv-res-n">2</span><h2 id="hv-res-h">무료 발레 되는 호텔</h2></div>
+        <div class="hv-summary" id="hv-summary"></div>
+        <div class="hv-filter">
+          <div class="hv-gus" id="hv-gus" aria-label="구"></div>
+          <div class="hv-filter-row">
             <label class="hv-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="hv-q" placeholder="호텔 검색" autocomplete="off" aria-label="호텔 검색"></label>
+            <label class="hv-only" id="hv-only-box"><input type="checkbox" id="hv-only" checked> 되는 곳만</label>
           </div>
-          <div class="wl-rows hv-hotels" id="hv-hotels"><p class="wl-empty" role="status">불러오는 중…</p></div>
-        </section>
-      </div>
+        </div>
+        <div class="wl-rows hv-hotels" id="hv-hotels"><p class="wl-empty" role="status">불러오는 중…</p></div>
+      </section>
       <p class="hv-note" id="hv-note"></p>
       <noscript>발레파킹 정보를 보려면 자바스크립트를 켜 주세요.</noscript>
     </div>
   </main>
-
-  <dialog class="hv-sheet" id="hv-sheet" aria-labelledby="hv-sheet-title">
-    <form method="dialog" class="hv-sheet-in">
-      <div class="hv-sheet-head">
-        <h2 id="hv-sheet-title">보유 카드 등록</h2>
-        <button type="submit" class="hv-done">완료</button>
-      </div>
-      <label class="hv-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="hv-cq" placeholder="카드 이름 검색 (예: CLASSIC, 아멕스)" autocomplete="off" aria-label="카드 검색"></label>
-      <div class="hv-cardlist" id="hv-cardlist"></div>
-    </form>
-  </dialog>
 
   <nav class="tabbar" aria-label="메인 메뉴">
     <a href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.8-1.3 7.7L12 19l4.8 2.5-1.3-7.7"/></svg><span>티어</span></a>
