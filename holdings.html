@@ -30,24 +30,50 @@
     </div>
   </header>
 
-  <main class="page">
+  <main class="page wl">
     <div class="container">
-      <div class="page-head">
-        <h1>관심종목</h1>
-        <button class="add-btn" id="add-btn" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>종목 추가
+      <div class="wl-head">
+        <div>
+          <h1>관심종목</h1>
+          <p class="wl-sub" id="wl-sub">불러오는 중…</p>
+        </div>
+        <button class="wl-add" id="add-btn" type="button" aria-label="종목 추가">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>추가</span>
         </button>
       </div>
 
-      <div class="h-tools">
-        <div class="uj-seg" id="h-sort" role="group" aria-label="정렬">
-          <button type="button" data-sort="default" aria-pressed="true">기본</button>
-          <button type="button" data-sort="change" aria-pressed="false">등락률</button>
-          <button type="button" data-sort="lv" aria-pressed="false">웅줍LV</button>
-        </div>
+      <div class="wl-breadth" id="wl-breadth" hidden></div>
+
+      <div class="wl-layout">
+        <section class="wl-main" aria-label="관심종목 목록">
+          <div class="wl-controls">
+            <div class="wl-tabs" id="wl-tabs" role="tablist" aria-label="보기">
+              <button type="button" role="tab" data-filter="all" aria-selected="true">전체</button>
+              <button type="button" role="tab" data-filter="kr" aria-selected="false">국내</button>
+              <button type="button" role="tab" data-filter="us" aria-selected="false">해외</button>
+              <button type="button" role="tab" data-filter="deep" aria-selected="false">웅줍권</button>
+            </div>
+            <label class="wl-sort">
+              <span class="sr-only">정렬</span>
+              <select id="h-sort">
+                <option value="default">기본순</option>
+                <option value="change">등락률순</option>
+                <option value="lv">웅줍LV순</option>
+              </select>
+            </label>
+          </div>
+          <div class="wl-list" id="h-list"><p class="wl-empty" role="status">관심종목을 불러오는 중…</p></div>
+        </section>
+
+        <aside class="wl-news" aria-labelledby="news-title">
+          <div class="wl-sec-head">
+            <h2 id="news-title">관심종목 뉴스</h2>
+            <span>최근 7일</span>
+          </div>
+          <div class="news-rail" id="news-rail"></div>
+        </aside>
       </div>
       <p id="watch-status" class="sr-only" role="status"></p>
-      <div id="h-list"><p class="sheet-hint" role="status">관심종목을 불러오는 중…</p></div>
     </div>
   </main>
 
@@ -56,13 +82,16 @@
       <h2 id="add-title">종목 추가</h2>
       <button class="sheet-x" type="button" data-close aria-label="닫기">✕</button>
     </div>
-
     <div class="sheet-step" id="step-search">
       <input class="sheet-input" id="q" type="search" aria-label="종목명 또는 티커" placeholder="종목명 또는 티커 (예: 삼성전자, NVDA, 애플)" autocomplete="off" enterkeyhint="search">
       <ul class="sym-list" id="sym-list"></ul>
       <p class="sheet-hint" id="sym-hint">미국·한국 상장 종목과 ETF를 찾을 수 있어요.</p>
     </div>
+  </dialog>
 
+  <dialog class="sheet detail" id="detail-dlg" aria-labelledby="dt-name">
+    <div class="sheet-grab" aria-hidden="true"></div>
+    <div class="detail-body" id="detail-body"></div>
   </dialog>
 
   <nav class="tabbar" aria-label="메인 메뉴">
