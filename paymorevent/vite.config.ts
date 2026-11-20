@@ -6,6 +6,8 @@ import react from '@vitejs/plugin-react';
 import {defineConfig, type Plugin} from 'vite';
 import {buildCardFiles} from './scripts/card-list.mjs';
 import {buildPageData} from './scripts/page-data';
+import {bestPicking} from './lib/catalog-model';
+import {applyVerifiedCardRules, readVerifiedCardRules} from './scripts/verified-card-rules.mjs';
 
 const base = '/my-website/paymorevent/';
 
@@ -13,7 +15,12 @@ const base = '/my-website/paymorevent/';
 // from public/catalog-snapshot.json. See scripts/card-list.mjs.
 function cardListFiles(): Plugin {
   const readJSON = (path: string) => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
-  const build = () => buildCardFiles(readJSON('./public/catalog-snapshot.json'), readJSON('./data/card-images.json'));
+  const build = () => {
+    const snapshot = readJSON('./public/catalog-snapshot.json');
+    const cards = applyVerifiedCardRules(snapshot.cards, readVerifiedCardRules(), {summary: true});
+    const files = buildCardFiles({...snapshot, cards}, readJSON('./data/card-images.json'));
+    return {...files, catalog: {...snapshot, cards, stats: {...snapshot.stats, pickingCount: cards.filter(bestPicking).length}}};
+  };
   const initial = build();
   return {
     name: 'mr-cards-card-list',
@@ -30,6 +37,7 @@ function cardListFiles(): Plugin {
     },
     generateBundle() {
       for (const [fileName, source] of Object.entries(initial.files)) this.emitFile({type: 'asset', fileName, source});
+      this.emitFile({type: 'asset', fileName: 'catalog-snapshot.json', source: JSON.stringify(initial.catalog)});
     },
   };
 }
@@ -37,7 +45,7 @@ function cardListFiles(): Plugin {
 // Serves (dev) and writes (build) the per-page data files derived from
 // data/events.json, data/cards.json.gz and the card snapshot. See scripts/page-data.ts.
 function pageData(): Plugin {
-  const source = ['./data/events.json', './public/catalog-snapshot.json', './data/cards.json.gz', './data/home-cards.json', './data/card-images.json'].map(path => new URL(path, import.meta.url));
+  const source = ['./data/events.json', './public/catalog-snapshot.json', './data/cards.json.gz', './data/home-cards.json', './data/card-images.json', './data/verified-card-rules.json.gz'].map(path => new URL(path, import.meta.url));
   const readJSON = (url: URL) => JSON.parse(readFileSync(url, 'utf8'));
   let cache: {stamp: string; data: ReturnType<typeof buildPageData>} | undefined;
   // 원본 파일이 바뀌었을 때만 다시 만듦 (개발 서버에서 데이터를 고치면 새로고침만 하면 됨)
@@ -45,8 +53,12 @@ function pageData(): Plugin {
     const stamp = source.map(url => statSync(url).mtimeMs).join();
     if (cache?.stamp !== stamp) {
       const [events, snapshot, details, home, images] = source;
+      // card-list.json(요약 카드)과 card-data(상세)에 적용하는 검증 보정을 똑같이 적용 (scripts/verified-card-rules.mjs)
+      const rules = readVerifiedCardRules();
       cache = {stamp, data: buildPageData({
-        events: readJSON(events), snapshotCards: readJSON(snapshot).cards, detailCards: JSON.parse(gunzipSync(readFileSync(details)).toString('utf8')),
+        events: readJSON(events),
+        snapshotCards: applyVerifiedCardRules(readJSON(snapshot).cards, rules, {summary: true}),
+        detailCards: applyVerifiedCardRules(JSON.parse(gunzipSync(readFileSync(details)).toString('utf8')), rules),
         homeCards: readJSON(home), cachedImages: readJSON(images),
       })};
     }
