@@ -9,12 +9,16 @@
   - **다크 모드**: Mr. Stocks와 같은 `theme` 저장값을 같이 씁니다(한쪽에서 바꾸면 다른 쪽도 같음). `app/*.css`의 색은 `var(--d-색, 원래색)`으로 감싸 두었고 다크 값은 `app/mr-cards-dark.css`(자동 생성)에 있습니다. CSS에 색을 추가·변경했다면 `paymorevent/`에서 `npm run theme`을 실행해 함께 커밋하세요.
   - **첫 화면 속도**: `pages/main.tsx`는 화면(목록·카드 상세·이벤트 상세)과 큰 데이터(`data/events.json`, `data/home-cards.json`)를 `import()`로 나눠 받습니다. 이 파일들을 다시 맨 위 `import`로 불러오지 마세요(첫 화면 JS가 다시 2.5MB가 됩니다).
   - **카드 목록 데이터**: 원본은 `public/catalog-snapshot.json`이고, 앱은 빌드 때 여기서 만든 `card-list.json`(목록·상세 공통)·`card-search.json`(목록 검색)만 받습니다. 요약 카드에서 새 필드를 읽으려면 `scripts/card-list.mjs`의 `LIST_FIELDS`에 추가하세요.
-  - **사이트 전환 메뉴**(로고 옆 ▾): Mr. Stocks는 `assets/js/main.js`, Mr. Cards는 `components/customer-shell.tsx`에 있습니다. 문구를 바꾸면 두 곳을 같이 고치세요.
+  - **사이트 전환 메뉴**(로고 옆 ▾): Mr. Stocks·Hotels·Travel은 `assets/js/main.js`, Mr. Cards는 `components/customer-shell.tsx`에 있습니다. 문구를 바꾸거나 사이트를 추가하면 두 곳을 같이 고치세요.
 - **Mr. Hotels**: `hotels/` 폴더, `/my-website/hotels/`에 배포. 메뉴는 **티어 · 호텔 · 이벤트** 세 가지(`index.html` · `list.html` · `events.html`)이며 헤더·하단 탭바는 Mr. Stocks와 같은 마크업을 각 HTML에 복사해 씁니다. 화면은 `assets/js/hotels.js`(body의 `data-page`로 분기), 스타일은 `portfolio.css`의 `wl-*`(탭·목록·타일)에 `assets/css/hotels.css`를 더합니다.
   - 등급 기준·혜택·제휴카드는 `hotels.js`의 `P`(등급별 `card`, 프로그램별 `cards`·`cardNote`), 호텔별 조식·라운지·룸업글 여부와 메모는 `flags`, 호텔 목록은 `hotels/directory.json`, 이벤트는 `hotels/events.json`(공식 프로모션을 요약해 화면에서 바로 읽게 함. `endsAt`이 지난 행사는 자동으로 숨김)에서 고칩니다.
   - 호텔 화면: 국가·도시·나의 등급을 고르면 `호텔명 | 성급 | 위치 | 조식 | 라운지 | 룸업글`을 핑크 점으로 보여 줍니다. 대표 이미지는 호텔의 `image` → `hotels/images.json` → `same`(다른 체인 목록의 같은 호텔) 순서로 찾고, 없거나 깨지면 성급 타일을 보여 줍니다.
   - `hotels/images.json`은 배포 때 `tools/hotels/images.py`가 `image`가 없는 호텔(Marriott, HOTELLUX 독립 호텔은 `site`)의 공식 페이지 og:image를 찾아 채웁니다. 실패해도 배포는 계속됩니다.
   - 선택한 프로그램·등급은 브라우저 `mrhotels.program`, `mrhotels.tier.<프로그램>`에 저장해 세 화면이 같이 씁니다.
+- **Mr. Travel**: `travel/` 폴더, `/my-website/travel/`에 배포. 메뉴는 **혜택 · 여행지** 두 가지(`index.html` · `places.html`)이며 헤더·하단 탭바는 Mr. Stocks와 같은 마크업을 각 HTML에 복사해 씁니다. 화면은 `assets/js/travel.js`(body의 `data-page`로 분기), 스타일은 `portfolio.css`의 `wl-*`에 `assets/css/travel.css`를 더합니다.
+  - **혜택**: `travel/benefits.json`은 배포 때 `tools/travel/benefits.py`가 Mr. Cards 데이터(`paymorevent/data/events.json`, `cards.json.gz`)에서 해외·여행 혜택만 골라 만듭니다(마감 지난 행사 제외). 나라 키워드가 없으면 **공통**, 있으면 **나라별**(코드는 `places.json`의 id, 지역 묶음 `EU`·`SEA`·`APAC`)이고, 트래블카드는 카드 DB에서 수수료 면제·라운지 여부를 읽습니다. 분류 키워드는 `benefits.py`의 `PLACES`·`TYPES`에서 고칩니다. 원본 행사가 갱신되려면 Mr. Cards 이벤트 데이터를 갱신하세요.
+  - **여행지**: `travel/places.json`(나라별 월별 시즌 `season` 0=비수기·1=보통·2=성수기, 왕복 항공권 `air`·5성급 1박 `hotel` 참고 시세(만원), 비행시간·시차·통화·입국 조건)을 직접 고칩니다. 바꾸면 `checked` 날짜도 고치세요. 지도는 `travel/world.json`(태평양 중심 Natural Earth 선 지도)이며 `tools/travel/world.mjs`로 다시 만듭니다. 핀 위치는 `travel.js`의 `project()`가 같은 투영식으로 계산합니다.
+  - 마지막으로 고른 나라는 브라우저 `mrtravel.place`에 저장합니다. 혜택 화면 `index.html#place-JP`, 여행지 화면 `places.html#JP`처럼 주소로 바로 열 수 있습니다.
 - `main` 브랜치에 merge되면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages로 자동 배포합니다.
 
 ## 폴더 구조
@@ -32,6 +36,10 @@ assets/js/main.js     공통 스크립트
 assets/js/ungjup.js   차트 (캔버스, 외부 라이브러리 없음)
 assets/js/watchlist.js 관심종목 페이지
 assets/js/dividend.js  배당 페이지
+assets/js/travel.js    Mr. Travel (혜택 · 여행지 지도)
+travel/               Mr. Travel 페이지와 데이터 (benefits.json은 배포 때 생성, places.json·world.json은 직접 관리)
+tools/travel/benefits.py Mr. Cards 데이터 → travel/benefits.json
+tools/travel/world.mjs   세계지도 → travel/world.json (지도 바꿀 때만)
 tools/ungjup/build.py 데이터 생성기 (Yahoo Finance → data/ungjup/*.json)
 tools/ungjup/extras.py 종목 검색 목록(symbols.json)·종목별 뉴스(news.json) 생성
 tools/ungjup/dividends.py 종목별 최근 12개월 주당 배당금(dividends.json) 생성
