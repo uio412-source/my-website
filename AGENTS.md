@@ -23,6 +23,7 @@
   - **혜택**: `travel/benefits.json`은 배포 때 `tools/travel/benefits.py`가 Mr. Cards 데이터(`paymorevent/data/events.json`, `cards.json.gz`)에서 해외·여행 혜택만 골라 만듭니다(마감 지난 행사 제외). 나라 키워드가 없으면 **공통**, 있으면 **나라별**(코드는 `places.json`의 id, 지역 묶음 `EU`·`SEA`·`APAC`)이고, 트래블카드는 카드 DB에서 수수료 면제·라운지 여부를 읽습니다. 분류 키워드는 `benefits.py`의 `PLACES`·`TYPES`에서 고칩니다. 원본 행사가 갱신되려면 Mr. Cards 이벤트 데이터를 갱신하세요.
   - **여행지**: `travel/places.json`(나라별 월별 시즌 `season` 0=비수기·1=보통·2=성수기, 왕복 항공권 `air`·5성급 1박 `hotel` 참고 시세(만원), 비행시간·시차·통화·입국 조건)을 직접 고칩니다. 바꾸면 `checked` 날짜도 고치세요. 지도는 `travel/world.json`(태평양 중심 Natural Earth 선 지도)이며 `tools/travel/world.mjs`로 다시 만듭니다. 핀 위치는 `travel.js`의 `project()`가 같은 투영식으로 계산합니다.
   - 마지막으로 고른 나라는 브라우저 `mrtravel.place`에 저장합니다. 혜택 화면 `index.html#place-JP`, 여행지 화면 `places.html#JP`처럼 주소로 바로 열 수 있습니다.
+- **데이터 수집(이벤트·호텔·카드 상품)**: 외부 AI·사람은 큰 DB를 직접 고치지 않고 `data/inbox/<card-events|hotel-events|card-products>/YYYY-MM-DD-<출처>.json`만 추가하는 PR을 올립니다. 양식과 순서는 `docs/data-update.md`. PR 검사는 `.github/workflows/data-check.yml`(`tools/data/inbox.py validate`), 배포 때 `tools/data/inbox.py merge`가 이벤트 DB에 합칩니다(커밋 안 함). `card-products`는 검토 대기열이라 자동 반영하지 않습니다.
 - `main` 브랜치에 merge되면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages로 자동 배포합니다.
 
 ## 폴더 구조

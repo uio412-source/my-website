@@ -1,0 +1,24 @@
+# 수집 데이터(data/inbox) PR 양식 검사. 틀리면 PR에 빨간 X가 뜨고, 오류 내용은 작업 로그에 한국어로 나옵니다.
+name: 수집 데이터 양식 검사
+
+on:
+  pull_request:
+    paths:
+      - "data/inbox/**"
+      - "tools/data/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 양식 검사
+        run: python tools/data/inbox.py validate
+      - name: 합치기 시험 (배포 때와 같은 동작)
+        run: python tools/data/inbox.py merge
