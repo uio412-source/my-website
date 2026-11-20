@@ -77,6 +77,8 @@
       c.setAttribute("aria-selected", on);
       if (on && scrollCard) {
         const box = $("uj-carousel");
+        // 카드로 자동 이동할 때는 스크롤로 종목을 다시 선택하지 않는다.
+        delete box.dataset.userScroll;
         box.scrollTo({ left: c.offsetLeft - box.offsetLeft - 2, behavior: "smooth" });
       }
     });
