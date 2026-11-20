@@ -100,8 +100,9 @@
     accor(t, pr) {
       if (pr === 'excluded') return { note: 'ALL Accor 멤버십 미참여' };
       const lounge = (pr === 'club' && t >= 3) || (pr === 'fairmont' && t >= 4);
-      return { bf: t >= 3, lounge, up: t >= 2,
-        note: pr === 'fairmont' && t === 3 ? '페어몬트 골드 라운지는 다이아몬드부터' : '' };
+      return { bf: t >= 3, lounge, up: t >= 2 && pr !== 'noUpgrade',
+        note: pr === 'fairmont' && t === 3 ? '페어몬트 골드 라운지는 다이아몬드부터' :
+          pr === 'noUpgrade' && t >= 2 ? '이비스·이비스 스타일은 등급 객실 업그레이드 제외' : '' };
     },
     ihg(t, pr) {
       const incl = pr === 'breakfastIncluded';
@@ -113,12 +114,13 @@
         note: pr === 'sofitelExample' ? '혜택 요금: 매일 조식 · US$100 크레딧' : '혜택 포함 요금으로 예약 시' };
     },
     marriott(t, pr) {
+      if (pr === 'excluded') return { note: '메리어트 본보이 미참여' };
       if (pr === 'apartments') return { note: '이그제큐티브 아파트먼트 별도 혜택 조건' };
       if (t < 3) return { bf: false, lounge: false, up: t >= 2, note: t === 2 ? '오후 2시 레이트 체크아웃(가능 시)' : '' };
       const bf = ['breakfastChoice', 'clubChoice', 'series', 'courtyardClub', 'club'].includes(pr);
       const lounge = ['club', 'clubChoice', 'courtyardClub'].includes(pr);
       const note = {
-        breakfastChoice: '웰컴 혜택으로 2인 조식 선택', clubChoice: '웰컴 혜택으로 조식 선택', series: '조식 선택(레스토랑 운영 시)',
+        breakfastChoice: '웰컴 혜택으로 2인 조식 선택', clubChoice: '웰컴 혜택으로 조식 선택', series: '조식 선택(호텔 직영 레스토랑 운영 시)',
         club: '라운지에서 조식', courtyardClub: '라운지 조식 · 미운영 시 레스토랑', foodCredit: '조식 대신 식음 크레딧 선택',
         courtyard: '조식 대신 식음 크레딧 선택', welcome: '웰컴 혜택: 포인트 또는 어메니티',
       }[pr] || '';
@@ -132,6 +134,80 @@
       return { bf: t >= 2, lounge: t >= 3, up: t >= 2, note: join(t === 2 && '라운지 층 객실로 업그레이드되면 입장', dr) };
     },
   };
+
+  const COMPARE_PERKS = [...PERKS.slice(0, 3), ['out', '레이트 체크아웃']];
+  const included = (label) => ({ label, kind: 'included' });
+  const conditional = (label) => ({ label, kind: 'conditional' });
+  const limited = (label) => ({ label, kind: 'limited' });
+  const UP_IF_AVAILABLE = conditional('가능 시');
+  const CHECK_HOTEL = limited('호텔 확인');
+
+  function hotelBenefits(program, tier, hotel, day) {
+    if (hotel.closedFrom && hotel.closedFrom <= day) {
+      const closed = limited('휴업');
+      return { bf: closed, lounge: closed, up: closed, out: closed, note: hotel.closureNote };
+    }
+    const profile = hotel.profile;
+    const f = flags[program](tier, profile);
+    if (profile === 'excluded') return { note: f.note };
+    const up = f.up ? UP_IF_AVAILABLE : null;
+    switch (program) {
+      case 'accor':
+        return {
+          bf: f.bf ? conditional('참여 시') : null,
+          lounge: f.lounge ? included(profile === 'fairmont' ? '골드 라운지' : '포함') : null,
+          up: profile === 'noUpgrade' && tier >= 2 ? limited('브랜드 제외') : up,
+          out: tier >= 1 ? conditional('요청 · 가능 시') : null,
+          note: [f.note, f.lounge && hotel.loungeNote].filter(Boolean).join(' · '),
+        };
+      case 'ihg':
+        return {
+          bf: profile === 'breakfastIncluded' ? included('기본 포함') :
+            f.bf ? conditional('2인 선택') : null,
+          lounge: profile === 'loungeMilestone' ? limited('연간권 필요') : null,
+          up, out: conditional('14시까지 가능 시'),
+          note: profile === 'loungeMilestone' ? '라운지는 마일스톤 리워드에서 연간권을 선택한 회원과 동반 1인.' : '',
+        };
+      case 'marriott': {
+        if (profile === 'apartments') {
+          return { bf: CHECK_HOTEL, lounge: CHECK_HOTEL, up: CHECK_HOTEL, out: CHECK_HOTEL, note: f.note };
+        }
+        const breakfast = {
+          breakfastChoice: conditional('2인 선택'),
+          clubChoice: conditional('2인 선택'),
+          club: included('라운지 조식'),
+          courtyardClub: included('라운지 조식'),
+          series: conditional('직영 식당 운영 시'),
+          foodCredit: limited('식음 크레딧'),
+          courtyard: limited('식음 크레딧'),
+        }[profile];
+        const out = tier >= 3
+          ? hotel.checkout === 'availability' || profile === 'design'
+            ? conditional('16시까지 가능 시')
+            : included('16시 보장')
+          : tier === 2 ? conditional('14시까지 가능 시') : tier === 1 ? conditional('우선 요청') : null;
+        return {
+          bf: tier >= 3 ? breakfast : null,
+          lounge: f.lounge ? included('회원 + 1인') : tier >= 3 && hotel.loungeUnconfirmed ? CHECK_HOTEL : null,
+          up, out,
+          note: [
+            tier >= 3 && profile === 'courtyardClub' && '라운지 미운영 시 호텔 레스토랑 조식.',
+            tier >= 3 && profile === 'series' && '호텔 직영 레스토랑 미운영 시 포인트 제공.',
+            tier >= 3 && profile === 'design' && '조식 웰컴 혜택과 라운지 보장은 디자인 호텔스 약관에서 제외.',
+            tier >= 3 && hotel.checkout === 'availability' && '리조트의 레이트 체크아웃은 객실 상황에 따릅니다.',
+          ].filter(Boolean).join(' '),
+        };
+      }
+      case 'hilton':
+        return {
+          bf: f.bf ? (profile === 'slh' ? included('2인 컨티넨털') : conditional('MyWay 조식')) : null,
+          lounge: f.lounge ? included('회원 + 1인') :
+            profile === 'conrad' && tier === 2 ? conditional('라운지 객실 시') : null,
+          up, out: tier === 4 && profile !== 'slh' ? included('16시 보장') : conditional('요청 · 가능 시'),
+          note: profile === 'slh' ? '힐튼 직접 예약 시 SLH 전용 약관 적용.' : '',
+        };
+    }
+  }
 
   const listInfo = {
     accor: {
@@ -271,11 +347,25 @@
   async function listPage() {
     const [data, found] = await Promise.all([MS.getJSON('directory.json'), MS.getJSON('images.json').catch(() => ({}))]);
     const country = $('country'), citySel = $('city'), tierSel = $('tier');
+    const compareTiers = $('compare-tiers'), search = $('compare-search');
     const list = ids(ORDER);
     let current = pickProgram(list);
+    const params = new URLSearchParams(location.search);
+    let compare = params.get('view') === 'compare';
+    if (params.has('t') && !P[current].noTier) store.set(STORE_T + current, String(pickTier(current)));
 
     const opts = (sel, values, selected) => sel.replaceChildren(...values.map(([v, t]) => new Option(t, v, false, v === selected)));
     const city = () => data.countries[country.selectedIndex].cities[citySel.selectedIndex];
+    const comparePrograms = () => list.filter((id) => !P[id].noTier && city().programs[id]?.length);
+    const day = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
+    function updateAddress() {
+      const url = new URL(location.href);
+      url.searchParams.delete('t');
+      if (compare) url.searchParams.set('view', 'compare');
+      else url.searchParams.delete('view');
+      url.hash = current;
+      history.replaceState(null, '', url);
+    }
     // 대표 이미지: 호텔에 적힌 image → 배포 때 찾은 images.json → 같은 호텔(same)의 이미지
     const byKey = {};
     for (const c of data.countries) for (const ct of c.cities) for (const [pg, hs] of Object.entries(ct.programs)) for (const h of hs) byKey[pg + ':' + h.id] = h;
@@ -285,17 +375,37 @@
     function fillCities() {
       opts(citySel, data.countries[country.selectedIndex].cities.map((c, i) => [String(i), c.name]), '0');
     }
+    function makeCompareTierSelects(programs) {
+      compareTiers.innerHTML = programs.map((id) => `<label class="hx-field hx-mytier">
+        <span>${esc(P[id].name)} 등급</span><select data-program="${id}"></select>
+      </label>`).join('');
+      for (const select of compareTiers.querySelectorAll('select')) {
+        const id = select.dataset.program;
+        opts(select, P[id].tiers.map((t, i) => [String(i), t.n]), String(pickTier(id)));
+      }
+    }
     function selectProgram() {
       const info = P[current];
       store.set(STORE_P, current);
       const counts = Object.fromEntries(list.map((id) => [id, (city().programs[id] || []).length]));
       renderTabs(list, current, counts, pick);
-      $('tier-field').hidden = !!info.noTier;
+      $('tier-field').hidden = compare || !!info.noTier;
+      $('programs').hidden = compare;
+      $('list').hidden = compare;
+      $('comparison').hidden = !compare;
+      $('view-compare').setAttribute('aria-pressed', String(compare));
+      $('view-list').setAttribute('aria-pressed', String(!compare));
       if (!info.noTier) opts(tierSel, info.tiers.map((t, i) => [String(i), t.n]), String(pickTier(current)));
-      const li = listInfo[current];
-      $('conditions').textContent = li.condition;
-      $('sources').innerHTML = [...li.sources, ['공식 등급 혜택·약관', info.terms],
-        ['호텔업 등급결정 현황', 'https://www.hotelrating.or.kr/hotel']]
+      const programs = compare ? comparePrograms() : [current];
+      if (compare) makeCompareTierSelects(programs);
+      $('conditions').textContent = compare
+        ? '호텔과 브랜드별 예외를 반영했습니다. 적격 요금과 라운지 운영 여부를 확인하세요.'
+        : listInfo[current].condition;
+      const sources = programs.flatMap((id) => [
+        [P[id].name + ' 등급 약관', P[id].terms], ...listInfo[id].sources,
+      ]);
+      if (!compare) sources.push(['호텔업 등급결정 현황', 'https://www.hotelrating.or.kr/hotel']);
+      $('sources').innerHTML = sources
         .map(([t, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join('');
       const abroad = data.countries[country.selectedIndex].name !== '한국';
       $('checked').textContent = '목록 대조일 ' + data.updated.replaceAll('-', '.') +
@@ -304,10 +414,45 @@
       render();
     }
 
+    function renderComparison() {
+      const ct = city();
+      const fold = (text) => text.toLowerCase().replace(/[\s·-]/g, '');
+      const filter = fold(search.value);
+      let count = 0;
+      const tables = [...compareTiers.querySelectorAll('select')].map((select) => {
+        const program = select.dataset.program;
+        const tier = Number(select.value);
+        const hotels = ct.programs[program].filter((h) => fold(h.name + h.district).includes(filter));
+        if (!hotels.length) return '';
+        count += hotels.length;
+        const cells = hotels.map((h) => {
+          const perk = hotelBenefits(program, tier, h, day);
+          return `<tr>
+            <th scope="row"><a href="${esc(h.url)}">${esc(h.name)}</a><small>${esc(h.district)}</small>
+              ${perk.note ? `<small class="hx-compare-note">${esc(perk.note)}</small>` : ''}</th>
+            ${COMPARE_PERKS.map(([key]) => {
+              const value = perk[key];
+              return `<td>${value ? `<span data-kind="${value.kind}">${esc(value.label)}</span>` : '—'}</td>`;
+            }).join('')}
+          </tr>`;
+        }).join('');
+        return `<div class="wl-rows hx-compare-group"><table class="hx-compare-table">
+          <caption>${esc(P[program].name)} <small>${esc(P[program].tiers[tier].n)} · ${hotels.length}곳</small></caption>
+          <thead><tr><th scope="col">호텔</th>${COMPARE_PERKS.map(([, label]) => `<th scope="col">${label}</th>`).join('')}</tr></thead>
+          <tbody>${cells}</tbody>
+        </table></div>`;
+      }).join('');
+      $('sub').textContent = `${ct.name} · ${count}곳 비교`;
+      $('compare-results').innerHTML = count ? tables : '<p class="wl-empty">조건에 맞는 호텔이 없습니다.</p>';
+    }
+
     function render() {
+      if (compare) return renderComparison();
       const info = P[current], ct = city();
       const t = info.noTier ? 0 : Number(tierSel.value);
-      const rows = (ct.programs[current] || []).map((h) => ({ h, f: flags[current](t, h.profile) }));
+      const rows = (ct.programs[current] || []).map((h) => ({
+        h, f: h.closedFrom && h.closedFrom <= day ? { note: h.closureNote } : flags[current](t, h.profile),
+      }));
       const score = (f) => (f.bf ? 1 : 0) + (f.lounge ? 1 : 0) + (f.up ? 1 : 0);
       rows.sort((a, b) => score(b.f) - score(a.f) || (b.h.stars || 0) - (a.h.stars || 0) || a.h.name.localeCompare(b.h.name, 'ko'));
       const n = (k) => rows.filter((r) => r.f[k]).length;
@@ -336,21 +481,36 @@
     // 사진을 못 불러오면 성급 타일로 대신 보여 줌
     $('list').addEventListener('error', (e) => { if (e.target.tagName === 'IMG') e.target.remove(); }, true);
 
-    const pick = (id) => { current = id; setHash(id); selectProgram(); };
+    const pick = (id) => { current = id; updateAddress(); selectProgram(); };
     opts(country, data.countries.map((c, i) => [String(i), c.name]), '0');
     fillCities();
     // 도시를 바꿨는데 지금 프로그램 호텔이 없으면 목록이 있는 프로그램으로 옮김
     const fitProgram = () => {
       if ((city().programs[current] || []).length) return;
       const next = list.find((id) => (city().programs[id] || []).length);
-      if (next) { current = next; setHash(next); }
+      if (next) { current = next; updateAddress(); }
     };
     country.addEventListener('change', () => { fillCities(); fitProgram(); selectProgram(); });
     citySel.addEventListener('change', () => { fitProgram(); selectProgram(); });
     tierSel.addEventListener('change', () => { store.set(STORE_T + current, tierSel.value); render(); });
+    compareTiers.addEventListener('change', (e) => {
+      const select = e.target;
+      if (!select.matches('select[data-program]')) return;
+      store.set(STORE_T + select.dataset.program, select.value);
+      renderComparison();
+    });
+    search.addEventListener('input', renderComparison);
+    function chooseView(value) {
+      if (compare === value) return;
+      compare = value;
+      updateAddress();
+      selectProgram();
+    }
+    $('view-compare').addEventListener('click', () => chooseView(true));
+    $('view-list').addEventListener('click', () => chooseView(false));
     window.addEventListener('hashchange', () => { current = pickProgram(list); selectProgram(); });
+    if (params.has('t')) updateAddress();
     selectProgram();
-    if (location.search) setHash(current); // 티어 화면에서 넘어온 ?t= 는 한 번만 쓰고 주소에서 지움
   }
 
   // ---------- 이벤트 (공식 프로모션을 요약해 화면에서 바로 읽음) ----------

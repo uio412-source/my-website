@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#11151c" media="(prefers-color-scheme: dark)">
-  <title>서울 호텔 | Mr. Hotels</title>
-  <meta name="description" content="서울 호텔의 조식, 라운지, 객실 업그레이드 혜택을 멤버십 등급별로 비교하세요.">
+  <title>호텔·티어 비교 | Mr. Hotels</title>
+  <meta name="description" content="도시를 고르고, 내 등급으로 받을 수 있는 호텔별 조식, 라운지, 객실 업그레이드, 레이트 체크아웃을 비교하세요.">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/portfolio.css">
   <link rel="stylesheet" href="../assets/css/hotels.css">
@@ -41,12 +41,24 @@
           <p class="wl-sub" id="hx-sub">서울 호텔을 불러오는 중…</p>
         </div>
       </div>
+      <div class="hx-view-switch" role="group" aria-label="호텔 보기 방식">
+        <button type="button" id="hx-view-list" aria-pressed="true" aria-controls="hx-list">호텔 목록</button>
+        <button type="button" id="hx-view-compare" aria-pressed="false" aria-controls="hx-comparison">내 티어 비교</button>
+      </div>
       <div class="wl-tabs hx-programs" id="hx-programs" role="tablist" aria-label="멤버십 프로그램"></div>
       <div class="hx-controls">
         <label class="hx-field"><span>국가</span><select id="hx-country"></select></label>
         <label class="hx-field"><span>도시</span><select id="hx-city"></select></label>
         <label class="hx-field hx-mytier" id="hx-tier-field"><span>나의 등급</span><select id="hx-tier"></select></label>
       </div>
+      <section id="hx-comparison" aria-label="내 티어로 호텔 비교" hidden>
+        <div class="hx-compare-controls">
+          <div class="hx-compare-tiers" id="hx-compare-tiers"></div>
+          <label class="hx-field hx-compare-search"><span>호텔 검색</span><input type="search" id="hx-compare-search" placeholder="호텔명 또는 지역"></label>
+        </div>
+        <p class="hx-compare-key">적격 숙박 기준 · ‘—’는 해당 등급에서 제공되는 혜택이 없음을 뜻합니다.</p>
+        <div id="hx-compare-results"></div>
+      </section>
       <div id="hx-list"><p class="wl-empty" role="status">호텔 목록을 불러오는 중…</p></div>
       <details class="hx-notes">
         <summary>혜택 조건 및 출처</summary>
