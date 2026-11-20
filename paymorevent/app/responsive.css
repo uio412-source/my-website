@@ -12,7 +12,7 @@
 .product-tags{margin-bottom:13px;min-height:0}
 .product-terms{margin-top:auto;gap:16px}
 .product-status{min-height:17px}
-.product:focus-within{border-color:#1951fa;box-shadow:0 0 0 2px #1951fa18}
+.product:focus-within{border-color:#2456e8;box-shadow:0 0 0 2px #2456e818}
 .product-title:focus-visible::after{outline:3px solid #93b2ff;outline-offset:3px}
 .product-info,.results,.card-hero-copy{min-width:0}
 .card-detail-main{max-width:1320px;padding:26px 40px 60px}
@@ -21,7 +21,7 @@
 .card-hero-description{max-width:650px}
 .card-artwork-large{width:100%}
 .card-artwork-large img{max-width:min(100%,285px)}
-.detail-section-nav{position:sticky;top:0;z-index:10;background:#f5f7fb;min-height:55px}
+.detail-section-nav{position:sticky;top:0;z-index:10;background:#f5f7fa;min-height:55px}
 .detail-section-nav a{display:flex;align-items:center;justify-content:center;min-height:48px}
 .detail-section{scroll-margin-top:78px}
 .detail-table{font-size:15px;line-height:1.85}

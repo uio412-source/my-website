@@ -15,6 +15,7 @@ import '@/app/customer-update.css';
 import '@/app/customer.css';
 import '@/app/database.css';
 import '@/app/issuer-ui.css';
+import '@/app/mr-cards.css';
 
 const events = eventSnapshot as Offer[];
 const catalogRoute = /^(cards|events)\/([a-zA-Z0-9][a-zA-Z0-9._-]*)\/?$/;
@@ -24,7 +25,7 @@ function Status({message}: {message: string}) {
     <SiteHeader />
     <main className="pm-detail-main">
       <h1 role="status">{message}</h1>
-      <a className="pm-back" href={sitePath()}>페이모먼트 홈으로</a>
+      <a className="pm-back" href={sitePath()}>Mr. Cards 홈으로</a>
     </main>
     <SiteFooter />
   </div>;
@@ -43,7 +44,7 @@ function Detail({kind, id}: {kind: 'cards' | 'events'; id: string}) {
         if (!mounted) return;
         setData({cards, card});
         const name = card?.name ?? offer?.title;
-        if (name) document.title = `${name} | 페이모먼트`;
+        if (name) document.title = `${name} | Mr. Cards`;
       })
       .catch(() => { if (mounted) setFailed(true); });
     return () => { mounted = false; };
