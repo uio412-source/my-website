@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko" data-site="hotels">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#11151c" media="(prefers-color-scheme: dark)">
+  <title>서울 호텔 발레파킹 | Mr. Hotels</title>
+  <meta name="description" content="서울 호텔의 카드별 발레파킹 가능 여부와 전월실적, 횟수, 주차 조건을 비교하세요.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/portfolio.css">
+  <link rel="stylesheet" href="../assets/css/hotels.css">
+  <link rel="stylesheet" href="../assets/css/hotel-valet.css">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body data-page="valet">
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="./">Mr. <span>Hotels</span></a>
+      <div class="head-right">
+      <nav class="nav" aria-label="메인 메뉴">
+        <ul>
+          <li><a href="./">티어</a></li>
+          <li><a href="list.html">호텔</a></li>
+          <li><a href="events.html">이벤트</a></li>
+          <li><a href="valet.html" aria-current="page">발레파킹</a></li>
+        </ul>
+      </nav>
+        <button class="theme-btn" id="theme-btn" type="button" aria-label="다크 모드 전환" title="다크/라이트 모드">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page hx hv">
+    <div class="container">
+      <header class="hv-heading">
+        <div>
+          <p>서울</p>
+          <h1>호텔 발레파킹</h1>
+          <p>호텔이나 카드로 무료 발레파킹과 이용 조건을 찾아보세요.</p>
+        </div>
+        <a href="../paymorevent/?valet=all#cards" class="hv-link">Mr. Cards에서 검색</a>
+      </header>
+      <form id="valet-filters" class="hv-filters" role="search">
+        <label class="hv-search"><span>호텔·카드 검색</span><input type="search" id="valet-query" placeholder="예: 서울신라, 메리어트, Classic Y" autocomplete="off"></label>
+        <label><span>카드사</span><select id="valet-issuer"><option value="">전체 카드사</option></select></label>
+        <label><span>카드·브랜드</span><select id="valet-card"><option value="">전체 카드</option></select></label>
+        <label><span>지역</span><select id="valet-district"><option value="">서울 전체</option></select></label>
+        <label class="hv-check"><input type="checkbox" id="valet-my-only"> 저장한 카드만</label>
+        <button type="button" id="valet-reset" class="hv-button">초기화</button>
+      </form>
+      <div class="hv-overview">
+        <section class="hv-map-panel" aria-label="서울 구별 발레파킹 지도">
+          <div class="hv-panel-head"><h2>서울 구별 지도</h2><span>구를 눌러 호텔 보기</span></div>
+          <svg id="valet-map" aria-label="서울 자치구 지도"></svg>
+          <div class="hv-map-meta">
+            <button type="button" id="valet-clear-district" class="hv-button" hidden>서울 전체</button>
+            <a id="valet-map-source" href="https://github.com/southkorea/seoul-maps">지도 경계 출처</a>
+          </div>
+        </section>
+        <section class="hv-results" aria-label="호텔별 카드">
+          <div class="hv-panel-head"><h2>호텔별 카드</h2><p id="valet-count" role="status">불러오는 중…</p></div>
+          <div id="valet-results"></div>
+        </section>
+      </div>
+      <details class="hv-card-list">
+        <summary>카드 전체 목록·저장</summary>
+        <div id="valet-cards"></div>
+      </details>
+      <p id="valet-data-note" class="hv-note"></p>
+      <noscript>호텔 발레파킹을 검색하려면 자바스크립트를 켜 주세요.</noscript>
+    </div>
+  </main>
+
+  <nav class="tabbar" aria-label="메인 메뉴">
+    <a href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.8-1.3 7.7L12 19l4.8 2.5-1.3-7.7"/></svg><span>티어</span></a>
+    <a href="list.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M10 21v-4h4v4"/></svg><span>호텔</span></a>
+    <a href="events.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg><span>이벤트</span></a>
+    <a href="valet.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.8-8 10-8 10s-8-5.2-8-10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>발레파킹</span></a>
+  </nav>
+  <script src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/hotel-valet.js"></script>
+</body>
+</html>

@@ -11,9 +11,11 @@ import {CardArtwork,BrandLogos} from '@/components/card-visuals';
 import {cardPath,annualFeeRows,shortText} from '@/lib/card-presentation';
 import type {Card, Offer} from '@/lib/catalog-types';
 import {customerLines,featureTags} from '@/lib/customer-copy';
+import {pendingValet,valetHotelResults,valetMapPath,valetQuota,valetRules} from '@/lib/hotel-valet';
 const amount=(n:number|null)=>n===null?'—':n===0?'없음':`${n.toLocaleString('ko-KR')}원`;
 export default function CardDetail({card, catalog}:{card:Card;catalog:{cards:Card[];events:Offer[]}}) {
  const variants=catalog.cards.filter(c=>cardFamilyKey(c)===cardFamilyKey(card));const family=variants.length?variants:[card];const offers=dedupeOffers(family.flatMap(c=>linkedOffers(c,catalog.events)));const pending=catalog.events.filter(o=>o.status==='needs_review'&&family.some(c=>offerApplies(c,o)));
+ const parkingRules=valetRules(card.id), pendingParking=pendingValet(card.id);
  const benefits=Array.from(new Map(card.benefits.map(b=>[b.title+'|'+b.detail,b])).values());
  return <div className="pm-site pm-detail"><SiteHeader current="cards"/><main className="pm-detail-main">
   <a href={sitePath('#cards')} className="pm-back"><ArrowLeft size={16}/>카드 목록</a>
@@ -21,6 +23,23 @@ export default function CardDetail({card, catalog}:{card:Card;catalog:{cards:Car
   {(offers.length>0||pending.length>0)&&<nav className="pm-detail-event-nav"><a href="#related-events">이 카드 이벤트 {offers.length}개 ↓</a><a href={sitePath('?card='+encodeURIComponent(card.id)+'#events')}>이벤트 모아보기 →</a></nav>}
   <LinkedEvents offers={offers} pending={pending}/>
   <CardBenefitTabs benefits={benefits} networkServices={card.networkServices}/>
+  {(parkingRules.length>0||pendingParking)&&<section className="pm-section" id="hotel-valet">
+   <h2>서울 호텔 발레파킹</h2>
+   <div className="pm-accordions">
+    {parkingRules.map(program=>{
+      const hotels=valetHotelResults(program);
+      const variant=program.cards.find(item=>item.catalogId===card.id);
+      return <details key={program.id} open>
+        <summary>{program.brand} {program.tier} · {hotels.length?`서울 ${hotels.length}곳`:'최신 제휴 호텔 확인 중'}</summary>
+        <p>전월 {(program.minimumSpend/10000).toLocaleString('ko-KR')}만원 이상 · {valetQuota(program)} · {program.parking}</p>
+        <p>{program.visit} · {program.grace}</p>
+        {hotels.length>0&&<p>{hotels.map(hotel=>hotel.name).join(' · ')}</p>}
+        <a href={valetMapPath(variant?`${program.id}:${variant.key}`:card.id)}>호텔별 조건과 지도</a>{' · '}<a href={program.source}>공식 안내장</a>
+      </details>;
+    })}
+    {pendingParking&&<details open><summary>{pendingParking.brand} · 제휴 호텔 확인 중</summary><p>{pendingParking.note}</p><a href={pendingParking.source}>공식 안내</a></details>}
+   </div>
+  </section>}
   <section className="pm-section" id="conditions"><h2>이용 조건</h2><div className="pm-accordions">
    <details><summary>연회비·발급 브랜드</summary><table className="pm-info-table"><tbody>{annualFeeRows(card).map((f,i)=><tr key={i}><th>{f.label}</th><td>{f.amount==='미확인'?'—':f.amount}</td></tr>)}</tbody></table></details>
    {!!card.eligibility?.length&&<details><summary>발급 대상</summary><ul>{card.eligibility.flatMap(customerLines).map((t,i)=><li key={i}>{t}</li>)}</ul></details>}
