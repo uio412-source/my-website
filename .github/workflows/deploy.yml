@@ -1,5 +1,5 @@
 # main 브랜치에 변경이 들어오면 GitHub Pages로 자동 배포합니다.
-# 매일 정해진 시각에도 실행해서 웅줍 지표 데이터를 최신으로 갱신한 뒤 배포합니다.
+# 매일 정해진 시각에도 실행해서 줍줍 지표 데이터를 최신으로 갱신한 뒤 배포합니다.
 name: Deploy to GitHub Pages
 
 on:
@@ -30,7 +30,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: 웅줍 지표 데이터 갱신
+      - name: 줍줍 지표 데이터 갱신
         # 실패해도 저장소에 들어 있는 데이터로 배포를 계속합니다.
         continue-on-error: true
         run: |

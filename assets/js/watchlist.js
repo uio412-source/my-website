@@ -7,12 +7,12 @@
   const CHART = { QQQ: "qqq", SPY: "spy", GLD: "gld", "069500.KS": "ks200", "BTC-USD": "btc" };
   const MKT = { US: "미국", KOSPI: "코스피", KOSDAQ: "코스닥" };
   const BANDS = [
-    { lo: 900, name: "웅줍권", cls: "h" },
+    { lo: 900, name: "줍줍권", cls: "h" },
     { lo: 700, name: "깊은 조정", cls: "d" },
     { lo: 400, name: "조정", cls: "m" },
     { lo: 1, name: "평온", cls: "l" },
   ];
-  const ZONE = ["평상시", "관심", "웅줍 구간"];
+  const ZONE = ["평상시", "관심", "줍줍 구간"];
   const norm = (text) => (text || "").toLowerCase().replace(/[\s.\-·]/g, "");
   const ticker = (symbol) => symbol.replace(/\.(KS|KQ)$/, "");
   const isKorean = (symbol) => ticker(symbol) !== symbol;
@@ -126,7 +126,7 @@
     const b = lv != null ? band(lv) : null;
     const chg = q?.change;
     const lvChip = lv != null
-      ? `<span class="lv-chip ${b.cls}${q.zone === 2 ? " zone" : ""}" title="웅줍LV ${lv} · ${b.name}${q.short ? " (추정)" : ""}">${q.zone === 2 ? "웅줍 " : ""}LV ${lv}</span>`
+      ? `<span class="lv-chip ${b.cls}${q.zone === 2 ? " zone" : ""}" title="줍줍LV ${lv} · ${b.name}${q.short ? " (추정)" : ""}">${q.zone === 2 ? "줍줍 " : ""}LV ${lv}</span>`
       : "";
     const price = Number.isFinite(q?.close)
       ? `<b class="px">${priceText(item.symbol, q.close)}</b><em class="chg ${dirOf(chg)}">${Number.isFinite(chg) ? fmt.pct.format(chg) : "—"}</em>`
@@ -148,7 +148,7 @@
     };
     $("wl-tabs").querySelectorAll("[data-filter]").forEach((t) => {
       const f = t.dataset.filter;
-      t.innerHTML = `${{ all: "전체", kr: "국내", us: "해외", deep: "웅줍권" }[f]}<span>${counts[f]}</span>`;
+      t.innerHTML = `${{ all: "전체", kr: "국내", us: "해외", deep: "줍줍권" }[f]}<span>${counts[f]}</span>`;
     });
     renderBreadth(all);
 
@@ -163,7 +163,7 @@
     $("h-list").innerHTML = shown.length
       ? blocks.map((blk) => `<div class="wl-block">${blk.name ? `<div class="wl-block-head">${esc(blk.name)}<span>${blk.rows.length}</span></div>` : ""}
           <div class="wl-rows">${blk.rows.map(row).join("")}</div></div>`).join("")
-      : `<p class="wl-empty">${filter === "deep" ? "지금 웅줍권(LV 900 이상)인 종목이 없어요." : "관심종목이 비어 있어요. 오른쪽 위 추가 버튼으로 등록해 보세요."}</p>`;
+      : `<p class="wl-empty">${filter === "deep" ? "지금 줍줍권(LV 900 이상)인 종목이 없어요." : "관심종목이 비어 있어요. 오른쪽 위 추가 버튼으로 등록해 보세요."}</p>`;
 
     $("wl-sub").textContent = `${all.length}종목` + (quotes[all[0]?.symbol]?.date ? ` · ${fmt.day.format(new Date(quotes[all[0].symbol].date + "T00:00:00Z")).replace(/\.$/, "")} 종가 기준` : "");
     renderNews(all);
@@ -246,14 +246,14 @@
       ${lv != null ? `
       <div class="dt-lv">
         <div class="dt-lv-top">
-          <span>웅줍LV</span>
+          <span>줍줍LV</span>
           <b class="lv-${b.cls}">${lv}</b>
           <span class="lv-chip ${b.cls}">${b.name}${q.short ? " · 추정" : ""}</span>
         </div>
-        <div class="gauge" role="img" aria-label="웅줍LV ${lv} / 1000">
+        <div class="gauge" role="img" aria-label="줍줍LV ${lv} / 1000">
           <i class="gauge-pin" style="left:${(lv - 1) / 9.99}%"></i>
         </div>
-        <div class="gauge-ticks"><span>평온</span><span>조정</span><span>깊은 조정</span><span>웅줍권</span></div>
+        <div class="gauge-ticks"><span>평온</span><span>조정</span><span>깊은 조정</span><span>줍줍권</span></div>
       </div>
       <div class="dt-stats">
         ${stat("상태", ZONE[q.zone] ?? "—", q.zone === 2 ? "zone" : "")}
