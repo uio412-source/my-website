@@ -19,7 +19,12 @@
   flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--color-text);
   font: inherit; font-size: .92rem; padding: 11px 0;
 }
-.tv-filters { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+.tv-filters { display: flex; flex-direction: column; margin-bottom: 14px; border: 1px solid var(--color-border); border-radius: 14px; overflow: hidden; }
+.tv-filters:empty { display: none; }
+.tv-frow { display: flex; align-items: center; min-width: 0; }
+.tv-frow + .tv-frow { border-top: 1px solid var(--color-border); }
+.tv-flabel { flex-shrink: 0; align-self: stretch; display: flex; align-items: center; width: 58px; padding-left: 12px; font-size: .74rem; font-weight: 800; color: var(--color-muted); background: var(--color-bg-alt); border-right: 1px solid var(--color-border); }
+.tv-frow .tv-chiprow { flex: 1; min-width: 0; padding: 9px 12px 9px 10px; }
 .tv-chiprow, .tv-chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
 .tv-chiprow::-webkit-scrollbar, .tv-chips::-webkit-scrollbar { display: none; }
 .tv-chip {
