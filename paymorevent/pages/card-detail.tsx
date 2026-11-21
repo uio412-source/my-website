@@ -1,6 +1,6 @@
 // 카드 상세 — 표준 양식: 머리(이미지·카드사·이름) → 기본 정보 표 → 혜택 표 → 피킹률 표 → 결제 인정 표 → 이벤트 → 원문
 // 모든 정보는 같은 모양의 표(.cd-t)로만 보여 준다. 설명 문단은 두지 않는다.
-import {useState} from 'react';
+import {Fragment, useState, type ReactNode} from 'react';
 import {sitePath} from '@/lib/site-path';
 import {SiteHeader, SiteFooter} from '@/components/customer-shell';
 import {CardArt} from '@/components/mc-ui';
@@ -14,20 +14,36 @@ import type {Card, Offer} from '@/lib/catalog-types';
 
 const MARK = {allowed: ['✓', 'ok', '인정'], excluded: ['✕', 'no', '제외'], unknown: ['?', 'na', '미확인'], na: ['–', 'na', '해당 없음']} as const;
 
-function BenefitTr({b}: {b: BenefitRow}) {
-  const [open, setOpen] = useState(false);
-  const more = b.tiers.length > 0 || b.lines.some(l => l !== b.where);
-  return <>
-    <tr className={more ? 'cd-t-has' : undefined} onClick={more ? () => setOpen(v => !v) : undefined} aria-expanded={more ? open : undefined}>
-      <th scope="row"><b>{b.name}</b>{b.where && <small>{b.where}</small>}</th>
-      <td className="cd-t-num">{b.value.main ? <><b>{b.value.main}</b>{b.value.sub && <small>{b.value.sub}</small>}</> : <small>–</small>}</td>
-      <td className="cd-t-cond">{b.conds.length ? b.conds.map(c => <span key={c}>{c}</span>) : <small>–</small>}</td>
-    </tr>
-    {open && <tr className="cd-t-open"><td colSpan={3}>
-      {b.tiers.length > 0 && <dl className="cd-tiers">{b.tiers.map(t => { const [k, v] = t.split(' → '); return <div key={t}><dt>전월 {k}</dt><dd>{v}</dd></div>; })}</dl>}
-      <ul>{b.lines.filter(l => l !== b.where).map((l, j) => <li key={j}>{l}</li>)}</ul>
-    </td></tr>}
-  </>;
+/** 카드사 상품설명서처럼: 구분 | 적용처 | 혜택 | 한도. 묶음([일상] 등)은 가로 머리줄, 통합 한도는 세로로 합친 칸 */
+function BenefitGrid({rows, common, extra}: {rows: BenefitRow[]; common: string | null; extra: ReactNode}) {
+  const groups: {name: string | null; rows: BenefitRow[]}[] = [];
+  for (const r of rows) { const last = groups[groups.length - 1]; if (last && last.name === r.group) last.rows.push(r); else groups.push({name: r.group, rows: [r]}); }
+  const limitCell = (r: BenefitRow) => {
+    const lines = [...(r.limit ? [r.limit + (r.tiers.length ? ' (실적별)' : '')] : []), ...(r.spend && r.spend !== common ? [r.spend] : []), ...r.extras];
+    return lines.length ? lines.map((l, i) => <span key={i}>{l}</span>) : <span className="mute">–</span>;
+  };
+  return <table className="cd-g cd-ben">
+    <colgroup><col className="c-label"/><col/><col className="c-val"/><col className="c-lim"/></colgroup>
+    <thead><tr><th scope="col">구분</th><th scope="col">적용처</th><th scope="col">혜택</th><th scope="col">한도·조건</th></tr></thead>
+    <tbody>{groups.map((g, gi) => <Fragment key={gi}>
+      {g.name && <tr className="cd-g-grp"><th colSpan={4} scope="rowgroup">{g.name}</th></tr>}
+      {g.rows.map((r, i) => {
+        const key = (x: BenefitRow) => x.shared && x.limit ? x.limit + '|' + (x.spend ?? '') : null;
+        const k = key(r);
+        if (k && i > 0 && key(g.rows[i - 1]) === k) return <tr key={i}>{cells(r, false)}</tr>;
+        let span = 1;
+        while (k && i + span < g.rows.length && key(g.rows[i + span]) === k) span++;
+        return <tr key={i}>{cells(r, true, span)}</tr>;
+      })}
+    </Fragment>)}{extra}</tbody>
+  </table>;
+  function cells(r: BenefitRow, withLimit: boolean, span = 1) {
+    return <>
+      {r.place ? <><th scope="row">{r.label}</th><td>{r.place}</td></> : <th scope="row" colSpan={2} className="wide">{r.label}</th>}
+      <td className="cd-g-val">{r.value.main ? <><b>{r.value.main}</b>{r.value.sub && <small>{r.value.sub}</small>}</> : <span className="mute">–</span>}</td>
+      {withLimit && <td className="cd-g-lim" rowSpan={span > 1 ? span : undefined}>{limitCell(r)}</td>}
+    </>;
+  }
 }
 
 function PayTr({label, check}: {label: string; check: PaymentCheck}) {
@@ -69,11 +85,19 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
   // 위에 카드사를 따로 쓰니 이름 앞의 카드사명은 뺌 ("삼성카드 taptap O" → "taptap O")
   const title = card.name.replace(new RegExp('^' + card.issuer.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s+'), '') || card.name;
   const fee = feeText(card);
+  // 카드 값보다 혜택별 조건이 실제에 가까움: 혜택에 전월실적이 걸려 있으면 그 최소값을 보여 줌
+  const benefitSpends = card.benefits.map(b => b.minimumSpend).filter((v): v is number => typeof v === 'number');
+  const positive = [...new Set(benefitSpends.filter(v => v > 0))].sort((a, b) => a - b);
+  const spendInfo = positive.length
+    ? {main: won(positive[0]) + ' 이상', sub: benefitSpends.includes(0) ? '일부 혜택은 실적 무관' : positive.length > 1 ? '혜택별로 다름' : ''}
+    : {main: spend.value === null ? '–' : spend.value === 0 ? '없음' : won(spend.value) + (spend.varies ? '~' : ' 이상'), sub: ''};
   const brands = networkBrands(card.brands).map(b => b.label).filter(b => b !== '국내전용');
   const [allBenefits, setAllBenefits] = useState(false);
   const [allPicks, setAllPicks] = useState(false);
   const SHOW = 10;
   const rows = (allBenefits ? benefits : benefits.slice(0, SHOW)).map(benefitRow);
+  // 기본 정보의 전월실적과 같은 조건은 혜택 칸마다 되풀이하지 않음
+  const common = positive.length ? '전월 ' + won(positive[0]) : spend.value === 0 ? '실적 무관' : null;
   const eligibility = (card.eligibility ?? []).flatMap(customerLines);
   const spendOut = [...new Set(card.spendExclusions.flatMap(customerLines))];
   const benefitOut = [...new Set(card.benefitExclusions.flatMap(customerLines))];
@@ -82,7 +106,7 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
     <a href={sitePath('#cards')} className="mc-back">← 카드 목록</a>
 
     <header className="cd-head">
-      <CardArt card={card} large/>
+      <div className="cd-head-art"><CardArt card={card} large/></div>
       <div className="cd-head-t">
         <p>{card.issuer}</p>
         <h1>{title}</h1>
@@ -97,33 +121,29 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
       <tbody>
         <tr><th scope="row">종류</th><td>{card.type === 'credit' ? '신용' : '체크'}{brands.length > 0 && <small>{brands.join(' · ')}</small>}</td></tr>
         <tr><th scope="row">연회비</th><td><b>{fee.main}</b>{fee.sub && <small>{fee.sub}</small>}</td></tr>
-        <tr><th scope="row">전월실적</th><td><b>{spend.value === null ? (benefits.some(b => b.spend) ? '혜택별 다름' : '–') : spend.value === 0 ? '없음' : won(spend.value) + (spend.varies ? '~' : ' 이상')}</b></td></tr>
+        <tr><th scope="row">전월실적</th><td><b>{spendInfo.main}</b>{spendInfo.sub && <small>{spendInfo.sub}</small>}</td></tr>
         {best && <tr><th scope="row">최고 피킹률</th><td><b className="up">{formatPicking(best.value)}%</b></td></tr>}
       </tbody>
     </table>
 
     <section className="cd-sec">
       <h2>혜택<small>{benefits.length}</small></h2>
-      {benefits.length ? <table className="cd-t cd-ben">
-        <thead><tr><th scope="col">혜택</th><th scope="col">할인·적립</th><th scope="col">조건</th></tr></thead>
-        <tbody>
-          {rows.map((b, i) => <BenefitTr key={i} b={b}/>)}
+      {benefits.length ? <BenefitGrid rows={rows} common={common} extra={<>
           {services.map(s => <tr key={s.id}>
-            <th scope="row"><b>{s.title}</b></th>
-            <td className="cd-t-num"><b>{s.benefitMode === 'discount' ? '할인' : s.benefitMode === 'paid' ? '유료' : '무료'}</b></td>
-            <td className="cd-t-cond">{[s.minimumSpend ? `전월 ${won(s.minimumSpend)}` : '', s.annualLimit ? `연 ${s.annualLimit}회` : s.monthlyLimit ? `월 ${s.monthlyLimit}회` : '', s.guestCount ? `동반 ${s.guestCount}인` : ''].filter(Boolean).map(c => <span key={c}>{c}</span>)}</td>
+            <th scope="row" colSpan={2} className="wide">{s.title}</th>
+            <td className="cd-g-val"><b>{s.benefitMode === 'discount' ? '할인' : s.benefitMode === 'paid' ? '유료' : '무료'}</b></td>
+            <td className="cd-g-lim">{[s.minimumSpend ? `전월 ${won(s.minimumSpend)}` : '', s.annualLimit ? `연 ${s.annualLimit}회` : s.monthlyLimit ? `월 ${s.monthlyLimit}회` : '', s.guestCount ? `동반 ${s.guestCount}인` : ''].filter(Boolean).map(c => <span key={c}>{c}</span>)}</td>
           </tr>)}
           {valet.map(p => {
             const v = p.cards.find(x => x.catalogId === card.id);
             return <tr key={p.id}>
-              <th scope="row"><b>호텔 발레파킹</b><small><a href={valetMapPath(v ? `${p.id}:${v.key}` : card.id)}>서울 {valetHotelResults(p).length}곳 →</a></small></th>
-              <td className="cd-t-num"><b>무료</b></td>
-              <td className="cd-t-cond"><span>전월 {won(p.minimumSpend)}</span><span>{valetQuota(p)}</span></td>
+              <th scope="row" colSpan={2} className="wide">호텔 발레파킹 <a href={valetMapPath(v ? `${p.id}:${v.key}` : card.id)}>서울 {valetHotelResults(p).length}곳 →</a></th>
+              <td className="cd-g-val"><b>무료</b></td>
+              <td className="cd-g-lim"><span>전월 {won(p.minimumSpend)}</span><span>{valetQuota(p)}</span></td>
             </tr>;
           })}
-          {valetPending && <tr><th scope="row"><b>호텔 발레파킹</b></th><td className="cd-t-num"><small>확인 중</small></td><td className="cd-t-cond"><small>–</small></td></tr>}
-        </tbody>
-      </table> : <p className="cd-empty">정리된 혜택 없음 · 카드사 페이지 참고</p>}
+          {valetPending && <tr><th scope="row" colSpan={2} className="wide">호텔 발레파킹</th><td className="cd-g-val"><span className="mute">확인 중</span></td><td className="cd-g-lim"><span className="mute">–</span></td></tr>}
+        </>}/> : <p className="cd-empty">정리된 혜택 없음 · 카드사 페이지 참고</p>}
       {benefits.length > SHOW && <button type="button" className="mc-more" onClick={() => setAllBenefits(v => !v)}>{allBenefits ? '접기' : `${benefits.length - SHOW}개 더 보기`}</button>}
     </section>
 
@@ -164,9 +184,10 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
       {offers.length > 5 && <a className="mc-more" href={sitePath('?card=' + encodeURIComponent(card.id) + '#events')}>{offers.length - 5}건 더 보기</a>}
     </section>}
 
-    {(variants.length > 1 || eligibility.length > 0 || spendOut.length > 0 || benefitOut.length > 0) && <section className="cd-sec">
+    {(benefits.length > 0 || variants.length > 1 || eligibility.length > 0 || spendOut.length > 0 || benefitOut.length > 0) && <section className="cd-sec">
       <h2>원문</h2>
       {variants.length > 1 && <details className="mc-acc"><summary>다른 브랜드·디자인<small>{variants.length}</small></summary><div className="mc-variants">{variants.map(v => <a key={v.id} href={cardPath(v.id)} aria-current={v.id === card.id ? 'page' : undefined}>{v.name}<small>{v.brands.join('·')}</small></a>)}</div></details>}
+      {benefits.some(b => b.lines.length || b.cap) && <details className="mc-acc"><summary>혜택 원문</summary><dl className="cd-orig">{benefits.map((b, i) => <div key={i}><dt>{b.title}</dt>{[b.cap && b.cap !== '한도 없음' ? '한도: ' + b.cap : '', ...b.lines].filter(Boolean).map((l, j) => <dd key={j}>{l}</dd>)}</div>)}</dl></details>}
       {eligibility.length > 0 && <details className="mc-acc"><summary>발급 대상</summary><ul className="mc-b-lines">{eligibility.map((t, i) => <li key={i}>{t}</li>)}</ul></details>}
       {spendOut.length > 0 && <details className="mc-acc"><summary>전월실적 제외<small>{Math.min(spendOut.length, 30)}</small></summary><ul className="mc-b-lines">{spendOut.slice(0, 30).map((t, i) => <li key={i}>{t}</li>)}</ul></details>}
       {benefitOut.length > 0 && <details className="mc-acc"><summary>혜택 제외<small>{Math.min(benefitOut.length, 30)}</small></summary><ul className="mc-b-lines">{benefitOut.slice(0, 30).map((t, i) => <li key={i}>{t}</li>)}</ul></details>}

@@ -185,7 +185,20 @@ function valueLabel(b: CleanBenefit, text: string) {
   if (/무료|이용권|제공/.test(b.title + text.slice(0, 80))) return {main: '무료', sub: ''};
   return {main: '', sub: ''};
 }
-export type BenefitRow = {group: string | null; name: string; where: string; value: {main: string; sub: string}; conds: string[]; tiers: string[]; lines: string[]};
+export type BenefitRow = {
+  group: string | null; name: string; where: string; value: {main: string; sub: string}; conds: string[]; tiers: string[]; lines: string[];
+  /** 표 칸용: 구분(짧은 이름) · 적용처 · 한도 · 전월실적 · 그 밖의 조건(횟수·건당 최소) */
+  label: string; place: string; limit: string | null; shared: boolean; spend: string | null; extras: string[];
+};
+/** "대중교통· 택시 10% 결제일할인" → "대중교통·택시" (혜택 칸과 겹치는 율·금액·동사는 뺌) */
+function shortLabel(name: string) {
+  const t = name.replace(/\s*·\s*/g, '·')
+    .replace(/\s*(?:최대\s*)?[\d,.]+\s*(?:%|만\s*원|천\s*원|원|마일리지|마일|P|배)\s*/g, ' ')
+    .replace(/\s*(?:결제일\s*)?(?:할인|적립|캐시백|청구할인|서비스|혜택|제공|면제|무료\s*이용|무료)\s*$/g, '')
+    .replace(/\s*(?:결제일\s*)?(?:할인|적립|캐시백)\s*$/g, '').replace(/의$/, '').replace(/\s+/g, ' ').trim();
+  const u = t.length > 8 ? t.replace(/\s*\([^)]*\)\s*/g, ' ').trim() : t;
+  return u.length >= 2 ? u : t.length >= 2 ? t : name;
+}
 /** 혜택 하나를 표 한 줄로: 혜택 | 할인·적립 | 조건(전월실적·한도·횟수·건당 최소) */
 export function benefitRow(b: CleanBenefit): BenefitRow {
   const text = [b.cap ?? '', ...b.lines].join(' ');
@@ -208,5 +221,13 @@ export function benefitRow(b: CleanBenefit): BenefitRow {
   // 조건 칸과 겹치는 문장("전월 이용실적 20만원 이상 시 제공")·표 머리글 같은 조각("공항· 라운지", "놀이공원명· 제공 서비스")은 버림
   if (/^(?:전월|직전|실적|이용\s*실적)/.test(where) || /(?:명|서비스|구분|내용|대상|기준)$/.test(where) || (!/\d/.test(where) && where.split('·').length >= 2 && where.split('·').every(w => w.trim().length <= 7) && where.split('·').some(w => /(?:종류|대상|가맹점|적립률|할인율|명|서비스|구분|라운지|한도)$/.test(w.trim())))) where = '';
   if (where === name || name.includes(where) || where.length < 4) where = '';
-  return {group: g ? g[1] : null, name, where: short(where, 44), value: valueLabel(b, text), conds: [...new Set(conds)].slice(0, 4), tiers: cap.tiers, lines: b.lines};
+  const extras = [...counts, ...(per ? [compact(per[1]) + ' 이상 결제'] : [])];
+  const label = shortLabel(name);
+  let place = where.replace(/\s*(?:결제|이용)\s*시$/, '').trim();
+  const bare = (t: string) => t.replace(/요금|이용|[^가-힣A-Za-z0-9]/g, '');
+  if (bare(place) === bare(label) || bare(label).includes(bare(place))) place = '';
+  return {
+    group: g ? g[1] : null, name, where: short(where, 44), value: valueLabel(b, text), conds: [...new Set(conds)].slice(0, 4), tiers: cap.tiers, lines: b.lines,
+    label, place: short(place, 48), limit: cap.label, shared: /통합/.test(b.cap ?? ''), spend: b.spend ? (b.spend === '무실적' ? '실적 무관' : b.spend) : null, extras,
+  };
 }
