@@ -14,7 +14,7 @@
     { k: "3y", label: "3년", m: 36 },
     { k: "all", label: "상장후" },
   ];
-  const COLORS = ["--chart-price", "--chart-uj", "--cat-3", "--cat-4"];
+  const COLORS = ["--chart-price", "--chart-uj", "--cat-3", "--cat-4", "--cat-5"];
   const RATE = 0.03; // '줍줍구간 배당 재매수'에서 분배금을 모아 두는 현금 금리(연)
   const KEY = "mrstocks.cc";
   let saved = {};
@@ -47,9 +47,11 @@
     g.items.forEach((it) => {
       const div = new Float64Array(g.d.length);
       it.dv.forEach(([i, a]) => (div[i] += a));
-      const tr = new Float64Array(g.d.length);
-      tr[0] = 1;
-      for (let i = 1; i < g.d.length; i++) tr[i] = tr[i - 1] * (it.c[i] + div[i]) / it.c[i - 1];
+      // 늦게 상장한 종목은 first(첫 거래일 위치) 전까지 값이 없음
+      it.first = it.first || 0;
+      const tr = new Float64Array(g.d.length).fill(NaN);
+      tr[it.first] = 1;
+      for (let i = it.first + 1; i < g.d.length; i++) tr[i] = tr[i - 1] * (it.c[i] + div[i]) / it.c[i - 1];
       it.div = div;
       it.tr = tr;
       it.sims = new Map();
@@ -67,6 +69,7 @@
   }
 
   const dipOn = (g) => state.dip && !!g.z;
+  const has = (it, s) => s >= it.first; // s일에 이미 상장해 있었는지
 
   // 줍줍구간 배당 재매수: s일 종가에 1만큼 사고, 분배금은 연 3% 현금으로 모아 두었다가
   // 줍줍 구간인 날 종가에 모아 둔 현금을 전부 삼(구간 안에서 받은 분배금은 그날 바로). 평가액 = 주식 + 현금
@@ -101,6 +104,7 @@
   }
 
   function stats(g, it, s) {
+    if (!has(it, s)) return null;
     const e = g.last, n = e - s;
     const f = curve(g, it, s);
     const total = f(n);
@@ -144,8 +148,14 @@
     const W = Math.max(280, box.clientWidth), H = box.clientHeight || 200;
     const pad = { l: 40, r: 8, t: 10, b: 22 };
     const e = g.last, n = e - s;
-    const series = g.items.map((it) => { const f = curve(g, it, s); return Array.from({ length: n + 1 }, (_, k) => f(k)); });
-    let lo = Math.min(0, ...series.flat()), hi = Math.max(0, ...series.flat());
+    // 이 기간 시작일에 아직 상장 전인 종목은 그리지 않음(null)
+    const series = g.items.map((it) => {
+      if (!has(it, s)) return null;
+      const f = curve(g, it, s);
+      return Array.from({ length: n + 1 }, (_, k) => f(k));
+    });
+    const all = series.filter(Boolean).flat();
+    let lo = Math.min(0, ...all), hi = Math.max(0, ...all);
     const span = hi - lo || 0.02;
     lo -= span * 0.06; hi += span * 0.06;
     const x = (k) => pad.l + (n ? (k / n) : 0) * (W - pad.l - pad.r);
@@ -174,6 +184,7 @@
     const order = g.items.map((_, i) => i).sort((a, b) => (g.items[a].base ? 1 : 0) - (g.items[b].base ? 1 : 0));
     const stepK = Math.max(1, Math.floor(n / (W - pad.l - pad.r)));
     order.forEach((i) => {
+      if (!series[i]) return;
       const pts = [];
       for (let k = 0; k <= n; k += stepK) pts.push(`${x(k).toFixed(1)},${y(series[i][k]).toFixed(1)}`);
       if ((n % stepK) !== 0) pts.push(`${x(n).toFixed(1)},${y(series[i][n]).toFixed(1)}`);
@@ -198,7 +209,7 @@
     cross.setAttribute("x1", cx); cross.setAttribute("x2", cx); cross.setAttribute("visibility", "visible");
     const tip = $("cc-tip");
     const zone = dipOn(v.g) && v.g.z[v.s + k] ? " · 줍줍 구간" : "";
-    tip.innerHTML = `<div class="t">${v.g.d[v.s + k]}${zone}</div>` + v.g.items.map((it, i) =>
+    tip.innerHTML = `<div class="t">${v.g.d[v.s + k]}${zone}</div>` + v.g.items.map((it, i) => !v.series[i] ? "" :
       `<div class="r"><span><i class="cc-dot" style="background:var(${COLORS[i]})"></i>${it.short}</span><b class="${tone(v.series[i][k])}">${pct(v.series[i][k])}</b></div>`).join("");
     tip.hidden = false;
     const tw = tip.offsetWidth;
@@ -215,7 +226,13 @@
     const rows = g.items.map((it, i) => ({ it, i, st: stats(g, it, s) }));
     const base = rows.find((r) => r.it.base);
     $("cc-list").innerHTML = rows.map(({ it, i, st }) => {
-      const diff = base && !it.base ? st.total - base.st.total : null;
+      if (!st) {
+        return `<div class="cc-row cc-off">
+        <div class="cc-nm" title="${it.name} · ${it.symbol}"><i class="cc-dot" style="background:var(${COLORS[i]})"></i><span>${it.short}</span></div>
+        <div class="cc-wait">${ymd(it.listed)} 상장이라 이 기간은 비교 못 해요</div>
+      </div>`;
+      }
+      const diff = base?.st && !it.base ? st.total - base.st.total : null;
       return `<div class="cc-row${it.base ? " base" : ""}">
         <div class="cc-nm" title="${it.name} · ${it.symbol}"><i class="cc-dot" style="background:var(${COLORS[i]})"></i><span>${it.short}</span>${it.base ? "<small>본주</small>" : ""}</div>
         <div class="cc-tot"><b class="${tone(st.total)}">${pct(st.total)}</b>${st.cagr != null ? `<small>연 ${pct(st.cagr)}</small>` : ""}</div>
@@ -229,7 +246,7 @@
   function renderTable(g, cur) {
     const cols = PERIODS.filter((p) => p.table !== false);
     const starts = cols.map((p) => startIndex(g, p));
-    const vals = g.items.map((it) => starts.map((s) => (s >= 0 ? stats(g, it, s).total : null)));
+    const vals = g.items.map((it) => starts.map((s) => (s >= 0 ? stats(g, it, s)?.total ?? null : null)));
     const best = cols.map((_, c) => Math.max(...vals.map((r) => r[c] ?? -Infinity)));
     $("cc-table").style.setProperty("--cc-cols", cols.length);
     $("cc-table").innerHTML =
@@ -240,7 +257,8 @@
         ${vals[i].map((v, c) => `<span class="cell${v == null ? " na" : ""}${cols[c].k === cur ? " on" : ""}${v != null && v === best[c] ? " best" : ""}" style="background:${retBg(v)}">${v == null ? "–" : pct(v, Math.abs(v) >= 0.1 ? 0 : 1)}</span>`).join("")}
       </div>`).join("");
     const cc = g.items.filter((it) => !it.base);
-    const youngest = cc.reduce((a, b) => (b.listed > a.listed ? b : a), cc[0] || g.items[0]);
+    const oldest = cc.reduce((a, b) => (b.first < a.first ? b : a), cc[0] || g.items[0]);
+    const late = cc.some((it) => it.first > 0);
     const dip = dipOn(g);
     $("cc-mode").hidden = !dip;
     $("cc-note").textContent = [
@@ -248,7 +266,7 @@
         ? `줍줍구간 배당 재매수: 분배금을 바로 다시 사지 않고 연 ${RATE * 100}% 현금으로 모아 두었다가, 위 ${g.name} 차트의 진한 핑크(줍줍 구간: 200일선 아래 + RSI 33 미만)에 들어간 날 종가에 전부 사요. 구간 안에서 받은 분배금은 그날 바로 사고, 끝날 때 남은 현금은 이자까지 더해 평가해요. 바로 재투자보다 = 분배금을 배당락일에 바로 다시 산 경우와의 차이, 분배금 몫 = 총수익 − 주가 수익률(세전)이에요.`
         : "총수익은 분배금을 배당락일 종가에 다시 산다고 본 세전 수익률이고, 분배금 몫 = 총수익 − 주가 수익률이에요.",
       g.unit === "$" ? "미국 ETF는 달러 기준(환율 변동 제외)이에요." : "",
-      `상장후 = ${youngest.short} 상장일(${g.start})부터, 모두 같은 날을 기준으로 비교해요.`,
+      `상장후 = 가장 먼저 상장한 커버드콜 ${oldest.short}의 상장일(${g.start})부터${late ? "이고, 그 뒤에 상장한 종목은 상장 전 기간을 '–'로 비워 둬요" : "예요"}. 같은 기간은 모두 같은 날을 기준으로 비교해요.`,
       `${g.d[g.last]} 종가까지.`,
     ].filter(Boolean).join(" ");
   }

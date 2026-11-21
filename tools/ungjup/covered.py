@@ -1,7 +1,9 @@
 """차트 페이지 '커버드콜 vs 본주' 데이터(data/ungjup/covered.json).
 
 묶음(GROUPS)마다 본주와 커버드콜 ETF의 종가·분배금을 Yahoo에서 받아
-가장 늦게 상장한 종목의 상장일부터 공통 거래일로 맞춰 저장합니다.
+가장 먼저 상장한 커버드콜의 상장일부터 본주 거래일에 맞춰 저장합니다.
+늦게 상장한 종목은 상장 전 날짜가 null이고 first(첫 거래일 위치)를 따로 적습니다.
+그래서 종목을 새로 넣어도 다른 종목의 비교 기간이 짧아지지 않습니다.
 화면(assets/js/covered.js)이 기간을 골라 총수익(분배금 재투자)·주가 수익·분배금 몫을 계산합니다.
 
   - 종가는 분할만 반영된 실제 종가(배당 미반영), 분배금은 배당락일 기준 주당 금액
@@ -23,20 +25,23 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "data" / "ungjup" / "covered.json"
 UA = {"User-Agent": "Mozilla/5.0"}
 
-# items: (티커, 이름, 화면용 짧은 이름, 본주 여부)
+# items: (티커, 이름(툴팁), 화면에 보이는 종목명, 본주 여부). 종목명은 상장 정식 명칭 그대로 씁니다.
 GROUPS = [
     {"id": "k200", "name": "코스피200", "asset": "ks200", "unit": "₩", "items": [
         ("069500.KS", "KODEX 200", "KODEX 200", True),
-        ("498400.KS", "KODEX 200타겟위클리커버드콜", "200타겟위클리", False),
+        ("498400.KS", "KODEX 200타겟위클리커버드콜", "KODEX 200타겟위클리커버드콜", False),
+        ("0104N0.KS", "TIGER 200타겟위클리커버드콜", "TIGER 200타겟위클리커버드콜", False),
     ]},
     {"id": "ndx", "name": "나스닥100", "asset": "qqq", "unit": "$", "items": [
-        ("QQQ", "QQQ (나스닥100)", "QQQ", True),
-        ("GPIQ", "GPIQ (골드만삭스 나스닥100 프리미엄인컴)", "GPIQ", False),
-        ("JEPQ", "JEPQ (JP모간 나스닥 프리미엄인컴)", "JEPQ", False),
+        ("QQQ", "Invesco QQQ Trust (나스닥100)", "QQQ", True),
+        ("GPIQ", "Goldman Sachs Nasdaq-100 Premium Income ETF", "GPIQ", False),
+        ("JEPQ", "JPMorgan Nasdaq Equity Premium Income ETF", "JEPQ", False),
+        ("QQQI", "NEOS Nasdaq-100 High Income ETF", "QQQI", False),
     ]},
     {"id": "spx", "name": "S&P500", "asset": "spy", "unit": "$", "items": [
-        ("SPY", "SPY (S&P500)", "SPY", True),
-        ("JEPI", "JEPI (JP모간 에쿼티 프리미엄인컴)", "JEPI", False),
+        ("SPY", "SPDR S&P 500 ETF Trust", "SPY", True),
+        ("JEPI", "JPMorgan Equity Premium Income ETF", "JEPI", False),
+        ("SPYI", "NEOS S&P 500 High Income ETF", "SPYI", False),
     ]},
 ]
 
@@ -92,34 +97,55 @@ def dip_runs(asset, dates):
 
 def build_group(g):
     raw = {}
-    for sym, *_ in g["items"]:
-        closes, divs = fetch(sym)
-        if len(closes) < 2:
-            raise ValueError(f"{sym} 종가 없음")
+    for sym, _, _, base in g["items"]:
+        try:
+            closes, divs = fetch(sym)
+            if len(closes) < 2:
+                raise ValueError("종가 없음")
+        except Exception as e:  # 커버드콜 하나가 안 받아져도 묶음은 그대로 (본주는 꼭 필요)
+            if base:
+                raise ValueError(f"{sym} {e}")
+            print(f"[커버드콜] {g['name']} {sym} 건너뜀: {e}", file=sys.stderr)
+            continue
         raw[sym] = (closes, divs)
+    base_sym = next(sym for sym, *_, base in g["items"] if base)
     listed = {s: min(c) for s, (c, _) in raw.items()}
-    start = max(listed.values())
-    dates = sorted(set.intersection(*(set(d for d in c if d >= start) for c, _ in raw.values())))
+    others = [listed[s] for s in raw if s != base_sym]
+    if not others:
+        raise ValueError("커버드콜 데이터 없음")
+    start = max(listed[base_sym], min(others))
+    dates = sorted(d for d in raw[base_sym][0] if d >= start)
     if len(dates) < 2:
-        raise ValueError("공통 거래일 부족")
+        raise ValueError("거래일 부족")
     nd = 0 if g["unit"] == "₩" else 2
+    rnd = (lambda v: round(v)) if nd == 0 else (lambda v: round(v, nd))
     items = []
     for sym, name, short, base in g["items"]:
+        if sym not in raw:
+            continue
         closes, divs = raw[sym]
-        # 배당락일이 공통 거래일에 없으면 그 다음 공통 거래일에 붙임 (시작일 이전 분배금은 버림)
-        dv = {}
-        j = 0
+        first = next((i for i, d in enumerate(dates) if d in closes), None)  # 본주와 함께 거래한 첫날
+        if first is None or first >= len(dates) - 1:
+            print(f"[커버드콜] {g['name']} {sym} 거래일 부족", file=sys.stderr)
+            continue
+        # 상장 전은 null, 상장 후 본주만 거래한 날은 직전 종가로 채움
+        c, last = [], None
+        for i, d in enumerate(dates):
+            if i >= first:
+                last = closes.get(d, last)
+            c.append(None if last is None else rnd(last))
+        # 배당락일이 날짜 목록에 없으면 그 다음 날짜에 붙임 (첫 거래일까지의 분배금은 버림)
+        dv, j = {}, 0
         for d in sorted(divs):
-            if d <= dates[0]:
+            if d <= dates[first]:
                 continue
             while j < len(dates) and dates[j] < d:
                 j += 1
             if j < len(dates):
                 dv[j] = dv.get(j, 0) + divs[d]
         items.append({
-            "symbol": sym, "name": name, "short": short, "base": base, "listed": listed[sym],
-            "c": [round(closes[d], nd) if nd else round(closes[d]) for d in dates],
-            "dv": [[i, round(a, 4)] for i, a in sorted(dv.items())],
+            "symbol": sym, "name": name, "short": short, "base": base, "listed": listed[sym], "first": first,
+            "c": c, "dv": [[i, round(a, 4)] for i, a in sorted(dv.items())],
         })
     out = {"id": g["id"], "name": g["name"], "asset": g["asset"], "unit": g["unit"],
            "start": dates[0], "d": dates, "items": items}
@@ -141,7 +167,7 @@ def main():
         try:
             out = build_group(g)
             groups.append(out)
-            last = {it["short"]: it["c"][-1] for it in out["items"]}
+            last = {it["short"]: f'{it["c"][-1]} ({it["listed"]}~)' for it in out["items"]}
             dip = f"줍줍구간 {len(out['dip'])}번" if "dip" in out else "줍줍구간 데이터 없음"
             print(f"커버드콜 {g['name']:6s} {out['start']} ~ {out['d'][-1]}  {last}  {dip}")
         except Exception as e:  # 실패한 묶음은 지난 데이터 유지
