@@ -60,8 +60,20 @@
     const qCards = () => data.cards.filter((c) => matches(cardHay(c)));
 
     const countBy = (list, f) => list.reduce((m, x) => { for (const k of [].concat(f(x))) m[k] = (m[k] || 0) + 1; return m; }, {});
-    const chips = (name, items, current) => `<div class="tv-chiprow" data-f="${name}">${items.map(([v, label, n]) =>
-      `<button type="button" class="tv-chip" data-v="${esc(v)}" aria-pressed="${v === current}">${label}${n != null ? `<span>${n}</span>` : ''}</button>`).join('')}</div>`;
+    // 필터 줄마다 왼쪽에 이름(종류·카드사·나라)을 붙여 줄끼리 헷갈리지 않게 (Mr. Cards와 같은 모양)
+    const FNAME = {kind: '종류', issuer: '카드사', place: '나라', ctype: '종류'};
+    const chips = (name, items, current) => `<div class="tv-frow"><span class="tv-flabel" aria-hidden="true">${FNAME[name] || ''}</span><div class="tv-chiprow" data-f="${name}" role="group" aria-label="${FNAME[name] || ''}">${items.map(([v, label, n]) =>
+      `<button type="button" class="tv-chip" data-v="${esc(v)}" aria-pressed="${v === current}">${label}${n != null ? `<span>${n}</span>` : ''}</button>`).join('')}</div></div>`;
+    // 제목 앞 [카드사x제휴처] 꼬리표는 아래 태그와 겹치니 떼고, 제목을 되풀이하는 설명은 숨김
+    // "[NH농협카드x트립닷컴] 결제 시…" → "트립닷컴 결제 시…" (카드사·브랜드 이름은 태그에 있으니 빼고 제휴처만 남김)
+    const cleanTitle = (t) => {
+      const m = /^\s*\[([^\]]{1,30})\]\s*(.+)$/.exec(t);
+      if (!m) return t;
+      const keep = m[1].split(/\s*[x×X&+]\s*/).filter((w) => w && !/카드|card|visa|master|비자|마스터|유니온|jcb|amex/i.test(w));
+      return (keep.length ? keep.join('·') + ' ' : '') + m[2];
+    };
+    const grams = (t) => { const x = t.replace(/[^가-힣A-Za-z0-9]/g, ''); const g = new Set(); for (let i = 0; i < x.length - 1; i++) g.add(x.slice(i, i + 2)); return g; };
+    const echoes = (a, b) => { const A = grams(a), B = grams(b); if (!A.size) return true; let n = 0; for (const g of A) if (B.has(g)) n++; return n / A.size >= 0.6; };
 
     function render() {
       const evs = qEvents(), common = evs.filter((e) => !e.places.length), placed = evs.filter((e) => e.places.length);
@@ -122,8 +134,8 @@
         return `<article class="wl-row tv-ev">
           ${issuerTile(e.issuer)}
           <div class="tv-ev-body">
-            <a class="tv-ev-title" href="../paymorevent/events/${encodeURIComponent(e.id)}/">${esc(e.title)}</a>
-            ${e.text ? `<p class="tv-ev-text">${esc(e.text)}</p>` : ''}
+            <a class="tv-ev-title" href="../paymorevent/events/${encodeURIComponent(e.id)}/">${esc(cleanTitle(e.title))}</a>
+            ${e.text && !echoes(e.text, e.title) ? `<p class="tv-ev-text">${esc(e.text)}</p>` : ''}
             <div class="tv-tags"><span class="iss">${esc(e.issuer)}</span>${tags.join('')}</div>
           </div>
           <div class="tv-ev-side">
