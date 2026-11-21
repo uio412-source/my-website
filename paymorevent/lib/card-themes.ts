@@ -59,7 +59,8 @@ export function cardThemes(c:Card):string[]{
  // Cached themes must never override edited eligibility values.
  const cached=c.themeTags?.filter(t=>!ELIGIBILITY_SEARCH_TAGS.has(t));
  const benefits=c.benefits.filter(b=>b.kind!=='voucher');const t=benefits.map(b=>b.title+' '+b.detail).join(' '),name=c.name;const hotelText=c.benefits.map(b=>b.title+' '+b.detail).join(' ');const themes:string[]=[];
- for(const theme of ELIGIBILITY_THEMES)if(matchesPaymentEligibility(c,theme,'any'))themes.push(theme);
+ // 상품권은 결제해서 혜택(할인·적립)까지 받는 카드만. 실적만 인정되는 건 넣지 않음
+ for(const theme of ELIGIBILITY_THEMES)if(matchesPaymentEligibility(c,theme,theme==='상품권 가능'?'benefit':'any'))themes.push(theme);
  if(benefits.some(b=>/대한항공|아시아나|스카이패스|SKYPASS|ANA|JAL|KrisFlyer|항공\s*마일/i.test(b.title+' '+b.detail)&&/마일|miles/i.test(b.title+' '+b.detail)))themes.push('마일리지');
  if(/메리어트|Marriott|힐튼|Hilton|아코르|Accor|ALL\s*우리|IHG|하얏트|Hyatt|American\s*Express|아메리칸\s*익스프레스|아멕스/i.test(name)&&/메리어트|Marriott|힐튼|Hilton|아코르|Accor|IHG|하얏트|Hyatt|F[&＆]B|Fine Hotels|FHR|Fine\s*Hotels\s*&\s*Resorts|호텔\s*멤버십/i.test(name+' '+hotelText))themes.push('호텔');
  if(benefits.some(b=>/해외|외화/.test(b.title+' '+b.category)&&/적립|할인|캐시백|수수료\s*(면제|우대)/.test(b.title+' '+b.detail)))themes.push('해외');
