@@ -1,5 +1,5 @@
 import type {Card,Benefit} from './catalog-types';
-import {cardThemes,paymentEligibility} from './card-themes';
+import {cardThemes,useFit} from './card-themes';
 const cleanTag=(value:string)=>value.replace(/^#+/,'').trim();
 export function featureTags(card:Card){
  const benefitText=card.benefits.map(b=>b.category+' '+b.title+' '+b.detail).join(' ');
@@ -13,10 +13,8 @@ export function featureTags(card:Card){
  if(/해외|외화/.test(benefitText+' '+serviceText))tags.add('해외');
  if(/호텔|리조트|숙박/.test(benefitText+' '+serviceText))tags.add('호텔');
  if(/라운지/.test(benefitText+' '+serviceText))tags.add('라운지');
- const gift=paymentEligibility(card,'상품권 가능');
- if(gift.benefit==='allowed'){tags.add('상품권');tags.add('상품권 가능');}
- const national=paymentEligibility(card,'국세'),local=paymentEligibility(card,'지방세');
- if(national.spend==='allowed'||national.benefit==='allowed'||local.spend==='allowed'||local.benefit==='allowed')tags.add('세금');
+ if(useFit(card,'상품권 가능')){tags.add('상품권');tags.add('상품권 가능');}
+ if(useFit(card,'국세')||useFit(card,'지방세'))tags.add('세금');
  return [...tags];
 }
 export function browseThemes(card:Card){

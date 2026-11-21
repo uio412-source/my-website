@@ -9,7 +9,7 @@ import {
   BENEFIT_KINDS, EVENT_CATEGORIES, activeOffer, benefitKinds, bestPicking, cardFamilyKey, currentMonthOffer, dedupeOffers,
   eventCategory, eventPath, formatPicking, groupCards, issuerGroup, offerApplies, offerLinkLabel, requiresEntry, rewardValue, visibleOffer,
 } from '@/lib/catalog-model';
-import {ELIGIBILITY_THEMES, matchesPaymentEligibility} from '@/lib/card-themes';
+import {ELIGIBILITY_THEMES, hotelTier, useFit} from '@/lib/card-themes';
 import {browseThemes} from '@/lib/customer-copy';
 import {cardPath} from '@/lib/card-presentation';
 import {valetRules} from '@/lib/hotel-valet';
@@ -23,7 +23,10 @@ const SECTIONS: Record<Tab, {title: string; sub: string}> = {
   cashback: {title: '발급이벤트', sub: '신규 발급 캐시백'},
   events: {title: '카드사 이벤트', sub: '진행 중인 이벤트'},
 };
-const THEMES = ['무실적', '쇼핑', '커피', '교통', 'K패스', '통신', '해외', '마일리지', '라운지', '마티나골드', '호텔', '상품권 가능', '관리비', '국세', '지방세', '혜자카드', '호텔 발레'] as const;
+const THEMES = ['무실적', 'K패스', '통신', '해외', '마일리지', '라운지', '마티나골드', '호텔 등급', '호텔 발레', '상품권 가능', '관리비', '국세', '지방세'] as const;
+/** 이 필터들은 '왜 해당되는지'를 카드 줄에 한 줄로 보여 줌 (예: "혜택 O · 기본 1% 적립") */
+const whyFor = (c: Card, t: string) => t === '호텔 등급' ? hotelTier(c) : (ELIGIBILITY_THEMES as readonly string[]).includes(t) ? useFit(c, t) : null;
+const EXPLAINED = new Set<string>(['호텔 등급', ...ELIGIBILITY_THEMES]);
 const PAGE = 30;
 const groupOf = (issuer: string) => issuerGroup(issuer);
 // 카드사 줄 칩: 카드사 타일을 붙여 혜택 칩과 구분
@@ -117,6 +120,8 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
 
   const filtered = useMemo(() => {
     const out: {c: Card; score: number}[] = [];
+    // 관리비 전용 할인 > 혜택 O(기본 적립·할인) > 실적만 O
+    const benefitFirst = (c: Card) => { const w = (ELIGIBILITY_THEMES as readonly string[]).includes(theme) ? whyFor(c, theme) : null; return !w ? 0 : w.startsWith('혜택 O · 관리비') ? 2 : w.startsWith('혜택') ? 1 : 0; };
     for (const c of cards) {
       const m = meta.get(c.id)!;
       if (issuer !== 'all' && groupOf(c.issuer) !== issuer) continue;
@@ -127,20 +132,20 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       if (kind !== 'all' && !benefitKinds(c).includes(kind)) continue;
       if (withEvents && !m.events) continue;
       const t = theme;
-      if (t !== 'all' && !(t === '혜자카드' ? m.best !== null : t === '호텔 발레' ? valetRules(c.id).length > 0
-        : (ELIGIBILITY_THEMES as readonly string[]).includes(t) ? matchesPaymentEligibility(c, t, t === '상품권 가능' ? 'benefit' : 'any') : m.themes.includes(t))) continue;
+      if (t !== 'all' && !(t === '호텔 발레' ? valetRules(c.id).length > 0 : EXPLAINED.has(t) ? whyFor(c, t) : m.themes.includes(t))) continue;
       const score = searchScore(query, m.text);
       if (!score) continue;
       out.push({c, score});
     }
     const by: Record<string, (a: {c: Card; score: number}, b: {c: Card; score: number}) => number> = {
-      best: (a, b) => (query ? b.score - a.score : 0) || meta.get(b.c.id)!.rec - meta.get(a.c.id)!.rec || a.c.name.localeCompare(b.c.name, 'ko'),
+      // 상품권·관리비 등은 혜택까지 되는 카드를 실적만 되는 카드보다 위로
+      best: (a, b) => (query ? b.score - a.score : 0) || benefitFirst(b.c) - benefitFirst(a.c) || meta.get(b.c.id)!.rec - meta.get(a.c.id)!.rec || a.c.name.localeCompare(b.c.name, 'ko'),
       picking: (a, b) => (meta.get(b.c.id)!.best ?? -1) - (meta.get(a.c.id)!.best ?? -1),
       fee: (a, b) => (a.c.annualFeeMin ?? Infinity) - (b.c.annualFeeMin ?? Infinity),
       events: (a, b) => meta.get(b.c.id)!.events - meta.get(a.c.id)!.events,
       name: (a, b) => a.c.name.localeCompare(b.c.name, 'ko'),
     };
-    out.sort(theme === '혜자카드' ? by.picking : by[sort]);
+    out.sort(by[sort]);
     // 같은 카드의 브랜드·디자인 변형은 하나로
     const seen = new Set<string>();
     return out.filter(({c}) => { const k = cardFamilyKey(c); if (seen.has(k)) return false; seen.add(k); return true; }).map(x => x.c);
@@ -183,12 +188,14 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
     {filtered.length ? <div className="mc-rows">{filtered.slice(0, more).map(c => {
       const m = meta.get(c.id)!;
       const facts = [c.type === 'credit' ? '신용' : '체크', feeLabel(c.annualFeeMin), spendLabel(c.minimumSpend), RESTRICTED.test(c.name) ? '가입 대상 제한' : ''].filter(Boolean);
+      const why = EXPLAINED.has(theme) ? whyFor(c, theme) : null;
       return <a key={c.id} className="mc-row mc-cardrow" href={cardPath(c.id)}>
         <CardArt card={c}/>
         <span className="mc-body">
           <span className="mc-issuer">{c.issuer}</span>
           <b className="mc-name">{c.familyName ?? c.name}</b>
           <span className="mc-facts">{facts.join(' · ')}</span>
+          {why && <span className="mc-why">{why}</span>}
           {m.hl.length > 0 && <span className="mc-hl">{m.hl.map(h => <i key={h}>{h}</i>)}</span>}
         </span>
         <span className="mc-side">

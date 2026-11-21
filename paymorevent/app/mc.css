@@ -121,6 +121,8 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .mc-issuer { font-size: .72rem; font-weight: 600; color: var(--mc-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mc-name { font-size: .94rem; font-weight: 700; line-height: 1.35; }
 .mc-facts { font-size: .74rem; color: var(--mc-muted); font-variant-numeric: tabular-nums; }
+/* 상품권·관리비·국세·지방세·호텔 등급 필터: 왜 해당되는지 한 줄 */
+.mc-why { font-size: .74rem; font-weight: 700; color: var(--mc-primary); line-height: 1.4; overflow-wrap: anywhere; }
 .mc-hl, .mc-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
 .mc-hl i, .mc-tags i {
   font-style: normal; font-size: .7rem; font-weight: 700; line-height: 1.6; padding: 0 7px; border-radius: 6px; white-space: nowrap;

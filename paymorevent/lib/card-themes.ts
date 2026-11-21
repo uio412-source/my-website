@@ -55,14 +55,83 @@ export function matchesPaymentEligibility(c:Card,theme:string,mode:'spend'|'bene
  const entries=[paymentEligibility(c,theme),...scopedPaymentEligibility(c,theme)];
  return entries.some(e=>mode==='both'?e.spend==='allowed'&&e.benefit==='allowed':mode==='spend'?e.spend==='allowed':mode==='benefit'?e.benefit==='allowed':e.spend==='allowed'||e.benefit==='allowed');
 }
+/** 가입 대상이 정해진 카드(공무원·법인 등). 목록 추천순에서 아래로, 쓰임 필터에서는 뺍니다. */
+export const RESTRICTED = /교육청|공무원|도청|시청|군청|경찰|소방|국방|나라사랑|국민행복|바우처|복지카드|화물복지|법인|BIZ|비즈니스|사업자|학생증|ISIC|협회|연합회|조합원|운송사업자|다자녀|꿈디딤|꿈드리미|교육사랑/i;
+
+// ---------- 국내 전 가맹점 기본 적립·할인 ----------
+// 세금·관리비·상품권처럼 업종 혜택이 붙지 않는 결제에 실제로 남는 건 '전 가맹점 기본 혜택'뿐입니다.
+const RATE_GENERAL=/기본|(?:국내외?|모든|전)\s*(?:전\s*)?가맹점|가맹점\s*(?:구분|제한)\s*없|^국내\s*(?:이용\s*)?(?:적립|할인|캐시백)/;
+const TITLE_GENERAL=/기본\s*(?:적립|할인|캐시백|마일|포인트)|(?:국내외?|모든|전)\s*(?:전\s*)?가맹점|^국내\s*[:：]?\s*\d/;
+const TEXT_GENERAL=/(?:국내외?|모든|전)\s*(?:전\s*)?가맹점[^/;\n]{0,30}?(?:\d+(?:\.\d+)?\s*%|[\d,]+\s*원당)|가맹점\s*(?:구분|제한)\s*없이[^/;\n]{0,30}?\d|(?:이용\s*(?:금액|실적)|사용액)[^/;\n]{0,25}?[\d,]+\s*원당\s*[\d.]+\s*(?:마일|포인트|점|P\b|M)/;
+const rateText=(t:string)=>{
+ const mile=/([\d,]+)\s*원당\s*(?:최대\s*)?([\d.]+)\s*(?:[가-힣A-Za-z]+\s+)?(마일리지|마일|포인트|점|P|M)/.exec(t);
+ if(mile)return `${mile[1]}원당 ${mile[2]}${/마일/.test(mile[3])?'마일':'P'}`;
+ const pct=/(\d+(?:\.\d+)?)\s*%/.exec(t);
+ return pct?`${pct[1]}%`:'';
+};
+const kindOf=(t:string)=>/마일/.test(t)?'마일 적립':/캐시백/.test(t)?'캐시백':/할인/.test(t)?'할인':'적립';
+/** 전 가맹점 기본 혜택이 있으면 짧은 이름("기본 1.2% 적립", "기본 1,000원당 1마일"), 없으면 null */
+export function generalReward(c:Card):string|null{
+ for(const r of c.rewardRates??[]){
+  if(!RATE_GENERAL.test(r.label)||(/해외/.test(r.label)&&!/국내/.test(r.label)))continue;
+  const unit=String(r.rewardUnit??'');
+  if(/마일/.test(unit)||/마일/.test(r.label))return `기본 ${r.spendUnit.toLocaleString('ko-KR')}원당 ${r.rewardUnits}마일`;
+  if(r.spendUnit>0&&r.rewardUnits>0&&r.unitValue>0){const pct=Math.round(r.rewardUnits*r.unitValue/r.spendUnit*1000)/10;if(pct>0)return `기본 ${pct}% ${kindOf(r.label)}`;}
+ }
+ for(const b of c.benefits){
+  const t=b.title+' '+b.detail;
+  if(/해외/.test(b.title)&&!/국내/.test(b.title))continue;
+  if(TITLE_GENERAL.test(b.title)||TEXT_GENERAL.test(b.detail)){const rate=rateText(TITLE_GENERAL.test(b.title)?b.title+' '+b.detail:b.detail);return rate?`기본 ${rate}${/마일|P$/.test(rate)?'':' '+kindOf(t)}`:`기본 ${kindOf(t)}`;}
+ }
+ return null;
+}
+const ANNUAL_REWARD=/연간\s*(?:이용|실적|사용)[^/;\n]{0,40}?(?:바우처|마일|포인트|숙박권|연회비|면제|기프트|캐시백|상품권)/;
+const verdicts=(c:Card,theme:string)=>[paymentEligibility(c,theme),...scopedPaymentEligibility(c,theme)];
+/** 상품권·관리비·국세·지방세: 실제로 써서 남는 게 있는 카드면 이유("혜택 O · 기본 1% 적립"), 아니면 null.
+ * - 국세·지방세: 혜택이 적용되고(혜택 O) 전 가맹점 기본 혜택이 있어야 함
+ * - 상품권(상테크)·관리비: 혜택 O + 기본 혜택(관리비는 관리비 할인도), 또는 실적 O + 채울 전월실적·연간 실적 혜택이 있어야 함 */
+export function useFit(c:Card,theme:string):string|null{
+ if(RESTRICTED.test(c.name))return null;
+ const v=verdicts(c,theme),benefitOk=v.some(e=>e.benefit==='allowed'),spendOk=v.some(e=>e.spend==='allowed');
+ const general=generalReward(c);
+ if(theme==='국세'||theme==='지방세')return benefitOk&&general?`혜택 O · ${general}`:null;
+ if(theme==='관리비'){
+  const own=c.benefits.find(b=>/관리비/.test(b.title+' '+b.detail)&&/할인|적립|캐시백/.test(b.title+' '+b.detail)&&!/제외/.test(b.title));
+  if(own&&!v.some(e=>e.benefit==='excluded')){
+   // 관리비 바로 뒤의 금액·율을 씀 (앞쪽 '월 최대 3,000원' 같은 통합 한도와 헷갈리지 않게)
+   const t=own.title+' '+own.detail,near=t.slice(t.indexOf('관리비'),t.indexOf('관리비')+90);
+   const amount=/([\d,]+(?:천|만)?원)\s*(?:결제일|청구)?\s*(?:할인|캐시백|적립)/.exec(near)?.[1];
+   const rate=rateText(own.title)||amount||rateText(near);
+   return `혜택 O · 관리비${rate?' '+rate:''} ${kindOf(/할인|캐시백|적립|마일/.test(own.title)?own.title:near)}`;
+  }
+ }
+ if(benefitOk&&general)return `혜택 O · ${general}`;
+ if(spendOk){
+  if((c.minimumSpend??0)>0)return `실적 O · 전월 ${(c.minimumSpend!/10000).toLocaleString('ko-KR')}만원 채우기`;
+  if(c.benefits.some(b=>ANNUAL_REWARD.test(b.title+' '+b.detail)))return '실적 O · 연간 실적 혜택 채우기';
+ }
+ return null;
+}
+
+// ---------- 호텔 멤버십 등급을 주는 카드 ----------
+/** Mr. Hotels(assets/js/hotels.js의 P.*.cards)와 같은 내용. 카드를 추가·변경하면 두 곳을 같이 고치세요. */
+export const HOTEL_TIERS:{re:RegExp;tier:string}[]=[
+ {re:/ALL\s*우리카드\s*Infinite/i,tier:'아코르 골드 · 발급 시 자동'},
+ {re:/ALL\s*우리카드\s*Premium/i,tier:'아코르 실버 · 발급 시'},
+ {re:/메리어트\s*본보이.*더\s*베스트/,tier:'메리어트 골드 · 발급 시 자동 (연 6천만원 이용 시 플래티넘)'},
+ {re:/힐튼\s*아너스\s*아멕스\s*프리미엄/,tier:'힐튼 골드 · 발급 시 (연 2,400만원 이용 시 다이아몬드)'},
+ {re:/힐튼\s*아너스\s*아멕스(?!\s*프리미엄)/,tier:'힐튼 실버 · 발급 시 (연 1,200만원 이용 시 골드)'},
+ {re:/American\s*Express\s*The\s*Platinum/i,tier:'힐튼·메리어트 골드 · 멤버십 리워즈에서 신청'},
+];
+export const hotelTier=(c:Card)=>HOTEL_TIERS.find(h=>h.re.test(c.name))?.tier??null;
 export function cardThemes(c:Card):string[]{
  // Cached themes must never override edited eligibility values.
- const cached=c.themeTags?.filter(t=>!ELIGIBILITY_SEARCH_TAGS.has(t));
- const benefits=c.benefits.filter(b=>b.kind!=='voucher');const t=benefits.map(b=>b.title+' '+b.detail).join(' '),name=c.name;const hotelText=c.benefits.map(b=>b.title+' '+b.detail).join(' ');const themes:string[]=[];
- // 상품권은 결제해서 혜택(할인·적립)까지 받는 카드만. 실적만 인정되는 건 넣지 않음
- for(const theme of ELIGIBILITY_THEMES)if(matchesPaymentEligibility(c,theme,theme==='상품권 가능'?'benefit':'any'))themes.push(theme);
+ const cached=c.themeTags?.filter(t=>!ELIGIBILITY_SEARCH_TAGS.has(t)&&t!=='호텔');
+ const benefits=c.benefits.filter(b=>b.kind!=='voucher');const t=benefits.map(b=>b.title+' '+b.detail).join(' '),name=c.name;const themes:string[]=[];
+ // 상품권·관리비·국세·지방세는 실제로 쓸 의미가 있는 카드만 (useFit)
+ for(const theme of ELIGIBILITY_THEMES)if(useFit(c,theme))themes.push(theme);
  if(benefits.some(b=>/대한항공|아시아나|스카이패스|SKYPASS|ANA|JAL|KrisFlyer|항공\s*마일/i.test(b.title+' '+b.detail)&&/마일|miles/i.test(b.title+' '+b.detail)))themes.push('마일리지');
- if(/메리어트|Marriott|힐튼|Hilton|아코르|Accor|ALL\s*우리|IHG|하얏트|Hyatt|American\s*Express|아메리칸\s*익스프레스|아멕스/i.test(name)&&/메리어트|Marriott|힐튼|Hilton|아코르|Accor|IHG|하얏트|Hyatt|F[&＆]B|Fine Hotels|FHR|Fine\s*Hotels\s*&\s*Resorts|호텔\s*멤버십/i.test(name+' '+hotelText))themes.push('호텔');
+ if(hotelTier(c))themes.push('호텔 등급');
  if(benefits.some(b=>/해외|외화/.test(b.title+' '+b.category)&&/적립|할인|캐시백|수수료\s*(면제|우대)/.test(b.title+' '+b.detail)))themes.push('해외');
  if(!/wiz|위즈/i.test(name)&&/(?:CLUB\s*SK|클럽\s*SK|SK패밀리|\bKT\b|\bSKT\b|SK\s*텔레콤|T[-\s]?라이트|T[-\s]?프리미엄|T[-\s]?이코노미|T[-\s]?삼성|LG\s*(?:U|유플러스)|U\+|유플러스|알뜰폰|통신비|통신요금)/i.test(name)&&/통신|휴대폰|이동전화|알뜰폰/.test(t)&&/할인/.test(t))themes.push('통신');
  return [...new Set([...(cached??[]),...themes])];
