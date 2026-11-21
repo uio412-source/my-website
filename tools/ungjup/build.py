@@ -327,6 +327,13 @@ def main():
     except Exception as e:
         print(f"[배당 실패] {e}", file=sys.stderr)
 
+    # 7) 차트 하단 '커버드콜 vs 본주' 총수익 비교
+    import covered
+    try:
+        covered.main()
+    except (Exception, SystemExit) as e:  # 실패해도 나머지 데이터는 그대로 배포
+        print(f"[커버드콜 실패] {e}", file=sys.stderr)
+
 
 if __name__ == "__main__":
     main()

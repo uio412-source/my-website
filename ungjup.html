@@ -57,6 +57,26 @@
         </div>
       </div>
 
+      <section class="cc" id="cc" aria-labelledby="cc-title" hidden>
+        <div class="cc-head">
+          <h2 id="cc-title" class="ref-h">커버드콜 vs 본주 <small>배당 포함 총수익</small></h2>
+          <div class="uj-seg" id="cc-group" role="group" aria-label="비교 묶음"></div>
+        </div>
+        <div class="ref-card">
+          <div class="uj-seg cc-per" id="cc-period" role="group" aria-label="기간"></div>
+          <div class="cc-chart" id="cc-chart">
+            <svg id="cc-svg" aria-hidden="true"></svg>
+            <div class="uj-tip" id="cc-tip" hidden></div>
+          </div>
+          <div class="cc-list" id="cc-list"></div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-title">기간별 총수익 <small class="cc-sub">열을 누르면 위 그래프 기간이 바뀌어요</small></div>
+          <div class="cc-table" id="cc-table"></div>
+          <p class="crash-note" id="cc-note"></p>
+        </div>
+      </section>
+
       <section class="uj-ref" aria-labelledby="ref-title">
         <h2 id="ref-title" class="ref-h">참고자료</h2>
         <div class="ref-card">
@@ -89,5 +109,6 @@
   </nav>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/ungjup.js?v=3"></script>
+  <script src="assets/js/covered.js"></script>
 </body>
 </html>

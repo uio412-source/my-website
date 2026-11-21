@@ -52,6 +52,7 @@ assets/css/portfolio.css 관심종목 페이지 스타일 (배당 페이지도 �
 assets/css/dividend.css 배당 페이지 스타일
 assets/js/main.js     공통 스크립트
 assets/js/ungjup.js   차트 (캔버스, 외부 라이브러리 없음)
+assets/js/covered.js  차트 하단 '커버드콜 vs 본주' 기간별 총수익 비교
 assets/js/watchlist.js 관심종목 페이지
 assets/js/dividend.js  배당 페이지
 assets/js/travel.js    Mr. Travel (혜택 · 여행지 지도 · 여행준비)
@@ -64,6 +65,7 @@ tools/data/queue.py      수집 대기열 → data/collect-queue.json
 tools/ungjup/build.py 데이터 생성기 (Yahoo Finance → data/ungjup/*.json)
 tools/ungjup/extras.py 종목 검색 목록(symbols.json)·종목별 뉴스(news.json) 생성
 tools/ungjup/dividends.py 종목별 최근 12개월 주당 배당금(dividends.json) 생성
+tools/ungjup/covered.py   커버드콜 vs 본주 종가·분배금(covered.json) 생성
 data/watchlist.json   기본 관심종목 목록 (종목명과 티커)
 data/dividend_extra.json (선택) 배당 데이터를 꼭 계산할 추가 티커 목록 ["SCHD", "005930.KS"]
 data/ungjup/          생성된 지수 데이터, 종목별 시세·LV(holdings_lv.json), 줍줍LV 기준표(lv_model.json), symbols.json, news.json
@@ -93,6 +95,11 @@ assets/img/           이미지
 - 주당 배당금은 배포 때 `dividends.py`가 Yahoo 배당 이력으로 계산합니다: 최근 365일 배당락 기준 합계(상장 1년 미만은 평균 × 지급 주기로 연환산). 하루 한 번만 새로 받고 `build.py --dividends`로 강제 갱신.
 - 계산 대상(배당 유니버스): 관심종목 + `data/dividend_extra.json` + 코스피 시총 상위 200·코스닥 40 + 이름에 배당·커버드콜·인컴·리츠 등이 들어간 국내 ETF + `dividends.py`의 `US_DIV`. 목록에 없는 종목은 화면에서 연간 주당 배당금을 직접 입력합니다.
 - 화면: 요약(투자금 | 연 배당금 | 배당률, 월 평균·현재가 기준 배당률) → 월별 예상 배당금(배당락 월 기준) → 보유 종목(연 배당금 순). 미국 종목은 오늘 환율(`fx.USDKRW`)로 원화 환산, 세후는 국내 15.4%·미국 15% 단순 적용.
+
+## 커버드콜 vs 본주 (차트 하단)
+- 묶음: 코스피200(KODEX 200 · KODEX 200타겟위클리커버드콜) · 나스닥100(QQQ · GPIQ · JEPQ) · S&P500(SPY · JEPI). 종목·묶음은 `tools/ungjup/covered.py`의 `GROUPS`만 고치면 됩니다. `asset`은 위 지수 카드 id로, 그 카드를 고르면 같은 묶음이 열립니다(사용자가 다른 묶음을 직접 고르면 따라가지 않음).
+- `covered.py`는 `build.py` 마지막 단계에서 실행되어 `data/ungjup/covered.json`(배포 때 생성, 커밋 안 함)을 만듭니다: 묶음 안에서 가장 늦게 상장한 종목의 상장일부터 공통 거래일의 종가(배당 미반영)와 배당락일 분배금. 파일이 없으면 화면에서 이 구역을 숨깁니다.
+- 화면(`assets/js/covered.js`): 기간(1·3·6개월·올해·1·3년·상장후, 함께 거래된 이력이 모자라면 비활성) → 총수익 선 그래프 → 종목별 총수익·본주 대비 %p·주가·분배금 몫·최대낙폭 → 기간별 총수익 표(열을 누르면 그래프 기간 변경). 총수익은 분배금을 배당락일 종가에 재투자한 세전 기준, 미국 ETF는 달러 기준. 선택은 브라우저 `mrstocks.cc`에 저장.
 
 ## 줍줍 지표
 - 데이터는 배포 워크플로가 하루 두 번(한국시간 06:40, 16:40) `tools/ungjup/build.py`로 갱신합니다.
