@@ -14,14 +14,14 @@ import {browseThemes} from '@/lib/customer-copy';
 import {cardPath} from '@/lib/card-presentation';
 import {valetRules} from '@/lib/hotel-valet';
 import {sitePath} from '@/lib/site-path';
-import {ISSUER_FILTERS, dday, eventSummary, feeLabel, headlineAmount, highlights, issuerFilterLabel, searchScore, spendLabel, today, won, ymd} from '@/lib/mc-text';
+import {ISSUER_FILTERS, dday, eventSummary, feeLabel, headlineAmount, highlights, issuerFilterLabel, RESTRICTED, searchScore, spendLabel, today, won, ymd} from '@/lib/mc-text';
 import sources from '@/data/personal-benefit-sources.json';
 
 type Tab = 'cards' | 'cashback' | 'events';
 const SECTIONS: Record<Tab, {title: string; sub: string}> = {
-  cards: {title: '카드상품 검색', sub: '혜택·카드사·실적 조건으로 내게 맞는 카드를 찾아보세요.'},
-  cashback: {title: '발급이벤트', sub: '새로 만들면 캐시백 주는 카드를 금액 순으로 모았어요.'},
-  events: {title: '카드사 이벤트', sub: '이번 달 진행 중인 카드사 이벤트를 마감 임박 순으로 모았어요.'},
+  cards: {title: '카드상품 검색', sub: ''},
+  cashback: {title: '발급이벤트', sub: '신규 발급 캐시백'},
+  events: {title: '카드사 이벤트', sub: '진행 중인 이벤트'},
 };
 const THEMES = ['무실적', '쇼핑', '커피', '교통', 'K패스', '통신', '해외', '마일리지', '라운지', '마티나골드', '호텔', '상품권 가능', '관리비', '국세', '지방세', '혜자카드', '호텔 발레'] as const;
 const PAGE = 30;
@@ -55,7 +55,7 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
     <a className="pm-skip" href="#main-content">본문으로 이동</a>
     <SiteHeader current={tab} onNav={id => go(id as Tab)}/>
     <main id="main-content" className="mc-main">
-      <div className="mc-head"><h1>{SECTIONS[tab].title}</h1><p>{SECTIONS[tab].sub}</p></div>
+      <div className="mc-head"><h1>{SECTIONS[tab].title}</h1>{SECTIONS[tab].sub && <p>{SECTIONS[tab].sub}</p>}</div>
       {loadFailed && <div className="mc-alert" role="status">전체 카드 목록을 불러오지 못했어요. <button type="button" onClick={() => { setLoadFailed(false); setAttempt(a => a + 1); }}>다시 불러오기</button></div>}
       {tab === 'cards' && <CardsView cards={cards} events={events}/>}
       {tab !== 'cards' && !eventsLoading && <Freshness events={events}/>}
@@ -102,7 +102,8 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       const hl = highlights(c, 3);
       const n = (live.get(groupOf(c.issuer)) ?? []).filter(o => offerApplies(c, o)).length;
       // 추천순: 계산된 피킹률·실물 이미지·정리된 혜택·진행 이벤트가 많을수록 위로 (데이터가 빈약한 카드는 아래로)
-      const rec = (best !== null ? 30 : 0) + (cardImage(c) ? 25 : 0) + Math.min(hl.length, 3) * 6 + Math.min(n, 5) * 3 + (c.normalization?.qualityScore ?? 0) / 10;
+      const restricted = RESTRICTED.test(c.name);
+      const rec = (best !== null ? 30 : 0) + (cardImage(c) ? 25 : 0) + Math.min(hl.length, 3) * 6 + Math.min(n, 5) * 3 + (c.normalization?.qualityScore ?? 0) / 10 - (restricted ? 60 : 0);
       m.set(c.id, {
         themes: browseThemes(c), best, events: n, hl, rec,
         text: [[c.familyName ?? c.name, 100], [(c.searchAliases ?? []).join(' '), 80], [c.issuer + ' ' + groupOf(c.issuer), 40],
@@ -153,7 +154,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
   const families = useMemo(() => new Set(cards.map(cardFamilyKey)).size, [cards]);
 
   return <>
-    <SearchBox value={q} onChange={setQ} placeholder="카드 이름·혜택 검색 (예: 스타벅스, 해외 수수료, ㅅㅎ)"/>
+    <SearchBox value={q} onChange={setQ} placeholder="카드명·혜택 검색 (예: 스타벅스, ㅅㅎ)"/>
     <div className="mc-filters">
       <Chips label="혜택" items={[{value: 'all', label: '전체'}, ...THEMES.map(t => ({value: t, label: t}))]} value={theme} onChange={pickTheme}/>
       <Chips label="카드사" issuers items={[{value: 'all', label: '전체'}, ...issuerItems(ISSUER_FILTERS)]} value={issuer} onChange={setIssuer}/>
@@ -162,11 +163,6 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       <Tabs label="카드 종류" items={[{value: 'all', label: '전체'}, {value: 'credit', label: '신용'}, {value: 'debit', label: '체크'}]} value={type} onChange={setType}/>
       <button type="button" className="mc-btn" aria-expanded={panel} onClick={() => setPanel(p => !p)}>필터{advanced > 0 && <b>{advanced}</b>}</button>
       {anything && <button type="button" className="mc-link" onClick={reset}>초기화</button>}
-      <span className="mc-count">{filtered.length.toLocaleString('ko-KR')}<small>/{families.toLocaleString('ko-KR')}종</small></span>
-      <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}>
-        <option value="best">{q ? '검색 정확도순' : '추천순'}</option><option value="picking">피킹률 높은순</option>
-        <option value="fee">연회비 낮은순</option><option value="events">이벤트 많은순</option><option value="name">이름순</option>
-      </select>
     </div>
     {panel && <div className="mc-panel">
       <Field label="연회비" value={fee} set={setFee} options={[['all', '전체'], ['0', '없음'], ['20000', '2만원 이하'], ['50000', '5만원 이하'], ['100000', '10만원 이하']]}/>
@@ -177,9 +173,16 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
     </div>}
     {theme === '호텔 발레' && <p className="mc-note">서울 호텔별로 어떤 카드가 되는지는 <a href={sitePath('../hotels/valet.html')}>Mr. Hotels 발레파킹 지도</a>에서 볼 수 있어요.</p>}
 
+    <div className="mc-listhead">
+      <span className="mc-count">{filtered.length.toLocaleString('ko-KR')}<small>/{families.toLocaleString('ko-KR')}종</small></span>
+      <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}>
+        <option value="best">{q ? '검색 정확도순' : '추천순'}</option><option value="picking">피킹률 높은순</option>
+        <option value="fee">연회비 낮은순</option><option value="events">이벤트 많은순</option><option value="name">이름순</option>
+      </select>
+    </div>
     {filtered.length ? <div className="mc-rows">{filtered.slice(0, more).map(c => {
       const m = meta.get(c.id)!;
-      const facts = [c.type === 'credit' ? '신용' : '체크', feeLabel(c.annualFeeMin), spendLabel(c.minimumSpend)].filter(Boolean);
+      const facts = [c.type === 'credit' ? '신용' : '체크', feeLabel(c.annualFeeMin), spendLabel(c.minimumSpend), RESTRICTED.test(c.name) ? '가입 대상 제한' : ''].filter(Boolean);
       return <a key={c.id} className="mc-row mc-cardrow" href={cardPath(c.id)}>
         <CardArt card={c}/>
         <span className="mc-body">
@@ -189,13 +192,13 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
           {m.hl.length > 0 && <span className="mc-hl">{m.hl.map(h => <i key={h}>{h}</i>)}</span>}
         </span>
         <span className="mc-side">
-          {m.best !== null && <span className="mc-pick"><small>최대</small>{formatPicking(m.best)}%</span>}
+          {m.best !== null && <span className="mc-pick"><small>피킹률</small>{formatPicking(m.best)}%</span>}
           {m.events > 0 && <span className="mc-pill">이벤트 {m.events}</span>}
         </span>
       </a>;
     })}</div> : <Empty title="조건에 맞는 카드가 없어요. 조건을 줄여 보세요." action={{label: '전체 카드 보기', onClick: reset}}/>}
     {filtered.length > more && <button type="button" className="mc-more" onClick={() => setMore(n => n + PAGE)}>더 보기 ({(filtered.length - more).toLocaleString('ko-KR')}개 남음)</button>}
-    <p className="mc-note">피킹률 = 전월실적 최소 구간에서 받을 수 있는 최대 혜택 ÷ 실적. 카드사 원문으로 계산이 끝난 카드만 표시해요.</p>
+    <p className="mc-note">피킹률 = 최소 실적 구간의 최대 혜택 ÷ 실적</p>
   </>;
 }
 

@@ -61,15 +61,35 @@ export function cleanBenefits(card: Pick<Card, 'benefits'>): CleanBenefit[] {
 }
 
 /** 목록에 보여 줄 핵심 혜택 2~3개 (짧게) */
+/** 목록 칩: 상세 혜택 표와 같은 말로 "구분 값" (예: "커피 10%", "해외 빅포인트 1.3%") */
 export function highlights(card: Pick<Card, 'benefits'>, n = 3) {
-  return cleanBenefits(card).slice(0, n).map(b => b.rate ? `${short(b.title, 20)} ${b.rate}` : short(b.title, 26));
+  const out: string[] = [];
+  for (const b of cleanBenefits(card)) {
+    const r = benefitRow(b);
+    const label = r.label.replace(/^(?:[①-⑳]|\d+[.)])\s*/, '').replace(/[\s\-~:·(]+$/, '').trim();
+    const ok = label.length >= 2 && !/^당\s/.test(label) && !/원당/.test(b.title);
+    const t = ok ? short(label, 18) + (r.value.main ? ' ' + r.value.main : '') : short(b.title, 24);
+    if (!out.includes(t)) out.push(t);
+    if (out.length >= n) break;
+  }
+  return out;
 }
+/** 공무원·교육청·국민행복·법인·학생증처럼 가입 대상이 정해진 카드 (추천순에서 아래로, 목록에 표시) */
+export const RESTRICTED = /교육청|공무원|도청|시청|군청|경찰|소방|국방|나라사랑|국민행복|바우처|복지카드|화물복지|법인|BIZ|비즈니스|사업자|학생증|ISIC|협회|연합회|조합원|운송사업자|다자녀|꿈디딤|꿈드리미|교육사랑/i;
 
 // ---------- 이벤트 문구 ----------
 const GENERIC = /^(?:공식 (?:진행 이벤트|목록|혜택)|공식 혜택·이벤트 확인)|확인 필요$|상세 혜택 및 참여 조건 확인/;
+/** 두 문장이 얼마나 겹치는지(글자 2개 묶음 기준, 0~1). 제목을 되풀이하는 요약을 거르는 데 씀 */
+function overlap(a: string, b: string) {
+  const grams = (t: string) => { const x = t.replace(/[^가-힣A-Za-z0-9]/g, ''); const g = new Set<string>(); for (let i = 0; i < x.length - 1; i++) g.add(x.slice(i, i + 2)); return g; };
+  const A = grams(a), B = grams(b);
+  if (!A.size) return 1;
+  let n = 0; for (const g of A) if (B.has(g)) n++;
+  return n / A.size;
+}
 export function eventSummary(o: Offer) {
   const cands = [o.benefitText, o.description].map(s => tidy(customerLines(s ?? '').join(' · ')));
-  const t = cands.find(s => s && !GENERIC.test(s) && s !== o.title && !o.title.includes(s));
+  const t = cands.find(s => s && !GENERIC.test(s) && s !== o.title && !o.title.includes(s) && overlap(s, o.title) < .6);
   return t ? short(t, 120) : '';
 }
 export function dday(end: string | null, now = today()) {
@@ -175,6 +195,10 @@ function valueLabel(b: CleanBenefit, text: string) {
     if (b.rate.length > 8 && pcts.length > 1) return {main: `${Math.min(...pcts)}~${Math.max(...pcts)}%`, sub: '항목별'};
     return {main: b.rate, sub: /적립|포인트|마일/.test(b.title + text.slice(0, 80)) ? '적립' : /캐시백/.test(b.title + text.slice(0, 80)) ? '캐시백' : '할인'};
   }
+  const range = /([\d.]+)\s*%?\s*~\s*([\d.]+)\s*%/.exec(b.title) ?? /([\d.]+)\s*%?\s*~\s*([\d.]+)\s*%/.exec(text.slice(0, 120));
+  if (range) return {main: `${range[1]}~${range[2]}%`, sub: /적립|포인트|마일/.test(b.title) ? '적립' : '할인'};
+  const pct = /([\d.]+)\s*%/.exec(b.title);
+  if (pct) return {main: pct[1] + '%', sub: /적립|포인트|마일/.test(b.title) ? '적립' : /캐시백/.test(b.title) ? '캐시백' : '할인'};
   const per = /리터당\s*([\d,]+)\s*원/.exec(text);
   if (per) return {main: `${per[1]}원`, sub: '리터당'};
   const amt = /([\d,]+(?:\.\d+)?\s*(?:만\s*)?(?:천\s*)?원)\s*(?:결제일\s*)?(할인|적립|캐시백|청구할인)/.exec(text);
@@ -193,6 +217,7 @@ export type BenefitRow = {
 /** "대중교통· 택시 10% 결제일할인" → "대중교통·택시" (혜택 칸과 겹치는 율·금액·동사는 뺌) */
 function shortLabel(name: string) {
   const t = name.replace(/\s*·\s*/g, '·')
+    .replace(/\s*(?:최대\s*)?[\d.]+\s*%?\s*~\s*[\d.]+\s*%\s*/g, ' ')
     .replace(/\s*(?:최대\s*)?[\d,.]+\s*(?:%|만\s*원|천\s*원|원|마일리지|마일|P|배)\s*/g, ' ')
     .replace(/\s*(?:결제일\s*)?(?:할인|적립|캐시백|청구할인|서비스|혜택|제공|면제|무료\s*이용|무료)\s*$/g, '')
     .replace(/\s*(?:결제일\s*)?(?:할인|적립|캐시백)\s*$/g, '').replace(/의$/, '').replace(/\s+/g, ' ').trim();
