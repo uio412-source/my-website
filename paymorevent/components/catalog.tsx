@@ -14,6 +14,9 @@ import {browseThemes} from '@/lib/customer-copy';
 import {cardPath} from '@/lib/card-presentation';
 import {valetRules} from '@/lib/hotel-valet';
 import {sitePath} from '@/lib/site-path';
+import {CompareDock, CompareToggle} from '@/components/compare';
+import {RECENT_KEY, clearRecent, useStoredIds} from '@/lib/my-cards';
+import {spendShort} from '@/lib/card-value';
 import {ISSUER_FILTERS, dday, eventSummary, feeLabel, headlineAmount, highlights, issuerFilterLabel, RESTRICTED, searchScore, spendLabel, today, won, ymd} from '@/lib/mc-text';
 import sources from '@/data/personal-benefit-sources.json';
 
@@ -67,6 +70,18 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
         : tab === 'cashback' ? <CashbackView events={events}/> : <EventsView events={events} cards={cards}/>)}
     </main>
     <SiteFooter/>
+  </div>;
+}
+
+/** 최근 본 카드: 상세에서 돌아왔을 때 바로 다시 열 수 있게 (브라우저에만 저장) */
+function Recent({cards}: {cards: Card[]}) {
+  const ids = useStoredIds(RECENT_KEY);
+  const byId = useMemo(() => new Map(cards.map(c => [c.id, c])), [cards]);
+  const list = ids.map(id => byId.get(id)).filter((c): c is Card => !!c);
+  if (!list.length) return null;
+  return <div className="mc-recent">
+    <div className="mc-recent-h"><b>최근 본 카드</b><button type="button" className="mc-link" onClick={clearRecent}>지우기</button></div>
+    <div className="mc-recent-list">{list.map(c => <a key={c.id} href={cardPath(c.id)}><CardArt card={c}/><span>{c.familyName ?? c.name}</span></a>)}</div>
   </div>;
 }
 
@@ -178,6 +193,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
     </div>}
     {theme === '호텔 발레' && <p className="mc-note">서울 호텔별로 어떤 카드가 되는지는 <a href={sitePath('../hotels/valet.html')}>Mr. Hotels 발레파킹 지도</a>에서 볼 수 있어요.</p>}
 
+    {!anything && <Recent cards={cards}/>}
     <div className="mc-listhead">
       <span className="mc-count">{filtered.length.toLocaleString('ko-KR')}<small>/{families.toLocaleString('ko-KR')}종</small></span>
       <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}>
@@ -187,13 +203,14 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
     </div>
     {filtered.length ? <div className="mc-rows">{filtered.slice(0, more).map(c => {
       const m = meta.get(c.id)!;
-      const facts = [c.type === 'credit' ? '신용' : '체크', feeLabel(c.annualFeeMin), spendLabel(c.minimumSpend), RESTRICTED.test(c.name) ? '가입 대상 제한' : ''].filter(Boolean);
+      const facts = [c.type === 'credit' ? '신용' : '체크', feeLabel(c.annualFeeMin), spendShort(c), RESTRICTED.test(c.name) ? '가입 대상 제한' : ''].filter(Boolean);
       const why = EXPLAINED.has(theme) ? whyFor(c, theme) : null;
-      return <a key={c.id} className="mc-row mc-cardrow" href={cardPath(c.id)}>
+      // 줄 전체가 링크(이름의 ::after가 줄을 덮음)이고, 비교 버튼만 따로 눌림
+      return <div key={c.id} className="mc-row mc-cardrow">
         <CardArt card={c}/>
         <span className="mc-body">
           <span className="mc-issuer">{c.issuer}</span>
-          <b className="mc-name">{c.familyName ?? c.name}</b>
+          <a className="mc-name mc-stretch" href={cardPath(c.id)}>{c.familyName ?? c.name}</a>
           <span className="mc-facts">{facts.join(' · ')}</span>
           {why && <span className="mc-why">{why}</span>}
           {m.hl.length > 0 && <span className="mc-hl">{m.hl.map(h => <i key={h}>{h}</i>)}</span>}
@@ -201,10 +218,12 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
         <span className="mc-side">
           {m.best !== null && <span className="mc-pick"><small>피킹률</small>{formatPicking(m.best)}%</span>}
           {m.events > 0 && <span className="mc-pill">이벤트 {m.events}</span>}
+          <CompareToggle id={c.id} compact/>
         </span>
-      </a>;
+      </div>;
     })}</div> : <Empty title="조건에 맞는 카드가 없어요. 조건을 줄여 보세요." action={{label: '전체 카드 보기', onClick: reset}}/>}
     {filtered.length > more && <button type="button" className="mc-more" onClick={() => setMore(n => n + PAGE)}>더 보기 ({(filtered.length - more).toLocaleString('ko-KR')}개 남음)</button>}
+    <CompareDock cards={cards} events={events}/>
     <p className="mc-note">피킹률 = 최소 실적 구간의 최대 혜택 ÷ 실적</p>
   </>;
 }

@@ -15,13 +15,16 @@ export function cardImage(card: Pick<Card, 'id' | 'imageUrl'>) {
   return Object.hasOwn(cached, card.id) ? cached[card.id] : card.imageUrl;
 }
 
-/** 카드 실물 이미지. 없거나 깨지면 카드사 타일 */
+/** 카드 실물 이미지. 세로 카드는 가로로 눕혀 다른 카드와 같은 크기로 보이게. 없거나 깨지면 카드사 타일 */
 export function CardArt({card, large}: {card: Pick<Card, 'id' | 'name' | 'imageUrl' | 'issuer'>; large?: boolean}) {
   const [failed, setFailed] = useState(false);
+  const [portrait, setPortrait] = useState(false);
   const src = cardImage(card);
-  return <span className={'mc-art' + (large ? ' lg' : '')}>
+  return <span className={'mc-art' + (large ? ' lg' : '') + (portrait ? ' portrait' : '')}>
     {src && !failed
-      ? <img src={assetPath(src)} alt={`${card.name} 카드 이미지`} loading={large ? 'eager' : 'lazy'} decoding="async" onError={() => setFailed(true)}/>
+      ? <img src={assetPath(src)} alt={`${card.name} 카드 이미지`} loading={large ? 'eager' : 'lazy'} decoding="async" onError={() => setFailed(true)}
+          ref={i => { if (i?.complete && i.naturalWidth) setPortrait(i.naturalHeight > i.naturalWidth * 1.15); }}
+          onLoad={e => { const i = e.currentTarget; setPortrait(i.naturalHeight > i.naturalWidth * 1.15); }}/>
       : <span className="mc-art-ph"><IssuerTile issuer={card.issuer} size={large ? 'lg' : undefined}/></span>}
   </span>;
 }
