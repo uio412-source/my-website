@@ -1,6 +1,7 @@
-// Mr. Travel — 혜택(index.html) · 여행지(places.html)
+// Mr. Travel — 혜택(index.html) · 여행지(places.html) · 여행준비(prep.html)
 // 데이터: travel/benefits.json(배포 때 tools/travel/benefits.py가 Mr. Cards 데이터에서 생성),
-//         travel/places.json(여행지 정보, 직접 수정), travel/world.json(지도, tools/travel/world.mjs)
+//         travel/places.json(여행지 정보, 직접 수정), travel/world.json(지도, tools/travel/world.mjs),
+//         travel/prep.json(여행준비, 배포 때 tools/travel/prep.py가 생성)
 (() => {
   const page = document.body.dataset.page;
   const $ = (id) => document.getElementById('tv-' + id);
@@ -371,10 +372,109 @@
     detail();
   }
 
-  const run = { benefits: benefitsPage, places: placesPage }[page];
+  // ======================= 여행준비 =======================
+  // 1 항공권 → 2 호텔 → 3 이동수단 → 4 면세점 → 5 라운지 순서로, 각 칸은 카드사 이벤트 + 카드/공식 사이트
+  async function prepPage() {
+    const d = await MS.getJSON('prep.json');
+    const STEPS = [['air', '항공권'], ['hotel', '호텔 예약'], ['move', '공항 이동'], ['dutyfree', '면세점'], ['lounge', '공항 라운지']];
+    $('steps').innerHTML = STEPS.map(([id, label], i) => `<a href="#prep-${id}"><b>${i + 1}</b>${label}</a>`).join('');
+    const open = {};
+    const evRows = (key, list, internal = true) => {
+      if (!list.length) return '<div class="wl-rows"><p class="wl-empty">진행 중인 이벤트가 없어요.</p></div>';
+      const shown = open[key] ? list : list.slice(0, 4);
+      return `<div class="wl-rows">${shown.map((e) => `<article class="wl-row tv-ev">
+          ${e.issuer ? issuerTile(e.issuer) : chainTile(e.brand)}
+          <div class="tv-ev-body">
+            <a class="tv-ev-title" href="${internal ? `../paymorevent/events/${encodeURIComponent(e.id)}/` : esc(e.url)}"${internal ? '' : ' target="_blank" rel="noopener"'}>${esc(e.title)}</a>
+            ${e.text ? `<p class="tv-ev-text">${esc(e.text)}</p>` : ''}
+            <div class="tv-tags"><span class="iss">${esc(e.issuer || e.brand)}</span>${e.register ? '<span class="warn">사전 등록</span>' : ''}</div>
+          </div>
+          <div class="tv-ev-side"><b class="dd">${dday(e.end)}</b><small>${e.end ? '~' + ymd(e.end) : ''}</small>
+            ${e.url && internal ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">공식 ↗</a>` : ''}</div>
+        </article>`).join('')}</div>${list.length > 4 ? `<button type="button" class="tv-more" data-more="${key}">${open[key] ? '접기' : `${list.length - 4}건 더 보기`}</button>` : ''}`;
+    };
+    const CHAIN = [[/hyatt/i, 'H', 5], [/hilton/i, 'H', 1], [/marriott|bonvoy/i, 'M', 2], [/ihg/i, 'IHG', 3], [/accor/i, 'A', 4]];
+    const chainTile = (brand) => { const [, a, tone] = CHAIN.find(([rx]) => rx.test(brand || '')) || [0, (brand || '?').slice(0, 2), 1];
+      return `<span class="tile" data-tone="${tone}" data-len="${a.length}" aria-hidden="true">${esc(a)}</span>`; };
+    // 영문 카드명도 한글로 찾게
+    const SYN = [['플래티넘', 'platinum'], ['프리미엄', 'premium'], ['마일리지', 'mileage'], ['스카이패스', 'skypass'], ['아시아나', 'asiana'], ['더모아', 'themore'], ['트래블', 'travel'], ['시그니처', 'signature'], ['인피니트', 'infinite']];
+    const syn = (t) => { let x = t.toLowerCase().replace(/\s+/g, ''); for (const [k, e] of SYN) x = x.replace(k, e); return x; };
+    const links = (list) => `<div class="tv-links">${list.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)} ↗</a>`).join('')}</div>`;
+    const cardLink = (c) => `<a href="../paymorevent/cards/${encodeURIComponent(c.id)}/">${esc(c.name)}</a>`;
+    const cardTable = (key, head, list, cells) => {
+      if (!list.length) return '';
+      const shown = open[key] ? list : list.slice(0, 6);
+      return `<table class="tv-t"><thead><tr>${head.map((h) => `<th scope="col">${h}</th>`).join('')}</tr></thead>
+        <tbody>${shown.map((c) => `<tr><th scope="row">${issuerTile(c.issuer)}<span>${cardLink(c)}<small>${esc(c.issuer)} · ${c.type}</small></span></th>${cells(c)}</tr>`).join('')}</tbody></table>
+        ${list.length > 6 ? `<button type="button" class="tv-more" data-more="${key}">${open[key] ? '접기' : `${list.length - 6}종 더 보기`}</button>` : ''}`;
+    };
+    let lq = '', lscope = 'all';
+    const loungeList = () => {
+      const terms = syn(lq);
+      return d.lounge.cards.filter((c) => (!terms || syn(c.name + c.issuer + c.items.map((i) => i.title).join('')).includes(terms))
+        && (lscope === 'all' || (lscope === 'overseas' ? c.overseas : c.domestic)));
+    };
+    const loungeBody = () => {
+      const list = loungeList();
+      const shown = lq || open.lounge ? list : list.slice(0, 6);
+      return `<p class="tv-count">${list.length}종${lq ? ` · '${esc(lq)}'` : ''}</p>` + (list.length ? `<div class="wl-rows">${shown.map((c) => `<article class="wl-row tv-lounge">
+          ${issuerTile(c.issuer)}
+          <div class="tv-ev-body">
+            <span class="tv-ev-title">${cardLink(c)}</span>
+            <div class="tv-tags"><span class="iss">${esc(c.issuer)} · ${c.type}</span>${c.domestic ? '<span class="k">국내 공항</span>' : ''}${c.overseas ? '<span class="k">해외 공항</span>' : ''}${c.arrival ? '<span class="k">입국</span>' : ''}</div>
+            <ul class="tv-lines">${c.items.map((i) => `<li><b>${esc(i.title)}</b> ${esc(i.text)}</li>`).join('')}</ul>
+          </div>
+        </article>`).join('')}</div>${!lq && list.length > 6 ? `<button type="button" class="tv-more" data-more="lounge">${open.lounge ? '접기' : `${list.length - 6}종 더 보기`}</button>` : ''}`
+        : '<div class="wl-rows"><p class="wl-empty">라운지 혜택이 있는 카드를 찾지 못했어요. 카드 이름을 줄여서 검색해 보세요.</p></div>');
+    };
+    const sec = (i, id, title, body) => `<section class="tv-prep" id="prep-${id}"><h2><b>${i}</b>${title}</h2>${body}</section>`;
+
+    function render() {
+      $('prep').innerHTML =
+        sec(1, 'air', '항공권 예매',
+          `<h3>카드사 항공권 이벤트 <small>${d.air.events.length}</small></h3>${evRows('air', d.air.events)}
+           <h3>항공사 공식 사이트 <small>특가·프로모션</small></h3>${links(d.air.links)}`) +
+        sec(2, 'hotel', '호텔 예약',
+          `<h3>호텔 체인 프로모션 <small>${d.hotel.chains.length}</small></h3>${evRows('chains', d.hotel.chains, false)}
+           <p class="tv-more-link"><a href="../hotels/events.html">Mr. Hotels 이벤트 전체 →</a></p>
+           <h3>카드사 숙박 이벤트 <small>${d.hotel.events.length}</small></h3>${evRows('hotel', d.hotel.events)}`) +
+        sec(3, 'move', '공항 이동',
+          `<h3>택시·렌터카·공항 주차 이벤트 <small>${d.move.events.length}</small></h3>${evRows('move', d.move.events)}
+           <h3>공항 발레파킹 되는 카드 <small>${d.move.valet.length}</small></h3>
+           ${cardTable('valet', ['카드', '서비스'], d.move.valet, (c) => `<td>${esc(c.title)}</td>`)}`) +
+        sec(4, 'dutyfree', '면세점',
+          `<h3>면세점 결제 이벤트 <small>${d.dutyfree.events.length}</small></h3>${evRows('dutyfree', d.dutyfree.events)}
+           <h3>면세점 할인 카드 <small>할인율 높은 순</small></h3>
+           ${cardTable('dfcards', ['카드', '혜택', '할인'], d.dutyfree.cards, (c) => `<td>${esc(c.title)}</td><td class="num">${esc(c.rate || '–')}</td>`)}
+           <h3>면세점 공식 사이트 <small>자체 이벤트</small></h3>${links(d.dutyfree.links)}`) +
+        sec(5, 'lounge', '공항 라운지',
+          `<label class="tv-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+             <input id="tv-lq" type="search" placeholder="내 카드 이름 (예: 더모아, PP, 플래티넘)" autocomplete="off" aria-label="카드 이름으로 라운지 찾기" value="${esc(lq)}"></label>
+           <div class="tv-filters"><div class="tv-frow"><span class="tv-flabel" aria-hidden="true">공항</span><div class="tv-chiprow" role="group" aria-label="공항">
+             ${[['all', '전체'], ['overseas', '해외 공항(귀국편)'], ['domestic', '국내 공항']].map(([v, l]) => `<button type="button" class="tv-chip" data-scope="${v}" aria-pressed="${v === lscope}">${l}</button>`).join('')}</div></div></div>
+           <div id="tv-lbody">${loungeBody()}</div>
+           <h3>카드사 라운지 이벤트 <small>${d.lounge.events.length}</small></h3>${evRows('lev', d.lounge.events)}`);
+    }
+    render();
+    $('prep').addEventListener('click', (e) => {
+      const m = e.target.closest('[data-more]');
+      if (m) { open[m.dataset.more] = !open[m.dataset.more]; if (m.dataset.more === 'lounge') $('lbody').innerHTML = loungeBody(); else render(); return; }
+      const sc = e.target.closest('[data-scope]');
+      if (sc) { lscope = sc.dataset.scope; [...$('prep').querySelectorAll('[data-scope]')].forEach((b) => b.setAttribute('aria-pressed', String(b === sc))); $('lbody').innerHTML = loungeBody(); }
+    });
+    let t;
+    $('prep').addEventListener('input', (e) => {
+      if (e.target.id !== 'tv-lq') return;
+      clearTimeout(t); t = setTimeout(() => { lq = e.target.value.trim(); $('lbody').innerHTML = loungeBody(); }, 120);
+    });
+    $('foot').innerHTML = `Mr. Cards 카드 DB·카드사 이벤트와 호텔 체인 공식 프로모션에서 모았어요(${ymd(d.built)} 기준). 라운지 이용 횟수·동반·실적 조건은 카드사 원문을 확인하세요.`;
+    if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+  }
+
+  const run = { benefits: benefitsPage, places: placesPage, prep: prepPage }[page];
   if (run) run().catch((err) => {
     console.error(err);
-    const box = $('list') || $('map');
+    const box = $('list') || $('map') || $('prep');
     if (box) box.innerHTML = '<div class="wl-rows"><p class="wl-empty">불러오지 못했습니다. 새로고침해 주세요.</p></div>';
   });
 })();
