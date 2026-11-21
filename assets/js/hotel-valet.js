@@ -55,7 +55,7 @@ function cardAt(c, h, sel = mine[c.key]) {
   const free = live.find((x) => !x.p.minimumSpend);
   if (free) return {state: 'ok', p: free.p};
   // 브랜드를 정하지 않았으면 실적 조건이 가장 낮은 안내 기준
-  const p = live.sort((a, b) => a.p.minimumSpend - b.p.minimumSpend || b.p.monthlyLimit - a.p.monthlyLimit)[0].p;
+  const p = live.sort((a, b) => a.p.minimumSpend - b.p.minimumSpend || (b.p.monthlyLimit ?? 99) - (a.p.monthlyLimit ?? 99))[0].p;
   return {state: sel?.met === false ? 'spend' : 'ok', p};
 }
 const RANK = {ok: 0, spend: 1, check: 2};

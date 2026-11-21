@@ -24,7 +24,9 @@
   - **여행지**: `travel/places.json`(나라별 월별 시즌 `season` 0=비수기·1=보통·2=성수기, 왕복 항공권 `air`·5성급 1박 `hotel` 참고 시세(만원), 비행시간·시차·통화·입국 조건)을 직접 고칩니다. 바꾸면 `checked` 날짜도 고치세요. 상세의 월별 칸 아래 항공권·5성급 1박 월별 참고가(만원)는 나라에 `airM`·`hotelM`(12칸 배열)이 있으면 그 값을, 없으면 `air`·`hotel` 범위를 시즌에 맞춰 나눈 추정값(비수기 15%·보통 35%·성수기 60% 지점)을 보여 줍니다. 지도는 `travel/world.json`(태평양 중심 Natural Earth 선 지도)이며 `tools/travel/world.mjs`로 다시 만듭니다. 핀 위치는 `travel.js`의 `project()`가 같은 투영식으로 계산합니다.
   - 마지막으로 고른 나라는 브라우저 `mrtravel.place`에 저장합니다. 혜택 화면 `index.html#place-JP`, 여행지 화면 `places.html#JP`처럼 주소로 바로 열 수 있습니다.
   - **여행준비**(`prep.html`): 1 항공권 예매 → 2 호텔 예약 → 3 공항 이동 → 4 면세점 → 5 공항 라운지 순서. `travel/prep.json`은 배포 때 `tools/travel/prep.py`가 카드사 이벤트(`events.json`, inbox 합친 뒤)·카드 DB·`hotels/events.json`에서 만듭니다. 분류 키워드는 `prep.py`의 `RX`, 항공사·면세점 공식 사이트 목록은 `AIRLINES`·`DUTY_FREE`. 라운지는 카드 이름(한·영 동의어)으로 찾고 '해외 공항(귀국편)'·'국내 공항'으로 거릅니다(PP·라운지키·전 세계 문구면 해외).
-- **데이터 수집(이벤트·호텔·카드 상품)**: 외부 AI·사람은 큰 DB를 직접 고치지 않고 `data/inbox/<card-events|hotel-events|card-products>/YYYY-MM-DD-<출처>.json`만 추가하는 PR을 올립니다. 양식과 순서는 `docs/data-update.md`. PR 검사는 `.github/workflows/data-check.yml`(`tools/data/inbox.py validate`), 배포 때 `tools/data/inbox.py merge`가 이벤트 DB에 합칩니다(커밋 안 함). `card-products`는 검토 대기열이라 자동 반영하지 않습니다.
+- **데이터 수집**: 외부 AI·사람은 큰 DB를 직접 고치지 않고 `data/inbox/<종류>/YYYY-MM-DD-<출처>.json`만 추가하는 PR을 올립니다. 양식·찾는 요령·실행 한도·요일별 순서는 `docs/data-update.md`. PR 검사는 `.github/workflows/data-check.yml`(`tools/data/inbox.py validate`), 배포 때 `tools/data/inbox.py merge`가 합칩니다(결과는 커밋 안 함).
+  - 종류: `card-events`·`hotel-events`(이벤트 DB) · `travel-events`(항공사·면세점·공항 자체 이벤트 → `travel/vendor-events.json`, 여행준비) · `brand-services`(국제브랜드·카드사 선택 서비스: 호텔 발레·공항 라운지·공항 커피 등 → `paymorevent/data/brand-services.json`, 서울 호텔 발레는 `hotels/valet.json`에도 자동 추가) · `card-terms`(상품설명서 표준 정리 → `paymorevent/data/card-terms.json`) · `card-products`(검토 대기열, 자동 반영 안 함).
+  - 무엇을 먼저 모을지는 `data/collect-queue.json`(수집 대기열, `tools/data/queue.py`로 생성·커밋). 수집 파일에 대기열 key를 `queueKey`로 적으면 다음 실행 때 건너뜁니다. 카드사·도메인 목록과 서비스 분류는 `inbox.py`의 `ISSUERS`·`CARD_DOMAINS`·`SERVICE_CATS`에서 고칩니다.
 - `main` 브랜치에 merge되면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages로 자동 배포합니다.
 
 ## 폴더 구조
@@ -47,6 +49,8 @@ travel/               Mr. Travel 페이지와 데이터 (benefits.json은 배포
 tools/travel/benefits.py Mr. Cards 데이터 → travel/benefits.json
 tools/travel/prep.py     Mr. Cards·Hotels 데이터 → travel/prep.json (여행준비)
 tools/travel/world.mjs   세계지도 → travel/world.json (지도 바꿀 때만)
+tools/data/inbox.py      수집 파일(data/inbox) 검사·배포 때 합치기
+tools/data/queue.py      수집 대기열 → data/collect-queue.json
 tools/ungjup/build.py 데이터 생성기 (Yahoo Finance → data/ungjup/*.json)
 tools/ungjup/extras.py 종목 검색 목록(symbols.json)·종목별 뉴스(news.json) 생성
 tools/ungjup/dividends.py 종목별 최근 12개월 주당 배당금(dividends.json) 생성
