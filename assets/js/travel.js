@@ -283,6 +283,10 @@
 
     // ----- 상세 -----
     const bar = (lo, hi, max) => `<div class="bar"><i style="left:${Math.min(100, (lo / max) * 100)}%;width:${Math.max(2, Math.min(100, (hi / max) * 100) - Math.min(100, (lo / max) * 100))}%"></i></div>`;
+    // 월별 참고가(만원): places.json에 airM·hotelM(12칸)이 있으면 그 값, 없으면 시세 범위를 시즌(비수기·보통·성수기)에 맞춰 나눈 추정값
+    const SHARE = [0.15, 0.35, 0.6];
+    const monthly = (p, key) => p[key + 'M'] || p.season.map((v) => Math.round(p[key][0] + (p[key][1] - p[key][0]) * SHARE[v]));
+    const priceRow = (vals, p) => vals.map((v, i) => `<span class="pv s${p.season[i]}${i === MONTH ? ' now' : ''}">${v}</span>`).join('');
     const seasonCells = (s, big) => s.map((v, i) => `<span class="m s${v}${i === MONTH ? ' now' : ''}" title="${i + 1}월 ${SEASON[v]}">${big ? `<b>${i + 1}</b>` : ''}</span>`).join('');
     function detail() {
       const p = byId[sel];
@@ -301,7 +305,11 @@
         </div>
         <div class="tv-sec-k">월별 성수기 · 비수기</div>
         <div class="tv-season">${seasonCells(p.season, true)}</div>
-        <div class="tv-legend"><span class="s2">성수기</span><span class="s1">보통</span><span class="s0">비수기</span><em>가격·혼잡 기준</em></div>
+        <div class="tv-pk">✈ 왕복 항공권 <small>만원</small></div>
+        <div class="tv-season tv-prices">${priceRow(monthly(p, 'air'), p)}</div>
+        <div class="tv-pk">🏨 5성급 1박 <small>만원</small></div>
+        <div class="tv-season tv-prices">${priceRow(monthly(p, 'hotel'), p)}</div>
+        <div class="tv-legend"><span class="s2">성수기</span><span class="s1">보통</span><span class="s0">비수기</span><em>${p.airM ? '월별 참고가' : '가격은 시세 범위로 낸 추정'}</em></div>
         <p class="tv-note">${esc(p.note)}</p>
         <div class="tv-meters">
           <div class="tv-meter air"><div class="k">왕복 항공권 <small>비수기 특가 ~ 성수기</small></div>
