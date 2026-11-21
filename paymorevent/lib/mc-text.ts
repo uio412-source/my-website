@@ -75,7 +75,7 @@ export function highlights(card: Pick<Card, 'benefits'>, n = 3) {
   return out;
 }
 /** 공무원·교육청·국민행복·법인·학생증처럼 가입 대상이 정해진 카드 (추천순에서 아래로, 목록에 표시) */
-export const RESTRICTED = /교육청|공무원|도청|시청|군청|경찰|소방|국방|나라사랑|국민행복|바우처|복지카드|화물복지|법인|BIZ|비즈니스|사업자|학생증|ISIC|협회|연합회|조합원|운송사업자|다자녀|꿈디딤|꿈드리미|교육사랑/i;
+export {RESTRICTED} from './card-themes';
 
 // ---------- 이벤트 문구 ----------
 const GENERIC = /^(?:공식 (?:진행 이벤트|목록|혜택)|공식 혜택·이벤트 확인)|확인 필요$|상세 혜택 및 참여 조건 확인/;
