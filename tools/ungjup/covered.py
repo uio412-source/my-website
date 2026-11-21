@@ -6,6 +6,9 @@
 
   - 종가는 분할만 반영된 실제 종가(배당 미반영), 분배금은 배당락일 기준 주당 금액
   - 총수익 지수: TR_t = TR_{t-1} × (종가_t + 분배금_t) / 종가_{t-1}  (세전, 배당락일 종가에 재투자)
+  - dip: 위 차트의 진한 핑크 '줍줍 구간'(본주 지수 카드 zone 2 = 200일선 아래 + RSI 33 미만)인 날을
+    공통 거래일 위치 [시작, 끝] 범위로. 화면의 '줍줍구간 배당 재매수' 계산에 씁니다.
+    build.py가 이번 실행에서 먼저 쓴 data/ungjup/<asset>.json을 읽으므로 차트 음영과 같은 날입니다.
 
 종목을 바꾸거나 묶음을 추가하려면 GROUPS만 고치세요. asset은 차트 위 지수 카드 id(build.py ASSETS)로,
 그 카드를 고르면 이 묶음이 함께 열립니다.
@@ -65,6 +68,28 @@ def fetch(symbol):
     return closes, divs
 
 
+def dip_runs(asset, dates):
+    """본주 지수 카드의 줍줍 구간(zone 2)인 날 → 묶음 날짜 위치 [[시작, 끝], ...]. 데이터가 없으면 None."""
+    try:
+        rows = json.loads((OUT.parent / f"{asset}.json").read_text())["rows"]
+        zone = dict(zip(rows["d"], rows["z"]))
+    except Exception as e:
+        print(f"[커버드콜] {asset} 줍줍 구간 없음: {e}", file=sys.stderr)
+        return None
+    if not any(d in zone for d in dates):
+        return None
+    runs, a = [], None
+    for i, d in enumerate(dates):
+        on = zone.get(d) == 2
+        if on and a is None:
+            a = i
+        if not on and a is not None:
+            runs.append([a, i - 1]); a = None
+    if a is not None:
+        runs.append([a, len(dates) - 1])
+    return runs
+
+
 def build_group(g):
     raw = {}
     for sym, *_ in g["items"]:
@@ -96,8 +121,12 @@ def build_group(g):
             "c": [round(closes[d], nd) if nd else round(closes[d]) for d in dates],
             "dv": [[i, round(a, 4)] for i, a in sorted(dv.items())],
         })
-    return {"id": g["id"], "name": g["name"], "asset": g["asset"], "unit": g["unit"],
-            "start": dates[0], "d": dates, "items": items}
+    out = {"id": g["id"], "name": g["name"], "asset": g["asset"], "unit": g["unit"],
+           "start": dates[0], "d": dates, "items": items}
+    dip = dip_runs(g["asset"], dates)
+    if dip is not None:
+        out["dip"] = dip
+    return out
 
 
 def main():
@@ -113,7 +142,8 @@ def main():
             out = build_group(g)
             groups.append(out)
             last = {it["short"]: it["c"][-1] for it in out["items"]}
-            print(f"커버드콜 {g['name']:6s} {out['start']} ~ {out['d'][-1]}  {last}")
+            dip = f"줍줍구간 {len(out['dip'])}번" if "dip" in out else "줍줍구간 데이터 없음"
+            print(f"커버드콜 {g['name']:6s} {out['start']} ~ {out['d'][-1]}  {last}  {dip}")
         except Exception as e:  # 실패한 묶음은 지난 데이터 유지
             print(f"[커버드콜 실패] {g['name']}: {e}", file=sys.stderr)
             if g["id"] in old:

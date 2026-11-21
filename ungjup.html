@@ -63,7 +63,10 @@
           <div class="uj-seg" id="cc-group" role="group" aria-label="비교 묶음"></div>
         </div>
         <div class="ref-card">
-          <div class="uj-seg cc-per" id="cc-period" role="group" aria-label="기간"></div>
+          <div class="cc-ctrl">
+            <div class="uj-seg cc-per" id="cc-period" role="group" aria-label="기간"></div>
+            <button type="button" class="cc-sw" id="cc-dip" role="switch" aria-checked="false"><i aria-hidden="true"></i>줍줍구간 배당 재매수</button>
+          </div>
           <div class="cc-chart" id="cc-chart">
             <svg id="cc-svg" aria-hidden="true"></svg>
             <div class="uj-tip" id="cc-tip" hidden></div>
@@ -71,7 +74,7 @@
           <div class="cc-list" id="cc-list"></div>
         </div>
         <div class="ref-card">
-          <div class="ref-title">기간별 총수익 <small class="cc-sub">열을 누르면 위 그래프 기간이 바뀌어요</small></div>
+          <div class="ref-title">기간별 총수익 <span class="cc-mode" id="cc-mode" hidden>줍줍구간 재매수</span> <small class="cc-sub">열을 누르면 위 그래프 기간이 바뀌어요</small></div>
           <div class="cc-table" id="cc-table"></div>
           <p class="crash-note" id="cc-note"></p>
         </div>
