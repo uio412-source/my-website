@@ -16,6 +16,9 @@ EVENTS = ROOT / "paymorevent/data/events.json"
 CARDS = ROOT / "paymorevent/data/cards.json.gz"
 HOTEL_EVENTS = ROOT / "hotels/events.json"
 OUT = ROOT / "travel/prep.json"
+# 배포 때 tools/data/inbox.py merge가 만드는 파일(없으면 건너뜀)
+VENDOR = ROOT / "travel/vendor-events.json"
+BRAND = ROOT / "paymorevent/data/brand-services.json"
 TODAY = (datetime.now(timezone.utc) + timedelta(hours=9)).strftime("%Y-%m-%d")
 
 RX = {
@@ -166,15 +169,61 @@ def hotel_chain_events():
     return out
 
 
+def vendor_events():
+    """항공사·면세점·여행사 자체 이벤트 (data/inbox/travel-events)"""
+    if not VENDOR.exists():
+        return {}
+    out = {}
+    for e in json.loads(VENDOR.read_text(encoding="utf-8")).get("events", []):
+        if e["end"] < TODAY:
+            continue
+        out.setdefault(e["vendorType"], []).append({"id": e["id"], "issuer": "", "brand": e["vendor"], "title": e["title"], "text": e["text"],
+                                                    "end": e["end"], "url": e["url"], "vendor": True})
+    return out
+
+
+def brand_cards():
+    """국제브랜드·카드사 선택 서비스(data/inbox/brand-services)에서 공항 라운지·공항 발레 되는 카드"""
+    if not BRAND.exists():
+        return [], []
+    lounge, valet = [], []
+    for g in json.loads(BRAND.read_text(encoding="utf-8")).get("programs", []):
+        for s in g["services"]:
+            base = {"issuer": g["issuer"], "program": f"{g['brand']} {g['tier']}", "cards": g["cards"], "ids": g.get("catalogIds") or [], "url": g["url"]}
+            text = " ".join([s["title"], s.get("coverage") or "", *(s.get("conditions") or [])])
+            if s["category"] == "airport_lounge":
+                lounge.append({**base, "title": s["title"], "text": short(text, 110), "overseas": bool(OVERSEAS.search(text)), "domestic": bool(DOMESTIC.search(text)) or not OVERSEAS.search(text)})
+            elif s["category"] in ("airport_valet", "airport_parking"):
+                valet.append({**base, "title": s["title"]})
+    return lounge, valet
+
+
 def main():
     ev = card_events()
     lounge, dutyfree, valet = cards_index()
+    vend = vendor_events()
+    b_lounge, b_valet = brand_cards()
+    # 선택 서비스로 라운지가 되는 카드: 카드 DB에 없는 카드만 덧붙임
+    have = {c["id"] for c in lounge}
+    for x in b_lounge:
+        for i, name in enumerate(x["cards"]):
+            cid = x["ids"][i] if i < len(x["ids"]) else None
+            if cid and cid in have:
+                continue
+            lounge.append({"id": cid or "", "issuer": x["issuer"], "name": name, "type": "", "fee": None, "arrival": bool(ARRIVAL.search(x["text"])),
+                           "overseas": x["overseas"], "domestic": x["domestic"], "items": [{"title": f"{x['program']} · {x['title']}", "text": x["text"], "arrival": False}]})
+    have_v = {c["id"] for c in valet}
+    for x in b_valet:
+        for i, name in enumerate(x["cards"]):
+            cid = x["ids"][i] if i < len(x["ids"]) else None
+            if not (cid and cid in have_v):
+                valet.append({"id": cid or "", "issuer": x["issuer"], "name": name, "type": "", "fee": None, "title": f"{x['program']} · {x['title']}"})
     out = {
         "built": TODAY,
-        "air": {"events": ev["air"], "links": [{"name": n, "url": u} for n, u in AIRLINES]},
+        "air": {"events": vend.get("airline", []) + vend.get("ota", []) + ev["air"], "links": [{"name": n, "url": u} for n, u in AIRLINES]},
         "hotel": {"chains": hotel_chain_events(), "events": ev["hotel"]},
-        "move": {"events": ev["move"], "valet": valet},
-        "dutyfree": {"events": ev["dutyfree"], "cards": dutyfree, "links": [{"name": n, "url": u} for n, u in DUTY_FREE]},
+        "move": {"events": vend.get("airport", []) + ev["move"], "valet": valet},
+        "dutyfree": {"events": vend.get("dutyfree", []) + ev["dutyfree"], "cards": dutyfree, "links": [{"name": n, "url": u} for n, u in DUTY_FREE]},
         "lounge": {"events": ev["lounge"], "cards": lounge},
     }
     OUT.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

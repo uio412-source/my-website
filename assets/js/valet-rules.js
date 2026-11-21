@@ -13,7 +13,8 @@ export function valetQuota(program, hotel) {
     hotel_shared: '호텔 통합',
     hotel_airport: '호텔·공항 통합',
   }[program.quotaScope];
-  const general = `${scope} 월 ${program.monthlyLimit}회`;
+  // 안내문에 '이용횟수 제한 없이'면 수집 데이터의 monthlyLimit이 null
+  const general = program.monthlyLimit == null ? '횟수 제한 없음' : `${scope} 월 ${program.monthlyLimit}회`;
   const override = hotel && program.hotelOverrides?.[hotel.id];
-  return override ? `이 호텔 월 ${override.monthlyLimit}회 · ${general}` : general;
+  return override && override.monthlyLimit != null && override.monthlyLimit !== program.monthlyLimit ? `이 호텔 월 ${override.monthlyLimit}회 · ${general}` : general;
 }

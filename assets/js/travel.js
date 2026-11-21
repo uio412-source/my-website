@@ -379,10 +379,11 @@
     const STEPS = [['air', '항공권'], ['hotel', '호텔 예약'], ['move', '공항 이동'], ['dutyfree', '면세점'], ['lounge', '공항 라운지']];
     $('steps').innerHTML = STEPS.map(([id, label], i) => `<a href="#prep-${id}"><b>${i + 1}</b>${label}</a>`).join('');
     const open = {};
-    const evRows = (key, list, internal = true) => {
+    // 항공사·면세점 자체 이벤트(vendor)는 Mr. Cards에 상세가 없으니 공식 페이지로 바로
+    const evRows = (key, list, intl = true) => {
       if (!list.length) return '<div class="wl-rows"><p class="wl-empty">진행 중인 이벤트가 없어요.</p></div>';
       const shown = open[key] ? list : list.slice(0, 4);
-      return `<div class="wl-rows">${shown.map((e) => `<article class="wl-row tv-ev">
+      return `<div class="wl-rows">${shown.map((e) => { const internal = intl && !e.vendor; return `<article class="wl-row tv-ev">
           ${e.issuer ? issuerTile(e.issuer) : chainTile(e.brand)}
           <div class="tv-ev-body">
             <a class="tv-ev-title" href="${internal ? `../paymorevent/events/${encodeURIComponent(e.id)}/` : esc(e.url)}"${internal ? '' : ' target="_blank" rel="noopener"'}>${esc(e.title)}</a>
@@ -391,7 +392,7 @@
           </div>
           <div class="tv-ev-side"><b class="dd">${dday(e.end)}</b><small>${e.end ? '~' + ymd(e.end) : ''}</small>
             ${e.url && internal ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">공식 ↗</a>` : ''}</div>
-        </article>`).join('')}</div>${list.length > 4 ? `<button type="button" class="tv-more" data-more="${key}">${open[key] ? '접기' : `${list.length - 4}건 더 보기`}</button>` : ''}`;
+        </article>`; }).join('')}</div>${list.length > 4 ? `<button type="button" class="tv-more" data-more="${key}">${open[key] ? '접기' : `${list.length - 4}건 더 보기`}</button>` : ''}`;
     };
     const CHAIN = [[/hyatt/i, 'H', 5], [/hilton/i, 'H', 1], [/marriott|bonvoy/i, 'M', 2], [/ihg/i, 'IHG', 3], [/accor/i, 'A', 4]];
     const chainTile = (brand) => { const [, a, tone] = CHAIN.find(([rx]) => rx.test(brand || '')) || [0, (brand || '?').slice(0, 2), 1];
@@ -400,12 +401,12 @@
     const SYN = [['플래티넘', 'platinum'], ['프리미엄', 'premium'], ['마일리지', 'mileage'], ['스카이패스', 'skypass'], ['아시아나', 'asiana'], ['더모아', 'themore'], ['트래블', 'travel'], ['시그니처', 'signature'], ['인피니트', 'infinite']];
     const syn = (t) => { let x = t.toLowerCase().replace(/\s+/g, ''); for (const [k, e] of SYN) x = x.replace(k, e); return x; };
     const links = (list) => `<div class="tv-links">${list.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)} ↗</a>`).join('')}</div>`;
-    const cardLink = (c) => `<a href="../paymorevent/cards/${encodeURIComponent(c.id)}/">${esc(c.name)}</a>`;
+    const cardLink = (c) => c.id ? `<a href="../paymorevent/cards/${encodeURIComponent(c.id)}/">${esc(c.name)}</a>` : `<b>${esc(c.name)}</b>`;
     const cardTable = (key, head, list, cells) => {
       if (!list.length) return '';
       const shown = open[key] ? list : list.slice(0, 6);
       return `<table class="tv-t"><thead><tr>${head.map((h) => `<th scope="col">${h}</th>`).join('')}</tr></thead>
-        <tbody>${shown.map((c) => `<tr><th scope="row">${issuerTile(c.issuer)}<span>${cardLink(c)}<small>${esc(c.issuer)} · ${c.type}</small></span></th>${cells(c)}</tr>`).join('')}</tbody></table>
+        <tbody>${shown.map((c) => `<tr><th scope="row">${issuerTile(c.issuer)}<span>${cardLink(c)}<small>${esc(c.issuer)}${c.type ? ' · ' + c.type : ''}</small></span></th>${cells(c)}</tr>`).join('')}</tbody></table>
         ${list.length > 6 ? `<button type="button" class="tv-more" data-more="${key}">${open[key] ? '접기' : `${list.length - 6}종 더 보기`}</button>` : ''}`;
     };
     let lq = '', lscope = 'all';
@@ -421,7 +422,7 @@
           ${issuerTile(c.issuer)}
           <div class="tv-ev-body">
             <span class="tv-ev-title">${cardLink(c)}</span>
-            <div class="tv-tags"><span class="iss">${esc(c.issuer)} · ${c.type}</span>${c.domestic ? '<span class="k">국내 공항</span>' : ''}${c.overseas ? '<span class="k">해외 공항</span>' : ''}${c.arrival ? '<span class="k">입국</span>' : ''}</div>
+            <div class="tv-tags"><span class="iss">${esc(c.issuer)}${c.type ? ' · ' + c.type : ''}</span>${c.domestic ? '<span class="k">국내 공항</span>' : ''}${c.overseas ? '<span class="k">해외 공항</span>' : ''}${c.arrival ? '<span class="k">입국</span>' : ''}</div>
             <ul class="tv-lines">${c.items.map((i) => `<li><b>${esc(i.title)}</b> ${esc(i.text)}</li>`).join('')}</ul>
           </div>
         </article>`).join('')}</div>${!lq && list.length > 6 ? `<button type="button" class="tv-more" data-more="lounge">${open.lounge ? '접기' : `${list.length - 6}종 더 보기`}</button>` : ''}`

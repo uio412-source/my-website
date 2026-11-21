@@ -1,28 +1,39 @@
-# 데이터 수집 표준 작업 (Mr. Cards · Mr. Hotels)
+# 데이터 수집 표준 작업 (Mr. Cards · Mr. Hotels · Mr. Travel)
 
-외부 AI(ChatGPT 예약 작업, Codex 등)나 사람이 카드사·호텔 이벤트를 모아 올 때 따르는 **유일한** 방법입니다.
+외부 AI(ChatGPT 예약 작업, Codex 등)나 사람이 카드·호텔·여행 데이터를 모아 올 때 따르는 **유일한** 방법입니다.
 
-- 큰 DB 파일(`paymorevent/data/events.json`, `cards.json.gz`, `hotels/events.json`)은 **절대 직접 고치지 않습니다.**
-- 대신 `data/inbox/<종류>/YYYY-MM-DD-<출처>.json` 파일을 **새로 추가**하는 PR만 올립니다.
-- PR이 열리면 GitHub Actions(`수집 데이터 양식 검사`)가 양식을 검사하고, `main`에 머지되면 배포 때 `tools/data/inbox.py merge`가 화면용 DB에 자동으로 합칩니다.
-- 같은 이벤트를 다음에 다시 수집하면(같은 `id`나 같은 카드사+제목) 새 파일 값이 이깁니다. 그러니 매번 **현재 진행 중인 것 전체**를 다시 담아도 됩니다.
+- 큰 DB 파일(`paymorevent/data/*.json`, `cards.json.gz`, `hotels/*.json`, `travel/*.json`)은 **절대 직접 고치지 않습니다.**
+- `data/inbox/<종류>/YYYY-MM-DD-<출처>.json` 파일을 **새로 추가**하는 PR만 올립니다.
+- PR이 열리면 GitHub Actions(`수집 데이터 양식 검사`)가 양식을 검사하고(틀리면 빨간 X와 한국어 오류), `main`에 머지되면 배포 때 `tools/data/inbox.py merge`가 화면용 DB에 합칩니다.
+- 같은 항목을 다음에 다시 수집하면(같은 `id`·같은 카드사+제목) **나중 파일 값이 이깁니다.** 매번 그 출처의 현재 내용 전체를 다시 담아도 됩니다.
+- 무엇을 먼저 모을지는 `data/collect-queue.json`(수집 대기열)에 있습니다. → **9장 실행 한도와 순서**
 
-로컬 검사: `python tools/data/inbox.py validate`
+로컬 검사: `python tools/data/inbox.py validate` · 대기열 다시 만들기: `python tools/data/queue.py`
 
 ---
 
-## 1. 폴더와 파일 이름
+## 1. 종류와 쓰임
 
-| 폴더 | 내용 | 사이트 반영 |
+| 폴더(`type`) | 내용 | 어디에 쓰이나 |
 |---|---|---|
-| `data/inbox/card-events/` | 카드사 이벤트 + 신규 발급 캐시백 | 배포 때 자동 |
-| `data/inbox/hotel-events/` | 호텔 체인 프로모션 | 배포 때 자동 |
-| `data/inbox/card-products/` | 카드 상품 신규·변경·단종 | **검토 대기열**(자동 반영 안 함) |
+| `card-events` | 카드사 이벤트, 신규 발급 캐시백 | Mr. Cards 카드사 이벤트·발급이벤트, Travel 혜택·여행준비 |
+| `hotel-events` | 호텔 체인 프로모션 | Mr. Hotels 이벤트, 여행준비 ② |
+| `travel-events` | 항공사·면세점·여행 예약 사이트·공항 **자체** 이벤트 | 여행준비 ①③④ |
+| `brand-services` | 국제브랜드(Visa·Mastercard·AMEX·UnionPay) 등급 서비스 + **카드사 선택 서비스**(호텔 발레·공항 라운지·공항 발레·공항 커피·리무진 등) | Mr. Hotels 발레파킹(서울 호텔 자동 연결), 여행준비 ③⑤, 카드 상세(예정) |
+| `card-terms` | **상품설명서** 표준 정리(연회비·실적·제외 항목·혜택 표) | 카드 DB 검토·반영(자동 반영은 단계적으로) |
+| `card-products` | 신상품·단종 알림 | 검토 대기열 |
 
-파일 이름: `YYYY-MM-DD-<영문 소문자 출처>.json` — 예: `2026-11-21-hana.json`, `2026-11-21-marriott.json`.
-카드사 하나당 파일 하나, 호텔 체인 하나당 파일 하나.
+## 2. 공통 규칙
 
-## 2. 카드 이벤트 `card-events`
+- 파일 이름: `YYYY-MM-DD-<영문 소문자 출처>.json` (예: `2026-11-21-hana.json`, `2026-11-21-koreanair.json`). **출처(카드사·회사) 하나당 파일 하나.**
+- `collectedAt`: 수집한 날, `collector`: 도구 이름(`ChatGPT`).
+- 금액은 **원 단위 정수**: 3천원 → `3000`, 1.5만원 → `15000`, 30만원 이상 → `300000`. 비율·마일 같은 혜택 크기는 문자열(`"10%"`, `"1.5마일"`).
+- 날짜는 `YYYY-MM-DD`. 모르면 `null`, 목록이 없으면 `[]`. **추측·계산해서 채우지 않습니다.**
+- 출처 주소는 **공식 도메인**만(카드사·국제브랜드·호텔 체인·항공사·면세점). 블로그·커뮤니티·비교 사이트 금지(발급 캐시백 모음 3곳만 예외).
+- 문장은 안내문 표기를 살리되 광고 문구(이모지, "놓치지 마세요")는 뺍니다.
+- `id`: 영문 소문자·숫자·하이픈, 64자 이내. 같은 대상이면 다음 수집 때도 **같은 id**를 씁니다.
+
+## 3. 카드사 이벤트 `card-events`
 
 ```json
 {
@@ -73,7 +84,7 @@
 
 인정 도메인: shinhancard.com kbcard.com samsungcard.com hyundaicard.com wooricard.com hanacard.co.kr lottecard.co.kr nonghyup.com bccard.com paybooc.co.kr ibk.co.kr pay.naver.com kakaopay.com card-gorilla.com toss.im tossbank.com banksalad.com
 
-## 3. 호텔 이벤트 `hotel-events`
+## 4. 호텔 체인 프로모션 `hotel-events`
 
 ```json
 {
@@ -112,7 +123,173 @@
 
 인정 도메인: marriott.com hilton.com ihg.com accor.com hyatt.com hotelux.com josunhotel.com shillahotels.com lottehotel.com parnas.co.kr ambatel.com
 
-## 4. 카드 상품 변경 `card-products` (검토 대기열)
+## 5. 항공사·면세점·여행 이벤트 `travel-events`
+
+카드사가 아니라 **항공사·면세점·여행 예약 사이트·공항이 직접** 여는 이벤트입니다(카드사 제휴 이벤트는 `card-events`).
+
+```json
+{
+  "type": "travel-events",
+  "vendorType": "airline",
+  "vendor": "대한항공",
+  "collectedAt": "2026-11-21",
+  "collector": "ChatGPT",
+  "listUrls": ["https://www.koreanair.com/..."],
+  "events": [
+    {
+      "id": "koreanair-202611-winter-sale",
+      "title": "겨울 국제선 특가",
+      "summary": "동남아 왕복 최저 29만원부터",
+      "startsAt": "2026-11-20",
+      "endsAt": "2026-12-10",
+      "conditions": ["홈페이지·앱 예약", "탑승 기간 2027.01.05~03.31"],
+      "url": "https://www.koreanair.com/...",
+      "cardIssuers": ["삼성카드"],
+      "promoCode": "WINTER26"
+    }
+  ]
+}
+```
+
+| 항목 | 규칙 |
+|---|---|
+| `vendorType` | `airline` 항공사 · `dutyfree` 면세점 · `ota` 여행 예약 사이트(트립닷컴·아고다 등) · `airport` 공항 |
+| `cardIssuers` | (선택) 특정 카드사 결제 조건이 붙으면 그 카드사 |
+| `promoCode` | (선택) 할인 코드 |
+
+## 6. 국제브랜드·카드사 선택 서비스 `brand-services`
+
+상품설명서·'국제브랜드 서비스 안내' PDF에 있는 **호텔 발레파킹, 공항 라운지, 공항 발레, 공항 커피, 리무진·철도, KTX 주차** 같은 특수 혜택입니다. 카드사 × 브랜드 × 등급(예: 삼성카드 Mastercard World)마다 **프로그램 하나**로 정리합니다.
+
+```json
+{
+  "type": "brand-services",
+  "issuer": "삼성카드",
+  "collectedAt": "2026-11-21",
+  "collector": "ChatGPT",
+  "programs": [
+    {
+      "id": "samsung-american-express-platinum-elite",
+      "queueKey": "samsung-american-express-platinum-elite",
+      "brand": "American Express",
+      "tier": "PLATINUM ELITE",
+      "provider": "issuer_selection",
+      "docTitle": "아멕스 프리미엄 서비스 이용 안내",
+      "url": "https://static11.samsungcard.com/wcms/personal/files/2604_AMEX_E_004.pdf",
+      "docDate": "2026-04-15",
+      "validThrough": "2026-12-31",
+      "cards": ["American Express® Reserve"],
+      "services": [
+        {
+          "category": "hotel_valet",
+          "title": "호텔 발렛파킹 서비스",
+          "minimumSpend": 500000,
+          "grace": "발급월+1개월까지 실적 무관",
+          "monthlyLimit": 5,
+          "quotaScope": "hotel_airport",
+          "sharedWith": "인천공항 발렛파킹과 통합 월 5회",
+          "freeHours": 3,
+          "holderOnly": true,
+          "hotels": [
+            {"name": "그랜드 워커힐 서울", "city": "서울"},
+            {"name": "JW 메리어트 호텔 서울", "city": "서울"},
+            {"name": "파크 하얏트 부산", "city": "부산"}
+          ],
+          "hotelRules": [{"name": "JW 메리어트 호텔 서울", "receiptMin": 50000, "monthlyLimit": null, "note": null}],
+          "conditions": ["객실·식음료 매장 이용(연회장 제외) 본인 방문", "당일 영수증 제시"]
+        },
+        {
+          "category": "airport_lounge",
+          "title": "공항 라운지 서비스",
+          "minimumSpend": 0,
+          "annualLimit": 5,
+          "guestCount": 1,
+          "coverage": "전 세계 PP 라운지 (본인+동반 1인)",
+          "conditions": ["카드 발급 후 PP 카드 신청"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+| 항목 | 규칙 |
+|---|---|
+| `id` / `queueKey` | `<카드사 영문>-<브랜드>-<등급>` (대기열 `brandPrograms[].key`와 같게). 같은 등급인데 카드마다 조건이 다르면 뒤에 `-<카드 영문>`을 붙여 따로 |
+| `provider` | `issuer_selection` 카드사가 고른 선택 서비스(발레·라운지 대부분) · `international_network` 브랜드 기본 서비스 |
+| `docDate` | 안내문 기준일(여신금융협회 **심의필 날짜**, 없으면 파일명·표지 날짜). **올해·작년 문서만** 씁니다 |
+| `cards` | 안내문에 적힌 **대상 카드 이름 전부**(카드사 표기 그대로) |
+| `services[].category` | `hotel_valet` 호텔 발레 · `airport_valet` 공항 발레 · `airport_lounge` 공항 라운지 · `airport_coffee` 공항 커피 · `airport_limousine` 리무진·철도 · `airport_fasttrack` 패스트트랙·입국 · `airport_parking` 공항·KTX 주차 · `hotel_benefit` 호텔 객실·F&B 할인 · `dining` · `golf` · `concierge` · `insurance` · `travel_booking` · `other` |
+| `minimumSpend` | 실적 조건(원). 실적 무관이면 `0`. '직전 3개월 월평균'처럼 기준이 다르면 금액은 넣고 `conditions`에 기준을 적기 |
+| `monthlyLimit` 등 | 횟수. **'이용횟수 제한 없이'면 `null`** + conditions에 적기 |
+| `quotaScope` | `per_hotel` 호텔별 · `hotel_shared` 호텔 통합 · `hotel_airport` 호텔·공항 통합 · `per_service` 서비스별 · `shared_group` 기타 통합(→ `sharedWith`에 설명) |
+| `hotels` | `hotel_valet`은 **필수**. 대상 호텔 **전체**(서울·지방 모두)를 안내문 표기 그대로 + `city`. 서울 호텔은 배포 때 발레파킹 화면에 자동 연결됩니다 |
+| `hotelRules` | 호텔별 예외만: 영수증 최소 금액 `receiptMin`(원), 호텔별 횟수, 메모 |
+
+## 7. 상품설명서 정리 `card-terms`
+
+카드 상품설명서(PDF)를 **카드 상세 화면과 같은 표 구조**로 옮깁니다: `구분 | 적용처 | 혜택 | 한도·조건`.
+
+```json
+{
+  "type": "card-terms",
+  "issuer": "신한카드",
+  "collectedAt": "2026-11-21",
+  "collector": "ChatGPT",
+  "cards": [
+    {
+      "cardId": "shinhan-201509030001",
+      "queueKey": "shinhan-201509030001",
+      "name": "신한카드 Mr.Life",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188220_2207.html",
+      "termsUrl": "https://www.shinhancard.com/pconts/download/card/....pdf",
+      "docDate": "2026-01-02",
+      "annualFee": [{"brand": "Visa", "amount": 18000}, {"brand": "국내전용", "amount": 15000}],
+      "brands": ["Visa", "국내전용"],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 일시불·할부 승인 기준",
+      "grace": "발급월 다음 달 말까지 실적 무관",
+      "spendExclusions": ["아파트 관리비", "상품권 구매", "국세·지방세", "단기카드대출"],
+      "benefitExclusions": ["무이자할부", "상품권"],
+      "brandPrograms": ["shinhan-visa-platinum"],
+      "benefits": [
+        {
+          "group": "생활",
+          "label": "공과금",
+          "place": "전기·가스·통신요금 자동납부",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [{"spend": 300000, "cap": 3000}, {"spend": 500000, "cap": 7000}, {"spend": 1000000, "cap": 10000}],
+          "cap": null,
+          "capScope": "월",
+          "shared": "생활 통합 한도",
+          "limits": null,
+          "conditions": ["건당 1만원 이상"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+| 항목 | 규칙 |
+|---|---|
+| `cardId` | 대기열 `cards[].key`(=카드 DB id). 새 카드면 `null` |
+| `annualFee` | 브랜드별 연회비(원). 가족카드·VIP 등은 넣지 않음 |
+| `spendExclusions` / `benefitExclusions` | 안내문의 '실적 제외'·'혜택 제외'를 **항목 하나씩** 쪼갬(각 60자 이내) |
+| `benefits[]` | 상품설명서 혜택 표의 **한 줄 = 한 개**. 같은 혜택이 가맹점마다 율이 다르면 줄을 나눔 |
+| `label` | 구분 칸: 짧은 이름(커피·대중교통·해외·주유) |
+| `place` | 적용처: 가맹점·업종 목록(안내문 표기) |
+| `value` / `valueType` | `"10%"`·`"1,000원"`·`"리터당 60원"`·`"1.5마일"` / `할인`·`적립`·`캐시백`·`무료`·`면제`·`제공` |
+| `tiers` | 실적 구간별 한도. 30만원 이상 3천원 → `{"spend": 300000, "cap": 3000}` |
+| `cap` / `capScope` | 구간 없이 한 가지 한도면 `cap`(원) + `월`·`연`·`일`·`건` |
+| `shared` | '통합 한도'로 묶인 혜택들은 **같은 이름**으로 |
+| `brandPrograms` | 이 카드에 붙는 `brand-services` 프로그램 id(호텔 발레·라운지 등은 거기에) |
+
+## 8. 신상품·단종 알림 `card-products` (검토 대기열)
 
 ```json
 {
@@ -140,13 +317,58 @@
 - `changed`·`discontinued`는 `cardId`(`paymorevent/public/catalog-snapshot.json`의 `id`) 필수
 - 사이트에 바로 반영되지 않습니다. 쌓인 대기열은 사람이 "카드 상품 대기열 반영해 줘"라고 요청할 때 카드 DB에 넣습니다.
 
-## 5. 수집 순서 (매 실행)
+## 9. 실행 한도와 순서 (한 번 실행에 최대한 많이, 하지만 끝까지 마치기)
 
-1. 아래 공식 목록을 차례로 연다. 로그인이 필요하거나 열리지 않으면 그 출처는 건너뛰고 PR 본문에 적는다.
-2. **진행 중·예정** 이벤트만 고른다. 끝난 것, 기간 없는 상시 안내, 공지·당첨자 발표는 뺀다.
-3. 금액·기간·조건은 **상세 페이지 원문**에서 옮긴다. 추측하거나 계산해서 채우지 않는다. 모르면 `null`/`[]`.
-4. 출처별로 파일 하나를 만든다.
-5. 브랜치 `ai/chatgpt/data-YYYY-MM-DD`에서 PR 하나로 올린다(직접 `main` 푸시 금지).
+**한 번 실행 예산** (넘지 않게 스스로 세면서 진행)
+
+| 항목 | 상한 |
+|---|---|
+| 열어 보는 페이지·PDF | 25개 |
+| 새로 쓰는 레코드(이벤트·혜택 줄 합계) | 150개 |
+| 만드는 파일 | 12개 |
+
+- 예산의 **80%**를 쓰면 새 출처를 열지 말고, 지금까지 만든 파일을 검사 규칙(2장·각 장 표)에 맞춰 다시 보고 PR을 올립니다.
+- 한 출처에서 두 번 실패(안 열림·스크립트로만 그려짐·로그인 필요)하면 건너뛰고 PR 본문에 적습니다.
+- 끝내지 못한 항목은 PR 본문 '다음 시작점'에 대기열 key로 적습니다.
+
+**요일별 순서** (한국시간 기준. 하루 한 번 실행을 가정)
+
+| 요일 | 할 일 | 대기열 |
+|---|---|---|
+| 월·목 | `card-events`: 카드사 9곳 + 발급 캐시백 3곳 → 남으면 `hotel-events` 5곳 | `eventSources` (type이 card-events → hotel-events) |
+| 화·금 | `brand-services`: status가 `todo`인 프로그램을 위에서부터, 같은 카드사끼리 묶어 **6~8개** | `brandPrograms` (todo → valet-only 순) |
+| 수·토 | `card-terms`: status가 `todo`인 카드를 위에서부터 **10~15종**(같은 카드사끼리 한 파일) | `cards` |
+| 일 | `travel-events`: 항공사 8곳·면세점 4곳·인천공항 → 남으면 지난주 실패한 출처 다시 | `eventSources` (travel-events) |
+
+- 대기열 `data/collect-queue.json`에서 **status가 `todo`이고, `data/inbox/` 아래 어떤 파일에도 그 key(`queueKey`·`cardId`·`id`)가 없는 것**만 고릅니다. 이렇게 하면 실행이 끊겨도 다음 번에 자연스럽게 이어집니다.
+- `valet-only`는 발레파킹만 손으로 넣어 둔 프로그램이라, 라운지·공항 서비스까지 채우러 다시 봐야 합니다.
+
+## 10. 찾는 요령
+
+**상품설명서·브랜드 서비스 안내 찾기**
+1. 대기열 `cards[].url`(카드 상세 페이지)을 열고 '상품설명서'·'상품안내장'·'국제브랜드 서비스' 링크(PDF)를 찾습니다. `termsUrl`이 있으면 그걸 먼저 엽니다.
+2. 카드사별 위치
+
+| 카드사 | 상품설명서·브랜드 서비스가 있는 곳 |
+|---|---|
+| 신한카드 | 카드 상세 > 상품설명서 PDF(`www.shinhancard.com/pconts/download/card/…`) · 'Visa/Mastercard 서비스 안내' PDF |
+| KB국민카드 | 카드 상세(`card.kbcard.com/CXPRICAC0076.cms?…cooperationcode=…`) > 상세혜택 > 티타늄·Visa 서비스 탭, 상품설명서 |
+| 삼성카드 | `static11.samsungcard.com/wcms/personal/files/` 의 `*_MASTER_*`·`*_AMEX_*`·`*_VISA_*` PDF (파일명 앞 `26`·`2604`처럼 올해 것 우선) |
+| 현대카드 | 카드 상세 > 상품설명서 · 프리미엄 서비스 안내 |
+| 우리카드 | 카드 상세 > 상품설명서 · 이벤트(`prgevnt`) 페이지 |
+| 하나카드 | `m.hanacard.co.kr/leaflet/` 의 PDF (예: `MW003_2026….pdf` = Mastercard World 공통서비스) |
+| 롯데카드 | `image.lottecard.co.kr/webapp/file/` 의 브랜드 서비스 안내 PDF |
+| NH농협카드 | 카드 상세 > 채움특별서비스(해외브랜드) · 상품설명서 |
+| BC카드·은행 | `www.bccard.com/down/individual/…pdf`, 각 은행 카드 상세 |
+
+3. 국제브랜드 공식 목록(호텔 발레 대상 호텔 등): Mastercard `mastercard.co.kr`의 'Premium Mastercard Services 2026' PDF, Visa·AMEX 한국 사이트. 카드사 안내와 다르면 **카드사 안내가 우선**(대부분 그렇게 적혀 있음).
+
+**옮겨 적는 요령**
+- 같은 카드의 안내문이 여러 판이면 **심의필 날짜가 가장 최근**인 것 하나만.
+- 표의 '통합 월 n회'·'호텔별 월 n회'·'공항 발렛과 통합' 같은 말은 `quotaScope`·`sharedWith`로 꼭 옮깁니다(사용자가 가장 헷갈려 하는 부분).
+- 호텔·가맹점 이름은 **안내문 표기 그대로**(줄이거나 영어로 바꾸지 않음). 지역 구분(서울·기타)은 `city`로.
+- '전월 이용금액 30만원 이상', '발급월+1개월까지 유예', '본인 차량에 한해', '영수증 제시' 같은 조건은 해당 칸이나 `conditions`에.
+- 금액 단위: '3천원' `3000`, '2만5천원' `25000`, '1백만원' `1000000`.
 
 | 카드사 | 공식 이벤트 목록 |
 |---|---|
@@ -169,24 +391,35 @@
 | Accor | https://all.accor.com/a/ko/deals-corner.html |
 | Hyatt | https://world.hyatt.com/content/gp/ko/offers.html |
 
-## 6. PR 양식
 
-- 제목: `data: 이벤트 수집 YYYY-MM-DD`
+## 11. PR 양식
+
+- 브랜치 `ai/chatgpt/data-YYYY-MM-DD`, PR 하나. 제목: `data: 수집 YYYY-MM-DD (<오늘 한 일>)`
 - 본문:
 
 ```
 ## 수집 결과
-| 출처 | 진행 중 | 새로 추가 | 건너뜀(이유) |
+| 종류 | 출처 | 레코드 | 대기열 key |
 |---|---|---|---|
-| 하나카드 | 18 | 18 | |
-| 신한카드 | 0 | 0 | 목록이 스크립트로만 보여 읽지 못함 |
+| card-terms | 신한카드 | 카드 12종 · 혜택 97줄 | shinhan-201509030001 외 11 |
+| brand-services | 삼성카드 | 프로그램 3 | samsung-mastercard-world … |
+
+## 예산
+페이지·PDF 21/25 · 레코드 132/150 · 파일 5/12
+
+## 건너뜀
+- 현대카드 상품설명서: 로그인 필요 (2회 실패)
+
+## 다음 시작점
+cards: kb-09246 부터 · brandPrograms: lotte-visa-platinum 부터
 
 작업 도구: ChatGPT 예약 작업
 ```
 
-## 7. 하지 말 것
+## 12. 하지 말 것
 
 - `data/inbox/` 밖의 파일 수정, 기존 inbox 파일 수정·삭제
-- 공식이 아닌 블로그·커뮤니티·뉴스 출처
+- 공식이 아닌 출처(블로그·커뮤니티·뉴스·비교 사이트)
+- 추측·계산으로 채운 값, 작년보다 오래된 안내문
 - 개인 맞춤 혜택(로그인해야 보이는 쿠폰), 개인정보
 - 양식에 없는 항목 추가 (검사에서 실패합니다)
