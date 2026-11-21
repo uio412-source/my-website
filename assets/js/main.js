@@ -161,7 +161,8 @@ document.addEventListener("DOMContentLoaded", () => { reloadIfStale(); });
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") reloadIfStale(); });
 window.addEventListener("pageshow", (e) => { if (e.persisted) reloadIfStale(); }); // 뒤로 가기 캐시로 돌아온 경우
 
-// ---------- 공통: 오른쪽 아래 새로고침 버튼 (데이터 최신화) ----------
+// ---------- 공통: 머리줄 새로고침 버튼 (데이터 최신화) ----------
+// 예전엔 오른쪽 아래 떠 있는 버튼이었으나 목록 숫자를 가려서 테마 버튼 옆으로 옮김.
 // 누르면 캐시를 건너뛰고 서버의 최신 데이터 파일을 다시 받아 지금 화면을 그대로 다시 그림.
 // 각 페이지는 "datarefresh" 이벤트를 받아 detail.tasks에 자기 작업(Promise)을 넣음.
 const RUN_URL = "https://github.com/uio412-source/my-website/actions/workflows/deploy.yml";
@@ -169,15 +170,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (isHotels || !document.querySelector(".site-header")) return;
   const fab = document.createElement("button");
   fab.type = "button";
-  fab.className = "fab-refresh";
+  fab.className = "theme-btn head-refresh";
   fab.setAttribute("aria-label", "데이터 최신화");
   fab.title = "데이터 최신화";
-  fab.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>';
+  fab.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>';
   const toast = document.createElement("div");
   toast.className = "ms-toast";
   toast.setAttribute("role", "status");
   toast.setAttribute("aria-live", "polite");
-  document.body.append(fab, toast);
+  const right = document.querySelector(".site-header .head-right");
+  const themeBtn = right && right.querySelector(".theme-btn");
+  if (themeBtn) right.insertBefore(fab, themeBtn); else document.body.append(fab);
+  document.body.append(toast);
 
   let hideT;
   const show = (html, kind) => {
