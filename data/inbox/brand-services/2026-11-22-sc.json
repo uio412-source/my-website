@@ -1,0 +1,98 @@
+{
+  "type": "brand-services",
+  "issuer": "SC제일은행",
+  "collectedAt": "2026-11-22",
+  "collector": "ChatGPT",
+  "programs": [
+    {
+      "id": "sc-visa-signature-the-red",
+      "brand": "Visa",
+      "tier": "Signature",
+      "provider": "issuer_selection",
+      "docTitle": "SC제일은행-the Red 가이드북",
+      "url": "https://www.hyundaicard.com/upload/card/T_AOB-20260427-1344-68_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_SC_the%20Red_V2_%EA%B3%B5%EC%8B%9C%EC%8B%A4%EC%9A%A9.pdf",
+      "docDate": "2026-04-30",
+      "cards": [
+        "SC제일은행-the Red"
+      ],
+      "services": [
+        {
+          "category": "airport_lounge",
+          "title": "THE LOUNGE 공항 라운지 무료 이용",
+          "minimumSpend": 500000,
+          "grace": "신규 발급 시 카드 수령 등록월 다음 달 이용분까지 전월실적 유예",
+          "holderOnly": true,
+          "annualLimit": 10,
+          "guestCount": 0,
+          "coverage": "전 세계 THE LOUNGE 제휴 공항 라운지",
+          "conditions": [
+            "THE LOUNGE 앱에 해당 카드 등록 후 입장 전에 이용권 발급",
+            "이용권 유효기간 24시간. 미사용 자동 취소 시 횟수 차감 없음",
+            "본인 회원만 이용. 발급 확정월을 포함한 12개월 기준"
+          ]
+        },
+        {
+          "category": "airport_valet",
+          "title": "공항 발레파킹 무료 이용",
+          "minimumSpend": 500000,
+          "grace": "신규 발급 시 카드 수령 등록월 다음 달 이용분까지 전월실적 유예",
+          "holderOnly": true,
+          "monthlyLimit": 10,
+          "quotaScope": "hotel_airport",
+          "sharedWith": "공항·호텔 발레파킹 통합 월 10회",
+          "coverage": "인천국제공항 제1·2여객터미널 공식 주차대행",
+          "conditions": [
+            "본인 회원이 본인 탑승 차량으로 방문",
+            "실물 카드 제시",
+            "주차료 별도"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sc-visa-infinite-the-red-stripe-edition2",
+      "brand": "Visa",
+      "tier": "Infinite",
+      "provider": "issuer_selection",
+      "docTitle": "SC제일은행-the Red Stripe Edition2 가이드북",
+      "url": "https://www.hyundaicard.com/upload/card/T_AOB-20260310-1658-84_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_SC_the%20Red%20St%20Ed2_V3.pdf",
+      "docDate": "2025-12-11",
+      "cards": [
+        "SC제일은행-the Red Stripe Edition2"
+      ],
+      "services": [
+        {
+          "category": "airport_lounge",
+          "title": "THE LOUNGE 공항 라운지 무료 이용",
+          "minimumSpend": 500000,
+          "grace": "신규 발급 시 카드 수령 등록월 다음 달 이용분까지 전월실적 유예",
+          "holderOnly": true,
+          "annualLimit": 10,
+          "guestCount": 0,
+          "coverage": "전 세계 THE LOUNGE 제휴 공항 라운지",
+          "conditions": [
+            "THE LOUNGE 앱에 해당 카드 등록 후 입장 전에 이용권 발급",
+            "이용권 유효기간 24시간. 미사용 자동 취소 시 횟수 차감 없음",
+            "본인 회원만 이용. 발급 확정월을 포함한 12개월 기준"
+          ]
+        },
+        {
+          "category": "airport_valet",
+          "title": "공항 발레파킹 무료 이용",
+          "minimumSpend": 500000,
+          "grace": "신규 발급 시 카드 수령 등록월 다음 달 이용분까지 전월실적 유예",
+          "holderOnly": true,
+          "monthlyLimit": 10,
+          "quotaScope": "hotel_airport",
+          "sharedWith": "공항·호텔 발레파킹 통합 월 10회",
+          "coverage": "인천국제공항 제1·2여객터미널 공식 주차대행",
+          "conditions": [
+            "본인 회원이 본인 탑승 차량으로 방문",
+            "실물 카드 제시",
+            "주차료 별도"
+          ]
+        }
+      ]
+    }
+  ]
+}

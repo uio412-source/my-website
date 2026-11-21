@@ -1,0 +1,97 @@
+{
+  "type": "brand-services",
+  "issuer": "현대카드",
+  "collectedAt": "2026-11-22",
+  "collector": "ChatGPT",
+  "programs": [
+    {
+      "id": "hyundai-visa-infinite-the-black",
+      "brand": "Visa",
+      "tier": "Infinite",
+      "provider": "issuer_selection",
+      "docTitle": "the Black 가이드북",
+      "url": "https://www.hyundaicard.com/upload/card/T_AQ7-20260427-1640-22_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_%EB%B8%94%EB%9E%99_V3.pdf",
+      "docDate": "2026-05-11",
+      "cards": [
+        "the Black"
+      ],
+      "services": [
+        {
+          "category": "airport_lounge",
+          "title": "마티나 골드 라운지 무료 이용",
+          "minimumSpend": 500000,
+          "grace": "신규 발급 시 카드 수령 등록월 다음 달 이용분까지 전월실적 유예",
+          "holderOnly": true,
+          "annualLimit": null,
+          "guestCount": 3,
+          "coverage": "인천국제공항 제2여객터미널 마티나 골드",
+          "conditions": [
+            "본인 회원과 동반 최대 3인",
+            "항공사·좌석 등급 제한 없음",
+            "실물 카드 제시",
+            "이용 횟수 제한 없음"
+          ]
+        },
+        {
+          "category": "airport_valet",
+          "title": "공항 발레파킹 무료 이용",
+          "minimumSpend": 500000,
+          "grace": "신규 발급 시 카드 수령 등록월 다음 달 이용분까지 전월실적 유예",
+          "holderOnly": true,
+          "monthlyLimit": null,
+          "coverage": "인천국제공항",
+          "conditions": [
+            "본인 회원 실물 카드 제시",
+            "주차료 별도",
+            "이용 횟수 제한 없음"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hyundai-visa-signature-the-orange",
+      "brand": "Visa",
+      "tier": "Signature",
+      "provider": "issuer_selection",
+      "docTitle": "the Orange 가이드북",
+      "url": "https://www.hyundaicard.com/upload/card/20260330_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_the%20Orange.pdf",
+      "docDate": "2026-01-13",
+      "cards": [
+        "the Orange"
+      ],
+      "services": [
+        {
+          "category": "airport_lounge",
+          "title": "THE LOUNGE 공항 라운지 무료 이용",
+          "minimumSpend": 500000,
+          "grace": "신규 발급 시 카드 수령 등록월 다음 달 이용분까지 전월실적 유예",
+          "holderOnly": true,
+          "annualLimit": 5,
+          "guestCount": 0,
+          "coverage": "전 세계 THE LOUNGE 제휴 공항 라운지",
+          "conditions": [
+            "THE LOUNGE 앱에 해당 카드 등록 후 입장 전에 이용권 발급",
+            "이용권 유효기간 24시간. 미사용 자동 취소 시 횟수 차감 없음",
+            "본인 회원만 이용. 발급 확정월을 포함한 12개월 기준"
+          ]
+        },
+        {
+          "category": "airport_valet",
+          "title": "공항 발레파킹 무료 이용",
+          "minimumSpend": 500000,
+          "grace": "신규 발급 시 카드 수령 등록월 다음 달 이용분까지 전월실적 유예",
+          "holderOnly": true,
+          "monthlyLimit": 5,
+          "quotaScope": "hotel_airport",
+          "sharedWith": "공항·호텔 발레파킹 통합 월 5회",
+          "coverage": "인천국제공항 제1·2여객터미널 공식 주차대행",
+          "conditions": [
+            "본인 회원이 본인 탑승 차량으로 방문",
+            "실물 카드 제시",
+            "주차료 별도"
+          ]
+        }
+      ]
+    }
+  ]
+}
