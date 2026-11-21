@@ -83,6 +83,8 @@
       }
     });
     try { history.replaceState(null, "", "#" + id); } catch (e) {}
+    // 아래 '커버드콜 vs 본주'(covered.js)가 같은 지수 묶음을 따라 열도록 알림
+    window.dispatchEvent(new CustomEvent("ujasset", { detail: { id } }));
     if (!state.cache[id]) {
       state.cache[id] = await getData(id + ".json");
     }
