@@ -55,6 +55,8 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .mc-tabs button span { margin-left: 4px; font-size: .7rem; opacity: .75; }
 
 .mc-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 10px 0 12px; }
+.mc-listhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 8px; }
+.mc-listhead .mc-count { margin-left: 0; }
 .mc-count { margin-left: auto; font-size: .9rem; font-weight: 800; font-variant-numeric: tabular-nums; }
 .mc-count small { font-size: .74rem; font-weight: 600; color: var(--mc-muted); margin-left: 1px; }
 .mc-select, .mc-field select {
@@ -308,3 +310,14 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
   .cd-g, .cd-t { font-size: .78rem; }
   .cd-g-val b { font-size: .88rem; }
 }
+
+/* 이벤트 상세: 카드 상세와 같은 머리·격자 표 */
+.ed-head { margin: 8px 0 16px; }
+.ed-head .ed-kicker { display: flex; align-items: center; gap: 6px; font-size: .82rem; font-weight: 700; color: var(--mc-muted); }
+.ed-head .ed-kicker .mc-pill { margin-left: auto; }
+.ed-head h1 { margin: 6px 0 0; font-size: 1.3rem; line-height: 1.35; letter-spacing: -.02em; }
+.ed-head .ed-amount { margin-top: 6px; font-size: 1.1rem; font-weight: 800; color: var(--mc-up); }
+.ed-head .cd-actions { margin-top: 14px; }
+.ed-steps { margin: 0; padding: 0; list-style: none; counter-reset: s; border-top: 2px solid var(--mc-text); }
+.ed-steps li { counter-increment: s; display: grid; grid-template-columns: 28px 1fr; gap: 8px; padding: 10px 4px; border-bottom: 1px solid var(--mc-border); font-size: .84rem; line-height: 1.55; overflow-wrap: anywhere; }
+.ed-steps li::before { content: counter(s); font-weight: 800; color: var(--mc-primary); text-align: center; }
