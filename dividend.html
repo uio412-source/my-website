@@ -69,6 +69,32 @@
         <div id="dv-list"><p class="wl-empty" role="status">불러오는 중…</p></div>
       </section>
 
+      <section class="ft" id="ft" aria-labelledby="ft-title" hidden>
+        <div class="wl-sec-head"><h2 id="ft-title">금융소득종합과세 한도</h2><span>2026년 지급분 · 국내 세법 기준</span></div>
+        <div class="ft-card">
+          <div class="ft-top">
+            <div><span class="ft-k">2,000만원 판정에 들어가는 금융소득</span><b class="ft-big" id="ft-total">0원</b></div>
+            <div class="ft-left" id="ft-left"></div>
+          </div>
+          <div class="ft-bar" id="ft-bar"><i></i></div>
+          <div class="ft-scale" aria-hidden="true"><span>0</span><span>1,000만</span><span>2,000만원</span></div>
+          <ul class="ft-rows" id="ft-rows"></ul>
+        </div>
+        <div class="ft-card">
+          <div class="ft-inputs">
+            <label class="fld"><span>예금·채권 이자 (연, 만원)</span><input id="ft-interest" class="sheet-input" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></label>
+            <label class="fld"><span>국내상장 해외·기타 ETF 매도 차익 (올해, 만원)</span><input id="ft-gain" class="sheet-input" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></label>
+            <label class="fld"><span>다른 종합소득 과세표준 (근로·사업, 만원)</span><input id="ft-other" class="sheet-input" type="number" inputmode="decimal" min="0" step="any" placeholder="연말정산 영수증의 과세표준"></label>
+          </div>
+          <div class="ft-tax" id="ft-tax"></div>
+        </div>
+        <details class="ft-card ft-detail" id="ft-detail">
+          <summary>종목별로 어떻게 잡혔는지 <small>분류·계좌·과세 비중을 바꿀 수 있어요</small></summary>
+          <div id="ft-items"></div>
+        </details>
+        <ul class="ft-notes" id="ft-notes"></ul>
+      </section>
+
       <p class="dv-note" id="dv-note"></p>
       <p id="dv-status" class="sr-only" role="status"></p>
     </div>
