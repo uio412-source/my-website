@@ -128,7 +128,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       if (withEvents && !m.events) continue;
       const t = theme;
       if (t !== 'all' && !(t === '혜자카드' ? m.best !== null : t === '호텔 발레' ? valetRules(c.id).length > 0
-        : (ELIGIBILITY_THEMES as readonly string[]).includes(t) ? matchesPaymentEligibility(c, t, 'any') : m.themes.includes(t))) continue;
+        : (ELIGIBILITY_THEMES as readonly string[]).includes(t) ? matchesPaymentEligibility(c, t, t === '상품권 가능' ? 'benefit' : 'any') : m.themes.includes(t))) continue;
       const score = searchScore(query, m.text);
       if (!score) continue;
       out.push({c, score});
