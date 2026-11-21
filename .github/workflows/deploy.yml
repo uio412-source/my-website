@@ -42,6 +42,9 @@ jobs:
       - name: Mr. Travel 혜택 요약 (Mr. Cards 카드사 이벤트에서 해외·여행만)
         continue-on-error: true
         run: python tools/travel/benefits.py
+      - name: Mr. Travel 여행준비 (항공권·호텔·공항 이동·면세점·라운지)
+        continue-on-error: true
+        run: python tools/travel/prep.py
       - name: 호텔 대표 이미지 찾기
         # Marriott 등 이미지 주소가 정해지지 않은 호텔의 og:image를 찾습니다. 실패해도 배포는 계속합니다.
         continue-on-error: true

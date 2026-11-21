@@ -32,7 +32,7 @@ const SITES = [
   {id: 'stocks', name: 'Stocks', desc: '줍줍 차트 · 관심종목 · 배당', href: () => sitePath('../ungjup.html')},
   {id: 'cards', name: 'Cards', desc: '카드상품 · 발급이벤트 · 카드사 이벤트', href: () => sitePath()},
   {id: 'hotels', name: 'Hotels', desc: '티어 · 호텔 · 이벤트 · 발레파킹', href: () => sitePath('../hotels/')},
-  {id: 'travel', name: 'Travel', desc: '해외여행 혜택 · 여행지', href: () => sitePath('../travel/')},
+  {id: 'travel', name: 'Travel', desc: '해외여행 혜택 · 여행지 · 여행준비', href: () => sitePath('../travel/')},
 ] as const;
 
 function SiteSwitch() {
