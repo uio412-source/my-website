@@ -1,0 +1,118 @@
+{
+  "type": "card-terms",
+  "issuer": "BC 바로카드",
+  "collectedAt": "2026-11-21",
+  "collector": "ChatGPT",
+  "cards": [
+    {
+      "cardId": "bc-103127",
+      "queueKey": "bc-103127",
+      "name": "KT 마이알뜰폰 BC 바로카드",
+      "cardType": "credit",
+      "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103127&mbkNo=050",
+      "termsUrl": "https://smsfree.bccard.com/down/individual/customer/103127.pdf",
+      "docDate": "2026-05-08",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 20000
+        },
+        {
+          "brand": "MasterCard",
+          "amount": 20000
+        },
+        {
+          "brand": "VISA",
+          "amount": 23000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "MasterCard",
+        "VISA"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 국내외 가맹점 이용금액(승인일 기준). 해외 및 무승인 거래는 카드사 매출전표 매입시점 기준.",
+      "grace": "최초 카드 또는 모바일 사용 등록일의 다음 달 말까지 최소 실적 구간 혜택 제공",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "연체료",
+        "각종 수수료 및 이자",
+        "건강보험",
+        "국민연금",
+        "고용보험",
+        "산재보험",
+        "장애인고용부담금",
+        "국세",
+        "지방세",
+        "관세",
+        "전기요금",
+        "수도요금",
+        "상하수도요금",
+        "도시가스요금",
+        "여권발급비용",
+        "과태료",
+        "범칙금",
+        "벌과금",
+        "국가·공공기관·공공단체 개설 가맹점 이용금액",
+        "초·중·고교 납입금",
+        "대학등록금",
+        "아파트관리비",
+        "기프트카드 구매 및 충전",
+        "선불카드 및 전자지급수단 구매·충전",
+        "상품권 구매금액"
+      ],
+      "benefitExclusions": [],
+      "brandPrograms": [],
+      "benefits": [
+        {
+          "group": "생활",
+          "label": "통신요금",
+          "place": "KT 알뜰폰 사업자",
+          "value": "최대 13,000원",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 7000
+            },
+            {
+              "spend": 700000,
+              "cap": 13000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "KT 알뜰폰 통신요금 자동이체 통합 한도",
+          "limits": null,
+          "conditions": [
+            "이 카드로 KT 알뜰폰 요금 자동이체 등록 후 카드사에 청구된 건에 적용",
+            "자동이체가 여러 건이면 월 한도 안에서 합산 할인",
+            "월 통신요금이 한도보다 적으면 청구된 통신요금만큼 할인",
+            "재발급 후 자동이체 재신청 필요",
+            "거래정지·한도 부족 등으로 자동이체가 실패하면 할인 제외"
+          ]
+        },
+        {
+          "group": "생활",
+          "label": "주유",
+          "place": "SK 주유소",
+          "value": "1%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [],
+          "cap": 1000,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "충전소 및 LPG 제외"
+          ]
+        }
+      ]
+    }
+  ]
+}
