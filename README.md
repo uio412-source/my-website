@@ -32,10 +32,11 @@ python tools/ungjup/build.py
 
 ## Mr. Hotels
 
-`hotels/`는 메뉴 **티어 · 호텔 · 이벤트** 세 가지입니다(데스크톱은 위 메뉴, 모바일은 하단 탭바).
-- **티어** (`hotels/index.html`): Accor·IHG·Marriott·Hilton 등급별 달성 방법(숙박·제휴카드)·보너스 적립·조식/라운지/업그레이드/체크아웃, 국내 제휴카드 요약
-- **호텔** (`hotels/list.html`): 국가·도시·나의 등급 기준 호텔별 조식·라운지·룸업글 (`hotels/directory.json`, 대표 이미지 `hotels/images.json`)
+`hotels/`는 메뉴 **호텔 · 이벤트 · 발레파킹** 세 가지입니다(데스크톱은 위 메뉴, 모바일은 하단 탭바).
+- **호텔** (`hotels/index.html`): 전세계 → 나라 → 도시 → 동네로 들어가는 지도 중심 호텔 검색. 호텔을 누르면 사진·성급·1박 평균가·등급별 조식·라운지·룸업글 (`hotels/directory.json`, 위치 `hotels/areas.json`, 지도 `hotels/map.json`, 대표 이미지 `hotels/images.json`)
+- **등급표** (호텔 화면 오른쪽 위 단추): Accor·IHG·Marriott·Hilton 등급별 달성 방법(숙박·제휴카드)·보너스 적립·조식/라운지/업그레이드/체크아웃, 국내 제휴카드 요약
 - **이벤트** (`hotels/events.html`): 호텔 체인 공식 프로모션 요약 (`hotels/events.json`)
+- **발레파킹** (`hotels/valet.html`): 가진 카드로 무료 발레가 되는 서울 호텔 (`hotels/valet.json`)
 
 종목 화면과 카드 화면에서는 로고 옆 사이트 전환 메뉴로 이동할 수 있습니다.
 

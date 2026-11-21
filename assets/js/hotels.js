@@ -1,5 +1,5 @@
-// Mr. Hotels — 티어(index.html) · 호텔(list.html) · 이벤트(events.html)
-// 프로그램(Accor·IHG…)과 등급 선택은 이 브라우저에 저장해 세 화면이 같이 씁니다.
+// Mr. Hotels — 호텔 지도(index.html, 오른쪽 위 '등급표' 팝업) · 이벤트(events.html)
+// 프로그램(Accor·IHG…)과 등급 선택은 이 브라우저에 저장해 화면들이 같이 씁니다. list.html은 index.html로 넘어갑니다.
 (() => {
   const page = document.body.dataset.page;
   const STORE_P = 'mrhotels.program';
@@ -181,24 +181,11 @@
 
   // ---------- 공통 도우미 ----------
   const ids = (list) => list.filter((id) => P[id]);
-  function pickProgram(allowed) {
-    const fromHash = location.hash.slice(1).toLowerCase();
-    if (allowed.includes(fromHash)) return fromHash;
-    const saved = store.get(STORE_P);
-    return allowed.includes(saved) ? saved : allowed[0];
-  }
-  function pickTier(id) {
-    const info = P[id];
-    const q = new URLSearchParams(location.search).get('t');
-    const n = q !== null ? Number(q) : Number(store.get(STORE_T + id) ?? info.defaultTier);
-    return Number.isInteger(n) && n >= 0 && n < info.tiers.length ? n : info.defaultTier;
-  }
   const tile = (abbr, tone, extra = '') =>
     `<span class="tile${extra}" data-tone="${tone}" data-len="${Math.min(abbr.length, 4)}" aria-hidden="true">${esc(abbr)}</span>`;
 
-  // 프로그램 탭: 같은 모양의 알약 탭(관심종목 보기 탭과 동일)
-  function renderTabs(list, current, counts, onPick) {
-    const box = $('programs');
+  // 프로그램 탭: 같은 모양의 알약 탭(관심종목 보기 탭과 동일). box를 안 주면 화면의 #hx-programs
+  function renderTabs(list, current, counts, onPick, box = $('programs')) {
     box.innerHTML = list.map((id) => {
       const label = P[id] ? P[id].name : id === 'all' ? '전체' : '기타';
       const n = counts && counts[id] != null ? `<span>${counts[id]}</span>` : '';
@@ -218,158 +205,602 @@
   }
   const setHash = (id) => history.replaceState(null, '', location.pathname + '#' + id); // ?t= 도 함께 지움
 
-  // ---------- 티어 ----------
-  function tierPage() {
-    const list = ids(ORDER).filter((id) => !P[id].noTier);
-    let current = pickProgram(list);
+  const myTier = (id) => {
+    const info = P[id];
+    if (!info || info.noTier) return 0;
+    const n = Number(store.get(STORE_T + id) ?? info.defaultTier);
+    return Number.isInteger(n) && n >= 0 && n < info.tiers.length ? n : info.defaultTier;
+  };
 
+  // ---------- 등급표 팝업 (호텔 지도 오른쪽 위 '등급표' 버튼) ----------
+  // 등급을 누르면 그 프로그램의 '나의 등급'으로 저장하고 지도 색을 바꿈
+  function tierDialog(onPick) {
+    const dlg = $('tiers');
+    const list = ids(ORDER).filter((id) => !P[id].noTier);
+    let current = list[0];
     function draw() {
       const info = P[current];
-      store.set(STORE_P, current);
-      $('sub').textContent = `${info.name} · 등급별 달성 방법·제휴카드·혜택 · 2026년 기준`;
-
-      // 한눈에: 혜택별 시작 등급
+      renderTabs(list, current, null, (id) => { current = id; draw(); }, $('t-programs'));
+      $('t-sub').textContent = `${info.name} · 등급별 달성 방법·제휴카드·혜택 · 2026년 기준. 등급을 누르면 나의 등급으로 지도에 반영돼요.`;
       $('glance').innerHTML = PERKS.slice(0, 4).map(([k, label]) => {
         const i = info.tiers.findIndex((t) => t.perks && t.perks[k]);
         return `<div><span>${label}</span><b>${i < 0 ? '없음' : esc(info.tiers[i].n) + '부터'}</b></div>`;
       }).join('');
-      $('glance').hidden = false;
-
-      const saved = store.get(STORE_T + current);
-      const mine = saved === null ? -1 : Number(saved); // 호텔 화면에서 고른 등급만 표시
-      $('tiers').innerHTML = info.tiers.map((t, i) => {
+      const mine = myTier(current);
+      $('t-rows').innerHTML = info.tiers.map((t, i) => {
         const perks = t.perks ? PERKS.filter(([k]) => t.perks[k]).map(([k, label]) =>
           `<span class="hx-perk" data-k="${k}"><b>${label}</b>${esc(t.perks[k])}</span>`).join('') :
           '<span class="hx-perk" data-k="base">회원 요금 · 포인트 적립</span>';
         const how = `<span class="hx-how"><span><b>숙박</b>${esc(t.req)}</span>${t.card ? `<span class="via"><b>카드</b>${esc(t.card)}</span>` : ''}</span>`;
-        return `<a class="wl-row hx-tier" href="list.html?t=${i}#${current}" data-i="${i}"${i === mine ? ' aria-current="true"' : ''}>
+        return `<button type="button" class="wl-row hx-tier" data-i="${i}"${i === mine ? ' aria-current="true"' : ''}>
           ${tile(t.a, 't' + Math.min(i, 5))}
           <span class="wl-id"><span class="nm">${esc(t.n)}${i === mine ? '<em class="hx-mine">나의 등급</em>' : ''}</span>${how}</span>
           <span class="hx-bonus${t.bonus ? '' : ' none'}">${t.bonus ? '+' + t.bonus + '%' : '—'}<small>보너스 적립</small></span>
           <span class="hx-perks">${perks}</span>
-        </a>`;
+        </button>`;
       }).join('');
-      $('foot').innerHTML = `${esc(info.tierNote)} 등급을 누르면 그 등급으로 서울 호텔별 혜택을 볼 수 있어요. <a href="${info.terms}" target="_blank" rel="noopener">공식 약관 ↗</a>`;
-
+      $('t-foot').innerHTML = `${esc(info.tierNote)} <a href="${info.terms}" target="_blank" rel="noopener">공식 약관 ↗</a>`;
       const cards = info.cards || [];
-      $('cardsec').innerHTML = `<section class="hx-sec"><div class="wl-sec-head"><h2>${info.name} 제휴카드</h2><span>국내 발급 · 등급 혜택 요약</span></div>` +
+      $('t-cards').innerHTML = `<div class="wl-sec-head"><h3>${info.name} 제휴카드</h3><span>국내 발급 · 등급 혜택 요약</span></div>` +
         (cards.length ? `<div class="hx-cards">${cards.map((c) => `<article class="hx-card hx-cc">
           <div class="hx-card-top"><span class="hx-brand">${esc(c.issuer)}</span><span class="hx-fee">${esc(c.fee)}</span></div>
           <h3>${esc(c.name)}</h3>
           <p class="hx-benefit">${esc(c.grant)}</p>
           <ul class="hx-list">${c.perks.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
         </article>`).join('')}</div>` : '') +
-        (info.cardNote ? `<p class="hx-foot">${esc(info.cardNote)}</p>` : '') + '</section>';
+        (info.cardNote ? `<p class="hx-foot">${esc(info.cardNote)}</p>` : '');
     }
-    $('tiers').addEventListener('click', (e) => {
-      const a = e.target.closest('a[data-i]');
-      if (a) store.set(STORE_T + current, a.dataset.i);
+    $('t-rows').addEventListener('click', (e) => {
+      const b = e.target.closest('button[data-i]');
+      if (!b) return;
+      store.set(STORE_T + current, b.dataset.i);
+      onPick(current);
+      dlg.close();
     });
-    renderTabs(list, current, null, (id) => { current = id; setHash(id); draw(); });
-    draw();
-    window.addEventListener('hashchange', () => { current = pickProgram(list); renderTabs(list, current, null, $('programs')._pick); draw(); });
+    dlg.addEventListener('click', (e) => { if (e.target === dlg || e.target.closest('[data-close]')) dlg.close(); });
+    return {
+      open(program) {
+        if (list.includes(program)) current = program;
+        else if (list.includes(store.get(STORE_P))) current = store.get(STORE_P);
+        draw();
+        dlg.showModal();
+      },
+    };
   }
 
-  // ---------- 호텔 ----------
+  // ---------- 호텔 지도: 전세계 → 나라 → 도시(구·동네) → 동네(호텔) ----------
   const DOT = [['bf', '조식'], ['lounge', '라운지'], ['up', '룸업글']];
-  async function listPage() {
-    const [data, found] = await Promise.all([MS.getJSON('directory.json'), MS.getJSON('images.json').catch(() => ({}))]);
-    const country = $('country'), citySel = $('city'), tierSel = $('tier');
+  async function mapPage() {
+    const [data, found, A, geo, world, pdata] = await Promise.all([
+      MS.getJSON('directory.json'), MS.getJSON('images.json').catch(() => ({})), MS.getJSON('areas.json'),
+      MS.getJSON('map.json').catch(() => ({ cities: {} })), MS.getJSON('../travel/world.json'),
+      MS.getJSON('../travel/places.json').catch(() => ({ places: [] })),
+    ]);
     const list = ids(ORDER);
-    let current = pickProgram(list);
+    const tabs = ['all', ...list];
     const params = new URLSearchParams(location.search);
-    if (params.has('t') && !P[current].noTier) store.set(STORE_T + current, String(pickTier(current)));
+    const h0 = location.hash.slice(1).toLowerCase();
+    let current = tabs.includes(h0) ? h0 : tabs.includes(store.get(STORE_P)) ? store.get(STORE_P) : 'all';
+    // 예전 주소(list.html?t=3#marriott)로 들어오면 그 등급을 저장
+    if (params.has('t') && P[current] && !P[current].noTier) {
+      const t = Number(params.get('t'));
+      if (Number.isInteger(t) && t >= 0 && t < P[current].tiers.length) store.set(STORE_T + current, String(t));
+    }
+    const day = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+    const placeOf = Object.fromEntries((pdata.places || []).map((p) => [p.id, p]));
 
-    const opts = (sel, values, selected) => sel.replaceChildren(...values.map(([v, t]) => new Option(t, v, false, v === selected)));
-    const city = () => data.countries[country.selectedIndex].cities[citySel.selectedIndex];
-    const day = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
-    function updateAddress() {
+    // 호텔 항목 펼치기: 같은 호텔이 HOTELLUX와 체인에 함께 있으면(same) '전체'에서는 체인 쪽 하나만
+    const entries = [];
+    for (const c of data.countries) for (const ct of c.cities) for (const [pg, hs] of Object.entries(ct.programs)) for (const h of hs) {
+      entries.push({ pg, h, country: c.name, city: ct.name, area: A.alias[h.district] || h.district, key: pg + ':' + h.id });
+    }
+    const byKey = Object.fromEntries(entries.map((e) => [e.key, e]));
+    const alsoVia = {};
+    for (const e of entries) if (e.h.same && byKey[e.h.same]) (alsoVia[e.h.same] ||= []).push(e);
+    const imageOf = (e, depth = 0) => e.h.image || found[e.key] ||
+      (e.h.same && depth < 2 && byKey[e.h.same] ? imageOf(byKey[e.h.same], depth + 1) : '') ||
+      (alsoVia[e.key] || []).map((x) => x.h.image || found[x.key]).find(Boolean) || '';
+    const flagOf = (e) => (e.h.closedFrom && e.h.closedFrom <= day ? { note: e.h.closureNote, closed: true } : flags[e.pg](myTier(e.pg), e.h.profile));
+    const score = (f) => (f.bf ? 1 : 0) + (f.lounge ? 1 : 0) + (f.up ? 1 : 0);
+    const shownAll = () => entries.filter((e) => (current === 'all' ? !(e.h.same && byKey[e.h.same]) : e.pg === current));
+
+    // ----- 투영 (travel.js와 같은 Natural Earth, 태평양 중심) -----
+    const project = (lon, lat) => {
+      let l = lon - world.l0;
+      l = (((l + 180) % 360) + 360) % 360 - 180;
+      const lam = (l * Math.PI) / 180, phi = (lat * Math.PI) / 180, p2 = phi * phi, p4 = p2 * p2;
+      const x = lam * (0.8707 - 0.131979 * p2 + p4 * (-0.013791 + p4 * (0.003971 * p2 - 0.001529 * p4)));
+      const y = phi * (1.007226 + p2 * (0.015085 + p4 * (-0.044475 + 0.028874 * p2 - 0.005916 * p4)));
+      return [world.tx + world.k * x, world.ty - world.k * y];
+    };
+    const pt = (ll) => project(ll[1], ll[0]);
+    const cityBox = (name) => {
+      const [w, s, e, n] = A.cities[name].box;
+      const [x0, y1] = project(w, s), [x1, y0] = project(e, n);
+      return [x0, y0, x1, y1];
+    };
+    const union = (bs) => [Math.min(...bs.map((b) => b[0])), Math.min(...bs.map((b) => b[1])), Math.max(...bs.map((b) => b[2])), Math.max(...bs.map((b) => b[3]))];
+    const countryOf = (name) => data.countries.find((c) => c.name === name);
+    const areaPt = (e) => (A.hotels[e.key] ? pt(A.hotels[e.key]) : pt(A.cities[e.city].areas[e.area]));
+
+    // ----- 상태 -----
+    const S = { country: null, city: null, areas: null };
+    let custom = null; // 같은 단계 안에서 겹친 거품을 눌러 더 확대한 범위
+    const level = () => (S.areas ? 3 : S.city ? 2 : S.country ? 1 : 0);
+    (() => { // 주소 ?at=나라/도시/동네
+      const at = (params.get('at') || '').split('/').filter(Boolean);
+      if (at[0] && countryOf(at[0])) {
+        S.country = at[0];
+        const cs = countryOf(at[0]).cities;
+        if (at[1] && cs.some((c) => c.name === at[1])) S.city = at[1];
+        else if (cs.length === 1) S.city = cs[0].name;
+        if (S.city && at[2]) {
+          const as = at.slice(2).filter((a) => A.cities[S.city].areas[a]);
+          if (as.length) S.areas = as;
+        }
+      }
+    })();
+    const areaName = (as) => (as.length <= 2 ? as.join('·') : `${as.slice(0, 2).join('·')} 외 ${as.length - 2}`);
+    const inScope = (e) => (!S.country || e.country === S.country) && (!S.city || e.city === S.city) && (!S.areas || S.areas.includes(e.area));
+    function saveUrl() {
       const url = new URL(location.href);
       url.searchParams.delete('t');
-      url.searchParams.delete('view');
-      url.hash = current;
-      history.replaceState(null, '', url);
-    }
-    // 대표 이미지: 호텔에 적힌 image → 배포 때 찾은 images.json → 같은 호텔(same)의 이미지
-    const byKey = {};
-    for (const c of data.countries) for (const ct of c.cities) for (const [pg, hs] of Object.entries(ct.programs)) for (const h of hs) byKey[pg + ':' + h.id] = h;
-    const imageOf = (pg, h, depth = 0) => h.image || found[pg + ':' + h.id] ||
-      (h.same && depth < 2 && byKey[h.same] ? imageOf(h.same.split(':')[0], byKey[h.same], depth + 1) : '');
-
-    function fillCities() {
-      opts(citySel, data.countries[country.selectedIndex].cities.map((c, i) => [String(i), c.name]), '0');
-    }
-    function selectProgram() {
-      const info = P[current];
+      const at = [S.country, S.city, ...(S.areas || [])].filter(Boolean);
+      url.searchParams.delete('at');
+      let q = url.searchParams.toString();
+      if (at.length) q = (q ? q + '&' : '') + 'at=' + at.map(encodeURIComponent).join('/'); // 주소에 '/'가 그대로 보이게
+      history.replaceState(null, '', url.pathname + (q ? '?' + q : '') + '#' + current);
       store.set(STORE_P, current);
-      const counts = Object.fromEntries(list.map((id) => [id, (city().programs[id] || []).length]));
-      renderTabs(list, current, counts, pick);
-      $('tier-field').hidden = !!info.noTier;
-      if (!info.noTier) opts(tierSel, info.tiers.map((t, i) => [String(i), t.n]), String(pickTier(current)));
-      const programs = [current];
-      $('conditions').textContent = listInfo[current].condition;
-      const sources = programs.flatMap((id) => [
-        [P[id].name + ' 등급 약관', P[id].terms], ...listInfo[id].sources,
-      ]);
-      sources.push(['호텔업 등급결정 현황', 'https://www.hotelrating.or.kr/hotel']);
-      $('sources').innerHTML = sources
-        .map(([t, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join('');
-      const abroad = data.countries[country.selectedIndex].name !== '한국';
-      $('checked').textContent = '목록 대조일 ' + data.updated.replaceAll('-', '.') +
-        (abroad ? ' · 해외 성급은 브랜드 등급 기준 추정 · 해외 라운지는 호텔 공식 정보 기준이며 바뀔 수 있습니다' : ' · 성급은 호텔·공개 등급 자료 기준') +
-        ' · 사진은 각 호텔 공식 사이트 이미지입니다.';
-      render();
     }
 
-    function render() {
-      const info = P[current], ct = city();
-      const t = info.noTier ? 0 : Number(tierSel.value);
-      const rows = (ct.programs[current] || []).map((h) => ({
-        h, f: h.closedFrom && h.closedFrom <= day ? { note: h.closureNote } : flags[current](t, h.profile),
-      }));
-      const score = (f) => (f.bf ? 1 : 0) + (f.lounge ? 1 : 0) + (f.up ? 1 : 0);
-      rows.sort((a, b) => score(b.f) - score(a.f) || (b.h.stars || 0) - (a.h.stars || 0) || a.h.name.localeCompare(b.h.name, 'ko'));
-      const n = (k) => rows.filter((r) => r.f[k]).length;
-      $('sub').textContent = `${ct.name} · ${info.name} ${rows.length}곳` + (info.noTier ? ' · 혜택 포함 요금 기준' : ` · ${info.tiers[t].n} 기준`);
-      if (!rows.length) {
-        const has = list.filter((id) => (ct.programs[id] || []).length).map((id) => P[id].name);
-        $('list').innerHTML = `<div class="wl-rows"><p class="wl-empty">${esc(ct.name)}에는 아직 정리한 ${esc(info.name)} 호텔이 없습니다.${has.length ? ` (${esc(has.join(' · '))} 목록은 있어요)` : ''}</p></div>`;
-        return;
+    // ----- 지도 바탕 -----
+    const box = $('map'), svg = $('svg'), marks = $('marks');
+    // 세계: 해안선·국경 선(world.json) / 나라·도시: 10m 땅을 칠하고 바다는 바탕색(map.json)
+    const countryLayers = Object.entries(geo.countries || {}).map(([name, c]) => `<g class="hm-cn" data-country="${esc(name)}"><path class="hm-landfill" d="${c.land}"/></g>`).join('');
+    const cityLayers = Object.entries(geo.cities || {}).map(([name, c]) => `<g class="hm-cl" data-city="${esc(name)}">
+      ${c.land ? `<path class="hm-landfill" d="${c.land}"/>` : ''}
+      ${(c.gu || []).map((g) => `<path class="hm-gu" data-n="${esc(g.n)}" d="${g.d}"/>`).join('')}
+      ${c.rivers ? `<path class="hm-river" d="${c.rivers}"/>` : ''}</g>`).join('');
+    svg.innerHTML = `<path class="hm-borders hm-world" d="${world.borders}"/><path class="hm-land hm-world" d="${world.land}"/>${countryLayers}${cityLayers}`;
+
+    let vb = [0, 0, world.w, world.h];
+    const size = () => [Math.max(1, box.clientWidth), Math.max(1, box.clientHeight)];
+    const toPx = (x, y) => { const [W, H] = size(); return [(x - vb[0]) * W / vb[2], (y - vb[1]) * H / vb[3]]; };
+    // 범위 [x0,y0,x1,y1]를 지도 상자 비율에 맞춰 여백과 함께
+    const fit = (b, pad = 0.12, minW = 0) => {
+      const [W, H] = size(), ar = W / H;
+      let w = Math.max(b[2] - b[0], minW), h = b[3] - b[1];
+      w *= 1 + pad * 2; h *= 1 + pad * 2;
+      if (w / h < ar) w = h * ar; else h = w / ar;
+      const cx = (b[0] + b[2]) / 2, cy = (b[1] + b[3]) / 2;
+      return [cx - w / 2, cy - h / 2, w, h];
+    };
+    const AREA_W = (city) => { const b = cityBox(city); return (b[2] - b[0]) * 0.3; };
+    function target() {
+      if (custom) return custom;
+      const shown = shownAll();
+      if (S.areas) {
+        const ps = shown.filter(inScope).map(areaPt);
+        const c = ps.length ? [ps.reduce((a, p) => a + p[0], 0) / ps.length, ps.reduce((a, p) => a + p[1], 0) / ps.length] : pt(A.cities[S.city].areas[S.areas[0]]);
+        const w = AREA_W(S.city);
+        return fit([c[0] - w / 2, c[1] - w / 4, c[0] + w / 2, c[1] + w / 4], 0);
       }
-      const sum = `<p class="hx-sum">${DOT.map(([k, l]) => `<span><i class="hx-pink" aria-hidden="true"></i>${l} <b>${n(k)}</b>곳</span>`).join('')}</p>`;
+      if (S.city) return fit(cityBox(S.city), 0.04);
+      if (S.country) return fit(union(countryOf(S.country).cities.map((c) => cityBox(c.name))), 0.25, 6);
+      const ps = data.countries.map((c) => pt(A.countries[c.name].ll));
+      return fit([Math.min(...ps.map((p) => p[0])), Math.min(...ps.map((p) => p[1])), Math.max(...ps.map((p) => p[0])), Math.max(...ps.map((p) => p[1]))], 0.2);
+    }
+
+    // ----- 표시: 거품(나라·도시·동네)과 호텔 핀 -----
+    const MAXR = { 0: 26, 1: 28, 2: 24 };
+    // 좁은 화면에선 거품을 조금 작게
+    const radius = (n, lv) => Math.min(MAXR[lv], 12 + 2.8 * Math.sqrt(n)) * Math.max(0.64, Math.min(1, size()[0] / 700));
+    let marksData = [];
+    function bubbles(view) {
+      const shown = shownAll().filter(inScope);
+      const lv = level();
+      const [W, H] = size();
+      const px = (p) => [(p[0] - view[0]) * W / view[2], (p[1] - view[1]) * H / view[3]];
+      let items = [];
+      if (lv === 0) {
+        for (const c of data.countries) {
+          const n = shown.filter((e) => e.country === c.name).length;
+          if (n) items.push({ kind: 'country', id: c.name, label: c.name, n, p: pt(A.countries[c.name].ll) });
+        }
+      } else if (lv === 1) {
+        for (const ct of countryOf(S.country).cities) {
+          const n = shown.filter((e) => e.city === ct.name).length;
+          const b = cityBox(ct.name);
+          if (n) items.push({ kind: 'city', id: ct.name, label: ct.name, n, p: [(b[0] + b[2]) / 2, (b[1] + b[3]) / 2] });
+        }
+      } else {
+        const city = A.cities[S.city];
+        const cnt = {};
+        for (const e of shownAll().filter((e) => e.city === S.city)) cnt[e.area] = (cnt[e.area] || 0) + 1;
+        for (const [a, n] of Object.entries(cnt)) {
+          if (lv === 3 && S.areas.includes(a)) continue; // 고른 동네는 호텔 핀으로
+          items.push({ kind: 'area', id: a, label: a, n, p: pt(city.areas[a]), dim: lv === 3 });
+        }
+      }
+      // 화면에서 겹치는 거품은 하나로 합침(호텔 많은 쪽 이름). 거품 아래 이름표 자리까지 겹침으로 봄
+      const textW = (t) => Array.from(t).reduce((w, ch) => w + (/[가-힣]/.test(ch) ? 11.5 : 7), 10);
+      const overlap = (a, b) => a[0] < b[2] && b[0] < a[2] && a[1] < b[3] && b[1] < a[3];
+      const nameOf = (ms) => {
+        const ls = ms.map((x) => x.label);
+        if (ls.length === 1) return ls[0];
+        if (ls.length === 2 && (ls[0] + ls[1]).length <= 8) return ls.join('·');
+        return `${ls[0]} 외 ${ls.length - 1}`;
+      };
+      const join = (o, it) => {
+        const t = o.n + it.n;
+        o.p = [(o.p[0] * o.n + it.p[0] * it.n) / t, (o.p[1] * o.n + it.p[1] * it.n) / t];
+        o.n = t;
+        o.members.push(...it.members);
+        o.members.sort((x, y) => y.n - x.n);
+        o.s = px(o.p);
+        o.r = radius(t, Math.min(lv, 2)) * (o.dim ? 0.75 : 1);
+        o.label = nameOf(o.members);
+      };
+      items.sort((a, b) => b.n - a.n);
+      const out = items.map((it) => {
+        const o = { ...it, s: px(it.p), r: radius(it.n, Math.min(lv, 2)) * (it.dim ? 0.75 : 1) };
+        o.members = [{ ...o }];
+        return o;
+      });
+      // 거품끼리 겹치면 합침(합쳐서 커진 거품이 또 겹치면 다시)
+      const near = (a, b) => Math.hypot(a.s[0] - b.s[0], a.s[1] - b.s[1]) < a.r + b.r + 4;
+      for (let again = true; again;) {
+        again = false;
+        search: for (let i = 0; i < out.length; i++) for (let j = i + 1; j < out.length; j++) {
+          if (near(out[i], out[j])) { join(out[i], out[j]); out.splice(j, 1); again = true; break search; }
+        }
+      }
+      // 이름표는 호텔 많은 거품부터 아래·위·오른쪽·왼쪽 중 빈 자리에 붙이고, 자리가 없으면 숨김(이름은 아래 칩에)
+      const [MW, MH] = size();
+      const placed = out.map((o) => [o.s[0] - o.r, o.s[1] - o.r, o.s[0] + o.r, o.s[1] + o.r]);
+      for (const o of out.slice().sort((a, b) => b.n - a.n)) {
+        const w = textW(o.label), [x, y] = o.s, r = o.r;
+        const spots = [['b', [x - w / 2, y + r + 1, x + w / 2, y + r + 18]], ['t', [x - w / 2, y - r - 18, x + w / 2, y - r - 1]],
+          ['r', [x + r + 2, y - 9, x + r + 2 + w, y + 9]], ['l', [x - r - 2 - w, y - 9, x - r - 2, y + 9]]];
+        const ok = spots.find(([, b]) => b[0] >= 0 && b[2] <= MW && b[1] >= 0 && b[3] <= MH && !placed.some((q) => q !== null && overlap(q, b) && !(q[0] === x - r && q[1] === y - r)));
+        o.lp = ok ? ok[0] : null;
+        if (ok) placed.push(ok[1]);
+      }
+      return out;
+    }
+    function hotelPins(view) {
+      if (!S.areas) return [];
+      const [W, H] = size();
+      const ups = view[2] / W; // 1px = 지도 단위
+      const hs = shownAll().filter(inScope).map((e) => ({ e, f: flagOf(e) }))
+        .sort((a, b) => score(b.f) - score(a.f) || (b.e.h.stars || 0) - (a.e.h.stars || 0) || a.e.h.name.localeCompare(b.e.h.name, 'ko'));
+      const exact = hs.filter((x) => A.hotels[x.e.key]);
+      const ring = hs.filter((x) => !A.hotels[x.e.key]);
+      const c = ring.length ? ring.reduce((a, x) => { const p = pt(A.cities[x.e.city].areas[x.e.area]); return [a[0] + p[0] / ring.length, a[1] + p[1] / ring.length]; }, [0, 0]) : null;
+      const pins = exact.map((x) => ({ kind: 'hotel', ...x, p: pt(A.hotels[x.e.key]) }));
+      // 위치가 동네 단위라 동네 지점 둘레에 고리로 놓음(가운데부터 8·14·20개씩)
+      let i = 0, ringNo = 0;
+      const caps = [1, 8, 14, 20, 26];
+      while (i < ring.length) {
+        const cap = ring.length === 1 ? 1 : caps[Math.min(ringNo + 1, caps.length - 1)];
+        const take = ring.slice(i, i + cap);
+        const R = ring.length === 1 ? 0 : (32 + ringNo * 26) * ups;
+        take.forEach((x, k) => {
+          const a = -Math.PI / 2 + (2 * Math.PI * k) / take.length + ringNo * 0.35;
+          pins.push({ kind: 'hotel', ...x, p: [c[0] + R * Math.cos(a), c[1] + R * Math.sin(a)] });
+        });
+        i += cap;
+        ringNo++;
+      }
+      return { pins, center: c, R: ring.length > 1 ? (32 + (ringNo - 1) * 26 + 17) : 20 };
+    }
+    let ringInfo = null;
+    function buildMarks(view) {
+      const hp = hotelPins(view);
+      ringInfo = hp && hp.center ? hp : null;
+      let bs = bubbles(view);
+      if (ringInfo) { // 고리와 겹치는 흐린 동네 거품은 숨김
+        const [W, H] = size();
+        const c = [(ringInfo.center[0] - view[0]) * W / view[2], (ringInfo.center[1] - view[1]) * H / view[3]];
+        bs = bs.filter((b) => Math.hypot(b.s[0] - c[0], b.s[1] - c[1]) > ringInfo.R + b.r + 16);
+      }
+      marksData = [...bs, ...(hp.pins || [])];
+      const area = S.areas ? areaName(S.areas) : '';
+      marks.innerHTML = (ringInfo ? `<div class="hm-ring" aria-hidden="true"><span>${esc(area)} 일대</span></div>` : '') + marksData.map((m, i) => {
+        if (m.kind === 'hotel') {
+          const f = m.f;
+          const cls = f.closed ? 'off' : f.bf || f.lounge ? 'full' : f.up ? 'up' : 'off';
+          return `<button type="button" class="hm-pin ${cls}" data-i="${i}" aria-label="${esc(m.e.h.name)} · ${m.e.h.stars || ''}성 · ${DOT.filter(([k]) => f[k]).map(([, l]) => l).join('·') || '혜택 없음'}" title="${esc(m.e.h.name)}"><i>${m.e.h.stars || ''}</i></button>`;
+        }
+        return `<button type="button" class="hm-bub k-${m.kind}${m.dim ? ' dim' : ''}${m.lp ? ' lp-' + m.lp : ' nolab'}" data-i="${i}" style="--r:${m.r.toFixed(1)}px" aria-label="${esc(m.label)} 호텔 ${m.n}곳"><b>${m.n}</b><span>${esc(m.label)}</span></button>`;
+      }).join('');
+      placeMarks();
+    }
+    function placeMarks() {
+      const els = marks.children;
+      let k = 0;
+      if (ringInfo) {
+        const [x, y] = toPx(...ringInfo.center);
+        const ring = els[0];
+        ring.style.left = x + 'px'; ring.style.top = y + 'px';
+        ring.style.width = ring.style.height = ringInfo.R * 2 + 'px';
+        k = 1;
+      }
+      for (let i = 0; i < marksData.length; i++, k++) {
+        const [x, y] = toPx(...marksData[i].p);
+        els[k].style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+      }
+    }
+    const setVB = (v) => { vb = v; svg.setAttribute('viewBox', v.map((n) => n.toFixed(5)).join(' ')); placeMarks(); };
+    let anim;
+    function zoom(instant) {
+      const to = target();
+      svg.dataset.level = String(level());
+      buildMarks(to);
+      cancelAnimationFrame(anim);
+      if (instant || matchMedia('(prefers-reduced-motion: reduce)').matches) { setVB(to); return; }
+      const from = vb.slice(), t0 = performance.now(), D = 520;
+      // 확대 비율이 크면 로그 보간으로 부드럽게
+      const lw0 = Math.log(from[2]), lw1 = Math.log(to[2]);
+      const step = (now) => {
+        const k = Math.min(1, (now - t0) / D), e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        const w = Math.exp(lw0 + (lw1 - lw0) * e), h = w * to[3] / to[2];
+        const cx = from[0] + from[2] / 2 + ((to[0] + to[2] / 2) - (from[0] + from[2] / 2)) * e;
+        const cy = from[1] + from[3] / 2 + ((to[1] + to[3] / 2) - (from[1] + from[3] / 2)) * e;
+        setVB([cx - w / 2, cy - h / 2, w, h]);
+        if (k < 1) anim = requestAnimationFrame(step);
+      };
+      anim = requestAnimationFrame(step);
+    }
+
+    // ----- 위쪽: 빵부스러기·탭·등급 -----
+    const tierSel = $('tier');
+    function crumbs() {
+      const parts = [['전세계', () => go({})]];
+      if (S.country) {
+        const multi = countryOf(S.country).cities.length > 1;
+        const one = !multi && S.city && S.city !== S.country ? `${S.country} ${S.city}` : S.country;
+        parts.push([one, multi ? () => go({ country: S.country }) : () => go({ country: S.country, city: S.city })]);
+        if (S.city && multi) parts.push([S.city, () => go({ country: S.country, city: S.city })]);
+        if (S.areas) parts.push([areaName(S.areas), null]);
+      }
+      crumbFns = parts.map((p) => p[1]);
+      $('crumbs').innerHTML = parts.map(([t], i) => (i === parts.length - 1
+        ? `<b aria-current="location">${esc(t)}</b>` : `<button type="button" data-c="${i}">${esc(t)}</button><span aria-hidden="true">›</span>`)).join('');
+      $('up').hidden = !level() && !custom;
+    }
+    let crumbFns = [];
+    function go(next) {
+      S.country = next.country || null;
+      S.city = next.city || null;
+      S.areas = next.areas || null;
+      if (S.country && !S.city && countryOf(S.country).cities.length === 1) S.city = countryOf(S.country).cities[0].name;
+      custom = null;
+      saveUrl();
+      draw();
+      zoom();
+    }
+    function up() {
+      if (custom) { custom = null; zoom(); crumbs(); return; }
+      if (S.areas) return go({ country: S.country, city: S.city });
+      if (S.city && countryOf(S.country).cities.length > 1) return go({ country: S.country });
+      go({});
+    }
+    function tabsAndTier() {
+      const inPlace = entries.filter((e) => (!S.country || e.country === S.country) && (!S.city || e.city === S.city));
+      const counts = { all: inPlace.filter((e) => !(e.h.same && byKey[e.h.same])).length };
+      for (const id of list) counts[id] = inPlace.filter((e) => e.pg === id).length;
+      renderTabs(tabs, current, counts, (id) => { current = id; saveUrl(); draw(); zoom(true); });
+      const info = P[current];
+      $('tier-field').hidden = !info || !!info.noTier;
+      if (info && !info.noTier) tierSel.replaceChildren(...info.tiers.map((t, i) => new Option(t.n, String(i), false, i === myTier(current))));
+      const tp = P[current] && !P[current].noTier ? current : null;
+      $('mytier').textContent = tp ? P[tp].tiers[myTier(tp)].n : '';
+    }
+
+    // ----- 아래: 바로가기 칩 · 목록 -----
+    function chips() {
+      const shown = shownAll();
+      let items = [];
+      if (!S.country) items = data.countries.map((c) => [c.name, shown.filter((e) => e.country === c.name).length, () => go({ country: c.name })]);
+      else if (!S.city) items = countryOf(S.country).cities.map((c) => [c.name, shown.filter((e) => e.city === c.name).length, () => go({ country: S.country, city: c.name })]);
+      else {
+        const cnt = {};
+        for (const e of shown.filter((e) => e.city === S.city)) cnt[e.area] = (cnt[e.area] || 0) + 1;
+        items = Object.entries(cnt).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ko'))
+          .map(([a, n]) => [a, n, () => go({ country: S.country, city: S.city, areas: S.areas && S.areas.length === 1 && S.areas[0] === a ? null : [a] }), S.areas && S.areas.includes(a)]);
+      }
+      items = items.filter((x) => x[1] > 0);
+      chipFns = items.map((x) => x[2]);
+      $('chips').innerHTML = items.map(([t, n, , on], i) => `<button type="button" role="listitem" class="hm-chip" data-k="${i}" aria-pressed="${!!on}">${esc(t)}<span>${n}</span></button>`).join('');
+    }
+    let chipFns = [];
+    const cityLabel = (e) => (e.country === '한국' ? `${e.city} ${e.area}` : `${e.city} · ${e.area}`);
+    function rowsHtml(rows) {
       const head = `<div class="hx-h hx-head" aria-hidden="true"><span></span><span>호텔명</span><span>성급</span><span>위치</span>${DOT.map(([, l]) => `<span>${l}</span>`).join('')}</div>`;
-      const korea = data.countries[country.selectedIndex].name === '한국';
-      const cityLabel = !korea ? ct.name : ct.name.endsWith('시') ? ct.name : ct.name + '시';
-      $('list').innerHTML = sum + `<div class="wl-rows hx-table">${head}${rows.map(({ h, f }) => {
-        const img = imageOf(current, h);
-        const star = h.stars ? h.stars + '성' : '—';
-        return `<a class="hx-h${f.bf || f.lounge || f.up ? '' : ' off'}" href="${esc(h.url)}" target="_blank" rel="noopener">
-          <span class="hx-img">${img ? `<img src="${esc(img)}" alt="${esc(h.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ''}<span class="hx-ph" aria-hidden="true">${esc(star)}</span></span>
-          <span class="hx-name"><b>${esc(h.name)}</b>${f.note ? `<small>${esc(f.note)}</small>` : ''}</span>
+      return `<div class="wl-rows hx-table">${head}${rows.map(({ e, f }) => {
+        const img = imageOf(e);
+        const star = e.h.stars ? e.h.stars + '성' : '—';
+        const prog = current === 'all' ? `<em class="hm-prog" data-p="${e.pg}">${esc(P[e.pg].name)}</em>` : '';
+        return `<button type="button" class="hx-h${f.bf || f.lounge || f.up ? '' : ' off'}" data-key="${esc(e.key)}">
+          <span class="hx-img">${img ? `<img src="${esc(img)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ''}<span class="hx-ph" aria-hidden="true">${esc(star)}</span></span>
+          <span class="hx-name"><b>${esc(e.h.name)}</b>${prog || f.note ? `<small>${prog}${esc(f.note || '')}</small>` : ''}</span>
           <span class="hx-star">${esc(star)}</span>
-          <span class="hx-loc"><span class="m">${esc(star)} · </span>${esc(cityLabel)} ${esc(h.district)}</span>
+          <span class="hx-loc"><span class="m">${esc(star)} · </span>${esc(cityLabel(e))}</span>
           ${DOT.map(([k, l]) => `<span class="hx-dot" data-k="${k}"${f[k] ? ' data-on' : ''} aria-label="${l} ${f[k] ? '있음' : '없음'}"><i aria-hidden="true"></i><em>${l}</em></span>`).join('')}
-        </a>`;
+        </button>`;
       }).join('')}</div>`;
     }
-    // 사진을 못 불러오면 성급 타일로 대신 보여 줌
-    $('list').addEventListener('error', (e) => { if (e.target.tagName === 'IMG') e.target.remove(); }, true);
+    function listBox() {
+      const shown = shownAll();
+      const box = $('list');
+      if (!S.city) {
+        // 나라·도시 단계: 도시별 요약(눌러서 들어가기)
+        const cities = data.countries.filter((c) => !S.country || c.name === S.country).flatMap((c) => c.cities.map((ct) => ({ c: c.name, ct: ct.name })));
+        const rows = cities.map(({ c, ct }) => {
+          const hs = shown.filter((e) => e.city === ct).map((e) => flagOf(e));
+          return { c, ct, n: hs.length, bf: hs.filter((f) => f.bf).length, lounge: hs.filter((f) => f.lounge).length };
+        }).filter((r) => r.n);
+        box.innerHTML = `<div class="wl-sec-head"><h2>도시별 호텔</h2><span>${current === 'all' ? '모든 체인' : esc(P[current].name)} · 나의 등급 기준</span></div>
+          <div class="hm-cities">${rows.map((r) => `<button type="button" class="hm-city" data-city="${esc(r.ct)}" data-country="${esc(r.c)}">
+            <b>${esc(r.ct)}</b><small>${esc(r.c)}</small><span class="n">${r.n}곳</span>
+            <span class="hm-mini"><i class="hx-pink" aria-hidden="true"></i>조식 ${r.bf} · 라운지 ${r.lounge}</span></button>`).join('')}</div>`;
+        return;
+      }
+      const rows = shown.filter(inScope).map((e) => ({ e, f: flagOf(e) }))
+        .sort((a, b) => score(b.f) - score(a.f) || (b.e.h.stars || 0) - (a.e.h.stars || 0) || a.e.h.name.localeCompare(b.e.h.name, 'ko'));
+      const n = (k) => rows.filter((r) => r.f[k]).length;
+      const where = S.areas ? `${S.city} ${areaName(S.areas)}` : S.city;
+      if (!rows.length) {
+        const has = list.filter((id) => entries.some((e) => e.pg === id && inScope(e))).map((id) => P[id].name);
+        box.innerHTML = `<div class="wl-rows"><p class="wl-empty">${esc(where)}에는 아직 정리한 ${current === 'all' ? '' : esc(P[current].name) + ' '}호텔이 없어요.${has.length ? ` (${esc(has.join(' · '))} 목록은 있어요)` : ''}</p></div>`;
+        return;
+      }
+      box.innerHTML = `<div class="wl-sec-head"><h2>${esc(where)} 호텔 ${rows.length}곳</h2><span>누르면 사진·평균가·등급별 혜택</span></div>
+        <p class="hx-sum">${DOT.map(([k, l]) => `<span><i class="hx-pink" aria-hidden="true"></i>${l} <b>${n(k)}</b>곳</span>`).join('')}</p>${rowsHtml(rows)}`;
+    }
+    function notes() {
+      const progs = current === 'all' ? list : [current];
+      $('conditions').textContent = progs.map((id) => (current === 'all' ? `${P[id].name}: ` : '') + listInfo[id].condition).join(' ');
+      const sources = progs.flatMap((id) => [[P[id].name + ' 등급 약관', P[id].terms], ...listInfo[id].sources]);
+      sources.push(['호텔업 등급결정 현황', 'https://www.hotelrating.or.kr/hotel'], ['지도: Natural Earth · 서울 구 경계 통계청', 'https://www.naturalearthdata.com/']);
+      $('sources').innerHTML = sources.map(([t, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join('');
+      $('checked').textContent = `목록 대조일 ${data.updated.replaceAll('-', '.')} · 해외 성급은 브랜드 등급 기준 추정 · 해외 라운지는 호텔 공식 정보 기준이며 바뀔 수 있습니다 · ` +
+        '지도 위 호텔 위치는 구·동네 단위로 표시해요(정확한 좌표가 들어온 호텔만 실제 위치) · 사진은 각 호텔 공식 사이트 이미지입니다.';
+    }
+    function draw() {
+      tabsAndTier();
+      crumbs();
+      chips();
+      listBox();
+      notes();
+      const shown = shownAll().filter(inScope);
+      const where = S.areas ? `${S.city} ${areaName(S.areas)}` : S.city || S.country || '전세계';
+      const tierTxt = P[current] && !P[current].noTier ? ` · ${P[current].tiers[myTier(current)].n} 기준` : current === 'hotelux' ? ' · 혜택 포함 요금 기준' : ' · 체인별 나의 등급 기준';
+      $('sub').textContent = `${where} · ${current === 'all' ? '모든 체인' : P[current].name} ${shown.length}곳${tierTxt}`;
+      $('legend').innerHTML = level() === 3
+        ? '<span><i class="lg full"></i>조식·라운지</span><span><i class="lg up"></i>룸업글만</span><span><i class="lg off"></i>혜택 없음</span><em>숫자는 성급 · 위치는 동네 단위</em>'
+        : `<em>${level() === 2 ? '숫자는 호텔 수 · 눌러서 동네 호텔 보기' : '숫자는 호텔 수 · 눌러서 들어가기'}</em>`;
+      for (const g of svg.querySelectorAll('.hm-cn')) g.classList.toggle('on', g.dataset.country === S.country);
+      // 서울은 호텔 있는 구를 칠함
+      for (const g of svg.querySelectorAll('.hm-gu')) {
+        const n = shownAll().filter((e) => e.city === '서울' && e.area === g.dataset.n).length;
+        g.classList.toggle('has', n > 0);
+        g.classList.toggle('on', !!(S.areas && S.areas.includes(g.dataset.n)));
+      }
+      for (const g of svg.querySelectorAll('.hm-cl')) g.classList.toggle('on', g.dataset.city === S.city);
+    }
 
-    const pick = (id) => { current = id; updateAddress(); selectProgram(); };
-    opts(country, data.countries.map((c, i) => [String(i), c.name]), '0');
-    fillCities();
-    // 도시를 바꿨는데 지금 프로그램 호텔이 없으면 목록이 있는 프로그램으로 옮김
-    const fitProgram = () => {
-      if ((city().programs[current] || []).length) return;
-      const next = list.find((id) => (city().programs[id] || []).length);
-      if (next) { current = next; updateAddress(); }
-    };
-    country.addEventListener('change', () => { fillCities(); fitProgram(); selectProgram(); });
-    citySel.addEventListener('change', () => { fitProgram(); selectProgram(); });
-    tierSel.addEventListener('change', () => { store.set(STORE_T + current, tierSel.value); render(); });
-    window.addEventListener('hashchange', () => { current = pickProgram(list); selectProgram(); });
-    if (params.has('t')) updateAddress();
-    selectProgram();
+    // ----- 호텔 카드 -----
+    const dlg = $('hotel');
+    function priceText(e) {
+      const pr = e.h.price;
+      const at = e.h.priceAt ? ` · ${e.h.priceAt.replaceAll('-', '.')} 기준` : '';
+      if (Array.isArray(pr) && pr.length === 2) return `<b>${pr[0]}~${pr[1]}만원</b><small>1박 평균${at}</small>`;
+      if (Number.isFinite(pr)) return `<b>약 ${pr}만원</b><small>1박 평균${at}</small>`;
+      const pl = placeOf[A.cities[e.city].place];
+      return `<b class="muted">수집 전</b>${pl && e.h.stars >= 5 ? `<small>${esc(pl.city)} 5성급 1박 시세 ${pl.hotel[0]}~${pl.hotel[1]}만원</small>` : '<small>공식 페이지에서 날짜별 요금 확인</small>'}`;
+    }
+    function openCard(key) {
+      const e = byKey[key];
+      if (!e) return;
+      const info = P[e.pg];
+      const img = imageOf(e);
+      const star = e.h.stars ? `${'★'.repeat(e.h.stars)} ${e.h.stars}성` : '성급 정보 없음';
+      const closed = e.h.closedFrom && e.h.closedFrom <= day;
+      const mine = myTier(e.pg);
+      const tiers = info.noTier ? [{ n: '혜택 포함 요금' }] : info.tiers;
+      const rows = tiers.map((t, i) => {
+        const f = closed ? {} : flags[e.pg](info.noTier ? 0 : i, e.h.profile);
+        const me = !info.noTier && i === mine;
+        return `<tr${me ? ' class="mine"' : ''}><th scope="row">${esc(t.n)}${me ? '<em>나</em>' : ''}</th>${DOT.map(([k]) => `<td>${f[k] ? '<i class="on" aria-label="있음"></i>' : '<i aria-label="없음"></i>'}</td>`).join('')}</tr>`;
+      }).join('');
+      const f = flagOf(e);
+      const extra = [
+        f.note,
+        e.h.loungeUnconfirmed ? '라운지 운영 여부는 호텔에 확인하세요' : '',
+        e.h.loungeNote || '',
+        e.h.checkout === 'availability' ? '레이트 체크아웃은 객실 상황에 따라' : '',
+      ].filter(Boolean);
+      const via = (alsoVia[e.key] || []).map((x) => `<a href="${esc(x.h.url)}" target="_blank" rel="noopener">${esc(P[x.pg].name)} 예약</a>`).join(' · ');
+      const same = e.h.same && byKey[e.h.same] ? byKey[e.h.same] : null;
+      $('card').innerHTML = `
+        <div class="hm-c-img">${img ? `<img src="${esc(img)}" alt="${esc(e.h.name)}" decoding="async" referrerpolicy="no-referrer">` : ''}<span class="hx-ph" aria-hidden="true">${e.h.stars || ''}성</span>
+          <button class="sheet-x hm-c-x" type="button" data-close aria-label="닫기">✕</button></div>
+        <div class="hm-c-body">
+          <div class="hm-c-top"><span class="hm-prog" data-p="${e.pg}">${esc(info.name)}</span><span class="hm-c-star">${star}</span></div>
+          <h2 id="hx-h-title">${esc(e.h.name)}</h2>
+          <p class="hm-c-loc">${esc(e.country)} · ${esc(cityLabel(e))}${A.hotels[e.key] ? '' : ' 일대'}</p>
+          <dl class="hm-c-facts">
+            <div><dt>성급</dt><dd><b>${e.h.stars ? e.h.stars + '성' : '—'}</b><small>${e.country === '한국' ? '호텔업 등급 기준' : '브랜드 등급 기준 추정'}</small></dd></div>
+            <div><dt>1박 평균가</dt><dd>${priceText(e)}</dd></div>
+          </dl>
+          ${closed ? `<p class="hm-c-closed">${esc(e.h.closureNote || '휴업 중')}</p>` : ''}
+          <div class="hm-c-k">${info.noTier ? '예약 혜택' : '등급별 혜택'}<small>${info.noTier ? 'HoteLux 혜택 포함 요금' : `나의 등급: ${esc(info.tiers[mine].n)} · 등급표에서 바꿀 수 있어요`}</small></div>
+          <table class="hm-c-tiers"><thead><tr><th scope="col">등급</th>${DOT.map(([, l]) => `<th scope="col">${l}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>
+          ${extra.length ? `<ul class="hm-c-notes">${extra.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+          ${via ? `<p class="hm-c-also">이 호텔은 ${via}으로도 혜택을 받을 수 있어요.</p>` : ''}
+          ${same ? `<p class="hm-c-also">같은 호텔의 <button type="button" class="hm-link" data-key="${esc(same.key)}">${esc(P[same.pg].name)} 등급 혜택</button>도 있어요.</p>` : ''}
+          <div class="hm-c-btns">
+            <a class="btn-primary" href="${esc(e.h.url)}" target="_blank" rel="noopener">${info.noTier ? 'HoteLux에서 요금 보기' : '공식 페이지에서 요금 보기'} ↗</a>
+            ${!info.noTier ? `<button type="button" class="hm-c-tier" data-p="${e.pg}">${esc(info.name)} 등급표</button>` : ''}
+          </div>
+        </div>`;
+      if (!dlg.open) dlg.showModal();
+      dlg.querySelector('.hm-c-body').scrollTop = 0;
+    }
+    dlg.addEventListener('click', (ev) => {
+      if (ev.target === dlg || ev.target.closest('[data-close]')) return dlg.close();
+      const l = ev.target.closest('.hm-link[data-key]');
+      if (l) return openCard(l.dataset.key);
+      const t = ev.target.closest('.hm-c-tier');
+      if (t) { dlg.close(); tiersUI.open(t.dataset.p); }
+    });
+    dlg.addEventListener('error', (ev) => { if (ev.target.tagName === 'IMG') ev.target.remove(); }, true);
+
+    // ----- 이벤트 -----
+    const tiersUI = tierDialog(() => { draw(); zoom(true); });
+    $('tierbtn').addEventListener('click', () => tiersUI.open(current));
+    tierSel.addEventListener('change', () => { store.set(STORE_T + current, tierSel.value); draw(); zoom(true); });
+    $('crumbs').addEventListener('click', (e) => { const b = e.target.closest('button[data-c]'); if (b && crumbFns[b.dataset.c]) crumbFns[b.dataset.c](); });
+    $('up').addEventListener('click', up);
+    $('chips').addEventListener('click', (e) => { const b = e.target.closest('button[data-k]'); if (b) chipFns[b.dataset.k](); });
+    marks.addEventListener('click', (ev) => {
+      const b = ev.target.closest('[data-i]');
+      if (!b) return;
+      const m = marksData[b.dataset.i];
+      if (m.kind === 'hotel') return openCard(m.e.key);
+      if (m.members.length > 1) {
+        // 겹친 거품: 넓게 퍼져 있으면 더 확대, 아주 가까운 동네끼리면 함께 열기
+        const ps = m.members.map((x) => x.p);
+        const b2 = [Math.min(...ps.map((p) => p[0])), Math.min(...ps.map((p) => p[1])), Math.max(...ps.map((p) => p[0])), Math.max(...ps.map((p) => p[1]))];
+        const span = Math.max(b2[2] - b2[0], b2[3] - b2[1]);
+        if (m.kind === 'area' && span < AREA_W(S.city) * 0.15) return go({ country: S.country, city: S.city, areas: m.members.map((x) => x.id) });
+        custom = fit(b2, 0.6, m.kind === 'area' ? AREA_W(S.city) * 0.6 : 2);
+        crumbs();
+        return zoom();
+      }
+      if (m.kind === 'country') return go({ country: m.id });
+      if (m.kind === 'city') return go({ country: S.country, city: m.id });
+      if (m.kind === 'area') return go({ country: S.country, city: S.city, areas: [m.id] });
+    });
+    $('list').addEventListener('click', (ev) => {
+      const r = ev.target.closest('[data-key]');
+      if (r) return openCard(r.dataset.key);
+      const c = ev.target.closest('.hm-city');
+      if (c) { go({ country: c.dataset.country, city: c.dataset.city }); box.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    });
+    $('list').addEventListener('error', (e) => { if (e.target.tagName === 'IMG') e.target.remove(); }, true);
+    window.addEventListener('hashchange', () => { const h = location.hash.slice(1).toLowerCase(); if (tabs.includes(h) && h !== current) { current = h; draw(); zoom(true); } });
+    let lastW = 0;
+    new ResizeObserver(() => {
+      const w = box.clientWidth;
+      if (w && w !== lastW) { lastW = w; cancelAnimationFrame(anim); custom = null; svg.dataset.level = String(level()); const t = target(); buildMarks(t); setVB(t); crumbs(); }
+    }).observe(box);
+
+    saveUrl();
+    draw();
+    zoom(true);
   }
 
   // ---------- 이벤트 (공식 프로모션을 요약해 화면에서 바로 읽음) ----------
@@ -417,9 +848,9 @@
     draw();
   }
 
-  const run = { tier: async () => tierPage(), list: listPage, events: eventsPage }[page];
+  const run = { map: mapPage, events: eventsPage }[page];
   if (run) run().catch(() => {
-    const box = $('list') || $('events') || $('tiers');
+    const box = $('list') || $('events');
     if (box) box.innerHTML = '<div class="wl-rows"><p class="wl-empty">불러오지 못했습니다. 새로고침해 주세요.</p></div>';
   });
 })();

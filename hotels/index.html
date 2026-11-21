@@ -5,22 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#11151c" media="(prefers-color-scheme: dark)">
-  <title>멤버십 티어 | Mr. Hotels</title>
-  <meta name="description" content="Accor·IHG·Marriott·Hilton 멤버십 등급별 달성 기준과 조식·라운지·업그레이드 혜택 비교.">
+  <title>Mr. Hotels · 지도로 찾는 호텔 등급 혜택</title>
+  <meta name="description" content="세계 지도에서 나라·도시·동네로 들어가 호텔을 고르고, 사진·성급·평균가와 등급별 조식·라운지·객실 업그레이드 혜택을 한 번에 보세요.">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/portfolio.css">
   <link rel="stylesheet" href="../assets/css/hotels.css">
   <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
-<body data-page="tier">
+<body data-page="map">
   <header class="site-header">
     <div class="container">
       <a class="logo" href="./">Mr. <span>Hotels</span></a>
       <div class="head-right">
       <nav class="nav" aria-label="메인 메뉴">
         <ul>
-          <li><a href="./" aria-current="page">티어</a></li>
-          <li><a href="list.html">호텔</a></li>
+          <li><a href="./" aria-current="page">호텔</a></li>
           <li><a href="events.html">이벤트</a></li>
           <li><a href="valet.html">발레파킹</a></li>
         </ul>
@@ -33,25 +32,67 @@
     </div>
   </header>
 
-  <main class="page hx">
+  <main class="page hx hm">
     <div class="container">
       <div class="wl-head">
         <div>
-          <h1>티어</h1>
-          <p class="wl-sub" id="hx-sub">등급별 달성 기준과 핵심 혜택 · 2026년 기준</p>
+          <h1>호텔</h1>
+          <p class="wl-sub" id="hx-sub">지도를 불러오는 중…</p>
         </div>
+        <button class="hm-tierbtn" id="hx-tierbtn" type="button" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.8-1.3 7.7L12 19l4.8 2.5-1.3-7.7"/></svg>
+          <span>등급표</span><b id="hx-mytier"></b>
+        </button>
       </div>
       <div class="wl-tabs hx-programs" id="hx-programs" role="tablist" aria-label="멤버십 프로그램"></div>
-      <div class="hx-glance" id="hx-glance" hidden></div>
-      <div class="wl-rows hx-tiers" id="hx-tiers"><p class="wl-empty" role="status">불러오는 중…</p></div>
-      <p class="hx-foot" id="hx-foot"></p>
-      <div id="hx-cardsec"></div>
+      <div class="hm-bar">
+        <nav class="hm-crumbs" id="hx-crumbs" aria-label="지도 위치"></nav>
+        <label class="hx-field hx-mytier" id="hx-tier-field"><span>나의 등급</span><select id="hx-tier"></select></label>
+      </div>
+      <div class="hm-map" id="hx-map">
+        <svg class="hm-svg" id="hx-svg" role="img" aria-label="호텔 지도"></svg>
+        <div class="hm-marks" id="hx-marks"></div>
+        <button class="hm-up" id="hx-up" type="button" aria-label="한 단계 넓게 보기" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg>
+        </button>
+        <p class="hm-legend" id="hx-legend"></p>
+      </div>
+      <div class="hm-chips" id="hx-chips" role="list"></div>
+      <div id="hx-list"><p class="wl-empty" role="status">호텔 목록을 불러오는 중…</p></div>
+      <details class="hx-notes">
+        <summary>혜택 조건 및 출처</summary>
+        <p id="hx-conditions"></p>
+        <p id="hx-checked"></p>
+        <ul id="hx-sources"></ul>
+      </details>
+      <noscript>호텔 지도를 보려면 자바스크립트를 켜 주세요.</noscript>
     </div>
   </main>
 
+  <dialog class="sheet hm-sheet" id="hx-hotel" aria-labelledby="hx-h-title">
+    <div class="sheet-grab" aria-hidden="true"></div>
+    <div class="hm-card" id="hx-card"></div>
+  </dialog>
+
+  <dialog class="sheet hm-sheet hm-tiers" id="hx-tiers" aria-labelledby="hx-t-title">
+    <div class="sheet-grab" aria-hidden="true"></div>
+    <div class="sheet-head">
+      <h2 id="hx-t-title">등급표</h2>
+      <button class="sheet-x" type="button" data-close aria-label="닫기">✕</button>
+    </div>
+    <div class="sheet-step">
+      <div class="wl-tabs hx-programs" id="hx-t-programs" role="tablist" aria-label="멤버십 프로그램"></div>
+      <p class="hm-t-sub" id="hx-t-sub"></p>
+      <div class="hx-glance" id="hx-glance"></div>
+      <div class="wl-rows hx-tiers" id="hx-t-rows"></div>
+      <p class="hx-foot" id="hx-t-foot"></p>
+      <div id="hx-t-cards"></div>
+    </div>
+  </dialog>
+
+
   <nav class="tabbar" aria-label="메인 메뉴">
-    <a href="./" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.8-1.3 7.7L12 19l4.8 2.5-1.3-7.7"/></svg><span>티어</span></a>
-    <a href="list.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M10 21v-4h4v4"/></svg><span>호텔</span></a>
+    <a href="./" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M10 21v-4h4v4"/></svg><span>호텔</span></a>
     <a href="events.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg><span>이벤트</span></a>
     <a href="valet.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.8-8 10-8 10s-8-5.2-8-10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>발레파킹</span></a>
   </nav>
