@@ -95,6 +95,8 @@
 }
 .cc-mode[hidden] { display: none; }
 .cc-zone { fill: var(--chart-zone2); }
+.cc-off { opacity: .7; }
+.cc-wait { grid-column: 2 / -1; font-size: .76rem; color: var(--color-muted); }
 .cc-dipinfo { grid-column: 1 / -1; padding-top: 6px; border-top: 1px dashed var(--color-border); }
 .cc-chart { position: relative; height: 220px; margin: 12px 0 6px; touch-action: pan-y; }
 .cc-chart svg { display: block; width: 100%; height: 100%; overflow: visible; }
@@ -115,7 +117,8 @@
   font-variant-numeric: tabular-nums;
 }
 .cc-nm { display: flex; align-items: center; min-width: 0; font-weight: 700; font-size: .88rem; }
-.cc-nm span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* 종목명은 정식 명칭 그대로: 자르지 않고 두 줄까지 줄바꿈 */
+.cc-nm span { min-width: 0; line-height: 1.25; word-break: keep-all; overflow-wrap: anywhere; }
 .cc-nm small { margin-left: 6px; font-size: .66rem; font-weight: 600; color: var(--color-muted); border: 1px solid var(--color-border); border-radius: 999px; padding: 0 6px; flex: none; }
 .cc-tot b { font-size: 1.05rem; font-weight: 800; }
 .cc-tot small { display: block; font-size: .7rem; color: var(--color-muted); }
@@ -257,7 +260,10 @@
 @media (max-width: 720px) {
   .cc-chart { height: 190px; }
   .cc-per button { padding: 4px 9px; font-size: .78rem; }
-  .cc-row { grid-template-columns: minmax(0, 1fr) auto auto; padding: 9px 10px; }
+  /* 휴대폰: 종목명은 한 줄 전체, 그 아래 총수익 | 본주 대비 */
+  .cc-row { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 9px 10px; }
+  .cc-row > .cc-nm, .cc-wait { grid-column: 1 / -1; }
+  .cc-tot small { display: inline; margin-left: 6px; }
   .cc-parts { grid-column: 1 / -1; font-size: .72rem; gap: 2px 10px; }
   .cc-diff { text-align: right; min-width: 56px; }
   .cc-tr { grid-template-columns: minmax(0, 1fr) repeat(var(--cc-cols), minmax(0, 40px)); gap: 3px; }
