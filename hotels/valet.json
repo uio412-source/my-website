@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-20",
+  "updatedAt": "2026-11-21",
   "hotels": [
     {
       "id": "pullman",
@@ -289,6 +289,23 @@
       "district": "강남구",
       "directoryIds": [
         "C3E4"
+      ]
+    },
+    {
+      "id": "riviera",
+      "name": "호텔 리베라 청담",
+      "district": "강남구",
+      "aliases": [
+        "리베라 호텔",
+        "호텔 리베라"
+      ]
+    },
+    {
+      "id": "asem-tower",
+      "name": "아셈타워",
+      "district": "강남구",
+      "aliases": [
+        "ASEM 타워"
       ]
     }
   ],
@@ -1163,6 +1180,167 @@
         }
       ],
       "validThrough": "2026-12-31"
+    },
+    {
+      "id": "samsung-amex-reserve",
+      "issuer": "삼성카드",
+      "provider": "issuer_selection",
+      "brand": "American Express",
+      "tier": "PLATINUM ELITE",
+      "minimumSpend": 500000,
+      "spendScope": "전월 일시불·할부",
+      "spendExclusions": "사회보험료·국세·지방세·공과금·교육비·대중교통·택시·관리비·임대료·선불카드 충전·상품권",
+      "monthlyLimit": 5,
+      "quotaScope": "hotel_airport",
+      "familyQuota": false,
+      "grace": "발급월+1개월까지 실적 무관",
+      "parking": "일 3시간 무료 · 초과 유료",
+      "visit": "객실·식음료 매장 이용(연회장 제외) · 본인 방문",
+      "proof": "대상 카드·주차권·당일 객실/매장 영수증 제시",
+      "notes": [
+        "인천공항 발렛파킹과 통합 월 5회"
+      ],
+      "source": "https://static11.samsungcard.com/wcms/personal/files/2604_AMEX_E_004.pdf",
+      "checkedAt": "2026-11-21",
+      "hotelIds": [
+        "walkerhill",
+        "grand-hyatt",
+        "novotel-gangnam",
+        "novotel-ddm",
+        "plaza",
+        "meridien",
+        "mayfield",
+        "banyan",
+        "garden",
+        "vista",
+        "dragon-city",
+        "shilla",
+        "asem-tower",
+        "pullman",
+        "courtyard-ts",
+        "hilton-garden",
+        "jw-ddm",
+        "jw-seoul"
+      ],
+      "hotelOverrides": {
+        "jw-seoul": {
+          "monthlyLimit": 5,
+          "note": "당일 호텔 영업장 합산 5만원 이상 영수증이 있어야 무료예요."
+        }
+      },
+      "cards": [
+        {
+          "key": "amex-reserve",
+          "name": "American Express® Reserve",
+          "catalogId": "samsung-aap1692"
+        }
+      ]
+    },
+    {
+      "id": "kb-master-titanium",
+      "issuer": "KB국민카드",
+      "provider": "issuer_selection",
+      "brand": "Mastercard",
+      "tier": "Titanium",
+      "minimumSpend": 300000,
+      "spendScope": "전월 일시불·할부",
+      "spendExclusions": "",
+      "monthlyLimit": 3,
+      "quotaScope": "hotel_shared",
+      "familyQuota": true,
+      "grace": "실적 유예 없음 · 티타늄카드 사용 등록 후 이용",
+      "parking": "일 3시간 무료(일부 호텔 제외) · 초과 유료",
+      "visit": "투숙·식음료 매장 이용 · 연회 고객은 제한될 수 있음",
+      "proof": "대상 카드·주차권 제시 · 일부 호텔 당일 영수증",
+      "notes": [
+        "본인+가족카드 합산 월 3회, 연 12회",
+        "대상 호텔은 Mastercard 2026 프리미엄 서비스 안내(11.09 기준), 이용 조건은 KB국민카드 상품 안내"
+      ],
+      "source": "https://card.kbcard.com/CXPRICAC0076.cms?mainCC=a&cooperationcode=04240",
+      "checkedAt": "2026-11-21",
+      "hotelIds": [
+        "jw-ddm",
+        "jw-seoul",
+        "mercure-gangnam",
+        "walkerhill",
+        "grand-hyatt",
+        "glad",
+        "novotel-gangnam",
+        "novotel-ddm",
+        "lescape",
+        "meridien",
+        "moxy",
+        "mea",
+        "mayfield",
+        "mondrian",
+        "banyan",
+        "vista",
+        "garden",
+        "dragon-city",
+        "shilla",
+        "sofitel",
+        "pullman",
+        "oakwood",
+        "courtyard-ts",
+        "conrad",
+        "park-hyatt",
+        "naru",
+        "riviera",
+        "koreana"
+      ],
+      "hotelOverrides": {
+        "jw-seoul": {
+          "monthlyLimit": 1,
+          "note": "당일 호텔 영업장 5만원 이상 영수증이 있어야 무료예요. 이 호텔은 월 1회까지예요."
+        },
+        "lescape": {
+          "monthlyLimit": 3,
+          "note": "당일 호텔 영업장 3만원 이상 영수증이 있어야 무료예요."
+        },
+        "mondrian": {
+          "monthlyLimit": 3,
+          "note": "당일 호텔 영업장 2만5천원 이상 영수증이 있어야 무료예요."
+        },
+        "koreana": {
+          "monthlyLimit": 3,
+          "note": "당일 호텔 영업장 2만5천원 이상 영수증이 있어야 무료예요."
+        },
+        "park-hyatt": {
+          "monthlyLimit": 3,
+          "note": "당일 호텔 영업장 2만원 이상 영수증이 있어야 무료예요."
+        },
+        "oakwood": {
+          "monthlyLimit": 3,
+          "note": "주차장이 차면 3시간 무료 주차권으로 대신하고 1회로 셉니다."
+        }
+      },
+      "cards": [
+        {
+          "key": "easy-auto",
+          "name": "KB국민 Easy auto 티타늄카드",
+          "catalogId": "kb-09246"
+        },
+        {
+          "key": "easy-ring",
+          "name": "KB국민 Easy ring 티타늄카드",
+          "catalogId": "kb-09253"
+        },
+        {
+          "key": "easy-pick",
+          "name": "KB국민 Easy pick 티타늄카드",
+          "catalogId": null
+        },
+        {
+          "key": "skypass-titanium",
+          "name": "KB국민 스카이패스 티타늄 카드",
+          "catalogId": "kb-04285"
+        },
+        {
+          "key": "liiv-m",
+          "name": "KB국민 Liiv M 카드",
+          "catalogId": null
+        }
+      ]
     }
   ],
   "pending": [
@@ -1181,6 +1359,30 @@
       "brand": "Visa",
       "source": "https://www.samsungcard.com/home/card/cardinfo/PGHPPCCCardCardinfoDetails001?code=AAP1908",
       "note": "Visa Infinite 호텔 발레파킹 안내 확인. 제휴 호텔별 이용 조건을 확인 중입니다."
+    },
+    {
+      "catalogId": "nh-90000234",
+      "name": "#ing+(샵핑플러스)카드 · NH올원+(플러스)카드",
+      "issuer": "NH농협카드",
+      "brand": "Mastercard",
+      "source": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90000234&WRS_TUP_C=M11002",
+      "note": "Mastercard Platinum 선택 서비스로 호텔 발레파킹 제공(전월 30만원 이상). 횟수·대상 호텔 확인 중입니다."
+    },
+    {
+      "catalogId": null,
+      "name": "롯데카드 Mastercard WORLD (AVENUEL 등)",
+      "issuer": "롯데카드",
+      "brand": "Mastercard",
+      "source": "https://image.lottecard.co.kr/webapp/file/31.Master_WORLD_06_230421(1).pdf",
+      "note": "호텔별 월 3회 무료 발레파킹 안내(2023 기준) 확인. 2026 대상 호텔과 실적 조건을 확인 중입니다."
+    },
+    {
+      "catalogId": null,
+      "name": "삼성카드 THE iD. · THE 1 등 Mastercard·아멕스 선택 서비스",
+      "issuer": "삼성카드",
+      "brand": "Mastercard",
+      "source": "https://static11.samsungcard.com/wcms/personal/files/240315_MASTER_W_001_v5.pdf",
+      "note": "카드마다 횟수·실적 조건이 달라 상품별로 확인 중입니다. 아멕스 Reserve는 반영했어요."
     }
   ]
 }
