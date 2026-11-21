@@ -48,6 +48,8 @@
 .hv-card-t { min-width: 0; display: flex; flex-direction: column; }
 .hv-card-t b { font-size: .86rem; line-height: 1.35; }
 .hv-card-t small { font-size: .72rem; color: var(--color-muted); font-weight: 600; }
+.hv-more { grid-column: 1 / -1; padding: 10px; border: 1px dashed var(--color-border); border-radius: 10px; background: none; color: var(--color-primary); font: inherit; font-size: .84rem; font-weight: 700; cursor: pointer; }
+@media (hover: hover) { .hv-more:hover { border-color: var(--color-primary); } }
 .hv-pend { margin: 8px 2px 0; font-size: .72rem; color: var(--color-muted); line-height: 1.5; }
 .hv-pend:empty { display: none; }
 

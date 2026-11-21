@@ -68,6 +68,7 @@ function toggleCard(key) {
 }
 
 // ---------- ① 카드 고르기 ----------
+let showAll = false;
 function renderPick() {
   const issuers = [...new Set(cards.map((c) => c.issuer))];
   if (!issuer || !issuers.includes(issuer)) issuer = issuers[0];
@@ -78,13 +79,20 @@ function renderPick() {
     const n = cards.filter((c) => c.issuer === i && mine[c.key]).length;
     return `<button type="button" role="tab" aria-selected="${i === issuer}" data-iss="${esc(i)}">${tile(i)}${esc(i.replace(/카드$/, ''))}${n ? `<b>${n}</b>` : ''}</button>`;
   }).join('');
-  const list = cards.filter((c) => terms ? norm(`${c.name} ${c.issuer} ${c.brands.join(' ')}`).includes(terms) : c.issuer === issuer);
-  $('cards').innerHTML = list.length ? list.map((c) => {
+  const found = cards.filter((c) => terms ? norm(`${c.name} ${c.issuer} ${c.brands.join(' ')}`).includes(terms) : c.issuer === issuer);
+  // 카드가 많으면(신한 36종 등) 화면이 카드 목록으로만 꽉 차서 결과가 안 보임 → 고른 카드 먼저 + 8개만, 나머지는 펼치기
+  const LIMIT = 8;
+  const sorted = [...found.filter((c) => mine[c.key]), ...found.filter((c) => !mine[c.key])];
+  const list = terms || showAll || sorted.length <= LIMIT + 2 ? sorted : sorted.slice(0, Math.max(LIMIT, sorted.filter((c) => mine[c.key]).length));
+  const rest = sorted.length - list.length;
+  $('cards').innerHTML = (list.length ? list.map((c) => {
     const on = !!mine[c.key];
     return `<button type="button" class="hv-card${on ? ' on' : ''}" aria-pressed="${on}" data-card="${esc(c.key)}">
       <span class="hv-check" aria-hidden="true">${on ? '✓' : ''}</span>
       <span class="hv-card-t"><b>${esc(short(c.name))}</b><small>${terms ? esc(c.issuer.replace(/카드$/, '')) + ' · ' : ''}서울 ${hotelCount(c)}곳</small></span></button>`;
-  }).join('') : '<p class="wl-empty">찾는 카드가 없어요. 아래 목록에서 카드사 공식 안내를 확인해 주세요.</p>';
+  }).join('') : '<p class="wl-empty">찾는 카드가 없어요. 아래 목록에서 카드사 공식 안내를 확인해 주세요.</p>')
+    + (rest > 0 ? `<button type="button" class="hv-more" data-act="all">${esc(issuer.replace(/카드$/, ''))} 카드 ${rest}종 더 보기</button>`
+      : showAll && !terms && sorted.length > LIMIT + 2 ? '<button type="button" class="hv-more" data-act="fold">접기</button>' : '');
   const pend = data.pending || [];
   $('pend').innerHTML = pend.length ? `제휴 호텔 확인 중: ${pend.map((p) => esc(p.name)).join(', ')}` : '';
 }
@@ -135,7 +143,7 @@ function renderResult() {
   const spend = all.filter((r) => !r.closed && r.best === 'spend').length;
   $('summary').innerHTML = has
     ? `<div class="hv-big"><b>${ok}</b><span>곳에서 지금 무료 발레 가능</span></div>${spend ? `<p>지난달 실적을 채우면 <b>${spend}곳</b> 더 돼요.</p>` : ok ? '' : '<p>고른 카드로는 서울 제휴 호텔이 없어요.</p>'}`
-    : `<p class="hv-hint">카드를 고르면 그 카드로 무료 발레가 되는 호텔만 골라 보여 드려요. 지금은 서울 제휴 호텔 ${all.filter((r) => !r.closed).length}곳 전체예요.</p>`;
+    : `<p class="hv-hint">카드를 고르면 되는 호텔만 보여요 · 지금은 전체 ${all.filter((r) => !r.closed).length}곳</p>`;
   // 구 필터 (되는 곳만 볼 때는 되는 곳 수)
   const visible = all.filter((r) => !only || (!r.closed && r.best && r.best !== 'check'));
   const counts = {};
@@ -206,7 +214,9 @@ function renderAll() { renderPick(); renderMine(); renderResult(); }
 document.addEventListener('click', (e) => {
   const t = e.target;
   const iss = t.closest('[data-iss]');
-  if (iss) { issuer = iss.dataset.iss; renderPick(); return; }
+  if (iss) { issuer = iss.dataset.iss; showAll = false; renderPick(); return; }
+  if (t.closest('[data-act="all"]')) { showAll = true; renderPick(); return; }
+  if (t.closest('[data-act="fold"]')) { showAll = false; renderPick(); return; }
   const card = t.closest('[data-card]');
   if (card) { toggleCard(card.dataset.card); return; }
   const rm = t.closest('[data-remove]');
