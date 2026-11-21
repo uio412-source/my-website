@@ -323,3 +323,126 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .ed-steps { margin: 0; padding: 0; list-style: none; counter-reset: s; border-top: 2px solid var(--mc-text); }
 .ed-steps li { counter-increment: s; display: grid; grid-template-columns: 28px 1fr; gap: 8px; padding: 10px 4px; border-bottom: 1px solid var(--mc-border); font-size: .84rem; line-height: 1.55; overflow-wrap: anywhere; }
 .ed-steps li::before { content: counter(s); font-weight: 800; color: var(--mc-primary); text-align: center; }
+
+/* ---------- 2026-11 카드 화면 보강: 세로 카드 눕히기 · 줄 링크 · 비교 · 최근 본 카드 · 계산기 · 비슷한 카드 ---------- */
+/* 세로 카드 이미지는 -90도로 눕혀 가로 카드와 같은 크기로 (요소 상자는 그대로라 최대 폭·높이를 바꿔 줌) */
+/* 요소 상자가 칸보다 커도 가운데에 오도록 절대 위치로 */
+.mc-art.portrait { position: relative; }
+.mc-art.portrait img { position: absolute; top: 50%; left: 50%; max-width: 44px; max-height: 64px; transform: translate(-50%, -50%) rotate(-90deg); }
+.mc-art.lg.portrait img { max-width: 150px; max-height: 240px; }
+.cd-head-art .mc-art.lg.portrait img { width: auto; height: 250px; max-width: none; max-height: none; }
+.mc-dock .mc-art.portrait img, .mc-recent .mc-art.portrait img { max-width: 28px; max-height: 40px; }
+
+/* 목록 줄: 이름 링크가 줄 전체를 덮고, 비교 버튼만 위에 떠서 따로 눌림 */
+.mc-cardrow { position: relative; }
+.mc-stretch { color: inherit; text-decoration: none; }
+.mc-stretch::after { content: ""; position: absolute; inset: 0; }
+.mc-stretch:focus-visible { outline: 0; }
+.mc-stretch:focus-visible::after { outline: 2px solid var(--mc-primary); outline-offset: -2px; border-radius: inherit; }
+.mc-cmp { position: relative; z-index: 1; cursor: pointer; }
+.mc-cmp.compact {
+  margin-top: 2px; padding: 2px 8px; border-radius: 8px; font-size: .7rem; font-weight: 700; white-space: nowrap;
+  border: 1px solid var(--mc-border); background: var(--mc-bg); color: var(--mc-muted);
+}
+.mc-cmp[aria-pressed="true"] { color: var(--mc-primary); border-color: var(--mc-primary); background: color-mix(in srgb, var(--mc-primary) 8%, var(--mc-bg)); }
+
+/* 최근 본 카드 */
+.mc-recent { margin: 2px 0 14px; }
+.mc-recent-h { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; font-size: .78rem; }
+.mc-recent-h b { color: var(--mc-muted); font-weight: 800; }
+.mc-recent-list { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.mc-recent-list::-webkit-scrollbar { display: none; }
+.mc-recent-list a {
+  flex-shrink: 0; display: flex; align-items: center; gap: 8px; max-width: 200px; padding: 6px 12px 6px 6px; border-radius: 12px;
+  border: 1px solid var(--mc-border); background: var(--mc-bg); color: var(--mc-text); text-decoration: none; font-size: .78rem; font-weight: 700;
+}
+.mc-recent-list span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mc-recent .mc-art, .mc-dock .mc-art { width: 40px; height: 28px; }
+.mc-recent .mc-art img, .mc-dock .mc-art img { max-width: 40px; max-height: 28px; }
+.mc-recent .mc-art-ph, .mc-dock .mc-art-ph { width: 40px; height: 28px; }
+.mc-recent .mc-art-ph .mc-tile, .mc-dock .mc-art-ph .mc-tile { width: 24px; height: 24px; border-radius: 7px; font-size: .5rem; }
+
+/* 비교함 막대: 화면 아래(휴대폰은 탭바 위)에 떠 있음 */
+.mc-dock {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: 16px; z-index: 35; width: min(560px, calc(100% - 24px));
+  display: flex; align-items: center; gap: 10px; padding: 8px 8px 8px 12px; border-radius: 16px;
+  background: var(--mc-bg); border: 1px solid var(--mc-border); box-shadow: 0 10px 30px color-mix(in srgb, var(--mc-text) 18%, transparent);
+}
+.mc-dock-cards { display: flex; gap: 6px; }
+.mc-dock-empty { width: 40px; height: 28px; border-radius: 5px; border: 1.5px dashed var(--mc-border); }
+.mc-dock-n { font-size: .8rem; color: var(--mc-muted); font-variant-numeric: tabular-nums; }
+.mc-dock-n b { color: var(--mc-text); }
+.mc-dock .mc-link { margin-left: auto; color: var(--mc-muted); }
+.mc-dock .mc-btn[disabled] { opacity: .55; cursor: default; }
+.mc-main:has(~ .mc-dock), .mc-main:has(.mc-dock) { padding-bottom: 96px; }
+
+/* 비교 표 (dialog) */
+.mc-sheet { width: min(920px, 100%); max-width: 100%; max-height: min(88vh, 100%); margin: auto; padding: 0; border: 0; border-radius: 18px; background: var(--mc-bg); color: var(--mc-text); }
+.mc-sheet::backdrop { background: color-mix(in srgb, #000 45%, transparent); }
+.mc-sheet-in { display: flex; flex-direction: column; max-height: inherit; }
+.mc-sheet-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid var(--mc-border); }
+.mc-sheet-head h2 { font-size: 1.05rem; }
+.mc-x { width: 32px; height: 32px; border-radius: 50%; border: 0; background: var(--mc-bg-alt); color: var(--mc-text); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+.mc-sheet-body { overflow: auto; padding: 0 0 16px; }
+.mc-sheet-body .cd-foot { padding: 0 14px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.mc-cmpt { border-top: 0; min-width: 0; }
+.mc-cmpt thead th { position: sticky; top: 0; z-index: 1; background: var(--mc-bg); vertical-align: top; white-space: normal; padding: 12px 8px; }
+.mc-cmpt thead th:first-child { width: 22%; background: var(--mc-bg-alt); }
+.mc-cmpt thead a { display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--mc-text); text-decoration: none; }
+.mc-cmpt thead a small { font-size: .68rem; font-weight: 600; color: var(--mc-muted); }
+.mc-cmpt thead a b { font-size: .8rem; line-height: 1.35; color: var(--mc-text); }
+.mc-cmpt thead .mc-link { margin-top: 6px; font-size: .72rem; color: var(--mc-muted); }
+.mc-cmpt tbody th { font-size: .76rem; }
+.mc-cmpt tbody td { text-align: center; font-size: .8rem; vertical-align: middle; }
+.mc-cmpt td ul { margin: 0; padding: 0; list-style: none; text-align: left; font-size: .74rem; line-height: 1.45; }
+.mc-cmpt td li + li { margin-top: 3px; }
+.mc-cmpt td small { display: block; font-size: .68rem; color: var(--mc-primary); font-weight: 700; }
+.mc-cmpt .ok { color: var(--mc-green); font-weight: 900; }
+.mc-cmpt .up { color: var(--mc-up); }
+.mc-cmpt b.best { box-shadow: inset 0 -.45em 0 color-mix(in srgb, var(--mc-yellow) 35%, transparent); }
+
+/* 머리: 발급 캐시백·월 최대 혜택 */
+.cd-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.cd-badge {
+  display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: .76rem; font-weight: 800; text-decoration: none;
+  color: var(--mc-primary); background: color-mix(in srgb, var(--mc-primary) 10%, transparent);
+}
+.cd-badge.gift { color: var(--mc-up); background: color-mix(in srgb, var(--mc-up) 10%, transparent); }
+.cd-badge small { font-size: .68rem; font-weight: 700; opacity: .8; }
+
+/* 혜택 표(휴대폰 3칸): 적용처는 구분 칸 아래 작은 글씨 */
+.cd-ben.narrow col.c-label { width: 46%; }
+.cd-ben.narrow col.c-val { width: 22%; }
+.cd-ben.narrow col.c-lim { width: 32%; }
+.cd-g-place { display: block; margin-top: 2px; font-size: .7rem; font-weight: 500; line-height: 1.45; color: var(--mc-muted); }
+
+/* 내 지출로 계산 */
+.cd-calc-pick { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.cd-calc-pick button, .cd-calc-in {
+  display: inline-flex; align-items: center; gap: 2px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--mc-border);
+  background: var(--mc-bg); color: var(--mc-muted); font-size: .8rem; font-weight: 700; cursor: pointer; font-variant-numeric: tabular-nums;
+}
+.cd-calc-pick button[aria-pressed="true"], .cd-calc-in.on { color: var(--mc-on-primary); border-color: var(--mc-primary); background: var(--mc-primary); }
+.cd-calc-in input { width: 2.4em; border: 0; outline: 0; background: transparent; color: inherit; font-weight: 800; text-align: right; padding: 0; }
+.cd-calc-in input::placeholder { color: var(--mc-muted); font-weight: 600; }
+.cd-calc-in.on input::placeholder { color: var(--mc-on-primary); }
+.cd-calc tbody th { width: 36%; text-align: left; padding-left: 12px; }
+.cd-calc td.cd-t-num { text-align: right; padding-right: 14px; }
+.cd-calc td.cd-t-num b { display: inline; color: var(--mc-text); }
+.cd-calc td.cd-t-num small { display: block; }
+.cd-calc-net th, .cd-calc-net td { background: color-mix(in srgb, var(--mc-primary) 5%, var(--mc-bg)); }
+.cd-calc-net b { font-size: 1.05rem; }
+.cd-calc-net b.plus { color: var(--mc-green) !important; }
+.cd-calc-net b.minus { color: var(--mc-up) !important; }
+
+/* 비슷한 카드 */
+.cd-sim .mc-row { padding: 10px 12px; }
+
+@media (max-width: 720px) {
+  .mc-dock { bottom: calc(72px + env(safe-area-inset-bottom)); }
+  .mc-art.portrait img { max-width: 34px; max-height: 48px; }
+  .cd-head-art .mc-art.lg.portrait img { height: min(270px, 74vw); }
+  .mc-sheet { width: 100%; max-height: 100%; height: 100%; border-radius: 0; }
+  .mc-cmpt thead th:first-child { width: 20%; }
+}

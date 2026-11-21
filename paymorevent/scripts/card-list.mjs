@@ -21,7 +21,8 @@ const LIST_FIELDS = [
   // Picking rate (pickingOptions)
   'pickingScenarios', 'spendingPlans', 'benefitSpendExcluded', 'rewardModelComplete', 'rewardCoveragePending', 'rewardComponentsPending', 'sourceReviewPending',
 ];
-const BENEFIT_FIELDS = ['category', 'title', 'detail', 'kind'];
+// minimumSpend: 목록·비교 표의 전월실적을 상세와 같게(혜택별 실적 중 가장 작은 값) 보여 주려고
+const BENEFIT_FIELDS = ['category', 'title', 'detail', 'kind', 'minimumSpend'];
 // Explanations attached to reward rules. The picking rate calculation never reads them.
 const PROSE_FIELDS = new Set(['note', 'sourceUrl']);
 const STATUSES = new Set(['allowed', 'excluded', 'unknown']);
