@@ -105,6 +105,64 @@
 #dv-dlg { overflow: visible; }
 #dv-dlg .sheet-step { overflow: visible; }
 
+/* ----- 금융소득종합과세 한도 계산기 ----- */
+.ft { padding: 0; margin: 8px 0 22px; }
+.ft-card { padding: 16px; border: 1px solid var(--color-border); border-radius: 16px; margin-bottom: 10px; }
+.ft-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.ft-k { display: block; font-size: .76rem; font-weight: 600; color: var(--color-muted); }
+.ft-big { display: block; font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 800; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.ft-left { text-align: right; flex: none; }
+.ft-left b { display: block; font-size: 1.05rem; font-weight: 800; color: var(--color-primary); font-variant-numeric: tabular-nums; }
+.ft-left b.over { color: var(--color-up); }
+.ft-left small { font-size: .72rem; color: var(--color-muted); }
+.ft-bar { height: 10px; border-radius: 999px; background: var(--color-bg-alt); overflow: hidden; margin: 12px 0 4px; }
+.ft-bar i { display: block; height: 100%; border-radius: inherit; background: var(--color-primary); transition: width .2s; }
+.ft-bar.over i { background: var(--color-up); }
+.ft-scale { display: flex; justify-content: space-between; font-size: .64rem; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.ft-rows { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 2px; }
+.ft-rows li { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 6px 0; font-size: .84rem; border-top: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent); }
+.ft-rows li:first-child { border-top: 0; }
+.ft-rows li span { min-width: 0; }
+.ft-rows li small { display: block; font-size: .68rem; color: var(--color-muted); }
+.ft-rows li b { flex: none; font-variant-numeric: tabular-nums; font-weight: 700; }
+.ft-rows li.out { color: var(--color-muted); }
+.ft-rows li.out b { font-weight: 600; text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--color-muted) 60%, transparent); }
+.ft-rows li.sep { justify-content: flex-start; padding-top: 12px; font-size: .72rem; font-weight: 800; color: var(--color-muted); border-top: 1px dashed var(--color-border); }
+.ft-rows li.empty { font-size: .8rem; color: var(--color-muted); }
+.ft-inputs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.ft-inputs .sheet-input { font-size: .95rem; padding: 9px 12px; }
+.ft-tax { margin-top: 12px; }
+.ft-ok { margin: 0; font-size: .85rem; line-height: 1.6; }
+.ft-ok b { color: var(--color-primary); }
+.ft-hint { margin: 8px 0 0; font-size: .76rem; color: var(--color-muted); line-height: 1.6; }
+.ft-hint b { color: var(--color-text); }
+.ft-calc { display: grid; gap: 2px; }
+.ft-l { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 5px 0; font-size: .82rem; }
+.ft-l small { display: block; font-size: .66rem; color: var(--color-muted); }
+.ft-l b { flex: none; font-variant-numeric: tabular-nums; font-weight: 700; }
+.ft-l.pick { border-top: 1px solid var(--color-border); padding-top: 8px; font-weight: 700; }
+.ft-l.total { margin-top: 4px; padding: 10px 12px; border-radius: 12px; background: color-mix(in srgb, var(--color-up) 10%, var(--color-bg)); font-weight: 800; }
+.ft-l.total b { color: var(--color-up); font-size: 1.05rem; }
+.ft-detail summary { cursor: pointer; font-size: .88rem; font-weight: 800; list-style-position: inside; }
+.ft-detail summary small { display: block; margin: 2px 0 0 1.1em; font-size: .72rem; font-weight: 500; color: var(--color-muted); }
+.ft-detail[open] summary { margin-bottom: 8px; }
+.ft-it { padding: 10px 0; border-top: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent); }
+.ft-it-h { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.ft-it-h b { font-size: .86rem; word-break: keep-all; overflow-wrap: anywhere; }
+.ft-it-h span { font-size: .74rem; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.ft-it-h em { font-style: normal; font-weight: 800; color: var(--color-text); }
+.ft-it-h em.zero { color: var(--color-muted); font-weight: 600; }
+.ft-it-c { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 6px; align-items: center; }
+.ft-it-c select, .ft-pct input {
+  font: inherit; font-size: .78rem; color: var(--color-text); background: var(--color-bg-alt);
+  border: 1px solid var(--color-border); border-radius: 8px; padding: 5px 8px; min-width: 0; max-width: 100%;
+}
+.ft-pct, .ft-chk { display: inline-flex; align-items: center; gap: 5px; font-size: .76rem; color: var(--color-muted); }
+.ft-pct input { width: 58px; text-align: right; }
+.ft-pct small { font-size: .66rem; padding: 0 5px; border-radius: 999px; background: var(--color-bg-alt); }
+.ft-notes { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: .72rem; color: var(--color-muted); line-height: 1.6; }
+.ft-notes b { color: var(--color-text); }
+
 @media (max-width: 720px) {
   .dv-hero { padding: 16px; }
   .dv-kpis { grid-template-columns: 1fr; gap: 0; }
@@ -118,4 +176,6 @@
   .cal-v { font-size: .54rem; }
   .cal-m { font-size: .6rem; }
   #dv-dlg .sheet-step { overflow-y: auto; }
+  .ft-card { padding: 14px 12px; }
+  .ft-inputs { grid-template-columns: 1fr; }
 }
