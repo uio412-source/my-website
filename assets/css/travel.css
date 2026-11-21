@@ -118,6 +118,12 @@
 .tv-season .m b { font-size: .68rem; font-weight: 800; color: var(--color-text); font-variant-numeric: tabular-nums; }
 .tv-season .m.s2 b { color: var(--color-action-text); }
 .tv-season .m.now, .tv-mrow .m.now { box-shadow: 0 0 0 2px var(--color-text); }
+.tv-pk { margin: 10px 0 4px; font-size: .72rem; font-weight: 700; color: var(--color-muted); }
+.tv-pk small { font-weight: 500; margin-left: 2px; }
+.tv-prices .pv { display: grid; place-items: center; height: 24px; border-radius: 6px; font-size: .66rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.03em; color: var(--color-text); background: var(--color-bg-alt); }
+.tv-prices .pv.s2 { color: var(--color-up); }
+.tv-prices .pv.s0 { color: var(--color-muted); }
+.tv-prices .pv.now { box-shadow: 0 0 0 2px var(--color-text); }
 .tv-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: 8px; font-size: .7rem; color: var(--color-muted); }
 .tv-legend span { display: inline-flex; align-items: center; gap: 5px; }
 .tv-legend span::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: color-mix(in srgb, var(--s) var(--a, 70%), transparent); }
