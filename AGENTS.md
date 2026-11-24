@@ -50,6 +50,7 @@
   - 종류: `card-events`·`hotel-events`(이벤트 DB) · `travel-events`(항공사·면세점·공항 자체 이벤트 → `travel/vendor-events.json`, 여행준비) · `brand-services`(국제브랜드·카드사 선택 서비스: 호텔 발레·공항 라운지·공항 커피 등 → `paymorevent/data/brand-services.json`, 서울 호텔 발레는 `hotels/valet.json`에도 자동 추가) · `card-terms`(상품설명서 표준 정리 → `paymorevent/data/card-terms.json`) · `card-products`(검토 대기열, 자동 반영 안 함).
   - 무엇을 먼저 모을지는 `data/collect-queue.json`(수집 대기열, `tools/data/queue.py`로 생성·커밋). 수집 파일에 대기열 key를 `queueKey`로 적으면 다음 실행 때 건너뜁니다. 카드사·도메인 목록과 서비스 분류는 `inbox.py`의 `ISSUERS`·`CARD_DOMAINS`·`SERVICE_CATS`에서 고칩니다.
 - `main` 브랜치에 merge되면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages로 자동 배포합니다.
+- **매일 개선**: Claude가 매일 한 건 이상 개선·확장을 골라 PR → 머지 → 배포 확인까지 진행합니다. 사이트별 목적·고르는 기준·후보·한 일은 `docs/roadmap.md`에 있고, 작업할 때마다 그 파일을 같이 고칩니다.
 
 ## 폴더 구조
 ```
