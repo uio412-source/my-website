@@ -1,0 +1,32 @@
+{
+  "issuer": "NH농협카드",
+  "listUrls": [
+    "https://card.nonghyup.com/servlet/IpCb0005M.act"
+  ],
+  "events": [
+    {
+      "id": "nh-202611-affiliate-card-monthly-cashback",
+      "kind": "cashback",
+      "title": "제휴카드 쓰고 매달 캐시백 받자!",
+      "summary": "이벤트 대상 제휴카드 발급 후 이용 조건 충족 시 월 캐시백",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "직전 6개월간 NH농협 개인 신용카드 이용실적이 없는 본인 회원. BC·후불하이패스 이용실적 포함",
+        "기간 내 대상 제휴카드를 신청·정상 발급하고 행사 기간 중 해당 카드의 지정 업종에서 결제",
+        "카드별 전월실적 충족 및 지급 시점에 유효한 대상 카드 보유 필요",
+        "가족카드, 행사 전 대상 제휴카드 발급 및 탈회 이력, 동일 카드 프로모션 중복 수혜 제외",
+        "라이트할부 미청구 원금을 선결제하면 혜택 제외"
+      ],
+      "url": "https://card.nonghyup.com/servlet/IpCb2002R.act?EVT_CRT_SQNO=6096",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ],
+  "type": "card-events",
+  "collectedAt": "2026-11-23",
+  "collector": "ChatGPT"
+}

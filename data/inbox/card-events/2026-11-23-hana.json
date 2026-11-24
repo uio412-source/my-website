@@ -1,0 +1,53 @@
+{
+  "issuer": "하나카드",
+  "listUrls": [
+    "https://m.hanacard.co.kr/MPAEVT100M.web"
+  ],
+  "events": [
+    {
+      "id": "hana-202611-grand-lisboa-palace-stay-3-pay-2",
+      "kind": "card",
+      "title": "마카오 그랜드 리스보아 팰리스 2+1 혜택",
+      "summary": "지정 객실 연속 3박 예약 시 2박 요금 결제",
+      "category": "해외/여행",
+      "startsAt": "2026-11-16",
+      "endsAt": "2027-03-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "하나 Mastercard 개인 신용·체크카드로 지정 객실 결제",
+        "Grand Lisboa Palace Macau 또는 THE KARL LAGERFELD MACAU에서 7일 전 연속 3박 이상 예약",
+        "투숙 기간 2026-11-23~2027-04-15. 토요일과 지정 제외일은 혜택 제외",
+        "제외일 2026-12-24~26·12-30~31, 2027-01-01~02·02-06~12·03-26~29",
+        "10% 서비스요금과 관련 세금 별도. 다른 프로모션·바우처·쿠폰과 중복 불가"
+      ],
+      "url": "https://m.hanacard.co.kr/MKEVT1010M.web?EVN_SEQ=60574",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "hana-202611-aliexpress-upi-32usd",
+      "kind": "card",
+      "title": "알리익스프레스 최대 $32 즉시할인",
+      "summary": "진행 중인 2차 행사에서 $100 이상 결제 시 $16 즉시할인",
+      "category": "해외/여행",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-12-03",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "하나 UPI 브랜드 개인 신용·체크카드 대상. 법인·선불카드 제외",
+        "2차 행사 2026-11-19~2026-12-03. 1차 행사는 2026-11-18 종료",
+        "알리익스프레스에 대상 카드를 등록하고 USD로 결제",
+        "알리익스프레스 ID당 각 행사 기간 1회. K-VENUE 원화 결제 및 간편결제 제외",
+        "할인받은 주문을 취소하고 재결제하면 혜택 제외"
+      ],
+      "url": "https://m.hanacard.co.kr/MKEVT1010M.web?EVN_SEQ=60641",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ],
+  "type": "card-events",
+  "collectedAt": "2026-11-23",
+  "collector": "ChatGPT"
+}
