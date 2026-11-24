@@ -165,7 +165,19 @@
           <div class="wl-rows">${blk.rows.map(row).join("")}</div></div>`).join("")
       : `<p class="wl-empty">${filter === "deep" ? "지금 줍줍권(LV 900 이상)인 종목이 없어요." : "관심종목이 비어 있어요. 오른쪽 위 추가 버튼으로 등록해 보세요."}</p>`;
 
-    $("wl-sub").textContent = `${all.length}종목` + (quotes[all[0]?.symbol]?.date ? ` · ${fmt.day.format(new Date(quotes[all[0].symbol].date + "T00:00:00Z")).replace(/\.$/, "")} 종가 기준` : "");
+    // 국내(한국장)와 해외(미국장)는 마감 시각이 달라 종가 날짜가 다를 수 있음 → 날짜별로 묶어 표시
+    const dates = { kr: null, us: null };
+    for (const i of all) {
+      const d = quotes[i.symbol]?.date;
+      if (!d) continue;
+      const g = i.group === "kr" ? "kr" : "us";
+      if (!dates[g] || d > dates[g]) dates[g] = d;
+    }
+    const dayText = (d) => fmt.day.format(new Date(d + "T00:00:00Z")).replace(/\.$/, "");
+    const when = dates.kr && dates.us && dates.kr !== dates.us
+      ? `국내 ${dayText(dates.kr)} · 해외 ${dayText(dates.us)} 종가 기준`
+      : dates.kr || dates.us ? `${dayText(dates.kr || dates.us)} 종가 기준` : "";
+    $("wl-sub").textContent = `${all.length}종목` + (when ? ` · ${when}` : "");
     renderNews(all);
   }
 
@@ -248,7 +260,7 @@
         <div class="dt-lv-top">
           <span>줍줍LV</span>
           <b class="lv-${b.cls}">${lv}</b>
-          <span class="lv-chip ${b.cls}">${b.name}${q.short ? " · 추정" : ""}</span>
+          <span class="lv-chip ${b.cls}">${b.name}${q.short ? " (추정)" : ""}</span>
         </div>
         <div class="gauge" role="img" aria-label="줍줍LV ${lv} / 1000">
           <i class="gauge-pin" style="left:${(lv - 1) / 9.99}%"></i>
@@ -258,7 +270,7 @@
       <div class="dt-stats">
         ${stat("상태", ZONE[q.zone] ?? "—", q.zone === 2 ? "zone" : "")}
         ${stat("RSI(14)", Number.isFinite(q.rsi) ? q.rsi.toFixed(1) : "—", q.rsi < 33 ? "down" : "")}
-        ${stat("52주 고점 대비", Number.isFinite(q.dd52) ? fmt.pct1.format(-q.dd52) : "—")}
+        ${stat(q.short ? "상장 후 고점 대비 (추정)" : "52주 고점 대비", Number.isFinite(q.dd52) ? fmt.pct1.format(-q.dd52) : "—")}
         ${stat("200일선 대비", Number.isFinite(q.gap200) ? fmt.pct1.format(q.gap200) : "—", dirOf(q.gap200))}
       </div>` : ""}
 
