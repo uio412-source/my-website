@@ -65,6 +65,36 @@ def short(s, n):
     return s if len(s) <= n else s[: n - 1].rstrip() + "…"
 
 
+# 라운지 문장을 자를 경계: 문장 부호 뒤 공백, 가운데점(·)과 슬래시(/)로 나뉜 항목
+LOUNGE_SPLIT = re.compile(r"(?<=[.!?。])\s+|\s*[·•]\s*|\s*[/|;；]\s*|\s+▶\s*")
+
+
+def lounge_sentence(text, limit=130):
+    """'라운지'가 들어간 항목 하나를 문장··// 경계에서 잘라 냄.
+
+    예전에는 '라운지' 앞 40자를 아무 데서나 잘라 'ite 서비스'처럼 단어 중간에서 시작했습니다.
+    """
+    for part in LOUNGE_SPLIT.split(clean(text)):
+        p = part.strip(" -—–·•,;:")
+        if "라운지" not in p or len(p) < 4:
+            continue
+        if len(p) <= limit:
+            return p
+        # 조각이 길면 라운지 앞쪽에서 시작하되 단어 경계로 맞추고, 끝도 단어 중간이면 버림
+        at = p.index("라운지")
+        start = max(0, at - 40)
+        if start:
+            space = p.rfind(" ", 0, start)
+            start = space + 1 if space >= 0 else start
+        cut = p[start:start + limit]
+        if start + limit < len(p):
+            space = cut.rfind(" ")
+            if space >= limit // 2:
+                cut = cut[:space]
+        return cut.strip(" -—–·•,;:") + "…"
+    return ""
+
+
 def card_events():
     out, seen = {k: [] for k in RX}, set()
     for e in json.loads(EVENTS.read_text(encoding="utf-8")):
@@ -125,9 +155,8 @@ def cards_index():
             t, d = clean(b.get("title")), clean(b.get("detail"))
             if "라운지" not in t + d or NOT_AIRPORT.search(t) or not AIRPORT_LOUNGE.search(t + " " + d[:200]):
                 continue
-            # 라운지 문장만 잘라서 보여 줌
-            m = re.search(r"[^.。\n]{0,40}라운지[^.。\n]{0,80}", d)
-            items.append({"title": t, "text": short(m.group(0) if m else d, 110), "arrival": bool(ARRIVAL.search(t + " " + d))})
+            # 라운지 문장만 문장··// 경계에 맞춰 잘라서 보여 줌(단어 중간에서 시작하지 않게)
+            items.append({"title": t, "text": short(lounge_sentence(d) or d, 110), "arrival": bool(ARRIVAL.search(t + " " + d))})
         if items:
             text = " ".join(i["title"] + " " + i["text"] for i in items)
             lounge.append({**base, "items": items[:4], "arrival": any(i["arrival"] for i in items),

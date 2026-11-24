@@ -32,6 +32,12 @@ DOMESTIC = re.compile(r"휘닉스파크|소노|국내호텔|국내 호텔|제주
                       r"롯데호텔|그랜드 ?조선|그랜드 머큐어|호텔 ?식사권|백미당|애프터눈|휴양림|우다페|ALL x WOORI|DINING WEEK|에플로어|KTX|중고차|직구|몰테일")
 SIGNUP = re.compile(r"^(네이버페이|카카오페이|토스|페이코|PAYCO)\s*·")
 GENERIC = re.compile(r"^공식 (진행 이벤트|혜택|목록의)|확인 필요$")
+# 혜택이 아닌 안내문(서비스 오픈·멤버십·유의사항)은 혜택 카드로 보여 주지 않음
+NOTICE = re.compile(r"알려드려요|안내|서비스 ?오픈|유의 ?사항")
+# '멤버십 등급 제공·업그레이드'처럼 실제 혜택인 멤버십은 남기고, '멤버십 안내'만 안내문으로 봄
+MEMBERSHIP = re.compile(r"멤버십")
+MEMBERSHIP_BENEFIT = re.compile(r"등급|제공|업그레이드|무료")
+BENEFIT_WORD = re.compile(r"할인|적립|캐시백|%|\d[\d,]*\s*(?:만\s*)?원")
 
 # 나라·지역 키워드 (travel/places.json id). 위에서부터 차례로 검사
 PLACES = [
@@ -140,6 +146,9 @@ def build_events():
         if GENERIC.search(text) or text == title:
             text = desc if desc and desc != title and not GENERIC.search(desc) else ""
         both = f"{title} {desc} {text}"
+        notice = NOTICE.search(title) or (MEMBERSHIP.search(title) and not MEMBERSHIP_BENEFIT.search(title))
+        if notice and not BENEFIT_WORD.search(both):
+            continue
         out.append({
             "id": e["id"],
             "issuer": e.get("issuer") or "",
