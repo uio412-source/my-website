@@ -28,7 +28,10 @@ export default function EventDetail({offer: o, cards, events}: {offer: Offer; ca
   const [allCards, setAllCards] = useState(false);
   const d = dday(o.endsAt);
   const facts: [string, string, boolean?][] = [
-    ['기간', [o.startsAt ? ymd(o.startsAt) : o.startsAtLabel, o.endsAt ? ymd(o.endsAt) : ''].filter(Boolean).join(' ~ ') + (status === '진행 중' && d ? ` (${d})` : '')],
+    ['기간', (o.endsAt
+      ? [o.startsAt ? ymd(o.startsAt) : o.startsAtLabel, ymd(o.endsAt)].filter(Boolean).join(' ~ ')
+      : o.status === 'active' ? [o.startsAt ? ymd(o.startsAt) : o.startsAtLabel, '상시'].filter(Boolean).join('부터 ') : o.startsAt ? ymd(o.startsAt) : o.startsAtLabel ?? '')
+      + (status === '진행 중' && d ? ` (${d})` : '')],
     ['참여', v.entry === true ? '응모·신청해야 받아요' : v.entry === false ? '응모 없이 결제하면 받아요' : UNKNOWN, v.entry === null],
     ['대상 카드', v.target ?? (related.length ? `${related.length}종 (아래)` : UNKNOWN), !v.target && !related.length],
     ['결제 경로', o.channel && o.channel !== '카드사 공식' ? o.channel : ''],

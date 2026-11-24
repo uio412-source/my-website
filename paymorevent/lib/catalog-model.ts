@@ -113,10 +113,10 @@ export function offerStatus(o:Offer,today=new Date(Date.now()+9*3600000).toISOSt
  if(o.status==='needs_review')return '조건 재확인';if(o.status==='official_hub')return '공식 이벤트 목록';
  if(o.status==='expired'||(o.endsAt&&o.endsAt<today))return '종료';
  if(o.startsAt&&o.startsAt>today)return '예정';
- if(!o.startsAt&&o.startsAtLabel==='수신일'&&o.endsAt)return '수신 대상';if(!o.startsAt||!o.endsAt)return '기간 확인 필요';return '진행 중';
+ if(!o.startsAt&&o.startsAtLabel==='수신일'&&o.endsAt)return '수신 대상';if(!o.endsAt&&o.status==='active')return '진행 중';if(!o.startsAt||!o.endsAt)return '기간 확인 필요';return '진행 중';
 }
 export function activeOffer(o:Offer,today?:string){return offerStatus(o,today)==='진행 중';}
-export function currentMonthOffer(o:Offer,today=new Date(Date.now()+9*3600000).toISOString().slice(0,10)){return (o.status==='active'||o.status==='upcoming')&&(!!o.startsAt||o.startsAtLabel==='수신일')&&!!o.endsAt&&o.endsAt>=today&&(!o.startsAt||o.startsAt<=today.slice(0,7)+'-31');}
+export function currentMonthOffer(o:Offer,today=new Date(Date.now()+9*3600000).toISOString().slice(0,10)){return (o.status==='active'||o.status==='upcoming')&&(!!o.startsAt||o.startsAtLabel==='수신일')&&(o.endsAt?o.endsAt>=today:o.status==='active')&&(!o.startsAt||o.startsAt<=today.slice(0,7)+'-31');}
 export function isAnnualFeeOffer(o:Offer){return o.annualFeeOnly??(o.kind==='cashback'&&/연회비/.test(o.title+' '+o.benefitText));}
 export function rewardValue(o:Offer){
  if(isAnnualFeeOffer(o))return null;

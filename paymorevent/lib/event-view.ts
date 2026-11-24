@@ -196,8 +196,8 @@ export function conditionLines(o: Offer, lines: (s: string) => string[]) {
 }
 
 /** 마감까지 남은 날로 묶기 */
-export function endBucket(end: string | null, now: string) {
-  if (!end) return '기간 확인';
+export function endBucket(end: string | null, now: string, ongoing = false) {
+  if (!end) return ongoing ? '상시' : '기간 확인';
   const d = Math.round((Date.parse(end) - Date.parse(now)) / 864e5);
   return d <= 3 ? '3일 안에 끝나요' : d <= 7 ? '일주일 안에 끝나요' : d <= 31 ? '한 달 안에 끝나요' : '한 달 넘게 남았어요';
 }

@@ -4498,7 +4498,7 @@
       "포인트/캐시백"
     ],
     "startsAt": "2026-04-01",
-    "endsAt": "2028-12-31",
+    "endsAt": null,
     "bookingEndsAt": null,
     "stayEndsAt": null,
     "requirements": [
@@ -9294,7 +9294,7 @@
     "category": "기타",
     "channel": "카드사 공식",
     "startsAt": "2024-07-18",
-    "endsAt": "2029-06-30",
+    "endsAt": null,
     "bookingEndsAt": null,
     "stayEndsAt": null,
     "requirements": [
@@ -22575,7 +22575,7 @@
     "category": "기타",
     "channel": "카드사 공식",
     "startsAt": "2024-11-04",
-    "endsAt": "2028-12-31",
+    "endsAt": null,
     "bookingEndsAt": null,
     "stayEndsAt": null,
     "requirements": [
@@ -22949,7 +22949,7 @@
     "category": "기타",
     "channel": "카드사 공식",
     "startsAt": "2025-08-04",
-    "endsAt": "9999-12-31",
+    "endsAt": null,
     "bookingEndsAt": null,
     "stayEndsAt": null,
     "requirements": [
@@ -34009,7 +34009,7 @@
     "category": "기타",
     "channel": "카드사 공식",
     "startsAt": "2025-11-10",
-    "endsAt": "2999-12-31",
+    "endsAt": null,
     "bookingEndsAt": null,
     "stayEndsAt": null,
     "requirements": [

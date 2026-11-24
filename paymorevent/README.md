@@ -13,7 +13,7 @@ npm run build
 npm run theme   # app/*.css의 색을 바꾼 뒤 다크 모드 파일(app/mr-cards-dark.css) 다시 만들기
 ```
 
-카드 검색 목록의 원본은 `public/catalog-snapshot.json`입니다. 카드 상세는 `data/cards.json.gz`, 이벤트는 `data/events.json`을 기준으로 빌드합니다. 데이터를 갱신할 때 카드 목록과 상세의 ID가 일치해야 합니다.
+카드 검색 목록의 원본은 `data/catalog-snapshot.json`입니다. 카드 상세는 `data/cards.json.gz`, 이벤트는 `data/events.json`을 기준으로 빌드합니다. 데이터를 갱신할 때 카드 목록과 상세의 ID가 일치해야 합니다.
 
 화면은 원본 대신 빌드할 때 원본에서 만든 가벼운 파일 두 개를 내려받습니다(`scripts/card-list.mjs`, 개발 서버에서도 같은 내용을 제공).
 

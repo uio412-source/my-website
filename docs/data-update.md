@@ -317,7 +317,7 @@
 ```
 
 - `change`: `new` 신상품 / `changed` 혜택·연회비 변경 / `discontinued` 발급 중단
-- `changed`·`discontinued`는 `cardId`(`paymorevent/public/catalog-snapshot.json`의 `id`) 필수
+- `changed`·`discontinued`는 `cardId`(`paymorevent/data/catalog-snapshot.json`의 `id`) 필수
 - 사이트에 바로 반영되지 않습니다. 쌓인 대기열은 사람이 "카드 상품 대기열 반영해 줘"라고 요청할 때 카드 DB에 넣습니다.
 
 ## 9. 실행 한도와 순서 (매일 한 번, 끝까지 마치기)
@@ -350,7 +350,7 @@
 
 **상품공시실** (`card-products`)
 - 각 카드사 홈페이지 고객센터의 '상품공시실'(신용·체크카드 상품 목록, 판매 중단 상품, 상품설명서 개정 내역)을 엽니다. 실제로 연 주소는 PR 본문에 적습니다.
-- `paymorevent/public/catalog-snapshot.json`에 없는 이름이면 `new`, 공시실에 '판매중단'으로 표시되고 DB에 있으면 `discontinued`, 상품설명서 개정으로 혜택·연회비·전월실적이 바뀌었으면 `changed`.
+- `paymorevent/data/catalog-snapshot.json`에 없는 이름이면 `new`, 공시실에 '판매중단'으로 표시되고 DB에 있으면 `discontinued`, 상품설명서 개정으로 혜택·연회비·전월실적이 바뀌었으면 `changed`.
 - 카드사: 신한카드 KB국민카드 삼성카드 현대카드 우리카드 하나카드 롯데카드 NH농협카드 BC카드
 
 ## 10. 찾는 요령

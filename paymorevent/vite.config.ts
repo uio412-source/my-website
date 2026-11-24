@@ -3,20 +3,19 @@ import {fileURLToPath} from 'node:url';
 import react from '@vitejs/plugin-react';
 import {defineConfig, type Plugin} from 'vite';
 import {buildCardFiles} from './scripts/card-list.mjs';
-import {bestPicking} from './lib/catalog-model';
 import {applyVerifiedCardRules, readVerifiedCardRules} from './scripts/verified-card-rules.mjs';
 
 const base = '/my-website/paymorevent/';
 
 // Serves (dev) and emits (build) card-list.json and card-search.json, derived
-// from public/catalog-snapshot.json. See scripts/card-list.mjs.
+// from data/catalog-snapshot.json. See scripts/card-list.mjs.
 function cardListFiles(): Plugin {
   const readJSON = (path: string) => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
   const build = () => {
-    const snapshot = readJSON('./public/catalog-snapshot.json');
+    const snapshot = readJSON('./data/catalog-snapshot.json');
     const cards = applyVerifiedCardRules(snapshot.cards, readVerifiedCardRules(), {summary: true});
-    const files = buildCardFiles({...snapshot, cards}, readJSON('./data/card-images.json'));
-    return {...files, catalog: {...snapshot, cards, stats: {...snapshot.stats, pickingCount: cards.filter(bestPicking).length}}};
+    // 카드 목록·검색만 앱이 읽습니다. catalog-snapshot.json은 빌드·검증용이라 dist에 내보내지 않습니다(12.5MB 절감).
+    return buildCardFiles({...snapshot, cards}, readJSON('./data/card-images.json'));
   };
   const initial = build();
   return {
@@ -34,7 +33,6 @@ function cardListFiles(): Plugin {
     },
     generateBundle() {
       for (const [fileName, source] of Object.entries(initial.files)) this.emitFile({type: 'asset', fileName, source});
-      this.emitFile({type: 'asset', fileName: 'catalog-snapshot.json', source: JSON.stringify(initial.catalog)});
     },
   };
 }
