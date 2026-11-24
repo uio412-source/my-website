@@ -1,0 +1,1928 @@
+{
+  "type": "card-events",
+  "issuer": "롯데카드",
+  "collectedAt": "2026-11-24",
+  "collector": "ChatGPT",
+  "listUrls": [
+    "https://www.lottecard.co.kr/app/LPBNFDA_V100.lc",
+    "https://m.lottecard.co.kr/app/LPBNFDA_V100.lc",
+    "https://www.lottecard.co.kr/app/LPSCHBA_P200.lc?prevSearchText=&searchType=event"
+  ],
+  "events": [
+    {
+      "id": "lotte-202611-cu-marketing-consent",
+      "kind": "card",
+      "title": "마케팅 정보 수신·알람 동의하고 CU 쿠폰 받아가세요!",
+      "summary": "마케팅 수신 동의 시 CU 2천원 쿠폰",
+      "category": "응모형",
+      "startsAt": "2026-11-17",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "행사 시작일에 마케팅 수신 미동의 상태인 롯데 개인 신용회원 대상",
+        "수신 동의 및 앱 알림·문자·이메일 중 2개 이상 동의 후 응모, 지급 시까지 유지",
+        "본인 1회, 2027년 1월 말까지 문자 발송"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11389",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-sjm-macau",
+      "kind": "card",
+      "title": "롯데 마스터카드 특별 혜택! 마카오 SJM 호텔 2+1박 특전",
+      "summary": "마카오 지정 객실 2박 결제 시 1박 무료",
+      "category": "해외/여행",
+      "startsAt": "2026-11-16",
+      "endsAt": "2027-03-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데 마스터카드 개인 신용 플래티넘·티타늄·월드 대상",
+        "그랜드 리스보아 팰리스 디럭스 룸 또는 더 칼 라거펠트 그랜드 클래식 룸",
+        "투숙 2026.11.23~2027.4.15, 체크인 7일 전까지 전용 링크로 연속 3박 예약",
+        "목요일 체크인 불가. 12.24~26, 12.30~1.2, 2.6~12, 3.26~29 제외",
+        "체크인 시 대상 카드 제시 후 현장 결제, 서비스료와 세금 별도"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11395",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-trip-to-loca-amex-overseas",
+      "kind": "card",
+      "title": "Trip to 로카 아멕스 카드 최대 5% 혜택",
+      "summary": "해외 외화 결제 4.5% 할인 및 조건별 최대 25만원 캐시백",
+      "category": "해외/여행",
+      "startsAt": "2026-11-16",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [
+        "Trip to 로카"
+      ],
+      "conditions": [
+        "Trip to 로카 AMEX 온라인 발급 대상. 행사 전 6개월 롯데 개인 신용카드 결제 이력 없는 회원",
+        "4.5% 결제일 할인은 전월 실적·한도 제한 없음",
+        "추가 캐시백은 대상 해외 외화 결제 2천만원 이상 10만원, 5천만원 이상 25만원, 구간 중복 불가",
+        "기간 내 응모 필수, 직전 12개월 롯데카드 이용유도 이벤트 수혜 이력·간편결제·가족카드 등 제외"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11396",
+      "cashbackAmount": 250000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202611-claude-mastercard",
+      "kind": "card",
+      "title": "마스터카드로 클로드 결제하고 최대 2만 네이버페이 포인트 받자!",
+      "summary": "클로드 외화 결제 시 네이버페이 최대 2만 포인트",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-06",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "롯데 개인 신용 마스터카드로 응모 후 기간 내 CLAUDE AI 구독료 외화 결제",
+        "합산 2만원 이상 1만P, 4만원 이상 2만P. 본인당 유리한 구간 1회, 가족카드 합산",
+        "원화·인앱·국내 PG·간편결제·결합상품 제외",
+        "2027.1.31까지 문자 발송, 발송일 포함 60일 내 등록"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11391",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-mastercard-overseas",
+      "kind": "card",
+      "title": "해외 결제 시 최대 11만 네이버페이 포인트드려요!",
+      "summary": "마스터카드 해외 결제 시 네이버페이 최대 11만 포인트",
+      "category": "해외/여행",
+      "startsAt": "2026-11-06",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "롯데 개인 신용 마스터카드로 응모 후 해외 온·오프라인 외화 결제",
+        "합산 20만·40만·80만원 이상 시 각각 3만·5만·11만P. 가장 높은 구간 1회, 가족카드 합산",
+        "해외 원화 결제, 현금서비스, ATM, 가상자산·사행성 가맹점 제외",
+        "2027.1.31까지 문자 발송, 발송일 포함 60일 내 등록"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11390",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-hanwha-carrot-auto",
+      "kind": "card",
+      "title": "한화손보 캐롯 자동차보험 롯데카드 결제시 최대 3만원 캐시백",
+      "summary": "캐롯 신규 자동차보험료 30만원 이상 시 최대 3만원",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-02",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "전용 링크에서 신규 가입 후 롯데 개인 신용카드로 결제, 재가입 제외",
+        "최근 10개월 내 캐롯 자동차보험 타 행사 혜택과 중복 불가",
+        "지급 시 계약 및 조건 유지, 승인 다음 달 말 지급"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11364",
+      "cashbackAmount": 30000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202611-amex-shopping-megafesta",
+      "kind": "card",
+      "title": "마이아멕스쇼핑 메가페스타 오픈! 연말까지 보너스 캐시백 지급",
+      "summary": "기본 캐시백에 10% 보너스 및 추가 $10 쿠폰",
+      "category": "해외/여행",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데 아멕스 개인 신용카드를 MyAmexShopping 계정에 연동하고 해당 사이트를 경유해 결제",
+        "보너스 캐시백은 적격 구매 합산 계정당 최대 $100",
+        "추가 $10은 쿠폰 등록 후 순 주문액 $100 이상 및 기본 캐시백 적립이 완료된 건 대상",
+        "11.22~28 CASETiFY 최대 25%, 11.29~12.5 FARFETCH 최대 22%",
+        "12.6~12 Apple KR 최대 15%, 12.13~19 일본 가맹점·12.20~31 여행 가맹점 최대 22%",
+        "여행은 온라인 사전 결제 후 2027.5.31까지 여행·숙박 완료"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11388",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-aliexpress-visa",
+      "kind": "card",
+      "title": "AliExpress(알리익스프레스)에서 최대 $30 즉시할인!",
+      "summary": "11.19~12.3 알리익스프레스 $100 이상 결제 시 $30 즉시할인",
+      "category": "해외/여행",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-12-03",
+      "entryRequired": false,
+      "cards": [
+        "디지로카 Paris",
+        "디지로카 Las Vegas",
+        "LOCA 365",
+        "LOCA 100",
+        "디지로카 Wellness"
+      ],
+      "conditions": [
+        "롯데 개인 신용 비자 중 카드번호 앞 6자리 401585·467007·488972·489515인 카드 대상",
+        "11.1~18에는 $70 이상 결제 시 $14 할인",
+        "미국 달러로 해외배송 상품 결제, 기간별 계정당 1회 선착순",
+        "간편결제·K-VENUE·타 할인 쿠폰 중복 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11379",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-aliexpress-mastercard",
+      "kind": "card",
+      "title": "AliExpress(알리익스프레스) $15 즉시할인",
+      "summary": "알리익스프레스 $100 이상 구매 시 $15 즉시할인",
+      "category": "해외/여행",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-12-03",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데 개인 신용 마스터카드로 해외배송 상품을 미국 달러로 결제",
+        "11.1~18과 11.19~12.3 기간별 계정당 1회, 선착순",
+        "간편결제·K-VENUE·타 할인 쿠폰 중복 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11377",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-insurance-installments",
+      "kind": "card",
+      "title": "삼성화재 · DB손해보험등 무이자/부분 무이자 할부 혜택",
+      "summary": "손해보험 2~5개월 무이자·10/12개월 부분 무이자",
+      "category": "기타",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데 개인 신용카드로 등록된 손해보험 가맹점에서 5만원 이상 최초 할부 결제",
+        "10개월은 1~5회차, 12개월은 1~6회차 수수료 고객 부담",
+        "체크·법인·기프트카드, 할부 개월 변경·일시불의 할부 전환 제외",
+        "무이자 적용 건은 일부 상품을 제외하고 포인트·마일리지 미적립"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11376",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-travel-installments",
+      "kind": "card",
+      "title": "여행사 · 항공사 업종 무이자/부분 무이자 할부 혜택",
+      "summary": "여행사·항공사 2~3개월 무이자·10/12개월 부분 무이자",
+      "category": "해외/여행",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데 개인 신용카드로 등록된 여행사·항공사에서 5만원 이상 최초 할부 결제",
+        "10개월은 1~5회차, 12개월은 1~6회차 수수료 고객 부담",
+        "체크·법인·기프트카드 및 일시불에서 할부로 전환한 건 제외",
+        "무이자 적용 건은 일부 상품을 제외하고 포인트·마일리지 미적립"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11375",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-living-installments",
+      "kind": "card",
+      "title": "생활 플러스 업종 최대 5개월 무이자 할부",
+      "summary": "생활 업종 2~5개월 무이자 할부",
+      "category": "기타",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데 개인 신용카드로 건당 5만원 이상 최초 할부 결제",
+        "학원·교육·일반 의료·일부 전자상거래·여행사·항공사는 2~3개월",
+        "종합병원·손해보험 2~5개월, 손해보험·여행사·항공사 10/12개월 부분 무이자",
+        "국세·지방세는 6/10/12개월 부분 무이자(4대보험 제외), 각 1~3·1~5·1~6회차 고객 부담",
+        "체크·법인·기프트카드 및 일시불에서 할부로 전환한 건 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11374",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-revolving-draw",
+      "kind": "card",
+      "title": "최대 5만원 캐시백 받는 일부결제금액이월약정(리볼빙) 혜택",
+      "summary": "리볼빙 월말 이월잔액에 따라 추첨 최대 5만원",
+      "category": "응모형",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "기간 중 1회 응모, 응모한 달부터 월말 이월잔액으로 추첨",
+        "50만원 이상 5천원 500명, 200만원 이상 2만원 200명, 400만원 이상 5만원 50명",
+        "당첨 회원 1회, 다음 달 20일까지 카드 결제계좌 지급",
+        "지급일까지 약정 유지, 연체·탈회·월말 잔액 납부 시 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11373",
+      "cashbackAmount": 50000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202611-samsung-direct-insurance",
+      "kind": "card",
+      "title": "삼성화재 다이렉트 자동차보험 신규 가입 시 최대 3만원 캐시백",
+      "summary": "삼성화재 다이렉트 보험료 50만원 이상 시 최대 3만원",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "전용 링크에서 개인 자동차보험 신규 가입 후 롯데 개인 신용카드로 결제",
+        "재가입 제외, 최근 12개월 내 이벤트 참여 고객은 2만원",
+        "혜택 지급까지 계약과 행사 조건 유지, 승인월의 다음 달 말 입금"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11372",
+      "cashbackAmount": 30000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202611-samsung-insurance-quote",
+      "kind": "card",
+      "title": "삼성화재 내차 보험료 조회하면 네이버페이 포인트 7천원 지급",
+      "summary": "삼성화재 자동차보험료 조회 시 네이버페이 7천 포인트",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "이벤트 전용 링크에서 자동차 소유자 명의 인증·마케팅 동의 후 온라인 보험료 계산 및 참여",
+        "현재 삼성화재 가입자 및 최근 12개월 내 행사 참여자 제외",
+        "참여 시 문자 발송, 쿠폰 유효기간 3개월"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11371",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-skt-tello-ne",
+      "kind": "card",
+      "title": "TELLO NE 롯데카드 SKT 통신요금 할인 프로모션",
+      "summary": "SKT 자동납부 월 최대 29,000원 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "TELLO NE 롯데카드"
+      ],
+      "conditions": [
+        "행사 직전 6개월간 롯데카드 사용 이력이 없는 회원",
+        "기간 내 대상 카드에 SKT 통신요금 자동납부 연결",
+        "전월 40만원 이상 월 28,000원, 80만원 이상 월 29,000원 할인",
+        "프로모션 최대 24개월, 이후 기본 혜택 적용"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11370",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-saint-augustin",
+      "kind": "card",
+      "title": "아시안푸드 전문점 생어거스틴 10% 결제일 할인받아요",
+      "summary": "생어거스틴 10% 청구 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-11-01",
+      "endsAt": "2027-04-30",
+      "entryRequired": false,
+      "cards": [
+        "11번가 ShoppingMaster 롯데카드",
+        "B 롯데카드",
+        "CGV 롯데 포인트플러스 카드",
+        "DC스마트 카드",
+        "DC플러스 카드",
+        "Driving Pass 카드",
+        "E1 LPG 롯데카드",
+        "GS25 롯데카드",
+        "HD현대오일뱅크 드라이빙 패스 롯데카드",
+        "I Love Seoul 관리공단 나눔 롯데카드",
+        "LG전자 베스트샵 롯데카드",
+        "LOHB's(롭스) 롯데체크카드",
+        "New 에듀드림 롯데카드",
+        "New 인터파크 롯데카드",
+        "SK 드라이빙 패스 롯데카드",
+        "The CJ 롯데카드",
+        "V-Big 멤버스 롯데체크카드",
+        "VEEX Ⅱ 롯데카드",
+        "VEEX 플래티넘 롯데카드",
+        "VIC마켓 롯데카드",
+        "Weekly 체크카드",
+        "YES24 Mania 롯데카드",
+        "골프존 롯데카드",
+        "교보문고 핫트랙스 롯데카드",
+        "교원DC 롯데카드",
+        "구도일플러스100 롯데카드",
+        "네이버 체크아웃 DC20 롯데카드",
+        "노랑풍선 롯데카드",
+        "뉴 롯데면세점 롯데카드",
+        "뉴GS칼텍스 롯데카드",
+        "뉴롯데시네마 롯데체크카드",
+        "뉴롯데시네마 포인트플러스카드",
+        "다이아몬드(NEW) 카드",
+        "드림미즈 롯데 포인트플러스 카드",
+        "롯데 VEEX 카드",
+        "롯데 VEEX-KIA 복지카드",
+        "롯데 Weekly 체크카드(경기도 청소년 교통비 지원)",
+        "롯데 국민행복카드(신용)",
+        "롯데 국민행복카드(체크)",
+        "롯데 데일리 카드",
+        "롯데 데일리 카드 화이트·블루",
+        "롯데 레니스카드",
+        "롯데 베네피아 포인트플러스 그란데 카드",
+        "롯데 아이행복카드(신용)",
+        "롯데 아이행복카드(체크)",
+        "롯데 옵틴 플래티넘 카드",
+        "롯데 위버스카이 스카이패스 카드",
+        "롯데 위버스카이 아시아나클럽 카드",
+        "롯데 체크플러스 카드",
+        "롯데 포인트플러스 그란데 카드",
+        "롯데 포인트플러스 카드",
+        "롯데ON Smart PLUS 카드",
+        "롯데렌터카 AUTO 카드",
+        "롯데마트 롯데카드",
+        "롯데월드 롯데카드",
+        "롯데하이마트 Hi - Class 롯데카드",
+        "마이비 선불교통 롯데 체크카드",
+        "모두투어 마일리지 롯데카드",
+        "반디앤루니스 롯데카드",
+        "샤롯데 비엔 플래티넘 카드",
+        "샤롯데 플래티넘 스타 카드",
+        "쇼퍼홀릭 롯데홈쇼핑 체크카드",
+        "쇼퍼홀릭 롯데홈쇼핑 카드",
+        "쌍용자동차 AUTO롯데카드",
+        "아시아나클럽 롯데아멕스카드",
+        "에이앤피파이낸셜 롯데 포인트플러스 카드",
+        "진에어 롯데카드",
+        "코코몽 롯데카드",
+        "패션플러스 롯데 포인트플러스 카드",
+        "플래티넘 위버스카이 카드",
+        "해병대 전우 롯데 데일리 카드",
+        "해병대 전우 롯데체크플러스",
+        "해피포인트 롯데 체크카드",
+        "해피포인트 롯데카드"
+      ],
+      "conditions": [
+        "상품설명서에 생어거스틴 10% 할인이 명시된 카드로 결제",
+        "일반 기준 전월 일시불·할부 20만원 이상, 일 1회, 결제액 20만원·할인액 2만원 한도",
+        "백화점·대형마트·호텔 입점매장 제외, 최초 신규회원 등록월 포함 3개월 유예"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11366",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-mobile-plan-family",
+      "kind": "card",
+      "title": "SKT KT LGU+ 알뜰폰 요금 월 최대 3만원, 최대 72만원 할인혜택!",
+      "summary": "통신·알뜰폰 자동납부 월 최대 3만원 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "Toss Mobile x LOCA"
+      ],
+      "conditions": [
+        "전월 30만원 이상 25,000원, 70만원 이상 28,000원, 150만원 이상 30,000원 결제일 할인",
+        "자동납부 최초 등록 기준 직전 6개월 롯데 개인 신용카드 결제 이력 없는 회원",
+        "프로모션 최대 24개월, 25개월부터 전월 30만원 이상 시 7천원"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11359",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-lge-trip-to-loca",
+      "kind": "card",
+      "title": "LG전자 온라인몰(LGE.COM) 최대 50만원 캐시백",
+      "summary": "LG전자 온라인몰 이용 금액에 따라 최대 50만원 캐시백",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [
+        "Trip to 로카"
+      ],
+      "conditions": [
+        "11.30까지 응모, 직전 6개월간 롯데 개인 신용카드 결제 이력이 없는 회원",
+        "12.31까지 LGE.COM에서 Trip to 로카 AMEX 결제",
+        "20만·100만·1,000만원 이상 결제 시 각각 18만·20만·50만원, 구간 중복 불가",
+        "2027.1.31까지 지급, 대상 카드는 온라인 채널 발급 건에 한함"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11354",
+      "cashbackAmount": 500000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202611-ybm-digiloca",
+      "kind": "card",
+      "title": "YBM X 디지로카로 무이자할부와 최대 15만원 혜택 받아가세요",
+      "summary": "YBM 12개월 무이자 할부 및 조건 충족 시 15만원 캐시백",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [
+        "YBM X 디지로카"
+      ],
+      "conditions": [
+        "최근 롯데카드 사용 이력 2026.4.1~10.31 없는 대상 카드 회원, 가족회원 제외",
+        "11.30까지 응모, 이용기간 12.31까지",
+        "YBM에서 20만원 이상 결제 시 12개월 무이자",
+        "캐시백 실적 20만원 이상, 무이자 할부 이용 금액 제외",
+        "2027.1.29까지 등록 계좌 지급"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11325",
+      "cashbackAmount": 150000,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-skt-t-light",
+      "kind": "card",
+      "title": "T 라이트 롯데카드 장기할부 캐시백 프로모션",
+      "summary": "SKT 단말기 장기할부 월 최대 35,000원 캐시백",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "T 라이트 롯데카드"
+      ],
+      "conditions": [
+        "행사 직전 6개월간 롯데카드 사용 이력이 없는 회원, 하이패스 포함",
+        "SKT 단말기를 대상 카드로 24개월 또는 36개월 라이트할부 구매",
+        "전월 50만원 이상 34,000원, 100만원 이상 35,000원",
+        "장기할부 유지 시 최대 24개월"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11305",
+      "cashbackAmount": 35000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202611-lotte-dept-card-campaign",
+      "kind": "card",
+      "title": "롯데백화점에서 할인받고 최대 78만원 상당 혜택",
+      "summary": "30만원 이용 시 14만원 캐시백, 추가 혜택 별도",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [
+        "롯데백화점 롯데카드"
+      ],
+      "conditions": [
+        "11.30까지 응모, 직전 6개월간 롯데 개인 신용카드 결제 이력 및 직전 12개월 내 카드 이용 이벤트 수혜 이력 없는 회원",
+        "12.10까지 30만원 결제 시 14만원, 리볼빙 유지 시 1만원 추가",
+        "12.10까지 혜택 지급 관련 선택동의 4종 완료 후 지급일까지 유지",
+        "기본 혜택 대상자는 12.11~1.10 해외 300만·3,000만원 이상 결제 시 각각 3만·50만원 캐시백",
+        "롯데백화점몰 쿠폰 3종과 지정 멤버십 정기결제 월 최대 5천원씩 6개월 별도"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11363",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-loca-likit-15-campaign",
+      "kind": "card",
+      "title": "간단하게 할인받고 최대 84만원 상당 혜택",
+      "summary": "30만원 이용 시 아멕스 20만원·마스터/국내전용 14만원",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [
+        "LOCA LIKIT 1.5"
+      ],
+      "conditions": [
+        "11.30까지 응모, 직전 6개월 롯데 개인 신용카드 결제 및 직전 12개월 카드 이용 이벤트 수혜 이력 없는 회원",
+        "12.10까지 30만원 결제, 리볼빙 유지 시 1만원 추가",
+        "12.10까지 혜택 지급 관련 선택동의 4종 완료 후 지급일까지 유지",
+        "기본 혜택 대상자는 12.11~1.10 해외 300만·3,000만원 이상 결제 시 각각 3만·50만원 캐시백",
+        "롯데백화점몰 쿠폰 3종과 지정 멤버십 정기결제 월 최대 5천원씩 6개월 별도"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11360",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-digiloca-london-campaign",
+      "kind": "card",
+      "title": "여기저기 혜택받고 최대 84만원 상당 혜택까지",
+      "summary": "30만·300만원 이용 시 각각 17만·20만원 캐시백",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [
+        "디지로카 London"
+      ],
+      "conditions": [
+        "11.30까지 응모, 직전 6개월 롯데 개인 신용카드 결제 및 직전 12개월 카드 이용 이벤트 수혜 이력 없는 회원",
+        "12.10까지 대상 카드 결제, 리볼빙 유지 시 1만원 추가",
+        "12.10까지 혜택 지급 관련 선택동의 4종 완료 후 지급일까지 유지",
+        "기본 혜택 대상자는 12.11~1.10 해외 300만·3,000만원 이상 결제 시 각각 3만·50만원 캐시백",
+        "롯데백화점몰 쿠폰 3종과 지정 멤버십 정기결제 월 최대 5천원씩 6개월 별도"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11358",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-travelwallet-krw",
+      "kind": "card",
+      "title": "트래블월렛 하이브리드 롯데카드 20만원 캐시백",
+      "summary": "30만원 이상 신용결제 시 트래블월렛 원화 20만원",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [
+        "트래블월렛 하이브리드 롯데카드"
+      ],
+      "conditions": [
+        "응모 11.30까지, 이용 12.10까지. 국내·해외 신용 승인만 인정, 트래블페이 충전 잔액 사용 제외",
+        "직전 6개월 롯데 개인 신용카드 결제 이력 및 직전 12개월 카드 이용 이벤트 수혜 이력 없는 회원",
+        "혜택은 응모월 다음 달 25일 지급, 트래블월렛 원화 충전 약관 동의 필요",
+        "별도 라운지 혜택은 전월 50만원 충족 시 12.31까지 본인 1회 무료"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11292",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-daiso-loca",
+      "kind": "card",
+      "title": "다이소엔로카 이용하고 다이소 50% 할인 + 12만원 혜택",
+      "summary": "다이소 최대 50% 할인 및 조건 충족 시 12만원 캐시백",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [
+        "다이소엔로카"
+      ],
+      "conditions": [
+        "할인 기간 2027.9.20까지, 전월 30만·60만원 이상 시 월 1.5만·2.5만원 한도",
+        "캐시백은 직전 6개월 롯데 개인 신용카드 사용 이력 없는 회원, 가족회원 제외",
+        "11.30 응모분은 12.20까지 이용·12.31 지급, 12.31 응모분은 1.20까지 이용·1.29 지급",
+        "다이소 온·오프라인 이용 2만원 포함 총 12만원 이상 사용",
+        "다이소 입점매장 및 상품권 등은 적용 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11265",
+      "cashbackAmount": 120000,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-mobile-x-loca-se",
+      "kind": "card",
+      "title": "Mobile X LOCA SE 카드로 알뜰폰 통신요금 월 최대 25,000원 결제일 할인",
+      "summary": "알뜰폰 자동납부 월 최대 25,000원 결제일 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "Mobile X LOCA SE"
+      ],
+      "conditions": [
+        "대상 카드로 대상 알뜰폰 요금 자동납부 및 전월 실적 달성",
+        "전월 30만·70만·150만원 이상 시 각각 월 23,000원·24,000원·25,000원",
+        "최초 자동납부 승인 필요, 행사 전 자동납부 이력 또는 직전 6개월 롯데 개인 신용카드 사용 이력 있으면 제외",
+        "추가할인 최대 24개월"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11173",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-lg-uplus-dc",
+      "kind": "card",
+      "title": "U+ 통신요금 월 최대 29,000원 할인 혜택",
+      "summary": "U+ 요금 자동납부 월 28,000~29,000원 결제일 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "U+ DC 롯데카드"
+      ],
+      "conditions": [
+        "직전 6개월 롯데 개인 신용카드 사용 이력 없는 회원",
+        "행사 기간 내 대상 카드로 통신요금 자동납부 등록",
+        "전월 40만원 이상 28,000원, 80만원 이상 29,000원 할인"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11106",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-kt-dc",
+      "kind": "card",
+      "title": "KT통신요금 월 최대 29,000원 결제일 할인",
+      "summary": "KT 요금 자동납부 월 28,000~29,000원 결제일 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "KT DC 롯데카드"
+      ],
+      "conditions": [
+        "직전 6개월 롯데 개인 신용카드 사용 이력 없는 회원",
+        "행사 기간 내 대상 카드로 통신요금 자동납부 연결",
+        "전월 40만원 이상 28,000원, 80만원 이상 29,000원 할인",
+        "최대 24개월"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11105",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-himart-subscription",
+      "kind": "card",
+      "title": "롯데하이마트 구독하고 매월 최대 22,000원 캐시백 받아요",
+      "summary": "하이마트 구독 결제 시 월 최대 22,000원 캐시백",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "Hi-Class 롯데카드"
+      ],
+      "conditions": [
+        "36·60개월 무이자 구독 결제 대상, 기존 하이마트 구독 이용회원 제외",
+        "월 이용금액 30만원·70만원·150만원 이상 구간별 18,000원·20,000원·22,000원",
+        "가족카드 실적 합산, 첫 결제 1건만 적용",
+        "상품권·관리비·세금·4대보험·하이마트 장기할부 매출 등 실적 제외, 다음 달 말 지급"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=8481",
+      "cashbackAmount": 22000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202611-hanssem-loca-plan-plus",
+      "kind": "card",
+      "title": "한샘 X LOCA 플랜+카드 최대 16만원 캐시백",
+      "summary": "한샘 결제 등 3개 미션 완료 시 최대 16만원 캐시백",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [
+        "한샘 X LOCA 플랜+카드"
+      ],
+      "conditions": [
+        "11.30까지 응모, 12.31까지 100만원 이상 결제에 한샘몰·한샘가구 매장 단건 50만원 이상 포함 시 12만원",
+        "2027년 1월·2월에 각각 한샘 외 가맹점 10만원 이상 이용 시 월별 2만원",
+        "12.10까지 크레딧케어 최초 가입 시 첫 2개월 무료 및 5개월 유지 시 스타벅스 쿠폰"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=7820",
+      "cashbackAmount": 160000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202611-likit-20-reactivation",
+      "kind": "card",
+      "title": "LOCA LIKIT 2.0 한번 써보세요 캐시백+내년 연회비 면제까지",
+      "summary": "12월 10만원 이용 시 2만원 캐시백·연회비 면제 별도",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "LOCA LIKIT2.0"
+      ],
+      "conditions": [
+        "11.30 기준 대상 카드 보유 및 직전 6개월 대상 카드 결제 이력이 없는 회원",
+        "12.1~31 대상 카드 10만원 이상 이용 시 2027년 1월 말 캐시백",
+        "연간 600만원 이상 이용 시 다음 해 연회비 면제",
+        "지급 시 대상 카드 포함 신용카드 2장 이상 정상 보유, 오프라인 발급·상품권·선불 충전 등 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11193",
+      "cashbackAmount": 20000,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-likit-15-reactivation",
+      "kind": "card",
+      "title": "LOCA LIKIT 1.5 한번 써보세요 캐시백+내년 연회비 면제까지",
+      "summary": "12월 10만원 이용 시 1만원 캐시백·연회비 면제 별도",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "LOCA LIKIT1.5"
+      ],
+      "conditions": [
+        "11.30 기준 대상 카드 보유 및 직전 6개월 대상 카드 결제 이력이 없는 회원",
+        "12.1~31 대상 카드 10만원 이상 이용 시 2027년 1월 말 캐시백",
+        "연간 600만원 이상 이용 시 다음 해 연회비 면제",
+        "지급 시 대상 카드 포함 신용카드 2장 이상 정상 보유, 오프라인 발급·상품권·선불 충전 등 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11192",
+      "cashbackAmount": 10000,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-travelwallet-reactivation",
+      "kind": "card",
+      "title": "트래블월렛 하이브리드 롯데카드 캐시백+내년 연회비 면제까지",
+      "summary": "12월 10만원 이용 시 2만원 캐시백·연회비 면제 별도",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "트래블월렛 하이브리드 롯데카드"
+      ],
+      "conditions": [
+        "11.30 기준 대상 카드 보유 및 직전 6개월 대상 카드 결제 이력이 없는 회원",
+        "12.1~31 대상 카드 10만원 이상 이용 시 2027년 1월 말 캐시백",
+        "연간 600만원 이상 이용 시 다음 해 연회비 면제",
+        "지급 시 대상 카드 포함 신용카드 2장 이상 정상 보유, 오프라인 발급·상품권·선불 충전 등 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11139",
+      "cashbackAmount": 20000,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-loca-money-reactivation",
+      "kind": "card",
+      "title": "LOCA MONEY 카드 캐시백+내년 연회비 면제까지",
+      "summary": "12월 10만원 이용 시 25,000원 캐시백·연회비 면제 별도",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "LOCA MONEY 카드"
+      ],
+      "conditions": [
+        "11.30 기준 대상 카드 보유 및 직전 6개월 대상 카드 결제 이력이 없는 회원",
+        "12.1~31 대상 카드 10만원 이상 이용 시 2027년 1월 말 캐시백",
+        "연간 600만원 이상 이용 시 다음 해 연회비 면제",
+        "지급 시 대상 카드 포함 신용카드 2장 이상 정상 보유, 오프라인 발급·상품권·선불 충전 등 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11138",
+      "cashbackAmount": 25000,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-lotte-members-reactivation",
+      "kind": "card",
+      "title": "롯데멤버스 카드 한번 써보세요 캐시백 + 내년 연회비 면제",
+      "summary": "12월 10만원 이용 시 2만원 캐시백·연회비 면제 별도",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "롯데멤버스 카드"
+      ],
+      "conditions": [
+        "11.30 기준 대상 카드 보유 및 직전 6개월 대상 카드 결제 이력이 없는 회원",
+        "12.1~31 대상 카드 10만원 이상 이용 시 2027년 1월 말 캐시백",
+        "연간 600만원 이상 이용 시 다음 해 연회비 면제",
+        "지급 시 대상 카드 포함 신용카드 2장 이상 정상 보유, 오프라인 발급·상품권·선불 충전 등 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11136",
+      "cashbackAmount": 20000,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-las-vegas-reactivation",
+      "kind": "card",
+      "title": "디지로카 Las Vegas 한번 써보세요 캐시백 + 내년 연회비 면제",
+      "summary": "12월 10만원 이용 시 2만원 캐시백·연회비 면제 별도",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "디지로카 Las Vegas"
+      ],
+      "conditions": [
+        "11.30 기준 대상 카드 보유 및 직전 6개월 대상 카드 결제 이력이 없는 회원",
+        "12.1~31 대상 카드 10만원 이상 이용 시 2027년 1월 말 캐시백",
+        "연간 600만원 이상 이용 시 다음 해 연회비 면제",
+        "지급 시 대상 카드 포함 신용카드 2장 이상 정상 보유, 오프라인 발급·상품권·선불 충전 등 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11134",
+      "cashbackAmount": 20000,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-london-reactivation",
+      "kind": "card",
+      "title": "디지로카 London 한번 써보세요 캐시백 + 내년 연회비 면제",
+      "summary": "12월 10만원 이용 시 2만원 캐시백·연회비 면제 별도",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "디지로카 London"
+      ],
+      "conditions": [
+        "11.30 기준 대상 카드 보유 및 직전 6개월 대상 카드 결제 이력이 없는 회원",
+        "12.1~31 대상 카드 10만원 이상 이용 시 2027년 1월 말 캐시백",
+        "연간 600만원 이상 이용 시 다음 해 연회비 면제",
+        "지급 시 대상 카드 포함 신용카드 2장 이상 정상 보유, 오프라인 발급·상품권·선불 충전 등 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11116",
+      "cashbackAmount": 20000,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-kdb-annuity-quote",
+      "kind": "card",
+      "title": "KDB다이렉트 보증형연금 연금액 확인 이벤트",
+      "summary": "보증형연금 확인 추첨 및 가입 시 최대 3만원권",
+      "category": "응모형",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "전용 링크에서 연금액 확인 및 상품소개에 동의한 사람 대상",
+        "추첨 네이버페이 3만원 10명, 1만원 20명, 2천원 50명",
+        "11월 대상 상품 가입 시 신세계상품권 또는 네이버페이 최대 3만원, 총 혜택 3만원 한도",
+        "모바일 쿠폰 2027.1.15 지급"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11365",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-db-direct-auto",
+      "kind": "card",
+      "title": "DB손해보험 다이렉트 자동차보험 롯데카드 결제시 최대 3만원 캐시백",
+      "summary": "DB 다이렉트 자동차보험료 30만원 이상 시 최대 3만원",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "행사 링크에서 가입 후 롯데 개인 신용카드 결제",
+        "신차 3만원, 신규 2만원, 갱신은 조건에 따라 최대 3만원",
+        "가족카드 포함 본인 기준 월 1회, 승인 다음 달 말 지급"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11356",
+      "cashbackAmount": 30000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202611-living-bills-autopay",
+      "kind": "card",
+      "title": "생활요금 자동납부 신청하고 최대 6만원 캐시백 받기",
+      "summary": "생활요금 신규 자동납부 업종당 1만원, 최대 6만원",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [
+        "롯데 국민행복 카드"
+      ],
+      "conditions": [
+        "롯데 국민행복 카드 이용 이벤트 혜택 대상자, 11.30까지 응모",
+        "관리비·전기·이동통신·도시가스·4대보험·임대료 중 12.31까지 납부 승인된 업종별 1건, 건당 5천원 이상",
+        "직전 6개월 정기납부 이력 업체 및 10월 정기결제 행사 응모자 제외",
+        "납부액 1만원 미만이면 승인 금액만큼 지급, 2027년 1월 말 입금"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11353",
+      "cashbackAmount": 60000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202611-ien-digiloca",
+      "kind": "card",
+      "title": "아이엔 디지로카 이용하면 월 최대 39,000원 할인제공",
+      "summary": "아이엔 디지로카 월 최대 39,000원 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-11-01",
+      "endsAt": "2027-10-31",
+      "entryRequired": false,
+      "cards": [
+        "아이엔 디지로카"
+      ],
+      "conditions": [
+        "전월 50만·100만원 이상이면 제휴사 기본 월 15,000원·25,000원 한도에 각각 1만원 추가",
+        "대상 제휴사는 아이베·베베쿡·유한킴벌리·청연·번개장터, 승인 순 통합",
+        "생활서비스 한도는 전월 실적별 월 2천·4천원, 추가 프로모션은 사용등록월 포함 12개월"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11378",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-golfzon-digiloca",
+      "kind": "card",
+      "title": "골프존 최대 30% 캐시백에 월 최대 1만원 캐시백한도 추가 제공!",
+      "summary": "골프존 30% 캐시백, 월 한도 최대 35,000원",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "골프존 X 디지로카"
+      ],
+      "conditions": [
+        "대상 카드 보유 G멤버십 회원, 골프존·골프존파크 대상",
+        "전월 40만원 이상이면 월 한도 2만원, 80만원 이상이면 35,000원",
+        "추가 한도 적용 2026.12~2027.11, 매월 15일 지급"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11399",
+      "cashbackAmount": 35000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202611-hilton-second-anniversary",
+      "kind": "card",
+      "title": "힐튼 아너스 아멕스 카드 외 1종 출시 2주년 무료숙박권 혜택",
+      "summary": "국내외 힐튼·더블트리 주중·주말 숙박권 1매",
+      "category": "해외/여행",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [
+        "힐튼 아너스 아멕스 프리미엄",
+        "힐튼 아너스 아멕스"
+      ],
+      "conditions": [
+        "대상 카드 온라인 발급, 2025.1.1~2026.10.31 대상 카드 이용 이력 없는 본인회원",
+        "11.30까지 응모, 이용기간 내 연회비 납부. 가족카드 제외",
+        "2027.1.31까지 일반 카드 300만원, 프리미엄 카드 600만원 이용",
+        "2027.2.28까지 힐튼 등록 이메일로 제공"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11367",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-lotte-members-group-spend",
+      "kind": "card",
+      "title": "롯데멤버스 카드로 롯데계열사 15만원 이상 이용하면 15만원 캐시백",
+      "summary": "롯데계열사 합산 15만원 사용 시 15만원 캐시백",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [
+        "롯데멤버스 카드",
+        "롯데멤버스 카드 프리미엄"
+      ],
+      "conditions": [
+        "11.30까지 응모, 직전 6개월 롯데 개인 신용카드 결제 이력 및 직전 12개월 카드이용 행사 수혜 이력 없는 회원",
+        "12.31까지 지정 롯데계열사에서 15만원 이상 사용, 회원당 1회",
+        "가족카드·간편결제·상품권·선불 충전 등 제외, 2027.1.29 지급"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11109",
+      "cashbackAmount": 150000,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-seoulland-two-person",
+      "kind": "card",
+      "title": "서울랜드 파크이용권 2인 패키지 특별 할인",
+      "summary": "서울랜드 파크이용권 2인 패키지 최대 52% 할인",
+      "category": "기타",
+      "startsAt": "2026-10-31",
+      "endsAt": "2027-01-03",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "전월 실적 무관, 롯데카드 회원 대상",
+        "어른 종일권 2인 5만원, 오후 4시 이후 야간권 2인 43,000원"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11212",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-lotte-rentacar-used",
+      "kind": "card",
+      "title": "롯데렌터카 인증중고차 × 롯데카드 혜택",
+      "summary": "인증중고차 일시불 1.1% 캐시백 또는 카드할부 고정 연 6.5%",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-10-23",
+      "endsAt": "2027-03-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "롯데렌터카 Tcar 앱 상담 후 일시불 캐시백 또는 카드할부 사전 신청",
+        "신청일부터 14일 안에 결제, 할부는 2~6·48·60개월 원금균등상환",
+        "10만원 할인쿠폰은 대상 차량 한정"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=8399",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-taobao-visa",
+      "kind": "card",
+      "title": "니하오~ 타오바오 쇼핑하오! 비자카드로 최대 $150 즉시할인",
+      "summary": "타오바오 결제수수료 3% 면제 및 최대 $125 즉시할인",
+      "category": "해외/여행",
+      "startsAt": "2026-10-20",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "디지로카 Paris",
+        "디지로카 Las Vegas",
+        "LOCA 365",
+        "LOCA 100",
+        "디지로카 Wellness"
+      ],
+      "conditions": [
+        "롯데 비자 개인 신용카드 중 카드번호 앞 6자리 401585·467007·488972·489515 대상",
+        "수수료 면제는 1일 1회 최대 $2, 선착순 자동 적용",
+        "쿠폰 발급 당일 $50·$100·$500 이상 결제 시 각각 $5·$15·$125 할인, 선착순"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11352",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-yellow-umbrella",
+      "kind": "card",
+      "title": "롯데카드에서 노란우산 가입하시고 모바일 상품권 6만원 받으세요!",
+      "summary": "노란우산 신규 가입 및 앱 설치 시 상품권 총 6만원",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-10-16",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데카드 채널에서 노란우산 신규 가입 시 네이버페이 또는 카카오페이 5만원권",
+        "가입 후 디지로카 앱 설치 시 롯데 모바일 1만원권 추가",
+        "가입한 다음 달까지 등록 휴대폰 번호로 발송"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11262",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-hana-direct-auto-consult",
+      "kind": "card",
+      "title": "하나 다이렉트 자동차보험 상담신청 이벤트",
+      "summary": "하나손보 보험료 상담 5천원권, 신규 계약 2만5천원권",
+      "category": "응모형",
+      "startsAt": "2026-10-15",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "신청 후 전화 상담으로 타사 만기 자동차보험료 산출, 상품소개 동의 필수",
+        "보험료 30만원 이상 신규 계약 시 추가 증정",
+        "SK주유권 또는 이마트금액권으로 총 최대 3만원, 본인 1회, 다음 달 20일 내 발송"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=10694",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-lotte-hotel-busan",
+      "kind": "card",
+      "title": "프리미엄카드 혜택으로 떠나는 부산롯데호텔 힐링 스테이",
+      "summary": "부산롯데호텔 객실 할인 및 체크아웃 1시간 연장",
+      "category": "해외/여행",
+      "startsAt": "2026-10-07",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "롯데백화점 Flex카드",
+        "Flex카드 몽블랑 에디션",
+        "AVENUEL BLACK",
+        "AVENUEL EMERALD",
+        "AVENUEL SAPPHIRE",
+        "AVENUEL PURPLE",
+        "AVENUEL ORANGE",
+        "AVENUEL",
+        "LENITH",
+        "CLUB L",
+        "LOCA PLATINUM",
+        "L.CLASS ‘L60",
+        "인피니트",
+        "다이아몬드",
+        "위버스카이",
+        "롯데 플래티넘",
+        "LOCA Professional",
+        "디지로카 Monaco"
+      ],
+      "conditions": [
+        "투숙자 본인이 행사 전용 링크에서 온라인 예약 후 체크아웃 시 실물 대상 카드 결제",
+        "객실형·부대시설형·클럽라운지형이 있으며 법인·LOCA for 카드 및 간편결제 제외",
+        "부대시설 포함 상품은 2인 수영장 1일 1회, 사우나·헬스장 1박 1회 포함"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11344",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-japan-mastercard-rebate",
+      "kind": "card",
+      "title": "마스터카드 일본여행 보너스 캐시백",
+      "summary": "일본 오프라인 누적 5만엔 이상 결제 시 2천엔 캐시백",
+      "category": "해외/여행",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "롯데 개인 신용 마스터카드 플래티넘·티타늄·월드 대상",
+        "Mastercard Bonus Rebate 플랫폼에서 대상 카드 등록 및 참여 신청 후 일본 오프라인 결제",
+        "등록 후 일본 오프라인 엔화 결제, ATM 제외. 등록 가능 카드 최대 5장, 카드별 실적 합산",
+        "조건 충족 선착순 12,000장, 명세서에 MA Bonus Rebate 표시"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11351",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-department-store-ecoupon",
+      "kind": "card",
+      "title": "롯데백화점 5% 할인 e-쿠폰 혜택",
+      "summary": "롯데백화점 현장 5% 할인 e쿠폰 월 3매",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-10-01",
+      "endsAt": "2027-09-30",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "최근 6개월 롯데백화점·롯데아울렛에서 롯데카드 1회 이상 결제, 미취소·기명 결제 건",
+        "쿠폰은 발행 월말까지, 아울렛은 실적에만 포함",
+        "식품·가전·세일상품·임대·명품매장 사용 불가",
+        "롯데멤버스 정보 제공 동의 또는 공지된 바코드 쿠폰 발급 조건 충족 필요"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11267",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-cruise-travel-first",
+      "kind": "card",
+      "title": "월 29,500원으로 크루즈 여행 다녀오세요!",
+      "summary": "여행먼저 크루즈 가입 시 여행 바우처 5만원",
+      "category": "해외/여행",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "LOCA X Special SE"
+      ],
+      "conditions": [
+        "디지로카 앱에서 해당 서비스 가입, 크루즈 이용 시 바우처 사용",
+        "HD투어존에서 가입 후 2~3일 내 문자 발송",
+        "크루즈 서비스는 월 29,500원씩 200회 납입, 기본 1인 총 590만원"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11394",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-healthcare-cancer",
+      "kind": "card",
+      "title": "헬스케어(암) 신규가입 혜택! 신세계상품권 1만원 증정 프로모션",
+      "summary": "헬스케어(암) 첫 가입 시 신세계상품권 1만원",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데카드 앱 또는 오프라인에서 서비스 최초 가입, 월 이용료 9,900원",
+        "이마트 전용 교환권, 가입한 달의 두 달 뒤 1일 지급"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11331",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-lotte-members-dept-store",
+      "kind": "card",
+      "title": "롯데백화점 전국 매장에서 한도 없이 최대 3% 결제일 할인!",
+      "summary": "롯데백화점 L.PAY 3%·일반결제 2.5% 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [
+        "롯데멤버스 카드",
+        "롯데멤버스 카드-프리미엄"
+      ],
+      "conditions": [
+        "매월 TOUCH 누른 후 대상 카드로 300만원 이상 일시불 결제",
+        "롯데백화점 전국 오프라인 및 롯데프리미엄아울렛 동부산점 대상",
+        "그 외 아울렛과 몰 제외"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11304",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202610-lg-uplus-internet-tv",
+      "kind": "card",
+      "title": "LG U+ 인터넷·TV를 한 번에 가입하고 혜택 받아요",
+      "summary": "LG U+ 인터넷·TV 상품권·사은품 최대 38만원 및 캐시백",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-10-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "전용 경로로 LG U+ 요금제 가입 및 롯데 개인 신용·체크카드 결제",
+        "인터넷+TV 100M·500M·1G 상품권 및 사은품 각각 25만·35만·38만원, 3년 약정",
+        "이벤트 추가 캐시백 최대 10만원"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=10923",
+      "cashbackAmount": 100000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202609-daiso-loca-discount",
+      "kind": "card",
+      "title": "다이소엔로카 이용하고 다이소 50% 할인",
+      "summary": "다이소 온·오프라인 50% 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-09-21",
+      "endsAt": "2027-09-20",
+      "entryRequired": false,
+      "cards": [
+        "다이소엔로카"
+      ],
+      "conditions": [
+        "전월 30만·60만원 이상 시 월 15,000원·25,000원 한도",
+        "건당 5천원 이상, 월 5회",
+        "백화점·대형마트·지하철역 등 입점매장 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11318",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202609-china-unionpay",
+      "kind": "card",
+      "title": "롯데 유니온페이 카드로 중국에서 누리는 특별한 혜택",
+      "summary": "알리페이·위챗 결제수수료 3% 면제 및 중국 현지 할인",
+      "category": "해외/여행",
+      "startsAt": "2026-09-16",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데 유니온페이 개인 신용·체크카드 대상, 선불·법인 제외",
+        "알리페이·위챗에 대상 카드 등록",
+        "중국 본토 지정 카페 30위안 결제 시 10위안 할인, 통합 1일 2회·기간 총 10회",
+        "지정 레스토랑 300위안 결제 시 50위안 할인, 통합 1일 1회·기간 총 4회",
+        "핀둬둬는 별도 사전 등록 후 10% 할인, 건당 최대 5위안·일 2회·월 20위안"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11324",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202609-japan-unionpay",
+      "kind": "card",
+      "title": "롯데 유니온페이 카드로 일본에서 누리는 특별한 혜택",
+      "summary": "츠루하 최대 7% 할인, 돈키호테 최대 7% 할인과 10% 면세",
+      "category": "해외/여행",
+      "startsAt": "2026-09-16",
+      "endsAt": "2027-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데 유니온페이 개인 신용·체크카드 대상, 선불·법인 제외",
+        "전용 링크에서 쿠폰 다운로드 후 현장 제시·결제",
+        "츠루하 1만엔·3만엔·5만엔 이상 각각 3%·5%·7% 할인과 면세, 2027.12.31까지",
+        "돈키호테 1만엔 이상 3만엔 미만 5%, 3만엔 이상 5만엔 미만 7% 할인과 면세, 2026.12.31까지"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11302",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202609-first-year-fee-refund",
+      "kind": "cashback",
+      "title": "롯데카드와 첫 만남의 혜택 연회비 캐시백 100% 지급!",
+      "summary": "롯데카드 첫해 연회비 100% 캐시백",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-09-16",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "디지로카 Lasvegas",
+        "디지로카 London",
+        "디지로카 Paris",
+        "LOCA LIKIT 1.5",
+        "LOCA LIKIT 2.0",
+        "디지로카 Monaco",
+        "디지로카 Auto",
+        "디지로카 Pet",
+        "디지로카 Wellness",
+        "디지로카 Golf",
+        "디지로카 Edu",
+        "롯데멤버스 카드",
+        "LOCA LIKIT"
+      ],
+      "conditions": [
+        "롯데 개인 신용카드 미보유 고객이 홈페이지 또는 앱에서 대상 카드 신규 발급",
+        "크레딧케어, 광고성 정보 수신 동의, 리볼빙 3개 조건 모두 충족",
+        "발급 다음 달 20일까지 조건 유지, 다음 달 말까지 결제계좌 입금",
+        "크레딧케어는 최초 가입 시 2개월 무료 후 월 990원"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11259",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202609-japan-coupon-book",
+      "kind": "card",
+      "title": "일본 여행 쿠폰북",
+      "summary": "도쿄역 500엔, 빅카메라·돈키호테 최대 17%, 이온 5%",
+      "category": "해외/여행",
+      "startsAt": "2026-09-16",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "가맹점별 쿠폰·바코드를 확인하고 일본 현지에서 제시 후 롯데카드 결제",
+        "최소 결제 금액과 품목 등은 가맹점별 쿠폰 조건 적용"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11281",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202609-ybm-toeic-refund",
+      "kind": "card",
+      "title": "YBM 토익 최대 500% 환급 이벤트",
+      "summary": "대상 토익 과정 출석·성적 조건 충족 시 최대 500% 환급",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-09-15",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "롯데 개인 신용카드 회원이 전용 링크에서 대상 과정 결제",
+        "출석 또는 목표점수 충족 시 100%, 두 기준 충족 시 과정·성적별 최대 500%",
+        "과정 수료 후 환급 신청 필요, 토익 50%·토익스피킹 10% 응시료 할인 쿠폰 제공"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11332",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202609-driving-care",
+      "kind": "card",
+      "title": "드라이빙케어 한정혜택 쿠폰팩 + 스타벅스 교환권",
+      "summary": "드라이빙케어 첫 가입 시 스타벅스 아메리카노 교환권",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-09-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데카드 앱 또는 웹에서 최초 가입, 월 이용료 9,900원",
+        "11월 가입은 2027.1.20까지, 12월 가입은 2027.2.20까지 지급"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11241",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202609-safe-shopping",
+      "kind": "card",
+      "title": "안심쇼핑 한정혜택 쇼핑 쿠폰팩 + 스타벅스 교환권",
+      "summary": "안심쇼핑 첫 가입 시 스타벅스 아메리카노 교환권",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-09-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "이벤트 페이지에서 첫 가입 후 혜택 지급일까지 유지, 월 이용료 5,500원",
+        "11월 가입은 2027.1.20까지, 12월 가입은 2027.2.20까지 지급"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11240",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202609-hilton-first-year",
+      "kind": "card",
+      "title": "힐튼 아너스 아멕스 카드 주말 숙박권 & 등급 업그레이드",
+      "summary": "첫해 힐튼 주말 숙박권 및 골드·다이아몬드 등급 혜택",
+      "category": "해외/여행",
+      "startsAt": "2026-09-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "힐튼 아너스 아멕스 프리미엄",
+        "힐튼 아너스 아멕스"
+      ],
+      "conditions": [
+        "AMEX 대상 본인 카드, 가족카드 제외",
+        "프리미엄은 첫해 600만원 이용 시 숙박권 2매, 1,200만원 이용 시 다이아몬드",
+        "일반은 첫해 300만원 이용 시 숙박권 1매, 600만원 이용 시 골드",
+        "숙박권은 참여기간 내 첫해 연회비 납부 조건, 충족 후 최대 12주 내 제공"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=8356",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202608-lotte-dept-store-perks",
+      "kind": "card",
+      "title": "롯데백화점 쇼핑 전 필수 확인! 알짜 혜택 3가지 활용하기",
+      "summary": "롯데백화점 2시간 무료주차·5% e쿠폰·L.POINT 적립",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-08-22",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "디지로카 앱 혜택리포트 쿠폰함에서 무료주차권 지점 선택, 롯데카드로 결제",
+        "주차권·할인 쿠폰은 사용 불가 지점 및 매장 확인"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11303",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202608-lotte-rentacar-short-term",
+      "kind": "card",
+      "title": "롯데카드로 결제하면 렌터카 최대 65% 할인 혜택!",
+      "summary": "롯데 단기렌터카 내륙 최대 65%·제주 최대 60% 할인",
+      "category": "해외/여행",
+      "startsAt": "2026-08-12",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "전용 링크에서 예약하고 롯데 개인 신용카드로 결제",
+        "대여일 기준, 24시간 이상 이용 시 적용",
+        "기사 포함 대여, 자차면책 보험료·편도 수수료 등 부가서비스 제외"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11237",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202608-hotels-com-mastercard",
+      "kind": "card",
+      "title": "호텔스닷컴에서 롯데 마스터카드로 호텔 예약하면 최대 13% 즉시할인",
+      "summary": "호텔스닷컴 월드 13%·그 외 롯데 개인 마스터카드 8% 할인",
+      "category": "해외/여행",
+      "startsAt": "2026-08-01",
+      "endsAt": "2027-01-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "월드 13%는 $220 이상 결제 시 최대 $70 할인",
+        "전용 호텔스닷컴 링크에서 쿠폰코드를 복사한 뒤 결제 단계에서 입력",
+        "예약 2027.1.31까지, 숙박 2027.6.30까지",
+        "선불·법인카드 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11239",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-hanatour-2026",
+      "kind": "card",
+      "title": "하나투어와 해외여행 떠나면 5% 결제일 할인 또는 12개월 무이자",
+      "summary": "하나투어 해외여행 일시불 5% 할인 또는 12개월 무이자",
+      "category": "해외/여행",
+      "startsAt": "2026-08-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "디지로카 앱 트래블 또는 발견에서 하나투어 해외여행 상품 예약 후 롯데 개인 신용카드 결제",
+        "일시불 할인과 12개월 무이자 중 하나 선택",
+        "유류할증료·제세공과금·선택 관광 비용 제외, 체크·법인·기프트카드 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=8466",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202607-theme-parks",
+      "kind": "card",
+      "title": "놀이공원 이용권 40~50% 할인 혜택",
+      "summary": "롯데월드·경주월드 등 놀이공원 본인 40~50% 현장 할인",
+      "category": "기타",
+      "startsAt": "2026-07-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데월드 서울·부산, 경주월드, 대전오월드 50% 할인은 전월 일시불·할부 20만원 이상",
+        "위 4곳 통합 월 1회·연 6회, 최초 신규회원 사용등록월 포함 3개월 실적 유예",
+        "광주패밀리랜드 50%, 서울랜드 40%는 전월 실적·횟수 제한 없음",
+        "롯데 신용·체크회원 대상, 일부 카드 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11204",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202607-dutyfree-lotte-shilla-ipark",
+      "kind": "card",
+      "title": "롯데, 신라아이파크 면세점 5~15% 할인 혜택",
+      "summary": "롯데면세점 5~15%·신라아이파크면세점 10~15% 할인",
+      "category": "해외/여행",
+      "startsAt": "2026-07-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데 개인 신용·체크회원, 오프라인 정상가 기준",
+        "일부 상품·브랜드 제외, 롯데면세점 지점별 할인율 상이",
+        "결제대행·간편결제 및 세일 기간 추가 할인 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=7638",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202607-mr-pizza",
+      "kind": "card",
+      "title": "미스터피자 15% / 40% 할인 혜택",
+      "summary": "미스터피자 15%, 매월 마지막 주 금요일 40% 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-07-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데 신용·체크회원, 전월 일시불·할부 20만원 이상. 최초 신규회원은 등록월 포함 3개월 유예",
+        "15% 할인은 월 3회·연 12회, 40% 할인은 월 1회·연 12회, 일 결제금액 20만원 한도",
+        "매장 또는 미스터피자 앱 이용, 일부 매장·배달앱·간편결제 제외",
+        "다른 행사·쿠폰·세트메뉴 중복 할인 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=7637",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202607-hair-salon-discounts",
+      "kind": "card",
+      "title": "박준 뷰티랩, 박승철 헤어스투디오 할인 혜택",
+      "summary": "박준 뷰티랩 20%·박승철 헤어스투디오 15% 현장 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-07-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데 신용·체크회원, 오프라인 매장 정상가 기준",
+        "커트·드라이·클리닉·제품 구매 제외. 박승철은 일반 염색·지정 펌에 한함",
+        "박승철 프리미엄 매장, PG·간편결제 및 세일 기간 추가 할인 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=7635",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202607-loca-money-spend",
+      "kind": "card",
+      "title": "LOCA MONEY 카드, 지난달 실적 기준을 낮춰 부담을 줄여드려요!",
+      "summary": "LOCA MONEY 실적 기준 300만원에서 150만원으로 인하",
+      "category": "기타",
+      "startsAt": "2026-07-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "LOCA MONEY 카드",
+        "LOCA MONEY 비즈니스 카드"
+      ],
+      "conditions": [
+        "대상 카드 회원만 적용, 제휴카드 회원 제외",
+        "서비스 적용월 기준 2026.7~12월"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=6553",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202607-direct-auto-insurance-app",
+      "kind": "card",
+      "title": "자동차보험 신규가입 최대 3만원 캐시백",
+      "summary": "앱에서 자동차보험 신규 가입·연 30만원 결제 시 최대 3만원",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-07-01",
+      "endsAt": "2027-05-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데카드 앱을 통해 자동차보험 신규 가입 후 롯데 개인 신용카드 결제",
+        "보험사별 기준 상이, 가입 다음 달 말 지급",
+        "별도 2~5개월 무이자 혜택은 6개 보험사 5만원 이상 결제 시 2026.12.31까지"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=9453",
+      "cashbackAmount": 30000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "lotte-202606-phonecare-cu",
+      "kind": "card",
+      "title": "폰케어 신규 고객 CU 편의점 3천원권 증정!",
+      "summary": "폰케어 첫 가입 시 CU 3천원권",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-06-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "이벤트 페이지를 통해 롯데카드 앱에서 최초 가입하고 지급일까지 유지",
+        "11월 가입은 2027.1.20까지, 12월 가입은 2027.2.20까지 지급"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=10096",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202605-kimcaddie-welcome",
+      "kind": "card",
+      "title": "김캐디 총 9천원 웰컴쿠폰 제공",
+      "summary": "김캐디 첫 로그인 시 3천원 할인 쿠폰 3장",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-05-18",
+      "endsAt": "2027-04-30",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "로카페이 등록 고객 중 롯데카드 로그인으로 처음 가입하는 고객",
+        "스크린골프장 선택 후 로카페이로 로그인하고 결제"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11081",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202604-uplus-phonecare",
+      "kind": "card",
+      "title": "LG U+ 가입자 한정 폰케어 3개월 무료로 받기",
+      "summary": "LG U+ 가입자 폰케어 서비스 3개월 무료",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-04-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "롯데카드 앱으로 대상 LG U+ 요금제 가입을 완료하고 기간 내 폰케어 최초 가입",
+        "정상 월 이용료 990원"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=10596",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202601-lotte-on",
+      "kind": "card",
+      "title": "롯데ON 5% 할인 혜택",
+      "summary": "롯데ON 3만원 이상 구매 시 5% 쿠폰, 최대 3천원",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "월 1인 1매, 롯데ON 결제 혜택에서 쿠폰 다운로드",
+        "롯데 개인 신용·체크카드 대상, 법인·기프트 제외",
+        "L.PAY 결제 가능, L.POINT·모바일 상품권 사용 시 카드 할인 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=8375",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-trip-to-loca-2026",
+      "kind": "card",
+      "title": "Trip to 로카 해외 결제하면 한도 없는 최대 4.5% 할인",
+      "summary": "Trip to 로카 해외결제 아멕스 4.5%·마스터 3% 할인",
+      "category": "해외/여행",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "Trip to 로카"
+      ],
+      "conditions": [
+        "전월 실적과 할인한도 제한 없음",
+        "빠니보틀 디자인은 마스터카드만 가능",
+        "무이자 할부·상품권·포인트 충전·세금·공과금 등 제외",
+        "다른 결제일 할인 행사와 겹치면 큰 혜택만 적용"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=8011",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202601-loca-100-spend",
+      "kind": "card",
+      "title": "전월실적 부담 DOWN! 백점짜리 LOCA 100 프로모션",
+      "summary": "LOCA 100 전월 실적에 월평균 카드대출 이용액 포함",
+      "category": "기타",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "LOCA 100"
+      ],
+      "conditions": [
+        "단기·장기카드대출 이용금액에 이용일수 비율 적용, 중도상환액 차감",
+        "Flex Voucher 연간 실적에서는 제외"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=7295",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202601-loca-series-spend",
+      "kind": "card",
+      "title": "슬기로운 카드 생활, LOCA가 맞춰 드릴게요",
+      "summary": "LOCA 전월실적 100만원으로 완화·카드대출 실적 합산",
+      "category": "기타",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "LOCA Classic",
+        "LOCA Platinum",
+        "LOCA for",
+        "LOCA in"
+      ],
+      "conditions": [
+        "대상 카드의 전월 기준 150만원을 100만원으로 변경",
+        "단기·장기카드대출 월평균 이용금액을 전월 실적에 합산, 중도상환금 차감",
+        "서비스 적용월 기준, 발급월 무관"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=6254",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202601-lotte-members-premium-partners",
+      "kind": "card",
+      "title": "쓸수록 더 쌓이는 혜택 롯데멤버스 카드 프리미엄",
+      "summary": "롯데백화점 10% 현장할인 및 에비뉴엘 편의 혜택",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "롯데멤버스 카드-프리미엄"
+      ],
+      "conditions": [
+        "롯데 브랜드 제휴처별 혜택·조건 상이",
+        "롯데백화점 현장할인 연 15만원 한도, 에비뉴엘 바 월 4회",
+        "오렌지 라운지 월 1회는 전월 백화점·아울렛 200만원 이상",
+        "평일 발레 연 2회는 발급확정월 포함 12개월 대상점 이용액 2,400만원 이상"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=10990",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202601-lotte-members-partners",
+      "kind": "card",
+      "title": "쓸수록 더 쌓이는 혜택 롯데멤버스 카드",
+      "summary": "롯데백화점 7% 현장할인 및 에비뉴엘 바 월 2회",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "롯데멤버스 카드"
+      ],
+      "conditions": [
+        "롯데백화점 현장 할인 연 15만원 한도",
+        "롯데마트 쿠폰은 롯데마트 GO 앱에서 제공, 점포별 구매 금액 조건 적용"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=10989",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202601-teenie-card",
+      "kind": "card",
+      "title": "티니카드 신청하고 5% 결제일 할인받아요!",
+      "summary": "티니카드 발급비 면제 및 이용금액 5% 결제일 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "티니카드"
+      ],
+      "conditions": [
+        "롯데 개인신용카드 회원이 티니카드 최초 발급 후 연결",
+        "발급 다음 달 이용금액 5%, 최대 1만원, 후불교통 제외",
+        "여러 장 발급 시 최초 등록 1장만 할인"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=9967",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202601-lotte-outlet-mall",
+      "kind": "card",
+      "title": "롯데아울렛 · 롯데몰도 롯데백화점 롯데카드로 15% 할인",
+      "summary": "롯데아울렛·롯데몰 15% 결제일 할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "롯데백화점 롯데카드"
+      ],
+      "conditions": [
+        "전월 실적 30만·50만·100만·200만원 이상 시 할인한도 2만·3만·5만·10만원",
+        "롯데백화점·아울렛·롯데몰 할인은 카드 기본 한도 공유",
+        "롯데백화점 이용금액·연회비·수수료는 실적 제외"
+      ],
+      "url": "https://m.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=9366",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ]
+}
