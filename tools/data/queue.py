@@ -13,7 +13,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-CATALOG = ROOT / "paymorevent/public/catalog-snapshot.json"
+CATALOG = ROOT / "paymorevent/data/catalog-snapshot.json"
 VALET = ROOT / "hotels/valet.json"
 INBOX = ROOT / "data/inbox"
 OUT = ROOT / "data/collect-queue.json"

@@ -19,10 +19,11 @@ data/inbox/<종류>/YYYY-MM-DD-<출처>.json 파일만 새로 추가합니다(�
 """
 from __future__ import annotations
 
+import html
 import json
 import re
 import sys
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -34,7 +35,7 @@ VALET = ROOT / "hotels" / "valet.json"
 VENDOR_EVENTS = ROOT / "travel" / "vendor-events.json"
 BRAND_OUT = ROOT / "paymorevent" / "data" / "brand-services.json"
 TERMS_OUT = ROOT / "paymorevent" / "data" / "card-terms.json"
-CATALOG = ROOT / "paymorevent" / "public" / "catalog-snapshot.json"
+CATALOG = ROOT / "paymorevent" / "data" / "catalog-snapshot.json"
 
 # 카드사 이름 → id 앞부분
 ISSUERS = {
@@ -108,6 +109,31 @@ def _url(v, domains) -> bool:
 
 def _text(v, lo: int, hi: int) -> bool:
     return isinstance(v, str) and lo <= len(v.strip()) <= hi and v == v.strip()
+
+
+# 화면에 그대로 보이면 깨지는 HTML 엔티티(&lt;BR&gt;·&lsquo; 등)와 태그
+ENTITY = re.compile(r"&(?:[a-zA-Z][a-zA-Z0-9]{1,31}|#\d{1,7}|#[xX][0-9a-fA-F]{1,6});")
+TAG = re.compile(r"<\s*/?\s*(?:br|p|div|span|b|i|strong|em|u)\s*/?\s*>", re.I)
+
+
+def clean_text(value):
+    """문자열 필드의 HTML 엔티티를 풀고 <BR> 같은 태그는 공백으로 바꿈. 엔티티가 없으면 그대로."""
+    if not isinstance(value, str) or not ENTITY.search(value):
+        return value
+    text = html.unescape(html.unescape(value))
+    text = TAG.sub(" ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def normalize_end(value, today=None):
+    """오늘+2년을 넘는 가짜 종료일(9999-12-31 등)은 끝이 없는 상시(null)로 바꿈."""
+    if not isinstance(value, str) or not DAY.match(value):
+        return value
+    try:
+        end = date.fromisoformat(value)
+    except ValueError:
+        return value
+    return None if end > (today or date.today()) + timedelta(days=730) else value
 
 
 def _keys(p: Problems, where: str, obj: dict, required: set, optional: set):
@@ -247,7 +273,7 @@ def check_card_products(doc: dict, where: str, p: Problems):
         if c.get("change") not in ("new", "changed", "discontinued"):
             p.add(w, "change는 new(신상품)·changed(혜택·연회비 변경)·discontinued(발급 중단)")
         if c.get("change") in ("changed", "discontinued") and not isinstance(c.get("cardId"), str):
-            p.add(w, "changed·discontinued는 기존 cardId 필요 (paymorevent/public/catalog-snapshot.json의 id)")
+            p.add(w, "changed·discontinued는 기존 cardId 필요 (paymorevent/data/catalog-snapshot.json의 id)")
         if not _text(c.get("name"), 2, 60):
             p.add(w, "name은 카드사 표기 그대로 2~60자")
         if c.get("cardType") not in ("credit", "debit"):
@@ -519,16 +545,16 @@ def to_offer(e: dict, doc: dict, card_ids: dict) -> dict:
     tags = [e["category"]] + (["발급 캐시백"] if e["kind"] == "cashback" else [])
     offer = {
         "id": e["id"], "kind": e["kind"], "category": e["category"], "issuer": doc["issuer"], "chain": None,
-        "title": e["title"], "description": e["summary"], "benefitText": e["summary"], "tags": tags,
-        "channel": e.get("channel") or "카드사 공식",
-        "startsAt": starts, "endsAt": e["endsAt"], "bookingEndsAt": None, "stayEndsAt": None,
-        "requirements": e["conditions"], "participation": e["conditions"],
+        "title": clean_text(e["title"]), "description": clean_text(e["summary"]), "benefitText": clean_text(e["summary"]), "tags": tags,
+        "channel": clean_text(e.get("channel") or "카드사 공식"),
+        "startsAt": starts, "endsAt": normalize_end(e["endsAt"]), "bookingEndsAt": None, "stayEndsAt": None,
+        "requirements": [clean_text(c) for c in e["conditions"]], "participation": [clean_text(c) for c in e["conditions"]],
         "sourceUrl": e["url"], "sourceDetailUrl": e["url"] if detail else None, "imageUrl": None,
         "status": "upcoming" if starts and starts > today else "active",
         "verificationLevel": "official_detail" if detail else "official_list",
         "verifiedAt": doc["collectedAt"],
         "verificationNote": f"{doc['collector']} 수집 · 공식 {'상세' if detail else '목록'} 페이지 기준",
-        "cardIds": ids, "cardNames": e["cards"],
+        "cardIds": ids, "cardNames": [clean_text(n) for n in e["cards"]],
         "cashbackAmount": e.get("cashbackAmount"), "cashbackIsMaximum": bool(e.get("cashbackIsMaximum", False)),
         "annualFeeOnly": False, "entryRequired": e["entryRequired"],
     }
@@ -545,6 +571,16 @@ def merge(docs) -> None:
             card_ids.setdefault((c["issuer"], norm(n)), []).append(c["id"])
 
     events = json.loads(EVENTS.read_text(encoding="utf-8"))
+    # 이미 저장된 이벤트도 배포 때 한 번 정리: 엔티티를 풀고, 오늘+2년을 넘는 가짜 종료일은 상시(null)로
+    today_date = date.today()
+    for o in events:
+        o["endsAt"] = normalize_end(o.get("endsAt"), today_date)
+        for key in ("title", "description", "benefitText", "channel"):
+            if isinstance(o.get(key), str):
+                o[key] = clean_text(o[key])
+        for key in ("requirements", "participation", "cardNames"):
+            if isinstance(o.get(key), list):
+                o[key] = [clean_text(v) for v in o[key]]
     by_id = {o["id"]: i for i, o in enumerate(events)}
     by_title = {(o["issuer"], norm(o["title"])): i for i, o in enumerate(events)}
     by_url = {o["sourceDetailUrl"]: i for i, o in enumerate(events) if o.get("sourceDetailUrl")}

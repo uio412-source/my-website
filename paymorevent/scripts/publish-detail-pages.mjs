@@ -8,7 +8,9 @@ const rules = readVerifiedCardRules();
 const cards = applyVerifiedCardRules(JSON.parse(gunzipSync(await readFile(new URL('../data/cards.json.gz', import.meta.url)))), rules);
 const events = JSON.parse(await readFile(new URL('../data/events.json', import.meta.url), 'utf8'));
 const page = await readFile(new URL('index.html', dist), 'utf8');
-const snapshot = JSON.parse(await readFile(new URL('catalog-snapshot.json', dist), 'utf8'));
+// 카드 목록의 원본은 저장소의 data/catalog-snapshot.json. dist에 12.5MB를 내보내지 않고 여기서 직접 읽습니다.
+const source = JSON.parse(await readFile(new URL('../data/catalog-snapshot.json', import.meta.url), 'utf8'));
+const snapshot = {...source, cards: applyVerifiedCardRules(source.cards, rules, {summary: true})};
 
 function validateIds(records) {
   if (!records.length) throw new Error('Empty publishing snapshot');
@@ -31,7 +33,7 @@ for (const summary of snapshot.cards) {
 // The app reads the list from these files, built from the snapshot by vite.config.ts.
 const list = JSON.parse(await readFile(new URL(CARD_LIST_FILE, dist), 'utf8'));
 const search = JSON.parse(await readFile(new URL(CARD_SEARCH_FILE, dist), 'utf8'));
-if (list.cards.map(card => card.id).join('\n') !== snapshot.cards.map(card => card.id).join('\n')) throw new Error(`${CARD_LIST_FILE} does not match catalog-snapshot.json`);
+if (list.cards.map(card => card.id).join('\n') !== snapshot.cards.map(card => card.id).join('\n')) throw new Error(`${CARD_LIST_FILE} does not match data/catalog-snapshot.json`);
 if (Object.keys(search.searchText).length !== snapshot.cards.length || snapshot.cards.some(card => typeof search.searchText[card.id] !== 'string' || !Object.hasOwn(search.searchText, card.id))) {
   throw new Error(`${CARD_SEARCH_FILE} does not match catalog-snapshot.json`);
 }

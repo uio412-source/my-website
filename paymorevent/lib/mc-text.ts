@@ -199,6 +199,16 @@ function valueLabel(b: CleanBenefit, text: string) {
   if (range) return {main: `${range[1]}~${range[2]}%`, sub: /적립|포인트|마일/.test(b.title) ? '적립' : '할인'};
   const pct = /([\d.]+)\s*%/.exec(b.title);
   if (pct) return {main: pct[1] + '%', sub: /적립|포인트|마일/.test(b.title) ? '적립' : /캐시백/.test(b.title) ? '캐시백' : '할인'};
+  // b.rate가 비어도 원문을 ';'로 나눈 항목(detail)에 '5%'처럼 율이 있으면 첫 율을 값 칸으로 올림.
+  // 할부 수수료율·이자율은 혜택이 아니므로 건너뜀.
+  let detailPct: string | null = null;
+  if (!/할부|수수료|이자|대출/.test(b.title)) {
+    for (const line of b.lines) {
+      const m = /([\d.]+)\s*%/.exec(line);
+      if (m && !/수수료|이자/.test(line.slice(0, m.index))) { detailPct = m[1]; break; }
+    }
+  }
+  if (detailPct) return {main: detailPct + '%', sub: /적립|포인트|마일/.test(b.title + b.lines.slice(0, 2).join(' ')) ? '적립' : /캐시백/.test(b.title + b.lines.slice(0, 2).join(' ')) ? '캐시백' : '할인'};
   const per = /리터당\s*([\d,]+)\s*원/.exec(text);
   if (per) return {main: `${per[1]}원`, sub: '리터당'};
   const amt = /([\d,]+(?:\.\d+)?\s*(?:만\s*)?(?:천\s*)?원)\s*(?:결제일\s*)?(할인|적립|캐시백|청구할인)/.exec(text);
@@ -214,6 +224,12 @@ export type BenefitRow = {
   /** 표 칸용: 구분(짧은 이름) · 적용처 · 한도 · 전월실적 · 그 밖의 조건(횟수·건당 최소) */
   label: string; place: string; limit: string | null; shared: boolean; spend: string | null; extras: string[];
 };
+/** 표 머리글 조각인지: 숫자·%가 없고 '대상·가맹점·할인율…' 같은 항목 이름이 2개 이상 */
+const HEADER_WORD = /대상|가맹점|할인율|적립률|한도|구분|내용|영역|비고|조건/g;
+function isHeaderLine(line: string) {
+  if (/[\d%]/.test(line)) return false;
+  return new Set(line.match(HEADER_WORD) ?? []).size >= 2;
+}
 /** "대중교통· 택시 10% 결제일할인" → "대중교통·택시" (혜택 칸과 겹치는 율·금액·동사는 뺌) */
 function shortLabel(name: string) {
   const t = name.replace(/\s*·\s*/g, '·')
@@ -238,11 +254,15 @@ export function benefitRow(b: CleanBenefit): BenefitRow {
   conds.push(...counts);
   const per = /(?:이용\s*)?건당\s*([\d,.]+\s*(?:만\s*)?(?:천\s*)?원)\s*이상/.exec(text) ?? /([\d,.]+\s*(?:만\s*)?(?:천\s*)?원)\s*이상\s*(?:결제|이용)?\s*시/.exec(b.lines[0] ?? '');
   if (per) conds.push(compact(per[1]) + ' 이상 결제');
-  let where = (b.lines[0] ?? '').split(' / ')[0]
+  // 원문 첫 줄이 표 머리글("대상 업종 및 가맹점 · 할인율", "조건 · 할인율")이면 적용처로 쓰지 않고 다음 줄부터
+  const lines = [...b.lines];
+  while (lines.length && isHeaderLine(lines[0])) lines.shift();
+  let where = (lines[0] ?? '').split(' / ')[0]
     .replace(/\(\s*(?:월|연)?\s*(?:통합\s*)?(?:할인|적립)?\s*한도[^)]*\)/g, '')
     .replace(/\s*(?:일|월|연)\s*\d+\s*회.*$/, '').replace(/\s*※.*$/, '').replace(/[,·]\s*$/, '').trim();
   // 할인율 칸과 겹치는 끝부분("… 10% 할인")은 빼고 어디서 쓰는지만
   if (b.rate) where = where.replace(new RegExp(String.raw`\s*` + b.rate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + String.raw`\s*(?:결제일\s*)?(?:할인|적립|캐시백)?(?:\(청구할인\))?$`), '').trim();
+  where = where.replace(/\s*(?:최대\s*)?[\d.]+\s*%\s*(?:결제일\s*)?(?:할인|적립|캐시백)?\s*$/, '').replace(/[,·]\s*$/, '').trim();
   // 조건 칸과 겹치는 문장("전월 이용실적 20만원 이상 시 제공")·표 머리글 같은 조각("공항· 라운지", "놀이공원명· 제공 서비스")은 버림
   if (/^(?:전월|직전|실적|이용\s*실적)/.test(where) || /(?:명|서비스|구분|내용|대상|기준)$/.test(where) || (!/\d/.test(where) && where.split('·').length >= 2 && where.split('·').every(w => w.trim().length <= 7) && where.split('·').some(w => /(?:종류|대상|가맹점|적립률|할인율|명|서비스|구분|라운지|한도)$/.test(w.trim())))) where = '';
   if (where === name || name.includes(where) || where.length < 4) where = '';

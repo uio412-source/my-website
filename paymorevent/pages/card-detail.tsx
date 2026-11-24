@@ -253,7 +253,7 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
       <table className="cd-t cd-ev">
         <tbody>{offers.slice(0, 5).map(o => <tr key={o.id} className="cd-t-has" onClick={() => { location.href = eventPath(o.id); }}>
           <th scope="row"><a href={eventPath(o.id)}><b>{nameAndValue(viewOf(o)).name}</b></a>{nameAndValue(viewOf(o)).value && <small className="cd-ev-val">{nameAndValue(viewOf(o)).value}</small>}</th>
-          <td className="cd-t-num">{dday(o.endsAt) && <b>{dday(o.endsAt)}</b>}<small>{o.endsAt ? '~' + ymd(o.endsAt) : ''}</small></td>
+          <td className="cd-t-num">{dday(o.endsAt) && <b>{dday(o.endsAt)}</b>}<small>{o.endsAt ? '~' + ymd(o.endsAt) : o.status === 'active' ? '상시' : ''}</small></td>
         </tr>)}</tbody>
       </table>
       {offers.length > 5 && <a className="mc-more" href={sitePath('?card=' + encodeURIComponent(card.id) + '#events')}>{offers.length - 5}건 더 보기</a>}

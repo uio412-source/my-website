@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
 
-// public/catalog-snapshot.json stays the source of truth for the card list.
+// data/catalog-snapshot.json stays the source of truth for the card list.
 // At build time this module derives the two light files the app downloads:
 //   card-list.json   - what the list, its filters and sorting, and the detail
 //                      pages' family/linked-event logic read from each card

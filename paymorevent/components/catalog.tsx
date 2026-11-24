@@ -305,7 +305,7 @@ function EventsView({events, cards}: {events: Offer[]; cards: Card[]}) {
   const fieldCount = useMemo(() => base.reduce((m, o) => { const f = viewOf(o).field; m[f] = (m[f] ?? 0) + 1; return m; }, {} as Record<string, number>), [base]);
   const issCount = useMemo(() => base.reduce((m, o) => { const g = groupOf(o.issuer); m[g] = (m[g] ?? 0) + 1; return m; }, {} as Record<string, number>), [base]);
   const grouped = sort === 'end' && !query;
-  const bucketCount = useMemo(() => grouped ? list.reduce((m, o) => { const b = endBucket(o.endsAt, now); m[b] = (m[b] ?? 0) + 1; return m; }, {} as Record<string, number>) : undefined, [list, grouped, now]);
+  const bucketCount = useMemo(() => grouped ? list.reduce((m, o) => { const b = endBucket(o.endsAt, now, o.status === 'active'); m[b] = (m[b] ?? 0) + 1; return m; }, {} as Record<string, number>) : undefined, [list, grouped, now]);
   const pickMine = (c: Card | null) => {
     setMine(c); setMq('');
     const u = new URL(location.href); c ? u.searchParams.set('card', c.id) : u.searchParams.delete('card');

@@ -26,7 +26,7 @@
     - 상품권(상테크)·관리비: 혜택 O + 기본 혜택(관리비는 관리비 전용 할인도), 또는 실적 O + 채울 전월실적·연간 실적 혜택. 가입 대상 제한 카드(`RESTRICTED`)는 뺌. 관리비 전용 할인 → 혜택 O → 실적만 O 순서로 정렬
     - 호텔 등급: 호텔 멤버십 등급을 주는 카드만(`HOTEL_TIERS`, Mr. Hotels `hotels.js`의 `P.*.cards`와 같은 내용이니 같이 고치세요)
     - 혜자카드·교통·쇼핑·커피 필터는 없앴습니다(검색어로는 그대로 찾힘).
-  - **카드 목록 데이터**: 원본은 `public/catalog-snapshot.json`이고, 앱은 빌드 때 여기서 만든 `card-list.json`(목록·상세 공통)·`card-search.json`(목록 검색)만 받습니다. 요약 카드에서 새 필드를 읽으려면 `scripts/card-list.mjs`의 `LIST_FIELDS`에 추가하세요.
+  - **카드 목록 데이터**: 원본은 `data/catalog-snapshot.json`이고, 앱은 빌드 때 여기서 만든 `card-list.json`(목록·상세 공통)·`card-search.json`(목록 검색)만 받습니다. 요약 카드에서 새 필드를 읽으려면 `scripts/card-list.mjs`의 `LIST_FIELDS`에 추가하세요.
   - **사이트 전환 메뉴**(로고 옆 ▾): Mr. Stocks·Hotels·Travel은 `assets/js/main.js`, Mr. Cards는 `components/customer-shell.tsx`에 있습니다. 문구를 바꾸거나 사이트를 추가하면 두 곳을 같이 고치세요.
 - **Mr. Hotels**: `hotels/` 폴더, `/my-website/hotels/`에 배포. 메뉴는 **호텔 · 이벤트 · 발레파킹** 세 가지(`index.html` · `events.html` · `valet.html`, 예전 `list.html`은 `index.html`로 넘어감)이며 헤더·하단 탭바는 Mr. Stocks와 같은 마크업을 각 HTML에 복사해 씁니다. 화면은 `assets/js/hotels.js`(body의 `data-page`로 분기), 스타일은 `portfolio.css`의 `wl-*`(탭·목록·타일)에 `assets/css/hotels.css`를 더합니다.
   - 등급 기준·혜택·제휴카드는 `hotels.js`의 `P`(등급별 `card`, 프로그램별 `cards`·`cardNote`), 호텔별 조식·라운지·룸업글 여부와 메모는 `flags`, 호텔 목록은 `hotels/directory.json`, 이벤트는 `hotels/events.json`(공식 프로모션을 요약해 화면에서 바로 읽게 함. `endsAt`이 지난 행사는 자동으로 숨김)에서 고칩니다.

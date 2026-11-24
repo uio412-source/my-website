@@ -38,7 +38,7 @@ export function EventRow({o, amount, hideField}: {o: Offer; amount?: number | nu
     </span>
     <span className="mc-side">
       {d && <span className={'mc-dd' + (soon ? ' soon' : '')}>{d}</span>}
-      <small className="mc-end">{o.endsAt ? '~' + ymd(o.endsAt) : ''}</small>
+      <small className="mc-end">{o.endsAt ? '~' + ymd(o.endsAt) : o.status === 'active' ? '상시' : ''}</small>
     </span>
   </a>;
 }
@@ -49,7 +49,7 @@ export function EventGroups({list, grouped, hideField, amountOf, counts}: {list:
   const now = today();
   const groups: [string, Offer[]][] = [];
   for (const o of list) {
-    const b = endBucket(o.endsAt, now);
+    const b = endBucket(o.endsAt, now, o.status === 'active');
     const last = groups[groups.length - 1];
     if (last?.[0] === b) last[1].push(o); else groups.push([b, [o]]);
   }

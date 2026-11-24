@@ -6,7 +6,7 @@ import type {Card} from '@/lib/catalog-types';
 declare const __CARD_DATA_VERSION__: string;
 
 // card-list.json and card-search.json are generated at build time from
-// public/catalog-snapshot.json (scripts/card-list.mjs). A summary card holds
+// data/catalog-snapshot.json (scripts/card-list.mjs). A summary card holds
 // only what the list, filters, sorting and the detail pages' family and
 // linked-event logic read. Full details come from readCard().
 async function readData<T>(file: string, message: string) {
