@@ -271,14 +271,16 @@
   // ---------- 호텔 지도: 전세계 → 나라 → 도시(구·동네) → 동네(호텔) ----------
   const DOT = [['bf', '조식'], ['lounge', '라운지'], ['up', '룸업글']];
   async function mapPage() {
-    const [data, found, A, geo, world, pdata] = await Promise.all([
+    const [data, found, A, geo, world, pdata, valet] = await Promise.all([
       MS.getJSON('directory.json'), MS.getJSON('images.json').catch(() => ({})), MS.getJSON('areas.json'),
       MS.getJSON('map.json').catch(() => ({ cities: {} })), MS.getJSON('../travel/world.json'),
       MS.getJSON('../travel/places.json').catch(() => ({ places: [] })),
+      MS.getJSON('valet.json').catch(() => null),
     ]);
     const list = ids(ORDER);
     const tabs = ['all', ...list];
     const params = new URLSearchParams(location.search);
+    const openKey = params.get('h'); // 발레파킹 화면에서 ?h=프로그램:호텔id 로 넘어오면 그 호텔 카드를 엶
     const h0 = location.hash.slice(1).toLowerCase();
     let current = tabs.includes(h0) ? h0 : tabs.includes(store.get(STORE_P)) ? store.get(STORE_P) : 'all';
     // 예전 주소(list.html?t=3#marriott)로 들어오면 그 등급을 저장
@@ -287,6 +289,14 @@
       if (Number.isInteger(t) && t >= 0 && t < P[current].tiers.length) store.set(STORE_T + current, String(t));
     }
     const day = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+    // 발레파킹(valet.json) 연결: 호텔 directory 키 → {id, n: 무료 발레 되는 카드 수}
+    const valetOf = {};
+    for (const vh of (valet && valet.hotels) || []) {
+      if (!vh.directory || (vh.closure && vh.closure.from <= day)) continue;
+      const names = new Set();
+      for (const p of valet.programs) if (p.hotelIds.includes(vh.id) && !(p.validThrough && p.validThrough < day)) for (const c of p.cards) names.add(p.issuer + c.name);
+      if (names.size) for (const k of vh.directory) valetOf[k] = { id: vh.id, n: names.size };
+    }
     const placeOf = Object.fromEntries((pdata.places || []).map((p) => [p.id, p]));
 
     // 호텔 항목 펼치기: 같은 호텔이 HOTELLUX와 체인에 함께 있으면(same) '전체'에서는 체인 쪽 하나만
@@ -345,6 +355,7 @@
     function saveUrl() {
       const url = new URL(location.href);
       url.searchParams.delete('t');
+      url.searchParams.delete('h');
       const at = [S.country, S.city, ...(S.areas || [])].filter(Boolean);
       url.searchParams.delete('at');
       let q = url.searchParams.toString();
@@ -724,6 +735,8 @@
       ].filter(Boolean);
       const via = (alsoVia[e.key] || []).map((x) => `<a href="${esc(x.h.url)}" target="_blank" rel="noopener">${esc(P[x.pg].name)} 예약</a>`).join(' · ');
       const same = e.h.same && byKey[e.h.same] ? byKey[e.h.same] : null;
+      const vk = [e.key, e.h.same, ...(alsoVia[e.key] || []).map((x) => x.key)].find((k) => k && valetOf[k]);
+      const vl = vk ? valetOf[vk] : null;
       $('card').innerHTML = `
         <div class="hm-c-img">${img ? `<img src="${esc(img)}" alt="${esc(e.h.name)}" decoding="async" referrerpolicy="no-referrer">` : ''}<span class="hx-ph" aria-hidden="true">${e.h.stars || ''}성</span>
           <button class="sheet-x hm-c-x" type="button" data-close aria-label="닫기">✕</button></div>
@@ -736,6 +749,7 @@
             <div><dt>1박 평균가</dt><dd>${priceText(e)}</dd></div>
           </dl>
           ${closed ? `<p class="hm-c-closed">${esc(e.h.closureNote || '휴업 중')}</p>` : ''}
+          ${vl && !closed ? `<a class="hm-c-valet" href="valet.html?hotel=${encodeURIComponent(vl.id)}"><b>무료 발레파킹</b><span>카드 ${vl.n}종 · 내 카드로 되는지 보기 →</span></a>` : ''}
           <div class="hm-c-k">${info.noTier ? '예약 혜택' : '등급별 혜택'}<small>${info.noTier ? 'HoteLux 혜택 포함 요금' : `나의 등급: ${esc(info.tiers[mine].n)} · 등급표에서 바꿀 수 있어요`}</small></div>
           <table class="hm-c-tiers"><thead><tr><th scope="col">등급</th>${DOT.map(([, l]) => `<th scope="col">${l}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>
           ${extra.length ? `<ul class="hm-c-notes">${extra.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
@@ -801,6 +815,7 @@
     saveUrl();
     draw();
     zoom(true);
+    if (openKey && byKey[openKey]) openCard(openKey);
   }
 
   // ---------- 이벤트 (공식 프로모션을 요약해 화면에서 바로 읽음) ----------
