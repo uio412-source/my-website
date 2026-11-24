@@ -314,7 +314,7 @@ def check_travel_events(doc: dict, where: str, p: Problems):
 
 def check_service(s: dict, w: str, p: Problems):
     if not _keys(p, w, s, {"category", "title"}, {"minimumSpend", "grace", "dailyLimit", "monthlyLimit", "annualLimit", "quotaScope", "sharedWith",
-                                                  "guestCount", "holderOnly", "freeHours", "coverage", "hotels", "hotelRules", "conditions"}):
+                                                  "guestCount", "holderOnly", "freeHours", "coverage", "hotels", "hotelRules", "conditions", "useRequired"}):
         return
     cat = s.get("category")
     if cat not in SERVICE_CATS:
@@ -336,6 +336,8 @@ def check_service(s: dict, w: str, p: Problems):
             p.add(w, f"{k}는 2~80자 문장 또는 null")
     if "holderOnly" in s and not isinstance(s["holderOnly"], bool):
         p.add(w, "holderOnly는 true(본인만)/false")
+    if "useRequired" in s and not isinstance(s["useRequired"], bool):
+        p.add(w, "useRequired는 true(당일 투숙·식음료 이용해야 무료)/false(안내문에 호텔 이용 없이 무료라고 적힌 경우만)")
     hotels = s.get("hotels")
     if cat == "hotel_valet":
         if not isinstance(hotels, list) or not hotels:
@@ -659,7 +661,11 @@ def merge_valet(programs, card_ids):
                 "minimumSpend": svc.get("minimumSpend") or 0, "spendScope": "전월 이용실적", "spendExclusions": "",
                 "monthlyLimit": svc.get("monthlyLimit"), "quotaScope": svc.get("quotaScope") or "hotel_shared", "familyQuota": False,
                 "grace": svc.get("grace") or "", "parking": f"일 {hours:g}시간 무료 · 초과 유료" if hours else "무료 주차 시간은 호텔별",
-                "visit": "객실·식음료 매장 이용(연회장 제외)", "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
+                # 안내문에 '호텔 이용과 관계없이' 등으로 적힌 경우(useRequired false)만 조건 없이 무료로 봄. 모르면 이용 필요
+                "visit": "호텔 이용 없이 무료(안내문 기준)" if svc.get("useRequired") is False else
+                         next((c for c in svc.get("conditions") or [] if re.search("객실|투숙|식음|업장|레스토랑", c)), "객실·식음료 매장 이용(연회장 제외)"),
+                "useRequired": svc.get("useRequired") is not False,
+                "proof": "대상 카드·주차권 제시" if svc.get("useRequired") is False else "대상 카드·주차권·당일 호텔 이용 영수증 제시",
                 "notes": ([svc["sharedWith"]] if svc.get("sharedWith") else []) + (svc.get("conditions") or [])[:3],
                 "source": g["url"], "checkedAt": g["docDate"], "hotelIds": ids, "hotelOverrides": overrides,
                 "cards": [{"key": f"c{i}", "name": n, "catalogId": next(iter(card_ids.get((g["issuer"], norm(n)), [])), None)} for i, n in enumerate(g["cards"])],

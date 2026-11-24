@@ -1,7 +1,7 @@
 // Mr. Hotels 발레파킹 — ① 가진 카드 고르기 → ② 카드마다 지난달 실적 채웠는지 체크 → 무료 발레 되는 호텔(지도 + 목록)
 // 데이터: hotels/valet.json(카드사 공식 안내 정리), 지도 바탕: hotels/map.json(서울 구 경계·강, 호텔 지도와 같은 투영)
 // 판정: valet-rules.js (Mr. Cards와 공유)
-import {valetStatus, valetDate, valetQuota, valetExtra} from './valet-rules.js';
+import {valetStatus, valetDate, valetQuota, valetExtra, valetNoUse} from './valet-rules.js';
 
 const $ = (id) => document.getElementById('hv-' + id);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
@@ -52,6 +52,7 @@ const hotelCount = (c) => data.hotels.filter((h) => !isClosed(h) && progsOf(c, {
 /**
  * 이 호텔에서 카드 한 장의 상태: ok(바로 가능) · spend(실적 채우면) · check(조건 확인 중) · null
  * extra: 실적 말고 이 호텔에만 붙는 조건(당일 ○만원 이상 영수증 등, valet-rules.js valetExtra)
+ * free: 안내문에 호텔 이용 없이 무료라고 적힌 경우(valetNoUse)
  */
 function cardAt(c, h, sel = mine[c.key]) {
   const ps = progsOf(c, sel).map((p) => ({p, st: valetStatus(p, h, day)})).filter((x) => x.st === 'available' || x.st === 'expired');
@@ -59,14 +60,14 @@ function cardAt(c, h, sel = mine[c.key]) {
   const live = ps.filter((x) => x.st === 'available').map((x) => x.p);
   if (!live.length) return {state: 'check', p: ps[0].p, extra: ''};
   const met = (p) => !p.minimumSpend || sel?.met !== false;
-  const cost = (p) => (met(p) ? 0 : 2) + (valetExtra(p, h) ? 1 : 0);
-  // 브랜드를 정하지 않았으면 조건이 가장 적은 안내 기준(실적 → 영수증 조건 → 실적 금액 → 횟수 순)
+  const cost = (p) => (met(p) ? 0 : 4) + (valetExtra(p, h) ? 2 : 0) + (valetNoUse(p) ? 0 : 1);
+  // 브랜드를 정하지 않았으면 조건이 가장 적은 안내 기준(실적 → 영수증 금액 → 호텔 이용 → 실적 금액 → 횟수 순)
   const p = live.sort((a, b) => cost(a) - cost(b) || (a.minimumSpend || 0) - (b.minimumSpend || 0) || (b.monthlyLimit ?? 99) - (a.monthlyLimit ?? 99))[0];
-  return {state: met(p) ? 'ok' : 'spend', p, extra: valetExtra(p, h)};
+  return {state: met(p) ? 'ok' : 'spend', p, extra: valetExtra(p, h), free: valetNoUse(p) && !valetExtra(p, h)};
 }
-/** clean(조건 없이 무료) · cond(무료지만 호텔 조건) · spend · check */
-const kindOf = (r) => (!r ? null : r.state === 'ok' ? (r.extra ? 'cond' : 'clean') : r.state);
-const RANK = {clean: 0, cond: 1, spend: 2, check: 3};
+/** clean(안내문상 조건 없이 무료) · use(당일 투숙·식음료 이용 시 무료) · cond(이용 + 영수증 금액 조건) · spend · check */
+const kindOf = (r) => (!r ? null : r.state === 'ok' ? (r.free ? 'clean' : r.extra ? 'cond' : 'use') : r.state);
+const RANK = {clean: 0, use: 1, cond: 2, spend: 3, check: 4};
 
 function save() { store.set(SAVE, mine); }
 function toggleCard(key) {
@@ -161,12 +162,14 @@ function renderResult() {
   const all = rowsFor();
   const live = all.filter((r) => !r.closed);
   const n = (k) => live.filter((r) => r.best === k).length;
-  const [nClean, nCond, nSpend] = [n('clean'), n('cond'), n('spend')];
+  const [nClean, nUse, nCond, nSpend] = [n('clean'), n('use'), n('cond'), n('spend')];
+  const nOk = nClean + nUse + nCond;
   $('summary').innerHTML = has
-    ? `<div class="hv-big"><b>${clean ? nClean : nClean + nCond}</b><span>${clean ? '곳에서 조건 없이 무료 발레' : '곳에서 지금 무료 발레 가능'}</span></div>`
-      + (!clean && nCond ? `<p>그중 <b>${nCond}곳</b>은 당일 영수증 금액 같은 호텔별 조건이 있어요.</p>` : '')
-      + (clean && nCond ? `<p>당일 영수증 금액 조건이 붙는 <b>${nCond}곳</b>은 뺐어요.</p>` : '')
-      + (nSpend ? `<p>지난달 실적을 채우면 <b>${nSpend}곳</b> 더 돼요.</p>` : nClean + nCond ? '' : '<p>고른 카드로는 서울 제휴 호텔이 없어요.</p>')
+    ? `<div class="hv-big"><b>${clean ? nClean : nOk}</b><span>${clean ? '곳에서 조건 없이 무료 발레' : '곳에서 무료 발레 가능'}</span></div>`
+      + (clean
+        ? (nClean ? '' : `<p>상품설명서상 호텔을 이용하지 않아도 무료인 곳은 없어요. 고른 카드는 모두 당일 투숙이나 식음료 매장을 이용해야 무료예요${nOk ? ` (이용 시 무료 <b>${nOk}곳</b>)` : ''}.</p>`)
+        : (nOk ? `<p>${nClean ? `조건 없이 무료 <b>${nClean}곳</b> · ` : ''}당일 투숙·식음료 이용 시 무료 <b>${nUse + nCond}곳</b>${nCond ? ` (그중 ${nCond}곳은 영수증 금액 조건)` : ''}</p>` : ''))
+      + (nSpend && !clean ? `<p>지난달 실적을 채우면 <b>${nSpend}곳</b> 더 돼요.</p>` : nOk || nSpend ? '' : '<p>고른 카드로는 서울 제휴 호텔이 없어요.</p>')
     : `<p class="hv-hint">카드를 고르면 되는 호텔만 보여요 · 지금은 전체 ${live.length}곳</p>`;
   const visible = filtered(all);
   rowsNow = visible;
@@ -178,15 +181,16 @@ function renderResult() {
     .map(([g, t, c]) => `<button type="button" data-gu="${esc(g)}" aria-pressed="${g === gu}">${esc(t)} <small>${c}</small></button>`).join('');
   const rows = visible.filter((r) => !gu || r.h.district === gu);
   rows.sort((a, b) => (a.closed - b.closed) || ((RANK[a.best] ?? 9) - (RANK[b.best] ?? 9)) || (b.any.length - a.any.length) || ko.compare(a.h.name, b.h.name));
-  const empty = clean ? '조건 없이 무료인 호텔이 없어요. ‘조건 없이 무료만’을 끄면 영수증 조건이 있는 곳도 보여요.'
+  const empty = clean ? '상품설명서 기준으로 호텔 이용 없이 무료인 곳이 없어요. ‘조건 없이 무료만’을 끄면 당일 투숙·식음료 이용 시 무료인 호텔이 보여요.'
     : $('only').checked && has ? '조건에 맞는 호텔이 없어요. ‘되는 곳만’을 끄면 전체를 볼 수 있어요.' : '조건에 맞는 호텔이 없어요.';
   $('hotels').innerHTML = rows.length ? rows.map((r) => row(r, has)).join('') : `<p class="wl-empty">${empty}</p>`;
   map.draw();
 }
 
 const STATE = {
-  clean: ['ok', '가능'],
-  cond: ['ok cond', '조건부'],
+  clean: ['ok', '조건 없이 무료'],
+  use: ['ok cond', '이용 시 무료'],
+  cond: ['ok cond', '금액 조건'],
   spend: ['warn', '실적 채우면'],
   check: ['off', '조건 확인 중'],
 };
@@ -194,7 +198,8 @@ const STATE = {
 function lineOf(r) {
   const top = r.mineAt[0];
   if (!top) return '';
-  return `${short(top.c.name)} · ${top.r.extra && top.r.state === 'ok' ? top.r.extra : parkShort(top.r.p)}`;
+  const how = top.r.state !== 'ok' ? parkShort(top.r.p) : top.r.extra ? top.r.extra : top.r.free ? `이용 없이 ${parkShort(top.r.p)}` : `이용 시 ${parkShort(top.r.p)}`;
+  return `${short(top.c.name)} · ${how}`;
 }
 function pillOf(r, has) {
   if (r.closed) return '<span class="hv-pill off">휴업</span>';
@@ -232,7 +237,7 @@ function detail({h, closed, mineAt, any}, has) {
   const mineHtml = mineAt.map(({c, r}) => {
     const k = kindOf(r);
     return `<li class="hv-cl ${STATE[k][0]}">
-    <div class="hv-cl-top">${tile(c.issuer)}<b>${esc(short(c.name))}</b><small>${esc(brandShort(r.p.brand))}</small><span class="hv-st ${STATE[k][0]}">${k === 'spend' ? `전월 ${won(r.p.minimumSpend)} 채우면` : k === 'cond' ? '영수증 조건' : STATE[k][1]}</span></div>
+    <div class="hv-cl-top">${tile(c.issuer)}<b>${esc(short(c.name))}</b><small>${esc(brandShort(r.p.brand))}</small><span class="hv-st ${STATE[k][0]}">${k === 'spend' ? `전월 ${won(r.p.minimumSpend)} 채우면` : STATE[k][1]}</span></div>
     ${terms(r.p, h, r.extra)}</li>`;
   }).join('');
   const others = any.filter((c) => !mine[c.key]);
@@ -368,7 +373,8 @@ const map = (() => {
     }
     return out;
   }
-  const pinCls = (r, has) => (r.closed ? 'off' : !has ? 'any' : r.best ? {clean: 'clean', cond: 'cond', spend: 'spend', check: 'off'}[r.best] : 'off');
+  const PIN = {clean: 'clean', use: 'cond', cond: 'cond', spend: 'spend', check: 'off'};
+  const pinCls = (r, has) => (r.closed ? 'off' : !has ? 'any' : r.best ? PIN[r.best] : 'off');
   function build(v) {
     const has = hasCards();
     items = layout(v);
@@ -399,7 +405,7 @@ const map = (() => {
     marks.innerHTML = gl.map(([n]) => `<span class="hv-gl" aria-hidden="true">${esc(n)}</span>`).join('') + items.map((m, i) => {
       if (m.kind === 'ring') return '<span class="hv-ringbg" aria-hidden="true"></span>';
       if (m.kind === 'bub') {
-        const cls = m.closed ? 'off' : !has ? 'any' : m.best ? {clean: 'clean', cond: 'cond', spend: 'spend', check: 'off'}[m.best] : 'off';
+        const cls = m.closed ? 'off' : !has ? 'any' : m.best ? PIN[m.best] : 'off';
         return `<button type="button" class="hv-bub ${cls}" data-i="${i}" aria-label="호텔 ${m.m.length}곳 · 눌러서 확대"><b>${m.m.length}</b></button>`;
       }
       const lab = labels.get(m);
@@ -444,7 +450,9 @@ const map = (() => {
   function legend() {
     const has = hasCards();
     $('legend').innerHTML = has
-      ? `<span><i class="lg v-clean"></i>조건 없이 무료</span>${cleanOn() ? '' : '<span><i class="lg v-cond"></i>조건부</span><span><i class="lg v-spend"></i>실적 채우면</span>'}${$('only').checked || cleanOn() ? '' : '<span><i class="lg v-off"></i>안 됨</span>'}`
+      ? [['clean', 'v-clean', '조건 없이 무료'], ['use', 'v-cond', '이용 시 무료'], ['spend', 'v-spend', '실적 채우면'], ['off', 'v-off', '안 됨']]
+        .filter(([k]) => rowsNow.some((r) => (k === 'use' ? r.best === 'use' || r.best === 'cond' : k === 'off' ? !r.closed && (!r.best || r.best === 'check') : r.best === k)))
+        .map(([, c, t]) => `<span><i class="lg ${c}"></i>${t}</span>`).join('') || '<em>보이는 호텔이 없어요</em>'
       : '<span><i class="lg v-any"></i>카드 무료 발레 호텔</span><em>카드를 고르면 색으로 나눠 보여요</em>';
   }
   function popup() {
@@ -578,7 +586,7 @@ async function load() {
   map.init(geo);
   $('sub').textContent = `서울 호텔 ${data.hotels.length}곳 · 카드 ${cards.length}종 · 카드사 공식 안내 ${data.updatedAt.slice(2).replace(/-/g, '.')} 확인`;
   $('note').textContent = '카드사 공식 안내(상품설명서·혜택 안내)에 나온 서울 제휴 호텔만 정리했어요. 무료 시간·횟수는 카드사 기준이고, 만차·행사 때는 호텔 사정으로 제한될 수 있어요. '
-    + '‘조건 없이 무료’는 고른 카드의 전월실적을 채웠고 호텔별 당일 영수증 금액 조건이 없는 곳이에요(당일 객실·식당 이용은 모든 카드 공통). '
+    + '‘조건 없이 무료’는 상품설명서·브랜드 서비스 안내에 호텔 이용 없이 무료라고 적힌 곳만이에요(전월실적은 채워야 함). 당일 투숙·식음료 매장 이용이 필요한 곳은 ‘이용 시 무료’로 보여요. '
     + '지도 위치는 호텔 주소 기준 대략 위치예요(지도: Natural Earth, 구 경계: 통계청). 고른 카드와 실적 체크는 이 브라우저에만 저장돼요.';
   renderAll();
   if (open) {

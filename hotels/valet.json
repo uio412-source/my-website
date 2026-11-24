@@ -525,6 +525,7 @@
       "grace": "카드 사용등록 다음 달 말까지 유예",
       "parking": "호텔별 2~3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
       "notes": [],
       "source": "https://www.shinhancard.com/pconts/download/card/MO_26_00770_visa_signature_2_best.pdf",
@@ -587,6 +588,7 @@
       "grace": "카드 사용등록 다음 달 말까지 유예",
       "parking": "호텔별 2~3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
       "notes": [],
       "source": "https://www.shinhancard.com/pconts/download/card/MO_26_00770_visa_signature_2_best.pdf",
@@ -644,6 +646,7 @@
       "grace": "등록월에는 제공되지 않음",
       "parking": "호텔별 2~3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
       "notes": [],
       "source": "https://www.shinhancard.com/pconts/download/card/PC_26_00776_visa_platinum_1_new.pdf",
@@ -732,6 +735,7 @@
       "grace": "카드 사용등록 다음 달 말까지 유예",
       "parking": "호텔별 2~3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
       "notes": [],
       "source": "https://www.shinhancard.com/pconts/download/card/PC_26_00776_visa_platinum_1_new.pdf",
@@ -785,6 +789,7 @@
       "grace": "등록월에는 제공되지 않음",
       "parking": "호텔별 2~3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
       "notes": [
         "안내장의 그랜드강남호텔은 현재 운영 시설 이름을 확인 중입니다."
@@ -829,6 +834,7 @@
       "grace": "등록월에는 제공되지 않음",
       "parking": "호텔별 2~3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
       "notes": [
         "안내장 표기만으로 시설을 특정하기 어려운 메리어트 항목은 지도 목록에서 보류했습니다."
@@ -885,6 +891,7 @@
       "grace": "카드 사용등록 다음 달 말까지 유예",
       "parking": "호텔별 2~3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
       "notes": [
         "안내장의 그랜드강남호텔은 현재 운영 시설 이름을 확인 중입니다."
@@ -934,6 +941,7 @@
       "grace": "카드 사용등록 다음 달 말까지 유예",
       "parking": "호텔별 2~3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
       "notes": [
         "안내장 표기만으로 시설을 특정하기 어려운 메리어트 항목은 지도 목록에서 보류했습니다."
@@ -990,6 +998,7 @@
       "grace": "등록월에는 제공되지 않음",
       "parking": "호텔별 2~3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "차량보관증과 대상 UnionPay 실물카드 제시",
       "notes": [
         "출차할 때 차량보관증과 대상 UnionPay 카드를 제시합니다. 당일 이용 영수증 요건은 호텔에 확인하세요."
@@ -1046,6 +1055,7 @@
       "grace": "발급월 포함 3개월 유예",
       "parking": "1일 3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "실물카드·주차권 제시. 당일 이용 영수증을 요청할 수 있음.",
       "notes": [],
       "source": "https://www.hyundaicard.com/upload/card/26%EB%85%84%20AMEX%20THE%20PLATINUM_PLATINUM%20Ed2_2610.pdf",
@@ -1103,6 +1113,7 @@
       "grace": "발급월 포함 3개월 유예",
       "parking": "1일 3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "실물카드·주차권 제시. 당일 이용 영수증을 요청할 수 있음.",
       "notes": [],
       "source": "https://www.hyundaicard.com/upload/card/26%EB%85%84%20AMEX%20PLATINUM%20ELITE%20%EC%84%A0%ED%83%9D%EC%A0%9C%EA%B3%B5%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%95%88%EB%82%B4%EC%84%9C_%EA%B3%A8%EB%93%9CEd2_2610.pdf",
@@ -1158,6 +1169,7 @@
       "grace": "발급월 포함 3개월 유예",
       "parking": "1일 3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "실물카드·주차권 제시. 당일 이용 영수증을 요청할 수 있음.",
       "notes": [
         "안내장에 표기가 불분명한 마지막 제휴 호텔은 현재 호텔명 확인 중입니다."
@@ -1214,6 +1226,7 @@
       "grace": "발급월 포함 3개월 유예",
       "parking": "1일 3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "실물카드·주차권 제시. 당일 이용 영수증을 요청할 수 있음.",
       "notes": [
         "타임스퀘어 제휴점은 안내장 표기와 현재 호텔명을 대조 중입니다."
@@ -1269,6 +1282,7 @@
       "grace": "카드 사용등록 다음 달 말까지 유예",
       "parking": "호텔별 2~3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "대상 카드·주차권·당일 호텔 이용 영수증 제시",
       "notes": [
         "안내장의 노보텔 표기가 혼재된 한 지점은 별도 확인 중입니다."
@@ -1325,6 +1339,7 @@
       "grace": "최초 카드 사용등록 다음 달 말까지 유예",
       "parking": "1일 3시간 무료 · 초과 유료",
       "visit": "당일 객실 또는 식음료 매장 이용 · 연회장 제외",
+      "useRequired": true,
       "proof": "주차권과 대상 Visa 실물카드 제시. 당일 영수증은 호텔별 확인.",
       "notes": [
         "일부 호텔은 당일 일정 금액의 이용 영수증이 필요합니다. 호텔별 최소금액은 공식 안내장에 기재되지 않았습니다."
@@ -1397,6 +1412,7 @@
       "grace": "발급월+1개월까지 실적 무관",
       "parking": "일 3시간 무료 · 초과 유료",
       "visit": "객실·식음료 매장 이용(연회장 제외) · 본인 방문",
+      "useRequired": true,
       "proof": "대상 카드·주차권·당일 객실/매장 영수증 제시",
       "notes": [
         "인천공항 발렛파킹과 통합 월 5회"
@@ -1453,6 +1469,7 @@
       "grace": "실적 유예 없음 · 티타늄카드 사용 등록 후 이용",
       "parking": "일 3시간 무료(일부 호텔 제외) · 초과 유료",
       "visit": "투숙·식음료 매장 이용 · 연회 고객은 제한될 수 있음",
+      "useRequired": true,
       "proof": "대상 카드·주차권 제시 · 일부 호텔 당일 영수증",
       "notes": [
         "본인+가족카드 합산 월 3회, 연 12회",
