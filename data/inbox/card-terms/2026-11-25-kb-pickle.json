@@ -1,0 +1,679 @@
+{
+  "type": "card-terms",
+  "issuer": "KB국민카드",
+  "collectedAt": "2026-11-25",
+  "collector": "Pickle",
+  "cards": [
+    {
+      "cardId": "kb-09922",
+      "queueKey": "kb-09922",
+      "name": "KB ALL 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09922&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/09922__prdctOpmn_20260415.pdf",
+      "docDate": "2025-12-04",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 20000
+        },
+        {
+          "brand": "Visa",
+          "amount": 20000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Visa"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": "전월 1일~말일(승인시점 기준) 일시불·할부 승인금액, 해외는 매입완료 기준, 취소는 취소전표 접수월의 실적에서 차감",
+      "grace": "최초 발급 카드 사용등록일~다음 달 말일까지는 전월실적 40만원 미만에도 혜택 제공",
+      "spendExclusions": [
+        "KB ALL 카드 자동납부(쇼핑멤버십/OTT/이동통신) 할인 적용받은 전체 이용금액",
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "상품권 및 선불카드(선불전자지급수단 포함) 구입·충전 금액",
+        "아파트관리비",
+        "초·중·고 학교납입금 전체",
+        "정부지원금(보육료/유치원보육비/바우처 이용금액 등)",
+        "대학(원) 등록금",
+        "국세",
+        "지방세",
+        "공과금(전기/수도 등)",
+        "4대 사회보험료(건강/연금/고용/산재)",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "무승인전표(교통요금/자판기/터널통행료/항공기내 이용 등)",
+        "취소금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "상품권 및 선불카드 구입·충전 금액",
+        "아파트관리비",
+        "초·중·고 학교납입금 전체",
+        "정부지원금(보육료/유치원보육비/바우처 이용금액 등)",
+        "대학(원) 등록금",
+        "국세",
+        "지방세",
+        "공과금(전기/수도 등)",
+        "4대 사회보험료(건강/연금/고용/산재)",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "신차구매(환급) 할인 전표 전체",
+        "취소금액"
+      ],
+      "benefits": [
+        {
+          "label": "국내",
+          "place": "국내 가맹점",
+          "value": "1%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "cap": null,
+          "conditions": [
+            "전월 이용실적 조건·할인한도 없음"
+          ]
+        },
+        {
+          "label": "해외",
+          "place": "해외 가맹점(해외겸용 카드)",
+          "value": "2%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "cap": 40000,
+          "capScope": "월",
+          "conditions": [
+            "전월 이용실적 조건 없음",
+            "해외 이용 수수료 별도"
+          ]
+        },
+        {
+          "label": "쇼핑 멤버십",
+          "place": "네이버 플러스 멤버십, 쿠팡 로켓와우 멤버십 자동납부 요금",
+          "value": "50%",
+          "valueType": "할인",
+          "group": "멤버십·구독·통신",
+          "minimumSpend": 400000,
+          "cap": 3000,
+          "capScope": "월",
+          "shared": "통합 월 할인한도",
+          "conditions": [
+            "쇼핑 멤버십·OTT·이동통신 합산 월 3천원 한도",
+            "공식 홈페이지를 통한 정기 결제 건에 한함",
+            "간편결제 및 인앱결제 등은 할인 제외"
+          ]
+        },
+        {
+          "label": "OTT",
+          "place": "넷플릭스, 유튜브 프리미엄, 웨이브, 티빙, 디즈니플러스 자동납부 요금",
+          "value": "10%",
+          "valueType": "할인",
+          "group": "멤버십·구독·통신",
+          "minimumSpend": 400000,
+          "cap": 3000,
+          "capScope": "월",
+          "shared": "통합 월 할인한도",
+          "conditions": [
+            "쇼핑 멤버십·OTT·이동통신 합산 월 3천원 한도"
+          ]
+        },
+        {
+          "label": "이동통신요금",
+          "place": "SKT, KT, LG U+, Liiv M 이동통신 자동납부 요금",
+          "value": "5%",
+          "valueType": "할인",
+          "group": "멤버십·구독·통신",
+          "minimumSpend": 400000,
+          "cap": 3000,
+          "capScope": "월",
+          "shared": "통합 월 할인한도",
+          "conditions": [
+            "쇼핑 멤버십·OTT·이동통신 합산 월 3천원 한도",
+            "인터넷·IPTV 등 결합상품 할인 제외"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "kb-09162",
+      "queueKey": "kb-09162",
+      "name": "KB ALL point 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09162&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/09162__prdctOpmn_20260506.pdf",
+      "docDate": "2026-03-18",
+      "annualFee": [
+        {
+          "brand": "K-World(UPI)",
+          "amount": 15000
+        },
+        {
+          "brand": "국내외겸용(MASTER)",
+          "amount": 15000
+        },
+        {
+          "brand": "국내외겸용(VISA)",
+          "amount": 20000
+        }
+      ],
+      "brands": [
+        "K-World(UPI)",
+        "Mastercard",
+        "Visa"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": "전월 1일~말일(승인시점 기준) 일시불·할부 승인금액, 해외는 매입완료 기준, 취소는 취소전표 접수월 실적에서 차감",
+      "grace": "최초 카드 사용등록일로부터 다음 달 말일까지는 전월실적 없이도 1구간(30만원 이상) 할인한도 적용",
+      "spendExclusions": [
+        "무이자할부 이용금액",
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "상품권 및 선불카드 구입·충전금액",
+        "정부지원금",
+        "대학(원) 등록금",
+        "지방세",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "취소금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "상품권 및 선불카드 구입·충전금액",
+        "정부지원금",
+        "대학(원) 등록금",
+        "지방세",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "취소금액"
+      ],
+      "benefits": [
+        {
+          "label": "국내",
+          "place": "국내 가맹점",
+          "value": "0.7%",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "cap": null,
+          "conditions": [
+            "전월 이용실적 조건 없음"
+          ]
+        },
+        {
+          "label": "주말·공휴일",
+          "place": "국내 가맹점(주말·공휴일 이용)",
+          "value": "0.5%",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "conditions": [
+            "대중교통·이동통신요금 자동납부 금액은 제외(택시는 적용)"
+          ]
+        },
+        {
+          "label": "음식·커피",
+          "place": "일반음식점, 한식·중식·일식·양식·뷔페·패밀리레스토랑, 커피전문점(스타벅스·커피빈 등)",
+          "value": "0.5%",
+          "valueType": "적립",
+          "minimumSpend": 0
+        },
+        {
+          "label": "대중교통·택시",
+          "place": "버스·지하철, 택시",
+          "value": "0.5%",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "conditions": [
+            "시외버스·고속버스 제외"
+          ]
+        },
+        {
+          "label": "이동통신요금",
+          "place": "SKT, KT, LG U+, Liiv M 자동납부 등록 요금",
+          "value": "0.5%",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "conditions": [
+            "KB ALL point 카드로 자동납부 등록 시 제공"
+          ]
+        },
+        {
+          "label": "해외",
+          "place": "해외 가맹점(해외겸용 카드)",
+          "value": "1.7%",
+          "valueType": "캐시백",
+          "minimumSpend": 0,
+          "cap": null,
+          "limits": "월 이용금액 100만원까지",
+          "conditions": [
+            "전월 이용실적 조건 없음",
+            "할인금액은 해당 월 결제일 다음 결제계좌로 입금"
+          ]
+        },
+        {
+          "label": "영화",
+          "place": "메가박스, CGV 온라인 영화 예매",
+          "value": "3,500원",
+          "valueType": "할인",
+          "group": "영화·놀이공원",
+          "minimumSpend": 300000,
+          "cap": 3500,
+          "capScope": "건",
+          "shared": "할인 횟수 별도",
+          "limits": "1일 2회, 월 4회, 연 10회",
+          "conditions": [
+            "승인 건당 3,500원 청구할인"
+          ]
+        },
+        {
+          "label": "롯데월드",
+          "place": "롯데월드 어드벤처 종합이용권",
+          "value": "50%",
+          "valueType": "할인",
+          "group": "영화·놀이공원",
+          "minimumSpend": 300000,
+          "limits": "회원별 1일 1매, 월 2매, 연 5매"
+        },
+        {
+          "label": "에버랜드",
+          "place": "에버랜드 페스티벌 월드 자유이용권",
+          "value": "50%",
+          "valueType": "할인",
+          "group": "영화·놀이공원",
+          "minimumSpend": 300000,
+          "limits": "카드별(가족카드 포함) 1일 1매, 회원별 연 10매"
+        },
+        {
+          "label": "캐리비안베이",
+          "place": "캐리비안베이 입장권",
+          "value": "30%",
+          "valueType": "할인",
+          "group": "영화·놀이공원",
+          "minimumSpend": 300000,
+          "limits": "카드별(가족카드 포함) 1일 1매"
+        }
+      ]
+    },
+    {
+      "cardId": "kb-07972",
+      "queueKey": "kb-07972",
+      "name": "KB국민 노리2 체크카드",
+      "cardType": "debit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=07972&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/07964__prdctOpmn_20260716.pdf",
+      "docDate": "2026-05-22",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 0
+        }
+      ],
+      "brands": [
+        "국내전용"
+      ],
+      "minimumSpend": 200000,
+      "spendBasis": "전월 1일~말일 KB국민 노리2 체크카드 일시불 승인금액(매출 취소·부분취소 반영), 후불교통요금 제외",
+      "grace": "최초 카드 사용등록일로부터 다음 달 말일까지는 전월실적 없이도 일상혜택 제공",
+      "spendExclusions": [
+        "후불교통요금",
+        "무승인거래(자판기·터널통행료·유료도로 등)",
+        "기차·고속버스 취소 반환수수료",
+        "정부지원금 이용금액(보육료·유치원보조비·바우처 등)",
+        "포인트리 충전금액",
+        "대학(재)등록금",
+        "상품권 및 선불카드(선불전자지급수단 포함) 구입·충전금액",
+        "연체료",
+        "지방세(지방세·상하수도·세외수입)",
+        "취소금액",
+        "각종 수수료 및 이자"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "상품권 및 선불카드 구입·충전금액"
+      ],
+      "benefits": [
+        {
+          "label": "커피",
+          "place": "스타벅스(사이렌오더 포함), 커피빈",
+          "value": "10%",
+          "valueType": "할인",
+          "group": "일상혜택",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 20000
+            },
+            {
+              "spend": 400000,
+              "cap": 30000
+            },
+            {
+              "spend": 600000,
+              "cap": 40000
+            },
+            {
+              "spend": 800000,
+              "cap": 50000
+            }
+          ],
+          "cap": 3000,
+          "capScope": "월",
+          "shared": "월간 통합할인한도",
+          "limits": "월 3만원 이용분까지",
+          "conditions": [
+            "커피 할인은 전월실적 없이 제공"
+          ]
+        },
+        {
+          "label": "모바일 앱마켓",
+          "place": "구글플레이스토어, 앱스토어",
+          "value": "10%",
+          "valueType": "할인",
+          "group": "일상혜택",
+          "minimumSpend": 200000,
+          "cap": 5000,
+          "capScope": "월",
+          "shared": "월간 통합할인한도",
+          "limits": "월 5만원 이용분까지",
+          "conditions": [
+            "KB국민카드 가맹점으로 등록된 결제 건에 한함"
+          ]
+        },
+        {
+          "label": "문화",
+          "place": "인터파크티켓",
+          "value": "10%",
+          "valueType": "할인",
+          "group": "일상혜택",
+          "minimumSpend": 200000,
+          "cap": 7000,
+          "capScope": "월",
+          "shared": "월간 통합할인한도",
+          "limits": "월 7만원 이용분까지",
+          "conditions": [
+            "공연 티켓 예매 시에만 제공"
+          ]
+        },
+        {
+          "label": "뷰티",
+          "place": "올리브영, 미용실 업종",
+          "value": "5%",
+          "valueType": "할인",
+          "group": "일상혜택",
+          "minimumSpend": 200000,
+          "cap": 2000,
+          "capScope": "월",
+          "shared": "월간 통합할인한도",
+          "limits": "월 4만원 이용분까지"
+        },
+        {
+          "label": "편의점",
+          "place": "GS25, CU",
+          "value": "5%",
+          "valueType": "할인",
+          "group": "일상혜택",
+          "minimumSpend": 200000,
+          "cap": 2000,
+          "capScope": "월",
+          "shared": "월간 통합할인한도",
+          "limits": "월 4만원 이용분까지"
+        },
+        {
+          "label": "구독",
+          "place": "넷플릭스, 유튜브프리미엄",
+          "value": "1,000원",
+          "valueType": "할인",
+          "group": "일상혜택",
+          "minimumSpend": 200000,
+          "cap": 2000,
+          "capScope": "월",
+          "shared": "월간 통합할인한도",
+          "limits": "건당 1만원 이상 결제 시 월 2회"
+        },
+        {
+          "label": "배달",
+          "place": "배달의민족, 요기요",
+          "value": "1,000원",
+          "valueType": "할인",
+          "group": "일상혜택",
+          "minimumSpend": 200000,
+          "cap": 1000,
+          "capScope": "월",
+          "shared": "월간 통합할인한도",
+          "limits": "건당 1만원 이상 결제 시 월 1회"
+        },
+        {
+          "label": "이동통신",
+          "place": "SKT, KT, LG U+, Liiv M 자동이체 납부금액",
+          "value": "2,500원",
+          "valueType": "할인",
+          "group": "일상혜택",
+          "minimumSpend": 200000,
+          "cap": 2500,
+          "capScope": "월",
+          "shared": "월간 통합할인한도",
+          "limits": "건당 5만원 이상 결제 시 월 1회"
+        },
+        {
+          "label": "영화",
+          "place": "CGV",
+          "value": "4,000원",
+          "valueType": "할인",
+          "group": "일상혜택",
+          "minimumSpend": 200000,
+          "cap": 8000,
+          "capScope": "월",
+          "shared": "월간 통합할인한도",
+          "limits": "건당 1만원 이상 결제 시 월 2회",
+          "conditions": [
+            "현장 결제, 공식 홈페이지 및 모바일앱 결제 시 제공"
+          ]
+        },
+        {
+          "label": "놀이공원",
+          "place": "에버랜드, 롯데월드",
+          "value": "15,000원",
+          "valueType": "할인",
+          "group": "일상혜택",
+          "minimumSpend": 200000,
+          "cap": 15000,
+          "capScope": "월",
+          "shared": "월간 통합할인한도",
+          "limits": "당 3만원 이상 결제 시 월 1회",
+          "conditions": [
+            "당일 티켓 요금 결제 시 제공(상품권 구매·매점 이용분 제외)"
+          ]
+        },
+        {
+          "label": "KB Pay 오프라인",
+          "place": "KB Pay 오프라인 결제",
+          "value": "2%",
+          "valueType": "할인",
+          "group": "KB Pay 혜택",
+          "minimumSpend": 300000,
+          "cap": 3000,
+          "capScope": "월",
+          "limits": "월 15만원 이용분까지",
+          "conditions": [
+            "일상혜택과 중복 적용 가능"
+          ]
+        },
+        {
+          "label": "KB Pay 온라인",
+          "place": "KB Pay 온라인 결제",
+          "value": "2%",
+          "valueType": "할인",
+          "group": "KB Pay 혜택",
+          "minimumSpend": 300000,
+          "cap": 2000,
+          "capScope": "월",
+          "limits": "월 10만원 이용분까지"
+        },
+        {
+          "label": "해외",
+          "place": "해외 가맹점(Global 카드)",
+          "value": "2%",
+          "valueType": "할인",
+          "group": "Global 혜택",
+          "minimumSpend": 300000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": "월 25만원 이용분까지",
+          "conditions": [
+            "KB국민 노리2 체크카드(Global) 발급 회원 대상"
+          ]
+        },
+        {
+          "label": "공항라운지",
+          "place": "전 세계 공항 라운지(더라운지멤버스)",
+          "value": "연 1회 무료",
+          "valueType": "무료",
+          "group": "Global 혜택",
+          "minimumSpend": 300000,
+          "limits": "본인 1인, 연 1회",
+          "conditions": [
+            "더라운지멤버스 앱 설치·회원가입 후 이용권 발급",
+            "이용권은 발급 후 24시간 유효, 미사용 시 자동 취소 후 재발급"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "kb-04404",
+      "queueKey": "kb-04404",
+      "name": "KB국민 펫코노미 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04404&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/04404__prdctOpmn_20260930.pdf",
+      "docDate": "2026-08-14",
+      "annualFee": [
+        {
+          "brand": "K-World(JCB타입)",
+          "amount": 30000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 30000
+        }
+      ],
+      "brands": [
+        "K-World(JCB타입)",
+        "Mastercard"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일(승인시점 기준) KB국민 펫코노미 카드 일시불·할부 승인금액, 해외는 매입완료 기준",
+      "grace": "최초 카드 사용등록일로부터 다음 달 말일까지는 전월실적이 없어도 1구간(30만원 이상) 할인 적용",
+      "spendExclusions": [
+        "KB국민 펫코노미 카드로 할인받은 이용금액 전체",
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "각종 세금 및 공과금",
+        "아파트관리비",
+        "정부지원금",
+        "대학(원) 등록금",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "상품권 및 선불카드 구입·충전금액",
+        "무승인전표(대중교통·자판기·터널이용료·항공기내 이용 등)",
+        "취소금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "상품권 및 선불카드 구입·충전금액"
+      ],
+      "benefits": [
+        {
+          "label": "반려동물업종",
+          "place": "동물병원, 반려동물서비스·용품점(애견샵·동물검사소·약품구매·장례업체 포함)",
+          "value": "30%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 600000,
+              "cap": 15000
+            },
+            {
+              "spend": 900000,
+              "cap": 20000
+            }
+          ],
+          "conditions": [
+            "KB국민카드에 등록된 가맹점 업종 기준"
+          ]
+        },
+        {
+          "label": "인터파크쇼핑",
+          "place": "인터파크쇼핑 홈페이지·모바일·앱",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 900000,
+              "cap": 20000
+            }
+          ],
+          "conditions": [
+            "인터넷쇼핑몰 내 상품권·야행·항공권·티켓·도서 이용금액 할인 제외"
+          ]
+        },
+        {
+          "label": "대형마트",
+          "place": "이마트, 홈플러스, 롯데마트",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 5000
+            },
+            {
+              "spend": 900000,
+              "cap": 10000
+            }
+          ],
+          "conditions": [
+            "인터넷쇼핑몰·슈퍼(이마트에브리데이·홈플러스익스프레스·롯데슈퍼 등) 이용금액 제외",
+            "상품권 구매 및 건물 내 임대매장 이용금액 제외"
+          ]
+        },
+        {
+          "label": "반려견보험",
+          "place": "KB손해보험 반려견상해보장",
+          "value": "연 30만원 보장",
+          "valueType": "무료",
+          "minimumSpend": 0,
+          "cap": null,
+          "conditions": [
+            "유효한 등록번호(내장형 마이크로칩)을 보유한 생후 12~96개월 반려견",
+            "카드 가입 시 반려견 정보를 KB국민카드에 등록해야 하며 허위 등록 시 제외",
+            "유효카드 1매당 1마리만 등록 가능, 사고당 자기부담금 3만원 차감 후 30% 공제 지급"
+          ]
+        }
+      ]
+    }
+  ]
+}
