@@ -20,11 +20,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  # 만들기(build)와 올리기(deploy)를 나눈 GitHub 기본 구성.
+  # 한 job 안에서 업로드 직후 바로 deploy-pages를 부르면 방금 올린 github-pages 산출물을 못 찾고
+  # ("No artifacts named github-pages were found") 실패하는 일이 잦아서, 다음 job에서 받게 함.
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -72,5 +72,13 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: ${{ runner.temp }}/pages
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v5
