@@ -6,40 +6,67 @@
       "id": "pullman",
       "name": "앰배서더 서울 풀만",
       "district": "중구",
+      "ll": [
+        37.5583,
+        127.004
+      ],
+      "directory": [
+        "accor:0966"
+      ],
       "aliases": [
         "앰배서더 서울 - 풀만 호텔"
-      ],
-      "directoryIds": [
-        "0966"
       ]
     },
     {
       "id": "walkerhill",
       "name": "그랜드 워커힐 서울",
-      "district": "광진구"
+      "district": "광진구",
+      "ll": [
+        37.5554,
+        127.1083
+      ]
     },
     {
       "id": "swiss",
       "name": "스위스 그랜드 호텔",
-      "district": "서대문구"
+      "district": "서대문구",
+      "ll": [
+        37.5873,
+        126.9335
+      ]
     },
     {
       "id": "mayfield",
       "name": "메이필드 호텔 서울",
-      "district": "강서구"
+      "district": "강서구",
+      "ll": [
+        37.5555,
+        126.8115
+      ]
     },
     {
       "id": "novotel-gangnam",
       "name": "노보텔 앰배서더 서울 강남",
       "district": "강남구",
-      "directoryIds": [
-        "1633"
+      "ll": [
+        37.5045,
+        127.031
+      ],
+      "directory": [
+        "accor:1633"
       ]
     },
     {
       "id": "lescape",
       "name": "레스케이프 서울 명동",
       "district": "중구",
+      "ll": [
+        37.5598,
+        126.98
+      ],
+      "directory": [
+        "marriott:sellm"
+      ],
       "aliases": [
         "레스케이프 럭셔리 컬렉션"
       ]
@@ -48,6 +75,13 @@
       "id": "plaza",
       "name": "더 플라자 서울",
       "district": "중구",
+      "ll": [
+        37.5648,
+        126.978
+      ],
+      "directory": [
+        "marriott:selak"
+      ],
       "aliases": [
         "더플라자",
         "THE PLAZA"
@@ -62,25 +96,40 @@
       "id": "naru",
       "name": "호텔 나루 서울 엠갤러리",
       "district": "마포구",
+      "ll": [
+        37.5393,
+        126.9455
+      ],
+      "directory": [
+        "accor:B5E0"
+      ],
       "aliases": [
         "엠갤러리 컬렉션"
-      ],
-      "directoryIds": [
-        "B5E0"
       ]
     },
     {
       "id": "mondrian",
       "name": "몬드리안 서울 이태원",
       "district": "용산구",
-      "directoryIds": [
-        "B771"
+      "ll": [
+        37.5362,
+        126.9918
+      ],
+      "directory": [
+        "accor:B771"
       ]
     },
     {
       "id": "mea",
       "name": "메리어트 이그제큐티브 아파트먼트 서울",
       "district": "영등포구",
+      "ll": [
+        37.5212,
+        126.925
+      ],
+      "directory": [
+        "marriott:seler"
+      ],
       "aliases": [
         "여의도 파크센터",
         "MEA 서울"
@@ -89,17 +138,35 @@
     {
       "id": "ac-gangnam",
       "name": "AC 호텔 바이 메리어트 서울 강남",
-      "district": "강남구"
+      "district": "강남구",
+      "ll": [
+        37.4997,
+        127.0352
+      ],
+      "directory": [
+        "marriott:selag"
+      ]
     },
     {
       "id": "vista",
       "name": "비스타 워커힐 서울",
-      "district": "광진구"
+      "district": "광진구",
+      "ll": [
+        37.5546,
+        127.1101
+      ]
     },
     {
       "id": "shilla",
       "name": "서울신라호텔",
       "district": "중구",
+      "ll": [
+        37.5557,
+        127.0057
+      ],
+      "directory": [
+        "hotelux:5b5964218885d57e94df4c33"
+      ],
       "aliases": [
         "신라호텔 서울",
         "서울 신라 호텔"
@@ -109,18 +176,26 @@
       "id": "novotel-ddm",
       "name": "노보텔 앰배서더 서울 동대문",
       "district": "중구",
+      "ll": [
+        37.5667,
+        127.0068
+      ],
+      "directory": [
+        "accor:A5U6"
+      ],
       "aliases": [
         "노보텔 동대문 호텔 & 레지던스",
         "레지던스 앰배서더 서울"
-      ],
-      "directoryIds": [
-        "A5U6"
       ]
     },
     {
       "id": "garden",
       "name": "서울가든호텔",
       "district": "마포구",
+      "ll": [
+        37.542,
+        126.9488
+      ],
       "aliases": [
         "서울 가든 호텔"
       ]
@@ -129,6 +204,10 @@
       "id": "oakwood",
       "name": "오크우드 프리미어 코엑스 센터",
       "district": "강남구",
+      "ll": [
+        37.5112,
+        127.061
+      ],
       "aliases": [
         "오크우드 코엑스"
       ]
@@ -136,12 +215,23 @@
     {
       "id": "glad",
       "name": "글래드 강남 코엑스센터",
-      "district": "강남구"
+      "district": "강남구",
+      "ll": [
+        37.5083,
+        127.0662
+      ]
     },
     {
       "id": "jw-seoul",
       "name": "JW 메리어트 호텔 서울",
       "district": "서초구",
+      "ll": [
+        37.5045,
+        127.0043
+      ],
+      "directory": [
+        "marriott:seljw"
+      ],
       "aliases": [
         "JW 메리어트 서울 강남",
         "JW 메리어트 반포"
@@ -151,6 +241,15 @@
       "id": "dragon-city",
       "name": "서울드래곤시티",
       "district": "용산구",
+      "ll": [
+        37.5289,
+        126.9649
+      ],
+      "directory": [
+        "accor:9472",
+        "accor:9473",
+        "accor:9469"
+      ],
       "aliases": [
         "서울 드래곤 시티",
         "노보텔 용산",
@@ -158,27 +257,43 @@
         "이비스 스타일 용산",
         "더 26"
       ],
-      "directoryIds": [
-        "9472",
-        "9473",
-        "9469"
-      ],
       "note": "카드 안내장에 서울드래곤시티로 표기된 복합시설입니다. 이용 건물과 업장의 영수증 인정 여부는 호텔에 확인하세요."
     },
     {
       "id": "andaz",
       "name": "안다즈 서울 강남",
-      "district": "강남구"
+      "district": "강남구",
+      "ll": [
+        37.5255,
+        127.0275
+      ],
+      "directory": [
+        "hotelux:5dc262c5aee457777a8708f8"
+      ]
     },
     {
       "id": "conrad",
       "name": "콘래드 서울",
-      "district": "영등포구"
+      "district": "영등포구",
+      "ll": [
+        37.5255,
+        126.9262
+      ],
+      "directory": [
+        "hilton:selcici"
+      ]
     },
     {
       "id": "jw-ddm",
       "name": "JW 메리어트 동대문 스퀘어 서울",
       "district": "종로구",
+      "ll": [
+        37.5703,
+        127.0091
+      ],
+      "directory": [
+        "marriott:seldp"
+      ],
       "aliases": [
         "JW 동대문"
       ]
@@ -186,47 +301,80 @@
     {
       "id": "grand-hyatt",
       "name": "그랜드 하얏트 서울",
-      "district": "용산구"
+      "district": "용산구",
+      "ll": [
+        37.5395,
+        126.997
+      ],
+      "directory": [
+        "hotelux:5b59645a8885d57e94df4ec2"
+      ]
     },
     {
       "id": "ic-parnas",
       "name": "그랜드 인터컨티넨탈 서울 파르나스",
       "district": "강남구",
+      "ll": [
+        37.5087,
+        127.0597
+      ],
+      "directory": [
+        "ihg:seoha"
+      ],
       "aliases": [
         "인터컨티넨탈 파르나스"
-      ],
-      "directoryIds": [
-        "seoha"
       ]
     },
     {
       "id": "fairmont",
       "name": "페어몬트 앰배서더 서울",
       "district": "영등포구",
-      "directoryIds": [
-        "B200"
+      "ll": [
+        37.5265,
+        126.9282
+      ],
+      "directory": [
+        "accor:B200"
       ]
     },
     {
       "id": "meridien",
       "name": "르메르디앙 서울 명동",
-      "district": "중구"
+      "district": "중구",
+      "ll": [
+        37.5601,
+        126.9852
+      ],
+      "directory": [
+        "marriott:selmm"
+      ]
     },
     {
       "id": "banyan",
       "name": "반얀트리 클럽 앤 스파 서울",
       "district": "중구",
+      "ll": [
+        37.5514,
+        127.0009
+      ],
+      "directory": [
+        "accor:B1V3"
+      ],
       "aliases": [
         "반얀 트리 클럽 앤 스파 서울"
-      ],
-      "directoryIds": [
-        "B1V3"
       ]
     },
     {
       "id": "courtyard-ts",
       "name": "코트야드 메리어트 서울 타임스퀘어",
       "district": "영등포구",
+      "ll": [
+        37.517,
+        126.9035
+      ],
+      "directory": [
+        "marriott:selcy"
+      ],
       "aliases": [
         "코트야드 타임스퀘어"
       ]
@@ -234,46 +382,79 @@
     {
       "id": "park-hyatt",
       "name": "파크 하얏트 서울",
-      "district": "강남구"
+      "district": "강남구",
+      "ll": [
+        37.5087,
+        127.0648
+      ],
+      "directory": [
+        "hotelux:5b5964218885d57e94df4c37"
+      ]
     },
     {
       "id": "four-seasons",
       "name": "포시즌스 호텔 서울",
-      "district": "종로구"
+      "district": "종로구",
+      "ll": [
+        37.5718,
+        126.9752
+      ],
+      "directory": [
+        "hotelux:5b5964128885d57e94df4ba8"
+      ]
     },
     {
       "id": "hilton-garden",
       "name": "힐튼 가든 인 서울 강남",
-      "district": "서초구"
+      "district": "서초구",
+      "ll": [
+        37.4855,
+        127.0335
+      ],
+      "directory": [
+        "hilton:selgigi"
+      ]
     },
     {
       "id": "sofitel",
       "name": "소피텔 앰배서더 서울",
       "district": "송파구",
+      "ll": [
+        37.5098,
+        127.099
+      ],
+      "directory": [
+        "accor:B220"
+      ],
       "aliases": [
         "소피텔 앰배서더 서울 호텔 & 서비스드 레지던스",
         "소피텔 잠실"
-      ],
-      "directoryIds": [
-        "B220"
       ]
     },
     {
       "id": "mercure-yongsan",
       "name": "그랜드 머큐어 앰배서더 서울 용산",
       "district": "용산구",
+      "ll": [
+        37.5294,
+        126.9658
+      ],
+      "directory": [
+        "accor:9470"
+      ],
       "aliases": [
         "그랜드 머큐어 서울",
         "그랜드 머큐어 앰배서더 호텔 앤 레지던스 서울 용산"
-      ],
-      "directoryIds": [
-        "9470"
       ]
     },
     {
       "id": "koreana",
       "name": "호텔 코리아나",
       "district": "중구",
+      "ll": [
+        37.5662,
+        126.9771
+      ],
       "aliases": [
         "코리아나 호텔"
       ]
@@ -281,20 +462,35 @@
     {
       "id": "moxy",
       "name": "목시 서울 명동",
-      "district": "중구"
+      "district": "중구",
+      "ll": [
+        37.5605,
+        126.9857
+      ],
+      "directory": [
+        "marriott:selmx"
+      ]
     },
     {
       "id": "mercure-gangnam",
       "name": "그랜드 머큐어 임페리얼 팰리스 서울",
       "district": "강남구",
-      "directoryIds": [
-        "C3E4"
+      "ll": [
+        37.514,
+        127.035
+      ],
+      "directory": [
+        "accor:C3E4"
       ]
     },
     {
       "id": "riviera",
       "name": "호텔 리베라 청담",
       "district": "강남구",
+      "ll": [
+        37.5245,
+        127.0565
+      ],
       "aliases": [
         "리베라 호텔",
         "호텔 리베라"
@@ -304,6 +500,10 @@
       "id": "asem-tower",
       "name": "아셈타워",
       "district": "강남구",
+      "ll": [
+        37.5128,
+        127.0592
+      ],
       "aliases": [
         "ASEM 타워"
       ]
@@ -1179,7 +1379,8 @@
           "catalogId": null
         }
       ],
-      "validThrough": "2026-12-31"
+      "validThrough": "2026-12-31",
+      "receiptByHotel": true
     },
     {
       "id": "samsung-amex-reserve",
@@ -1225,7 +1426,8 @@
       "hotelOverrides": {
         "jw-seoul": {
           "monthlyLimit": 5,
-          "note": "당일 호텔 영업장 합산 5만원 이상 영수증이 있어야 무료예요."
+          "note": "당일 호텔 영업장 합산 5만원 이상 영수증이 있어야 무료예요.",
+          "minReceipt": 50000
         }
       },
       "cards": [
@@ -1291,23 +1493,28 @@
       "hotelOverrides": {
         "jw-seoul": {
           "monthlyLimit": 1,
-          "note": "당일 호텔 영업장 5만원 이상 영수증이 있어야 무료예요. 이 호텔은 월 1회까지예요."
+          "note": "당일 호텔 영업장 5만원 이상 영수증이 있어야 무료예요. 이 호텔은 월 1회까지예요.",
+          "minReceipt": 50000
         },
         "lescape": {
           "monthlyLimit": 3,
-          "note": "당일 호텔 영업장 3만원 이상 영수증이 있어야 무료예요."
+          "note": "당일 호텔 영업장 3만원 이상 영수증이 있어야 무료예요.",
+          "minReceipt": 30000
         },
         "mondrian": {
           "monthlyLimit": 3,
-          "note": "당일 호텔 영업장 2만5천원 이상 영수증이 있어야 무료예요."
+          "note": "당일 호텔 영업장 2만5천원 이상 영수증이 있어야 무료예요.",
+          "minReceipt": 25000
         },
         "koreana": {
           "monthlyLimit": 3,
-          "note": "당일 호텔 영업장 2만5천원 이상 영수증이 있어야 무료예요."
+          "note": "당일 호텔 영업장 2만5천원 이상 영수증이 있어야 무료예요.",
+          "minReceipt": 25000
         },
         "park-hyatt": {
           "monthlyLimit": 3,
-          "note": "당일 호텔 영업장 2만원 이상 영수증이 있어야 무료예요."
+          "note": "당일 호텔 영업장 2만원 이상 영수증이 있어야 무료예요.",
+          "minReceipt": 20000
         },
         "oakwood": {
           "monthlyLimit": 3,

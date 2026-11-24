@@ -154,7 +154,10 @@ def main(src):
     land = json.loads((src / "ne_10m_land.geojson").read_text())["features"]
     rivers = json.loads((src / "ne_10m_rivers_lake_centerlines.geojson").read_text())["features"]
     seoul = json.loads((src / "seoul_municipalities_geo_simple.json").read_text())["features"]
-    out = {"source": "Natural Earth 1:10m 땅·강, 서울 구 경계: 통계청(southkorea/seoul-maps)", "countries": {}, "cities": {}}
+    out = {"source": "Natural Earth 1:10m 땅·강, 서울 구 경계: 통계청(southkorea/seoul-maps)",
+           # 위도·경도 → 지도 좌표 투영값(world.json과 같음). 발레파킹 지도(hotel-valet.js)가 world.json 없이 핀을 찍을 때 씀
+           "proj": {k: WORLD[k] for k in ("l0", "k", "tx", "ty")},
+           "countries": {}, "cities": {}}
     by_country = {}
     for name, city in AREAS["cities"].items():
         by_country.setdefault(city.get("country"), []).append(city["box"])

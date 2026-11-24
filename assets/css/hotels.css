@@ -287,6 +287,13 @@ a.hx-h:focus-visible, button.hx-h:focus-visible { outline: 2px solid var(--color
 .hm-c-star { font-size: .78rem; font-weight: 800; color: var(--cat-4); letter-spacing: .02em; }
 .hm-c-body h2 { margin: 0; font-size: 1.2rem; line-height: 1.35; word-break: keep-all; }
 .hm-c-loc { margin: -6px 0 0; font-size: .82rem; color: var(--color-muted); }
+.hm-c-valet {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; text-decoration: none;
+  color: var(--color-text); background: color-mix(in srgb, var(--cat-3) 9%, var(--color-bg)); border: 1px solid color-mix(in srgb, var(--cat-3) 35%, var(--color-border));
+}
+.hm-c-valet b { font-size: .84rem; font-weight: 800; color: var(--cat-3); white-space: nowrap; }
+.hm-c-valet span { font-size: .78rem; font-weight: 700; text-align: right; }
+@media (hover: hover) { .hm-c-valet:hover { border-color: var(--cat-3); } }
 .hm-c-facts { display: grid; grid-template-columns: 1fr 1.4fr; gap: 8px; margin: 0; }
 .hm-c-facts div { padding: 10px 12px; border-radius: 12px; background: var(--color-bg-alt); min-width: 0; }
 .hm-c-facts dt { font-size: .7rem; font-weight: 700; color: var(--color-muted); }

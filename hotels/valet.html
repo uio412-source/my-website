@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#11151c" media="(prefers-color-scheme: dark)">
   <title>서울 호텔 발레파킹 | Mr. Hotels</title>
-  <meta name="description" content="서울 호텔의 카드별 발레파킹 가능 여부와 전월실적, 횟수, 주차 조건을 비교하세요.">
+  <meta name="description" content="서울 지도에서 카드별 무료 발레파킹 호텔을 찾고, 조건 없이 무료인 곳만 골라 보세요. 전월실적·횟수·영수증 조건까지 비교합니다.">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/portfolio.css">
   <link rel="stylesheet" href="../assets/css/hotels.css">
@@ -60,12 +60,22 @@
       <section class="hv-step hv-result" aria-labelledby="hv-res-h">
         <div class="hv-step-h"><span class="hv-n" aria-hidden="true" id="hv-res-n">2</span><h2 id="hv-res-h">무료 발레 되는 호텔</h2></div>
         <div class="hv-summary" id="hv-summary"></div>
+        <div class="hv-switches" id="hv-switches" hidden>
+          <label class="hv-sw"><input type="checkbox" role="switch" id="hv-clean"><span>조건 없이 무료만</span><i aria-hidden="true"></i></label>
+          <label class="hv-sw" id="hv-only-box"><input type="checkbox" role="switch" id="hv-only" checked><span>되는 곳만</span><i aria-hidden="true"></i></label>
+        </div>
+        <div class="hm-map hv-map" id="hv-map" hidden>
+          <svg class="hm-svg" id="hv-svg" role="img" aria-label="서울 호텔 발레파킹 지도"></svg>
+          <div class="hv-marks" id="hv-marks"></div>
+          <button class="hm-up" id="hv-up" type="button" aria-label="서울 전체 보기" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg>
+          </button>
+          <p class="hm-legend hv-legend" id="hv-legend"></p>
+          <div class="hv-pop" id="hv-pop" role="status" hidden></div>
+        </div>
         <div class="hv-filter">
           <div class="hv-gus" id="hv-gus" aria-label="구"></div>
-          <div class="hv-filter-row">
-            <label class="hv-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="hv-q" placeholder="호텔 검색" autocomplete="off" aria-label="호텔 검색"></label>
-            <label class="hv-only" id="hv-only-box"><input type="checkbox" id="hv-only" checked> 되는 곳만</label>
-          </div>
+          <label class="hv-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="hv-q" placeholder="호텔 검색" autocomplete="off" aria-label="호텔 검색"></label>
         </div>
         <div class="wl-rows hv-hotels" id="hv-hotels"><p class="wl-empty" role="status">불러오는 중…</p></div>
       </section>

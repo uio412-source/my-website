@@ -651,6 +651,8 @@ def merge_valet(programs, card_ids):
                     continue
                 note = " ".join(x for x in [f"당일 호텔 영업장 {r['receiptMin']:,}원 이상 영수증이 있어야 무료예요." if r.get("receiptMin") else "", r.get("note") or ""] if x)
                 overrides[hid] = {"monthlyLimit": r.get("monthlyLimit") or svc.get("monthlyLimit"), "note": note or "호텔별 조건이 있어요."}
+                if r.get("receiptMin"):
+                    overrides[hid]["minReceipt"] = r["receiptMin"]  # 화면의 '조건 없이 무료' 판정(valet-rules.js valetExtra)
             hours = svc.get("freeHours")
             prog = {
                 "id": g["id"], "issuer": g["issuer"], "provider": g["provider"], "brand": g["brand"], "tier": g["tier"],
