@@ -14,9 +14,17 @@
   const TODAY = kst.toISOString().slice(0, 10);
   const MONTH = kst.getUTCMonth(); // 0~11
   const ymd = (s) => (s ? s.slice(2).replace(/-/g, '.') : '');
+  // '~99.12.31'·'2999-12-31' 같은 수집 오류(또는 2년 넘게 남은 날짜)는 끝나는 날이 없는 상시로 봄
+  const TWO_YEARS = 730 * 864e5;
+  const realEnd = (end) => {
+    if (!end) return null;
+    const t = Date.parse(end);
+    return Number.isFinite(t) && t - Date.parse(TODAY) <= TWO_YEARS ? end : null;
+  };
   const dday = (end) => {
-    if (!end) return '상시';
-    const d = Math.round((Date.parse(end) - Date.parse(TODAY)) / 864e5);
+    const e = realEnd(end);
+    if (!e) return '상시';
+    const d = Math.round((Date.parse(e) - Date.parse(TODAY)) / 864e5);
     return d <= 0 ? '오늘 마감' : 'D-' + d;
   };
   const won = (n) => (n >= 10000 ? (n / 10000).toFixed(n % 10000 ? 1 : 0) + '억' : n + '만');
@@ -131,7 +139,7 @@
         if (e.brand) tags.push(`<span>${esc(e.brand)}</span>`);
         for (const c of e.places) { const [f, nm] = placeLabel(c); tags.push(`<span>${f} ${esc(nm)}</span>`); }
         if (e.check) tags.push('<span class="warn">조건 확인 필요</span>');
-        const soon = e.end && (Date.parse(e.end) - Date.parse(TODAY)) / 864e5 <= 14;
+        const soon = realEnd(e.end) && (Date.parse(e.end) - Date.parse(TODAY)) / 864e5 <= 14;
         return `<article class="wl-row tv-ev">
           ${issuerTile(e.issuer)}
           <div class="tv-ev-body">
@@ -141,7 +149,7 @@
           </div>
           <div class="tv-ev-side">
             <b class="dd${soon ? ' soon' : ''}">${dday(e.end)}</b>
-            <small>${e.end ? '~' + ymd(e.end) : ''}</small>
+            <small>${realEnd(e.end) ? '~' + ymd(e.end) : ''}</small>
             ${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">공식 ↗</a>` : ''}
           </div>
         </article>`;
@@ -390,7 +398,7 @@
             ${e.text ? `<p class="tv-ev-text">${esc(e.text)}</p>` : ''}
             <div class="tv-tags"><span class="iss">${esc(e.issuer || e.brand)}</span>${e.register ? '<span class="warn">사전 등록</span>' : ''}</div>
           </div>
-          <div class="tv-ev-side"><b class="dd">${dday(e.end)}</b><small>${e.end ? '~' + ymd(e.end) : ''}</small>
+          <div class="tv-ev-side"><b class="dd">${dday(e.end)}</b><small>${realEnd(e.end) ? '~' + ymd(e.end) : ''}</small>
             ${e.url && internal ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">공식 ↗</a>` : ''}</div>
         </article>`; }).join('')}</div>${list.length > 4 ? `<button type="button" class="tv-more" data-more="${key}">${open[key] ? '접기' : `${list.length - 4}건 더 보기`}</button>` : ''}`;
     };
