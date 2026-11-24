@@ -191,6 +191,7 @@
           "sharedWith": "인천공항 발렛파킹과 통합 월 5회",
           "freeHours": 3,
           "holderOnly": true,
+          "useRequired": true,
           "hotels": [
             {"name": "그랜드 워커힐 서울", "city": "서울"},
             {"name": "JW 메리어트 호텔 서울", "city": "서울"},
@@ -226,6 +227,7 @@
 | `quotaScope` | `per_hotel` 호텔별 · `hotel_shared` 호텔 통합 · `hotel_airport` 호텔·공항 통합 · `per_service` 서비스별 · `shared_group` 기타 통합(→ `sharedWith`에 설명) |
 | `hotels` | `hotel_valet`은 **필수**. 대상 호텔 **전체**(서울·지방 모두)를 안내문 표기 그대로 + `city`. 서울 호텔은 배포 때 발레파킹 화면에 자동 연결됩니다 |
 | `hotelRules` | 호텔별 예외만: 영수증 최소 금액 `receiptMin`(원), 호텔별 횟수, 메모 |
+| `useRequired` | `hotel_valet`: 당일 **투숙·식음료 매장 이용**이 있어야 무료면 `true`(대부분). 안내문에 **'호텔 이용과 관계없이' 등 이용 없이 무료라고 적혀 있을 때만** `false`. 모르면 `true`. 발레파킹 화면의 '조건 없이 무료만'은 `false`인 곳만 보여 줍니다 |
 
 ## 7. 상품설명서 정리 `card-terms`
 

@@ -24,6 +24,9 @@ export function valetExtra(program, hotel) {
   return '';
 }
 
+/** 안내문(상품설명서·브랜드 서비스 안내)에 호텔 이용 없이 무료라고 적힌 경우만 true. 값이 없으면 이용이 필요하다고 봄 */
+export const valetNoUse = (program) => program.useRequired === false;
+
 export function valetQuota(program, hotel) {
   const scope = {
     per_hotel: '호텔별',
