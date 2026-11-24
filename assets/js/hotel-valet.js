@@ -45,7 +45,9 @@ function buildCards() {
   for (const c of cards) c.brands = [...new Set(c.programs.map((p) => p.brand))];
   byKey = Object.fromEntries(cards.map((c) => [c.key, c]));
 }
-const isClosed = (h) => h.closure && h.closure.from <= day;
+// directory.json은 closedFrom, valet.json은 closure.from을 씁니다 — 둘 다 읽어 휴업 호텔을 같은 기준으로 뺌
+const closedFrom = (h) => h.closedFrom || h.closure?.from || '';
+const isClosed = (h) => !!closedFrom(h) && closedFrom(h) <= day;
 const progsOf = (c, sel = mine[c.key]) => c.programs.filter((p) => !sel?.brand || p.brand === sel.brand);
 const hotelCount = (c) => data.hotels.filter((h) => !isClosed(h) && progsOf(c, {}).some((p) => valetStatus(p, h, day) === 'available')).length;
 
@@ -141,7 +143,7 @@ function rowsFor() {
     const any = cards.filter((c) => cardAt(c, h, {}));
     const best = kindOf(mineAt[0]?.r);
     return {h, closed, mineAt, any, best};
-  }).filter((r) => r.closed || r.any.length);
+  }).filter((r) => !r.closed && r.any.length); // 휴업 호텔은 발레 목록·숫자에서 뺌
 }
 const hasCards = () => Object.keys(mine).length > 0;
 const cleanOn = () => hasCards() && $('clean').checked;

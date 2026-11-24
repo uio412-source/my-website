@@ -312,7 +312,11 @@
       (alsoVia[e.key] || []).map((x) => x.h.image || found[x.key]).find(Boolean) || '';
     const flagOf = (e) => (e.h.closedFrom && e.h.closedFrom <= day ? { note: e.h.closureNote, closed: true } : flags[e.pg](myTier(e.pg), e.h.profile));
     const score = (f) => (f.bf ? 1 : 0) + (f.lounge ? 1 : 0) + (f.up ? 1 : 0);
-    const shownAll = () => entries.filter((e) => (current === 'all' ? !(e.h.same && byKey[e.h.same]) : e.pg === current));
+    // 휴업 호텔(directory.json closedFrom)은 기본 목록·지도·숫자에서 빼고 '휴업' 칩을 켰을 때만 보여 줌
+    let showClosed = false;
+    const isClosedH = (e) => !!(e.h.closedFrom && e.h.closedFrom <= day);
+    const inProgram = (e) => (current === 'all' ? !(e.h.same && byKey[e.h.same]) : e.pg === current);
+    const shownAll = () => entries.filter((e) => inProgram(e) && (showClosed || !isClosedH(e)));
 
     // ----- 투영 (travel.js와 같은 Natural Earth, 태평양 중심) -----
     const project = (lon, lat) => {
@@ -621,6 +625,9 @@
         items = Object.entries(cnt).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ko'))
           .map(([a, n]) => [a, n, () => go({ country: S.country, city: S.city, areas: S.areas && S.areas.length === 1 && S.areas[0] === a ? null : [a] }), S.areas && S.areas.includes(a)]);
       }
+      const closedN = entries.filter((e) => inProgram(e) && isClosedH(e)
+        && (!S.country || e.country === S.country) && (!S.city || e.city === S.city)).length;
+      if (closedN) items.push(['휴업', closedN, () => { showClosed = !showClosed; draw(); }, showClosed]);
       items = items.filter((x) => x[1] > 0);
       chipFns = items.map((x) => x[2]);
       $('chips').innerHTML = items.map(([t, n, , on], i) => `<button type="button" role="listitem" class="hm-chip" data-k="${i}" aria-pressed="${!!on}">${esc(t)}<span>${n}</span></button>`).join('');
