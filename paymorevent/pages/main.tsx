@@ -56,7 +56,7 @@ function Detail({kind, id}: {kind: 'cards' | 'events'; id: string}) {
   if (kind === 'events') {
     const offer = data.events.find(event => event.id === id);
     if (!offer) return <Status message="이벤트를 찾을 수 없습니다." />;
-    return <Suspense fallback={loading}><EventDetail offer={offer} cards={data.cards} /></Suspense>;
+    return <Suspense fallback={loading}><EventDetail offer={offer} cards={data.cards} events={data.events} /></Suspense>;
   }
   if (data.card) return <Suspense fallback={loading}><CardDetail card={data.card} catalog={{cards: data.cards, events: data.events}} /></Suspense>;
   return <Status message="카드를 찾을 수 없습니다." />;

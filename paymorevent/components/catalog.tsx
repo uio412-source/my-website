@@ -6,9 +6,11 @@ import type {Card, Offer} from '@/lib/catalog-types';
 import {SiteHeader, SiteFooter} from '@/components/customer-shell';
 import {CardArt, Chips, Empty, IssuerTile, SearchBox, Tabs, cardImage} from '@/components/mc-ui';
 import {
-  BENEFIT_KINDS, EVENT_CATEGORIES, activeOffer, benefitKinds, bestPicking, cardFamilyKey, currentMonthOffer, dedupeOffers,
-  eventCategory, eventPath, formatPicking, groupCards, issuerGroup, offerApplies, offerLinkLabel, requiresEntry, rewardValue, visibleOffer,
+  BENEFIT_KINDS, activeOffer, benefitKinds, bestPicking, cardFamilyKey, currentMonthOffer, dedupeOffers,
+  formatPicking, groupCards, issuerGroup, offerApplies, rewardValue, visibleOffer,
 } from '@/lib/catalog-model';
+import {FIELDS, endBucket, viewOf} from '@/lib/event-view';
+import {EventGroups} from '@/components/event-row';
 import {ELIGIBILITY_THEMES, hotelTier, useFit} from '@/lib/card-themes';
 import {browseThemes} from '@/lib/customer-copy';
 import {cardPath} from '@/lib/card-presentation';
@@ -17,7 +19,7 @@ import {sitePath} from '@/lib/site-path';
 import {CompareDock, CompareToggle} from '@/components/compare';
 import {RECENT_KEY, clearRecent, useStoredIds} from '@/lib/my-cards';
 import {spendShort} from '@/lib/card-value';
-import {ISSUER_FILTERS, dday, eventSummary, feeLabel, headlineAmount, highlights, issuerFilterLabel, RESTRICTED, searchScore, spendLabel, today, won, ymd} from '@/lib/mc-text';
+import {ISSUER_FILTERS, feeLabel, headlineAmount, highlights, issuerFilterLabel, RESTRICTED, searchScore, today, ymd} from '@/lib/mc-text';
 import sources from '@/data/personal-benefit-sources.json';
 
 type Tab = 'cards' | 'cashback' | 'events';
@@ -64,7 +66,7 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
       <div className="mc-head"><h1>{SECTIONS[tab].title}</h1>{SECTIONS[tab].sub && <p>{SECTIONS[tab].sub}</p>}</div>
       {loadFailed && <div className="mc-alert" role="status">전체 카드 목록을 불러오지 못했어요. <button type="button" onClick={() => { setLoadFailed(false); setAttempt(a => a + 1); }}>다시 불러오기</button></div>}
       {tab === 'cards' && <CardsView cards={cards} events={events}/>}
-      {tab !== 'cards' && !eventsLoading && <Freshness events={events}/>}
+      {tab !== 'cards' && !eventsLoading && <Freshness events={events} kind={tab === 'cashback' ? 'cashback' : 'card'}/>}
       {tab !== 'cards' && (eventsLoading
         ? <Empty title="이벤트를 불러오고 있어요…"/>
         : tab === 'cashback' ? <CashbackView events={events}/> : <EventsView events={events} cards={cards}/>)}
@@ -85,12 +87,13 @@ function Recent({cards}: {cards: Card[]}) {
   </div>;
 }
 
-/** 이벤트 데이터가 언제 기준인지. 2주 넘게 안 바뀌었으면 새 이벤트가 빠져 있을 수 있다고 알림 */
-function Freshness({events}: {events: Offer[]}) {
-  const asOf = events.reduce((m, o) => o.verifiedAt > m ? o.verifiedAt : m, '');
-  if (!asOf) return null;
-  const days = Math.round((Date.parse(today()) - Date.parse(asOf)) / 864e5);
-  return <p className={'mc-fresh' + (days > 14 ? ' old' : '')}>카드사 공지 {ymd(asOf)} 기준{days > 14 ? ` · ${days}일 전 정보라 그 뒤에 새로 나온 이벤트는 아직 없어요` : ''}</p>;
+/** 이벤트 데이터가 언제 확인한 건지. 카드사마다 확인한 날이 달라서 범위로 보여 주고, 2주 넘은 게 있으면 알림 */
+function Freshness({events, kind}: {events: Offer[]; kind: 'card' | 'cashback'}) {
+  const days = events.filter(o => o.kind === kind && visibleOffer(o) && activeOffer(o)).map(o => o.verifiedAt).filter(Boolean).sort();
+  if (!days.length) return null;
+  const from = days[0], to = days[days.length - 1];
+  const old = Math.round((Date.parse(today()) - Date.parse(from)) / 864e5);
+  return <p className={'mc-fresh' + (old > 14 ? ' old' : '')}>카드사 공지 {from === to ? `${ymd(to)} 기준` : `${ymd(from)}~${ymd(to)} 확인`}{old > 14 ? ` · 오래 전에 확인한 카드사는 새 이벤트가 빠져 있을 수 있어요` : ''}</p>;
 }
 
 // ======================= 카드상품 검색 =======================
@@ -232,33 +235,6 @@ function Field({label, value, set, options}: {label: string; value: string; set:
   return <label className="mc-field"><span>{label}</span><select value={value} onChange={e => set(e.target.value)}>{options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select></label>;
 }
 
-// ======================= 공통: 이벤트 행 =======================
-function EventRow({o, amount}: {o: Offer; amount?: number | null}) {
-  const d = dday(o.endsAt);
-  const soon = !!o.endsAt && (Date.parse(o.endsAt) - Date.parse(today())) / 864e5 <= 7;
-  const sum = eventSummary(o);
-  const scope = offerLinkLabel(o);
-  return <a className="mc-row mc-evrow" href={eventPath(o.id)}>
-    <IssuerTile issuer={o.issuer}/>
-    <span className="mc-body">
-      <span className="mc-issuer">{o.issuer}{o.channel && o.channel !== '카드사 공식' ? ` · ${o.channel}` : ''}</span>
-      <b className="mc-name">{o.title}</b>
-      {sum && <span className="mc-sum">{sum}</span>}
-      <span className="mc-tags">
-        {(o.kind === 'cashback' || eventCategory(o) !== '기타') && <i className="k">{o.kind === 'cashback' ? '발급' : eventCategory(o)}</i>}
-        {requiresEntry(o) && <i className="warn">응모</i>}
-        {scope !== '카드사 공통' && <i>{scope}</i>}
-        {o.status === 'needs_review' && <i className="warn">조건 확인 필요</i>}
-      </span>
-    </span>
-    <span className="mc-side">
-      {amount ? <span className="mc-amount"><small>{o.cashbackIsMaximum || /최대/.test(o.title) ? '최대' : ''}</small>{won(amount)}</span> : null}
-      {d && <span className={'mc-dd' + (soon ? ' soon' : '')}>{d}</span>}
-      <small className="mc-end">{o.endsAt ? '~' + ymd(o.endsAt) : '상시'}</small>
-    </span>
-  </a>;
-}
-
 // ======================= 발급이벤트 =======================
 function CashbackView({events}: {events: Offer[]}) {
   const [q, setQ] = useState('');
@@ -283,19 +259,20 @@ function CashbackView({events}: {events: Offer[]}) {
       <span className="mc-count">{list.length}<small>건</small></span>
       <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}><option value="amount">혜택 큰 순</option><option value="end">마감 임박순</option></select>
     </div>
-    {list.length ? <div className="mc-rows">{list.map(({o, amount}) => <EventRow key={o.id} o={o} amount={amount}/>)}</div>
+    {list.length ? <EventGroups list={list.map(x => x.o)} grouped={false} amountOf={o => list.find(x => x.o === o)?.amount || null}/>
       : <Empty title="지금 진행 중인 발급 이벤트가 없어요."/>}
     <p className="mc-note">금액은 카드사 공지의 최대 지급액이에요. 직전 이용 이력·발급 경로·이용 금액 조건은 이벤트 상세에서 확인하세요.</p>
   </>;
 }
 
 // ======================= 카드사 이벤트 =======================
+// 한 줄 = 어디서 · 얼마나 · 카드사·분야·응모 · 남은 날. 분야는 제목에서 뽑음(lib/event-view.ts)
 function EventsView({events, cards}: {events: Offer[]; cards: Card[]}) {
   const [q, setQ] = useState('');
   const query = useDeferredValue(q);
-  const [cat, setCat] = useState('all');
+  const [field, setField] = useState('all');
   const [issuer, setIssuer] = useState('all');
-  const [entry, setEntry] = useState(false), [soon, setSoon] = useState(false);
+  const [soon, setSoon] = useState(false);
   const [sort, setSort] = useState('end');
   const [more, setMore] = useState(PAGE);
   // 내 카드로 찾기: 이름을 치면 후보가 뜨고, 고르면 그 카드에 해당하는 이벤트만
@@ -312,26 +289,33 @@ function EventsView({events, cards}: {events: Offer[]; cards: Card[]}) {
 
   const base = useMemo(() => events.filter(o => o.kind === 'card' && visibleOffer(o) && currentMonthOffer(o)), [events]);
   const now = today();
+  // 혜택 큰 순: 금액(원) 있는 것 → 비율(%) → 나머지. 금액과 %는 서로 비교하지 않음
+  const val = (o: Offer) => { const v = viewOf(o).value; return !v ? 0 : v.won ? 2e9 + v.won : v.pct ? 1e9 + v.pct : 1; };
   const list = useMemo(() => base
-    .filter(o => (cat === 'all' || eventCategory(o) === cat) && (issuer === 'all' || groupOf(o.issuer) === issuer) && (!entry || requiresEntry(o)) &&
-      (!soon || (!!o.endsAt && (Date.parse(o.endsAt) - Date.parse(now)) / 864e5 <= 7)) && (!mine || mineFamily.some(c => offerApplies(c, o))))
-    .map(o => ({o, score: searchScore(query, [[o.title, 100], [o.issuer + ' ' + groupOf(o.issuer) + ' ' + (o.cardNames ?? []).join(' '), 50], [eventCategory(o) + ' ' + o.tags.join(' ') + ' ' + (o.channel ?? ''), 30], [o.benefitText + ' ' + o.description, 20], [o.requirements.join(' '), 5]])}))
+    .filter(o => { const v = viewOf(o); return (field === 'all' || v.field === field) && (issuer === 'all' || groupOf(o.issuer) === issuer) &&
+      (!soon || (!!o.endsAt && (Date.parse(o.endsAt) - Date.parse(now)) / 864e5 <= 7)) && (!mine || mineFamily.some(c => offerApplies(c, o))); })
+    .map(o => { const v = viewOf(o); return {o, score: searchScore(query, [[v.title, 100], [(v.merchant ?? '') + ' ' + o.issuer + ' ' + groupOf(o.issuer) + ' ' + (o.cardNames ?? []).join(' '), 60], [v.field + ' ' + (v.value?.text ?? '') + ' ' + (o.channel ?? '') + (v.entry ? ' 응모' : ''), 30], [o.benefitText + ' ' + o.description, 10]])}; })
     .filter(x => x.score)
-    .sort((a, b) => (query && sort === 'end' ? b.score - a.score : 0) ||
-      (sort === 'new' ? (b.o.startsAt ?? '').localeCompare(a.o.startsAt ?? '') : sort === 'amount' ? headlineAmount(b.o, rewardValue(b.o)) - headlineAmount(a.o, rewardValue(a.o)) : (a.o.endsAt ?? '9').localeCompare(b.o.endsAt ?? '9')))
-    .map(x => x.o), [base, query, cat, issuer, entry, soon, mine, mineFamily, sort, now]);
-  useEffect(() => setMore(PAGE), [query, cat, issuer, entry, soon, mine, sort]);
-  const catCount = useMemo(() => base.reduce((m, o) => { const c = eventCategory(o); m[c] = (m[c] ?? 0) + 1; return m; }, {} as Record<string, number>), [base]);
+    // 카드사가 같은 행사를 두 번 올린 경우(같은 제목·마감일) 하나만
+    .filter((x, i, all) => { const k = x.o.issuer + '|' + viewOf(x.o).title + '|' + x.o.endsAt; return all.findIndex(y => y.o.issuer + '|' + viewOf(y.o).title + '|' + y.o.endsAt === k) === i; })
+    .sort((a, b) => (query ? b.score - a.score : 0) ||
+      (sort === 'new' ? (b.o.startsAt ?? '').localeCompare(a.o.startsAt ?? '') : sort === 'amount' ? val(b.o) - val(a.o) : (a.o.endsAt ?? '9').localeCompare(b.o.endsAt ?? '9') || val(b.o) - val(a.o)))
+    .map(x => x.o), [base, query, field, issuer, soon, mine, mineFamily, sort, now]);
+  useEffect(() => setMore(PAGE), [query, field, issuer, soon, mine, sort]);
+  const fieldCount = useMemo(() => base.reduce((m, o) => { const f = viewOf(o).field; m[f] = (m[f] ?? 0) + 1; return m; }, {} as Record<string, number>), [base]);
   const issCount = useMemo(() => base.reduce((m, o) => { const g = groupOf(o.issuer); m[g] = (m[g] ?? 0) + 1; return m; }, {} as Record<string, number>), [base]);
+  const grouped = sort === 'end' && !query;
+  const bucketCount = useMemo(() => grouped ? list.reduce((m, o) => { const b = endBucket(o.endsAt, now); m[b] = (m[b] ?? 0) + 1; return m; }, {} as Record<string, number>) : undefined, [list, grouped, now]);
   const pickMine = (c: Card | null) => {
     setMine(c); setMq('');
     const u = new URL(location.href); c ? u.searchParams.set('card', c.id) : u.searchParams.delete('card');
     history.replaceState(null, '', u.pathname + u.search + u.hash);
   };
-  const reset = () => { setQ(''); setCat('all'); setIssuer('all'); setEntry(false); setSoon(false); pickMine(null); };
+  const pickField = (f: string) => setField(p => p === f && f !== 'all' ? 'all' : f);
+  const reset = () => { setQ(''); setField('all'); setIssuer('all'); setSoon(false); pickMine(null); };
 
   return <>
-    <SearchBox value={q} onChange={setQ} placeholder="이벤트·제휴처 검색 (예: 스타벅스, 아고다, 응모)"/>
+    <SearchBox value={q} onChange={setQ} placeholder="가맹점·혜택 검색 (예: 아고다, 스타벅스, 캐시백)"/>
     <div className="mc-mine">
       {mine
         ? <div className="mc-mine-on"><span>내 카드</span><b>{mine.familyName ?? mine.name}</b><small>{mine.issuer}</small><button type="button" className="mc-link" onClick={() => pickMine(null)}>해제</button></div>
@@ -341,19 +325,19 @@ function EventsView({events, cards}: {events: Offer[]; cards: Card[]}) {
         </div>}
     </div>
     <div className="mc-filters">
-      <Chips label="종류" items={[{value: 'all', label: '전체', count: base.length}, ...EVENT_CATEGORIES.filter(c => catCount[c]).map(c => ({value: c, label: c, count: catCount[c]}))]} value={cat} onChange={setCat}/>
+      <Chips label="분야" items={[{value: 'all', label: '전체', count: base.length}, ...FIELDS.filter(f => fieldCount[f]).map(f => ({value: f, label: f, count: fieldCount[f]}))]} value={field} onChange={pickField}/>
       <Chips label="카드사" issuers items={[{value: 'all', label: '전체'}, ...issuerItems(ISSUER_FILTERS.filter(g => issCount[g]), issCount)]} value={issuer} onChange={setIssuer}/>
     </div>
     <div className="mc-bar">
       <label className="mc-check"><input type="checkbox" checked={soon} onChange={e => setSoon(e.target.checked)}/>7일 안 마감</label>
-      <label className="mc-check"><input type="checkbox" checked={entry} onChange={e => setEntry(e.target.checked)}/>응모 필요</label>
-      {(q || cat !== 'all' || issuer !== 'all' || entry || soon || mine) && <button type="button" className="mc-link" onClick={reset}>초기화</button>}
+      {(q || field !== 'all' || issuer !== 'all' || soon || mine) && <button type="button" className="mc-link" onClick={reset}>초기화</button>}
       <span className="mc-count">{list.length}<small>건</small></span>
-      <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}><option value="end">마감 임박순</option><option value="new">새로 시작한 순</option><option value="amount">혜택 큰 순</option></select>
+      <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}><option value="end">마감 임박순</option><option value="amount">혜택 큰 순</option><option value="new">새로 시작한 순</option></select>
     </div>
-    {list.length ? <div className="mc-rows">{list.slice(0, more).map(o => <EventRow key={o.id} o={o} amount={rewardValue(o)}/>)}</div>
+    {list.length ? <EventGroups list={list.slice(0, more)} grouped={grouped} hideField={field !== 'all'} counts={bucketCount}/>
       : <Empty title={mine ? '이 카드로 참여할 수 있는 이벤트가 없어요.' : '조건에 맞는 이벤트가 없어요.'} action={{label: '조건 초기화', onClick: reset}}/>}
     {list.length > more && <button type="button" className="mc-more" onClick={() => setMore(n => n + PAGE)}>더 보기 ({list.length - more}건 남음)</button>}
+    <p className="mc-note">혜택은 카드사 공지 제목에서 읽은 최대치예요. 받는 조건(전월실적·최소 결제액·대상 카드)은 이벤트를 눌러 확인하세요.</p>
     <details className="mc-links">
       <summary>카드사 앱의 내 맞춤 혜택 바로가기</summary>
       <div>{sources.filter(s => issuer === 'all' || groupOf(s.issuer) === issuer).map(s => <a key={s.issuer} href={s.url} target="_blank" rel="noopener noreferrer"><IssuerTile issuer={s.issuer} size="sm"/>{s.label} ↗</a>)}</div>

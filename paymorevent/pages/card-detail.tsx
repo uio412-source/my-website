@@ -14,6 +14,8 @@ import {customerLines} from '@/lib/customer-copy';
 import {pendingValet, valetHotelResults, valetMapPath, valetQuota, valetRules} from '@/lib/hotel-valet';
 import {benefitRow, cardMinimumSpend, cleanBenefits, dday, feeLabel, headlineAmount, pickLabel, won, ymd, type BenefitRow} from '@/lib/mc-text';
 import type {Card, Offer} from '@/lib/catalog-types';
+import {viewOf} from '@/lib/event-view';
+import {nameAndValue} from '@/components/event-row';
 
 const MARK = {allowed: ['✓', 'ok', '인정'], excluded: ['✕', 'no', '제외'], unknown: ['?', 'na', '미확인'], na: ['–', 'na', '해당 없음']} as const;
 
@@ -250,7 +252,7 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
       <h2>이벤트<small>{offers.length}</small></h2>
       <table className="cd-t cd-ev">
         <tbody>{offers.slice(0, 5).map(o => <tr key={o.id} className="cd-t-has" onClick={() => { location.href = eventPath(o.id); }}>
-          <th scope="row"><a href={eventPath(o.id)}><b>{o.title}</b></a></th>
+          <th scope="row"><a href={eventPath(o.id)}><b>{nameAndValue(viewOf(o)).name}</b></a>{nameAndValue(viewOf(o)).value && <small className="cd-ev-val">{nameAndValue(viewOf(o)).value}</small>}</th>
           <td className="cd-t-num">{dday(o.endsAt) && <b>{dday(o.endsAt)}</b>}<small>{o.endsAt ? '~' + ymd(o.endsAt) : ''}</small></td>
         </tr>)}</tbody>
       </table>

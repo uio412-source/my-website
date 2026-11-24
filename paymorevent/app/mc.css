@@ -446,3 +446,17 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
   .mc-sheet { width: 100%; max-height: 100%; height: 100%; border-radius: 0; }
   .mc-cmpt thead th:first-child { width: 20%; }
 }
+
+/* ----- 카드사 이벤트: 한 줄 = 어디서 · 얼마나 · 카드사·분야·응모 · 남은 날 ----- */
+.ev-name { font-size: .92rem; font-weight: 700; line-height: 1.4; overflow-wrap: anywhere; }
+.ev-name em, .ev-val { font-style: normal; color: var(--mc-up); }
+.ev-val { font-size: .9rem; font-weight: 800; line-height: 1.35; }
+.ev-meta { display: flex; flex-wrap: wrap; gap: 0 5px; margin-top: 2px; font-size: .72rem; font-weight: 600; color: var(--mc-muted); }
+.ev-meta span + span::before { content: '·'; margin-right: 5px; color: var(--mc-border); }
+.ev-meta .warn { color: var(--mc-pink); }
+.ev-group + .ev-group { margin-top: 18px; }
+.ev-group h3 { display: flex; align-items: baseline; gap: 6px; margin: 4px 2px 8px; font-size: .84rem; font-weight: 800; }
+.ev-group h3 span { font-size: .74rem; font-weight: 600; color: var(--mc-muted); }
+.ev-group h3.soon { color: var(--mc-pink); }
+.ed-unknown { color: var(--mc-muted); font-weight: 600; }
+.cd-ev .cd-ev-val, .cd-ev em { font-style: normal; color: var(--mc-up); font-weight: 700; }
