@@ -1,0 +1,152 @@
+{
+  "type": "card-terms",
+  "issuer": "BC 바로카드",
+  "collectedAt": "2026-11-25",
+  "collector": "Pickle",
+  "cards": [
+    {
+      "cardId": "bc-102040",
+      "queueKey": "bc-102040",
+      "name": "BC 바로 On＆Off 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102040&mbkNo=050",
+      "termsUrl": "https://www.bccard.com/down/individual/customer/102040.pdf",
+      "docDate": "2026-05-04",
+      "annualFee": [
+        {
+          "brand": "BC",
+          "amount": 5000
+        },
+        {
+          "brand": "MasterCard",
+          "amount": 5000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일(매출 승인일) 국내외 일시불·할부 이용금액, 단체·부분 무이자할부 및 매출 취소 금액은 제외",
+      "grace": "최초 카드 사용등록 후 다음 달 말일까지는 전월실적 30만원 미만에도 30만원 이상 구간 할인한도 제공",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "연체료",
+        "제수수료·이자",
+        "아파트 관리비",
+        "상하수도·전기·도시가스 요금",
+        "상품권 구매금액",
+        "선불카드·선불 전자지급수단 구매 및 충전금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부(단, 할부·부분 무이자할부 포함) 이용금액",
+        "상품권 구매금액",
+        "선불카드·선불 전자지급수단 구매 및 충전금액"
+      ],
+      "benefits": [
+        {
+          "label": "온라인·간편결제",
+          "place": "국내 온라인 가맹점, 온/오프라인 간편결제(페이북·삼성페이·카카오페이·네이버페이·PAYCO·토스페이 등)",
+          "value": "10%",
+          "valueType": "할인",
+          "group": "국내",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 5000
+            },
+            {
+              "spend": 600000,
+              "cap": 10000
+            },
+            {
+              "spend": 900000,
+              "cap": 15000
+            }
+          ],
+          "shared": "국내 통합 할인한도",
+          "conditions": [
+            "국내 4개 영역 합산 월 할인한도는 30만원 이상 1만원, 60만원 이상 2만원, 90만원 이상 3만5천원",
+            "상기 간편결제(Pay) 사용금액으로 분류되어 해당 영역의 할인한도가 적용됨",
+            "단, 카카오T 앱에서 등록·호출된 카카오T 택시는 '버스/지하철/택시' 영역으로 분류"
+          ]
+        },
+        {
+          "label": "음식점·카페",
+          "place": "국내 대상 식당 및 커피 전문점",
+          "value": "10%",
+          "valueType": "할인",
+          "group": "국내",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 5000
+            },
+            {
+              "spend": 600000,
+              "cap": 10000
+            },
+            {
+              "spend": 900000,
+              "cap": 15000
+            }
+          ],
+          "shared": "국내 통합 할인한도"
+        },
+        {
+          "label": "버스·지하철·택시",
+          "place": "대중교통(시내버스/지하철), 카카오T",
+          "value": "10%",
+          "valueType": "할인",
+          "group": "국내",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 5000
+            },
+            {
+              "spend": 600000,
+              "cap": 10000
+            },
+            {
+              "spend": 900000,
+              "cap": 15000
+            }
+          ],
+          "shared": "국내 통합 할인한도"
+        },
+        {
+          "label": "해외",
+          "place": "해외 온/오프라인 가맹점",
+          "value": "10%",
+          "valueType": "할인",
+          "group": "해외",
+          "minimumSpend": 300000,
+          "cap": 5000,
+          "capScope": "월",
+          "conditions": [
+            "해외겸용 카드에 한해 제공"
+          ]
+        },
+        {
+          "label": "무이자할부",
+          "place": "국내 대상 가맹점(2~3개월)",
+          "value": "2~3개월",
+          "valueType": "면제",
+          "minimumSpend": 0,
+          "cap": null,
+          "conditions": [
+            "할부 거래금액 5만원 이상 결제 시 적용",
+            "일시불 거래를 할부로 전환한 경우 수수료 부과"
+          ]
+        }
+      ]
+    }
+  ]
+}
