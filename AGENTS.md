@@ -39,6 +39,7 @@
   - 마지막으로 고른 나라는 브라우저 `mrtravel.place`에 저장합니다. 혜택 화면 `index.html#place-JP`, 여행지 화면 `places.html#JP`처럼 주소로 바로 열 수 있습니다.
   - **여행준비**(`prep.html`): 1 항공권 예매 → 2 호텔 예약 → 3 공항 이동 → 4 면세점 → 5 공항 라운지 순서. `travel/prep.json`은 배포 때 `tools/travel/prep.py`가 카드사 이벤트(`events.json`, inbox 합친 뒤)·카드 DB·`hotels/events.json`에서 만듭니다. 분류 키워드는 `prep.py`의 `RX`, 항공사·면세점 공식 사이트 목록은 `AIRLINES`·`DUTY_FREE`. 라운지는 카드 이름(한·영 동의어)으로 찾고 '해외 공항(귀국편)'·'국내 공항'으로 거릅니다(PP·라운지키·전 세계 문구면 해외).
 - **데이터 수집**: 외부 AI·사람은 큰 DB를 직접 고치지 않고 `data/inbox/<종류>/YYYY-MM-DD-<출처>.json`만 추가하는 PR을 올립니다. 양식·찾는 요령·실행 한도·요일별 순서는 `docs/data-update.md`. PR 검사는 `.github/workflows/data-check.yml`(`tools/data/inbox.py validate`), 배포 때 `tools/data/inbox.py merge`가 합칩니다(결과는 커밋 안 함).
+  - **자동 머지**(`.github/workflows/data-automerge.yml` → `tools/data/automerge.py`): `ai/chatgpt/data-*` 브랜치 PR이 열리면 10분 기다린 뒤, 바뀐 파일이 전부 `data/inbox` 새 JSON이고 main의 `inbox.py validate`를 통과하면 머지하고 배포(`deploy.yml`)를 직접 실행합니다(GITHUB_TOKEN 머지는 push 배포를 안 일으켜서). 안 맞으면 머지하지 않고 PR에 이유를 댓글로 남기며, 3시간마다 놓친 PR을 다시 봅니다. `pull_request_target`이라 PR 쪽 코드는 실행하지 않습니다. 이 두 파일을 고칠 때 이 원칙(PR에서는 inbox JSON만 가져옴)을 지키세요.
   - 종류: `card-events`·`hotel-events`(이벤트 DB) · `travel-events`(항공사·면세점·공항 자체 이벤트 → `travel/vendor-events.json`, 여행준비) · `brand-services`(국제브랜드·카드사 선택 서비스: 호텔 발레·공항 라운지·공항 커피 등 → `paymorevent/data/brand-services.json`, 서울 호텔 발레는 `hotels/valet.json`에도 자동 추가) · `card-terms`(상품설명서 표준 정리 → `paymorevent/data/card-terms.json`) · `card-products`(검토 대기열, 자동 반영 안 함).
   - 무엇을 먼저 모을지는 `data/collect-queue.json`(수집 대기열, `tools/data/queue.py`로 생성·커밋). 수집 파일에 대기열 key를 `queueKey`로 적으면 다음 실행 때 건너뜁니다. 카드사·도메인 목록과 서비스 분류는 `inbox.py`의 `ISSUERS`·`CARD_DOMAINS`·`SERVICE_CATS`에서 고칩니다.
 - `main` 브랜치에 merge되면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages로 자동 배포합니다.
@@ -65,6 +66,7 @@ tools/travel/benefits.py Mr. Cards 데이터 → travel/benefits.json
 tools/travel/prep.py     Mr. Cards·Hotels 데이터 → travel/prep.json (여행준비)
 tools/travel/world.mjs   세계지도 → travel/world.json (지도 바꿀 때만)
 tools/data/inbox.py      수집 파일(data/inbox) 검사·배포 때 합치기
+tools/data/automerge.py  수집 PR(ai/chatgpt/data-*) 검사 후 자동 머지·배포 실행
 tools/data/queue.py      수집 대기열 → data/collect-queue.json
 tools/ungjup/build.py 데이터 생성기 (Yahoo Finance → data/ungjup/*.json)
 tools/ungjup/extras.py 종목 검색 목록(symbols.json)·종목별 뉴스(news.json) 생성
