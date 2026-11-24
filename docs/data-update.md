@@ -5,6 +5,7 @@
 - 큰 DB 파일(`paymorevent/data/*.json`, `cards.json.gz`, `hotels/*.json`, `travel/*.json`)은 **절대 직접 고치지 않습니다.**
 - `data/inbox/<종류>/YYYY-MM-DD-<출처>.json` 파일을 **새로 추가**하는 PR만 올립니다.
 - PR이 열리면 GitHub Actions(`수집 데이터 양식 검사`)가 양식을 검사하고(틀리면 빨간 X와 한국어 오류), `main`에 머지되면 배포 때 `tools/data/inbox.py merge`가 화면용 DB에 합칩니다.
+- `ai/chatgpt/data-*` 브랜치 PR은 **자동 머지**됩니다(`수집 PR 자동 머지`): 마지막 커밋 10분 뒤 `data/inbox` 새 파일만 있고 양식 검사를 통과하면 머지·배포. 그래서 **커밋을 다 올린 뒤에 PR을 여세요.** 기존 파일 수정·삭제나 inbox 밖 파일이 섞이면 자동 머지하지 않고 PR에 이유를 댓글로 남깁니다.
 - 같은 항목을 다음에 다시 수집하면(같은 `id`·같은 카드사+제목) **나중 파일 값이 이깁니다.** 매번 그 출처의 현재 내용 전체를 다시 담아도 됩니다.
 - 무엇을 먼저 모을지는 `data/collect-queue.json`(수집 대기열)에 있습니다. → **9장 실행 한도와 순서**
 
