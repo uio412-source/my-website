@@ -5,6 +5,7 @@
 ## 프로젝트 개요
 - **Mr. Stocks**: 줍줍 지표 차트와 관심종목 시세을 보여 주는 **정적 웹사이트**입니다. 빌드 도구나 프레임워크 없이 HTML, CSS, JS만 씁니다.
 - 모바일 우선입니다. 폭 720px 이하에서는 위 메뉴 대신 하단 탭바(차트 · 관심종목 · 배당)가 나옵니다.
+- **명언 배너**: Mr. Stocks 세 페이지(차트·관심종목·배당) 맨 위 `<div id="qroll">`에 '공포에 사라' 취지의 투자자 명언이 7초마다 바뀝니다(`assets/js/quotes.js`의 `QUOTES`, 스타일은 `style.css`의 `.qroll`). 마우스를 올리거나 키보드 포커스면 멈추고, 누르면 다음. 명언은 출처(주주서한·인터뷰·책)를 `src`에 적고, 출처가 확인 안 된 말은 `by`에 '…의 말로 알려짐', `src`에 '출처 확인 안 됨'으로 적습니다.
 - **Mr. Cards**(옛 이름 페이모먼트): 같은 저장소의 `paymorevent/` 폴더에 있는 카드 혜택 사이트로 `/my-website/paymorevent/`에 배포됩니다. 메뉴는 **카드상품 검색 · 발급이벤트 · 카드사 이벤트** 세 가지입니다(호텔 기능은 제거). React·Vite로 빌드하며(`npm ci`, `npm run build`), 링크·이미지 경로는 `lib/site-path.ts`의 함수를 씁니다. 헤더·하단 탭바·글꼴·색은 Mr. Stocks와 같게 `paymorevent/app/mr-cards.css`와 `components/customer-shell.tsx`에서 맞춥니다.
   - **화면**(2026-11 개편): 목록 `components/catalog.tsx`(카드상품 검색·발급이벤트·카드사 이벤트), 상세 `pages/card-detail.tsx`(표준 양식: 머리(큰 카드 이미지·카드사·이름) → 기본 정보 표(종류·연회비·전월실적·최고 피킹률) → 혜택 격자 표(카드사 상품설명서처럼 `구분 | 적용처 | 혜택 | 한도·조건`, 묶음은 가로 머리줄, '통합' 한도는 세로로 합친 칸, 기본 정보와 같은 전월실적은 칸마다 되풀이하지 않음. 한 줄은 `mc-text.ts`의 `benefitRow`) → 피킹률 표 → 결제별 인정 표 → 이벤트 표 → 원문(접힘). 모든 정보는 같은 표 모양 `.cd-t`로만 보여 주고 설명 문단·카드 소개 문구(DB `description`)는 쓰지 않습니다. 이름 앞 카드사명은 빼고 위에 따로 표시)·`pages/event-detail.tsx`(카드 상세와 같은 머리 + 정보 표 + 참여 조건 번호 목록, 기간만 되풀이하는 조건 줄은 뺌), 공통 조각 `components/mc-ui.tsx`(필터 `Chips`는 줄마다 왼쪽에 이름이 붙고, `issuers`면 카드사 타일 칩), 스타일 `app/mc.css` 하나. 카드상품 검색의 혜택 필터는 한 번에 하나만 고릅니다(다시 누르면 해제). 목록 혜택 칩은 상세 혜택 표와 같은 말(`highlights` → `benefitRow`의 '구분 값')을 씁니다. 공무원·교육청·국민행복·법인·학생증처럼 가입 대상이 정해진 카드는 `mc-text.ts`의 `RESTRICTED`로 추천순에서 아래로 내리고 '가입 대상 제한'을 붙입니다. DB 원문을 화면용으로 거르는 규칙(혜택이 아닌 안내 항목 숨김, 빈 값 "확인 중" 표시 안 함, 이벤트 요약 문구)과 검색(여러 단어·초성·동의어·이름 우선 점수)은 `lib/mc-text.ts`에 있습니다.
   - **카드사 이벤트**(2026-11-24 개편, `lib/event-view.ts` · `components/event-row.tsx`): 카드사 목록에서 제목·기간만 긁어 온 이벤트가 많아서, 제목(없으면 요약)에서 **혜택**(`eventValue`: '최대 3만원 캐시백'·'10% 즉시할인'·'무이자 최대 6개월'·'1+1'·'추첨 경품', 금액은 원·$·엔 환산해 정렬), **분야**(`FIELDS`: 쇼핑·해외·여행·외식·카페·생활·납부·교통·차·문화·레저·페이·포인트·무이자 할부·기타, 키워드는 `FIELD_RX`), **가맹점**(`MERCHANTS`), 응모 여부·대상 카드(모르면 `null`)를 뽑습니다. 광고 문구·카드사 자기 이름·HTML 엔티티는 `cleanTitle`이 지웁니다.
@@ -64,6 +65,7 @@ assets/css/ungjup.css 차트 페이지 스타일
 assets/css/portfolio.css 관심종목 페이지 스타일 (배당 페이지도 목록·시트·타일에 함께 씀)
 assets/css/dividend.css 배당 페이지 스타일
 assets/js/main.js     공통 스크립트
+assets/js/quotes.js   Mr. Stocks 맨 위 명언 배너
 assets/js/ungjup.js   차트 (캔버스, 외부 라이브러리 없음)
 assets/js/covered.js  차트 하단 '커버드콜 vs 본주' 기간별 총수익 비교
 assets/js/watchlist.js 관심종목 페이지

@@ -302,3 +302,31 @@ section { padding: 64px 0; }
   .head-refresh.spin svg { animation: none; opacity: .55; }
   .ms-toast { transition: none; }
 }
+
+/* ===== 명언 배너 (Mr. Stocks 맨 위, assets/js/quotes.js) ===== */
+.qroll {
+  position: relative; display: grid; margin: 0 0 16px; padding: 12px 56px 12px 18px; cursor: pointer;
+  border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-bg-alt); overflow: hidden;
+}
+.qroll::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--chart-zone-strip); }
+.qroll:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.qroll-item {
+  grid-area: 1 / 1; margin: 0; opacity: 0; transform: translateY(6px); visibility: hidden;
+  transition: opacity .5s ease, transform .5s ease, visibility 0s linear .5s;
+}
+.qroll-item.on { opacity: 1; transform: none; visibility: visible; transition: opacity .5s ease, transform .5s ease; }
+.qroll blockquote { margin: 0; font-size: .95rem; font-weight: 700; line-height: 1.5; color: var(--color-text); word-break: keep-all; }
+.qroll blockquote::before { content: "“"; color: var(--chart-zone-strip); margin-right: 2px; }
+.qroll blockquote::after { content: "”"; color: var(--chart-zone-strip); margin-left: 2px; }
+.qroll figcaption { margin-top: 4px; font-size: .76rem; color: var(--color-muted); }
+.qroll figcaption b { color: var(--color-text); font-weight: 700; }
+.qroll-n { position: absolute; right: 12px; bottom: 10px; font-size: .7rem; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.qroll.paused .qroll-n::before { content: "❚❚ "; font-size: .6rem; }
+@media (max-width: 720px) {
+  .qroll { padding: 10px 14px 10px 16px; margin-bottom: 12px; }
+  .qroll blockquote { font-size: .88rem; }
+  .qroll figcaption { padding-right: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .qroll-item, .qroll-item.on { transition: none; transform: none; }
+}
