@@ -258,6 +258,7 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .cd-g thead th, .cd-t thead th { background: var(--mc-bg-alt); font-size: .74rem; font-weight: 700; color: var(--mc-muted); text-align: center; white-space: nowrap; }
 .cd-g tbody th, .cd-t tbody th { background: var(--mc-bg-alt); font-weight: 700; text-align: center; }
 .cd-g tbody th.wide { text-align: left; padding-left: 12px; }
+.cd-g tbody th.wide small { display: block; margin-top: 2px; font-size: .7rem; font-weight: 500; color: var(--mc-muted); }
 .cd-g tbody th.wide a, .cd-t a { color: var(--mc-primary); font-weight: 700; text-decoration: none; }
 .cd-g-grp th { background: var(--mc-bg) !important; color: var(--mc-primary); font-size: .78rem; text-align: left !important; padding: 7px 12px !important; }
 .cd-ben col.c-label { width: 22%; }

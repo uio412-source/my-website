@@ -23,6 +23,7 @@ import html
 import json
 import re
 import sys
+import unicodedata
 from datetime import date, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
@@ -538,6 +539,37 @@ def load_inbox(p: Problems):
 norm = lambda s: re.sub(r"[\s·,()\[\]【】<>「」'\"!~-]", "", s or "").lower()
 
 
+def card_key(issuer: str, name: str) -> str:
+    """카드 이름을 느슨하게 비교하는 값. 안내문마다 표기가 달라도 같은 카드로 봅니다.
+
+    '신한카드 The BEST+' = 'The BEST+', 'BeV III' = 'BeV Ⅲ 카드', 'CLUB1 200' = 'CLUB1카드 200',
+    '메리어트 본보이™ 더 베스트' = '메리어트 본보이 더 베스트 신한카드'. 카드사 이름·'카드'·™®·기호·대소문자를 빼고 비교하되
+    '+'는 남깁니다(The BEST ≠ The BEST+). 발레 화면(assets/js/hotel-valet.js cardNorm)도 같은 규칙입니다.
+    """
+    s = unicodedata.normalize("NFKC", re.sub(r"[™®©]", "", name or "")).lower()
+    for w in sorted({issuer.lower(), issuer.lower().removesuffix("카드")}, key=len, reverse=True):
+        if w:
+            s = s.replace(w, "")
+    s = re.sub(r"카드|\bcard\b", "", s)
+    return re.sub(r"[^\w+]|_", "", s)
+
+
+def card_finder(catalog: list, card_ids: dict):
+    """(카드사, 카드 이름) → 카드 DB id 목록. 정확한 이름(norm)이 먼저, 없으면 느슨한 이름(card_key)이 한 장으로만 맞을 때."""
+    loose: dict = {}
+    for c in catalog:
+        for n in {c["name"], c.get("familyName") or c["name"]}:
+            loose.setdefault((c["issuer"], card_key(c["issuer"], n)), set()).add(c["id"])
+
+    def find(issuer: str, name: str) -> list:
+        exact = card_ids.get((issuer, norm(name)))
+        if exact:
+            return exact
+        ids = loose.get((issuer, card_key(issuer, name))) or set()
+        return sorted(ids) if len(ids) == 1 else []
+    return find
+
+
 def to_offer(e: dict, doc: dict, card_ids: dict) -> dict:
     today = date.today().isoformat()
     starts = e.get("startsAt")
@@ -570,6 +602,7 @@ def merge(docs) -> None:
     for c in catalog:
         for n in {c["name"], c.get("familyName") or c["name"]}:
             card_ids.setdefault((c["issuer"], norm(n)), []).append(c["id"])
+    find_card = card_finder(catalog, card_ids)
 
     events = json.loads(EVENTS.read_text(encoding="utf-8"))
     # 이미 저장된 이벤트도 배포 때 한 번 정리: 엔티티를 풀고, 오늘+2년을 넘는 가짜 종료일은 상시(null)로
@@ -629,7 +662,7 @@ def merge(docs) -> None:
                                    "cardIssuers": e.get("cardIssuers") or [], "promoCode": e.get("promoCode"), "checkedAt": doc["collectedAt"]}
         elif folder == "brand-services":
             for g in doc["programs"]:
-                ids = sorted({i for n in g["cards"] for i in card_ids.get((doc["issuer"], norm(n)), [])})
+                ids = sorted({i for n in g["cards"] for i in find_card(doc["issuer"], n)})
                 brand[g["id"]] = {**g, "issuer": doc["issuer"], "collectedAt": doc["collectedAt"], "collector": doc["collector"], "catalogIds": ids}
         elif folder == "card-terms":
             for c in doc["cards"]:
@@ -643,7 +676,7 @@ def merge(docs) -> None:
     VENDOR_EVENTS.write_text(json.dumps({"built": today, "events": vend}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     BRAND_OUT.write_text(json.dumps({"built": today, "programs": list(brand.values())}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     TERMS_OUT.write_text(json.dumps({"built": today, "cards": list(terms.values())}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    valet_added, valet_replaced, unmapped, lost = merge_valet(brand.values(), card_ids)
+    valet_added, valet_replaced, unmapped, lost = merge_valet(brand.values(), find_card)
 
     EVENTS.write_text(json.dumps(events, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     HOTEL_EVENTS.write_text(json.dumps(hotel, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -676,22 +709,35 @@ def valet_offer(p: dict) -> tuple:
             p.get("useRequired"), p.get("freeHours"), p.get("validThrough"), overrides)
 
 
-def valet_cards(*groups) -> list:
-    """프로그램을 합칠 때 카드 목록을 이름 기준으로 합치고 key(c0·c1…)를 다시 매깁니다(화면 카드 참조가 겹치지 않게)."""
-    out, seen = [], set()
+def valet_cards(issuer: str, *groups) -> list:
+    """프로그램을 합칠 때 카드 목록을 이름(card_key: 'The BEST+' = '신한카드 The BEST+') 기준으로 합치고
+    key(c0·c1…)를 다시 매깁니다(화면 카드 참조가 겹치지 않게). 한쪽에만 카드 DB id가 있으면 그 id를 씁니다."""
+    out, seen = [], {}
     for cards in groups:
         for c in cards or []:
             name = (c or {}).get("name")
-            if not name or name in seen:
+            if not name:
                 continue
-            seen.add(name)
-            out.append({"key": f"c{len(out)}", "name": name, "catalogId": c.get("catalogId")})
+            k = card_key(issuer, name)
+            if k in seen:
+                seen[k]["catalogId"] = seen[k]["catalogId"] or c.get("catalogId")
+                continue
+            seen[k] = {"key": f"c{len(out)}", "name": name, "catalogId": c.get("catalogId")}
+            out.append(seen[k])
     return out
 
 
-def merge_valet(programs, card_ids):
-    """brand-services의 hotel_valet(서울 호텔)을 발레파킹 화면 프로그램으로 바꿔 hotels/valet.json에 넣음(배포본만)."""
+def merge_valet(programs, find_card):
+    """brand-services의 hotel_valet(서울 호텔)을 발레파킹 화면 프로그램으로 바꿔 hotels/valet.json에 넣음(배포본만).
+
+    카드 이름은 find_card(card_finder)로 카드 DB id(catalogId)와 연결합니다. 손으로 정리한 프로그램에서 id가 빈 카드도
+    같은 규칙으로 채워, Mr. Cards 카드 상세·'호텔 발레' 필터와 발레 화면의 '같은 카드 묶기'가 끊기지 않게 합니다.
+    """
     data = json.loads(VALET.read_text(encoding="utf-8"))
+    for p in data["programs"]:
+        for c in p.get("cards") or []:
+            if not c.get("catalogId"):
+                c["catalogId"] = next(iter(find_card(p["issuer"], c["name"])), None)
     index = {}
     for h in data["hotels"]:
         for n in [h["name"], *(h.get("aliases") or [])]:
@@ -740,11 +786,11 @@ def merge_valet(programs, card_ids):
                 "proof": "대상 카드·주차권 제시" if svc.get("useRequired") is False else "대상 카드·주차권·당일 호텔 이용 영수증 제시",
                 "notes": ([svc["sharedWith"]] if svc.get("sharedWith") else []) + (svc.get("conditions") or [])[:3],
                 "source": g["url"], "checkedAt": g["docDate"], "hotelIds": ids, "hotelOverrides": overrides,
-                "cards": [{"key": f"c{i}", "name": n, "catalogId": next(iter(card_ids.get((g["issuer"], norm(n)), [])), None)} for i, n in enumerate(g["cards"])],
+                "cards": valet_cards(g["issuer"], [{"name": n, "catalogId": next(iter(find_card(g["issuer"], n)), None)} for n in g["cards"]]),
             }
             if g.get("validThrough"):
                 prog["validThrough"] = g["validThrough"]
-            collected.update(c["name"] for c in prog["cards"])
+            collected.update((g["issuer"], card_key(g["issuer"], c["name"])) for c in prog["cards"])
             # 같은 자리(같은 id, 또는 카드사·브랜드·등급과 대상 호텔·조건이 모두 같은 안내문)만 하나로 합칩니다.
             # 같은 등급이라도 대상 호텔이 다른 카드 묶음은 각각 남겨 카드마다 맞는 호텔 수를 보여 줍니다.
             slot, offer = valet_slot(prog), valet_offer(prog)
@@ -755,7 +801,7 @@ def merge_valet(programs, card_ids):
                 # 대상 호텔이 더 많은(더 포괄적인) 안내가 남습니다. 같으면 카드가 더 많은 안내. 예전에는 파일 순서상 나중에 온 좁은 안내가 넓은 안내를 덮었습니다.
                 keep_new = (len(prog["hotelIds"]), len(prog["cards"])) > (len(old["hotelIds"]), len(old["cards"]))
                 base = prog if keep_new else old
-                base["cards"] = valet_cards(base.get("cards"), *[data["programs"][j].get("cards") for j in same[1:]],
+                base["cards"] = valet_cards(base["issuer"], base.get("cards"), *[data["programs"][j].get("cards") for j in same[1:]],
                                             (old if keep_new else prog).get("cards"))
                 data["programs"][i] = base
                 for j in sorted(same[1:], reverse=True):
@@ -766,7 +812,8 @@ def merge_valet(programs, card_ids):
                 added += 1
             data["updatedAt"] = max(data.get("updatedAt") or "", g["collectedAt"])
     VALET.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
-    lost = sorted(collected - {c["name"] for p in data["programs"] for c in p.get("cards") or []})
+    kept = {(p["issuer"], card_key(p["issuer"], c["name"])) for p in data["programs"] for c in p.get("cards") or []}
+    lost = sorted(f"{i} {k}" for i, k in collected - kept)
     return added, replaced, unmapped, lost
 
 
