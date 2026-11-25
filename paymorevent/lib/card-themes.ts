@@ -41,7 +41,7 @@ const snippet=(texts:string[],re:RegExp)=>{for(const t of texts){const m=re.exec
 export function paymentCheck(c:Card,key:string):PaymentCheck{
  const spendOnly=key==='할인받은 이용금액';
  const re=CHECK_PATTERNS[key];
- if(!re){const e=paymentEligibility(c,key),lines=(e.evidence??'').split('\n'),pr=patterns[key]??/$^/;return {spend:e.spend,benefit:e.benefit,spendEvidence:e.spend==='excluded'?snippet(lines.slice(0,1),pr)??snippet(c.spendExclusions,pr):undefined,benefitEvidence:e.benefit==='excluded'?snippet(lines.slice(-1),pr)??snippet(c.benefitExclusions,pr):undefined};}
+ if(!re){const saved=paymentEligibility(c,key),e=paymentVerdict(c,key),lines=(saved.evidence??'').split('\n'),pr=patterns[key]??/$^/;return {spend:e.spend,benefit:e.benefit,spendEvidence:e.spend==='excluded'?snippet(lines.slice(0,1),pr)??snippet(c.spendExclusions,pr):undefined,benefitEvidence:e.benefit==='excluded'?snippet(lines.slice(-1),pr)??snippet(c.benefitExclusions,pr):undefined};}
  const complete=Object.values(c.paymentEligibility??{}).some(e=>e.basis==='full_exclusion_list');
  const spendEvidence=snippet(c.spendExclusions,re),benefitEvidence=spendOnly?undefined:snippet(c.benefitExclusions,re);
  const spend=spendEvidence||(spendOnly&&c.benefitSpendExcluded)?'excluded':complete?'allowed':'unknown';
@@ -51,9 +51,25 @@ export function scopedPaymentEligibility(c:Card,theme:string):PaymentEligibility
  const re=patterns[theme];
  return (c.eligibilityRules??[]).filter(rule=>rule.item===theme||aliases[theme]?.includes(rule.item)||!!re?.test(rule.item));
 }
+/** 카드 단위 판정(paymentEligibility)이 먼저입니다. 카드 단위로 확인된 판정은 범위별 규칙으로 뒤집지 않고,
+ * 확인되지 않은(unknown) 항목만 범위별 규칙(eligibilityRules)으로 채웁니다.
+ * 상품설명서의 계산 예시처럼 제외·인정 문구가 아닌 발췌에서 파생된 '가능' 규칙이
+ * 카드 단위 '제외'를 '혜택 O'로 바꾸지 못하게 하기 위함입니다(하나 CLUB H 상품권 사례).
+ * 같은 항목에 '제외'와 '가능'이 섞여 있으면 혜택을 약속하지 않도록 '제외'를 씁니다. */
+export function paymentVerdict(c:Card,theme:string):{spend:PaymentEligibility['spend'];benefit:PaymentEligibility['benefit']}{
+ const base=paymentEligibility(c,theme);
+ if(base.spend!=='unknown'&&base.benefit!=='unknown')return {spend:base.spend,benefit:base.benefit};
+ const scoped=scopedPaymentEligibility(c,theme);
+ const fill=(key:'spend'|'benefit'):'allowed'|'excluded'|'unknown'=>{
+  if(base[key]!=='unknown')return base[key];
+  if(scoped.some(rule=>rule[key]==='excluded'))return 'excluded';
+  return scoped.some(rule=>rule[key]==='allowed')?'allowed':'unknown';
+ };
+ return {spend:fill('spend'),benefit:fill('benefit')};
+}
 export function matchesPaymentEligibility(c:Card,theme:string,mode:'spend'|'benefit'|'both'|'any'){
- const entries=[paymentEligibility(c,theme),...scopedPaymentEligibility(c,theme)];
- return entries.some(e=>mode==='both'?e.spend==='allowed'&&e.benefit==='allowed':mode==='spend'?e.spend==='allowed':mode==='benefit'?e.benefit==='allowed':e.spend==='allowed'||e.benefit==='allowed');
+ const e=paymentVerdict(c,theme);
+ return mode==='both'?e.spend==='allowed'&&e.benefit==='allowed':mode==='spend'?e.spend==='allowed':mode==='benefit'?e.benefit==='allowed':e.spend==='allowed'||e.benefit==='allowed';
 }
 /** 가입 대상이 정해진 카드(공무원·법인 등). 목록 추천순에서 아래로, 쓰임 필터에서는 뺍니다. */
 export const RESTRICTED = /교육청|공무원|도청|시청|군청|경찰|소방|국방|나라사랑|국민행복|바우처|복지카드|화물복지|법인|BIZ|비즈니스|사업자|학생증|ISIC|협회|연합회|조합원|운송사업자|다자녀|꿈디딤|꿈드리미|교육사랑/i;
@@ -86,18 +102,17 @@ export function generalReward(c:Card):string|null{
  return null;
 }
 const ANNUAL_REWARD=/연간\s*(?:이용|실적|사용)[^/;\n]{0,40}?(?:바우처|마일|포인트|숙박권|연회비|면제|기프트|캐시백|상품권)/;
-const verdicts=(c:Card,theme:string)=>[paymentEligibility(c,theme),...scopedPaymentEligibility(c,theme)];
 /** 상품권·관리비·국세·지방세: 실제로 써서 남는 게 있는 카드면 이유("혜택 O · 기본 1% 적립"), 아니면 null.
  * - 국세·지방세: 혜택이 적용되고(혜택 O) 전 가맹점 기본 혜택이 있어야 함
  * - 상품권(상테크)·관리비: 혜택 O + 기본 혜택(관리비는 관리비 할인도), 또는 실적 O + 채울 전월실적·연간 실적 혜택이 있어야 함 */
 export function useFit(c:Card,theme:string):string|null{
  if(RESTRICTED.test(c.name))return null;
- const v=verdicts(c,theme),benefitOk=v.some(e=>e.benefit==='allowed'),spendOk=v.some(e=>e.spend==='allowed');
+ const verdict=paymentVerdict(c,theme),benefitOk=verdict.benefit==='allowed',spendOk=verdict.spend==='allowed';
  const general=generalReward(c);
  if(theme==='국세'||theme==='지방세')return benefitOk&&general?`혜택 O · ${general}`:null;
  if(theme==='관리비'){
   const own=c.benefits.find(b=>/관리비/.test(b.title+' '+b.detail)&&/할인|적립|캐시백/.test(b.title+' '+b.detail)&&!/제외/.test(b.title));
-  if(own&&!v.some(e=>e.benefit==='excluded')){
+  if(own&&verdict.benefit!=='excluded'){
    // 관리비 바로 뒤의 금액·율을 씀 (앞쪽 '월 최대 3,000원' 같은 통합 한도와 헷갈리지 않게)
    const t=own.title+' '+own.detail,near=t.slice(t.indexOf('관리비'),t.indexOf('관리비')+90);
    const amount=/([\d,]+(?:천|만)?원)\s*(?:결제일|청구)?\s*(?:할인|캐시백|적립)/.exec(near)?.[1];
