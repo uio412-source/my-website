@@ -11,18 +11,18 @@
  },
  "nextStart": {
   "cards": "samsung-aap1483",
-  "brandPrograms": "shinhan-visa-infinite"
+  "brandPrograms": "shinhan-mastercard-titanium"
  },
  "counts": {
   "cards": {
-   "done": 17,
-   "todo": 1414,
+   "done": 21,
+   "todo": 1410,
    "total": 1431
   },
   "brandPrograms": {
-   "done": 12,
-   "valetOnly": 6,
-   "todo": 76,
+   "done": 17,
+   "valetOnly": 4,
+   "todo": 73,
    "total": 94
   }
  },
@@ -231,7 +231,7 @@
    "brand": "Visa",
    "tier": "Infinite",
    "where": "카드 상세 > 상품설명서 PDF(www.shinhancard.com/pconts/download/card/…) 또는 'Visa/Mastercard 서비스 안내' PDF",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-mastercard-platinum",
@@ -239,7 +239,7 @@
    "brand": "Mastercard",
    "tier": "Platinum",
    "where": "카드 상세 > 상품설명서 PDF(www.shinhancard.com/pconts/download/card/…) 또는 'Visa/Mastercard 서비스 안내' PDF",
-   "status": "valet-only"
+   "status": "done"
   },
   {
    "key": "shinhan-mastercard-titanium",
@@ -255,7 +255,7 @@
    "brand": "Mastercard",
    "tier": "World",
    "where": "카드 상세 > 상품설명서 PDF(www.shinhancard.com/pconts/download/card/…) 또는 'Visa/Mastercard 서비스 안내' PDF",
-   "status": "valet-only"
+   "status": "done"
   },
   {
    "key": "shinhan-mastercard-world-elite",
@@ -279,7 +279,7 @@
    "brand": "American Express",
    "tier": "Platinum",
    "where": "카드 상세 > 상품설명서 PDF(www.shinhancard.com/pconts/download/card/…) 또는 'Visa/Mastercard 서비스 안내' PDF",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-american-express-platinum-elite",
@@ -303,7 +303,7 @@
    "brand": "UnionPay",
    "tier": "Diamond",
    "where": "카드 상세 > 상품설명서 PDF(www.shinhancard.com/pconts/download/card/…) 또는 'Visa/Mastercard 서비스 안내' PDF",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-visa-platinum",
@@ -7242,7 +7242,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/104453.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-103132",
@@ -7275,7 +7275,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/104063.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-101010",
@@ -7330,7 +7330,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/101883.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-101877",
@@ -7341,7 +7341,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/101877.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-101874",
