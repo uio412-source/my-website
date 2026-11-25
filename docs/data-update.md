@@ -7,7 +7,8 @@
 - PR이 열리면 GitHub Actions(`수집 데이터 양식 검사`)가 양식을 검사하고(틀리면 빨간 X와 한국어 오류), `main`에 머지되면 배포 때 `tools/data/inbox.py merge`가 화면용 DB에 합칩니다.
 - `ai/chatgpt/data-*` 브랜치 PR은 **자동 머지**됩니다(`수집 PR 자동 머지`): 마지막 커밋 10분 뒤 `data/inbox` 새 파일만 있고 양식 검사를 통과하면 머지·배포. 그래서 **커밋을 다 올린 뒤에 PR을 여세요.** 기존 파일 수정·삭제나 inbox 밖 파일이 섞이면 자동 머지하지 않고 PR에 이유를 댓글로 남깁니다.
 - 같은 항목을 다음에 다시 수집하면(같은 `id`·같은 카드사+제목) **나중 파일 값이 이깁니다.** 매번 그 출처의 현재 내용 전체를 다시 담아도 됩니다.
-- 무엇을 먼저 모을지는 `data/collect-queue.json`(수집 대기열)에 있습니다. → **9장 실행 한도와 순서**
+- 무엇을 먼저 모을지는 `data/collect-queue.json`(수집 대기열)에 있습니다. → **10장 실행 한도와 순서**
+- ChatGPT·Pickle·Claude가 함께 모읍니다. **작업을 시작하기 전에 9장 조율 규칙(대기열 · `data/inbox/` · 열린 PR 확인)을 먼저 보고 겹치지 않는 항목만 고릅니다.**
 
 로컬 검사: `python tools/data/inbox.py validate` · 대기열 다시 만들기: `python tools/data/queue.py`
 
@@ -26,8 +27,8 @@
 
 ## 2. 공통 규칙
 
-- 파일 이름: `YYYY-MM-DD-<영문 소문자 출처>.json` (예: `2026-11-21-hana.json`, `2026-11-21-koreanair.json`). **출처(카드사·회사) 하나당 파일 하나.**
-- `collectedAt`: 수집한 날, `collector`: 도구 이름(`ChatGPT`).
+- 파일 이름: `YYYY-MM-DD-<영문 소문자 출처>.json` (예: `2026-11-21-hana.json`, `2026-11-21-koreanair.json`). **출처(카드사·회사) 하나당 파일 하나.** 같은 날 다른 에이전트도 모았다면 9장대로 뒤에 자기 접미사를 붙입니다(`2026-11-21-hana-pickle.json`).
+- `collectedAt`: 수집한 날, `collector`: 도구 이름(`ChatGPT`·`Pickle`·`Claude`).
 - 금액은 **원 단위 정수**: 3천원 → `3000`, 1.5만원 → `15000`, 30만원 이상 → `300000`. 비율·마일 같은 혜택 크기는 문자열(`"10%"`, `"1.5마일"`).
 - 날짜는 `YYYY-MM-DD`. 모르면 `null`, 목록이 없으면 `[]`. **추측·계산해서 채우지 않습니다.**
 - 출처 주소는 **공식 도메인**만(카드사·국제브랜드·호텔 체인·항공사·면세점). 블로그·커뮤니티·비교 사이트 금지(발급 캐시백 모음 3곳만 예외).
@@ -326,7 +327,37 @@
 - `changed`·`discontinued`는 `cardId`(`paymorevent/data/catalog-snapshot.json`의 `id`) 필수
 - 사이트에 바로 반영되지 않습니다. 쌓인 대기열은 사람이 "카드 상품 대기열 반영해 줘"라고 요청할 때 카드 DB에 넣습니다.
 
-## 9. 실행 한도와 순서 (매일 한 번, 끝까지 마치기)
+## 9. 멀티 에이전트(ChatGPT · Pickle · Claude) 중복 방지 및 조율 규칙
+
+같은 대기열을 여러 에이전트(ChatGPT 예약 작업 · Pickle · Claude)가 번갈아 가며 모읍니다. 같은 항목을 두 번 모으면 시간과 레코드를 버리고, 같은 이름의 파일이 겹치면 PR이 충돌합니다. **작업을 시작하기 전에 아래 셋을 확인하고, 겹치지 않는 항목만 고릅니다.**
+
+1. **대기열** `data/collect-queue.json` — `status`가 `todo`인 것만 고릅니다. `done`은 수집 완료, `valet-only`는 발레파킹만 넣어 둔 프로그램(라운지·공항 서비스가 남음)입니다. 파일 맨 위 `lastCollected`(종류별 최근 수집일)와 `nextStart`(종류별 다음 시작 key)에서 이어서 시작합니다.
+2. **받은편지함** `data/inbox/**` — 파일 이름과 그 안의 `queueKey`·`cardId`·`id`를 모두 봅니다. 대기열이 낡았을 수 있으므로(자동 갱신이 아직 안 돌았거나 실패) 대기열에 `todo`로 남아 있어도 inbox에 key가 있으면 이미 한 항목입니다.
+3. **열린 PR** — `gh pr list --state open --json number,title,headRefName,files`로 다른 에이전트가 지금 올려 둔 PR이 건드리는 파일 이름과 key를 봅니다. 그 PR이 다루는 항목은 이번에 빼고, 머지된 뒤 다음 실행에서 이어 갑니다.
+
+- 고르지 않고 건너뛴 항목은 PR 본문 '건너뜀'·'다음 시작점'에 대기열 key로 적습니다. 같은 곳에서 같은 실패(로그인 필요·스크립트로만 그려짐 등)를 다음 에이전트가 반복하지 않습니다.
+- 수집한 항목은 `card-terms`의 `cardId`·`queueKey`, `brand-services`의 `queueKey`에 **대기열 key 그대로** 적습니다. 빠뜨리면 수집했는데도 대기열에 `todo`로 남아 다음 실행에서 또 모읍니다(검사 로그에 `안내:` 줄로 나옵니다).
+
+### 에이전트별 파일·브랜치 이름
+
+| 에이전트 | 브랜치 | 파일 이름 |
+|---|---|---|
+| ChatGPT 예약 작업 | `ai/chatgpt/data-YYYY-MM-DD` | `YYYY-MM-DD-<출처>.json` |
+| Pickle | `ai/chatgpt/data-YYYY-MM-DD-pickle`, 같은 날 두 번째부터 `-pickle2`·`-pickle3` | `YYYY-MM-DD-<출처>-pickle.json`, `…-pickle2.json` |
+| Claude·그 밖의 에이전트 | `ai/<에이전트>/data-YYYY-MM-DD` | `YYYY-MM-DD-<출처>-<에이전트>.json` |
+
+- **Pickle은 브랜치·파일 이름에 반드시 `-pickle`을 붙이고, 다른 에이전트는 `-pickle`을 쓰지 않습니다.** 같은 날 같은 출처를 둘이 함께 모아도 파일이 겹치지 않습니다.
+- 접미사는 영문 소문자·숫자·하이픈만 씁니다(파일 이름 `YYYY-MM-DD-<영문 소문자 출처>.json`).
+- Pickle도 브랜치를 `ai/chatgpt/data-`로 시작하게 해 자동 머지 대상이 되게 하되, **커밋을 다 올린 뒤에 PR을 엽니다**(자동 머지는 마지막 커밋 10분 뒤에 봅니다).
+- 코드·문서를 고치는 PR(Pickle의 `ai/pickle/…` 등)은 자동 머지 대상이 아닙니다. 사람이 보고 머지합니다.
+
+### 대기열 갱신
+
+- `data/collect-queue.json`은 **손으로 고치지 않습니다.** `python tools/data/queue.py`가 `data/inbox/`·카드 DB(`paymorevent/data/catalog-snapshot.json`)·`hotels/valet.json`을 읽어 다시 만듭니다. inbox에 key가 있으면 `done`, 발레파킹에만 있으면 `valet-only`가 됩니다.
+- 수집 PR이 `main`에 머지되면 자동 머지(`tools/data/automerge.py`)가 대기열을 다시 만들어 `data/collect-queue.json`만 커밋합니다. 직접 돌릴 때는 `python tools/data/queue.py` 뒤에 `data/collect-queue.json`을 함께 커밋합니다.
+- 대기열 key보다 자세한 key(예: `hyundai-visa-infinite-the-black`)를 수집하면 대기열의 기본 key(`hyundai-visa-infinite`)도 `done`으로 표시됩니다.
+
+## 10. 실행 한도와 순서 (매일 한 번, 끝까지 마치기)
 
 **하루 할 일** (한국시간 기준, 위에서부터 순서대로)
 
@@ -349,7 +380,7 @@
 - 예산의 **80%**를 쓰면 새 출처를 열지 말고, 지금까지 만든 파일을 검사 규칙(2장·각 장 표)에 맞춰 다시 보고 PR을 올립니다. 못 한 순서는 다음 날 같은 순서로 이어서 합니다.
 - 한 출처에서 두 번 실패(안 열림·스크립트로만 그려짐·로그인 필요)하면 건너뛰고 PR 본문에 적습니다.
 - 끝내지 못한 항목은 PR 본문 '다음 시작점'에 대기열 key로 적습니다.
-- 대기열 `data/collect-queue.json`에서 **status가 `todo`이고, `data/inbox/` 아래 어떤 파일에도 그 key(`queueKey`·`cardId`·`id`)가 없는 것**만 고릅니다. 이렇게 하면 실행이 끊겨도 다음 번에 자연스럽게 이어집니다.
+- 대기열 `data/collect-queue.json`에서 **status가 `todo`이고, `data/inbox/` 아래 어떤 파일에도 그 key(`queueKey`·`cardId`·`id`)가 없고, 열린 PR도 건드리지 않는 것**만 고릅니다(9장). 이렇게 하면 실행이 끊겨도 다음 번에 자연스럽게 이어집니다.
 - `card-terms`의 `cardId`·`queueKey`, `brand-services`의 `queueKey`는 **대기열 key 그대로** 적습니다. 빠뜨리면 다음 날 같은 걸 또 수집합니다.
 - `valet-only`는 발레파킹만 손으로 넣어 둔 프로그램이라, 라운지·공항 서비스까지 채우러 다시 봐야 합니다.
 - PR은 커밋을 다 올린 뒤에 엽니다(검사를 통과하면 10분 뒤 자동 머지).
@@ -359,7 +390,7 @@
 - `paymorevent/data/catalog-snapshot.json`에 없는 이름이면 `new`, 공시실에 '판매중단'으로 표시되고 DB에 있으면 `discontinued`, 상품설명서 개정으로 혜택·연회비·전월실적이 바뀌었으면 `changed`.
 - 카드사: 신한카드 KB국민카드 삼성카드 현대카드 우리카드 하나카드 롯데카드 NH농협카드 BC카드
 
-## 10. 찾는 요령
+## 11. 찾는 요령
 
 **상품설명서·브랜드 서비스 안내 찾기**
 1. 대기열 `cards[].url`(카드 상세 페이지)을 열고 '상품설명서'·'상품안내장'·'국제브랜드 서비스' 링크(PDF)를 찾습니다. `termsUrl`이 있으면 그걸 먼저 엽니다.
@@ -408,9 +439,9 @@
 | Hyatt | https://world.hyatt.com/content/gp/ko/offers.html |
 
 
-## 11. PR 양식
+## 12. PR 양식
 
-- 브랜치 `ai/chatgpt/data-YYYY-MM-DD`, PR 하나. 제목: `data: 수집 YYYY-MM-DD (<오늘 한 일>)`
+- 브랜치·파일 이름은 9장 '에이전트별 파일·브랜치 이름'을 따릅니다(Pickle은 `-pickle` 접미사). PR 하나. 제목: `data: 수집 YYYY-MM-DD (<오늘 한 일>)`
 - 본문:
 
 ```
@@ -429,10 +460,10 @@
 ## 다음 시작점
 cards: kb-09246 부터 · brandPrograms: lotte-visa-platinum 부터
 
-작업 도구: ChatGPT 예약 작업
+작업 도구: ChatGPT 예약 작업 / Pickle / Claude
 ```
 
-## 12. 하지 말 것
+## 13. 하지 말 것
 
 - `data/inbox/` 밖의 파일 수정, 기존 inbox 파일 수정·삭제
 - 공식이 아닌 출처(블로그·커뮤니티·뉴스·비교 사이트)

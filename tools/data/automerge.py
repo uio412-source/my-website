@@ -147,6 +147,40 @@ def handle(pr: dict, dry: bool, min_age: float) -> str:
     return "merged"
 
 
+def refresh_queue(dry: bool) -> None:
+    """먹지 뒤 수집 대기열(data/collect-queue.json)을 다시 만들어 커밋합니다.
+
+    대기열이 낡으면 다음 에이전트(ChatGPT·Pickle·Claude)가 이미 모은 항목을 또 고릅니다
+    (docs/data-update.md 9장). 이 단계가 실패해도 먹지·배포에는 영향을 주지 않습니다.
+    """
+    if dry:
+        print("  [dry-run] 대기열 갱신 안 함")
+        return
+    try:
+        sh("git", "fetch", "--quiet", "--no-tags", "origin", "main")
+        sh("git", "checkout", "--quiet", "--force", "-B", "queue-refresh", "origin/main")
+        sh(sys.executable, "-I", "tools/data/queue.py")
+        if not sh("git", "status", "--porcelain", "--", "data/collect-queue.json").stdout.strip():
+            print("대기열: 바뀐 것 없음")
+            return
+        sh("git", "add", "data/collect-queue.json")
+        sh("git", "-c", "user.name=github-actions[bot]", "-c", "user.email=41898282+github-actions[bot]@users.noreply.github.com",
+           "commit", "--quiet", "-m", "data: 수집 대기열 자동 갱신")
+        for _ in range(3):
+            r = sh("git", "push", "--quiet", "origin", "HEAD:main", check=False)
+            if not r.returncode:
+                print("대기열: 다시 만들어 main에 커밋함")
+                return
+            sh("git", "fetch", "--quiet", "origin", "main", check=False)
+            if sh("git", "rebase", "--quiet", "origin/main", check=False).returncode:
+                sh("git", "rebase", "--abort", check=False)
+                print("대기열: 커밋은 만들었지만 main에 못 올림(rebase 충돌)")
+                return
+        print(f"대기열: 푸시 실패 — 다음 실행에서 다시 시도 ({(r.stdout + r.stderr).strip()[:300]})")
+    except Exception as err:  # 대기열 갱신 실패가 머지 결과를 가리지 않게
+        print(f"대기열: 갱신 실패(머지·배포에는 영향 없음) {err}")
+
+
 def main() -> int:
     args = sys.argv[1:]
     dry = "--dry-run" in args
@@ -166,6 +200,8 @@ def main() -> int:
             k = "blocked"
         if k in result:
             result[k].append(f"#{pr['number']} {pr['title']}")
+    # 먹지된 수집분이 대기열에 done으로 남도록 대기열을 다시 만듭니다(다른 에이전트가 또 모으지 않게)
+    refresh_queue(dry)
     if result["merged"] and not dry:
         # GITHUB_TOKEN으로 한 머지는 push 이벤트를 만들지 않으므로 배포를 직접 실행
         sh("gh", "api", "-X", "POST", f"repos/{REPO}/actions/workflows/deploy.yml/dispatches", "-f", "ref=main")
