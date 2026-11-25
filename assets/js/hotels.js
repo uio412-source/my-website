@@ -849,6 +849,14 @@
       return rows;
     };
 
+    // 조건 줄: 위 예약·투숙 기간을 되풀이만 하는 줄은 빼고 2줄까지, 나머지는 '조건 더 보기'로 접음
+    const DATE_ONLY = /\d{4}년\s*\d{1,2}월\s*\d{1,2}일(?:\s*\([^)]*\))?\s*(?:까지|부터)?\s*(?:예약|투숙|체크아웃|체크인)?/g;
+    const pointList = (e) => {
+      const pts = e.points.filter((x) => x.replace(DATE_ONLY, '').replace(/[\s,·.~\-]/g, '').length > 0);
+      if (!pts.length) return '';
+      const li = (xs) => xs.map((x) => `<li>${esc(x)}</li>`).join('');
+      return `<ul class="hx-list">${li(pts.slice(0, 2))}</ul>` + (pts.length > 2 ? `<details class="hx-more"><summary>조건 ${pts.length - 2}개 더 보기</summary><ul class="hx-list">${li(pts.slice(2))}</ul></details>` : '');
+    };
     function draw() {
       const shown = events.filter((e) => current === 'all' || groupOf(e) === current);
       const soon = shown.filter((e) => e.endsAt && dday(e.endsAt) <= 14).length;
@@ -861,8 +869,8 @@
           <p class="hx-benefit">${esc(e.benefit)}</p>
           <div class="hx-tags"><span>${esc(e.kind)}</span>${e.register ? '<span class="reg">사전 등록 필요</span>' : ''}<span>${esc(e.region)}</span></div>
           <dl class="hx-period">${period(e).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
-          <ul class="hx-list">${e.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
-          <a class="hx-src" href="${esc(e.url)}" target="_blank" rel="noopener">출처 · 공식 페이지 ↗</a>
+          ${pointList(e)}
+          <a class="hx-src" href="${esc(e.url)}" target="_blank" rel="noopener">공식 페이지 ↗</a>
         </article>`;
       }).join('')}</div>` : '<div class="wl-rows"><p class="wl-empty">진행 중인 이벤트가 없습니다.</p></div>';
     }

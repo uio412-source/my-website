@@ -52,6 +52,9 @@
 @media (hover: hover) { .hv-more:hover { border-color: var(--color-primary); } }
 .hv-pend { margin: 8px 2px 0; font-size: .72rem; color: var(--color-muted); line-height: 1.5; }
 .hv-pend:empty { display: none; }
+.hv-pend summary { cursor: pointer; font-weight: 700; }
+.hv-pend details[open] summary { margin-bottom: 4px; }
+.hv-add.more { color: var(--color-primary); border-style: dashed; }
 
 /* ② 실적 체크 */
 .hv-mine { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
