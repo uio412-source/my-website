@@ -1,5 +1,6 @@
 import {sitePath} from '@/lib/site-path';
 import type {Card} from '@/lib/catalog-types';
+import {normalizeBrands} from '@/lib/network-brand';
 
 // Content hash of the two files below, set by vite.config.ts so a new build
 // never mixes a cached card-list.json with a fresh card-search.json.
@@ -26,7 +27,8 @@ export function readCardSummaries() {
   summaries ??= readData<{cards: Card[]}>('card-list.json', '카드 목록을 불러오지 못했습니다.')
     .then(data => {
       if (!Array.isArray(data.cards)) throw new Error('카드 목록 형식이 올바르지 않습니다.');
-      return data.cards.map(card => ({...omitted(), ...card}));
+      // 브랜드 이름은 하나로(제이씨비 → JCB, 유피아이·UPI → UnionPay, 신한 S& → American Express …, lib/network-brand.ts)
+      return data.cards.map(card => ({...omitted(), ...card, brands: normalizeBrands(card.brands)}));
     })
     .catch((error: unknown) => {
       summaries = undefined;
@@ -59,5 +61,5 @@ export async function readCard(id: string) {
   if (!response.ok) throw new Error('카드 상세를 불러오지 못했습니다.');
   const card = await response.json() as Card;
   if (card.id !== id) throw new Error('카드 상세 형식이 올바르지 않습니다.');
-  return card;
+  return {...card, brands: normalizeBrands(card.brands)};
 }

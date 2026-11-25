@@ -29,6 +29,7 @@
     - 상품권(상테크)·관리비: 혜택 O + 기본 혜택(관리비는 관리비 전용 할인도), 또는 실적 O + 채울 전월실적·연간 실적 혜택. 가입 대상 제한 카드(`RESTRICTED`)는 뺌. 관리비 전용 할인 → 혜택 O → 실적만 O 순서로 정렬
     - 호텔 등급: 호텔 멤버십 등급을 주는 카드만(`HOTEL_TIERS`, Mr. Hotels `hotels.js`의 `P.*.cards`와 같은 내용이니 같이 고치세요)
     - 혜자카드·교통·쇼핑·커피 필터는 없앴습니다(검색어로는 그대로 찾힘).
+  - **카드 브랜드 이름 통일**(`lib/network-brand.ts`): 카드 DB의 `brands`는 카드사 표기 그대로라(제이씨비·유피아이·UPI·Union Pay(K-WORLD)·S&·URS·더블류 …) 앱이 카드를 읽을 때(`pages/data.ts`·`main.tsx`) 결제망 이름 하나로 바꿉니다: Mastercard · Visa · American Express(신한 S& 포함) · JCB(신한 URS·NH 더블류 = JCB 네트워크) · UnionPay(유피아이·UPI·K-WORLD) · Diners Club · 국내전용(우리카드 'BC' 포함). BC Global·L·Global은 그대로. 연회비 줄의 브랜드 이름도 `brandText`로 같게 씁니다. 새 표기가 생기면 `networkBrand`에 넣으세요.
   - **카드 목록 데이터**: 원본은 `data/catalog-snapshot.json`이고, 앱은 빌드 때 여기서 만든 `card-list.json`(목록·상세 공통)·`card-search.json`(목록 검색)만 받습니다. 요약 카드에서 새 필드를 읽으려면 `scripts/card-list.mjs`의 `LIST_FIELDS`에 추가하세요.
   - **사이트 전환 메뉴**(로고 옆 ▾): Mr. Stocks·Hotels·Travel은 `assets/js/main.js`, Mr. Cards는 `components/customer-shell.tsx`에 있습니다. 문구를 바꾸거나 사이트를 추가하면 두 곳을 같이 고치세요.
 - **Mr. Hotels**: `hotels/` 폴더, `/my-website/hotels/`에 배포. 메뉴는 **호텔 · 이벤트 · 발레파킹** 세 가지(`index.html` · `events.html` · `valet.html`, 예전 `list.html`은 `index.html`로 넘어감)이며 헤더·하단 탭바는 Mr. Stocks와 같은 마크업을 각 HTML에 복사해 씁니다. 화면은 `assets/js/hotels.js`(body의 `data-page`로 분기), 스타일은 `portfolio.css`의 `wl-*`(탭·목록·타일)에 `assets/css/hotels.css`를 더합니다.

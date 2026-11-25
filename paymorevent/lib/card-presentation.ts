@@ -1,5 +1,6 @@
 import {sitePath} from './site-path';
 import type { Card, Benefit } from "./catalog-types";
+import {brandText} from './network-brand';
 
 export const cardPath = (id:string) => sitePath(`cards/${encodeURIComponent(id)}/`);
 export const moneyText = (value:number|null) => value===null?"미확인":value===0?"없음":`${value.toLocaleString("ko-KR")}원`;
@@ -32,25 +33,10 @@ export function annualFeeRows(card:Card):{label:string;amount:string}[] {
   });
   return rows.map(row=>{
     const index=row.search(/\d[\d,]*(?:\.\d+)?\s*(?:만\s*원|천\s*원|원)/);
-    if(index<0)return {label:"연회비 안내",amount:row};
-    const label=row.slice(0,index).replace(/[\s/:：]+$/g,"").trim();
+    if(index<0)return {label:"연회비 안내",amount:brandText(row)};
+    const label=brandText(row.slice(0,index).replace(/[\s/:：]+$/g,"").trim());
     return {label:label||"연회비",amount:row.slice(index).trim()};
   });
 }
 
-export type NetworkBrand={key:string;label:string;image:string|null};
-export function networkBrand(value:string):NetworkBrand {
-  const key=value.toLowerCase().replace(/[\s·_-]/g,"");
-  if(/master|마스터/.test(key))return {key:"mastercard",label:"Mastercard",image:"/brands/mastercard.svg"};
-  if(/visa|비자/.test(key))return {key:"visa",label:"Visa",image:"/brands/visa.svg"};
-  if(/unionpay|은련|유니온페이|유피아이|upi|kworld/.test(key))return {key:"unionpay",label:"UnionPay",image:"/brands/unionpay.png"};
-  if(/amex|americanexpress|아멕스/.test(key))return {key:"amex",label:"American Express",image:"/brands/amex.png"};
-  if(/jcb|제이씨비/.test(key))return {key:"jcb",label:"JCB",image:"/brands/jcb.png"};
-  if(/diners|다이너스/.test(key))return {key:"diners",label:"Diners Club",image:"/brands/diners.png"};
-  if(/국내전용|^local$/.test(key))return {key:"domestic",label:"국내전용",image:"/brands/domestic.svg"};
-  return {key:value,label:value,image:null};
-}
-
-export function networkBrands(values:string[]) {
-  return [...new Map(values.map(v=>{const b=networkBrand(v);return [b.key,b] as const;})).values()];
-}
+export {networkBrand, networkBrands, type NetworkBrand} from './network-brand';
