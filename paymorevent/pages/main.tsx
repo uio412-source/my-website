@@ -4,6 +4,7 @@ import {SiteHeader, SiteFooter} from '@/components/customer-shell';
 import type {Card, Offer} from '@/lib/catalog-types';
 import {sitePath} from '@/lib/site-path';
 import {readCard, readCardSummaries} from './data';
+import {normalizeBrands} from '@/lib/network-brand';
 import '@/app/mr-cards.css';
 import '@/app/mr-cards-dark.css';
 import '@/app/mc.css';
@@ -18,7 +19,7 @@ const CardDetail = lazy(loadCardDetail);
 const EventDetail = lazy(loadEventDetail);
 let eventsRequest: Promise<Offer[]> | undefined;
 const readEvents = () => eventsRequest ??= import('@/data/events.json').then(module => module.default as Offer[]);
-const readHomeCards = () => import('@/data/home-cards.json').then(module => module.default as Card[]);
+const readHomeCards = () => import('@/data/home-cards.json').then(module => (module.default as Card[]).map(c => ({...c, brands: normalizeBrands(c.brands)})));
 const catalogRoute = /^(cards|events)\/([a-zA-Z0-9][a-zA-Z0-9._-]*)\/?$/;
 
 function Status({message}: {message: string}) {
