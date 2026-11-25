@@ -1,0 +1,34 @@
+{
+  "type": "card-events",
+  "issuer": "삼성카드",
+  "collectedAt": "2026-11-25",
+  "collector": "ChatGPT",
+  "listUrls": [
+    "https://www.samsungcard.com/personal/event/ing/UHPPBE1403M0.jsp"
+  ],
+  "events": [
+    {
+      "id": "samsung-202611-recurring-bills-link-cashback",
+      "kind": "card",
+      "title": "최대 2만원 혜택",
+      "summary": "생활요금 정기결제 최대 1만5천원 캐시백과 5천원 상품권",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "삼성 개인신용카드 본인회원이 행사 기간에 LINK. 가족카드 납부액은 본인에게 합산",
+        "2026-12-02~2027-01-31 아파트관리비·전화·도시가스·4대 사회보험·전기 납부 건",
+        "항목별 3천원 이상 납부 시 3천원 캐시백. 최근 6개월 내 납부한 항목은 제외",
+        "2개 이상 정기결제 합계 1만원 이상, 그중 캐시백 적격 1건 이상이면 모바일상품권 5천원",
+        "캐시백은 납부 다음 달 또는 다다음 달 결제대금 차감. 상품권은 2027-02-11 발송",
+        "다른 정기결제 캐시백 행사와 중복 불가. 혜택 제공 시점까지 대상카드 보유"
+      ],
+      "url": "https://www.samsungcard.com/personal/common/commonWcms.jsp?url=%2Fevent%2Flink_benefit_v2%2F3761246_15274.html",
+      "cashbackAmount": 15000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    }
+  ]
+}

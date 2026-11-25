@@ -1,0 +1,33 @@
+{
+  "type": "card-events",
+  "issuer": "현대카드",
+  "collectedAt": "2026-11-25",
+  "collector": "ChatGPT",
+  "listUrls": [
+    "https://www.hyundaicard.com/cpb/ev/CPBEV0101_06.hc"
+  ],
+  "events": [
+    {
+      "id": "hyundai-202610-oliveyoung-plus-benefits",
+      "kind": "card",
+      "title": "올리브영 현대카드 Plus 최대 13만 6천원 상당 혜택",
+      "summary": "올리브영 온라인몰 7만원 쿠폰팩과 올영PAY 첫 결제 3만원 할인",
+      "category": "기타",
+      "startsAt": "2026-10-29",
+      "endsAt": "2026-11-27",
+      "entryRequired": false,
+      "cards": [
+        "올리브영 현대카드 Plus"
+      ],
+      "conditions": [
+        "쿠폰팩은 2026-11-27까지. 2026-04-29~10-28 모든 현대카드 결제 이력이 없는 대상 카드 회원",
+        "온라인몰에서 4만원 초과 시 4만원 쿠폰, 3만원 초과 시 3만원 쿠폰 각 1매",
+        "2026-11-30까지 등록한 올영PAY로 3만1천원 이상 첫 결제하면 3만원 할인. 재등록 제외",
+        "카드와 올리브영 회원 정보가 일치하고 지급 시점에 카드가 정상 상태여야 함"
+      ],
+      "url": "https://www.hyundaicard.com/cpb/ev/CPBEV0101_06.hc?bnftWebEvntCd=B41045&searchWord=",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ]
+}

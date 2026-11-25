@@ -1,0 +1,54 @@
+{
+  "type": "card-events",
+  "issuer": "하나카드",
+  "collectedAt": "2026-11-25",
+  "collector": "ChatGPT",
+  "listUrls": [
+    "https://m.hanacard.co.kr/MPAEVT100M.web"
+  ],
+  "events": [
+    {
+      "id": "hana-202611-narasarang-coupang-eats",
+      "kind": "card",
+      "title": "쿠팡이츠 최대 2만 5천원 혜택받기",
+      "summary": "신규 발급 1만원 기프트카드, 쿠팡이츠 쿠폰과 와우 구독료 환급",
+      "category": "기타",
+      "startsAt": "2026-11-23",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [
+        "하나 나라사랑카드(체크)"
+      ],
+      "conditions": [
+        "행사 페이지에서 하나 나라사랑카드를 신규 발급한 하나페이 회원에게 기프트카드 1만원, 2027-01-15까지",
+        "쿠폰을 내려받고 쿠페이에 등록한 하나카드로 배달 결제. 신규·장기 미이용 1만원, 기존 3만원 이상 주문 1천원",
+        "와우 구독료 7,890원 정상 결제 시 신규 발급 고객은 월 1회, 최대 3개월 환급. 결제 다음 달 말까지 지급",
+        "군 급여를 이체하는 나라사랑카드의 기본 혜택은 쿠팡이츠 결제액의 20%, 월 5천원 한도",
+        "쿠폰 결제 시 BC·법인·선불·충전·기프트카드 제외. 기프트카드 대상은 추가·재발급 제외"
+      ],
+      "url": "https://m.hanacard.co.kr/MKEVT1010M.web?EVN_SEQ=60675",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "hana-202611-agoda-unionpay-hotel-discount",
+      "kind": "card",
+      "title": "아고다 국내외 숙소 최대 25% 할인",
+      "summary": "유니온페이 등급별 아고다 대상 숙소 6%·18%·25% 할인",
+      "category": "해외/여행",
+      "startsAt": "2026-11-20",
+      "endsAt": "2027-01-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "하나 유니온페이 개인 신용·체크카드 보유 고객. 투숙 2026-11-20~2027-03-31",
+        "아고다 유니온페이 전용 페이지에서 지정 할인코드를 입력하고 UnionPay로 USD 결제",
+        "다이아몬드 25%·예약당 최대 USD 100, 플래티늄 18%·예약당 최대 USD 50, 일반 6%·한도 없음",
+        "프로모션 대상 숙소만 적용. 무이자할부 제외, 예산 소진 시 조기 종료"
+      ],
+      "url": "https://m.hanacard.co.kr/MKEVT1010M.web?EVN_SEQ=60652",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ]
+}
