@@ -5,6 +5,7 @@ import {sitePath} from '@/lib/site-path';
 import {SiteHeader, SiteFooter} from '@/components/customer-shell';
 import {CardArt} from '@/components/mc-ui';
 import {CompareDock, CompareToggle} from '@/components/compare';
+import {MineToggle} from '@/components/mine';
 import {benefitAt, firstSpend, monthlyMax, similarCards, spendShort} from '@/lib/card-value';
 import {rememberCard} from '@/lib/my-cards';
 import {activeOffer, cardFamilyKey, dedupeOffers, eventPath, formatPicking, linkedOffers, pickingExcluded, pickingOptions, rewardValue} from '@/lib/catalog-model';
@@ -184,6 +185,7 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
           <a className="mc-btn primary" href={card.sourceUrl} target="_blank" rel="noopener noreferrer">카드사에서 신청 ↗</a>
           {card.termsUrl && <a className="mc-btn" href={card.termsUrl} target="_blank" rel="noopener noreferrer">상품설명서</a>}
           <CompareToggle id={card.id}/>
+          <MineToggle id={card.id} family={variants.map(v => v.id)}/>
           <ShareButton title={title}/>
         </div>
       </div>

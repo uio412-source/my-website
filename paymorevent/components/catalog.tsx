@@ -1,5 +1,5 @@
 "use client";
-// Mr. Cards 목록 화면: 카드상품 검색 · 발급이벤트 · 카드사 이벤트
+// Mr. Cards 목록 화면: 카드상품 검색 · 발급이벤트 · 카드사 이벤트 · 내 혜택
 import {useDeferredValue, useEffect, useMemo, useState} from 'react';
 import {readSearchableCards} from '@/pages/data';
 import type {Card, Offer} from '@/lib/catalog-types';
@@ -17,16 +17,18 @@ import {cardPath} from '@/lib/card-presentation';
 import {valetRules} from '@/lib/hotel-valet';
 import {sitePath} from '@/lib/site-path';
 import {CompareDock, CompareToggle} from '@/components/compare';
+import {MineView} from '@/components/mine';
 import {RECENT_KEY, clearRecent, useStoredIds} from '@/lib/my-cards';
 import {spendShort} from '@/lib/card-value';
 import {ISSUER_FILTERS, feeLabel, headlineAmount, highlights, issuerFilterLabel, RESTRICTED, searchScore, today, ymd} from '@/lib/mc-text';
 import sources from '@/data/personal-benefit-sources.json';
 
-type Tab = 'cards' | 'cashback' | 'events';
+type Tab = 'cards' | 'cashback' | 'events' | 'mine';
 const SECTIONS: Record<Tab, {title: string; sub: string}> = {
   cards: {title: '카드상품 검색', sub: ''},
   cashback: {title: '발급이벤트', sub: '신규 발급 캐시백'},
   events: {title: '카드사 이벤트', sub: '진행 중인 이벤트'},
+  mine: {title: '내 혜택', sub: '내 카드로 지금 받을 수 있는 이벤트'},
 };
 const THEMES = ['무실적', 'K패스', '통신', '해외', '마일리지', '라운지', '마티나골드', '호텔 등급', '호텔 발레', '상품권 가능', '관리비', '국세', '지방세'] as const;
 /** 이 필터들은 '왜 해당되는지'를 카드 줄에 한 줄로 보여 줌 (예: "혜택 O · 기본 1% 적립") */
@@ -43,14 +45,15 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
   const [cards, setCards] = useState(initialCards);
   const [loadFailed, setLoadFailed] = useState(false);
   const [attempt, setAttempt] = useState(0);
+  const [fullCards, setFullCards] = useState(false); // 처음엔 첫 화면용 카드 일부만, 전체 목록은 뒤이어 받음
   useEffect(() => {
     let on = true;
-    readSearchableCards().then(d => on && setCards(d), () => on && setLoadFailed(true));
+    readSearchableCards().then(d => { if (on) { setCards(d); setFullCards(true); } }, () => on && setLoadFailed(true));
     return () => { on = false; };
   }, [attempt]);
   const events = useMemo(() => dedupeOffers(initialEvents), [initialEvents]);
 
-  const initialTab = (): Tab => { const h = location.hash.slice(1); return h === 'cashback' || h === 'events' ? h : 'cards'; };
+  const initialTab = (): Tab => { const h = location.hash.slice(1); return h === 'cashback' || h === 'events' || h === 'mine' ? h : 'cards'; };
   const [tab, setTab] = useState<Tab>(initialTab);
   useEffect(() => {
     const sync = () => setTab(initialTab());
@@ -69,7 +72,7 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
       {tab !== 'cards' && !eventsLoading && <Freshness events={events} kind={tab === 'cashback' ? 'cashback' : 'card'}/>}
       {tab !== 'cards' && (eventsLoading
         ? <Empty title="이벤트를 불러오고 있어요…"/>
-        : tab === 'cashback' ? <CashbackView events={events}/> : <EventsView events={events} cards={cards}/>)}
+        : tab === 'cashback' ? <CashbackView events={events}/> : tab === 'mine' ? <MineView cards={cards} events={events} ready={fullCards}/> : <EventsView events={events} cards={cards}/>)}
     </main>
     <SiteFooter/>
   </div>;

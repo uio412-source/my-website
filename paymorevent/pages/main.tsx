@@ -73,7 +73,7 @@ function Home() {
     const fail = () => { if (mounted) setFailed(true); };
     const first = Promise.all([readHomeCards(), loadCatalog()]);
     first.then(([data]) => { if (mounted) setCards(data); }, fail);
-    (/^#(events|cashback)$/.test(location.hash) ? readEvents() : first.then(readEvents))
+    (/^#(events|cashback|mine)$/.test(location.hash) ? readEvents() : first.then(readEvents))
       .then(data => { if (mounted) setEvents(data); }, fail);
     return () => { mounted = false; };
   }, []);

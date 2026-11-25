@@ -36,5 +36,6 @@ export {default as Smartphone} from "lucide-react/dist/esm/icons/smartphone.mjs"
 export {default as Sparkles} from "lucide-react/dist/esm/icons/sparkles.mjs";
 export {default as Ticket} from "lucide-react/dist/esm/icons/ticket.mjs";
 export {default as TriangleAlertIcon} from "lucide-react/dist/esm/icons/triangle-alert.mjs";
+export {default as Wallet} from "lucide-react/dist/esm/icons/wallet.mjs";
 export {default as XIcon} from "lucide-react/dist/esm/icons/x.mjs";
 export {default as X} from "lucide-react/dist/esm/icons/x.mjs";

@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState, type MouseEvent} from 'react';
-import {BadgePercent, CreditCard, Ticket} from 'lucide-react';
+import {BadgePercent, CreditCard, Ticket, Wallet} from 'lucide-react';
 import {sitePath} from '@/lib/site-path';
 
 // Mr. Stocks와 같은 틀: 위는 한 줄 헤더(로고 · 메뉴), 휴대폰은 하단 탭바
@@ -7,6 +7,7 @@ export const SECTIONS = [
   {id: 'cards', label: '카드상품 검색', Icon: CreditCard},
   {id: 'cashback', label: '발급이벤트', Icon: BadgePercent},
   {id: 'events', label: '카드사 이벤트', Icon: Ticket},
+  {id: 'mine', label: '내 혜택', Icon: Wallet},
 ] as const;
 
 type NavProps = {current?: string; onNav?: (id: string) => void};
@@ -30,7 +31,7 @@ function useNav({current, onNav}: NavProps) {
 // Mr. 사이트 전환 (Stocks·Hotels·Travel은 assets/js/main.js에서 같은 메뉴를 만듦)
 const SITES = [
   {id: 'stocks', name: 'Stocks', desc: '줍줍 차트 · 관심종목 · 배당', href: () => sitePath('../ungjup.html')},
-  {id: 'cards', name: 'Cards', desc: '카드상품 · 발급이벤트 · 카드사 이벤트', href: () => sitePath()},
+  {id: 'cards', name: 'Cards', desc: '카드상품 · 이벤트 · 내 혜택', href: () => sitePath()},
   {id: 'hotels', name: 'Hotels', desc: '호텔 지도 · 등급표 · 이벤트 · 발레파킹', href: () => sitePath('../hotels/')},
   {id: 'travel', name: 'Travel', desc: '해외여행 혜택 · 여행지 · 여행준비', href: () => sitePath('../travel/')},
 ] as const;
