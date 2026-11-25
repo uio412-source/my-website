@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-25 22:32 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-25 22:35 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,7 @@ _자동 생성 2026-11-25 22:32 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#114](https://github.com/uio412-source/my-website/pull/114) | Claude | Mr. Travel 텍스트 정리: 원문 요약 문장 빼고 목록은 더 보기로 | 2026-11-25 22:32 | 7파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳 | 머지 |
 | [#113](https://github.com/uio412-source/my-website/pull/113) | Claude | 광고성 이벤트 판단 보강 — Mr. Cards 전체와 Mr. Travel에서 빼기 | 2026-11-25 22:27 | 14파일 · paymorevent/ 5 · docs/ 3 · tools/travel … | 머지 |
 | [#112](https://github.com/uio412-source/my-website/pull/112) | Claude | docs: Claude 잠금 — 광고성 이벤트·전체 사이트 텍스트 정리 작업 중 | 2026-11-25 22:22 | 3파일 · data/ 2 · docs/ 1 | 머지 |
 | [#111](https://github.com/uio412-source/my-website/pull/111) | Claude | 도구: 현황판 agent_sync.py — gh pr list가 막히면 REST로 PR 이력 읽기 | 2026-11-25 22:12 | 5파일 · data/ 2 · docs/ 2 · tools/data 1 | 머지 |
@@ -59,7 +60,6 @@ _자동 생성 2026-11-25 22:32 KST · `python tools/data/agent_sync.py` · 기�
 | [#91](https://github.com/uio412-source/my-website/pull/91) | Pickle | Mr. Cards: 하나 CLUB H가 '상품권 가능'으로 분류되던 오류 수정 | 2026-11-25 10:31 | 4파일 · paymorevent/ 2 · docs/ 1 · 루트 1 | 머지 |
 | [#92](https://github.com/uio412-source/my-website/pull/92) | Pickle | Mr. Stocks: 차트 상단 요약 칸(줍줍LV·현재가·RSI·200일선) 삭제 | 2026-11-25 10:31 | 3파일 · assets/ 2 · 루트 1 | 머지 |
 | [#90](https://github.com/uio412-source/my-website/pull/90) | Pickle | Mr. Stocks: 명언 배너를 차트(ungjup.html)에만 남김 | 2026-11-25 10:23 | 4파일 · 루트 3 · docs/ 1 | 머지 |
-| [#89](https://github.com/uio412-source/my-website/pull/89) | Pickle | Mr. Stocks: 명언 배너에 말한 사람 사진 추가 | 2026-11-25 10:16 | 10파일 · assets/ 8 · docs/ 1 · 루트 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -75,9 +75,7 @@ _6시간이 넘은 잠금은 이미 끝난 작업일 수 있습니다. 내 것�
 
 ### 열린 PR
 
-| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
-|---|---|---|---|---|---|
-| [#114](https://github.com/uio412-source/my-website/pull/114) | Claude | `ai/claude/travel-text-cleanup` | 2026-11-25 22:31 | 7파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳 | Mr. Travel 텍스트 정리: 원문 요약 문장 빼고 목록은 더 보기로 |
+_열린 PR이 없습니다._
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-25)
 
@@ -93,7 +91,7 @@ _6시간이 넘은 잠금은 이미 끝난 작업일 수 있습니다. 내 것�
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #99 data: 수집 2026-11-25 (BC 모두의카드 실적 … | 2026-11-25 15:09 | 0건 |
 | ChatGPT Dot | **없음 — 만들어 주세요** | - | - | 0건 |
-| Claude | `data/agent-notes/claude.json` | #113 광고성 이벤트 판단 보강 — Mr. Cards 전체와 Mr.… | 2026-11-25 22:27 | 1건 |
+| Claude | `data/agent-notes/claude.json` | #114 Mr. Travel 텍스트 정리: 원문 요약 문장 빼고 목록… | 2026-11-25 22:32 | 1건 |
 | Pickle | `data/agent-notes/pickle.json` | #109 fix: 발레파킹 '확인 중' 목록에서 해결된 우리카드 항목… | 2026-11-25 19:56 | 2건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)

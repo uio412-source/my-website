@@ -24,6 +24,7 @@ const brandShort = (b) => b.replace(/^American Express /, '아멕스 ').replace(
 const parkShort = (p) => p.parking.replace(/ · 초과 유료$/, '');
 
 let data, cards = [], byKey = {};
+const othersAll = new Set(); // '다른 카드'를 다 펼친 호텔
 let mine = {};          // 카드키 → {brand, met}
 let issuer = '';
 let gu = '';
@@ -121,7 +122,8 @@ function renderPick() {
     + (rest > 0 ? `<button type="button" class="hv-more" data-act="all">${esc(issuer.replace(/카드$/, ''))} 카드 ${rest}종 더 보기</button>`
       : showAll && !terms && sorted.length > LIMIT + 2 ? '<button type="button" class="hv-more" data-act="fold">접기</button>' : '');
   const pend = data.pending || [];
-  $('pend').innerHTML = pend.length ? `제휴 호텔 확인 중: ${pend.map((p) => esc(p.name)).join(', ')}` : '';
+  // 확인 중인 카드는 이름을 다 늘어놓지 않고 개수만(눌러서 펼침)
+  $('pend').innerHTML = pend.length ? `<details><summary>제휴 호텔 확인 중인 카드 ${pend.length}종</summary>${pend.map((p) => esc(p.name)).join(' · ')}</details>` : '';
 }
 
 // ---------- ② 실적 체크 ----------
@@ -259,8 +261,11 @@ function detail({h, closed, mineAt, any}, has) {
     ${terms(r.p, h, r.extra)}</li>`;
   }).join('');
   const others = any.filter((c) => !mine[c.key]);
-  const othersHtml = others.length ? `<div class="hv-dh">${has ? '다른 카드' : '이 호텔에서 되는 카드'} <small>내 카드면 눌러서 고르세요</small></div>
-    <div class="hv-addchips">${others.map((c) => `<button type="button" class="hv-add" data-card="${esc(c.key)}">+ ${esc(short(c.name))}</button>`).join('')}</div>` : '';
+  // 되는 카드가 40종 넘게 나오는 호텔이 있어 처음엔 8종만, 나머지는 '+N종'
+  const OTHERS = 8, allOthers = othersAll.has(h.id);
+  const othersShown = allOthers ? others : others.slice(0, OTHERS);
+  const othersHtml = others.length ? `<div class="hv-dh">${has ? '다른 카드' : '이 호텔에서 되는 카드'} <small>${others.length}종 · 내 카드면 눌러서 고르기</small></div>
+    <div class="hv-addchips">${othersShown.map((c) => `<button type="button" class="hv-add" data-card="${esc(c.key)}">+ ${esc(short(c.name))}</button>`).join('')}${others.length > OTHERS ? `<button type="button" class="hv-add more" data-others="${esc(h.id)}">${allOthers ? '접기' : `+${others.length - OTHERS}종 더`}</button>` : ''}</div>` : '';
   const dir = h.directory?.[0];
   const link = dir ? `<a class="hv-maplink" href="./?at=${encodeURIComponent('한국')}/${encodeURIComponent('서울')}/${encodeURIComponent(h.district)}&h=${encodeURIComponent(dir)}">호텔 지도에서 등급 혜택 보기 →</a>` : '';
   return `<div class="hv-detail">${note}
@@ -538,6 +543,8 @@ document.addEventListener('click', (e) => {
   if (iss) { issuer = iss.dataset.iss; showAll = false; renderPick(); return; }
   if (t.closest('[data-act="all"]')) { showAll = true; renderPick(); return; }
   if (t.closest('[data-act="fold"]')) { showAll = false; renderPick(); return; }
+  const om = t.closest('[data-others]');
+  if (om) { const id = om.dataset.others; othersAll.has(id) ? othersAll.delete(id) : othersAll.add(id); renderResult(); return; }
   const card = t.closest('[data-card]');
   if (card) { toggleCard(card.dataset.card); return; }
   const rm = t.closest('[data-remove]');
@@ -607,9 +614,7 @@ async function load() {
   if (open) $('only').checked = false;
   map.init(geo);
   $('sub').textContent = `서울 호텔 ${data.hotels.length}곳 · 카드 ${cards.length}종 · 카드사 공식 안내 ${data.updatedAt.slice(2).replace(/-/g, '.')} 확인`;
-  $('note').textContent = '카드사 공식 안내(상품설명서·혜택 안내)에 나온 서울 제휴 호텔만 정리했어요. 무료 시간·횟수는 카드사 기준이고, 만차·행사 때는 호텔 사정으로 제한될 수 있어요. '
-    + '‘조건 없이 무료’는 상품설명서·브랜드 서비스 안내에 호텔 이용 없이 무료라고 적힌 곳만이에요(전월실적은 채워야 함). 당일 투숙·식음료 매장 이용이 필요한 곳은 ‘이용 시 무료’로 보여요. '
-    + '지도 위치는 호텔 주소 기준 대략 위치예요(지도: Natural Earth, 구 경계: 통계청). 고른 카드와 실적 체크는 이 브라우저에만 저장돼요.';
+  $('note').textContent = '카드사 공식 안내 기준 · 만차·행사 때는 제한될 수 있어요 · 지도 위치는 대략(Natural Earth·통계청) · 고른 카드는 이 브라우저에만 저장';
   renderAll();
   if (open) {
     map.select(open, {zoom: true});
