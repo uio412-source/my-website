@@ -1,0 +1,32 @@
+{
+  "agent": "Claude",
+  "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
+  "updatedAt": "2026-11-25T19:40:00+09:00",
+  "lock": null,
+  "runs": [
+    {
+      "at": "2026-11-25T19:13:00+09:00",
+      "kind": "code",
+      "pr": 100,
+      "summary": "Mr. Cards '내 혜택' 메뉴(#mine) — 내 카드 등록·대상 이벤트 모아 보기 (paymorevent 14파일 + AGENTS.md·roadmap)",
+      "queueKeys": []
+    },
+    {
+      "at": "2026-11-25T13:58:00+09:00",
+      "kind": "code",
+      "pr": 98,
+      "summary": "발레파킹 카드 이름 묶기(cardNorm)·카드 DB 연결(catalogId) 보강, inbox.py card_key/card_finder 추가 (카드 90→79종)",
+      "queueKeys": []
+    }
+  ],
+  "skipped": [
+    {
+      "at": "2026-11-25",
+      "target": "발레파킹 — 같은 카드사·브랜드·등급 안내문이 여러 개일 때 화면에 하나만 남던 문제",
+      "status": "resolved",
+      "reason": "merge_valet이 issuer+brand+tier가 같으면 무조건 덮어써서 KB Mastercard World가 39곳짜리(BeV III) 대신 13곳짜리만 표시됐음",
+      "retry": "대상 호텔이 더 많은 안내문을 남기고 카드별로 자기 안내의 호텔만 표시하도록 수정",
+      "ref": "#86 · #98에서 해결"
+    }
+  ]
+}

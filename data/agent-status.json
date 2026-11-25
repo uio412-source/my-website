@@ -1,0 +1,802 @@
+{
+  "generatedAt": "2026-11-25T19:32:51+09:00",
+  "repo": "uio412-source/my-website",
+  "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
+  "prFresh": true,
+  "agents": {
+    "ChatGPT": {
+      "noteFile": "data/agent-notes/chatgpt.json",
+      "role": "ChatGPT 예약 작업·Dot — 데이터 수집(data/inbox) 담당. 브랜치 ai/chatgpt/data-*, 파일 YYYY-MM-DD-<출처>.json(접미사 없음).",
+      "updatedAt": "2026-11-25T19:40:00+09:00",
+      "lock": null,
+      "lastMergedPR": {
+        "number": 99,
+        "title": "data: 수집 2026-11-25 (BC 모두의카드 실적 제외 정정)",
+        "mergedAt": "2026-11-25T06:09:16Z",
+        "mergedAtKST": "2026-11-25 15:09"
+      },
+      "runs": [
+        {
+          "at": "2026-11-25T15:09:00+09:00",
+          "kind": "card-terms",
+          "pr": 99,
+          "summary": "BC 바로 모두의카드(bc-103112) 전월실적 제외 정정 1종 — 아파트 관리비 추가",
+          "queueKeys": [
+            "bc-103112"
+          ]
+        },
+        {
+          "at": "2026-11-25T14:06:00+09:00",
+          "kind": "card-terms",
+          "pr": 97,
+          "summary": "BC 바로 모두의카드 1종 · 혜택 6줄 — 2026-10-28 약관 개정으로 K-패스→모두의카드 명칭 변경 확인(카드 ID 유지)",
+          "queueKeys": [
+            "bc-103112"
+          ]
+        }
+      ],
+      "openIssues": 0
+    },
+    "ChatGPT Dot": {
+      "noteFile": null,
+      "role": "",
+      "updatedAt": null,
+      "lock": null,
+      "lastMergedPR": null,
+      "runs": [],
+      "openIssues": 0
+    },
+    "Claude": {
+      "noteFile": "data/agent-notes/claude.json",
+      "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
+      "updatedAt": "2026-11-25T19:40:00+09:00",
+      "lock": null,
+      "lastMergedPR": {
+        "number": 101,
+        "title": "Mr. Cards 내 혜택 개편: 카드별 묶음 · +/− 접기 · 텍스트 줄이기 · 카드 찾기 개선",
+        "mergedAt": "2026-11-25T10:31:47Z",
+        "mergedAtKST": "2026-11-25 19:31"
+      },
+      "runs": [
+        {
+          "at": "2026-11-25T19:13:00+09:00",
+          "kind": "code",
+          "pr": 100,
+          "summary": "Mr. Cards '내 혜택' 메뉴(#mine) — 내 카드 등록·대상 이벤트 모아 보기 (paymorevent 14파일 + AGENTS.md·roadmap)",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-25T13:58:00+09:00",
+          "kind": "code",
+          "pr": 98,
+          "summary": "발레파킹 카드 이름 묶기(cardNorm)·카드 DB 연결(catalogId) 보강, inbox.py card_key/card_finder 추가 (카드 90→79종)",
+          "queueKeys": []
+        }
+      ],
+      "openIssues": 0
+    },
+    "Pickle": {
+      "noteFile": "data/agent-notes/pickle.json",
+      "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
+      "updatedAt": "2026-11-25T19:45:00+09:00",
+      "lock": {
+        "areas": [
+          "docs/",
+          "tools/data/",
+          "data/agent-notes/"
+        ],
+        "branch": "ai/pickle/agent-sync-board",
+        "pr": 102,
+        "since": "2026-11-25T19:26:00+09:00",
+        "note": "공용 현황판·충돌방지 도구 구축 (#102) — 머지되면 비웁니다"
+      },
+      "lastMergedPR": {
+        "number": 95,
+        "title": "data: 수집 대기열 갱신 (2026-11-25 Pickle 3차)",
+        "mergedAt": "2026-11-25T02:51:37Z",
+        "mergedAtKST": "2026-11-25 11:51"
+      },
+      "runs": [
+        {
+          "at": "2026-11-25T19:45:00+09:00",
+          "kind": "docs/tools",
+          "pr": 102,
+          "summary": "공용 작업 현황판(docs/agent-sync.md·data/agent-status.json)·생성기(agent_sync.py)·에이전트별 기록 파일(data/agent-notes) 구축, 규칙을 data-update 9장·AGENTS·README에 연결",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-25T11:51:00+09:00",
+          "kind": "queue",
+          "pr": 95,
+          "summary": "수집 대기열 갱신 — #94 반영해 done 처리(카드 1,410 todo·브랜드 프로그램 73 todo)",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-25T11:50:00+09:00",
+          "kind": "brand-services + card-terms",
+          "pr": 94,
+          "summary": "신한 브랜드 선택서비스 6개 프로그램(서비스 19) · BC 상품설명서 4종(혜택 22줄)",
+          "queueKeys": [
+            "shinhan-visa-infinite",
+            "shinhan-mastercard-world",
+            "shinhan-mastercard-platinum",
+            "shinhan-american-express-platinum",
+            "shinhan-unionpay-diamond",
+            "bc-104453",
+            "bc-104063",
+            "bc-101883",
+            "bc-101877"
+          ]
+        },
+        {
+          "at": "2026-11-25T10:35:00+09:00",
+          "kind": "docs",
+          "pr": 93,
+          "summary": "로드맵에 차트 요약 칸 삭제(#92) 기록",
+          "queueKeys": []
+        }
+      ],
+      "openIssues": 2
+    }
+  },
+  "locks": [
+    {
+      "agent": "Pickle",
+      "areas": [
+        "docs/",
+        "tools/data/",
+        "data/agent-notes/"
+      ],
+      "branch": "ai/pickle/agent-sync-board",
+      "pr": 102,
+      "since": "2026-11-25 19:26",
+      "sinceRaw": "2026-11-25T19:26:00+09:00",
+      "ageHours": 0.1,
+      "note": "공용 현황판·충돌방지 도구 구축 (#102) — 머지되면 비웁니다"
+    }
+  ],
+  "openPRs": [
+    {
+      "number": 102,
+      "title": "docs: GPT·Claude·Pickle 공용 작업 현황판(data/agent-notes → docs/agent-sync.md)과 기록 자동화",
+      "agent": "Pickle",
+      "branch": "ai/pickle/agent-sync-board",
+      "createdAtKST": "2026-11-25 19:32",
+      "area": "10파일 · data/ 4 · docs/ 3 · 루트 2 외 1곳",
+      "url": "https://github.com/uio412-source/my-website/pull/102",
+      "draft": false
+    }
+  ],
+  "recentPRs": [
+    {
+      "number": 101,
+      "title": "Mr. Cards 내 혜택 개편: 카드별 묶음 · +/− 접기 · 텍스트 줄이기 · 카드 찾기 개선",
+      "agent": "Claude",
+      "branch": "ai/claude/cards-mine-by-card",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T10:31:47Z",
+      "mergedAtKST": "2026-11-25 19:31",
+      "createdAt": "2026-11-25T10:31:05Z",
+      "createdAtKST": "2026-11-25 19:31",
+      "area": "7파일 · paymorevent/ 5 · docs/ 1 · 루트 1",
+      "files": 7,
+      "url": "https://github.com/uio412-source/my-website/pull/101"
+    },
+    {
+      "number": 100,
+      "title": "Mr. Cards: 새 메뉴 '내 혜택' — 내 카드 등록 + 받을 수 있는 이벤트 모아 보기",
+      "agent": "Claude",
+      "branch": "ai/claude/cards-my-benefits",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T10:13:32Z",
+      "mergedAtKST": "2026-11-25 19:13",
+      "createdAt": "2026-11-25T10:12:30Z",
+      "createdAtKST": "2026-11-25 19:12",
+      "area": "14파일 · paymorevent/ 11 · assets/ 1 · docs/ 1 외 1곳",
+      "files": 14,
+      "url": "https://github.com/uio412-source/my-website/pull/100"
+    },
+    {
+      "number": 99,
+      "title": "data: 수집 2026-11-25 (BC 모두의카드 실적 제외 정정)",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/data-2026-11-25-bc-correction",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T06:09:16Z",
+      "mergedAtKST": "2026-11-25 15:09",
+      "createdAt": "2026-11-25T05:59:01Z",
+      "createdAtKST": "2026-11-25 14:59",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/99"
+    },
+    {
+      "number": 97,
+      "title": "data: 수집 2026-11-25 (BC 바로 모두의카드 1종)",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/data-2026-11-25-bc",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T05:06:33Z",
+      "mergedAtKST": "2026-11-25 14:06",
+      "createdAt": "2026-11-25T04:56:20Z",
+      "createdAtKST": "2026-11-25 13:56",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/97"
+    },
+    {
+      "number": 98,
+      "title": "Mr. Hotels 발레: 표기만 다른 같은 카드를 한 장으로 묶고 카드 DB 연결 보강",
+      "agent": "Claude",
+      "branch": "ai/claude/valet-card-names",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T04:58:10Z",
+      "mergedAtKST": "2026-11-25 13:58",
+      "createdAt": "2026-11-25T04:57:07Z",
+      "createdAtKST": "2026-11-25 13:57",
+      "area": "6파일 · paymorevent/ 2 · assets/ 1 · docs/ 1 외 2곳",
+      "files": 6,
+      "url": "https://github.com/uio412-source/my-website/pull/98"
+    },
+    {
+      "number": 96,
+      "title": "data: 수집 2026-11-25 (BC 바로 모두의카드 1종)",
+      "agent": "ChatGPT Dot",
+      "branch": "ai/dot/data-2026-11-25",
+      "state": "CLOSED",
+      "mergedAt": null,
+      "mergedAtKST": "-",
+      "createdAt": "2026-11-25T04:54:31Z",
+      "createdAtKST": "2026-11-25 13:54",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/96"
+    },
+    {
+      "number": 95,
+      "title": "data: 수집 대기열 갱신 (2026-11-25 Pickle 3차)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/data-2026-11-25-queue",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T02:51:37Z",
+      "mergedAtKST": "2026-11-25 11:51",
+      "createdAt": "2026-11-25T02:50:45Z",
+      "createdAtKST": "2026-11-25 11:50",
+      "area": "1파일 · data/ 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/95"
+    },
+    {
+      "number": 94,
+      "title": "data: 수집 2026-11-25 (신한 브랜드 선택서비스 6 · BC 상품설명서 4종, Pickle 3차)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-25-pickle3",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T02:50:23Z",
+      "mergedAtKST": "2026-11-25 11:50",
+      "createdAt": "2026-11-25T02:49:22Z",
+      "createdAtKST": "2026-11-25 11:49",
+      "area": "2파일 · data/inbox/brand-services 1 · data/inbox/card-terms 1",
+      "files": 2,
+      "url": "https://github.com/uio412-source/my-website/pull/94"
+    },
+    {
+      "number": 93,
+      "title": "docs: 로드맵에 차트 요약 칸 삭제(#92) 기록",
+      "agent": "Pickle",
+      "branch": "ai/pickle/roadmap-stocks-summary",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T01:35:26Z",
+      "mergedAtKST": "2026-11-25 10:35",
+      "createdAt": "2026-11-25T01:35:12Z",
+      "createdAtKST": "2026-11-25 10:35",
+      "area": "1파일 · docs/ 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/93"
+    },
+    {
+      "number": 91,
+      "title": "Mr. Cards: 하나 CLUB H가 '상품권 가능'으로 분류되던 오류 수정",
+      "agent": "Pickle",
+      "branch": "ai/pickle/fix-hana-clubh-giftcard",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T01:31:25Z",
+      "mergedAtKST": "2026-11-25 10:31",
+      "createdAt": "2026-11-25T01:30:51Z",
+      "createdAtKST": "2026-11-25 10:30",
+      "area": "4파일 · paymorevent/ 2 · docs/ 1 · 루트 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/91"
+    },
+    {
+      "number": 92,
+      "title": "Mr. Stocks: 차트 상단 요약 칸(줍줍LV·현재가·RSI·200일선) 삭제",
+      "agent": "Pickle",
+      "branch": "ai/pickle/remove-stocks-top-kpis",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T01:31:18Z",
+      "mergedAtKST": "2026-11-25 10:31",
+      "createdAt": "2026-11-25T01:31:08Z",
+      "createdAtKST": "2026-11-25 10:31",
+      "area": "3파일 · assets/ 2 · 루트 1",
+      "files": 3,
+      "url": "https://github.com/uio412-source/my-website/pull/92"
+    },
+    {
+      "number": 90,
+      "title": "Mr. Stocks: 명언 배너를 차트(ungjup.html)에만 남김",
+      "agent": "Pickle",
+      "branch": "ai/pickle/stocks-quotes-ungjup-only",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T01:23:43Z",
+      "mergedAtKST": "2026-11-25 10:23",
+      "createdAt": "2026-11-25T01:23:11Z",
+      "createdAtKST": "2026-11-25 10:23",
+      "area": "4파일 · 루트 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/90"
+    },
+    {
+      "number": 89,
+      "title": "Mr. Stocks: 명언 배너에 말한 사람 사진 추가",
+      "agent": "Pickle",
+      "branch": "ai/pickle/stocks-quote-portraits",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T01:16:04Z",
+      "mergedAtKST": "2026-11-25 10:16",
+      "createdAt": "2026-11-25T01:15:31Z",
+      "createdAtKST": "2026-11-25 10:15",
+      "area": "10파일 · assets/ 8 · docs/ 1 · 루트 1",
+      "files": 10,
+      "url": "https://github.com/uio412-source/my-website/pull/89"
+    },
+    {
+      "number": 88,
+      "title": "data: 대기열 자동 갱신을 PR 머지 방식으로 수정",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-refresh-via-pr",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T01:13:39Z",
+      "mergedAtKST": "2026-11-25 10:13",
+      "createdAt": "2026-11-25T01:13:02Z",
+      "createdAtKST": "2026-11-25 10:13",
+      "area": "3파일 · docs/ 1 · tools/data 1 · 루트 1",
+      "files": 3,
+      "url": "https://github.com/uio412-source/my-website/pull/88"
+    },
+    {
+      "number": 87,
+      "title": "data: 멀티 에이전트 조율 규칙과 수집 대기열 갱신(중복 수집 방지)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/multi-agent-coordination",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T01:10:39Z",
+      "mergedAtKST": "2026-11-25 10:10",
+      "createdAt": "2026-11-25T01:10:07Z",
+      "createdAtKST": "2026-11-25 10:10",
+      "area": "6파일 · tools/data 3 · data/ 1 · docs/ 1 외 1곳",
+      "files": 6,
+      "url": "https://github.com/uio412-source/my-website/pull/87"
+    },
+    {
+      "number": 86,
+      "title": "Mr. Hotels: 발레파킹 서울 호텔 별칭 추가, 같은 등급 안내문 머지 규칙 수정",
+      "agent": "Pickle",
+      "branch": "ai/pickle/fix-valet-aliases-and-merge",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T01:03:22Z",
+      "mergedAtKST": "2026-11-25 10:03",
+      "createdAt": "2026-11-25T00:56:57Z",
+      "createdAtKST": "2026-11-25 09:56",
+      "area": "5파일 · docs/ 2 · hotels/ 1 · tools/data 1 외 1곳",
+      "files": 5,
+      "url": "https://github.com/uio412-source/my-website/pull/86"
+    },
+    {
+      "number": 85,
+      "title": "data: 수집 2026-11-25 2차 (KB·신한·롯데 발렛·라운지 서비스, BC 상품설명서)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-25-pickle2",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T00:19:22Z",
+      "mergedAtKST": "2026-11-25 09:19",
+      "createdAt": "2026-11-25T00:09:08Z",
+      "createdAtKST": "2026-11-25 09:09",
+      "area": "4파일 · data/inbox/brand-services 3 · data/inbox/card-terms 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/85"
+    },
+    {
+      "number": 84,
+      "title": "data: 수집 2026-11-25 (card-events)",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/data-2026-11-25",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T00:16:45Z",
+      "mergedAtKST": "2026-11-25 09:16",
+      "createdAt": "2026-11-25T00:06:32Z",
+      "createdAtKST": "2026-11-25 09:06",
+      "area": "6파일 · data/inbox/card-events 6",
+      "files": 6,
+      "url": "https://github.com/uio412-source/my-website/pull/84"
+    },
+    {
+      "number": 83,
+      "title": "data: 수집 2026-11-25 (삼성·하나 발렛·라운지 서비스, KB·BC 상품설명서)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-25-pickle",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T23:46:26Z",
+      "mergedAtKST": "2026-11-25 08:46",
+      "createdAt": "2026-11-24T23:36:09Z",
+      "createdAtKST": "2026-11-25 08:36",
+      "area": "4파일 · data/inbox/brand-services 2 · data/inbox/card-terms 2",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/83"
+    },
+    {
+      "number": 79,
+      "title": "Mr. Travel: 가짜 종료일 상시 처리, 라운지 문장 경계 자르기, 안내문 혜택 제외",
+      "agent": "Pickle",
+      "branch": "ai/pickle/fix-travel-prep-and-dday",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T23:00:13Z",
+      "mergedAtKST": "2026-11-25 08:00",
+      "createdAt": "2026-11-24T22:35:40Z",
+      "createdAtKST": "2026-11-25 07:35",
+      "area": "5파일 · tools/travel 2 · travel/ 2 · assets/ 1",
+      "files": 5,
+      "url": "https://github.com/uio412-source/my-website/pull/79"
+    },
+    {
+      "number": 78,
+      "title": "Mr. Stocks: 국내·해외 종가 날짜 분리 표기, 상장 200일 미만 고점 라벨 수정",
+      "agent": "Pickle",
+      "branch": "ai/pickle/fix-stocks-labels",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T22:59:54Z",
+      "mergedAtKST": "2026-11-25 07:59",
+      "createdAt": "2026-11-24T22:34:17Z",
+      "createdAtKST": "2026-11-25 07:34",
+      "area": "1파일 · assets/ 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/78"
+    },
+    {
+      "number": 80,
+      "title": "Mr. Hotels: 대표 이미지 캐시·공통 배너 제외, 휴업 호텔 목록/발레 카운트 정리",
+      "agent": "Pickle",
+      "branch": "ai/pickle/fix-hotels-images-and-closed",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T22:59:44Z",
+      "mergedAtKST": "2026-11-25 07:59",
+      "createdAt": "2026-11-24T22:37:17Z",
+      "createdAtKST": "2026-11-25 07:37",
+      "area": "4파일 · assets/ 2 · hotels/ 1 · tools/hotels 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/80"
+    },
+    {
+      "number": 81,
+      "title": "공통: 파비콘·OG 미리보기·robots·404 추가, README 현행화",
+      "agent": "Pickle",
+      "branch": "ai/pickle/fix-common-seo-readme",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T22:59:34Z",
+      "mergedAtKST": "2026-11-25 07:59",
+      "createdAt": "2026-11-24T22:38:24Z",
+      "createdAtKST": "2026-11-25 07:38",
+      "area": "22파일 · 루트 8 · assets/ 5 · hotels/ 4 외 2곳",
+      "files": 22,
+      "url": "https://github.com/uio412-source/my-website/pull/81"
+    },
+    {
+      "number": 82,
+      "title": "Mr. Cards: 혜택 표 머리글·율 파서 수정, 이벤트 엔티티·상시 종료일 정리, 12.5MB 스냅샷 배포 제외",
+      "agent": "Pickle",
+      "branch": "ai/pickle/fix-cards-benefits-and-bundle",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T22:59:24Z",
+      "mergedAtKST": "2026-11-25 07:59",
+      "createdAt": "2026-11-24T22:41:34Z",
+      "createdAtKST": "2026-11-25 07:41",
+      "area": "18파일 · paymorevent/ 14 · tools/data 2 · docs/ 1 외 1곳",
+      "files": 18,
+      "url": "https://github.com/uio412-source/my-website/pull/82"
+    },
+    {
+      "number": 77,
+      "title": "chore: 매번 실패하던 gemini-cli.yml 워크플로 삭제",
+      "agent": "Pickle",
+      "branch": "ai/pickle/remove-gemini-cli",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T15:22:41Z",
+      "mergedAtKST": "2026-11-25 00:22",
+      "createdAt": "2026-11-24T15:15:09Z",
+      "createdAtKST": "2026-11-25 00:15",
+      "area": "1파일 · .github/ 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/77"
+    },
+    {
+      "number": 76,
+      "title": "Mr. Stocks: 맨 위 '공포에 사라' 투자 명언 배너",
+      "agent": "Claude",
+      "branch": "ai/claude/stocks-quotes",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T13:17:31Z",
+      "mergedAtKST": "2026-11-24 22:17",
+      "createdAt": "2026-11-24T13:16:58Z",
+      "createdAtKST": "2026-11-24 22:16",
+      "area": "7파일 · 루트 4 · assets/ 2 · docs/ 1",
+      "files": 7,
+      "url": "https://github.com/uio412-source/my-website/pull/76"
+    },
+    {
+      "number": 75,
+      "title": "data: 수집 2026-11-24 (롯데카드 이벤트)",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/data-2026-11-24",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T12:23:53Z",
+      "mergedAtKST": "2026-11-24 21:23",
+      "createdAt": "2026-11-24T12:13:37Z",
+      "createdAtKST": "2026-11-24 21:13",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/75"
+    },
+    {
+      "number": 74,
+      "title": "docs: 매일 개선 작업용 로드맵",
+      "agent": "Claude",
+      "branch": "ai/claude/roadmap",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T05:41:52Z",
+      "mergedAtKST": "2026-11-24 14:41",
+      "createdAt": "2026-11-24T05:41:15Z",
+      "createdAtKST": "2026-11-24 14:41",
+      "area": "2파일 · docs/ 1 · 루트 1",
+      "files": 2,
+      "url": "https://github.com/uio412-source/my-website/pull/74"
+    },
+    {
+      "number": 73,
+      "title": "발레파킹: '조건 없이 무료'를 상품설명서 기준(호텔 이용 없이 무료)으로",
+      "agent": "Claude",
+      "branch": "ai/claude/valet-no-condition",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T05:18:08Z",
+      "mergedAtKST": "2026-11-24 14:18",
+      "createdAt": "2026-11-24T05:17:32Z",
+      "createdAtKST": "2026-11-24 14:17",
+      "area": "6파일 · assets/ 2 · docs/ 1 · hotels/ 1 외 2곳",
+      "files": 6,
+      "url": "https://github.com/uio412-source/my-website/pull/73"
+    },
+    {
+      "number": 72,
+      "title": "배포: build와 deploy job 분리 (github-pages 산출물 못 찾는 실패 방지)",
+      "agent": "Claude",
+      "branch": "ai/claude/pages-deploy-split",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T04:54:46Z",
+      "mergedAtKST": "2026-11-24 13:54",
+      "createdAt": "2026-11-24T04:54:05Z",
+      "createdAtKST": "2026-11-24 13:54",
+      "area": "1파일 · .github/ 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/72"
+    },
+    {
+      "number": 71,
+      "title": "Mr. Hotels 발레파킹: '조건 없이 무료만' 스위치 · 서울 지도 · 호텔 지도 연결",
+      "agent": "Claude",
+      "branch": "ai/claude/valet-map",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T04:47:56Z",
+      "mergedAtKST": "2026-11-24 13:47",
+      "createdAt": "2026-11-24T04:46:29Z",
+      "createdAtKST": "2026-11-24 13:46",
+      "area": "11파일 · assets/ 5 · hotels/ 3 · tools/data 1 외 2곳",
+      "files": 11,
+      "url": "https://github.com/uio412-source/my-website/pull/71"
+    },
+    {
+      "number": 70,
+      "title": "배포 고침: Pages 업로드·배포 액션을 Node 24용 v5로",
+      "agent": "Claude",
+      "branch": "ai/claude/fix-pages-deploy",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T02:38:04Z",
+      "mergedAtKST": "2026-11-24 11:38",
+      "createdAt": "2026-11-24T02:12:11Z",
+      "createdAtKST": "2026-11-24 11:12",
+      "area": "1파일 · .github/ 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/70"
+    },
+    {
+      "number": 69,
+      "title": "Mr. Cards 카드사 이벤트 개편: 가맹점·혜택·분야로 한눈에, 같은 가맹점 카드사 비교",
+      "agent": "Claude",
+      "branch": "ai/claude/card-events-revamp",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T02:06:55Z",
+      "mergedAtKST": "2026-11-24 11:06",
+      "createdAt": "2026-11-24T01:59:58Z",
+      "createdAtKST": "2026-11-24 10:59",
+      "area": "8파일 · paymorevent/ 7 · 루트 1",
+      "files": 8,
+      "url": "https://github.com/uio412-source/my-website/pull/69"
+    },
+    {
+      "number": 68,
+      "title": "수집 순서 변경: 매일 이벤트·상품공시실·상품설명서 10종, 토요일 여행·브랜드 서비스",
+      "agent": "Claude",
+      "branch": "ai/claude/collect-schedule",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T02:06:47Z",
+      "mergedAtKST": "2026-11-24 11:06",
+      "createdAt": "2026-11-24T01:47:52Z",
+      "createdAtKST": "2026-11-24 10:47",
+      "area": "2파일 · docs/ 1 · 루트 1",
+      "files": 2,
+      "url": "https://github.com/uio412-source/my-website/pull/68"
+    },
+    {
+      "number": 67,
+      "title": "수집 PR 자동 머지: 검사 통과한 ChatGPT 수집 PR을 머지하고 배포",
+      "agent": "Claude",
+      "branch": "ai/claude/data-automerge",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T01:43:38Z",
+      "mergedAtKST": "2026-11-24 10:43",
+      "createdAt": "2026-11-24T01:40:41Z",
+      "createdAtKST": "2026-11-24 10:40",
+      "area": "4파일 · .github/ 1 · docs/ 1 · tools/data 1 외 1곳",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/67"
+    },
+    {
+      "number": 65,
+      "title": "Mr. Hotels: 지도 중심 호텔 검색 + 등급표 팝업",
+      "agent": "Claude",
+      "branch": "ai/claude/hotel-map",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T01:18:38Z",
+      "mergedAtKST": "2026-11-24 10:18",
+      "createdAt": "2026-11-21T23:50:27Z",
+      "createdAtKST": "2026-11-22 08:50",
+      "area": "13파일 · hotels/ 6 · assets/ 3 · 루트 2 외 2곳",
+      "files": 13,
+      "url": "https://github.com/uio412-source/my-website/pull/65"
+    },
+    {
+      "number": 66,
+      "title": "data: 수집 2026-11-23 (card-events)",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/data-2026-11-23",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T01:18:24Z",
+      "mergedAtKST": "2026-11-24 10:18",
+      "createdAt": "2026-11-23T00:01:14Z",
+      "createdAtKST": "2026-11-23 09:01",
+      "area": "3파일 · data/inbox/card-events 3",
+      "files": 3,
+      "url": "https://github.com/uio412-source/my-website/pull/66"
+    },
+    {
+      "number": 64,
+      "title": "data: 수집 2026-11-22 (미스터카드 신용카드 8종)",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/data-2026-11-22",
+      "state": "MERGED",
+      "mergedAt": "2026-11-24T01:18:12Z",
+      "mergedAtKST": "2026-11-24 10:18",
+      "createdAt": "2026-11-21T23:33:13Z",
+      "createdAtKST": "2026-11-22 08:33",
+      "area": "5파일 · data/inbox/card-terms 3 · data/inbox/brand-services 2",
+      "files": 5,
+      "url": "https://github.com/uio412-source/my-website/pull/64"
+    },
+    {
+      "number": 63,
+      "title": "배당: 금융소득종합과세 한도 계산기 (국내 커버드콜 비과세분 반영)",
+      "agent": "Claude",
+      "branch": "ai/claude/dividend-tax-calc",
+      "state": "MERGED",
+      "mergedAt": "2026-11-21T23:25:12Z",
+      "mergedAtKST": "2026-11-22 08:25",
+      "createdAt": "2026-11-21T23:24:27Z",
+      "createdAtKST": "2026-11-22 08:24",
+      "area": "4파일 · assets/ 2 · 루트 2",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/63"
+    }
+  ],
+  "queue": {
+    "built": "2026-11-25",
+    "nextStart": {
+      "cards": "samsung-aap1483",
+      "brandPrograms": "shinhan-mastercard-titanium"
+    },
+    "counts": {
+      "cards": {
+        "done": 21,
+        "todo": 1410,
+        "total": 1431
+      },
+      "brandPrograms": {
+        "done": 17,
+        "valetOnly": 4,
+        "todo": 73,
+        "total": 94
+      }
+    },
+    "lastCollected": {
+      "card-terms": "2026-11-25",
+      "brand-services": "2026-11-25",
+      "card-events": "2026-11-25",
+      "hotel-events": null,
+      "travel-events": null,
+      "card-products": null
+    }
+  },
+  "skipped": [
+    {
+      "date": "2026-11-25",
+      "agent": "Pickle",
+      "target": "samsung-aap1483 삼성카드 taptap O 등 삼성 상품설명서(대기열 맨 앞 10종)",
+      "status": "open",
+      "reason": "삼성 카드 상세가 Nuxt 런타임으로 그려져 HTML에 상품설명서 PDF 링크가 없음. static11.samsungcard.com/.../YYMM_<코드>.pdf 파일명 추측 4건 모두 404 → 2회 실패로 중단",
+      "retry": "① 카드 상세를 브라우저로 렌더한 뒤 네트워크 응답(_next/data·api)에서 PDF 주소를 찾기 ② 삼성카드 고객센터 > 상품공시실 목록을 열어 카드명으로 검색해 내려받기 ③ 그래도 없으면 이 줄에 날짜만 더하고 다음 카드로",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-25",
+      "agent": "Pickle",
+      "target": "BC 상품설명서 6건(101874·101877·101881·101883·104063·104453)",
+      "status": "workaround",
+      "reason": "PDF가 이미지로만 되어 있어 텍스트 추출이 안 됨",
+      "retry": "공식 상품 페이지 본문으로 대체 확인(내용 일치 확인함). 글자 추출이 꼭 필요하면 OCR이 필요하고, 보통은 상품 페이지 본문으로 충분",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-25",
+      "agent": "Claude",
+      "target": "발레파킹 — 같은 카드사·브랜드·등급 안내문이 여러 개일 때 화면에 하나만 남던 문제",
+      "status": "resolved",
+      "reason": "merge_valet이 issuer+brand+tier가 같으면 무조건 덮어써서 KB Mastercard World가 39곳짜리(BeV III) 대신 13곳짜리만 표시됐음",
+      "retry": "대상 호텔이 더 많은 안내문을 남기고 카드별로 자기 안내의 호텔만 표시하도록 수정",
+      "ref": "#86 · #98에서 해결"
+    },
+    {
+      "date": "2026-11-25",
+      "agent": "Pickle",
+      "target": "bc-103112 — 대기열 이름(K-패스 카드)과 상품설명서 내용(BC 바로 모두의카드) 불일치",
+      "status": "resolved",
+      "reason": "PDF 본문이 '모두의카드' 혜택 안내라 카드명이 맞지 않아 보류했음. 실제로는 2026-10-28 약관 개정으로 이름이 바뀐 같은 카드였고 카드 ID가 유지됨",
+      "retry": "카드명이 다르면 먼저 카드사 약관 개정·명칭 변경 공지를 확인(카드 ID로 찾기)",
+      "ref": "ChatGPT #97(수집) · #99(전월실적 제외 정정)"
+    },
+    {
+      "date": "2026-11-25",
+      "agent": "Pickle",
+      "target": "발레파킹 서울 호텔 이름 표기 불일치 5곳(글래드 여의도·노보텔 앰배서더 동대문·레스케이프 호텔·코트야드 바이 메리어트 서울 타임스퀘어·코트야드 서울 타임스퀘어)",
+      "status": "resolved",
+      "reason": "안내문 표기 그대로 넣어 hotels/valet.json에서 호텔을 못 찾음(4곳은 별칭 없음, 글래드 여의도는 목록에 없던 호텔)",
+      "retry": "호텔 이름이 안 맞으면 hotels/valet.json의 aliases에 안내문 표기를 넣기(새 호텔이면 ll 좌표와 함께 등록)",
+      "ref": "#86 (별칭 4개 추가·글래드 여의도 신규 등록, 못 찾음 0건)"
+    },
+    {
+      "date": "2026-11-25",
+      "agent": "Pickle",
+      "target": "신한 Titanium · AMEX Gold·PLATINUM ELITE·The Platinum 안내장",
+      "status": "resolved",
+      "reason": "신한 카드 상세 8장을 확인했지만 해당 등급 안내장이 없음. 신한 AMEX는 PLATINUM·PLATINUM ELITE 공통 안내장 1종(유형1 클래식+급)만 운영",
+      "retry": "없는 안내장이므로 다시 찾지 말 것 — 대기열 key는 내리거나 valet-only로 두고 다른 등급으로 넘어가기",
+      "ref": ""
+    }
+  ]
+}

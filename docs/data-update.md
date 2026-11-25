@@ -9,8 +9,9 @@
 - 같은 항목을 다음에 다시 수집하면(같은 `id`·같은 카드사+제목) **나중 파일 값이 이깁니다.** 매번 그 출처의 현재 내용 전체를 다시 담아도 됩니다.
 - 무엇을 먼저 모을지는 `data/collect-queue.json`(수집 대기열)에 있습니다. → **10장 실행 한도와 순서**
 - ChatGPT·Pickle·Claude가 함께 모읍니다. **작업을 시작하기 전에 9장 조율 규칙(대기열 · `data/inbox/` · 열린 PR 확인)을 먼저 보고 겹치지 않는 항목만 고릅니다.**
+- 무엇이 됐고 **무엇이 안 됐는지**는 공용 현황판 `docs/agent-sync.md`·`data/agent-status.json`에 모입니다. 시작 전에 현황판 3·4장(잠금·실패 로그)을 보고, 끝나면 `data/agent-notes/<내 파일>.json`에 적고 `python tools/data/agent_sync.py`로 갱신합니다. → **9장**
 
-로컬 검사: `python tools/data/inbox.py validate` · 대기열 다시 만들기: `python tools/data/queue.py`
+로컬 검사: `python tools/data/inbox.py validate` · 대기열 다시 만들기: `python tools/data/queue.py` · 현황판 갱신: `python tools/data/agent_sync.py`
 
 ---
 
@@ -329,11 +330,12 @@
 
 ## 9. 멀티 에이전트(ChatGPT · Pickle · Claude) 중복 방지 및 조율 규칙
 
-같은 대기열을 여러 에이전트(ChatGPT 예약 작업 · Pickle · Claude)가 번갈아 가며 모읍니다. 같은 항목을 두 번 모으면 시간과 레코드를 버리고, 같은 이름의 파일이 겹치면 PR이 충돌합니다. **작업을 시작하기 전에 아래 셋을 확인하고, 겹치지 않는 항목만 고릅니다.**
+같은 대기열을 여러 에이전트(ChatGPT 예약 작업 · Pickle · Claude)가 번갈아 가며 모읍니다. 같은 항목을 두 번 모으면 시간과 레코드를 버리고, 같은 이름의 파일이 겹치면 PR이 충돌합니다. **작업을 시작하기 전에 아래 넷을 확인하고, 겹치지 않는 항목만 고릅니다.**
 
 1. **대기열** `data/collect-queue.json` — `status`가 `todo`인 것만 고릅니다. `done`은 수집 완료, `valet-only`는 발레파킹만 넣어 둔 프로그램(라운지·공항 서비스가 남음)입니다. 파일 맨 위 `lastCollected`(종류별 최근 수집일)와 `nextStart`(종류별 다음 시작 key)에서 이어서 시작합니다.
 2. **받은편지함** `data/inbox/**` — 파일 이름과 그 안의 `queueKey`·`cardId`·`id`를 모두 봅니다. 대기열이 낡았을 수 있으므로(자동 갱신이 아직 안 돌았거나 실패) 대기열에 `todo`로 남아 있어도 inbox에 key가 있으면 이미 한 항목입니다.
 3. **열린 PR** — `gh pr list --state open --json number,title,headRefName,files`로 다른 에이전트가 지금 올려 둔 PR이 건드리는 파일 이름과 key를 봅니다. 그 PR이 다루는 항목은 이번에 빼고, 머지된 뒤 다음 실행에서 이어 갑니다.
+4. **공용 현황판** `docs/agent-sync.md` · `data/agent-status.json` — 3장(잠금·열린 PR·다음 시작점)과 4장(실패·보류 로그)을 봅니다. 내가 하려는 항목이 4장에 `open`으로 있으면 같은 방법을 다시 시도하지 말고 거기 적힌 재시도 방법부터 씁니다.
 
 - 고르지 않고 건너뛴 항목은 PR 본문 '건너뜀'·'다음 시작점'에 대기열 key로 적습니다. 같은 곳에서 같은 실패(로그인 필요·스크립트로만 그려짐 등)를 다음 에이전트가 반복하지 않습니다.
 - 수집한 항목은 `card-terms`의 `cardId`·`queueKey`, `brand-services`의 `queueKey`에 **대기열 key 그대로** 적습니다. 빠뜨리면 수집했는데도 대기열에 `todo`로 남아 다음 실행에서 또 모읍니다(검사 로그에 `안내:` 줄로 나옵니다).
@@ -350,6 +352,24 @@
 - 접미사는 영문 소문자·숫자·하이픈만 씁니다(파일 이름 `YYYY-MM-DD-<영문 소문자 출처>.json`).
 - Pickle도 브랜치를 `ai/chatgpt/data-`로 시작하게 해 자동 머지 대상이 되게 하되, **커밋을 다 올린 뒤에 PR을 엽니다**(자동 머지는 마지막 커밋 10분 뒤에 봅니다).
 - 코드·문서를 고치는 PR(Pickle의 `ai/pickle/…` 등)은 자동 머지 대상이 아닙니다. 사람이 보고 머지합니다.
+- 에이전트별 기록 파일: ChatGPT `data/agent-notes/chatgpt.json` · Claude `data/agent-notes/claude.json` · Pickle `data/agent-notes/pickle.json`.
+
+### 공용 현황판 (무엇이 됐고 무엇이 안 됐는지 서로 보기)
+
+작업 전 확인만으로는 **"왜 안 됐는지"**가 다음 에이전트에게 전해지지 않습니다. 그래서 현황판을 함께 씁니다.
+
+| 파일 | 무엇 | 누가 씁니까 |
+|---|---|---|
+| `docs/agent-sync.md` | 사람이 읽는 현황판 — 규칙표 · 최근 PR 이력 · 잠금 · 실패/보류 로그 · 다음 시작점 | `agent_sync.py`만(손으로 고치지 않음) |
+| `data/agent-status.json` | 기계가 읽는 같은 내용(JSON) | `agent_sync.py`만 |
+| `data/agent-notes/<에이전트>.json` | 그 에이전트의 기록(잠금·한 일·실패) | **자기 파일만** 고침(남의 파일은 읽기만) |
+
+- **기록하는 법**: `data/agent-notes/<내 파일>.json`에서
+  - `lock` — 작업을 시작할 때 `areas`(예: `["paymorevent/"]`)·`branch`·`since`를 적고, PR을 머지하면 `null`로 비웁니다. 남이 잠근 영역은 그 PR이 머지된 뒤에 손댑니다.
+  - `runs` — 한 일(`at`·`kind`·`summary`·`pr`·`queueKeys`).
+  - `skipped` — **실패·보류·제외**(`target`·`reason`·`retry`). `status`는 `open`(다시 볼 것)·`workaround`(다른 경로로 처리함)·`resolved`(해결됨, `ref`에 해결 PR·커밋). 해결돼도 지우지 말고 `resolved`로 바꿉니다(이력이 남아야 같은 삽질을 막습니다).
+- **갱신**: 기록을 고친 뒤 `python tools/data/agent_sync.py`를 실행합니다. gh에서 PR 이력·열린 PR을 읽어 `docs/agent-sync.md`·`data/agent-status.json`을 다시 만들고, 마지막 줄에 몇 건이 모였는지 찍습니다. gh를 못 쓰는 환경이면 `--no-gh`로 기록·대기열만으로 만듭니다(PR 부분은 지난 값 유지).
+- **꼭 남기는 것**: 같은 곳에서 두 번 실패했거나(안 열림·스크립트로만 그려짐·로그인 필요·404), 찾는 곳에 없어서 다른 경로로 처리했을 때. 다음 에이전트가 같은 페이지를 다시 열어 같은 실패를 반복하는 것이 가장 큰 낭비입니다.
 
 ### 대기열 갱신
 

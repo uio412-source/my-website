@@ -32,6 +32,8 @@
 | `tools/travel/benefits.py` | `travel/benefits.json` | 매 배포 |
 | `tools/travel/prep.py` | `travel/prep.json` | 매 배포 |
 | `tools/hotels/images.py` | `hotels/images.json` (대표 이미지 캐시) | 매 배포 |
+| `tools/data/queue.py` | `data/collect-queue.json` (무엇을 먼저 모을지) | 수집 PR 머지 뒤 자동 |
+| `tools/data/agent_sync.py` | `docs/agent-sync.md` · `data/agent-status.json` (에이전트별 최근 PR·잠금·실패 로그) | 기록을 바꿀 때(사람·에이전트) |
 | `paymorevent` `npm run build` | Mr. Cards 정적 사이트·카드/이벤트 상세 페이지 | 매 배포 |
 
 직접 갱신할 때:
@@ -57,6 +59,14 @@ npm run build
 
 처음 한 번만: **Settings → Pages → Build and deployment → Source**를 **GitHub Actions**로, **Settings → Branches**에서 `main`에 *Require a pull request before merging*을 켭니다(AI 도구가 `main`에 직접 올리지 못하게).
 
+## 여러 AI가 함께 작업할 때
+
+GPT·Claude·Pickle이 같은 저장소를 번갈아 고칩니다. 서로 겹치지 않게 하려고 공용 현황판을 씁니다(세부는 [docs/data-update.md](docs/data-update.md) 9장).
+
+- **시작 전**: [docs/agent-sync.md](docs/agent-sync.md)와 `data/agent-status.json`을 봅니다 — 최근 PR 이력, 지금 잠긴 영역, 열린 PR, **실패·보류 로그(사유·재시도 방법)**, 수집 대기열 다음 시작점.
+- **끝나면**: `data/agent-notes/<내 파일>.json`(chatgpt·claude·pickle — 자기 파일만 고침)에 한 일·실패·잠금을 적고 `python tools/data/agent_sync.py`를 실행해 현황판을 갱신합니다. 두 산출물은 스크립트가 만드니 손으로 고치지 않습니다.
+- 브랜치·수집 파일 이름은 에이전트별 접미사로 나뉩니다(`ai/chatgpt/…`·`ai/claude/…`·`ai/pickle/…`, Pickle은 `-pickle`).
+
 ## 함께 편집하기
 
-Claude·ChatGPT 같은 AI 도구에 이 저장소를 연결하고 "AGENTS.md를 따라서 ○○를 바꾸고 PR을 만들어 줘"라고 요청합니다. PR에서 변경을 확인하고 Merge하면 1~2분 안에 사이트에 반영됩니다(진행은 **Actions** 탭).
+Claude·ChatGPT 같은 AI 도구에 이 저장소를 연결하고 "AGENTS.md를 따라서 ○○를 바꾸고 PR을 만들어 줘"라고 요청합니다(현황판 규칙은 위 '여러 AI가 함께 작업할 때'). PR에서 변경을 확인하고 Merge하면 1~2분 안에 사이트에 반영됩니다(진행은 **Actions** 탭).
