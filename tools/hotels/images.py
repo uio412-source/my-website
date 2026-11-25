@@ -5,6 +5,8 @@
 hotels/directory.json에서 image가 없는 호텔(Marriott, HOTELLUX의 독립 호텔)의
 공식 페이지를 열어 og:image 주소를 찾고 hotels/images.json({"프로그램:id": 주소})에 적습니다.
 - 페이지 주소: 호텔의 site가 있으면 site, 없으면 url
+- Marriott·리츠칼튼은 공식 페이지가 봇을 막아(403) og:image를 못 읽는 일이 많아, 호텔 코드·슬러그로
+  공식 사진 목록(.../photos/jcr:content.roomimages.json)을 대신 읽어 객실 사진을 씁니다.
 - same이 있는 호텔(다른 체인 목록에 같은 호텔이 있음)은 화면에서 그 이미지를 같이 쓰므로 건너뜁니다.
 - 이미 images.json에 있는 호텔은 다시 요청하지 않습니다(캐시). 공통 배너(link_img 등)·로고·자리표시자
   이미지와 여러 호텔에 똑같이 붙는 이미지는 호텔 사진이 아니라서 버립니다.
@@ -48,6 +50,36 @@ def og_image(page):
     return None
 
 
+MARRIOTT_SLUG = re.compile(r"/hotels/(?:travel/)?([a-z0-9]{5}-[^/?#]+)")
+MARRIOTT_REGIONS = ("na", "ap", "eu", "me", "la", "as")
+MARRIOTT_PHOTO_ORDER = ("genr", "dlux", "default", "espa", "clbl", "famz", "dkng", "ekng", "omgl", "dlan", "twin", "cjst", "dsun", "zxsz")
+
+
+def marriott_photo(page):
+    """Marriott 공식 사진 목록에서 대표 객실 사진 주소. 페이지 주소에서 호텔 코드·슬러그를 뽑습니다."""
+    m = MARRIOTT_SLUG.search(page or "")
+    if not m:
+        return None
+    slug = m.group(1)
+    code = slug[:5]
+    for region in MARRIOTT_REGIONS:
+        url = (f"https://www.marriott.com/content/marriott-hws/{region}/en-us/hotels/"
+               f"{code[0]}/{slug}/photos/jcr:content.roomimages.json")
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                data = json.loads(r.read(3_000_000).decode("utf-8", "ignore"))
+        except Exception:
+            continue
+        for kind in MARRIOTT_PHOTO_ORDER:
+            for item in data.get(kind) or []:
+                photo = item.get("wideRefDesktop") or item.get("fileReference")
+                if photo and photo.startswith("https://") and not BAD_IMAGE.search(photo):
+                    if "Coming Soon" not in (item.get("imageAltText") or ""):
+                        return photo
+    return None
+
+
 def main():
     data = json.loads(DIRECTORY.read_text(encoding="utf-8"))
     try:
@@ -75,7 +107,12 @@ def main():
         key, page = job
         try:
             return key, og_image(page), None
-        except Exception as e:  # 사이트가 막거나 느리면 건너뜀
+        except Exception as e:  # 사이트가 막거나 느리면 Marriott 공식 사진 목록으로 한 번 더 시도
+            if key.startswith("marriott:") or "marriott.com" in (page or "") or "ritzcarlton.com" in (page or ""):
+                try:
+                    return key, marriott_photo(page), None
+                except Exception as e2:
+                    return key, None, e2
             return key, None, e
 
     ok = 0
