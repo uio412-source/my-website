@@ -90,6 +90,9 @@ export function valueIn(t: string): Value | null {
     const pct = Number(best[2]) + Number(best[3] ?? 0);
     const kind = kindOf(best[4]) || (/할인/.test(t) ? '할인' : /적립/.test(t) ? '적립' : /캐시백|페이백/.test(t) ? '캐시백' : '할인');
     const many = pcts.length > 1;
+    // '5~15% 할인'·'40~50% 할인'처럼 범위면 앞 숫자까지 함께(이름에 '5'만 남던 문제)
+    const lo = !best[1] && !best[3] ? t.slice(0, best.index).match(/(\d+(?:\.\d+)?)\s*%?\s*[~∼]\s*$/) : null;
+    if (lo) return {text: `${lo[1]}~${best[2]}% ${kind === 'UP' ? '추가' : kind}`, won: 0, pct, kind, raw: many ? '' : (lo[0] + best[0]).trim()};
     return {text: `${best[1] || many ? '최대 ' : ''}${best[3] ? `${best[2]}+${best[3]}%` : `${best[2]}%`} ${kind === 'UP' ? '추가' : kind}`, won: 0, pct, kind, raw: many ? '' : best[0].trim()};
   }
   if ((m = t.match(/1\s*\+\s*1/))) return {text: '1+1', won: 0, pct: 50, kind: '1+1', raw: m[0]};
@@ -103,7 +106,7 @@ export function valueIn(t: string): Value | null {
 }
 
 // ---------- 분야(어디서) ----------
-export const FIELDS = ['쇼핑', '해외·여행', '외식·카페', '생활·납부', '교통·차', '문화·레저', '페이·포인트', '무이자 할부', '기타'] as const;
+export const FIELDS = ['쇼핑', '해외·여행', '외식·카페', '생활·납부', '교통·차', '문화·레저', '페이·포인트', '무이자 할부', '기타', '기타 광고'] as const;
 export type Field = typeof FIELDS[number];
 const FIELD_RX: [Field, RegExp][] = [
   ['무이자 할부', /무이자/],
@@ -116,7 +119,24 @@ const FIELD_RX: [Field, RegExp][] = [
   ['문화·레저', /영화|cgv|메가박스|롯데시네마|공연|뮤지컬|콘서트|전시|展|미술|박물관|합창단|오페라|연극|티켓|놀이공원|테마파크|에버랜드|롯데월드|서울랜드|워터파크|아쿠아리움|골프|\bcc\b|스키|헬스|필라테스|스포츠|야구|축구|넷플릭스|유튜브|디즈니|티빙|웨이브|쿠팡플레이|왓챠|멜론|지니|스포티파이|도서|교보|예스24|게임|이모티콘|웹툰|플레이트/i],
   ['페이·포인트', /페이|pay|qr|앱\s*카드|포인트|머니|마일리지\s*전환|출석|첫\s*(?:결제|로그인)|가입|등록/i],
 ];
+/**
+ * 기타 광고: 카드를 써서 받는 혜택이 아니라 제휴사 상품 가입·조회·상담을 권하는 광고성 이벤트.
+ * 보험(자동차·여행자·암 등 가입·보험료 조회·상담) · 대출·리볼빙·분할납부·투자·연금 같은 금융상품 · 통신·인터넷·멤버십·구독 가입 ·
+ * 여행사 패키지(하나투어·모두투어 …) · 해외직구 쿠폰(알리익스프레스·테무) · 가전·교육 제휴. 내 카드 이벤트 모아보기(lib/my-benefits.ts)에서는 뺍니다.
+ * 이미 내는 보험료·요금을 카드로 자동납부·자동이체하는 이벤트는 생활·납부로 둡니다.
+ */
+export const AD_RX = new RegExp([
+  String.raw`(?:자동차|운전자|여행자?|해외\s*여행|장기\s*체류|일본\s*여행|면역\s*질환|홀인원|제휴|다이렉트|펫|실손)\s*보험`, String.raw`보험\s*(?:가입|상담|진단|보장|료\s*(?:확인|조회))`, String.raw`내\s*보험`,
+  String.raw`손해\s*보험|손보|삼성화재|현대해상|DB손|캐롯|생명\s*제휴|헬스케어\s*\(암\)`,
+  String.raw`대출|카드론|현금\s*서비스|리볼빙|일부\s*결제|분할\s*납부|나눠\s*낼|발행\s*어음|증권|투자|연금|노란\s*우산|적금|예금|펀드|대신\s*청구|특별\s*금리|바우처\s*신청`,
+  String.raw`상담|견적|멤버십\s*신규\s*가입|가입\s*(?:하면|하고|하시고)|신규\s*가입|가입자\s*한정|개통|인터넷\s*[·+&,]?\s*TV|정수기|상조|AI\s*구독|구독\s*(?:하고|할인)|구독삼성`,
+  String.raw`하나투어|모두투어|노랑풍선|참좋은\s*여행|교원\s*투어|인터파크\s*투어|롯데관광|알리\s*익스프레스|aliexpress|테무|temu|LG\s*전자|삼성\s*전자|가전\s*(?:캐시백|구매)|토익|YBM`,
+].join('|'), 'i');
+const BILL_RX = /자동\s*납부|자동\s*이체/;
+export const isAd = (title: string) => AD_RX.test(title) && !BILL_RX.test(title);
+
 export function eventField(o: Pick<Offer, 'title' | 'benefitText' | 'description' | 'tags'>, title = tidy(o.title)): Field {
+  if (isAd(title)) return '기타 광고';
   for (const text of [title, tidy([o.benefitText, o.description].join(' ')).slice(0, 300)]) {
     for (const [f, rx] of FIELD_RX) if (rx.test(text)) return f;
   }

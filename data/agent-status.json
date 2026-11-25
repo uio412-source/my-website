@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-25T19:35:09+09:00",
+  "generatedAt": "2026-11-25T22:08:56+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
-  "prFresh": true,
+  "prFresh": false,
   "agents": {
     "ChatGPT": {
       "noteFile": "data/agent-notes/chatgpt.json",
@@ -49,7 +49,7 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-25T19:40:00+09:00",
+      "updatedAt": "2026-11-25T20:05:00+09:00",
       "lock": null,
       "lastMergedPR": {
         "number": 101,
@@ -58,6 +58,34 @@
         "mergedAtKST": "2026-11-25 19:31"
       },
       "runs": [
+        {
+          "at": "2026-11-25T20:05:00+09:00",
+          "kind": "code",
+          "pr": 110,
+          "summary": "Mr. Cards 광고성 이벤트(보험 가입·조회·상담, 금융상품, 가입 유도, 여행사 패키지, 알리·테무, 가전·교육) → 분야 '기타 광고'(event-view AD_RX), 내 카드 이벤트 모아보기에서 제외, 수집 규칙(data-update 3·10장)에 '광고성은 뒤로' 추가",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-25T19:38:00+09:00",
+          "kind": "code",
+          "pr": 106,
+          "summary": "Mr. Cards 카드 브랜드 이름 통일(lib/network-brand.ts): 제이씨비→JCB, 유피아이·UPI·K-WORLD→UnionPay, 신한 S&→Amex, 신한 URS·NH 더블류→JCB, 우리 'BC'→국내전용",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-25T19:35:00+09:00",
+          "kind": "code",
+          "pr": 103,
+          "summary": "Mr. Cards 카드상품 검색 혜택 태그 여러 개 선택(AND)",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-25T19:31:00+09:00",
+          "kind": "code",
+          "pr": 101,
+          "summary": "Mr. Cards 내 혜택 개편: 카드별 묶음·+/− 접기·통계/필터/최근 본 카드 삭제·카드 찾기 개선",
+          "queueKeys": []
+        },
         {
           "at": "2026-11-25T19:13:00+09:00",
           "kind": "code",
@@ -73,7 +101,7 @@
           "queueKeys": []
         }
       ],
-      "openIssues": 0
+      "openIssues": 1
     },
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
@@ -699,14 +727,14 @@
     },
     "counts": {
       "cards": {
-        "done": 21,
-        "todo": 1410,
-        "total": 1431
+        "done": 22,
+        "todo": 1425,
+        "total": 1447
       },
       "brandPrograms": {
-        "done": 17,
+        "done": 21,
         "valetOnly": 4,
-        "todo": 73,
+        "todo": 69,
         "total": 94
       }
     },
@@ -720,6 +748,15 @@
     }
   },
   "skipped": [
+    {
+      "date": "2026-11-25",
+      "agent": "Claude",
+      "target": "신한 The More(더모아) 등 카드 DB에 없는 인기 카드",
+      "status": "open",
+      "reason": "내 카드 찾기에서 '더모아'를 쳐도 안 나옴 — catalog-snapshot.json에 카드가 없음(검색 문제 아님)",
+      "retry": "card-products 수집(상품공시실)으로 판매 중 카드 누락 확인 후 카드 DB에 추가",
+      "ref": "roadmap 후보"
+    },
     {
       "date": "2026-11-25",
       "agent": "Pickle",
