@@ -18,7 +18,7 @@ const OPEN_KEY = 'mrcards.mine.open';
 const nameOf = (c: Card) => c.familyName ?? c.name;
 const FIELD_ICON: Record<Field, ComponentType<{'aria-hidden'?: boolean}>> = {
   '쇼핑': ShoppingBag, '해외·여행': Plane, '외식·카페': Coffee, '생활·납부': Receipt, '교통·차': Bus,
-  '문화·레저': Ticket, '페이·포인트': Coins, '무이자 할부': Percent, '기타': Gift, '기타 광고': Gift, // 기타 광고는 모아보기에 안 나옴
+  '문화·레저': Ticket, '페이·포인트': Coins, '무이자 할부': Percent, '기타': Gift,
 };
 
 /** 카드 상세 머리의 '+ 내 카드' 버튼. 같은 상품의 다른 변형이 이미 등록돼 있으면 등록된 것으로 봄 */

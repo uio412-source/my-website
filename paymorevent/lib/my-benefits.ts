@@ -1,10 +1,11 @@
-// 내 혜택: 등록한 카드(브라우저 mrcards.mine)로 지금 받을 수 있는 카드사 이벤트 모으기 (분야 '기타 광고'는 뺌)
+// 내 혜택: 등록한 카드(브라우저 mrcards.mine)로 지금 받을 수 있는 카드사 이벤트 모으기 (광고성·발급 홍보는 뺌)
 // - 확인됨: 카드사 공지에 대상 카드로 이 카드(같은 상품의 브랜드·디자인 변형 포함)가 적혀 있거나, 카드사 전체 대상이고 종류·브랜드 조건도 맞음 (offerApplies)
 // - 확인 필요: 같은 카드사 이벤트인데 공지에 대상 카드가 안 적혀 있음(제목·기간만 아는 이벤트가 대부분).
 //   다른 카드 전용이거나, 문구상 체크카드 제외·체크카드 전용·특정 브랜드 전용이라 이 카드가 빠지는 건 뺍니다.
 import type {Card, Offer} from './catalog-types';
 import {cardFamilyKey, currentMonthOffer, issuerGroup, offerApplies, visibleOffer} from './catalog-model';
 import {isDetailed, viewOf} from './event-view';
+import {isAd, isIssuePromo} from './ad-events';
 
 export type MineMatch = {o: Offer; sure: Card[]; maybe: Card[]};
 
@@ -53,7 +54,8 @@ export function myEvents(mine: Card[], all: Card[], events: Offer[]): MineMatch[
   const out: MineMatch[] = [];
   for (const o of events) {
     if (o.kind !== 'card' || !visibleOffer(o) || !currentMonthOffer(o)) continue;
-    if (viewOf(o).field === '기타 광고') continue; // 보험·금융상품·가입 유도·여행사 패키지 같은 광고성 이벤트는 빼고 (lib/event-view.ts AD_RX)
+    // 광고성 이벤트는 앱이 이벤트를 받을 때 이미 뺌(lib/ad-events.ts). 새로 발급·첫 이용 회원 대상 홍보는 이미 가진 카드라 뺌
+    if (isAd(o.title) || isIssuePromo(o.title)) continue;
     const g = issuerGroup(o.issuer);
     const sure: Card[] = [], maybe: Card[] = [];
     const open = !o.cardTarget && !o.cardIds?.length && !o.cardNames?.length; // 대상 카드가 안 적힌 이벤트
