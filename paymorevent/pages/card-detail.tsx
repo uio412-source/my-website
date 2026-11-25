@@ -210,7 +210,8 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
           {valet.map(p => {
             const v = p.cards.find(x => x.catalogId === card.id);
             return <tr key={p.id}>
-              <th scope="row" colSpan={narrow ? 1 : 2} className="wide">호텔 발레파킹 <a href={valetMapPath(v ? `${p.id}:${v.key}` : card.id)}>서울 {valetHotelResults(p).length}곳 →</a></th>
+              <th scope="row" colSpan={narrow ? 1 : 2} className="wide">호텔 발레파킹 <a href={valetMapPath(v ? `${p.id}:${v.key}` : card.id)}>서울 {valetHotelResults(p).length}곳 →</a>
+                {valet.length > 1 && <small>{p.brand} {p.tier.replace(/\s*\d+$/, '')} 발급 시</small>}</th>
               <td className="cd-g-val"><b>무료</b></td>
               <td className="cd-g-lim"><span>전월 {won(p.minimumSpend)}</span><span>{valetQuota(p)}</span></td>
             </tr>;

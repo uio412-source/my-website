@@ -31,15 +31,31 @@ let open = new URLSearchParams(location.search).get('hotel') || '';
 let q = '', cq = '';
 
 // ---------- 카드 묶기: 같은 카드가 브랜드별 안내(프로그램) 여러 개에 나옴 ----------
+/**
+ * 안내문마다 같은 카드 이름을 다르게 적음('신한카드 The BEST+'·'The BEST+', 'The ACE Blue Label'·'The ACE BLUE LABEL',
+ * '메리어트 본보이™ 더 베스트'·'… 신한카드'). 카드사 이름·'카드'·™®·기호·대소문자를 빼고 비교('+'는 남김: The BEST ≠ The BEST+).
+ * 수집 데이터를 합치는 tools/data/inbox.py의 card_key와 같은 규칙입니다.
+ */
+const cardNorm = (issuer, name) => {
+  let s = String(name).replace(/[™®©]/g, '').normalize('NFKC').toLowerCase();
+  for (const w of [issuer, issuer.replace(/카드$/, '')].map((x) => x.toLowerCase()).sort((a, b) => b.length - a.length)) if (w) s = s.split(w).join('');
+  return s.replace(/카드|\bcard\b/g, '').replace(/[^\p{L}\p{N}+]/gu, '');
+};
+let alias = {};          // 예전 저장값의 카드키(카드사|안내문 표기) → 지금 묶인 카드키
 function buildCards() {
-  const m = new Map();
+  const m = new Map(), idOf = {};
+  for (const p of data.programs) for (const c of p.cards) if (c.catalogId) idOf[p.issuer + '|' + cardNorm(p.issuer, c.name)] ||= c.catalogId;
+  alias = {};
   for (const program of data.programs) for (const c of program.cards) {
-    const key = program.issuer + '|' + c.name;
-    if (!m.has(key)) m.set(key, {key, name: c.name, issuer: program.issuer, catalogId: c.catalogId, programs: [], refs: []});
-    const card = m.get(key);
-    card.programs.push(program);
+    const n = program.issuer + '|' + cardNorm(program.issuer, c.name);
+    const id = c.catalogId || idOf[n];
+    const same = id ? program.issuer + '|#' + id : n;   // 카드 DB id가 같거나, 이름이 같으면 한 장
+    if (!m.has(same)) m.set(same, {key: program.issuer + '|' + c.name, name: c.name, names: [], issuer: program.issuer, catalogId: id, programs: [], refs: []});
+    const card = m.get(same);
+    if (!card.names.includes(c.name)) card.names.push(c.name);
+    if (!card.programs.includes(program)) card.programs.push(program);
     card.refs.push(program.id + ':' + c.key);
-    card.catalogId ||= c.catalogId;
+    alias[program.issuer + '|' + c.name] = card.key;
   }
   cards = [...m.values()].sort((a, b) => ko.compare(a.issuer, b.issuer) || ko.compare(short(a.name), short(b.name)));
   for (const c of cards) c.brands = [...new Set(c.programs.map((p) => p.brand))];
@@ -90,7 +106,7 @@ function renderPick() {
     const n = cards.filter((c) => c.issuer === i && mine[c.key]).length;
     return `<button type="button" role="tab" aria-selected="${i === issuer}" data-iss="${esc(i)}">${tile(i)}${esc(i.replace(/카드$/, ''))}${n ? `<b>${n}</b>` : ''}</button>`;
   }).join('');
-  const found = cards.filter((c) => terms ? norm(`${c.name} ${c.issuer} ${c.brands.join(' ')}`).includes(terms) : c.issuer === issuer);
+  const found = cards.filter((c) => terms ? norm(`${c.names.join(' ')} ${c.issuer} ${c.brands.join(' ')}`).includes(terms) : c.issuer === issuer);
   // 카드가 많으면(신한 36종 등) 화면이 카드 목록으로만 꽉 차서 결과가 안 보임 → 고른 카드 먼저 + 8개만, 나머지는 펼치기
   const LIMIT = 8;
   const sorted = [...found.filter((c) => mine[c.key]), ...found.filter((c) => !mine[c.key])];
@@ -572,11 +588,15 @@ async function load() {
     const met = store.get(OLD_MET, true);
     for (const ref of store.get(OLD_SAVE, [])) { const c = cards.find((x) => x.refs.includes(ref)); if (c) mine[c.key] = {brand: '', met}; }
   }
-  for (const k of Object.keys(mine)) if (!byKey[k]) delete mine[k];
+  for (const k of Object.keys(mine)) if (!byKey[k]) { // 표기가 달라 따로 보이던 카드는 묶인 카드로 옮김
+    const to = alias[k];
+    if (to && !mine[to]) mine[to] = mine[k];
+    delete mine[k];
+  }
   // Mr. Cards에서 ?card=카드ID(또는 프로그램id:카드key)로 넘어오면 그 카드를 골라 둠
   const want = new URLSearchParams(location.search).get('card');
   if (want) for (const c of cards) if (c.catalogId === want || c.refs.includes(want)) {
-    const prog = want.includes(':') ? c.programs[c.refs.indexOf(want)] : null;
+    const prog = want.includes(':') ? data.programs.find((p) => p.id === want.slice(0, want.lastIndexOf(':'))) : null;
     mine[c.key] = {brand: prog ? prog.brand : (c.brands.length === 1 ? c.brands[0] : ''), met: mine[c.key]?.met ?? true};
     issuer = c.issuer;
   }

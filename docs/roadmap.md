@@ -19,7 +19,9 @@ Claude가 매일 한 건 이상 개선·확장을 골라 끝까지(PR → 머지
 5. 추정·대략값은 화면에 그렇다고 적고, 공식 출처가 있는 값은 출처 링크를 남김.
 
 ## 후보 (위가 먼저)
-- [ ] Hotels 발레: 수집 카드 이름과 카드 DB(`catalog-snapshot.json`) 이름 표기가 달라 `catalogId`가 비는 카드(KB `BeV III`·`HERITAGE Classic [스카이패스형]`, 신한 `The BEST` 등)를 이름 정규화로 연결 — Mr. Cards에서 카드→발레 연결이 끊기는 문제
+- [ ] Hotels 발레: 같은 안내문(PDF)이 손정리 프로그램과 수집 프로그램으로 두 번 남는 경우 합치기(삼성 `samsung-amex-reserve` vs `samsung-american-express-platinum-elite`, `validThrough`만 다름) — Mr. Cards 상세에 같은 줄이 두 번 나옴
+- [ ] Hotels 발레: 카드 DB에 없는 발레 카드 40종(신한 The CLASSIC-Y·S·V·L, The BEST·BEST-F, 하나 CLUB1 100, 현대 아멕스 Edition1 등)이 단종인지 DB 누락인지 확인 — 누락이면 `card-products`로 알리기
+- [ ] Cards: 상품설명서 정리본(`card-terms`) 카드 연결도 같은 느슨한 이름 규칙(`card_key`)으로 — 지금은 정확한 이름만 연결
 - [ ] Hotels 발레: '제휴 호텔 확인 중' 카드 5종(ALL 우리카드 Infinite, 메리어트 본보이 더 프레스티지 삼성카드, NH ing+·올원+, 롯데 Mastercard WORLD, 삼성 THE iD.·THE 1)의 서울 제휴 호텔·조건을 카드사 공식 안내로 채우기 (`hotels/valet.json`의 `pending` → `programs`)
 - [ ] Hotels 발레: 카드사 안내 원문(PDF)으로 `visit`·`useRequired`·영수증 최소금액 다시 대조
 - [ ] Hotels 지도: 1박 평균가(`price`·`priceAt`)를 수집할 길 만들기 (예: `data/inbox/hotel-info` 양식 + 화면 '수집 전' 줄이기)
@@ -28,6 +30,7 @@ Claude가 매일 한 건 이상 개선·확장을 골라 끝까지(PR → 머지
 - [ ] Stocks: 사용자 입장에서 매일 들어와 볼 이유 점검(관심종목 알림 기준·배당 일정 등) 후 후보 추가
 
 ## 한 일
+- 2026-11-25 · Hotels 발레: 안내문마다 표기가 다른 같은 카드(`신한카드 The BEST+`·`The BEST+`, `The ACE Blue Label`·`BLUE LABEL`, `JADE Classic` 18곳·27곳 등)를 한 장으로 묶음 — 카드 고르기 90종 → 79종, 한쪽만 고르면 호텔이 덜 보이던 문제 해결. 카드 DB 연결(`catalogId`) 17건 추가로 Mr. Cards에서 발레가 보이는 카드 27 → 39장(BeV Ⅲ·CLUB Leaders·ACE BLUE LABEL 등), 상세의 발레 줄에 브랜드 표시 (#PR)
 - 2026-11-25 · Stocks: 차트 위 요약 칸(줍줍LV·현재가·RSI·200일선) 삭제 — 지수 카드와 겹치던 값 (#92)
 - 2026-11-25 · Cards: '상품권 가능' 분류 오류 수정 — 하나 CLUB H 상품설명서의 계산 예시 문장("…가정 시 200마일리지 적립")이 상품권·관리비 '가능' 규칙으로 파싱돼 목록 필터·태그에 노출되던 문제. 잘못된 발췌·규칙 제거 + 카드 단위 판정이 범위별 규칙보다 우선하도록 `paymentVerdict` 도입
 - 2026-11-25 · Stocks: 명언 배너를 차트(`ungjup.html`)에만 남기고 관심종목·배당에서는 제거(`#qroll`·`quotes.js` 로드 뺌)
