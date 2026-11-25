@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-25 22:48 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-26 02:53 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-25 22:48 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#118](https://github.com/uio412-source/my-website/pull/118) | Pickle | data: 수집 2026-11-26 (NH·롯데·KB 브랜드 선택서비스 8 · KB 상품설명서 5종) | 2026-11-26 02:51 | 4파일 · data/inbox/brand-services 3 · data/inbox/… | 머지 |
+| [#117](https://github.com/uio412-source/my-website/pull/117) | Claude | Mr. Cards 텍스트 정리: 이벤트 이름 찌꺼기·안내 한 줄·원문 반복 줄 | 2026-11-25 22:48 | 12파일 · paymorevent/ 7 · data/ 2 · docs/ 2 외 1곳 | 머지 |
 | [#116](https://github.com/uio412-source/my-website/pull/116) | Claude | Mr. Stocks 텍스트 정리: 배당 세금 안내 접기·한 줄씩 | 2026-11-25 22:39 | 8파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳 | 머지 |
 | [#115](https://github.com/uio412-source/my-website/pull/115) | Claude | Mr. Hotels 텍스트 정리: 이벤트 조건 2줄·발레 카드 목록 접기·안내 한 줄 | 2026-11-25 22:36 | 9파일 · assets/ 4 · data/ 2 · docs/ 2 외 1곳 | 머지 |
 | [#114](https://github.com/uio412-source/my-website/pull/114) | Claude | Mr. Travel 텍스트 정리: 원문 요약 문장 빼고 목록은 더 보기로 | 2026-11-25 22:32 | 7파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳 | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-25 22:48 KST · `python tools/data/agent_sync.py` · 기�
 | [#96](https://github.com/uio412-source/my-website/pull/96) | ChatGPT Dot | data: 수집 2026-11-25 (BC 바로 모두의카드 1종) | 2026-11-25 13:54 | 1파일 · data/inbox/card-terms 1 | 닫힘 |
 | [#95](https://github.com/uio412-source/my-website/pull/95) | Pickle | data: 수집 대기열 갱신 (2026-11-25 Pickle 3차) | 2026-11-25 11:51 | 1파일 · data/ 1 | 머지 |
 | [#94](https://github.com/uio412-source/my-website/pull/94) | Pickle | data: 수집 2026-11-25 (신한 브랜드 선택서비스 6 · BC 상품설명서 4종, Pickle 3… | 2026-11-25 11:50 | 2파일 · data/inbox/brand-services 1 · data/inbox/… | 머지 |
-| [#93](https://github.com/uio412-source/my-website/pull/93) | Pickle | docs: 로드맵에 차트 요약 칸 삭제(#92) 기록 | 2026-11-25 10:35 | 1파일 · docs/ 1 | 머지 |
-| [#91](https://github.com/uio412-source/my-website/pull/91) | Pickle | Mr. Cards: 하나 CLUB H가 '상품권 가능'으로 분류되던 오류 수정 | 2026-11-25 10:31 | 4파일 · paymorevent/ 2 · docs/ 1 · 루트 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -71,17 +71,15 @@ _지금 잠근 영역이 없습니다._
 
 ### 열린 PR
 
-| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
-|---|---|---|---|---|---|
-| [#117](https://github.com/uio412-source/my-website/pull/117) | Claude | `ai/claude/cards-text-cleanup` | 2026-11-25 22:47 | 12파일 · paymorevent/ 7 · data/ 2 · docs/… | Mr. Cards 텍스트 정리: 이벤트 이름 찌꺼기·안내 한 줄·원문 반복 줄 |
+_열린 PR이 없습니다._
 
-### 수집 대기열 (`data/collect-queue.json`, built 2026-11-25)
+### 수집 대기열 (`data/collect-queue.json`, built 2026-11-26)
 
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 1425 / 1447종 · **브랜드 프로그램** todo 69 · valet-only 4 / 94개
-- **최근 수집일** — card-terms 2026-11-25 · brand-services 2026-11-25 · card-events 2026-11-25 · hotel-events 없음 · travel-events 없음 · card-products 없음
+- **남은 카드** 1418 / 1447종 · **브랜드 프로그램** todo 62 · valet-only 4 / 94개
+- **최근 수집일** — card-terms 2026-11-26 · brand-services 2026-11-26 · card-events 2026-11-25 · hotel-events 없음 · travel-events 없음 · card-products 없음
 
 ### 에이전트별 마지막 반영
 
@@ -89,22 +87,31 @@ _지금 잠근 영역이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #99 data: 수집 2026-11-25 (BC 모두의카드 실적 … | 2026-11-25 15:09 | 0건 |
 | ChatGPT Dot | **없음 — 만들어 주세요** | - | - | 0건 |
-| Claude | `data/agent-notes/claude.json` | #116 Mr. Stocks 텍스트 정리: 배당 세금 안내 접기·한 … | 2026-11-25 22:39 | 1건 |
-| Pickle | `data/agent-notes/pickle.json` | #109 fix: 발레파킹 '확인 중' 목록에서 해결된 우리카드 항목… | 2026-11-25 19:56 | 2건 |
+| Claude | `data/agent-notes/claude.json` | #117 Mr. Cards 텍스트 정리: 이벤트 이름 찌꺼기·안내 한… | 2026-11-25 22:48 | 1건 |
+| Pickle | `data/agent-notes/pickle.json` | #118 data: 수집 2026-11-26 (NH·롯데·KB 브랜드… | 2026-11-26 02:51 | 5건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 2건
+### 다시 볼 것 (open) — 5건
 
+- **2026-11-26 · Pickle · NH농협카드 Mastercard Platinum 안내문**
+  - 사유: card.nonghyup.com/file/ebank/form/pdf/Mastercard_Platinum_250910.pdf 본문이 Mastercard World 안내문과 동일(심의필 2025-C1a-12536·12377)해 Platinum 자료로 쓸 수 없음
+  - 재시도: NH농협카드 상품공시실에서 Platinum 전용 안내장을 찾아 교체. 없으면 대기열 key를 내리기
+- **2026-11-26 · Pickle · NH농협카드 국제브랜드 안내문 2026년판**
+  - 사유: 공개된 파일이 2025년판(심의필 2025-08-27·28, 유효 2025-12-31)뿐. 규칙상 작년 문서는 허용되어 그대로 담고 validThrough를 2025-12-31로 표기
+  - 재시도: card.nonghyup.com/file/ebank/form/pdf/<Brand>_<Tier>_<YYMMDD>.pdf 규칙으로 2026년판 확인 후 같은 id로 교체
+- **2026-11-26 · Pickle · card-events 롯데·NH농협·BC·IBK 이벤트 목록**
+  - 사유: 이벤트 목록 표가 ajax로만 그려져 정적 HTML에 이벤트가 없음(bccard.com·card.nonghyup.com·lottecard.co.kr)
+  - 재시도: 브라우저로 목록을 렌더한 뒤 상세 페이지까지 확인해 수집(66·67·68행 참고)
+- **2026-11-26 · Pickle · samsung-aap1483 삼성카드 taptap O 등 삼성 상품설명서(대기열 맨 앞 10종)**
+  - 사유: 삼성 카드 상세가 Nuxt 런타임으로 그려져 HTML에 상품설명서 PDF 링크가 없음. static11.samsungcard.com/.../YYMM_<코드>.pdf 파일명 추측 4건 모두 404 → 2회 실패로 중단 (2026-11-26 실행에서도 같은 이유로 건너뜀)
+  - 재시도: ① 카드 상세를 브라우저로 렌더한 뒤 네트워크 응답(_next/data·api)에서 PDF 주소를 찾기 ② 삼성카드 고객센터 > 상품공시실 목록을 열어 카드명으로 검색해 내려받기 ③ 그래도 없으면 이 줄에 날짜만 더하고 다음 카드로
 - **2026-11-25 · Claude · 신한 The More(더모아) 등 카드 DB에 없는 인기 카드**
   - 사유: 내 카드 찾기에서 '더모아'를 쳐도 안 나옴 — catalog-snapshot.json에 카드가 없음(검색 문제 아님)
   - 재시도: card-products 수집(상품공시실)으로 판매 중 카드 누락 확인 후 카드 DB에 추가
   - 참고: roadmap 후보
-- **2026-11-25 · Pickle · samsung-aap1483 삼성카드 taptap O 등 삼성 상품설명서(대기열 맨 앞 10종)**
-  - 사유: 삼성 카드 상세가 Nuxt 런타임으로 그려져 HTML에 상품설명서 PDF 링크가 없음. static11.samsungcard.com/.../YYMM_<코드>.pdf 파일명 추측 4건 모두 404 → 2회 실패로 중단
-  - 재시도: ① 카드 상세를 브라우저로 렌더한 뒤 네트워크 응답(_next/data·api)에서 PDF 주소를 찾기 ② 삼성카드 고객센터 > 상품공시실 목록을 열어 카드명으로 검색해 내려받기 ③ 그래도 없으면 이 줄에 날짜만 더하고 다음 카드로
 
 ### 다른 경로로 처리 (workaround) — 1건
 

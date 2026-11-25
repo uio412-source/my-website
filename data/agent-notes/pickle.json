@@ -1,9 +1,33 @@
 {
   "agent": "Pickle",
   "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-  "updatedAt": "2026-11-25T19:40:00+09:00",
+  "updatedAt": "2026-11-26T02:56:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-26T02:55:00+09:00",
+      "kind": "brand-services + card-terms",
+      "pr": 118,
+      "summary": "NH농협(Mastercard World·Titanium·UnionPay Diamond)·롯데(Mastercard/Visa Platinum)·KB(Visa/Amex/Mastercard Platinum) 선택서비스 8프로그램(호텔 발레 대상 호텔 전체 포함, NH Titanium·KB Mastercard Platinum은 마티나·마티나골드 라운지) · KB 상품설명서 7종(EV·KB라이프·KT스카이라이프·E1 LPG·AK·Easy shopping·K-패스)",
+      "queueKeys": [
+        "nh-mastercard-world",
+        "nh-mastercard-titanium",
+        "nh-unionpay-diamond",
+        "lotte-mastercard-platinum",
+        "lotte-visa-platinum",
+        "kb-visa-platinum",
+        "kb-american-express-platinum",
+        "kb-mastercard-platinum",
+        "kb-00230",
+        "kb-09579",
+        "kb-04348",
+        "kb-04459",
+        "kb-04444",
+        "kb-09064",
+        "kb-09321"
+      ],
+      "status": "merged"
+    },
     {
       "at": "2026-11-25T19:45:00+09:00",
       "kind": "docs/tools",
@@ -46,10 +70,31 @@
   ],
   "skipped": [
     {
-      "at": "2026-11-25",
+      "at": "2026-11-26",
+      "target": "NH농협카드 Mastercard Platinum 안내문",
+      "status": "open",
+      "reason": "card.nonghyup.com/file/ebank/form/pdf/Mastercard_Platinum_250910.pdf 본문이 Mastercard World 안내문과 동일(심의필 2025-C1a-12536·12377)해 Platinum 자료로 쓸 수 없음",
+      "retry": "NH농협카드 상품공시실에서 Platinum 전용 안내장을 찾아 교체. 없으면 대기열 key를 내리기"
+    },
+    {
+      "at": "2026-11-26",
+      "target": "NH농협카드 국제브랜드 안내문 2026년판",
+      "status": "open",
+      "reason": "공개된 파일이 2025년판(심의필 2025-08-27·28, 유효 2025-12-31)뿐. 규칙상 작년 문서는 허용되어 그대로 담고 validThrough를 2025-12-31로 표기",
+      "retry": "card.nonghyup.com/file/ebank/form/pdf/<Brand>_<Tier>_<YYMMDD>.pdf 규칙으로 2026년판 확인 후 같은 id로 교체"
+    },
+    {
+      "at": "2026-11-26",
+      "target": "card-events 롯데·NH농협·BC·IBK 이벤트 목록",
+      "status": "open",
+      "reason": "이벤트 목록 표가 ajax로만 그려져 정적 HTML에 이벤트가 없음(bccard.com·card.nonghyup.com·lottecard.co.kr)",
+      "retry": "브라우저로 목록을 렌더한 뒤 상세 페이지까지 확인해 수집(66·67·68행 참고)"
+    },
+    {
+      "at": "2026-11-26",
       "target": "samsung-aap1483 삼성카드 taptap O 등 삼성 상품설명서(대기열 맨 앞 10종)",
       "status": "open",
-      "reason": "삼성 카드 상세가 Nuxt 런타임으로 그려져 HTML에 상품설명서 PDF 링크가 없음. static11.samsungcard.com/.../YYMM_<코드>.pdf 파일명 추측 4건 모두 404 → 2회 실패로 중단",
+      "reason": "삼성 카드 상세가 Nuxt 런타임으로 그려져 HTML에 상품설명서 PDF 링크가 없음. static11.samsungcard.com/.../YYMM_<코드>.pdf 파일명 추측 4건 모두 404 → 2회 실패로 중단 (2026-11-26 실행에서도 같은 이유로 건너뜀)",
       "retry": "① 카드 상세를 브라우저로 렌더한 뒤 네트워크 응답(_next/data·api)에서 PDF 주소를 찾기 ② 삼성카드 고객센터 > 상품공시실 목록을 열어 카드명으로 검색해 내려받기 ③ 그래도 없으면 이 줄에 날짜만 더하고 다음 카드로"
     },
     {
