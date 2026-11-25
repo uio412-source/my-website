@@ -1,0 +1,624 @@
+{
+  "type": "card-terms",
+  "issuer": "KB국민카드",
+  "collectedAt": "2026-11-26",
+  "collector": "Pickle",
+  "cards": [
+    {
+      "cardId": "kb-00230",
+      "queueKey": "kb-00230",
+      "name": "KB국민EV 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=00230&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/_00230__prdctOpmn_20260330.pdf",
+      "docDate": "2024-07-25",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 20000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 20000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 400000,
+      "spendBasis": "전월 1일~말일 승인시점 기준 일시불·할부 승인금액(가족카드 포함, 해외이용은 매입완료 기준)",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "국세",
+        "지방세",
+        "각종 공과금(전기·수도 등)",
+        "4대 사회보험료(건강·연금·고용·산재)",
+        "대학(원) 등록금",
+        "아파트 관리비",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "상품권·선불카드 구입·충전금액",
+        "무승인전표",
+        "취소금액",
+        "초·중·고 학교납입금 전체",
+        "정부지원금(보육료·유치원보조비·바우처 이용금액 등)"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "상품권·선불카드 구입·충전금액",
+        "취소금액",
+        "할인받은 이용건의 해당 매출 전체"
+      ],
+      "benefits": [
+        {
+          "group": "전기/수소차",
+          "label": "전기차충전",
+          "place": "전기차 충전기, 수소차 충전소",
+          "value": "20%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            },
+            {
+              "spend": 1200000,
+              "cap": 20000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "전월 이용실적 40/80/120만원 구간별 월 할인한도"
+          ]
+        },
+        {
+          "group": "생활",
+          "label": "주차/세차",
+          "place": "주차장, 세차장 업종",
+          "value": "20%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": null,
+          "conditions": [
+            "공식 홈페이지·모바일앱 정기결제 시 할인(간편결제·인앱결제 제외)"
+          ]
+        },
+        {
+          "group": "생활",
+          "label": "OTT",
+          "place": "넷플릭스, 티빙, 웨이브, 디즈니플러스, 유튜브프리미엄",
+          "value": "20%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": null,
+          "conditions": [
+            "공식 홈페이지·모바일앱 정기결제 시 할인"
+          ]
+        },
+        {
+          "group": "쇼핑",
+          "label": "오픈마켓",
+          "place": "G마켓, 옥션, 11번가",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": null,
+          "conditions": [
+            "KB Pay 결제수단으로 결제 시 할인"
+          ]
+        },
+        {
+          "group": "자동차",
+          "label": "자동차보험",
+          "place": "손해보험업종",
+          "value": "1만원",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 10000,
+          "capScope": "연",
+          "limits": "연 1회",
+          "conditions": [
+            "보험료 승인금액 건당 20만원 이상"
+          ]
+        }
+      ],
+      "grace": "최초 카드 사용등록일(KB Pay 등 간편결제 등록 포함)로부터 다음 달 말일까지 실적 유예 적용"
+    },
+    {
+      "cardId": "kb-09579",
+      "queueKey": "kb-09579",
+      "name": "KB라이프 딱좋은 요즘 건강 KB카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09579&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/09579__prdctOpmn_20260626.pdf",
+      "docDate": "2026-06-26",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 20000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 20000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 400000,
+      "spendBasis": "전월 1일~말일 승인시점 기준 일시불·할부 승인금액(가족카드 포함, 해외이용은 매입완료 기준)",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "국세",
+        "지방세",
+        "각종 공과금(전기·수도 등)",
+        "4대 사회보험료(건강·연금·고용·산재)",
+        "대학(원) 등록금",
+        "아파트 관리비",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "상품권·선불카드 구입·충전금액",
+        "무승인전표",
+        "취소금액",
+        "건강보험료 자동납부 및 병원/약국 업종 할인금액(해당 이용금액 전체)",
+        "유치원·초·중·고 학교납입금 전체",
+        "정부지원금(보육료·유치원보조비·바우처 이용금액 등)"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "상품권·선불카드 구입·충전금액",
+        "취소금액"
+      ],
+      "benefits": [
+        {
+          "group": "보험",
+          "label": "건강보험료",
+          "place": "KB라이프 건강보험 상품 보험료 자동납부",
+          "value": "월 5천~8천원",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 800000,
+              "cap": 8000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "limits": null,
+          "conditions": [
+            "자동납부 승인금액이 할인금액보다 적으면 승인금액만큼 할인",
+            "여러 건 자동납부 시 월 할인금액 내 합산"
+          ]
+        },
+        {
+          "group": "병원",
+          "label": "병원/약국",
+          "place": "종합병원, 일반·치과·한방병원, 일반·치과·한의원, 약국",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": null,
+          "conditions": []
+        }
+      ],
+      "grace": "최초 카드 사용등록일(KB Pay 등 간편결제 등록 포함)로부터 다음 달 말일까지 실적 유예 적용"
+    },
+    {
+      "cardId": "kb-04348",
+      "queueKey": "kb-04348",
+      "name": "KT 스카이라이프 KB카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04348&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/04348__prdctOpmn_20260626.pdf",
+      "docDate": "2025-11-21",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 20000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 20000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 승인시점 기준 일시불·할부 승인금액(가족카드 포함, 해외이용은 매입완료 기준)",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "국세",
+        "지방세",
+        "각종 공과금(전기·수도 등)",
+        "4대 사회보험료(건강·연금·고용·산재)",
+        "대학(원) 등록금",
+        "아파트 관리비",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "상품권·선불카드 구입·충전금액",
+        "무승인전표",
+        "취소금액",
+        "무승인전표(RF 후불교통요금·자판기·터널이용료·항공기내이용 등)"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "상품권·선불카드 구입·충전금액",
+        "취소금액"
+      ],
+      "benefits": [
+        {
+          "group": "통신",
+          "label": "스카이라이프",
+          "place": "KT스카이라이프 요금 자동납부",
+          "value": "월 5천~1만1천원",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 5000
+            },
+            {
+              "spend": 700000,
+              "cap": 11000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "limits": null,
+          "conditions": [
+            "KT스카이라이프 자동납부 신청 건에 한해 할인",
+            "자동납부 승인금액이 할인금액보다 적으면 승인금액까지만 할인"
+          ]
+        }
+      ],
+      "grace": "최초 카드 사용등록일로부터 다음 달 말일까지 전월실적 30만원 미만이면 월 2,500원 할인"
+    },
+    {
+      "cardId": "kb-04459",
+      "queueKey": "kb-04459",
+      "name": "E1 LPG KB국민카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04459&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/04459__prdctOpmn_20260626.pdf",
+      "docDate": "2024-11-25",
+      "annualFee": [
+        {
+          "brand": "K-World(JCB)",
+          "amount": 15000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 20000
+        }
+      ],
+      "brands": [
+        "K-World(JCB)",
+        "Mastercard"
+      ],
+      "minimumSpend": 500000,
+      "spendBasis": "전월 1일~말일 승인시점 기준 일시불·할부 승인금액(가족카드 포함, 해외이용은 매입완료 기준)",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "국세",
+        "지방세",
+        "각종 공과금(전기·수도 등)",
+        "4대 사회보험료(건강·연금·고용·산재)",
+        "대학(원) 등록금",
+        "아파트 관리비",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "상품권·선불카드 구입·충전금액",
+        "무승인전표",
+        "취소금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "상품권·선불카드 구입·충전금액",
+        "취소금액"
+      ],
+      "benefits": [
+        {
+          "group": "Car Life",
+          "label": "LPG 충전",
+          "place": "㈜E1 지정 LPG 충전소",
+          "value": "리터당 100원",
+          "valueType": "할인",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "limits": null,
+          "conditions": [
+            "㈜E1 고시 LPG 가격 기준 할인 적용",
+            "E1 오렌지 멤버십 자동 가입, 월 70만원까지 1천원당 4~7P 적립"
+          ]
+        },
+        {
+          "group": "Car Life",
+          "label": "자동차보험",
+          "place": "KB손해보험 매직카다이렉트",
+          "value": "모바일 충전 5천원권",
+          "valueType": "제공",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "limits": "1회",
+          "conditions": [
+            "보험료 최초 견적 산출 시 1회 제공(주민번호당 1개)",
+            "전월 이용실적 무관"
+          ]
+        },
+        {
+          "group": "My Life",
+          "label": "골프",
+          "place": "골프장, 골프연습장 업종 등록 가맹점",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 20000
+            },
+            {
+              "spend": 2000000,
+              "cap": 50000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "월간 통합 할인한도",
+          "limits": null,
+          "conditions": []
+        },
+        {
+          "group": "My Life",
+          "label": "쇼핑",
+          "place": "G마켓, 옥션, 11번가, 인터파크, 롯데닷컴, 신세계몰, 쿠팡, 티몬, 위메프",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 20000
+            },
+            {
+              "spend": 2000000,
+              "cap": 50000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "월간 통합 할인한도",
+          "limits": null,
+          "conditions": []
+        },
+        {
+          "group": "My Life",
+          "label": "외식",
+          "place": "VIPS, 아웃백스테이크하우스, 생어거스틴",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 20000
+            },
+            {
+              "spend": 2000000,
+              "cap": 50000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "월간 통합 할인한도",
+          "limits": null,
+          "conditions": []
+        },
+        {
+          "group": "My Life",
+          "label": "영화",
+          "place": "CGV 영화관(현장예매·홈페이지·앱 결제)",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 20000
+            },
+            {
+              "spend": 2000000,
+              "cap": 50000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "월간 통합 할인한도",
+          "limits": null,
+          "conditions": [
+            "상품권 구매·매점 이용분 제외"
+          ]
+        },
+        {
+          "group": "My Life",
+          "label": "대중교통",
+          "place": "시내버스, 지하철, 고속·시외버스",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 20000
+            },
+            {
+              "spend": 2000000,
+              "cap": 50000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "월간 통합 할인한도",
+          "limits": null,
+          "conditions": [
+            "시내버스·지하철은 명세서상 이용일 기준"
+          ]
+        }
+      ],
+      "grace": "최초 카드 사용등록일로부터 다음 달 말일까지 실적이 없어도 E1 LPG 충전 할인 월 1만원까지 제공"
+    },
+    {
+      "cardId": "kb-04444",
+      "queueKey": "kb-04444",
+      "name": "AK KB국민카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04444&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/_04444__prdctOpmn_20240531.pdf",
+      "docDate": "2024-05-28",
+      "annualFee": [
+        {
+          "brand": "K-World(JCB)",
+          "amount": 12000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 12000
+        }
+      ],
+      "brands": [
+        "K-World(JCB)",
+        "Mastercard"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 승인시점 기준 일시불·할부 승인금액(가족카드 포함, 해외이용은 매입완료 기준)",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "국세",
+        "지방세",
+        "각종 공과금(전기·수도 등)",
+        "4대 사회보험료(건강·연금·고용·산재)",
+        "대학(원) 등록금",
+        "아파트 관리비",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "상품권·선불카드 구입·충전금액",
+        "무승인전표",
+        "취소금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "상품권·선불카드 구입·충전금액",
+        "취소금액"
+      ],
+      "benefits": [
+        {
+          "group": "AK PLAZA",
+          "label": "AK플라자",
+          "place": "AK PLAZA(AK mall 포함, 별도 임대매장·일부 매장 제외)",
+          "value": "5~10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 600000,
+              "cap": 14000
+            },
+            {
+              "spend": 900000,
+              "cap": 20000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "limits": null,
+          "conditions": [
+            "이용 건당 5만원 이상",
+            "전월실적 30/60/90만원 구간별 5/7/10% 할인"
+          ]
+        },
+        {
+          "group": "AK PLAZA",
+          "label": "멤버스 적립",
+          "place": "AK PLAZA 내(AK mall 제외)",
+          "value": "0.2%",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "limits": null,
+          "conditions": [
+            "AK 멤버스 고객정보 제공 동의 필수(기본 멤버스 마일리지는 별도 제공)"
+          ]
+        }
+      ],
+      "grace": "최초 카드 사용등록일(KB Pay 등 간편결제 등록 포함)로부터 다음 달 말일까지 실적 유예 적용"
+    }
+  ]
+}
