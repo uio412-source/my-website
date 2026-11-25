@@ -81,8 +81,6 @@
       const keep = m[1].split(/\s*[x×X&+]\s*/).filter((w) => w && !/카드|card|visa|master|비자|마스터|유니온|jcb|amex/i.test(w));
       return (keep.length ? keep.join('·') + ' ' : '') + m[2];
     };
-    const grams = (t) => { const x = t.replace(/[^가-힣A-Za-z0-9]/g, ''); const g = new Set(); for (let i = 0; i < x.length - 1; i++) g.add(x.slice(i, i + 2)); return g; };
-    const echoes = (a, b) => { const A = grams(a), B = grams(b); if (!A.size) return true; let n = 0; for (const g of A) if (B.has(g)) n++; return n / A.size >= 0.6; };
 
     function render() {
       const evs = qEvents(), common = evs.filter((e) => !e.places.length), placed = evs.filter((e) => e.places.length);
@@ -98,7 +96,7 @@
           chips('issuer', [['all', '모든 카드사', null], ...Object.entries(iss).sort((a, b) => b[1] - a[1]).map(([k, n]) => [k, (ISSUER[k] || [k])[0], n])], state.issuer);
         const list = common.filter((e) => (state.kind === 'all' || e.kind === state.kind) && (state.issuer === 'all' || e.issuer === state.issuer));
         head = `<div class="wl-block-head">나라 구분 없는 혜택 · 마감 임박 순<span>${list.length}건</span></div>`;
-        body = rows(list);
+        body = rows(list, 'common', 15);
       } else if (state.tab === 'place') {
         const counts = {};
         for (const e of placed) for (const c of e.places) counts[c] = 0;
@@ -112,14 +110,14 @@
             const list = placed.filter((e) => e.places[0] === c);
             if (!list.length) return '';
             const [f, nm] = placeLabel(c);
-            return `<section class="wl-block"><div class="wl-block-head">${f} ${esc(nm)}<span>${list.length}건</span></div>${rows(list)}</section>`;
+            return `<section class="wl-block"><div class="wl-block-head">${f} ${esc(nm)}<span>${list.length}건</span></div>${rows(list, 'p-' + c, 3, c)}</section>`;
           }).join('');
         } else {
           const list = placed.filter((e) => inPlace(e, state.place));
           const [f, nm] = placeLabel(state.place);
           const link = P[state.place] ? ` · <a href="places.html#${state.place}">여행지 정보 →</a>` : '';
           head = `<div class="wl-block-head">${f} ${esc(nm)}<span>${list.length}건</span>${link}</div>`;
-          body = rows(list);
+          body = rows(list, 'place', 15, state.place);
         }
       } else {
         const types = countBy(cards, (c) => c.type);
@@ -132,19 +130,22 @@
       $('list').innerHTML = head + (body || '<div class="wl-rows"><p class="wl-empty">조건에 맞는 혜택이 없습니다.</p></div>');
     }
 
-    function rows(list) {
+    // 목록은 처음 n건만(나라별 묶음은 3건) 보여 주고 '더 보기'. 카드사 원문 요약 문장은 길고 제목과 겹쳐서 목록에는 안 씀
+    const more = {};
+    function rows(list, key, n, here = '') {
       if (!list.length) return '';
-      return `<div class="wl-rows">${list.map((e) => {
+      const shown = more[key] ? list : list.slice(0, n);
+      const rest = list.length - shown.length;
+      return `<div class="wl-rows">${shown.map((e) => {
         const tags = [`<span class="k">${esc(e.kind)}</span>`];
         if (e.brand) tags.push(`<span>${esc(e.brand)}</span>`);
-        for (const c of e.places) { const [f, nm] = placeLabel(c); tags.push(`<span>${f} ${esc(nm)}</span>`); }
+        for (const c of e.places) { if (c === here) continue; const [f, nm] = placeLabel(c); tags.push(`<span>${f} ${esc(nm)}</span>`); } // 묶음 나라는 머리에 있으니 빼고
         if (e.check) tags.push('<span class="warn">조건 확인 필요</span>');
         const soon = realEnd(e.end) && (Date.parse(e.end) - Date.parse(TODAY)) / 864e5 <= 14;
         return `<article class="wl-row tv-ev">
           ${issuerTile(e.issuer)}
           <div class="tv-ev-body">
             <a class="tv-ev-title" href="../paymorevent/events/${encodeURIComponent(e.id)}/">${esc(cleanTitle(e.title))}</a>
-            ${e.text && !echoes(e.text, e.title) ? `<p class="tv-ev-text">${esc(e.text)}</p>` : ''}
             <div class="tv-tags"><span class="iss">${esc(e.issuer)}</span>${tags.join('')}</div>
           </div>
           <div class="tv-ev-side">
@@ -153,7 +154,7 @@
             ${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">공식 ↗</a>` : ''}
           </div>
         </article>`;
-      }).join('')}</div>`;
+      }).join('')}</div>${rest > 0 ? `<button type="button" class="tv-more" data-more="${esc(key)}">${rest}건 더 보기</button>` : more[key] && list.length > n ? `<button type="button" class="tv-more" data-more="${esc(key)}">접기</button>` : ''}`;
     }
 
     function cardRows(list) {
@@ -178,15 +179,20 @@
       }).join('')}</div></section>`).join('');
     }
 
-    $('sub').textContent = `해외·여행 혜택 ${data.events.length}건 · 트래블카드 ${data.cards.length}종 · 카드사 공식 페이지 ${ymd(data.checked)} 확인`;
-    $('foot').innerHTML = `Mr. Cards의 카드사 이벤트·카드 데이터에서 해외·여행 혜택만 배포 때 자동으로 골라 요약합니다(${ymd(data.built)} 기준, 마감 지난 행사는 숨김). ` +
-      `대상 카드·한도·응모 여부는 <b>공식 ↗</b> 페이지에서 꼭 확인하세요. 제목을 누르면 Mr. Cards 상세로 이동합니다.`;
+    $('sub').textContent = `혜택 ${data.events.length}건 · 트래블카드 ${data.cards.length}종 · ${ymd(data.checked)} 확인`;
+    $('foot').innerHTML = `카드사 공식 안내 ${ymd(data.built)} 기준 · 대상 카드·한도·응모는 <b>공식 ↗</b>에서 확인`;
 
     $('tabs').addEventListener('click', (e) => {
       const b = e.target.closest('button[data-id]');
       if (!b) return;
       state.tab = b.dataset.id;
       history.replaceState(null, '', '#' + (state.tab === 'place' && state.place !== 'all' ? 'place-' + state.place : state.tab));
+      render();
+    });
+    $('list').addEventListener('click', (e) => {
+      const m = e.target.closest('[data-more]');
+      if (!m) return;
+      more[m.dataset.more] = !more[m.dataset.more];
       render();
     });
     $('filters').addEventListener('click', (e) => {
@@ -395,7 +401,7 @@
           ${e.issuer ? issuerTile(e.issuer) : chainTile(e.brand)}
           <div class="tv-ev-body">
             <a class="tv-ev-title" href="${internal ? `../paymorevent/events/${encodeURIComponent(e.id)}/` : esc(e.url)}"${internal ? '' : ' target="_blank" rel="noopener"'}>${esc(e.title)}</a>
-            ${e.text ? `<p class="tv-ev-text">${esc(e.text)}</p>` : ''}
+            ${e.text && !internal ? `<p class="tv-ev-text one">${esc(e.text)}</p>` : ''}
             <div class="tv-tags"><span class="iss">${esc(e.issuer || e.brand)}</span>${e.register ? '<span class="warn">사전 등록</span>' : ''}</div>
           </div>
           <div class="tv-ev-side"><b class="dd">${dday(e.end)}</b><small>${realEnd(e.end) ? '~' + ymd(e.end) : ''}</small>
@@ -431,7 +437,7 @@
           <div class="tv-ev-body">
             <span class="tv-ev-title">${cardLink(c)}</span>
             <div class="tv-tags"><span class="iss">${esc(c.issuer)}${c.type ? ' · ' + c.type : ''}</span>${c.domestic ? '<span class="k">국내 공항</span>' : ''}${c.overseas ? '<span class="k">해외 공항</span>' : ''}${c.arrival ? '<span class="k">입국</span>' : ''}</div>
-            <ul class="tv-lines">${c.items.map((i) => `<li><b>${esc(i.title)}</b> ${esc(i.text)}</li>`).join('')}</ul>
+            <ul class="tv-lines">${c.items.slice(0, 2).map((i) => `<li><b>${esc(i.title)}</b> ${esc(i.text)}</li>`).join('')}</ul>
           </div>
         </article>`).join('')}</div>${!lq && list.length > 6 ? `<button type="button" class="tv-more" data-more="lounge">${open.lounge ? '접기' : `${list.length - 6}종 더 보기`}</button>` : ''}`
         : '<div class="wl-rows"><p class="wl-empty">라운지 혜택이 있는 카드를 찾지 못했어요. 카드 이름을 줄여서 검색해 보세요.</p></div>');
@@ -476,7 +482,7 @@
       if (e.target.id !== 'tv-lq') return;
       clearTimeout(t); t = setTimeout(() => { lq = e.target.value.trim(); $('lbody').innerHTML = loungeBody(); }, 120);
     });
-    $('foot').innerHTML = `Mr. Cards 카드 DB·카드사 이벤트와 호텔 체인 공식 프로모션에서 모았어요(${ymd(d.built)} 기준). 라운지 이용 횟수·동반·실적 조건은 카드사 원문을 확인하세요.`;
+    $('foot').innerHTML = `카드사·호텔 공식 안내 ${ymd(d.built)} 기준 · 라운지 횟수·동반·실적은 카드사 원문 확인`;
     if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
   }
 

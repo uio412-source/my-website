@@ -45,6 +45,7 @@
   margin: 0; font-size: .78rem; line-height: 1.5; color: var(--color-muted);
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
+.tv-ev-text.one { -webkit-line-clamp: 1; }
 .tv-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
 .tv-tags span {
   font-size: .68rem; font-weight: 700; line-height: 1.6; padding: 0 7px; border-radius: 6px;
@@ -228,5 +229,6 @@
 .tv-prep .tv-filters { margin-bottom: 8px; }
 .tv-count { margin: 0 2px 6px; font-size: .76rem; color: var(--color-muted); font-weight: 600; }
 .tv-lounge .tv-ev-title a { color: inherit; text-decoration: none; }
-.tv-lines { margin: 6px 0 0; padding-left: 16px; font-size: .76rem; line-height: 1.55; color: var(--color-muted); }
+.tv-lines { margin: 6px 0 0; padding: 0; list-style: none; font-size: .76rem; line-height: 1.55; color: var(--color-muted); }
+.tv-lines li { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tv-lines b { color: var(--color-text); font-weight: 700; }

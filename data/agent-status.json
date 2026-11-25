@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T22:26:48+09:00",
+  "generatedAt": "2026-11-25T22:32:25+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -49,7 +49,7 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-25T22:45:00+09:00",
+      "updatedAt": "2026-11-25T23:05:00+09:00",
       "lock": {
         "areas": [
           "paymorevent/",
@@ -65,12 +65,19 @@
         "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
       },
       "lastMergedPR": {
-        "number": 112,
-        "title": "docs: Claude 잠금 — 광고성 이벤트·전체 사이트 텍스트 정리 작업 중",
-        "mergedAt": "2026-11-25T13:22:01Z",
-        "mergedAtKST": "2026-11-25 22:22"
+        "number": 113,
+        "title": "광고성 이벤트 판단 보강 — Mr. Cards 전체와 Mr. Travel에서 빼기",
+        "mergedAt": "2026-11-25T13:27:23Z",
+        "mergedAtKST": "2026-11-25 22:27"
       },
       "runs": [
+        {
+          "at": "2026-11-25T23:05:00+09:00",
+          "kind": "code",
+          "pr": 114,
+          "summary": "Mr. Travel 텍스트 정리(혜택 원문 요약 삭제·더 보기, 여행준비 요약·라운지 줄 정리)",
+          "queueKeys": []
+        },
         {
           "at": "2026-11-25T22:45:00+09:00",
           "kind": "code",
@@ -200,23 +207,37 @@
       "pr": null,
       "since": "2026-11-25 22:25",
       "sinceRaw": "2026-11-25T22:25:00+09:00",
-      "ageHours": 0.0,
+      "ageHours": 0.1,
       "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
     }
   ],
   "openPRs": [
     {
-      "number": 113,
-      "title": "광고성 이벤트 판단 보강 — Mr. Cards 전체와 Mr. Travel에서 빼기",
+      "number": 114,
+      "title": "Mr. Travel 텍스트 정리: 원문 요약 문장 빼고 목록은 더 보기로",
       "agent": "Claude",
-      "branch": "ai/claude/cards-ads-everywhere",
-      "createdAtKST": "2026-11-25 22:26",
-      "area": "14파일 · paymorevent/ 5 · docs/ 3 · tools/travel 3 외 2곳",
-      "url": "https://github.com/uio412-source/my-website/pull/113",
+      "branch": "ai/claude/travel-text-cleanup",
+      "createdAtKST": "2026-11-25 22:31",
+      "area": "7파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳",
+      "url": "https://github.com/uio412-source/my-website/pull/114",
       "draft": false
     }
   ],
   "recentPRs": [
+    {
+      "number": 113,
+      "title": "광고성 이벤트 판단 보강 — Mr. Cards 전체와 Mr. Travel에서 빼기",
+      "agent": "Claude",
+      "branch": "ai/claude/cards-ads-everywhere",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T13:27:23Z",
+      "mergedAtKST": "2026-11-25 22:27",
+      "createdAt": "2026-11-25T13:26:19Z",
+      "createdAtKST": "2026-11-25 22:26",
+      "area": "14파일 · paymorevent/ 5 · docs/ 3 · tools/travel 3 외 2곳",
+      "files": 14,
+      "url": "https://github.com/uio412-source/my-website/pull/113"
+    },
     {
       "number": 112,
       "title": "docs: Claude 잠금 — 광고성 이벤트·전체 사이트 텍스트 정리 작업 중",
@@ -748,20 +769,6 @@
       "area": "1파일 · data/inbox/card-events 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/75"
-    },
-    {
-      "number": 74,
-      "title": "docs: 매일 개선 작업용 로드맵",
-      "agent": "Claude",
-      "branch": "ai/claude/roadmap",
-      "state": "MERGED",
-      "mergedAt": "2026-11-24T05:41:52Z",
-      "mergedAtKST": "2026-11-24 14:41",
-      "createdAt": "2026-11-24T05:41:15Z",
-      "createdAtKST": "2026-11-24 14:41",
-      "area": "2파일 · docs/ 1 · 루트 1",
-      "files": 2,
-      "url": "https://github.com/uio412-source/my-website/pull/74"
     }
   ],
   "queue": {
