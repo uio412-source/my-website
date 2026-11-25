@@ -1,0 +1,31 @@
+{
+  "type": "card-events",
+  "issuer": "KB국민카드",
+  "collectedAt": "2026-11-25",
+  "collector": "ChatGPT",
+  "listUrls": [
+    "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001"
+  ],
+  "events": [
+    {
+      "id": "kb-202611-unionpay-taiwan-random-discount",
+      "kind": "card",
+      "title": "유니온페이 대만 최대 50% 랜덤즉시할인",
+      "summary": "대만 오프라인 결제 3~50% 랜덤 즉시할인",
+      "category": "해외/여행",
+      "startsAt": "2026-11-16",
+      "endsAt": "2027-03-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "KB국민 유니온페이 개인 신용·체크카드 기보유 고객. 기업·비씨카드 제외",
+        "프로모션 사전 등록과 선택 확인 후 대만 오프라인 가맹점 결제",
+        "하루 최대 5회, 행사 기간 최대 25회 및 카드당 3,000대만달러 한도",
+        "온라인 결제 제외. 선착순으로 예산 소진 시 종료"
+      ],
+      "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?mainCC=a&eventNum=1002680",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ]
+}
