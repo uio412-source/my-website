@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T22:11:56+09:00",
+  "generatedAt": "2026-11-25T22:21:29+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -49,13 +49,26 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-25T22:12:00+09:00",
-      "lock": null,
+      "updatedAt": "2026-11-25T22:25:00+09:00",
+      "lock": {
+        "areas": [
+          "paymorevent/",
+          "assets/",
+          "hotels/",
+          "travel/",
+          "*.html",
+          "docs/roadmap.md"
+        ],
+        "branch": "ai/claude/<사이트>-text-cleanup · ai/claude/cards-ads-everywhere",
+        "pr": null,
+        "since": "2026-11-25T22:25:00+09:00",
+        "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
+      },
       "lastMergedPR": {
-        "number": 110,
-        "title": "Mr. Cards: 광고성 이벤트를 '기타 광고'로 분류하고 내 카드 이벤트에서 제외",
-        "mergedAt": "2026-11-25T13:09:42Z",
-        "mergedAtKST": "2026-11-25 22:09"
+        "number": 111,
+        "title": "도구: 현황판 agent_sync.py — gh pr list가 막히면 REST로 PR 이력 읽기",
+        "mergedAt": "2026-11-25T13:12:32Z",
+        "mergedAtKST": "2026-11-25 22:12"
       },
       "runs": [
         {
@@ -165,20 +178,41 @@
       "openIssues": 2
     }
   },
-  "locks": [],
-  "openPRs": [
+  "locks": [
+    {
+      "agent": "Claude",
+      "areas": [
+        "paymorevent/",
+        "assets/",
+        "hotels/",
+        "travel/",
+        "*.html",
+        "docs/roadmap.md"
+      ],
+      "branch": "ai/claude/<사이트>-text-cleanup · ai/claude/cards-ads-everywhere",
+      "pr": null,
+      "since": "2026-11-25 22:25",
+      "sinceRaw": "2026-11-25T22:25:00+09:00",
+      "ageHours": -0.1,
+      "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
+    }
+  ],
+  "openPRs": [],
+  "recentPRs": [
     {
       "number": 111,
       "title": "도구: 현황판 agent_sync.py — gh pr list가 막히면 REST로 PR 이력 읽기",
       "agent": "Claude",
       "branch": "ai/claude/agent-sync-rest",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T13:12:32Z",
+      "mergedAtKST": "2026-11-25 22:12",
+      "createdAt": "2026-11-25T13:11:26Z",
       "createdAtKST": "2026-11-25 22:11",
       "area": "5파일 · data/ 2 · docs/ 2 · tools/data 1",
-      "url": "https://github.com/uio412-source/my-website/pull/111",
-      "draft": false
-    }
-  ],
-  "recentPRs": [
+      "files": 5,
+      "url": "https://github.com/uio412-source/my-website/pull/111"
+    },
     {
       "number": 110,
       "title": "Mr. Cards: 광고성 이벤트를 '기타 광고'로 분류하고 내 카드 이벤트에서 제외",
