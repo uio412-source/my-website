@@ -105,8 +105,8 @@ function Freshness({events, kind}: {events: Offer[]; kind: 'card' | 'cashback'})
 function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
   const [q, setQ] = useState('');
   const query = useDeferredValue(q);
-  // 혜택은 한 번에 하나만 (다시 누르면 해제)
-  const [theme, setTheme] = useState<string>(() => new URLSearchParams(location.search).get('valet') ? '호텔 발레' : 'all');
+  // 혜택 태그는 여러 개 고를 수 있음(고른 태그를 모두 만족하는 카드). 다시 누르면 해제, '전체'는 모두 해제
+  const [themes, setThemes] = useState<string[]>(() => new URLSearchParams(location.search).get('valet') ? ['호텔 발레'] : []);
   const [issuer, setIssuer] = useState('all');
   const [type, setType] = useState<'all' | 'credit' | 'debit'>('all');
   const [fee, setFee] = useState('all'), [spend, setSpend] = useState('all'), [brand, setBrand] = useState('all'), [kind, setKind] = useState('all');
@@ -144,7 +144,8 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
   const filtered = useMemo(() => {
     const out: {c: Card; score: number}[] = [];
     // 관리비 전용 할인 > 혜택 O(기본 적립·할인) > 실적만 O
-    const benefitFirst = (c: Card) => { const w = (ELIGIBILITY_THEMES as readonly string[]).includes(theme) ? whyFor(c, theme) : null; return !w ? 0 : w.startsWith('혜택 O · 관리비') ? 2 : w.startsWith('혜택') ? 1 : 0; };
+    const elig = themes.filter(t => (ELIGIBILITY_THEMES as readonly string[]).includes(t));
+    const benefitFirst = (c: Card) => elig.reduce((n, t) => { const w = whyFor(c, t); return n + (!w ? 0 : w.startsWith('혜택 O · 관리비') ? 2 : w.startsWith('혜택') ? 1 : 0); }, 0);
     for (const c of cards) {
       const m = meta.get(c.id)!;
       if (issuer !== 'all' && groupOf(c.issuer) !== issuer) continue;
@@ -154,8 +155,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       if (brand !== 'all' && !c.brands.includes(brand)) continue;
       if (kind !== 'all' && !benefitKinds(c).includes(kind)) continue;
       if (withEvents && !m.events) continue;
-      const t = theme;
-      if (t !== 'all' && !(t === '호텔 발레' ? valetRules(c.id).length > 0 : EXPLAINED.has(t) ? whyFor(c, t) : m.themes.includes(t))) continue;
+      if (!themes.every(t => t === '호텔 발레' ? valetRules(c.id).length > 0 : EXPLAINED.has(t) ? whyFor(c, t) : m.themes.includes(t))) continue;
       const score = searchScore(query, m.text);
       if (!score) continue;
       out.push({c, score});
@@ -172,19 +172,19 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
     // 같은 카드의 브랜드·디자인 변형은 하나로
     const seen = new Set<string>();
     return out.filter(({c}) => { const k = cardFamilyKey(c); if (seen.has(k)) return false; seen.add(k); return true; }).map(x => x.c);
-  }, [cards, meta, query, theme, issuer, type, fee, spend, brand, kind, withEvents, sort]);
-  useEffect(() => setMore(PAGE), [query, theme, issuer, type, fee, spend, brand, kind, withEvents, sort]);
+  }, [cards, meta, query, themes, issuer, type, fee, spend, brand, kind, withEvents, sort]);
+  useEffect(() => setMore(PAGE), [query, themes, issuer, type, fee, spend, brand, kind, withEvents, sort]);
 
-  const pickTheme = (t: string) => setTheme(p => p === t && t !== 'all' ? 'all' : t);
+  const pickTheme = (t: string) => setThemes(p => t === 'all' ? [] : p.includes(t) ? p.filter(x => x !== t) : [...p, t]);
   const advanced = [fee, spend, brand, kind].filter(v => v !== 'all').length + Number(withEvents);
-  const anything = !!q || theme !== 'all' || issuer !== 'all' || type !== 'all' || advanced > 0;
-  const reset = () => { setQ(''); setTheme('all'); setIssuer('all'); setType('all'); setFee('all'); setSpend('all'); setBrand('all'); setKind('all'); setWithEvents(false); };
+  const anything = !!q || themes.length > 0 || issuer !== 'all' || type !== 'all' || advanced > 0;
+  const reset = () => { setQ(''); setThemes([]); setIssuer('all'); setType('all'); setFee('all'); setSpend('all'); setBrand('all'); setKind('all'); setWithEvents(false); };
   const families = useMemo(() => new Set(cards.map(cardFamilyKey)).size, [cards]);
 
   return <>
     <SearchBox value={q} onChange={setQ} placeholder="카드명·혜택 검색 (예: 스타벅스, ㅅㅎ)"/>
     <div className="mc-filters">
-      <Chips label="혜택" items={[{value: 'all', label: '전체'}, ...THEMES.map(t => ({value: t, label: t}))]} value={theme} onChange={pickTheme}/>
+      <Chips label="혜택" multi items={[{value: 'all', label: '전체'}, ...THEMES.map(t => ({value: t, label: t}))]} value={themes.length ? themes : ['all']} onChange={pickTheme}/>
       <Chips label="카드사" issuers items={[{value: 'all', label: '전체'}, ...issuerItems(ISSUER_FILTERS)]} value={issuer} onChange={setIssuer}/>
     </div>
     <div className="mc-bar">
@@ -199,7 +199,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       <Field label="브랜드" value={brand} set={setBrand} options={[['all', '전체'], ...brands.map(b => [b, b] as [string, string])]}/>
       <label className="mc-check"><input type="checkbox" checked={withEvents} onChange={e => setWithEvents(e.target.checked)}/>진행 중 이벤트 있는 카드만</label>
     </div>}
-    {theme === '호텔 발레' && <p className="mc-note">서울 호텔별로 어떤 카드가 되는지는 <a href={sitePath('../hotels/valet.html')}>Mr. Hotels 발레파킹 지도</a>에서 볼 수 있어요.</p>}
+    {themes.includes('호텔 발레') && <p className="mc-note">서울 호텔별로 어떤 카드가 되는지는 <a href={sitePath('../hotels/valet.html')}>Mr. Hotels 발레파킹 지도</a>에서 볼 수 있어요.</p>}
 
     {!anything && <Recent cards={cards}/>}
     <div className="mc-listhead">
@@ -212,7 +212,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
     {filtered.length ? <div className="mc-rows">{filtered.slice(0, more).map(c => {
       const m = meta.get(c.id)!;
       const facts = [c.type === 'credit' ? '신용' : '체크', feeLabel(c.annualFeeMin), spendShort(c), RESTRICTED.test(c.name) ? '가입 대상 제한' : ''].filter(Boolean);
-      const why = EXPLAINED.has(theme) ? whyFor(c, theme) : null;
+      const why = [...new Set(themes.filter(t => EXPLAINED.has(t)).map(t => whyFor(c, t)).filter((w): w is string => !!w))];
       // 줄 전체가 링크(이름의 ::after가 줄을 덮음)이고, 비교 버튼만 따로 눌림
       return <div key={c.id} className="mc-row mc-cardrow">
         <CardArt card={c}/>
@@ -220,7 +220,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
           <span className="mc-issuer">{c.issuer}</span>
           <a className="mc-name mc-stretch" href={cardPath(c.id)}>{c.familyName ?? c.name}</a>
           <span className="mc-facts">{facts.join(' · ')}</span>
-          {why && <span className="mc-why">{why}</span>}
+          {why.map(w => <span key={w} className="mc-why">{w}</span>)}
           {m.hl.length > 0 && <span className="mc-hl">{m.hl.map(h => <i key={h}>{h}</i>)}</span>}
         </span>
         <span className="mc-side">
