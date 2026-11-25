@@ -15,14 +15,14 @@
  },
  "counts": {
   "cards": {
-   "done": 21,
-   "todo": 1410,
-   "total": 1431
+   "done": 22,
+   "todo": 1425,
+   "total": 1447
   },
   "brandPrograms": {
-   "done": 17,
+   "done": 21,
    "valetOnly": 4,
-   "todo": 73,
+   "todo": 69,
    "total": 94
   }
  },
@@ -583,7 +583,7 @@
    "brand": "Visa",
    "tier": "Platinum",
    "where": "pc.wooricard.com 카드 상세 > 상품설명서 · 이벤트(prgevnt) 페이지",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "woori-visa-signature",
@@ -591,7 +591,7 @@
    "brand": "Visa",
    "tier": "Signature",
    "where": "pc.wooricard.com 카드 상세 > 상품설명서 · 이벤트(prgevnt) 페이지",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "woori-visa-infinite",
@@ -599,7 +599,7 @@
    "brand": "Visa",
    "tier": "Infinite",
    "where": "pc.wooricard.com 카드 상세 > 상품설명서 · 이벤트(prgevnt) 페이지",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "woori-mastercard-platinum",
@@ -623,7 +623,7 @@
    "brand": "Mastercard",
    "tier": "World",
    "where": "pc.wooricard.com 카드 상세 > 상품설명서 · 이벤트(prgevnt) 페이지",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "woori-mastercard-world-elite",
@@ -994,7 +994,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/103112.pdf",
    "lastVerified": "2026-10-05",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-103127",
@@ -1048,6 +1048,17 @@
    "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=225021&mbkNo=003",
    "termsUrl": null,
    "lastVerified": "2026-10-05",
+   "priority": 85,
+   "status": "todo"
+  },
+  {
+   "key": "mg-15273",
+   "issuer": "MG새마을금고",
+   "name": "MG+ BLACK 하나카드",
+   "type": "credit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=15273",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
    "priority": 85,
    "status": "todo"
   },
@@ -1235,6 +1246,17 @@
    "url": "https://www.shinhancard.com/pconts/html/card/apply/premium/1237950_2205.html",
    "termsUrl": null,
    "lastVerified": "2026-10-05",
+   "priority": 85,
+   "status": "todo"
+  },
+  {
+   "key": "woori-500102",
+   "issuer": "우리카드",
+   "name": "THE SHOPPER",
+   "type": "credit",
+   "url": "https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD101S02.do?cdPrdCd=500102",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
    "priority": 85,
    "status": "todo"
   },
@@ -2192,6 +2214,50 @@
    "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=737263&mbkNo=003",
    "termsUrl": null,
    "lastVerified": "2026-10-05",
+   "priority": 70,
+   "status": "todo"
+  },
+  {
+   "key": "mg-15272",
+   "issuer": "MG새마을금고",
+   "name": "MG+ Blue 하나카드",
+   "type": "credit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=15272",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 70,
+   "status": "todo"
+  },
+  {
+   "key": "mg-15486",
+   "issuer": "MG새마을금고",
+   "name": "MG+ W 하나카드",
+   "type": "credit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=15486",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 70,
+   "status": "todo"
+  },
+  {
+   "key": "mg-15066",
+   "issuer": "MG새마을금고",
+   "name": "MG+ 신용카드 Primo",
+   "type": "credit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=15066",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 70,
+   "status": "todo"
+  },
+  {
+   "key": "mg-15822",
+   "issuer": "MG새마을금고",
+   "name": "MG+ 트래블로그 하나카드",
+   "type": "credit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=15822",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
    "priority": 70,
    "status": "todo"
   },
@@ -7047,6 +7113,17 @@
    "status": "todo"
   },
   {
+   "key": "woori-500106",
+   "issuer": "우리카드",
+   "name": "카드의정석2 PAY",
+   "type": "credit",
+   "url": "https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD101S02.do?cdPrdCd=500106",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 70,
+   "status": "todo"
+  },
+  {
    "key": "hyundai-hehc",
    "issuer": "현대카드",
    "name": "Hyundai EV카드",
@@ -8781,6 +8858,105 @@
    "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09563&mainCC=a",
    "termsUrl": null,
    "lastVerified": "2026-10-05",
+   "priority": 60,
+   "status": "todo"
+  },
+  {
+   "key": "mg-104566",
+   "issuer": "MG새마을금고",
+   "name": "K-패스 체크카드 (하이브리드)",
+   "type": "debit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=104566",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 60,
+   "status": "todo"
+  },
+  {
+   "key": "mg-100754",
+   "issuer": "MG새마을금고",
+   "name": "꿀카드",
+   "type": "debit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=100754",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 60,
+   "status": "todo"
+  },
+  {
+   "key": "mg-100133",
+   "issuer": "MG새마을금고",
+   "name": "다원 체크카드",
+   "type": "debit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=100133",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 60,
+   "status": "todo"
+  },
+  {
+   "key": "mg-103827",
+   "issuer": "MG새마을금고",
+   "name": "더담은 체크카드",
+   "type": "debit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=103827",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 60,
+   "status": "todo"
+  },
+  {
+   "key": "mg-104064",
+   "issuer": "MG새마을금고",
+   "name": "라이프핏 체크카드",
+   "type": "debit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=104064",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 60,
+   "status": "todo"
+  },
+  {
+   "key": "mg-101353",
+   "issuer": "MG새마을금고",
+   "name": "미타임 체크카드",
+   "type": "debit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=101353",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 60,
+   "status": "todo"
+  },
+  {
+   "key": "mg-105023",
+   "issuer": "MG새마을금고",
+   "name": "시장愛 온 체크카드",
+   "type": "debit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=105023",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 60,
+   "status": "todo"
+  },
+  {
+   "key": "mg-101488",
+   "issuer": "MG새마을금고",
+   "name": "에어머니 체크카드",
+   "type": "debit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=101488",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
+   "priority": 60,
+   "status": "todo"
+  },
+  {
+   "key": "mg-102341",
+   "issuer": "MG새마을금고",
+   "name": "올유닛 체크카드",
+   "type": "debit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=102341",
+   "termsUrl": null,
+   "lastVerified": "2026-11-25",
    "priority": 60,
    "status": "todo"
   },
