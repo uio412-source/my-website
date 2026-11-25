@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T22:35:34+09:00",
+  "generatedAt": "2026-11-25T22:36:03+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -74,7 +74,7 @@
         {
           "at": "2026-11-25T23:20:00+09:00",
           "kind": "code",
-          "pr": null,
+          "pr": 115,
           "summary": "Mr. Hotels 텍스트 정리(이벤트 조건 2줄+더 보기, 발레 다른 카드 8종, 확인 중 카드 개수만, 안내 한 줄)",
           "queueKeys": []
         },
@@ -218,7 +218,18 @@
       "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
     }
   ],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 115,
+      "title": "Mr. Hotels 텍스트 정리: 이벤트 조건 2줄·발레 카드 목록 접기·안내 한 줄",
+      "agent": "Claude",
+      "branch": "ai/claude/hotels-text-cleanup",
+      "createdAtKST": "2026-11-25 22:35",
+      "area": "9파일 · assets/ 4 · data/ 2 · docs/ 2 외 1곳",
+      "url": "https://github.com/uio412-source/my-website/pull/115",
+      "draft": false
+    }
+  ],
   "recentPRs": [
     {
       "number": 114,
@@ -765,20 +776,6 @@
       "area": "7파일 · 루트 4 · assets/ 2 · docs/ 1",
       "files": 7,
       "url": "https://github.com/uio412-source/my-website/pull/76"
-    },
-    {
-      "number": 75,
-      "title": "data: 수집 2026-11-24 (롯데카드 이벤트)",
-      "agent": "ChatGPT",
-      "branch": "ai/chatgpt/data-2026-11-24",
-      "state": "MERGED",
-      "mergedAt": "2026-11-24T12:23:53Z",
-      "mergedAtKST": "2026-11-24 21:23",
-      "createdAt": "2026-11-24T12:13:37Z",
-      "createdAtKST": "2026-11-24 21:13",
-      "area": "1파일 · data/inbox/card-events 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/75"
     }
   ],
   "queue": {
