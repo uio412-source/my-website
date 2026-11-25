@@ -120,6 +120,35 @@ const SYNONYMS: Record<string, string[]> = {
   쇼핑: ['쇼핑', '쿠팡', '마트', '백화점', '온라인'], 배달: ['배달', '배민', '쿠팡이츠', '요기요'], 아멕스: ['아멕스', 'amex', 'americanexpress'],
   마스터: ['마스터', 'mastercard', 'master'], 비자: ['비자', 'visa'], 체크: ['체크', 'debit'], 신용: ['신용', 'credit'],
 };
+/** 카드 이름의 영어 단어를 한글 읽기로 바꾼 글('신한카드 Deep Dream 체크' → '신한카드 딥 드림 체크'). 바뀐 게 없으면 ''.
+ *  '딥드림'·'제로'처럼 한글로 치거나 초성(ㄷㄷ)으로 찾을 때 씀. 모르는 단어는 그대로 둠 */
+const KO_READ: Record<string, string> = {
+  the: '더', edition: '에디션', loca: '로카', digiloca: '디지로카', digi: '디지', point: '포인트', platinum: '플래티넘', sol: '쏠', plus: '플러스', all: '올', plan: '플랜',
+  business: '비즈니스', biz: '비즈', skypass: '스카이패스', new: '뉴', on: '온', zero: '제로', check: '체크', club: '클럽', oil: '오일', deep: '딥', young: '영',
+  likit: '라이킷', pay: '페이', up: '업', one: '원', shopping: '쇼핑', life: '라이프', taptap: '탭탭', pet: '펫', express: '익스프레스', pick: '픽', classic: '클래식',
+  dream: '드림', american: '아메리칸', auto: '오토', heritage: '헤리티지', play: '플레이', visa: '비자', simple: '심플', select: '셀렉트', mileage: '마일리지',
+  hi: '하이', easy: '이지', edu: '에듀', global: '글로벌', red: '레드', trip: '트립', leaders: '리더스', mobility: '모빌리티', super: '슈퍼', travel: '트래블',
+  blue: '블루', gold: '골드', prime: '프라임', daily: '데일리', fit: '핏', love: '러브', avenuel: '에비뉴엘', big: '빅', line: '라인', air: '에어', hey: '헤이',
+  master: '마스터', jade: '제이드', moving: '무빙', kapick: '카픽', bliss: '블리스', go: '고', need: '니드', mobile: '모바일', toss: '토스', best: '베스트',
+  rental: '렌탈', orange: '오렌지', real: '리얼', shine: '샤인', choice: '초이스', lady: '레이디', store: '스토어', way: '웨이', cubig: '큐빅', mile: '마일',
+  triple: '트리플', members: '멤버스', flex: '플렉스', teens: '틴즈', bev: '비브', reserve: '리저브', smart: '스마트', cashback: '캐시백', money: '머니',
+  black: '블랙', premium: '프리미엄', station: '스테이션', family: '패밀리', more: '모아', myshop: '마이샵', my: '마이', kream: '크림', opus: '오퍼스',
+  silver: '실버', first: '퍼스트', boutique: '부티크', summit: '서밋', titanium: '티타늄', purple: '퍼플', green: '그린', happy: '해피', special: '스페셜',
+  everyday: '에브리데이', asiana: '아시아나', campus: '캠퍼스', wish: '위시', free: '프리', signature: '시그니처', premier: '프리미어', infinite: '인피니트',
+  world: '월드', ace: '에이스', label: '라벨', unboxing: '언박싱', taking: '테이킹', making: '메이킹', id: '아이디', liiv: '리브', wavve: '웨이브', tmap: '티맵',
+  kia: '기아', casper: '캐스퍼', hyundai: '현대', hana: '하나', lotte: '롯데', mr: '미스터', ev: '이브이', sk: '에스케이', kt: '케이티', lg: '엘지', gs: '지에스',
+};
+export function koReading(name: string) {
+  let changed = false;
+  const out = name.replace(/[A-Za-z][A-Za-z+]*/g, w => {
+    const plus = w.endsWith('+');
+    const k = KO_READ[w.toLowerCase().replace(/\+$/, '')];
+    if (!k) return w;
+    changed = true;
+    return k + (plus ? '플러스' : '');
+  });
+  return changed ? out : '';
+}
 export const terms = (q: string) => q.trim().toLowerCase().split(/\s+/).filter(Boolean);
 /** 한 단어가 글(text)에 들어 있는지: 동의어·초성 포함 */
 export function termIn(term: string, text: string, cho?: string) {

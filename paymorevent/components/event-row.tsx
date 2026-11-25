@@ -18,7 +18,8 @@ export function nameAndValue(v: EventView, amount?: number | null): {name: React
   return {name: v.name, value};
 }
 
-export function EventRow({o, amount, hideField}: {o: Offer; amount?: number | null; hideField?: boolean}) {
+/** note: 내 혜택 화면에서 어느 내 카드로 받는지 한 줄(카드사·분야 줄 앞에 붙음) */
+export function EventRow({o, amount, hideField, note}: {o: Offer; amount?: number | null; hideField?: boolean; note?: ReactNode}) {
   const v = viewOf(o);
   const d = dday(o.endsAt);
   const soon = !!o.endsAt && (Date.parse(o.endsAt) - Date.parse(today())) / 864e5 <= 7;
@@ -29,6 +30,7 @@ export function EventRow({o, amount, hideField}: {o: Offer; amount?: number | nu
       <b className="ev-name">{name}</b>
       {value && <span className="ev-val">{value}</span>}
       <span className="ev-meta">
+        {note}
         <span>{o.issuer}</span>
         {o.kind === 'cashback' ? <span>신규 발급</span> : !hideField && v.field !== '기타' && <span>{v.field}</span>}
         {v.entry && <span className="warn">응모</span>}
@@ -44,8 +46,8 @@ export function EventRow({o, amount, hideField}: {o: Offer; amount?: number | nu
 }
 
 /** 마감순 목록을 '3일 안에 끝나요 · 일주일 안 · 한 달 안 · 그 뒤'로 나눠 보여 줌 */
-export function EventGroups({list, grouped, hideField, amountOf, counts}: {list: Offer[]; grouped: boolean; hideField?: boolean; amountOf?: (o: Offer) => number | null; counts?: Record<string, number>}) {
-  if (!grouped) return <div className="mc-rows">{list.map(o => <EventRow key={o.id} o={o} hideField={hideField} amount={amountOf?.(o)}/>)}</div>;
+export function EventGroups({list, grouped, hideField, amountOf, counts, noteOf}: {list: Offer[]; grouped: boolean; hideField?: boolean; amountOf?: (o: Offer) => number | null; counts?: Record<string, number>; noteOf?: (o: Offer) => ReactNode}) {
+  if (!grouped) return <div className="mc-rows">{list.map(o => <EventRow key={o.id} o={o} hideField={hideField} amount={amountOf?.(o)} note={noteOf?.(o)}/>)}</div>;
   const now = today();
   const groups: [string, Offer[]][] = [];
   for (const o of list) {
@@ -55,6 +57,6 @@ export function EventGroups({list, grouped, hideField, amountOf, counts}: {list:
   }
   return <>{groups.map(([label, items]) => <section key={label} className="ev-group">
     <h3 className={label.startsWith('3일') ? 'soon' : undefined}>{label}<span>{counts?.[label] ?? items.length}</span></h3>
-    <div className="mc-rows">{items.map(o => <EventRow key={o.id} o={o} hideField={hideField} amount={amountOf?.(o)}/>)}</div>
+    <div className="mc-rows">{items.map(o => <EventRow key={o.id} o={o} hideField={hideField} amount={amountOf?.(o)} note={noteOf?.(o)}/>)}</div>
   </section>)}</>;
 }
