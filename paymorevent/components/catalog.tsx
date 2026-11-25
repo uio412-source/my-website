@@ -1,7 +1,7 @@
 "use client";
 // Mr. Cards 목록 화면: 카드상품 검색 · 발급이벤트 · 카드사 이벤트 · 내 혜택
 import {useDeferredValue, useEffect, useMemo, useState} from 'react';
-import {readSearchableCards} from '@/pages/data';
+import {readCardSummaries, readSearchableCards} from '@/pages/data';
 import type {Card, Offer} from '@/lib/catalog-types';
 import {SiteHeader, SiteFooter} from '@/components/customer-shell';
 import {CardArt, Chips, Empty, IssuerTile, SearchBox, Tabs, cardImage} from '@/components/mc-ui';
@@ -28,7 +28,7 @@ const SECTIONS: Record<Tab, {title: string; sub: string}> = {
   cards: {title: '카드상품 검색', sub: ''},
   cashback: {title: '발급이벤트', sub: '신규 발급 캐시백'},
   events: {title: '카드사 이벤트', sub: '진행 중인 이벤트'},
-  mine: {title: '내 혜택', sub: '내 카드로 지금 받을 수 있는 이벤트'},
+  mine: {title: '내 카드 이벤트 모아보기', sub: ''},
 };
 const THEMES = ['무실적', 'K패스', '통신', '해외', '마일리지', '라운지', '마티나골드', '호텔 등급', '호텔 발레', '상품권 가능', '관리비', '국세', '지방세'] as const;
 /** 이 필터들은 '왜 해당되는지'를 카드 줄에 한 줄로 보여 줌 (예: "혜택 O · 기본 1% 적립") */
@@ -48,6 +48,8 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
   const [fullCards, setFullCards] = useState(false); // 처음엔 첫 화면용 카드 일부만, 전체 목록은 뒤이어 받음
   useEffect(() => {
     let on = true;
+    // 내 카드 찾기는 검색 글이 필요 없어서 카드 목록만 먼저 오면 바로 씀(검색 글은 뒤이어 붙음)
+    readCardSummaries().then(d => { if (on) { setCards(c => c.length < d.length ? d : c); setFullCards(true); } }, () => {});
     readSearchableCards().then(d => { if (on) { setCards(d); setFullCards(true); } }, () => on && setLoadFailed(true));
     return () => { on = false; };
   }, [attempt]);
@@ -69,7 +71,7 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
       <div className="mc-head"><h1>{SECTIONS[tab].title}</h1>{SECTIONS[tab].sub && <p>{SECTIONS[tab].sub}</p>}</div>
       {loadFailed && <div className="mc-alert" role="status">전체 카드 목록을 불러오지 못했어요. <button type="button" onClick={() => { setLoadFailed(false); setAttempt(a => a + 1); }}>다시 불러오기</button></div>}
       {tab === 'cards' && <CardsView cards={cards} events={events}/>}
-      {tab !== 'cards' && !eventsLoading && <Freshness events={events} kind={tab === 'cashback' ? 'cashback' : 'card'}/>}
+      {tab !== 'cards' && tab !== 'mine' && !eventsLoading && <Freshness events={events} kind={tab === 'cashback' ? 'cashback' : 'card'}/>}
       {tab !== 'cards' && (eventsLoading
         ? <Empty title="이벤트를 불러오고 있어요…"/>
         : tab === 'cashback' ? <CashbackView events={events}/> : tab === 'mine' ? <MineView cards={cards} events={events} ready={fullCards}/> : <EventsView events={events} cards={cards}/>)}
