@@ -29,6 +29,12 @@ export function browseThemes(card:Card){
 export function customerLines(value:string){
  return value.split(/\n|\s*;\s*|\s+※\s*|\s+▶\s*/).map(v=>v.trim()).filter(v=>v&&!/^(?:실적 확인[:：]|공식 공통|확인 범위[:：]|수집 범위[:：]|출처[:：]|자료 확인[:：]|공식 목록의|공식 안내에서 대상.*(?:확인|참조)|세부 조건은.*(?:확인|참조)|자세한 내용은.*(?:확인|참조))/.test(v)).map(v=>v.replace(/발급 시 유의 사항 닫기 열기/g,'').trim()).filter(Boolean);
 }
+/** 띄어쓰기·문장부호만 다른 같은 문장, 다른 줄에 통째로 들어 있는 줄은 빼고 한 번만(카드사 원문이 같은 안내를 여러 번 적어서) */
+export function uniqueLines(lines:string[]){
+ const key=(s:string)=>s.replace(/[\s:：·•,./()（）[\]'"‘’“”\-]|입니다|합니다/g,'');
+ const ks=lines.map(key);
+ return lines.filter((_,i)=>ks[i]&&!ks.some((k,j)=>j!==i&&(k===ks[i]?j<i:ks[i].length>=8&&k.includes(ks[i]))));
+}
 export function customerSpend(b:Benefit){
  const explicit=/무실적|실적.{0,5}(?:관계없|상관없|조건없|제한없)/.test(b.title+' '+b.detail);
  if(b.minimumSpend===null||(b.minimumSpend===0&&!b.minimumSpendVerified&&!explicit))return '—';

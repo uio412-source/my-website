@@ -98,7 +98,8 @@ function Freshness({events, kind}: {events: Offer[]; kind: 'card' | 'cashback'})
   if (!days.length) return null;
   const from = days[0], to = days[days.length - 1];
   const old = Math.round((Date.parse(today()) - Date.parse(from)) / 864e5);
-  return <p className={'mc-fresh' + (old > 14 ? ' old' : '')}>카드사 공지 {from === to ? `${ymd(to)} 기준` : `${ymd(from)}~${ymd(to)} 확인`}{old > 14 ? ` · 오래 전에 확인한 카드사는 새 이벤트가 빠져 있을 수 있어요` : ''}</p>;
+  const end = from.slice(0, 4) === to.slice(0, 4) ? ymd(to).slice(3) : ymd(to);
+  return <p className={'mc-fresh' + (old > 14 ? ' old' : '')}>카드사 공지 {from === to ? `${ymd(to)} 기준` : `${ymd(from)}~${end} 확인`}{old > 14 ? ' · 일부는 2주 넘게 지난 정보' : ''}</p>;
 }
 
 // ======================= 카드상품 검색 =======================
@@ -266,7 +267,7 @@ function CashbackView({events}: {events: Offer[]}) {
     </div>
     {list.length ? <EventGroups list={list.map(x => x.o)} grouped={false} amountOf={o => list.find(x => x.o === o)?.amount || null}/>
       : <Empty title="지금 진행 중인 발급 이벤트가 없어요."/>}
-    <p className="mc-note">금액은 카드사 공지의 최대 지급액이에요. 직전 이용 이력·발급 경로·이용 금액 조건은 이벤트 상세에서 확인하세요.</p>
+    <p className="mc-note">금액은 공지의 최대치예요. 조건은 이벤트를 눌러 확인하세요.</p>
   </>;
 }
 
@@ -342,7 +343,7 @@ function EventsView({events, cards}: {events: Offer[]; cards: Card[]}) {
     {list.length ? <EventGroups list={list.slice(0, more)} grouped={grouped} hideField={field !== 'all'} counts={bucketCount}/>
       : <Empty title={mine ? '이 카드로 참여할 수 있는 이벤트가 없어요.' : '조건에 맞는 이벤트가 없어요.'} action={{label: '조건 초기화', onClick: reset}}/>}
     {list.length > more && <button type="button" className="mc-more" onClick={() => setMore(n => n + PAGE)}>더 보기 ({list.length - more}건 남음)</button>}
-    <p className="mc-note">혜택은 카드사 공지 제목에서 읽은 최대치예요. 받는 조건(전월실적·최소 결제액·대상 카드)은 이벤트를 눌러 확인하세요.</p>
+    <p className="mc-note">혜택은 공지 제목의 최대치예요. 조건은 이벤트를 눌러 확인하세요.</p>
     <details className="mc-links">
       <summary>카드사 앱의 내 맞춤 혜택 바로가기</summary>
       <div>{sources.filter(s => issuer === 'all' || groupOf(s.issuer) === issuer).map(s => <a key={s.issuer} href={s.url} target="_blank" rel="noopener noreferrer"><IssuerTile issuer={s.issuer} size="sm"/>{s.label} ↗</a>)}</div>

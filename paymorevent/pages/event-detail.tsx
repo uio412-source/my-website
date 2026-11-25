@@ -63,7 +63,7 @@ export default function EventDetail({offer: o, cards, events}: {offer: Offer; ca
     <table className="cd-t cd-info"><tbody>
       {facts.filter(([, val]) => val).map(([k, val, unknown]) => <tr key={k}><th scope="row">{k}</th><td>{unknown ? <span className="ed-unknown">{val}</span> : <b>{val}</b>}</td></tr>)}
     </tbody></table>
-    {!v.detailed && <p className="mc-note">카드사 이벤트 목록에서 제목과 기간만 확인한 이벤트예요. 최소 결제액·대상 카드·지급일은 카드사 안내에서 확인하세요.</p>}
+    {!v.detailed && <p className="mc-note">제목·기간만 확인한 이벤트예요. 조건은 카드사 안내를 확인하세요.</p>}
 
     {steps.length > 0 && <section className="cd-sec"><h2>받는 조건</h2><ol className="ed-steps">{steps.map((s, i) => <li key={i}>{s}</li>)}</ol></section>}
 
