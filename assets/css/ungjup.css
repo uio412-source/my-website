@@ -34,11 +34,6 @@
 
 /* 차트 패널 */
 .uj-panel { border: 1px solid var(--color-border); border-radius: var(--radius); padding: 16px; background: var(--color-bg); }
-.uj-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
-.uj-stat { padding: 10px 12px; border-radius: 10px; background: var(--color-bg-alt); min-width: 0; }
-.uj-stat .k { font-size: .74rem; color: var(--color-muted); }
-.uj-stat .v { font-size: 1.1rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.uj-stat .v small { display: block; font-size: .72rem; font-weight: 600; color: var(--color-muted); white-space: normal; }
 .uj-quote-note { margin: -6px 0 12px; color: var(--color-muted); font-size: .72rem; }
 .uj-controls { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-bottom: 8px; }
 .uj-seg { display: inline-flex; border: 1px solid var(--color-border); border-radius: 999px; padding: 2px; }
@@ -274,11 +269,6 @@
   .cc-sub { display: block; margin: 2px 0 0; }
   .uj-card { flex-basis: 42%; }
   .uj-panel { padding: 12px; margin: 0 -4px; }
-  .uj-summary { gap: 6px; }
-  .uj-stat { padding: 8px; }
-  .uj-stat .k { font-size: .66rem; }
-  .uj-stat .v { font-size: .92rem; }
-  .uj-stat .v small { font-size: .62rem; }
   .uj-chart { height: 420px; }
   .ref-card { padding: 14px 12px; }
   .ref-bands { grid-template-columns: repeat(2, 1fr); gap: 8px; }
@@ -305,5 +295,4 @@
   .cc-tr { grid-template-columns: repeat(var(--cc-cols), minmax(0, 1fr)); row-gap: 2px; }
   .cc-tr > .cc-nm { grid-column: 1 / -1; padding-top: 4px; }
   .cc-th > span:first-child { display: none; }
-  .uj-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
