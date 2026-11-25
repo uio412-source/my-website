@@ -69,13 +69,15 @@ _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
 | 에이전트 | 영역 | 브랜치 | PR | 시작 | 지난 시간 | 메모 |
 |---|---|---|---|---|---|---|
-| Pickle | `docs/`, `tools/data/`, `data/agent-notes/` | `ai/pickle/agent-sync-board` | - | 2026-11-25 19:26 | 1시간 안 | 공용 현황판·충돌방지 도구 구축 — 이 PR이 머지되면 비웁니다 |
+| Pickle | `docs/`, `tools/data/`, `data/agent-notes/` | `ai/pickle/agent-sync-board` | #102 | 2026-11-25 19:26 | 1시간 안 | 공용 현황판·충돌방지 도구 구축 (#102) — 머지되면 비웁니다 |
 
 _6시간이 넘은 잠금은 이미 끝난 작업일 수 있습니다. 내 것이면 `lock`을 비우고, 남의 것이면 그 에이전트 기록을 봅니다._
 
 ### 열린 PR
 
-_열린 PR이 없습니다._
+| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
+|---|---|---|---|---|---|
+| [#102](https://github.com/uio412-source/my-website/pull/102) | Pickle | `ai/pickle/agent-sync-board` | 2026-11-25 19:32 | 10파일 · data/ 4 · docs/ 3 · 루트 2 외 1곳 | docs: GPT·Claude·Pickle 공용 작업 현황판(data/agent-note… |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-25)
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T19:32:20+09:00",
+  "generatedAt": "2026-11-25T19:32:51+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -86,9 +86,9 @@
           "data/agent-notes/"
         ],
         "branch": "ai/pickle/agent-sync-board",
-        "pr": null,
+        "pr": 102,
         "since": "2026-11-25T19:26:00+09:00",
-        "note": "공용 현황판·충돌방지 도구 구축 — 이 PR이 머지되면 비웁니다"
+        "note": "공용 현황판·충돌방지 도구 구축 (#102) — 머지되면 비웁니다"
       },
       "lastMergedPR": {
         "number": 95,
@@ -97,6 +97,13 @@
         "mergedAtKST": "2026-11-25 11:51"
       },
       "runs": [
+        {
+          "at": "2026-11-25T19:45:00+09:00",
+          "kind": "docs/tools",
+          "pr": 102,
+          "summary": "공용 작업 현황판(docs/agent-sync.md·data/agent-status.json)·생성기(agent_sync.py)·에이전트별 기록 파일(data/agent-notes) 구축, 규칙을 data-update 9장·AGENTS·README에 연결",
+          "queueKeys": []
+        },
         {
           "at": "2026-11-25T11:51:00+09:00",
           "kind": "queue",
@@ -141,14 +148,25 @@
         "data/agent-notes/"
       ],
       "branch": "ai/pickle/agent-sync-board",
-      "pr": null,
+      "pr": 102,
       "since": "2026-11-25 19:26",
       "sinceRaw": "2026-11-25T19:26:00+09:00",
       "ageHours": 0.1,
-      "note": "공용 현황판·충돌방지 도구 구축 — 이 PR이 머지되면 비웁니다"
+      "note": "공용 현황판·충돌방지 도구 구축 (#102) — 머지되면 비웁니다"
     }
   ],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 102,
+      "title": "docs: GPT·Claude·Pickle 공용 작업 현황판(data/agent-notes → docs/agent-sync.md)과 기록 자동화",
+      "agent": "Pickle",
+      "branch": "ai/pickle/agent-sync-board",
+      "createdAtKST": "2026-11-25 19:32",
+      "area": "10파일 · data/ 4 · docs/ 3 · 루트 2 외 1곳",
+      "url": "https://github.com/uio412-source/my-website/pull/102",
+      "draft": false
+    }
+  ],
   "recentPRs": [
     {
       "number": 101,
@@ -695,20 +713,6 @@
       "area": "4파일 · assets/ 2 · 루트 2",
       "files": 4,
       "url": "https://github.com/uio412-source/my-website/pull/63"
-    },
-    {
-      "number": 62,
-      "title": "차트: 커버드콜 vs 본주에 TIGER 200타겟위클리커버드콜·QQQI·SPYI 추가, 정식 종목명",
-      "agent": "Claude",
-      "branch": "ai/claude/covered-more-etfs",
-      "state": "MERGED",
-      "mergedAt": "2026-11-21T23:15:18Z",
-      "mergedAtKST": "2026-11-22 08:15",
-      "createdAt": "2026-11-21T23:14:55Z",
-      "createdAtKST": "2026-11-22 08:14",
-      "area": "4파일 · assets/ 2 · tools/ungjup 1 · 루트 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/62"
     }
   ],
   "queue": {
