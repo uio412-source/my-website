@@ -22,8 +22,9 @@
   var n = QUOTES.length;
   var i = Math.floor(Math.random() * n);
   box.innerHTML = QUOTES.map(function (x, k) {
+    var who = String(x.by).replace(/의 말로 알려짐$/, '');
     var photo = x.img
-      ? '<img class="qroll-photo" src="' + esc(x.img) + '" alt="' + esc(x.by) + '" width="192" height="192" decoding="async"' + (k ? ' loading="lazy"' : '') + '>'
+      ? '<img class="qroll-photo" src="' + esc(x.img) + '" alt="' + esc(who) + '" width="192" height="192" decoding="async"' + (k ? ' loading="lazy"' : '') + '>'
       : '';
     return '<figure class="qroll-item' + (x.img ? '' : ' no-photo') + '" aria-hidden="true" data-k="' + k + '">' + photo
       + '<div class="qroll-body"><blockquote>' + esc(x.q) + '</blockquote>'
