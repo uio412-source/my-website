@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T22:38:04+09:00",
+  "generatedAt": "2026-11-25T22:38:35+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -74,7 +74,7 @@
         {
           "at": "2026-11-25T23:30:00+09:00",
           "kind": "code",
-          "pr": null,
+          "pr": 116,
           "summary": "Mr. Stocks 텍스트 정리(배당 세금 안내 접기·한 줄씩, 바닥 안내 한 줄)",
           "queueKeys": []
         },
@@ -225,7 +225,18 @@
       "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
     }
   ],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 116,
+      "title": "Mr. Stocks 텍스트 정리: 배당 세금 안내 접기·한 줄씩",
+      "agent": "Claude",
+      "branch": "ai/claude/stocks-text-cleanup",
+      "createdAtKST": "2026-11-25 22:38",
+      "area": "8파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳",
+      "url": "https://github.com/uio412-source/my-website/pull/116",
+      "draft": false
+    }
+  ],
   "recentPRs": [
     {
       "number": 115,
@@ -772,20 +783,6 @@
       "area": "1파일 · .github/ 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/77"
-    },
-    {
-      "number": 76,
-      "title": "Mr. Stocks: 맨 위 '공포에 사라' 투자 명언 배너",
-      "agent": "Claude",
-      "branch": "ai/claude/stocks-quotes",
-      "state": "MERGED",
-      "mergedAt": "2026-11-24T13:17:31Z",
-      "mergedAtKST": "2026-11-24 22:17",
-      "createdAt": "2026-11-24T13:16:58Z",
-      "createdAtKST": "2026-11-24 22:16",
-      "area": "7파일 · 루트 4 · assets/ 2 · docs/ 1",
-      "files": 7,
-      "url": "https://github.com/uio412-source/my-website/pull/76"
     }
   ],
   "queue": {

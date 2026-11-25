@@ -75,7 +75,9 @@ _6시간이 넘은 잠금은 이미 끝난 작업일 수 있습니다. 내 것�
 
 ### 열린 PR
 
-_열린 PR이 없습니다._
+| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
+|---|---|---|---|---|---|
+| [#116](https://github.com/uio412-source/my-website/pull/116) | Claude | `ai/claude/stocks-text-cleanup` | 2026-11-25 22:38 | 8파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳 | Mr. Stocks 텍스트 정리: 배당 세금 안내 접기·한 줄씩 |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-25)
 
