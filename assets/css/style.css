@@ -313,7 +313,15 @@ section { padding: 64px 0; }
 .qroll-item {
   grid-area: 1 / 1; margin: 0; opacity: 0; transform: translateY(6px); visibility: hidden;
   transition: opacity .5s ease, transform .5s ease, visibility 0s linear .5s;
+  display: flex; align-items: center; gap: 12px;
 }
+.qroll-photo {
+  flex: 0 0 auto; width: 52px; height: 52px; aspect-ratio: 1 / 1; border-radius: 50%;
+  object-fit: cover; object-position: center 28%; background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+.qroll-body { min-width: 0; }
+.qroll-item.no-photo .qroll-photo { display: none; }
 .qroll-item.on { opacity: 1; transform: none; visibility: visible; transition: opacity .5s ease, transform .5s ease; }
 .qroll blockquote { margin: 0; font-size: .95rem; font-weight: 700; line-height: 1.5; color: var(--color-text); word-break: keep-all; }
 .qroll blockquote::before { content: "“"; color: var(--chart-zone-strip); margin-right: 2px; }
@@ -324,6 +332,8 @@ section { padding: 64px 0; }
 .qroll.paused .qroll-n::before { content: "❚❚ "; font-size: .6rem; }
 @media (max-width: 720px) {
   .qroll { padding: 10px 14px 10px 16px; margin-bottom: 12px; }
+  .qroll-item { gap: 10px; align-items: flex-start; }
+  .qroll-photo { width: 42px; height: 42px; }
   .qroll blockquote { font-size: .88rem; }
   .qroll figcaption { padding-right: 44px; }
 }
