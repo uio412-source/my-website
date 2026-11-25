@@ -46,6 +46,7 @@ ISSUERS = {
     # 은행·기타 발급사 (카드 DB의 issuer 표기 그대로)
     "SC제일은행": "sc", "iM뱅크": "im", "경남은행": "kn", "광주은행": "kj", "부산은행": "busan", "수협은행": "suhyup",
     "신협": "cu", "우체국예금": "post", "전북은행": "jb", "카카오뱅크": "kakaobank", "케이뱅크": "kbank", "토스뱅크": "tossbank",
+    "MG새마을금고": "mg", "새마을금고": "mg",
 }
 # 출처로 인정하는 도메인 (카드사 공식 + 발급 이벤트를 여는 플랫폼)
 CARD_DOMAINS = (
@@ -53,7 +54,7 @@ CARD_DOMAINS = (
     "lottecard.co.kr", "nonghyup.com", "bccard.com", "paybooc.co.kr", "ibk.co.kr",
     "pay.naver.com", "kakaopay.com", "card-gorilla.com", "toss.im", "tossbank.com", "banksalad.com",
     "standardchartered.co.kr", "imbank.co.kr", "knbank.co.kr", "kjbank.com", "busanbank.co.kr", "suhyup-bank.com", "cu.co.kr",
-    "epostbank.go.kr", "jbbank.co.kr", "kakaobank.com", "kbanknow.com",
+    "epostbank.go.kr", "jbbank.co.kr", "kakaobank.com", "kbanknow.com", "kfcc.co.kr",
 )
 HOTEL_DOMAINS = (
     "marriott.com", "hilton.com", "ihg.com", "accor.com", "hyatt.com", "hotelux.com",

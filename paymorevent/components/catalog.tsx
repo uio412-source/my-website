@@ -20,7 +20,7 @@ import {CompareDock, CompareToggle} from '@/components/compare';
 import {MineView} from '@/components/mine';
 import {RECENT_KEY, clearRecent, useStoredIds} from '@/lib/my-cards';
 import {spendShort} from '@/lib/card-value';
-import {ISSUER_FILTERS, feeLabel, headlineAmount, highlights, issuerFilterLabel, RESTRICTED, searchScore, today, ymd} from '@/lib/mc-text';
+import {ISSUER_FILTERS, feeLabel, headlineAmount, highlights, issuerFilterLabel, koReading, RESTRICTED, searchScore, today, ymd} from '@/lib/mc-text';
 import sources from '@/data/personal-benefit-sources.json';
 
 type Tab = 'cards' | 'cashback' | 'events' | 'mine';
@@ -132,7 +132,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       const rec = (best !== null ? 30 : 0) + (cardImage(c) ? 25 : 0) + Math.min(hl.length, 3) * 6 + Math.min(n, 5) * 3 + (c.normalization?.qualityScore ?? 0) / 10 - (restricted ? 60 : 0);
       m.set(c.id, {
         themes: browseThemes(c), best, events: n, hl, rec,
-        text: [[c.familyName ?? c.name, 100], [(c.searchAliases ?? []).join(' '), 80], [c.issuer + ' ' + groupOf(c.issuer), 40],
+        text: [[(c.familyName ?? c.name) + ' ' + koReading(c.familyName ?? c.name), 100], [(c.searchAliases ?? []).join(' '), 80], [c.issuer + ' ' + groupOf(c.issuer), 40],
           [c.benefits.map(b => b.title).join(' '), 30], [browseThemes(c).join(' ') + ' ' + c.brands.join(' ') + (c.type === 'credit' ? ' 신용' : ' 체크'), 25],
           [(c.searchText ?? '') + ' ' + c.benefits.map(b => b.detail).join(' '), 8]],
       });
