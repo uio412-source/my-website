@@ -137,6 +137,21 @@ const KO_READ: Record<string, string> = {
   everyday: '에브리데이', asiana: '아시아나', campus: '캠퍼스', wish: '위시', free: '프리', signature: '시그니처', premier: '프리미어', infinite: '인피니트',
   world: '월드', ace: '에이스', label: '라벨', unboxing: '언박싱', taking: '테이킹', making: '메이킹', id: '아이디', liiv: '리브', wavve: '웨이브', tmap: '티맵',
   kia: '기아', casper: '캐스퍼', hyundai: '현대', hana: '하나', lotte: '롯데', mr: '미스터', ev: '이브이', sk: '에스케이', kt: '케이티', lg: '엘지', gs: '지에스',
+  kb: '케이비', nh: '엔에이치', sc: '에스씨', zgm: '지금', ibk: '아이비케이', bc: '비씨', cj: '씨제이', lpg: '엘피지', dc: '디씨', im: '아이엠', sfc: '에스에프씨',
+  soho: '소호', skt: '에스케이티', viva: '비바', okcashbag: '오케이캐쉬백', top: '탑', hola: '올라', syrup: '시럽', olleh: '올레', wiz: '위즈', lgu: '엘지유',
+  hanaro: '하나로', solsol: '쏠쏠', living: '리빙', bazic: '베이직', basic: '베이직', honors: '아너스', ssg: '쓱', npay: '엔페이', spike: '스파이크', tag: '태그',
+  rpm: '알피엠', link: '링크', shop: '샵', stripe: '스트라이프', multi: '멀티', bold: '볼드', health: '헬스', fun: '펀', ing: '잉', ai: '에이아이', cu: '씨유',
+  ak: '에이케이', won: '원', upi: '유피아이', ybm: '와이비엠', macao: '마카오', hero: '히어로', heroes: '히어로즈', hybrid: '하이브리드', challenge: '챌린지',
+  bag: '백', ring: '링', exclusive: '익스클루시브', autoslim: '오토슬림', youth: '유스', golf: '골프', las: '라스', vegas: '베가스', london: '런던',
+  monaco: '모나코', paris: '파리', emerald: '에메랄드', sapphire: '사파이어', porsche: '포르쉐', shilla: '신라', rewards: '리워즈', traders: '트레이더스',
+  digital: '디지털', drive: '드라이브', classy: '클래시', energy: '에너지', nomad: '노마드', pocket: '포켓', mercedes: '메르세데스', benz: '벤츠', srt: '에스알티',
+  ktx: '케이티엑스', neo: '네오', tmoney: '티머니', eco: '에코', eats: '이츠', xo: '엑스오', yolo: '욜로', diners: '다이너스', prestige: '프레스티지', mega: '메가',
+  coway: '코웨이', pink: '핑크', ikea: '이케아', plaza: '플라자', coffee: '커피', busan: '부산', teen: '틴', pass: '패스', mypick: '마이픽',
+  alpha: '알파', navy: '네이비', primus: '프리무스', allday: '올데이', online: '온라인', style: '스타일', ok: '오케이', anniverse: '애니버스', royal: '로얄',
+  zerose: '제로즈', unimile: '유니마일', every: '에브리', ten: '텐', core: '코어', day: '데이', tv: '티비', nol: '놀', velvet: '벨벳', save: '세이브',
+  light: '라이트', blossom: '블라썸', pride: '프라이드', two: '투', time: '타임', wellness: '웰니스', sweet: '스위트', together: '투게더', dual: '듀얼',
+  joy: '조이', rose: '로즈', buddy: '버디', seven: '세븐', art: '아트', work: '워크', with: '위드', we: '위', you: '유', for: '포', solid: '솔리드',
+  k: '케이', m: '엠', i: '아이',
 };
 export function koReading(name: string) {
   let changed = false;
