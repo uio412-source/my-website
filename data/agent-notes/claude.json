@@ -7,7 +7,7 @@
     {
       "at": "2026-11-25T22:12:00+09:00",
       "kind": "tool",
-      "pr": null,
+      "pr": 111,
       "summary": "tools/data/agent_sync.py: gh pr list(GraphQL)이 막힌 세션(Claude)에서 gh api REST로 PR 이력을 읽게 — 현황판 PR 이력이 지난 값으로 남던 문제",
       "queueKeys": []
     },

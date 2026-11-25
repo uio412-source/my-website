@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T22:11:23+09:00",
+  "generatedAt": "2026-11-25T22:11:56+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -61,7 +61,7 @@
         {
           "at": "2026-11-25T22:12:00+09:00",
           "kind": "tool",
-          "pr": null,
+          "pr": 111,
           "summary": "tools/data/agent_sync.py: gh pr list(GraphQL)이 막힌 세션(Claude)에서 gh api REST로 PR 이력을 읽게 — 현황판 PR 이력이 지난 값으로 남던 문제",
           "queueKeys": []
         },
@@ -166,7 +166,18 @@
     }
   },
   "locks": [],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 111,
+      "title": "도구: 현황판 agent_sync.py — gh pr list가 막히면 REST로 PR 이력 읽기",
+      "agent": "Claude",
+      "branch": "ai/claude/agent-sync-rest",
+      "createdAtKST": "2026-11-25 22:11",
+      "area": "5파일 · data/ 2 · docs/ 2 · tools/data 1",
+      "url": "https://github.com/uio412-source/my-website/pull/111",
+      "draft": false
+    }
+  ],
   "recentPRs": [
     {
       "number": 110,
@@ -713,20 +724,6 @@
       "area": "1파일 · .github/ 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/72"
-    },
-    {
-      "number": 71,
-      "title": "Mr. Hotels 발레파킹: '조건 없이 무료만' 스위치 · 서울 지도 · 호텔 지도 연결",
-      "agent": "Claude",
-      "branch": "ai/claude/valet-map",
-      "state": "MERGED",
-      "mergedAt": "2026-11-24T04:47:56Z",
-      "mergedAtKST": "2026-11-24 13:47",
-      "createdAt": "2026-11-24T04:46:29Z",
-      "createdAtKST": "2026-11-24 13:46",
-      "area": "11파일 · assets/ 5 · hotels/ 3 · tools/data 1 외 2곳",
-      "files": 11,
-      "url": "https://github.com/uio412-source/my-website/pull/71"
     }
   ],
   "queue": {

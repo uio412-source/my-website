@@ -71,7 +71,9 @@ _지금 잠근 영역이 없습니다._
 
 ### 열린 PR
 
-_열린 PR이 없습니다._
+| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
+|---|---|---|---|---|---|
+| [#111](https://github.com/uio412-source/my-website/pull/111) | Claude | `ai/claude/agent-sync-rest` | 2026-11-25 22:11 | 5파일 · data/ 2 · docs/ 2 · tools/data 1 | 도구: 현황판 agent_sync.py — gh pr list가 막히면 REST로 PR … |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-25)
 
