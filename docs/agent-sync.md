@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-25 22:31 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-25 22:32 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -75,7 +75,9 @@ _6시간이 넘은 잠금은 이미 끝난 작업일 수 있습니다. 내 것�
 
 ### 열린 PR
 
-_열린 PR이 없습니다._
+| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
+|---|---|---|---|---|---|
+| [#114](https://github.com/uio412-source/my-website/pull/114) | Claude | `ai/claude/travel-text-cleanup` | 2026-11-25 22:31 | 7파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳 | Mr. Travel 텍스트 정리: 원문 요약 문장 빼고 목록은 더 보기로 |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-25)
 
