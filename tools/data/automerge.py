@@ -148,14 +148,16 @@ def handle(pr: dict, dry: bool, min_age: float) -> str:
 
 
 def refresh_queue(dry: bool) -> None:
-    """먹지 뒤 수집 대기열(data/collect-queue.json)을 다시 만들어 커밋합니다.
+    """머지 뒤 수집 대기열(data/collect-queue.json)을 다시 만들어 커밋합니다.
 
     대기열이 낡으면 다음 에이전트(ChatGPT·Pickle·Claude)가 이미 모은 항목을 또 고릅니다
-    (docs/data-update.md 9장). 이 단계가 실패해도 먹지·배포에는 영향을 주지 않습니다.
+    (docs/data-update.md 9장). main은 PR로만 바뀌므로(ruleset 'main 보호') 대기열 변경분만 담은
+    PR을 만들어 곧바로 머지합니다. 이 단계가 실패해도 머지·배포에는 영향을 주지 않습니다.
     """
     if dry:
         print("  [dry-run] 대기열 갱신 안 함")
         return
+    branch = "ai/queue-refresh/main"
     try:
         sh("git", "fetch", "--quiet", "--no-tags", "origin", "main")
         sh("git", "checkout", "--quiet", "--force", "-B", "queue-refresh", "origin/main")
@@ -166,19 +168,26 @@ def refresh_queue(dry: bool) -> None:
         sh("git", "add", "data/collect-queue.json")
         sh("git", "-c", "user.name=github-actions[bot]", "-c", "user.email=41898282+github-actions[bot]@users.noreply.github.com",
            "commit", "--quiet", "-m", "data: 수집 대기열 자동 갱신")
-        for _ in range(3):
-            r = sh("git", "push", "--quiet", "origin", "HEAD:main", check=False)
-            if not r.returncode:
-                print("대기열: 다시 만들어 main에 커밋함")
-                return
-            sh("git", "fetch", "--quiet", "origin", "main", check=False)
-            if sh("git", "rebase", "--quiet", "origin/main", check=False).returncode:
-                sh("git", "rebase", "--abort", check=False)
-                print("대기열: 커밋은 만들었지만 main에 못 올림(rebase 충돌)")
-                return
-        print(f"대기열: 푸시 실패 — 다음 실행에서 다시 시도 ({(r.stdout + r.stderr).strip()[:300]})")
+        sh("git", "push", "--quiet", "--force", "origin", f"HEAD:refs/heads/{branch}")
+        body = ("수집 PR을 머지한 뒤 `python tools/data/queue.py`로 대기열을 다시 만든 결과입니다.\n"
+                "바뀐 파일은 `data/collect-queue.json` 하나이고 자동 머지(`tools/data/automerge.py`)가 만듭니다.\n"
+                "다른 에이전트가 이미 모은 항목을 또 모으지 않게 `done`·`nextStart`를 반영합니다(docs/data-update.md 9장).")
+        try:
+            n = json.loads(sh("gh", "api", "-X", "POST", f"repos/{REPO}/pulls", "-f", "title=data: 수집 대기열 자동 갱신",
+                              "-f", f"head={branch}", "-f", "base=main", "-f", f"body={body}").stdout)["number"]
+        except Exception:  # 같은 브랜치의 열린 PR이 있으면 그것을 씀
+            found = api(f"repos/{REPO}/pulls?state=open&head={REPO.split('/')[0]}:{branch}")
+            if not found:
+                raise
+            n = found[0]["number"]
+        r = sh("gh", "api", "-X", "PUT", f"repos/{REPO}/pulls/{n}/merge", "-f", "merge_method=squash", check=False)
+        if r.returncode:
+            print(f"대기열: PR #{n} 머지 실패({(r.stdout + r.stderr).strip()[:200]}) — 다음 실행에서 다시 시도")
+        else:
+            print(f"대기열: 다시 만들어 PR #{n}으로 머지함")
     except Exception as err:  # 대기열 갱신 실패가 머지 결과를 가리지 않게
         print(f"대기열: 갱신 실패(머지·배포에는 영향 없음) {err}")
+    sh("git", "push", "--quiet", "origin", "--delete", branch, check=False)
 
 
 def main() -> int:
@@ -200,7 +209,7 @@ def main() -> int:
             k = "blocked"
         if k in result:
             result[k].append(f"#{pr['number']} {pr['title']}")
-    # 먹지된 수집분이 대기열에 done으로 남도록 대기열을 다시 만듭니다(다른 에이전트가 또 모으지 않게)
+    # 머지된 수집분이 대기열에 done으로 남도록 대기열을 다시 만듭니다(다른 에이전트가 또 모으지 않게)
     refresh_queue(dry)
     if result["merged"] and not dry:
         # GITHUB_TOKEN으로 한 머지는 push 이벤트를 만들지 않으므로 배포를 직접 실행

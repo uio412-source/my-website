@@ -354,7 +354,7 @@
 ### 대기열 갱신
 
 - `data/collect-queue.json`은 **손으로 고치지 않습니다.** `python tools/data/queue.py`가 `data/inbox/`·카드 DB(`paymorevent/data/catalog-snapshot.json`)·`hotels/valet.json`을 읽어 다시 만듭니다. inbox에 key가 있으면 `done`, 발레파킹에만 있으면 `valet-only`가 됩니다.
-- 수집 PR이 `main`에 머지되면 자동 머지(`tools/data/automerge.py`)가 대기열을 다시 만들어 `data/collect-queue.json`만 커밋합니다. 직접 돌릴 때는 `python tools/data/queue.py` 뒤에 `data/collect-queue.json`을 함께 커밋합니다.
+- 수집 PR이 `main`에 머지되면 자동 머지(`tools/data/automerge.py`)가 대기열을 다시 만들어 `data/collect-queue.json`만 담은 PR을 곧바로 머지합니다(main은 PR로만 바뀝니다). 사람이 직접 돌릴 때는 `python tools/data/queue.py` 뒤에 `data/collect-queue.json`을 함께 올립니다.
 - 대기열 key보다 자세한 key(예: `hyundai-visa-infinite-the-black`)를 수집하면 대기열의 기본 key(`hyundai-visa-infinite`)도 `done`으로 표시됩니다.
 
 ## 10. 실행 한도와 순서 (매일 한 번, 끝까지 마치기)
