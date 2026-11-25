@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T22:47:35+09:00",
+  "generatedAt": "2026-11-25T22:48:21+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -61,7 +61,7 @@
         {
           "at": "2026-11-25T23:55:00+09:00",
           "kind": "code",
-          "pr": null,
+          "pr": 117,
           "summary": "Mr. Cards 텍스트 정리(이벤트 이름 찌꺼기·범위 숫자 정리, 동·돌파 금액 오인 수정, 확인일·안내 한 줄, 카드 상세 원문 반복 줄 하나로)",
           "queueKeys": []
         },
@@ -201,7 +201,18 @@
     }
   },
   "locks": [],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 117,
+      "title": "Mr. Cards 텍스트 정리: 이벤트 이름 찌꺼기·안내 한 줄·원문 반복 줄",
+      "agent": "Claude",
+      "branch": "ai/claude/cards-text-cleanup",
+      "createdAtKST": "2026-11-25 22:47",
+      "area": "12파일 · paymorevent/ 7 · data/ 2 · docs/ 2 외 1곳",
+      "url": "https://github.com/uio412-source/my-website/pull/117",
+      "draft": false
+    }
+  ],
   "recentPRs": [
     {
       "number": 116,
@@ -748,20 +759,6 @@
       "area": "18파일 · paymorevent/ 14 · tools/data 2 · docs/ 1 외 1곳",
       "files": 18,
       "url": "https://github.com/uio412-source/my-website/pull/82"
-    },
-    {
-      "number": 77,
-      "title": "chore: 매번 실패하던 gemini-cli.yml 워크플로 삭제",
-      "agent": "Pickle",
-      "branch": "ai/pickle/remove-gemini-cli",
-      "state": "MERGED",
-      "mergedAt": "2026-11-24T15:22:41Z",
-      "mergedAtKST": "2026-11-25 00:22",
-      "createdAt": "2026-11-24T15:15:09Z",
-      "createdAtKST": "2026-11-25 00:15",
-      "area": "1파일 · .github/ 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/77"
     }
   ],
   "queue": {
