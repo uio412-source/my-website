@@ -1,0 +1,237 @@
+{
+  "type": "brand-services",
+  "issuer": "롯데카드",
+  "collectedAt": "2026-11-25",
+  "collector": "Pickle",
+  "programs": [
+    {
+      "id": "lotte-mastercard-world-07",
+      "queueKey": "lotte-mastercard-world",
+      "brand": "Mastercard",
+      "tier": "World",
+      "provider": "issuer_selection",
+      "docTitle": "MasterCard WORLD 07 선택 서비스",
+      "url": "https://image.lottecard.co.kr/webapp/file/MasterCard_WORLD_07_select_service_260514.pdf",
+      "docDate": "2026-05-07",
+      "validThrough": "2026-12-31",
+      "cards": [
+        "LOCA Professional"
+      ],
+      "services": [
+        {
+          "category": "hotel_valet",
+          "title": "특급호텔 발렛 파킹 서비스",
+          "minimumSpend": 500000,
+          "grace": "카드 발급일~다음 달 말일까지는 지난 달 이용실적과 관계없이 제공",
+          "monthlyLimit": 3,
+          "quotaScope": "per_hotel",
+          "sharedWith": "호텔별 월 3회, 본인+가족카드 합산",
+          "holderOnly": true,
+          "useRequired": true,
+          "hotels": [
+            {
+              "name": "앰배서더 서울 풀만 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "그랜드 워커힐 서울",
+              "city": "서울"
+            },
+            {
+              "name": "그랜드 하얏트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "노보텔 앰배서더 서울 강남",
+              "city": "서울"
+            },
+            {
+              "name": "글래드 강남 코엑스센터",
+              "city": "서울"
+            },
+            {
+              "name": "노보텔 앰배서더 서울 동대문 호텔 & 레지던스",
+              "city": "서울"
+            },
+            {
+              "name": "더 플라자",
+              "city": "서울"
+            },
+            {
+              "name": "메리어트 이그제큐티브 아파트먼트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "메이필드 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "몬드리안 서울 이태원",
+              "city": "서울"
+            },
+            {
+              "name": "반얀트리 클럽 앤 스파 서울",
+              "city": "서울"
+            },
+            {
+              "name": "서울가든호텔",
+              "city": "서울"
+            },
+            {
+              "name": "비스타 워커힐 서울",
+              "city": "서울"
+            },
+            {
+              "name": "스위스 그랜드 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "서울 드래곤 시티",
+              "city": "서울"
+            },
+            {
+              "name": "레스케이프 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "오크우드 프리미어 코엑스 센터",
+              "city": "서울"
+            },
+            {
+              "name": "파크 하얏트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "코트야드 메리어트 서울 타임스퀘어",
+              "city": "서울"
+            },
+            {
+              "name": "콘래드 서울",
+              "city": "서울"
+            },
+            {
+              "name": "서울신라호텔",
+              "city": "서울"
+            },
+            {
+              "name": "호텔 나루 서울 엠갤러리",
+              "city": "서울"
+            },
+            {
+              "name": "JW 메리어트 동대문 스퀘어 서울",
+              "city": "서울"
+            },
+            {
+              "name": "JW 메리어트 호텔 서울",
+              "city": "서울"
+            },
+            {
+              "name": "호텔 코리아나",
+              "city": "서울"
+            },
+            {
+              "name": "그랜드 하얏트 인천",
+              "city": "인천"
+            },
+            {
+              "name": "세인트존스 호텔",
+              "city": "제주"
+            },
+            {
+              "name": "호텔 인터불고 대구",
+              "city": "대구"
+            },
+            {
+              "name": "소노캄 고양",
+              "city": "고양"
+            },
+            {
+              "name": "소노캄 여수",
+              "city": "여수"
+            },
+            {
+              "name": "파크 하얏트 부산",
+              "city": "부산"
+            },
+            {
+              "name": "그랜드 머큐어 앰배서더 창원",
+              "city": "창원"
+            },
+            {
+              "name": "힐튼 경주",
+              "city": "경주"
+            },
+            {
+              "name": "대구 메리어트 호텔",
+              "city": "대구"
+            },
+            {
+              "name": "파라다이스호텔 부산",
+              "city": "부산"
+            },
+            {
+              "name": "JW 메리어트 제주 리조트 & 스파",
+              "city": "제주"
+            }
+          ],
+          "hotelRules": [
+            {
+              "name": "몬드리안 서울 이태원",
+              "receiptMin": 25000
+            },
+            {
+              "name": "레스케이프 호텔",
+              "receiptMin": 30000
+            },
+            {
+              "name": "파크 하얏트 서울",
+              "receiptMin": 20000
+            },
+            {
+              "name": "JW 메리어트 호텔 서울",
+              "receiptMin": 50000
+            },
+            {
+              "name": "호텔 코리아나",
+              "receiptMin": 25000
+            }
+          ],
+          "conditions": [
+            "본인 차량에 한해 제공",
+            "호텔 객실·식음료 업장(연회 이용고객 제외) 이용 고객에게 제공",
+            "당일 호텔 이용 영수증 제시(호텔별 금액 상이)",
+            "이용 시 2~3시간 이내 주차비 포함",
+            "서울 드래곤 시티는 용산 4개 호텔 통합 이용"
+          ]
+        },
+        {
+          "category": "airport_valet",
+          "title": "인천공항 발렛파킹 서비스",
+          "minimumSpend": 500000,
+          "monthlyLimit": 3,
+          "quotaScope": "shared_group",
+          "sharedWith": "인천공항 제1·2여객터미널 통합 월 3회",
+          "conditions": [
+            "사전 예약 고객 대상",
+            "주차비는 별도 정산",
+            "제1터미널은 맥서브, 제2터미널은 아마노코리아 운영"
+          ]
+        },
+        {
+          "category": "airport_lounge",
+          "title": "공항라운지 무료입장 서비스",
+          "minimumSpend": 500000,
+          "annualLimit": 2,
+          "guestCount": 1,
+          "quotaScope": "per_service",
+          "coverage": "인천공항 T1 스카이허브, T2 마티나, 김포·김해 스카이허브",
+          "conditions": [
+            "본인+동반자 1인 연 2회",
+            "동반자 단독 무료입장 불가",
+            "동반자 초과 입장료는 현장 결제"
+          ]
+        }
+      ]
+    }
+  ]
+}
