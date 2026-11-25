@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T19:32:51+09:00",
+  "generatedAt": "2026-11-25T19:35:09+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -78,23 +78,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-25T19:45:00+09:00",
-      "lock": {
-        "areas": [
-          "docs/",
-          "tools/data/",
-          "data/agent-notes/"
-        ],
-        "branch": "ai/pickle/agent-sync-board",
-        "pr": 102,
-        "since": "2026-11-25T19:26:00+09:00",
-        "note": "공용 현황판·충돌방지 도구 구축 (#102) — 머지되면 비웁니다"
-      },
+      "updatedAt": "2026-11-25T19:40:00+09:00",
+      "lock": null,
       "lastMergedPR": {
-        "number": 95,
-        "title": "data: 수집 대기열 갱신 (2026-11-25 Pickle 3차)",
-        "mergedAt": "2026-11-25T02:51:37Z",
-        "mergedAtKST": "2026-11-25 11:51"
+        "number": 102,
+        "title": "docs: GPT·Claude·Pickle 공용 작업 현황판(data/agent-notes → docs/agent-sync.md)과 기록 자동화",
+        "mergedAt": "2026-11-25T10:33:46Z",
+        "mergedAtKST": "2026-11-25 19:33"
       },
       "runs": [
         {
@@ -102,7 +92,8 @@
           "kind": "docs/tools",
           "pr": 102,
           "summary": "공용 작업 현황판(docs/agent-sync.md·data/agent-status.json)·생성기(agent_sync.py)·에이전트별 기록 파일(data/agent-notes) 구축, 규칙을 data-update 9장·AGENTS·README에 연결",
-          "queueKeys": []
+          "queueKeys": [],
+          "status": "merged"
         },
         {
           "at": "2026-11-25T11:51:00+09:00",
@@ -139,35 +130,34 @@
       "openIssues": 2
     }
   },
-  "locks": [
+  "locks": [],
+  "openPRs": [
     {
-      "agent": "Pickle",
-      "areas": [
-        "docs/",
-        "tools/data/",
-        "data/agent-notes/"
-      ],
-      "branch": "ai/pickle/agent-sync-board",
-      "pr": 102,
-      "since": "2026-11-25 19:26",
-      "sinceRaw": "2026-11-25T19:26:00+09:00",
-      "ageHours": 0.1,
-      "note": "공용 현황판·충돌방지 도구 구축 (#102) — 머지되면 비웁니다"
+      "number": 103,
+      "title": "Mr. Cards 카드상품 검색: 혜택 태그 여러 개 선택",
+      "agent": "Claude",
+      "branch": "ai/claude/cards-multi-tags",
+      "createdAtKST": "2026-11-25 19:34",
+      "area": "4파일 · paymorevent/ 2 · docs/ 1 · 루트 1",
+      "url": "https://github.com/uio412-source/my-website/pull/103",
+      "draft": false
     }
   ],
-  "openPRs": [
+  "recentPRs": [
     {
       "number": 102,
       "title": "docs: GPT·Claude·Pickle 공용 작업 현황판(data/agent-notes → docs/agent-sync.md)과 기록 자동화",
       "agent": "Pickle",
       "branch": "ai/pickle/agent-sync-board",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T10:33:46Z",
+      "mergedAtKST": "2026-11-25 19:33",
+      "createdAt": "2026-11-25T10:32:44Z",
       "createdAtKST": "2026-11-25 19:32",
       "area": "10파일 · data/ 4 · docs/ 3 · 루트 2 외 1곳",
-      "url": "https://github.com/uio412-source/my-website/pull/102",
-      "draft": false
-    }
-  ],
-  "recentPRs": [
+      "files": 10,
+      "url": "https://github.com/uio412-source/my-website/pull/102"
+    },
     {
       "number": 101,
       "title": "Mr. Cards 내 혜택 개편: 카드별 묶음 · +/− 접기 · 텍스트 줄이기 · 카드 찾기 개선",
@@ -699,20 +689,6 @@
       "area": "5파일 · data/inbox/card-terms 3 · data/inbox/brand-services 2",
       "files": 5,
       "url": "https://github.com/uio412-source/my-website/pull/64"
-    },
-    {
-      "number": 63,
-      "title": "배당: 금융소득종합과세 한도 계산기 (국내 커버드콜 비과세분 반영)",
-      "agent": "Claude",
-      "branch": "ai/claude/dividend-tax-calc",
-      "state": "MERGED",
-      "mergedAt": "2026-11-21T23:25:12Z",
-      "mergedAtKST": "2026-11-22 08:25",
-      "createdAt": "2026-11-21T23:24:27Z",
-      "createdAtKST": "2026-11-22 08:24",
-      "area": "4파일 · assets/ 2 · 루트 2",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/63"
     }
   ],
   "queue": {

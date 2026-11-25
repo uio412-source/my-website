@@ -1,25 +1,16 @@
 {
   "agent": "Pickle",
   "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-  "updatedAt": "2026-11-25T19:45:00+09:00",
-  "lock": {
-    "areas": [
-      "docs/",
-      "tools/data/",
-      "data/agent-notes/"
-    ],
-    "branch": "ai/pickle/agent-sync-board",
-    "pr": 102,
-    "since": "2026-11-25T19:26:00+09:00",
-    "note": "공용 현황판·충돌방지 도구 구축 (#102) — 머지되면 비웁니다"
-  },
+  "updatedAt": "2026-11-25T19:40:00+09:00",
+  "lock": null,
   "runs": [
     {
       "at": "2026-11-25T19:45:00+09:00",
       "kind": "docs/tools",
       "pr": 102,
       "summary": "공용 작업 현황판(docs/agent-sync.md·data/agent-status.json)·생성기(agent_sync.py)·에이전트별 기록 파일(data/agent-notes) 구축, 규칙을 data-update 9장·AGENTS·README에 연결",
-      "queueKeys": []
+      "queueKeys": [],
+      "status": "merged"
     },
     {
       "at": "2026-11-25T11:51:00+09:00",

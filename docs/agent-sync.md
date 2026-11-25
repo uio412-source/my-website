@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-25 19:32 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-25 19:35 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,7 @@ _자동 생성 2026-11-25 19:32 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#102](https://github.com/uio412-source/my-website/pull/102) | Pickle | docs: GPT·Claude·Pickle 공용 작업 현황판(data/agent-notes → docs/a… | 2026-11-25 19:33 | 10파일 · data/ 4 · docs/ 3 · 루트 2 외 1곳 | 머지 |
 | [#101](https://github.com/uio412-source/my-website/pull/101) | Claude | Mr. Cards 내 혜택 개편: 카드별 묶음 · +/− 접기 · 텍스트 줄이기 · 카드 찾기 개선 | 2026-11-25 19:31 | 7파일 · paymorevent/ 5 · docs/ 1 · 루트 1 | 머지 |
 | [#100](https://github.com/uio412-source/my-website/pull/100) | Claude | Mr. Cards: 새 메뉴 '내 혜택' — 내 카드 등록 + 받을 수 있는 이벤트 모아 보기 | 2026-11-25 19:13 | 14파일 · paymorevent/ 11 · assets/ 1 · docs/ 1 외 … | 머지 |
 | [#99](https://github.com/uio412-source/my-website/pull/99) | ChatGPT | data: 수집 2026-11-25 (BC 모두의카드 실적 제외 정정) | 2026-11-25 15:09 | 1파일 · data/inbox/card-terms 1 | 머지 |
@@ -59,7 +60,6 @@ _자동 생성 2026-11-25 19:32 KST · `python tools/data/agent_sync.py` · 기�
 | [#80](https://github.com/uio412-source/my-website/pull/80) | Pickle | Mr. Hotels: 대표 이미지 캐시·공통 배너 제외, 휴업 호텔 목록/발레 카운트 정리 | 2026-11-25 07:59 | 4파일 · assets/ 2 · hotels/ 1 · tools/hotels 1 | 머지 |
 | [#81](https://github.com/uio412-source/my-website/pull/81) | Pickle | 공통: 파비콘·OG 미리보기·robots·404 추가, README 현행화 | 2026-11-25 07:59 | 22파일 · 루트 8 · assets/ 5 · hotels/ 4 외 2곳 | 머지 |
 | [#82](https://github.com/uio412-source/my-website/pull/82) | Pickle | Mr. Cards: 혜택 표 머리글·율 파서 수정, 이벤트 엔티티·상시 종료일 정리, 12.5MB 스냅샷 … | 2026-11-25 07:59 | 18파일 · paymorevent/ 14 · tools/data 2 · docs/ 1… | 머지 |
-| [#77](https://github.com/uio412-source/my-website/pull/77) | Pickle | chore: 매번 실패하던 gemini-cli.yml 워크플로 삭제 | 2026-11-25 00:22 | 1파일 · .github/ 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -67,17 +67,13 @@ _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
 ### 잠금 (작업 중인 영역 — 끝나면 `lock`을 `null`로 비웁니다)
 
-| 에이전트 | 영역 | 브랜치 | PR | 시작 | 지난 시간 | 메모 |
-|---|---|---|---|---|---|---|
-| Pickle | `docs/`, `tools/data/`, `data/agent-notes/` | `ai/pickle/agent-sync-board` | #102 | 2026-11-25 19:26 | 1시간 안 | 공용 현황판·충돌방지 도구 구축 (#102) — 머지되면 비웁니다 |
-
-_6시간이 넘은 잠금은 이미 끝난 작업일 수 있습니다. 내 것이면 `lock`을 비우고, 남의 것이면 그 에이전트 기록을 봅니다._
+_지금 잠근 영역이 없습니다._
 
 ### 열린 PR
 
 | PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
 |---|---|---|---|---|---|
-| [#102](https://github.com/uio412-source/my-website/pull/102) | Pickle | `ai/pickle/agent-sync-board` | 2026-11-25 19:32 | 10파일 · data/ 4 · docs/ 3 · 루트 2 외 1곳 | docs: GPT·Claude·Pickle 공용 작업 현황판(data/agent-note… |
+| [#103](https://github.com/uio412-source/my-website/pull/103) | Claude | `ai/claude/cards-multi-tags` | 2026-11-25 19:34 | 4파일 · paymorevent/ 2 · docs/ 1 · 루트 1 | Mr. Cards 카드상품 검색: 혜택 태그 여러 개 선택 |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-25)
 
@@ -94,7 +90,7 @@ _6시간이 넘은 잠금은 이미 끝난 작업일 수 있습니다. 내 것�
 | ChatGPT | `data/agent-notes/chatgpt.json` | #99 data: 수집 2026-11-25 (BC 모두의카드 실적 … | 2026-11-25 15:09 | 0건 |
 | ChatGPT Dot | **없음 — 만들어 주세요** | - | - | 0건 |
 | Claude | `data/agent-notes/claude.json` | #101 Mr. Cards 내 혜택 개편: 카드별 묶음 · +/− 접… | 2026-11-25 19:31 | 0건 |
-| Pickle | `data/agent-notes/pickle.json` | #95 data: 수집 대기열 갱신 (2026-11-25 Pickl… | 2026-11-25 11:51 | 2건 |
+| Pickle | `data/agent-notes/pickle.json` | #102 docs: GPT·Claude·Pickle 공용 작업 현황판… | 2026-11-25 19:33 | 2건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
