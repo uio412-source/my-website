@@ -619,6 +619,323 @@
         }
       ],
       "grace": "최초 카드 사용등록일(KB Pay 등 간편결제 등록 포함)로부터 다음 달 말일까지 실적 유예 적용"
+    },
+    {
+      "cardId": "kb-09064",
+      "queueKey": "kb-09064",
+      "name": "Easy shopping카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09064&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/_09064__prdctOpmn_20241128.pdf",
+      "docDate": "2024-10-08",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 15000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 15000
+        },
+        {
+          "brand": "K-World(JCB)",
+          "amount": 15000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard",
+        "K-World(JCB)"
+      ],
+      "minimumSpend": 500000,
+      "spendBasis": "전월 1일~말일 승인시점 기준 일시불·할부 승인금액(가족카드 포함, 해외이용은 매입완료 기준)",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "국세",
+        "지방세",
+        "각종 공과금(전기·수도 등)",
+        "4대 사회보험료(건강·연금·고용·산재)",
+        "대학(원) 등록금",
+        "아파트 관리비",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "상품권·선불카드 구입·충전금액",
+        "무승인전표",
+        "취소금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "상품권·선불카드 구입·충전금액",
+        "취소금액"
+      ],
+      "benefits": [
+        {
+          "group": "Shopping",
+          "label": "온라인쇼핑몰",
+          "place": "11번가, 옥션, G마켓",
+          "value": "10%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 15000
+            },
+            {
+              "spend": 1500000,
+              "cap": 20000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "Shopping 서비스 적립한도",
+          "limits": null,
+          "conditions": [
+            "상품권·여행·항공권·티켓·도서·별도 팝업사이트 제외",
+            "포인트리 적립"
+          ]
+        },
+        {
+          "group": "Shopping",
+          "label": "대형마트",
+          "place": "이마트, 롯데마트, 홈플러스",
+          "value": "10%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 15000
+            },
+            {
+              "spend": 1500000,
+              "cap": 20000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "Shopping 서비스 적립한도",
+          "limits": null,
+          "conditions": [
+            "온라인 결제·상품권 구매·임대매장·SSM 이용금액 제외"
+          ]
+        },
+        {
+          "group": "Shopping",
+          "label": "소셜커머스",
+          "place": "쿠팡, 위메프, 티몬",
+          "value": "10%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 15000
+            },
+            {
+              "spend": 1500000,
+              "cap": 20000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "Shopping 서비스 적립한도",
+          "limits": null,
+          "conditions": [
+            "상품권·여행·항공권·티켓·도서·별도 팝업사이트 제외"
+          ]
+        },
+        {
+          "group": "Shopping",
+          "label": "백화점",
+          "place": "롯데백화점, 현대백화점, 신세계백화점",
+          "value": "10%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 15000
+            },
+            {
+              "spend": 1500000,
+              "cap": 20000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "Shopping 서비스 적립한도",
+          "limits": null,
+          "conditions": [
+            "온라인 결제·상품권 구매 이용금액 제외"
+          ]
+        },
+        {
+          "group": "선택서비스(택1)",
+          "label": "관리비",
+          "place": "아파트관리비 자동납부",
+          "value": "5%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": "선택서비스 3종 중 1개",
+          "conditions": [
+            "당사에서 조회 가능한 아파트에 한해 자동납부 등록"
+          ]
+        },
+        {
+          "group": "선택서비스(택1)",
+          "label": "편의점",
+          "place": "GS25, CU, 세븐일레븐",
+          "value": "5%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": "선택서비스 3종 중 1개",
+          "conditions": [
+            "백화점·마트 등 일부 입점매장 제외"
+          ]
+        },
+        {
+          "group": "선택서비스(택1)",
+          "label": "배달앱",
+          "place": "배달의민족, 요기요, 마켓컬리",
+          "value": "5%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": "선택서비스 3종 중 1개",
+          "conditions": []
+        },
+        {
+          "group": "+KB Pay",
+          "label": "KB Pay",
+          "place": "온라인쇼핑몰(11번가, 옥션, G마켓) KB Pay 결제",
+          "value": "5%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": null,
+          "conditions": [
+            "상품권·여행·항공권·티켓·도서·별도 팝업사이트 제외"
+          ]
+        }
+      ],
+      "grace": "최초 카드 사용등록일로부터 다음 달 말일까지 실적이 없어도 1구간(50만원) 적립한도 제공"
+    },
+    {
+      "cardId": "kb-09321",
+      "queueKey": "kb-09321",
+      "name": "K-패스카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09321&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/09321__prdctOpmn_20240424.pdf",
+      "docDate": "2024-04-24",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 8000
+        },
+        {
+          "brand": "Visa",
+          "amount": 8000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Visa"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 승인시점 기준 일시불·할부 승인금액(가족카드 포함, 해외이용은 매입완료 기준)",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "국세",
+        "지방세",
+        "각종 공과금(전기·수도 등)",
+        "4대 사회보험료(건강·연금·고용·산재)",
+        "대학(원) 등록금",
+        "아파트 관리비",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "상품권·선불카드 구입·충전금액",
+        "무승인전표",
+        "취소금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "상품권·선불카드 구입·충전금액",
+        "취소금액"
+      ],
+      "benefits": [
+        {
+          "group": "대중교통",
+          "label": "대중교통",
+          "place": "버스, 지하철",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": null,
+          "conditions": [
+            "청구할인"
+          ]
+        },
+        {
+          "group": "생활서비스",
+          "label": "생활서비스",
+          "place": "이동통신요금 자동납부(SK·KT·LG·LiivM), 커피·약국·편의점 업종, CGV·롯데시네마, 패스트푸드 업종",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": null,
+          "conditions": [
+            "이동통신요금은 건당 1만원 이상 이용 시"
+          ]
+        },
+        {
+          "group": "생활서비스",
+          "label": "KB Pay 추가",
+          "place": "생활서비스 영역 KB Pay 결제",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": null,
+          "conditions": [
+            "생활서비스 할인과 별도 한도, 월 합계 1만5천원"
+          ]
+        }
+      ]
     }
   ]
 }
