@@ -642,7 +642,7 @@ def merge(docs) -> None:
     VENDOR_EVENTS.write_text(json.dumps({"built": today, "events": vend}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     BRAND_OUT.write_text(json.dumps({"built": today, "programs": list(brand.values())}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     TERMS_OUT.write_text(json.dumps({"built": today, "cards": list(terms.values())}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    valet_added, valet_replaced, unmapped = merge_valet(brand.values(), card_ids)
+    valet_added, valet_replaced, unmapped, lost = merge_valet(brand.values(), card_ids)
 
     EVENTS.write_text(json.dumps(events, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     HOTEL_EVENTS.write_text(json.dumps(hotel, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -652,6 +652,40 @@ def merge(docs) -> None:
         print("발레파킹: 서울 호텔 이름을 hotels/valet.json에서 못 찾음 (hotels에 추가하거나 aliases에 넣어 주세요):")
         for name in sorted(unmapped):
             print("  -", name)
+    if lost:
+        print("발레파킹: 안내문 카드 이름이 valet.json 프로그램에서 빠짐 (확인해 주세요):")
+        for name in lost:
+            print("  -", name)
+
+
+def valet_slot(p: dict) -> tuple:
+    """같은 프로그램으로 볼 카드사·브랜드·등급. 등급 끝의 안내문 번호('Mastercard World 02')는 같은 등급으로 봅니다."""
+    tier = re.sub(r"\s*\d+$", "", str(p.get("tier") or "").strip().lower())
+    return (p.get("issuer"), str(p.get("brand") or "").strip().lower(), tier)
+
+
+def valet_offer(p: dict) -> tuple:
+    """대상 호텔과 이용 조건(실적·횟수·이용 방식)이 모두 같은지 비교하는 값.
+
+    카드사·브랜드·등급이 같아도 카드 묶음마다 안내문이 달라 대상 호텔이 다를 수 있습니다(예: KB Mastercard World의
+    BeV III 39곳·HERITAGE Classic 13곳). 호텔·조건이 똑같을 때만 같은 안내문(같은 자리)으로 보고 한 프로그램으로 합칩니다.
+    """
+    overrides = tuple(sorted((k, v.get("monthlyLimit"), v.get("minReceipt")) for k, v in (p.get("hotelOverrides") or {}).items()))
+    return (tuple(sorted(p.get("hotelIds") or [])), p.get("minimumSpend"), p.get("monthlyLimit"), p.get("quotaScope"),
+            p.get("useRequired"), p.get("freeHours"), p.get("validThrough"), overrides)
+
+
+def valet_cards(*groups) -> list:
+    """프로그램을 합칠 때 카드 목록을 이름 기준으로 합치고 key(c0·c1…)를 다시 매깁니다(화면 카드 참조가 겹치지 않게)."""
+    out, seen = [], set()
+    for cards in groups:
+        for c in cards or []:
+            name = (c or {}).get("name")
+            if not name or name in seen:
+                continue
+            seen.add(name)
+            out.append({"key": f"c{len(out)}", "name": name, "catalogId": c.get("catalogId")})
+    return out
 
 
 def merge_valet(programs, card_ids):
@@ -670,7 +704,7 @@ def merge_valet(programs, card_ids):
         return hits.pop() if len(hits) == 1 else None
 
     added = replaced = 0
-    unmapped = set()
+    unmapped, collected = set(), set()
     for g in programs:
         for svc in g["services"]:
             if svc["category"] != "hotel_valet":
@@ -680,6 +714,7 @@ def merge_valet(programs, card_ids):
             for n in seoul:
                 hid = find(n)
                 (ids.append(hid) if hid else unmapped.add(n))
+            ids = list(dict.fromkeys(ids))  # 별칭이 겹쳐 같은 호텔이 두 번 들어가지 않게
             if not ids:
                 continue
             overrides = {}
@@ -708,17 +743,30 @@ def merge_valet(programs, card_ids):
             }
             if g.get("validThrough"):
                 prog["validThrough"] = g["validThrough"]
-            same = [i for i, x in enumerate(data["programs"]) if x["id"] == g["id"] or
-                    (x["issuer"] == g["issuer"] and x["brand"].lower() == g["brand"].lower() and x["tier"].lower() == g["tier"].lower())]
-            if len(same) == 1:
-                data["programs"][same[0]] = prog
+            collected.update(c["name"] for c in prog["cards"])
+            # 같은 자리(같은 id, 또는 카드사·브랜드·등급과 대상 호텔·조건이 모두 같은 안내문)만 하나로 합칩니다.
+            # 같은 등급이라도 대상 호텔이 다른 카드 묶음은 각각 남겨 카드마다 맞는 호텔 수를 보여 줍니다.
+            slot, offer = valet_slot(prog), valet_offer(prog)
+            same = [i for i, x in enumerate(data["programs"])
+                    if x.get("id") == prog["id"] or (valet_slot(x) == slot and valet_offer(x) == offer)]
+            if same:
+                i, old = same[0], data["programs"][same[0]]
+                # 대상 호텔이 더 많은(더 포괄적인) 안내가 남습니다. 같으면 카드가 더 많은 안내. 예전에는 파일 순서상 나중에 온 좁은 안내가 넓은 안내를 덮었습니다.
+                keep_new = (len(prog["hotelIds"]), len(prog["cards"])) > (len(old["hotelIds"]), len(old["cards"]))
+                base = prog if keep_new else old
+                base["cards"] = valet_cards(base.get("cards"), *[data["programs"][j].get("cards") for j in same[1:]],
+                                            (old if keep_new else prog).get("cards"))
+                data["programs"][i] = base
+                for j in sorted(same[1:], reverse=True):
+                    data["programs"].pop(j)
                 replaced += 1
             else:
                 data["programs"].append(prog)
                 added += 1
             data["updatedAt"] = max(data.get("updatedAt") or "", g["collectedAt"])
     VALET.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
-    return added, replaced, unmapped
+    lost = sorted(collected - {c["name"] for p in data["programs"] for c in p.get("cards") or []})
+    return added, replaced, unmapped, lost
 
 
 def main() -> int:
