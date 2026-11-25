@@ -1,11 +1,18 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-25T20:05:00+09:00",
+  "updatedAt": "2026-11-25T22:12:00+09:00",
   "lock": null,
   "runs": [
     {
-      "at": "2026-11-25T20:05:00+09:00",
+      "at": "2026-11-25T22:12:00+09:00",
+      "kind": "tool",
+      "pr": null,
+      "summary": "tools/data/agent_sync.py: gh pr list(GraphQL)이 막힌 세션(Claude)에서 gh api REST로 PR 이력을 읽게 — 현황판 PR 이력이 지난 값으로 남던 문제",
+      "queueKeys": []
+    },
+    {
+      "at": "2026-11-25T22:09:00+09:00",
       "kind": "code",
       "pr": 110,
       "summary": "Mr. Cards 광고성 이벤트(보험 가입·조회·상담, 금융상품, 가입 유도, 여행사 패키지, 알리·테무, 가전·교육) → 분야 '기타 광고'(event-view AD_RX), 내 카드 이벤트 모아보기에서 제외, 수집 규칙(data-update 3·10장)에 '광고성은 뒤로' 추가",
