@@ -18,7 +18,9 @@ export function cleanTitle(o: Pick<Offer, 'title' | 'issuer'>) {
       return parts.length && parts.length < inner.split(/\s*[xX×]\s*/).length ? parts.join(' ') + ' ' : all;
     })
     .replace(/^(?:BC|KB국민|국민|신한|삼성|현대|우리|하나|롯데|NH농협|농협)\s*카드\s*[xX×]\s*/, '')
-    .replace(/[!~]+/g, ' ')
+    .replace(/!+/g, ' ')
+    // '2~4개월'·'40~50%'처럼 숫자 사이 물결은 범위라 남기고, 꾸밈 물결만 지움
+    .replace(/~+/g, (m, i: number, s: string) => /\d\s*[가-힣%.]{0,2}\s*$/.test(s.slice(0, i)) && /^\s*\d/.test(s.slice(i + m.length)) ? '~' : ' ')
     .replace(/\s*(?:놓치지\s*마세요|지금\s*바로|확인하세요|만나보세요|받아가세요|챙기세요)\.?\s*$/g, '')
     .replace(/^(?:BC|신한|KB국민|국민|삼성|현대|우리|하나|롯데|NH농협|농협)\s*카드\s*(?:전용|회원(?:님)?(?:을)?\s*위한)\s*/, '')
     .replace(/\s+/g, ' ').trim();
@@ -29,7 +31,7 @@ export function cleanTitle(o: Pick<Offer, 'title' | 'issuer'>) {
 }
 
 // ---------- 혜택(얼마나) ----------
-const FX: Record<string, number> = {'$': 1400, 달러: 1400, 엔: 9.3, 위안: 195, 유로: 1500};
+const FX: Record<string, number> = {'$': 1400, 달러: 1400, 엔: 9.3, 위안: 195, 유로: 1500, 동: 0.055};
 /** num + 단위("만5천", "만", "천") → 원 */
 function krw(num: string, scale = '') {
   const n = Number(num.replace(/,/g, '')) || 0;
@@ -44,8 +46,9 @@ const kindOf = (w: string | undefined) => {
   const k = (w ?? '').replace(/\s+/g, '');
   return !k ? '' : /페이백|캐시백|캐쉬백/.test(k) ? '캐시백' : k === '행운' || k === '당첨' ? '당첨(추첨)' : k === '포인트백' ? '포인트 적립' : k === '할인쿠폰' ? '할인 쿠폰' : /M포인트사용|포인트사용/.test(k) ? 'M포인트 사용' : k === '머니' ? '머니 적립' : k === '즉시할인' ? '즉시할인' : k === '청구할인' ? '청구할인' : k;
 };
-const MONEY = /(최대\s*|월\s*최대\s*|총\s*)?(?:(\$|USD|JPY|EUR)\s*(\d[\d,.]*)|(\d[\d,]*(?:\.\d+)?)\s*(만\s*(?:\d[\d,]*\s*천)?|천)?\s*(원|달러|엔|위안|유로)?)(?:\s*\((?:USD|JPY|EUR)\))?/g;
-const NOT_REWARD = /^\s*(?:이상|당|미만|초과|이용|구매|결제|[A-Za-z가-힣]{0,6}카드\s*결제)/;
+const MONEY = /(최대\s*|월\s*최대\s*|총\s*)?(?:(\$|USD|JPY|EUR)\s*(\d[\d,.]*)|(\d[\d,]*(?:\.\d+)?)\s*(만\s*(?:\d[\d,]*\s*천)?|천)?\s*(원|달러|엔|위안|유로|동(?![가-힣]))?)(?:\s*\((?:USD|JPY|EUR|CNY|VND)\))?/g;
+// "1만원 이상 결제" 같은 조건 금액, "10만 돌파"·"5만 명" 같은 숫자는 혜택이 아님
+const NOT_REWARD = /^\s*(?:이상|당|미만|초과|이용|구매|결제|[A-Za-z가-힣]{0,6}카드\s*결제|돌파|명(?![가-힣])|회원|고객|건(?![가-힣]))/;
 
 export type Value = {text: string; won: number; pct: number; kind: string; raw: string};
 /** 제목(없으면 요약)에서 '최대 3만원 캐시백' '10% 할인' '무이자 6개월' '추첨' 같은 혜택 한 줄을 뽑음 */
@@ -170,12 +173,19 @@ export function targetOf(o: Offer): string | null {
   return null;
 }
 /** 이름: 제목에서 혜택 문구를 뺀 나머지(가맹점·행사명). 너무 짧아지면 제목 그대로 */
+// 혜택을 떼고 남은 앞뒤 찌꺼기: '최대 13만원 상당' '(CNY) 캐시백' '결제일 할인받아요' '돌려드려요' '상품권까지'
+const AFTER_JUNK = /^\s*(?:\((?:USD|JPY|CNY|EUR|VND)\)|상당|까지|무제한|한도|돌려\s*(?:받자|드려요|드립니다)?|드려요|드립니다|지급|제공|혜택까지|\+?\s*추가\s*(?:할인|적립|혜택)|(?:(?:즉시|청구|결제일|현장|상시|랜덤\s*즉시|추가|특별)\s*)?할인(?:\s*쿠폰)?|웰컴\s*쿠폰|캐시백|캐쉬백|페이백|포인트\s*백|적립|쿠폰|받고|받기|받자|받아요|받으세요)(?:받아요|받기|받으세요|받자|제공|지급)?(?=[\s,.)]|$)/;
 export function eventName(title: string, v: Value | null) {
-  if (!v?.raw || !title.includes(v.raw)) return title;
-  const rest = title.replace(v.raw, ' ').replace(/\s*(?:혜택|이벤트|프로모션|제공|받기|증정|받으세요|받아가세요|받자|드려요|드립니다|누리세요)\s*$/, '').replace(/\s*(?:결제\s*시|결제하고|결제하면|이용\s*시|구매\s*시|예약\s*시)\s*$/, '')
+  const i = v?.raw ? title.indexOf(v.raw) : -1;
+  if (!v || i < 0) return title;
+  let before = title.slice(0, i), after = title.slice(i + v.raw.length);
+  // '2~4개월'·'2•3개월'처럼 범위·목록 앞 숫자만 남은 경우
+  if (/^\d/.test(v.raw)) before = before.replace(/(?:\d+(?:\.\d+)?\s*%?\s*[~∼•·,]\s*)+$/, ' ');
+  for (let k = 0; k < 4 && AFTER_JUNK.test(after); k++) after = after.replace(AFTER_JUNK, ' ');
+  const rest = (before + ' ' + after).replace(/\s*(?:혜택|이벤트|프로모션|제공|받기|증정|받으세요|받아가세요|받자|드려요|드립니다|누리세요)\s*$/, '').replace(/\s+(?:한도\s*없(?:는|이)|무제한|단독)\s*$/, '').replace(/(?:^|\s)(?:결제\s*시|결제하고|결제하면|이용\s*시|구매\s*시|예약\s*시)\s*$/, '')
     .replace(/(?:^|\s)(?:최대|월|총|추가|즉시|청구)\s*$/, '').replace(/\s+·\s*\S{1,3}$/, '').replace(/\s+[이가을를은는도]$/, '')
     .replace(/^[\s&+·,:\-]+|[\s&+·,:\-]+$/g, '').replace(/\s+/g, ' ').trim();
-  return rest.replace(/[가-힣A-Za-z0-9)]/g, '').length === rest.length || rest.length < 3 || /^(?:부터|까지|으로|로|에서|을|를|이|가|와|과|및|바로|즉시|추가|더|매달|매월)(?:\s|$)/.test(rest) ? title : rest;
+  return rest.replace(/[가-힣A-Za-z0-9)]/g, '').length === rest.length || rest.length < 3 || (!before.trim() && rest.length < 6) || /^(?:부터|까지|으로|로|에서|을|를|이|가|와|과|및|바로|즉시|추가|더|매달|매월|받고|받아|상당)(?:\s|$)|^혜택/.test(rest) ? title : rest;
 }
 
 export type EventView = {o: Offer; title: string; name: string; value: Value | null; field: Field; merchant: string | null; entry: boolean | null; target: string | null; detailed: boolean};

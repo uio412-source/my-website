@@ -1,22 +1,16 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-25T23:30:00+09:00",
-  "lock": {
-    "areas": [
-      "paymorevent/",
-      "assets/",
-      "hotels/",
-      "travel/",
-      "*.html",
-      "docs/roadmap.md"
-    ],
-    "branch": "ai/claude/<사이트>-text-cleanup · ai/claude/cards-ads-everywhere",
-    "pr": null,
-    "since": "2026-11-25T22:25:00+09:00",
-    "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
-  },
+  "updatedAt": "2026-11-25T23:55:00+09:00",
+  "lock": null,
   "runs": [
+    {
+      "at": "2026-11-25T23:55:00+09:00",
+      "kind": "code",
+      "pr": null,
+      "summary": "Mr. Cards 텍스트 정리(이벤트 이름 찌꺼기·범위 숫자 정리, 동·돌파 금액 오인 수정, 확인일·안내 한 줄, 카드 상세 원문 반복 줄 하나로)",
+      "queueKeys": []
+    },
     {
       "at": "2026-11-25T23:30:00+09:00",
       "kind": "code",

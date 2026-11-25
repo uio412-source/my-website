@@ -11,7 +11,7 @@ import {rememberCard} from '@/lib/my-cards';
 import {activeOffer, cardFamilyKey, dedupeOffers, eventPath, formatPicking, linkedOffers, pickingExcluded, pickingOptions, rewardValue} from '@/lib/catalog-model';
 import {PAYMENT_CHECKS, paymentCheck, type PaymentCheck} from '@/lib/card-themes';
 import {annualFeeRows, cardPath, networkBrands} from '@/lib/card-presentation';
-import {customerLines} from '@/lib/customer-copy';
+import {customerLines, uniqueLines} from '@/lib/customer-copy';
 import {pendingValet, valetHotelResults, valetMapPath, valetQuota, valetRules} from '@/lib/hotel-valet';
 import {benefitRow, cardMinimumSpend, cleanBenefits, dday, feeLabel, headlineAmount, pickLabel, won, ymd, type BenefitRow} from '@/lib/mc-text';
 import type {Card, Offer} from '@/lib/catalog-types';
@@ -165,9 +165,9 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
   const rows = (allBenefits ? benefits : benefits.slice(0, SHOW)).map(benefitRow);
   // 기본 정보의 전월실적과 같은 조건은 혜택 칸마다 되풀이하지 않음
   const common = positive.length ? '전월 ' + won(positive[0]) : spend.value === 0 ? '실적 무관' : null;
-  const eligibility = (card.eligibility ?? []).flatMap(customerLines);
-  const spendOut = [...new Set(card.spendExclusions.flatMap(customerLines))];
-  const benefitOut = [...new Set(card.benefitExclusions.flatMap(customerLines))];
+  const eligibility = uniqueLines((card.eligibility ?? []).flatMap(customerLines));
+  const spendOut = uniqueLines(card.spendExclusions.flatMap(customerLines));
+  const benefitOut = uniqueLines(card.benefitExclusions.flatMap(customerLines));
 
   return <div className="pm-site mc"><SiteHeader current="cards"/><main className="mc-main mc-detail cd">
     <a href={sitePath('#cards')} className="mc-back">← 카드 목록</a>

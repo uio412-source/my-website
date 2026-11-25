@@ -69,7 +69,7 @@ export function MineView({cards, events, ready}: {cards: Card[]; events: Offer[]
     </div>}
     <AddCard cards={cards} mine={mine} ready={ready} onAdd={added}/>
     {groups.map(({c, list}) => <CardGroup key={c.id} card={c} list={list} open={open.includes(c.id)} onToggle={() => toggle(c.id)}/>)}
-    {mine.length > 0 && <p className="mc-note my-foot">등록한 카드는 이 브라우저에만 저장돼요. 이벤트를 눌러 조건을 확인하세요.</p>}
+    {mine.length > 0 && <p className="mc-note my-foot">등록한 카드는 이 브라우저에만 저장돼요.</p>}
   </>;
 }
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T22:38:35+09:00",
+  "generatedAt": "2026-11-25T22:47:35+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -49,28 +49,22 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-25T23:30:00+09:00",
-      "lock": {
-        "areas": [
-          "paymorevent/",
-          "assets/",
-          "hotels/",
-          "travel/",
-          "*.html",
-          "docs/roadmap.md"
-        ],
-        "branch": "ai/claude/<사이트>-text-cleanup · ai/claude/cards-ads-everywhere",
-        "pr": null,
-        "since": "2026-11-25T22:25:00+09:00",
-        "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
-      },
+      "updatedAt": "2026-11-25T23:55:00+09:00",
+      "lock": null,
       "lastMergedPR": {
-        "number": 115,
-        "title": "Mr. Hotels 텍스트 정리: 이벤트 조건 2줄·발레 카드 목록 접기·안내 한 줄",
-        "mergedAt": "2026-11-25T13:36:33Z",
-        "mergedAtKST": "2026-11-25 22:36"
+        "number": 116,
+        "title": "Mr. Stocks 텍스트 정리: 배당 세금 안내 접기·한 줄씩",
+        "mergedAt": "2026-11-25T13:39:05Z",
+        "mergedAtKST": "2026-11-25 22:39"
       },
       "runs": [
+        {
+          "at": "2026-11-25T23:55:00+09:00",
+          "kind": "code",
+          "pr": null,
+          "summary": "Mr. Cards 텍스트 정리(이벤트 이름 찌꺼기·범위 숫자 정리, 동·돌파 금액 오인 수정, 확인일·안내 한 줄, 카드 상세 원문 반복 줄 하나로)",
+          "queueKeys": []
+        },
         {
           "at": "2026-11-25T23:30:00+09:00",
           "kind": "code",
@@ -206,38 +200,23 @@
       "openIssues": 2
     }
   },
-  "locks": [
-    {
-      "agent": "Claude",
-      "areas": [
-        "paymorevent/",
-        "assets/",
-        "hotels/",
-        "travel/",
-        "*.html",
-        "docs/roadmap.md"
-      ],
-      "branch": "ai/claude/<사이트>-text-cleanup · ai/claude/cards-ads-everywhere",
-      "pr": null,
-      "since": "2026-11-25 22:25",
-      "sinceRaw": "2026-11-25T22:25:00+09:00",
-      "ageHours": 0.2,
-      "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
-    }
-  ],
-  "openPRs": [
+  "locks": [],
+  "openPRs": [],
+  "recentPRs": [
     {
       "number": 116,
       "title": "Mr. Stocks 텍스트 정리: 배당 세금 안내 접기·한 줄씩",
       "agent": "Claude",
       "branch": "ai/claude/stocks-text-cleanup",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T13:39:05Z",
+      "mergedAtKST": "2026-11-25 22:39",
+      "createdAt": "2026-11-25T13:38:07Z",
       "createdAtKST": "2026-11-25 22:38",
       "area": "8파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳",
-      "url": "https://github.com/uio412-source/my-website/pull/116",
-      "draft": false
-    }
-  ],
-  "recentPRs": [
+      "files": 8,
+      "url": "https://github.com/uio412-source/my-website/pull/116"
+    },
     {
       "number": 115,
       "title": "Mr. Hotels 텍스트 정리: 이벤트 조건 2줄·발레 카드 목록 접기·안내 한 줄",
