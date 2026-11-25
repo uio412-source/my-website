@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T22:48:21+09:00",
+  "generatedAt": "2026-11-26T02:53:13+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -52,10 +52,10 @@
       "updatedAt": "2026-11-25T23:55:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 116,
-        "title": "Mr. Stocks 텍스트 정리: 배당 세금 안내 접기·한 줄씩",
-        "mergedAt": "2026-11-25T13:39:05Z",
-        "mergedAtKST": "2026-11-25 22:39"
+        "number": 117,
+        "title": "Mr. Cards 텍스트 정리: 이벤트 이름 찌꺼기·안내 한 줄·원문 반복 줄",
+        "mergedAt": "2026-11-25T13:48:56Z",
+        "mergedAtKST": "2026-11-25 22:48"
       },
       "runs": [
         {
@@ -148,15 +148,39 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-25T19:40:00+09:00",
+      "updatedAt": "2026-11-26T02:56:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 109,
-        "title": "fix: 발레파킹 '확인 중' 목록에서 해결된 우리카드 항목 제거",
-        "mergedAt": "2026-11-25T10:56:32Z",
-        "mergedAtKST": "2026-11-25 19:56"
+        "number": 118,
+        "title": "data: 수집 2026-11-26 (NH·롯데·KB 브랜드 선택서비스 8 · KB 상품설명서 5종)",
+        "mergedAt": "2026-11-25T17:51:39Z",
+        "mergedAtKST": "2026-11-26 02:51"
       },
       "runs": [
+        {
+          "at": "2026-11-26T02:55:00+09:00",
+          "kind": "brand-services + card-terms",
+          "pr": 118,
+          "summary": "NH농협(Mastercard World·Titanium·UnionPay Diamond)·롯데(Mastercard/Visa Platinum)·KB(Visa/Amex/Mastercard Platinum) 선택서비스 8프로그램(호텔 발레 대상 호텔 전체 포함, NH Titanium·KB Mastercard Platinum은 마티나·마티나골드 라운지) · KB 상품설명서 7종(EV·KB라이프·KT스카이라이프·E1 LPG·AK·Easy shopping·K-패스)",
+          "queueKeys": [
+            "nh-mastercard-world",
+            "nh-mastercard-titanium",
+            "nh-unionpay-diamond",
+            "lotte-mastercard-platinum",
+            "lotte-visa-platinum",
+            "kb-visa-platinum",
+            "kb-american-express-platinum",
+            "kb-mastercard-platinum",
+            "kb-00230",
+            "kb-09579",
+            "kb-04348",
+            "kb-04459",
+            "kb-04444",
+            "kb-09064",
+            "kb-09321"
+          ],
+          "status": "merged"
+        },
         {
           "at": "2026-11-25T19:45:00+09:00",
           "kind": "docs/tools",
@@ -197,23 +221,40 @@
           "queueKeys": []
         }
       ],
-      "openIssues": 2
+      "openIssues": 5
     }
   },
   "locks": [],
-  "openPRs": [
+  "openPRs": [],
+  "recentPRs": [
+    {
+      "number": 118,
+      "title": "data: 수집 2026-11-26 (NH·롯데·KB 브랜드 선택서비스 8 · KB 상품설명서 5종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-26-pickle",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T17:51:39Z",
+      "mergedAtKST": "2026-11-26 02:51",
+      "createdAt": "2026-11-25T17:39:48Z",
+      "createdAtKST": "2026-11-26 02:39",
+      "area": "4파일 · data/inbox/brand-services 3 · data/inbox/card-terms 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/118"
+    },
     {
       "number": 117,
       "title": "Mr. Cards 텍스트 정리: 이벤트 이름 찌꺼기·안내 한 줄·원문 반복 줄",
       "agent": "Claude",
       "branch": "ai/claude/cards-text-cleanup",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T13:48:56Z",
+      "mergedAtKST": "2026-11-25 22:48",
+      "createdAt": "2026-11-25T13:47:55Z",
       "createdAtKST": "2026-11-25 22:47",
       "area": "12파일 · paymorevent/ 7 · data/ 2 · docs/ 2 외 1곳",
-      "url": "https://github.com/uio412-source/my-website/pull/117",
-      "draft": false
-    }
-  ],
-  "recentPRs": [
+      "files": 12,
+      "url": "https://github.com/uio412-source/my-website/pull/117"
+    },
     {
       "number": 116,
       "title": "Mr. Stocks 텍스트 정리: 배당 세금 안내 접기·한 줄씩",
@@ -705,20 +746,6 @@
       "url": "https://github.com/uio412-source/my-website/pull/79"
     },
     {
-      "number": 78,
-      "title": "Mr. Stocks: 국내·해외 종가 날짜 분리 표기, 상장 200일 미만 고점 라벨 수정",
-      "agent": "Pickle",
-      "branch": "ai/pickle/fix-stocks-labels",
-      "state": "MERGED",
-      "mergedAt": "2026-11-24T22:59:54Z",
-      "mergedAtKST": "2026-11-25 07:59",
-      "createdAt": "2026-11-24T22:34:17Z",
-      "createdAtKST": "2026-11-25 07:34",
-      "area": "1파일 · assets/ 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/78"
-    },
-    {
       "number": 80,
       "title": "Mr. Hotels: 대표 이미지 캐시·공통 배너 제외, 휴업 호텔 목록/발레 카운트 정리",
       "agent": "Pickle",
@@ -762,27 +789,27 @@
     }
   ],
   "queue": {
-    "built": "2026-11-25",
+    "built": "2026-11-26",
     "nextStart": {
       "cards": "samsung-aap1483",
       "brandPrograms": "shinhan-mastercard-titanium"
     },
     "counts": {
       "cards": {
-        "done": 22,
-        "todo": 1425,
+        "done": 29,
+        "todo": 1418,
         "total": 1447
       },
       "brandPrograms": {
-        "done": 21,
+        "done": 28,
         "valetOnly": 4,
-        "todo": 69,
+        "todo": 62,
         "total": 94
       }
     },
     "lastCollected": {
-      "card-terms": "2026-11-25",
-      "brand-services": "2026-11-25",
+      "card-terms": "2026-11-26",
+      "brand-services": "2026-11-26",
       "card-events": "2026-11-25",
       "hotel-events": null,
       "travel-events": null,
@@ -791,6 +818,42 @@
   },
   "skipped": [
     {
+      "date": "2026-11-26",
+      "agent": "Pickle",
+      "target": "NH농협카드 Mastercard Platinum 안내문",
+      "status": "open",
+      "reason": "card.nonghyup.com/file/ebank/form/pdf/Mastercard_Platinum_250910.pdf 본문이 Mastercard World 안내문과 동일(심의필 2025-C1a-12536·12377)해 Platinum 자료로 쓸 수 없음",
+      "retry": "NH농협카드 상품공시실에서 Platinum 전용 안내장을 찾아 교체. 없으면 대기열 key를 내리기",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-26",
+      "agent": "Pickle",
+      "target": "NH농협카드 국제브랜드 안내문 2026년판",
+      "status": "open",
+      "reason": "공개된 파일이 2025년판(심의필 2025-08-27·28, 유효 2025-12-31)뿐. 규칙상 작년 문서는 허용되어 그대로 담고 validThrough를 2025-12-31로 표기",
+      "retry": "card.nonghyup.com/file/ebank/form/pdf/<Brand>_<Tier>_<YYMMDD>.pdf 규칙으로 2026년판 확인 후 같은 id로 교체",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-26",
+      "agent": "Pickle",
+      "target": "card-events 롯데·NH농협·BC·IBK 이벤트 목록",
+      "status": "open",
+      "reason": "이벤트 목록 표가 ajax로만 그려져 정적 HTML에 이벤트가 없음(bccard.com·card.nonghyup.com·lottecard.co.kr)",
+      "retry": "브라우저로 목록을 렌더한 뒤 상세 페이지까지 확인해 수집(66·67·68행 참고)",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-26",
+      "agent": "Pickle",
+      "target": "samsung-aap1483 삼성카드 taptap O 등 삼성 상품설명서(대기열 맨 앞 10종)",
+      "status": "open",
+      "reason": "삼성 카드 상세가 Nuxt 런타임으로 그려져 HTML에 상품설명서 PDF 링크가 없음. static11.samsungcard.com/.../YYMM_<코드>.pdf 파일명 추측 4건 모두 404 → 2회 실패로 중단 (2026-11-26 실행에서도 같은 이유로 건너뜀)",
+      "retry": "① 카드 상세를 브라우저로 렌더한 뒤 네트워크 응답(_next/data·api)에서 PDF 주소를 찾기 ② 삼성카드 고객센터 > 상품공시실 목록을 열어 카드명으로 검색해 내려받기 ③ 그래도 없으면 이 줄에 날짜만 더하고 다음 카드로",
+      "ref": ""
+    },
+    {
       "date": "2026-11-25",
       "agent": "Claude",
       "target": "신한 The More(더모아) 등 카드 DB에 없는 인기 카드",
@@ -798,15 +861,6 @@
       "reason": "내 카드 찾기에서 '더모아'를 쳐도 안 나옴 — catalog-snapshot.json에 카드가 없음(검색 문제 아님)",
       "retry": "card-products 수집(상품공시실)으로 판매 중 카드 누락 확인 후 카드 DB에 추가",
       "ref": "roadmap 후보"
-    },
-    {
-      "date": "2026-11-25",
-      "agent": "Pickle",
-      "target": "samsung-aap1483 삼성카드 taptap O 등 삼성 상품설명서(대기열 맨 앞 10종)",
-      "status": "open",
-      "reason": "삼성 카드 상세가 Nuxt 런타임으로 그려져 HTML에 상품설명서 PDF 링크가 없음. static11.samsungcard.com/.../YYMM_<코드>.pdf 파일명 추측 4건 모두 404 → 2회 실패로 중단",
-      "retry": "① 카드 상세를 브라우저로 렌더한 뒤 네트워크 응답(_next/data·api)에서 PDF 주소를 찾기 ② 삼성카드 고객센터 > 상품공시실 목록을 열어 카드명으로 검색해 내려받기 ③ 그래도 없으면 이 줄에 날짜만 더하고 다음 카드로",
-      "ref": ""
     },
     {
       "date": "2026-11-25",
