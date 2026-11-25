@@ -89,23 +89,8 @@
       state.cache[id] = await getData(id + ".json");
     }
     if (state.cur !== id) return;
-    renderSummary();
     renderRef();
     draw();
-  }
-
-  // ---------- 요약 ----------
-  function renderSummary() {
-    const { meta } = state.cache[state.cur];
-    const L = meta.last, u = meta.unit;
-    const items = [
-      ["줍줍LV", `<span style="color:${lvColor(L.lv)}">${L.lv ?? "-"}</span>`, ZONE_SHORT[L.zone]],
-      ["현재가", fmtPrice(L.close, u), `전일 대비 ${changeLabel(L.change)} · ${L.date.slice(5).replace("-", ".")}`],
-      ["RSI", L.rsi?.toFixed(1) ?? "-", ""],
-      ["200일선", pct(L.gap200), ""],
-    ];
-    $("uj-summary").innerHTML = items.map(([k, v, s]) =>
-      `<div class="uj-stat"><div class="k">${k}</div><div class="v">${v}${s ? `<small>${s}</small>` : ""}</div></div>`).join("");
   }
 
   // ---------- 참고자료 ----------
