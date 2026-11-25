@@ -1,4 +1,4 @@
-"""수집 대기열(data/collect-queue.json) 만들기 — 외부 수집기(ChatGPT 등)가 '다음에 무엇을 모을지' 고르는 목록.
+"""수집 대기열(data/collect-queue.json) 만들기 — 외부 수집기(ChatGPT·Pickle·Claude 등)가 '다음에 무엇을 모을지' 고르는 목록.
 
   python tools/data/queue.py
 
@@ -6,7 +6,10 @@
 - brandPrograms: 카드사 × 국제브랜드 × 등급별 '선택 서비스' 안내(호텔 발레·공항 라운지·공항 발레·공항 커피 등).
 - eventSources: 이벤트를 모을 공식 목록(카드사·호텔 체인·항공사·면세점).
 각 항목의 key를 수집 파일의 queueKey(또는 이벤트 파일 이름)에 적으면, 다음 실행 때 이미 한 항목을 건너뛸 수 있습니다.
-이미 data/inbox에 있는 key는 status를 done으로 표시합니다. 카드 DB나 inbox가 바뀌면 다시 실행해 커밋하세요.
+이미 data/inbox에 있는 key는 status를 done으로 표시합니다. 등급 뒤에 카드 구분을 붙인 key(예:
+ hyundai-visa-infinite-the-black)는 대기열의 기본 key(hyundai-visa-infinite)도 done으로 봅니다.
+파일 맨 위의 lastCollected(종류별 최근 수집일)·nextStart(종류별 다음 시작 key)로 어디서 이어서 모을지 알 수 있습니다.
+카드 DB·hotels/valet.json·inbox가 바뀌면 다시 실행해 커밋하세요(main에서 수집 PR이 머지되면 automerge.py가 자동으로 다시 만들어 커밋합니다).
 """
 import gzip, json, re
 from datetime import datetime, timedelta, timezone
@@ -82,21 +85,65 @@ EVENT_SOURCES = [
 ]
 
 
-def done_keys():
-    keys = set()
-    for path in INBOX.glob("*/*.json"):
+def inbox_docs():
+    """data/inbox/<종류>/*.json 을 (종류, 내용)으로. 깨진 파일은 건너뜀(양식 검사는 inbox.py 담당)."""
+    docs = []
+    for path in sorted(INBOX.glob("*/*.json")):
         try:
             doc = json.loads(path.read_text(encoding="utf-8"))
         except Exception:
             continue
-        for item in doc.get("cards", []) + doc.get("programs", []):
+        if isinstance(doc, dict):
+            docs.append((path.parent.name, doc))
+    return docs
+
+
+def item_keys(item: dict) -> list:
+    """수집 항목이 밝히는 대기열 key: queueKey 우선, cardId·id도 함께(둘 다 대기열 key일 수 있음)."""
+    return [v for v in (item.get("queueKey"), item.get("cardId"), item.get("id")) if isinstance(v, str) and v]
+
+
+def done_keys(brand_keys: set) -> set:
+    """이미 수집한 key. 등급 뒤에 카드 구분을 붙인 자세한 key는 대기열의 기본 key도 done으로 봄.
+
+    예: hyundai-visa-infinite-the-black(수집함) → 대기열 key hyundai-visa-infinite도 done.
+    대기열에 있는 key와 정확히 같을 때만 그대로 쓰고, 카드 id는 접두사로 넓히지 않습니다(kb-09310 ↔ kb-0931 오인 방지).
+    """
+    done = set()
+    for _folder, doc in inbox_docs():
+        for item in (doc.get("cards") or []) + (doc.get("programs") or []):
             if isinstance(item, dict):
-                keys.add(item.get("queueKey") or item.get("cardId") or item.get("id"))
-    return keys
+                done.update(item_keys(item))
+    extra = set()
+    for key in done:
+        if key in brand_keys:
+            continue
+        parts = key.split("-")
+        for i in range(len(parts) - 1, 1, -1):  # 가장 긴 기본 key부터
+            base = "-".join(parts[:i])
+            if base in brand_keys:
+                extra.add(base)
+                break
+    return done | extra
+
+
+def last_collected() -> dict:
+    """종류별 최근 수집일(collectedAt의 최댓값)."""
+    out = {}
+    for folder, doc in inbox_docs():
+        got = doc.get("collectedAt")
+        if isinstance(got, str) and len(got) == 10:
+            out[folder] = max(out.get(folder, ""), got)
+    return out
 
 
 def main():
-    done = done_keys()
+    all_brand = set()
+    for issuer, brands in BRAND_ISSUERS.items():
+        for b in brands:
+            for t in TIERS[b]:
+                all_brand.add(f"{SLUG[issuer]}-{re.sub(r'[^a-z0-9]+', '-', (b + ' ' + t).lower()).strip('-')}")
+    done = done_keys(all_brand)
     cards = json.loads(CATALOG.read_text(encoding="utf-8"))["cards"]
     seen, rows = set(), []
     for c in cards:
@@ -128,16 +175,35 @@ def main():
                 status = "done" if key in done else "valet-only" if (issuer, b.lower(), t.lower()) in have else "todo"
                 progs.append({"key": key, "issuer": issuer, "brand": b, "tier": t, "where": BRAND_HINTS[issuer], "status": status})
 
+    collected = last_collected()
+    kinds = ("card-terms", "brand-services", "card-events", "hotel-events", "travel-events", "card-products")
     out = {
         "built": TODAY,
-        "how": "status가 todo인 것부터 위에서 아래로. 수집 파일에 queueKey로 key를 적으면 다음에 done이 됩니다(이 파일은 python tools/data/queue.py로 다시 만듦).",
+        "how": "status가 todo인 것부터 위에서 아래로. 시작 전에 이 파일·data/inbox/·열린 PR(gh pr list --state open)을 함께 보고 겹치지 않는 항목만 고릅니다(docs/data-update.md 9장 조율 규칙). 수집 파일에 queueKey로 key를 적으면 다음에 done이 됩니다(이 파일은 python tools/data/queue.py로 다시 만듦).",
+        "lastCollected": {k: collected.get(k) for k in kinds},
+        "nextStart": {
+            "cards": next((r["key"] for r in rows if r["status"] == "todo"), None),
+            "brandPrograms": next((p["key"] for p in progs if p["status"] == "todo"), None),
+        },
+        "counts": {
+            "cards": {"done": sum(r["status"] == "done" for r in rows), "todo": sum(r["status"] == "todo" for r in rows), "total": len(rows)},
+            "brandPrograms": {"done": sum(p["status"] == "done" for p in progs), "valetOnly": sum(p["status"] == "valet-only" for p in progs),
+                              "todo": sum(p["status"] == "todo" for p in progs), "total": len(progs)},
+        },
         "eventSources": [{"key": f"{t}:{n}", "type": t, "name": n, "url": u} for t, n, u in EVENT_SOURCES],
         "brandPrograms": progs,
         "cards": rows,
     }
+    try:  # 내용이 그대로면 built 날짜도 그대로 둡니다(날마다 빈 커밋이 생기지 않게)
+        old = json.loads(OUT.read_text(encoding="utf-8"))
+        if {k: v for k, v in old.items() if k != "built"} == {k: v for k, v in out.items() if k != "built"}:
+            out["built"] = old.get("built") or TODAY
+    except (OSError, json.JSONDecodeError):
+        pass
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     todo = sum(r["status"] == "todo" for r in rows)
-    print(f"수집 대기열: 카드 {len(rows)}종(남은 {todo}) · 브랜드 프로그램 {len(progs)}개 · 이벤트 출처 {len(EVENT_SOURCES)}곳")
+    bt = sum(p["status"] == "todo" for p in progs)
+    print(f"수집 대기열: 카드 {len(rows)}종(남은 {todo}) · 브랜드 프로그램 {len(progs)}개(남은 {bt}) · 이벤트 출처 {len(EVENT_SOURCES)}곳")
 
 
 if __name__ == "__main__":

@@ -35,6 +35,7 @@ VALET = ROOT / "hotels" / "valet.json"
 VENDOR_EVENTS = ROOT / "travel" / "vendor-events.json"
 BRAND_OUT = ROOT / "paymorevent" / "data" / "brand-services.json"
 TERMS_OUT = ROOT / "paymorevent" / "data" / "card-terms.json"
+QUEUE = ROOT / "data" / "collect-queue.json"
 CATALOG = ROOT / "paymorevent" / "data" / "catalog-snapshot.json"
 
 # 카드사 이름 → id 앞부분
@@ -769,6 +770,39 @@ def merge_valet(programs, card_ids):
     return added, replaced, unmapped, lost
 
 
+def queue_notes(docs) -> list:
+    """수집 대기열과 어긋난 부분을 알려 줍니다(검사를 실패시키지는 않음).
+
+    다른 에이전트가 같은 항목을 또 모으는 일을 줄이려고, (1) queueKey를 빠뜨린 항목, (2) 대기열에 아직
+todo·valet-only로 남아 있는 key를 로그에 남깁니다. 대기열은 python tools/data/queue.py로 다시 만듭니다.
+    """
+    notes = []
+    for folder, path, doc in docs:
+        if folder not in ("brand-services", "card-terms"):
+            continue
+        field = "cards" if folder == "card-terms" else "programs"
+        rel = path.relative_to(ROOT).as_posix()
+        for i, item in enumerate(doc.get(field) or []):
+            if not item.get("queueKey"):
+                notes.append(f"{rel} {field}[{i}]: queueKey가 없습니다. 대기열 key를 적지 않으면 다음 실행에서 같은 항목을 또 수집합니다")
+    try:
+        queue = json.loads(QUEUE.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return notes
+    status = {x.get("key"): x.get("status") for x in (queue.get("brandPrograms") or []) + (queue.get("cards") or [])}
+    stale = []
+    for _folder, _path, doc in docs:
+        for item in (doc.get("cards") or []) + (doc.get("programs") or []):
+            for key in (item.get("queueKey"), item.get("cardId")):
+                if key and status.get(key) in ("todo", "valet-only"):
+                    stale.append(key)
+    if stale:
+        keys = sorted(set(stale))
+        shown = ", ".join(keys[:6]) + (" 외 %d개" % (len(keys) - 6) if len(keys) > 6 else "")
+        notes.append(f"수집 대기열에 아직 todo·valet-only로 남은 key {len(keys)}개({shown}) — python tools/data/queue.py로 대기열을 갱신해 함께 올리세요")
+    return notes
+
+
 def main() -> int:
     cmd = sys.argv[1] if len(sys.argv) > 1 else "validate"
     p = Problems()
@@ -782,6 +816,8 @@ def main() -> int:
         # 배포 때는 틀린 파일만 빼고 계속
         bad = {line.split(":")[0].split(" ")[0] for line in p}
         docs = [d for d in docs if d[1].relative_to(ROOT).as_posix() not in bad]
+    for line in queue_notes(docs):
+        print("안내:", line)
     if cmd == "merge":
         merge(docs)
     else:
