@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T22:21:29+09:00",
+  "generatedAt": "2026-11-25T22:26:48+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -49,7 +49,7 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-25T22:25:00+09:00",
+      "updatedAt": "2026-11-25T22:45:00+09:00",
       "lock": {
         "areas": [
           "paymorevent/",
@@ -65,12 +65,19 @@
         "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
       },
       "lastMergedPR": {
-        "number": 111,
-        "title": "도구: 현황판 agent_sync.py — gh pr list가 막히면 REST로 PR 이력 읽기",
-        "mergedAt": "2026-11-25T13:12:32Z",
-        "mergedAtKST": "2026-11-25 22:12"
+        "number": 112,
+        "title": "docs: Claude 잠금 — 광고성 이벤트·전체 사이트 텍스트 정리 작업 중",
+        "mergedAt": "2026-11-25T13:22:01Z",
+        "mergedAtKST": "2026-11-25 22:22"
       },
       "runs": [
+        {
+          "at": "2026-11-25T22:45:00+09:00",
+          "kind": "code",
+          "pr": 113,
+          "summary": "광고성 이벤트 판단 보강(lib/ad-events.ts·tools/travel/ads.py, 90건) — Mr. Cards 전체·Mr. Travel 혜택/여행준비에서 빼기, 내 카드는 발급·신규회원 홍보도 제외",
+          "queueKeys": []
+        },
         {
           "at": "2026-11-25T22:12:00+09:00",
           "kind": "tool",
@@ -193,12 +200,37 @@
       "pr": null,
       "since": "2026-11-25 22:25",
       "sinceRaw": "2026-11-25T22:25:00+09:00",
-      "ageHours": -0.1,
+      "ageHours": 0.0,
       "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
     }
   ],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 113,
+      "title": "광고성 이벤트 판단 보강 — Mr. Cards 전체와 Mr. Travel에서 빼기",
+      "agent": "Claude",
+      "branch": "ai/claude/cards-ads-everywhere",
+      "createdAtKST": "2026-11-25 22:26",
+      "area": "14파일 · paymorevent/ 5 · docs/ 3 · tools/travel 3 외 2곳",
+      "url": "https://github.com/uio412-source/my-website/pull/113",
+      "draft": false
+    }
+  ],
   "recentPRs": [
+    {
+      "number": 112,
+      "title": "docs: Claude 잠금 — 광고성 이벤트·전체 사이트 텍스트 정리 작업 중",
+      "agent": "Claude",
+      "branch": "ai/claude/lock-text-cleanup",
+      "state": "MERGED",
+      "mergedAt": "2026-11-25T13:22:01Z",
+      "mergedAtKST": "2026-11-25 22:22",
+      "createdAt": "2026-11-25T13:21:32Z",
+      "createdAtKST": "2026-11-25 22:21",
+      "area": "3파일 · data/ 2 · docs/ 1",
+      "files": 3,
+      "url": "https://github.com/uio412-source/my-website/pull/112"
+    },
     {
       "number": 111,
       "title": "도구: 현황판 agent_sync.py — gh pr list가 막히면 REST로 PR 이력 읽기",
@@ -730,34 +762,6 @@
       "area": "2파일 · docs/ 1 · 루트 1",
       "files": 2,
       "url": "https://github.com/uio412-source/my-website/pull/74"
-    },
-    {
-      "number": 73,
-      "title": "발레파킹: '조건 없이 무료'를 상품설명서 기준(호텔 이용 없이 무료)으로",
-      "agent": "Claude",
-      "branch": "ai/claude/valet-no-condition",
-      "state": "MERGED",
-      "mergedAt": "2026-11-24T05:18:08Z",
-      "mergedAtKST": "2026-11-24 14:18",
-      "createdAt": "2026-11-24T05:17:32Z",
-      "createdAtKST": "2026-11-24 14:17",
-      "area": "6파일 · assets/ 2 · docs/ 1 · hotels/ 1 외 2곳",
-      "files": 6,
-      "url": "https://github.com/uio412-source/my-website/pull/73"
-    },
-    {
-      "number": 72,
-      "title": "배포: build와 deploy job 분리 (github-pages 산출물 못 찾는 실패 방지)",
-      "agent": "Claude",
-      "branch": "ai/claude/pages-deploy-split",
-      "state": "MERGED",
-      "mergedAt": "2026-11-24T04:54:46Z",
-      "mergedAtKST": "2026-11-24 13:54",
-      "createdAt": "2026-11-24T04:54:05Z",
-      "createdAtKST": "2026-11-24 13:54",
-      "area": "1파일 · .github/ 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/72"
     }
   ],
   "queue": {

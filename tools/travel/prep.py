@@ -11,6 +11,8 @@ import gzip, html, json, re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from ads import is_ad
+
 ROOT = Path(__file__).resolve().parents[2]
 EVENTS = ROOT / "paymorevent/data/events.json"
 CARDS = ROOT / "paymorevent/data/cards.json.gz"
@@ -98,6 +100,8 @@ def lounge_sentence(text, limit=130):
 def card_events():
     out, seen = {k: [] for k in RX}, set()
     for e in json.loads(EVENTS.read_text(encoding="utf-8")):
+        if is_ad(e.get("title", "")):  # 광고성 이벤트는 Mr. Cards와 같이 뺌(tools/travel/ads.py)
+            continue
         if e.get("status") not in ("active", "upcoming", "needs_review"):
             continue
         if (e.get("endsAt") or "9999") < TODAY:

@@ -5,6 +5,7 @@ import type {Card, Offer} from '@/lib/catalog-types';
 import {sitePath} from '@/lib/site-path';
 import {readCard, readCardSummaries} from './data';
 import {normalizeBrands} from '@/lib/network-brand';
+import {isAd} from '@/lib/ad-events';
 import '@/app/mr-cards.css';
 import '@/app/mr-cards-dark.css';
 import '@/app/mc.css';
@@ -18,7 +19,8 @@ const Catalog = lazy(loadCatalog);
 const CardDetail = lazy(loadCardDetail);
 const EventDetail = lazy(loadEventDetail);
 let eventsRequest: Promise<Offer[]> | undefined;
-const readEvents = () => eventsRequest ??= import('@/data/events.json').then(module => module.default as Offer[]);
+// 광고성 이벤트(보험 가입·금융상품·가입 유도·여행사 패키지 …)는 받자마자 뺌 → 목록·상세·내 카드·비교 어디에도 안 나옴
+const readEvents = () => eventsRequest ??= import('@/data/events.json').then(module => (module.default as Offer[]).filter(o => !isAd(o.title)));
 const readHomeCards = () => import('@/data/home-cards.json').then(module => (module.default as Card[]).map(c => ({...c, brands: normalizeBrands(c.brands)})));
 const catalogRoute = /^(cards|events)\/([a-zA-Z0-9][a-zA-Z0-9._-]*)\/?$/;
 
