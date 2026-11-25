@@ -75,7 +75,9 @@ _6시간이 넘은 잠금은 이미 끝난 작업일 수 있습니다. 내 것�
 
 ### 열린 PR
 
-_열린 PR이 없습니다._
+| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
+|---|---|---|---|---|---|
+| [#113](https://github.com/uio412-source/my-website/pull/113) | Claude | `ai/claude/cards-ads-everywhere` | 2026-11-25 22:26 | 14파일 · paymorevent/ 5 · docs/ 3 · tools… | 광고성 이벤트 판단 보강 — Mr. Cards 전체와 Mr. Travel에서 빼기 |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-25)
 

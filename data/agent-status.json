@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T22:26:07+09:00",
+  "generatedAt": "2026-11-25T22:26:48+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -74,7 +74,7 @@
         {
           "at": "2026-11-25T22:45:00+09:00",
           "kind": "code",
-          "pr": null,
+          "pr": 113,
           "summary": "광고성 이벤트 판단 보강(lib/ad-events.ts·tools/travel/ads.py, 90건) — Mr. Cards 전체·Mr. Travel 혜택/여행준비에서 빼기, 내 카드는 발급·신규회원 홍보도 제외",
           "queueKeys": []
         },
@@ -204,7 +204,18 @@
       "note": "HJ 요청: 광고성 이벤트 Mr. Cards 전체에서 빼기 + 전체 사이트 텍스트 정리(사이트별 PR). 끝나면 null로 비움"
     }
   ],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 113,
+      "title": "광고성 이벤트 판단 보강 — Mr. Cards 전체와 Mr. Travel에서 빼기",
+      "agent": "Claude",
+      "branch": "ai/claude/cards-ads-everywhere",
+      "createdAtKST": "2026-11-25 22:26",
+      "area": "14파일 · paymorevent/ 5 · docs/ 3 · tools/travel 3 외 2곳",
+      "url": "https://github.com/uio412-source/my-website/pull/113",
+      "draft": false
+    }
+  ],
   "recentPRs": [
     {
       "number": 112,
@@ -751,20 +762,6 @@
       "area": "2파일 · docs/ 1 · 루트 1",
       "files": 2,
       "url": "https://github.com/uio412-source/my-website/pull/74"
-    },
-    {
-      "number": 73,
-      "title": "발레파킹: '조건 없이 무료'를 상품설명서 기준(호텔 이용 없이 무료)으로",
-      "agent": "Claude",
-      "branch": "ai/claude/valet-no-condition",
-      "state": "MERGED",
-      "mergedAt": "2026-11-24T05:18:08Z",
-      "mergedAtKST": "2026-11-24 14:18",
-      "createdAt": "2026-11-24T05:17:32Z",
-      "createdAtKST": "2026-11-24 14:17",
-      "area": "6파일 · assets/ 2 · docs/ 1 · hotels/ 1 외 2곳",
-      "files": 6,
-      "url": "https://github.com/uio412-source/my-website/pull/73"
     }
   ],
   "queue": {

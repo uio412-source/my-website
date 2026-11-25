@@ -20,7 +20,7 @@
     {
       "at": "2026-11-25T22:45:00+09:00",
       "kind": "code",
-      "pr": null,
+      "pr": 113,
       "summary": "광고성 이벤트 판단 보강(lib/ad-events.ts·tools/travel/ads.py, 90건) — Mr. Cards 전체·Mr. Travel 혜택/여행준비에서 빼기, 내 카드는 발급·신규회원 홍보도 제외",
       "queueKeys": []
     },
