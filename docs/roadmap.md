@@ -19,6 +19,7 @@ Claude가 매일 한 건 이상 개선·확장을 골라 끝까지(PR → 머지
 5. 추정·대략값은 화면에 그렇다고 적고, 공식 출처가 있는 값은 출처 링크를 남김.
 
 ## 후보 (위가 먼저)
+- [ ] Hotels 발레: 수집 카드 이름과 카드 DB(`catalog-snapshot.json`) 이름 표기가 달라 `catalogId`가 비는 카드(KB `BeV III`·`HERITAGE Classic [스카이패스형]`, 신한 `The BEST` 등)를 이름 정규화로 연결 — Mr. Cards에서 카드→발레 연결이 끊기는 문제
 - [ ] Hotels 발레: '제휴 호텔 확인 중' 카드 5종(ALL 우리카드 Infinite, 메리어트 본보이 더 프레스티지 삼성카드, NH ing+·올원+, 롯데 Mastercard WORLD, 삼성 THE iD.·THE 1)의 서울 제휴 호텔·조건을 카드사 공식 안내로 채우기 (`hotels/valet.json`의 `pending` → `programs`)
 - [ ] Hotels 발레: 카드사 안내 원문(PDF)으로 `visit`·`useRequired`·영수증 최소금액 다시 대조
 - [ ] Hotels 지도: 1박 평균가(`price`·`priceAt`)를 수집할 길 만들기 (예: `data/inbox/hotel-info` 양식 + 화면 '수집 전' 줄이기)
@@ -27,6 +28,7 @@ Claude가 매일 한 건 이상 개선·확장을 골라 끝까지(PR → 머지
 - [ ] Stocks: 사용자 입장에서 매일 들어와 볼 이유 점검(관심종목 알림 기준·배당 일정 등) 후 후보 추가
 
 ## 한 일
+- 2026-11-25 · Hotels 발레: 서울 호텔 별칭 3곳 추가·글래드 여의도 등록, 같은 등급 안내문 머지 규칙(넓은 안내 우선·카드마다 다른 호텔 유지) 수정
 - 2026-11-24 · Hotels 발레: 서울 지도(구 경계·핀·말풍선)와 호텔 지도 카드 연결 (#71)
 - 2026-11-24 · 배포: build·deploy job 분리로 'github-pages 산출물 못 찾음' 실패 방지 (#72)
 - 2026-11-24 · Hotels 발레: '조건 없이 무료만'을 상품설명서 기준(호텔 이용 없이 무료)으로 (#73)
