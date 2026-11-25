@@ -8,7 +8,7 @@
 읽는 것
 - data/agent-notes/<에이전트>.json  ← 각 에이전트가 **자기 파일에만** 쓰는 기록(한 일·실패·잠금)
 - data/collect-queue.json           ← 다음 시작점·남은 건수·최근 수집일
-- gh pr list                        ← 최근 PR·열린 PR(실패하면 지난 현황판의 PR 부분을 그대로 씀)
+- gh pr list                        ← 최근 PR·열린 PR(GraphQL이 막히면 gh api REST로, 그것도 실패하면 지난 현황판의 PR 부분을 그대로 씀)
 
 쓰는 것 (손으로 고치지 마세요. 다음 실행 때 덮어씁니다)
 - data/agent-status.json  기계가 읽는 현황(에이전트·잠금·열린 PR·최근 PR·대기열·실패 목록)
@@ -155,6 +155,10 @@ def fetch_prs(limit: int, use_gh: bool) -> list[dict] | None:
         print(f"경고: gh를 실행하지 못했습니다({e}) — 지난 PR 이력을 그대로 씁니다.", file=sys.stderr)
         return None
     if out.returncode != 0:
+        # Claude 세션처럼 GraphQL(gh pr list)이 막힌 곳에서는 REST(gh api)로 같은 모양을 만들어 씁니다.
+        rest = fetch_prs_rest(limit)
+        if rest is not None:
+            return rest
         print("경고: gh pr list 실패 — 지난 PR 이력을 그대로 씁니다.\n" + out.stderr.strip()[:400], file=sys.stderr)
         return None
     try:
@@ -163,6 +167,29 @@ def fetch_prs(limit: int, use_gh: bool) -> list[dict] | None:
         print("경고: gh 출력을 읽지 못했습니다 — 지난 PR 이력을 그대로 씁니다.", file=sys.stderr)
         return None
     return data if isinstance(data, list) else None
+
+
+def fetch_prs_rest(limit: int) -> list[dict] | None:
+    """gh api(REST)로 PR 목록·파일을 읽어 gh pr list --json 과 같은 모양으로. 실패하면 None."""
+    def api(path: str):
+        out = subprocess.run(["gh", "api", path], capture_output=True, text=True, timeout=60)
+        if out.returncode != 0:
+            raise RuntimeError(out.stderr.strip()[:200])
+        return json.loads(out.stdout)
+    try:
+        pulls = api(f"repos/{REPO}/pulls?state=all&sort=created&direction=desc&per_page={min(max(limit, 1), 100)}")[:limit]
+        # 스레드는 쓰지 않음: 같은 폴더의 tools/data/queue.py가 표준 queue 모듈을 가려 ThreadPoolExecutor가 깨짐
+        files = [api(f"repos/{REPO}/pulls/{pr['number']}/files?per_page=100") for pr in pulls]
+    except (OSError, subprocess.TimeoutExpired, RuntimeError, json.JSONDecodeError, KeyError, TypeError) as e:
+        print(f"경고: gh api(REST)로도 PR을 못 읽었습니다({e}).", file=sys.stderr)
+        return None
+    return [{
+        "number": pr.get("number"), "title": pr.get("title"),
+        "state": "OPEN" if pr.get("state") == "open" else "MERGED" if pr.get("merged_at") else "CLOSED",
+        "headRefName": (pr.get("head") or {}).get("ref"), "createdAt": pr.get("created_at"), "mergedAt": pr.get("merged_at"),
+        "url": pr.get("html_url"), "isDraft": bool(pr.get("draft")),
+        "files": [{"path": f.get("filename", "")} for f in fl], "author": {"login": (pr.get("user") or {}).get("login")},
+    } for pr, fl in zip(pulls, files)]
 
 
 def pr_row(pr: dict) -> dict:

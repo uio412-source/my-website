@@ -1,12 +1,10 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-25 22:08 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-25 22:11 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
 > 이 파일과 `data/agent-status.json`은 스크립트가 만드니 손으로 고치지 마세요(다음 실행 때 덮어씁니다).
->
-> ⚠ gh를 부르지 못해 **PR 부분은 지난 생성 때 값**입니다(대기열·기록 부분은 최신).
 
 ## 1. 에이전트별 이름표 — 브랜치·파일이 겹치지 않게
 
@@ -37,6 +35,14 @@ _자동 생성 2026-11-25 22:08 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#110](https://github.com/uio412-source/my-website/pull/110) | Claude | Mr. Cards: 광고성 이벤트를 '기타 광고'로 분류하고 내 카드 이벤트에서 제외 | 2026-11-25 22:09 | 9파일 · docs/ 3 · paymorevent/ 3 · data/ 2 외 1곳 | 머지 |
+| [#109](https://github.com/uio412-source/my-website/pull/109) | Pickle | fix: 발레파킹 '확인 중' 목록에서 해결된 우리카드 항목 제거 | 2026-11-25 19:56 | 1파일 · hotels/ 1 | 머지 |
+| [#108](https://github.com/uio412-source/my-website/pull/108) | Pickle | Mr. Cards: MG·우리 신규 카드 한도 칸 중복 표기 정리 | 2026-11-25 19:50 | 2파일 · paymorevent/ 2 | 머지 |
+| [#107](https://github.com/uio412-source/my-website/pull/107) | Pickle | data: 우리카드 발레파킹 9개 프로그램 수집 · Marriott 호텔 사진 96곳 보강 | 2026-11-25 19:47 | 14파일 · paymorevent/ 6 · hotels/ 2 · data/ 1 외 5곳 | 머지 |
+| [#104](https://github.com/uio412-source/my-website/pull/104) | Pickle | Mr. Cards: MG새마을금고 카드 14종·우리카드 THE SHOPPER/PAY 추가, 한글 검색 보강 | 2026-11-25 19:44 | 8파일 · paymorevent/ 6 · docs/ 1 · tools/data 1 | 머지 |
+| [#106](https://github.com/uio412-source/my-website/pull/106) | Claude | Mr. Cards: 카드 브랜드 이름 통일 (JCB·UnionPay·American Express) | 2026-11-25 19:38 | 6파일 · paymorevent/ 4 · docs/ 1 · 루트 1 | 머지 |
+| [#105](https://github.com/uio412-source/my-website/pull/105) | Pickle | docs: 현황판 잠금 해제(#102 머지 반영) | 2026-11-25 19:35 | 3파일 · data/ 2 · docs/ 1 | 머지 |
+| [#103](https://github.com/uio412-source/my-website/pull/103) | Claude | Mr. Cards 카드상품 검색: 혜택 태그 여러 개 선택 | 2026-11-25 19:35 | 4파일 · paymorevent/ 2 · docs/ 1 · 루트 1 | 머지 |
 | [#102](https://github.com/uio412-source/my-website/pull/102) | Pickle | docs: GPT·Claude·Pickle 공용 작업 현황판(data/agent-notes → docs/a… | 2026-11-25 19:33 | 10파일 · data/ 4 · docs/ 3 · 루트 2 외 1곳 | 머지 |
 | [#101](https://github.com/uio412-source/my-website/pull/101) | Claude | Mr. Cards 내 혜택 개편: 카드별 묶음 · +/− 접기 · 텍스트 줄이기 · 카드 찾기 개선 | 2026-11-25 19:31 | 7파일 · paymorevent/ 5 · docs/ 1 · 루트 1 | 머지 |
 | [#100](https://github.com/uio412-source/my-website/pull/100) | Claude | Mr. Cards: 새 메뉴 '내 혜택' — 내 카드 등록 + 받을 수 있는 이벤트 모아 보기 | 2026-11-25 19:13 | 14파일 · paymorevent/ 11 · assets/ 1 · docs/ 1 외 … | 머지 |
@@ -54,14 +60,6 @@ _자동 생성 2026-11-25 22:08 KST · `python tools/data/agent_sync.py` · 기�
 | [#88](https://github.com/uio412-source/my-website/pull/88) | Pickle | data: 대기열 자동 갱신을 PR 머지 방식으로 수정 | 2026-11-25 10:13 | 3파일 · docs/ 1 · tools/data 1 · 루트 1 | 머지 |
 | [#87](https://github.com/uio412-source/my-website/pull/87) | Pickle | data: 멀티 에이전트 조율 규칙과 수집 대기열 갱신(중복 수집 방지) | 2026-11-25 10:10 | 6파일 · tools/data 3 · data/ 1 · docs/ 1 외 1곳 | 머지 |
 | [#86](https://github.com/uio412-source/my-website/pull/86) | Pickle | Mr. Hotels: 발레파킹 서울 호텔 별칭 추가, 같은 등급 안내문 머지 규칙 수정 | 2026-11-25 10:03 | 5파일 · docs/ 2 · hotels/ 1 · tools/data 1 외 1곳 | 머지 |
-| [#85](https://github.com/uio412-source/my-website/pull/85) | Pickle | data: 수집 2026-11-25 2차 (KB·신한·롯데 발렛·라운지 서비스, BC 상품설명서) | 2026-11-25 09:19 | 4파일 · data/inbox/brand-services 3 · data/inbox/… | 머지 |
-| [#84](https://github.com/uio412-source/my-website/pull/84) | ChatGPT | data: 수집 2026-11-25 (card-events) | 2026-11-25 09:16 | 6파일 · data/inbox/card-events 6 | 머지 |
-| [#83](https://github.com/uio412-source/my-website/pull/83) | Pickle | data: 수집 2026-11-25 (삼성·하나 발렛·라운지 서비스, KB·BC 상품설명서) | 2026-11-25 08:46 | 4파일 · data/inbox/brand-services 2 · data/inbox/… | 머지 |
-| [#79](https://github.com/uio412-source/my-website/pull/79) | Pickle | Mr. Travel: 가짜 종료일 상시 처리, 라운지 문장 경계 자르기, 안내문 혜택 제외 | 2026-11-25 08:00 | 5파일 · tools/travel 2 · travel/ 2 · assets/ 1 | 머지 |
-| [#78](https://github.com/uio412-source/my-website/pull/78) | Pickle | Mr. Stocks: 국내·해외 종가 날짜 분리 표기, 상장 200일 미만 고점 라벨 수정 | 2026-11-25 07:59 | 1파일 · assets/ 1 | 머지 |
-| [#80](https://github.com/uio412-source/my-website/pull/80) | Pickle | Mr. Hotels: 대표 이미지 캐시·공통 배너 제외, 휴업 호텔 목록/발레 카운트 정리 | 2026-11-25 07:59 | 4파일 · assets/ 2 · hotels/ 1 · tools/hotels 1 | 머지 |
-| [#81](https://github.com/uio412-source/my-website/pull/81) | Pickle | 공통: 파비콘·OG 미리보기·robots·404 추가, README 현행화 | 2026-11-25 07:59 | 22파일 · 루트 8 · assets/ 5 · hotels/ 4 외 2곳 | 머지 |
-| [#82](https://github.com/uio412-source/my-website/pull/82) | Pickle | Mr. Cards: 혜택 표 머리글·율 파서 수정, 이벤트 엔티티·상시 종료일 정리, 12.5MB 스냅샷 … | 2026-11-25 07:59 | 18파일 · paymorevent/ 14 · tools/data 2 · docs/ 1… | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -75,7 +73,7 @@ _지금 잠근 영역이 없습니다._
 
 | PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
 |---|---|---|---|---|---|
-| [#103](https://github.com/uio412-source/my-website/pull/103) | Claude | `ai/claude/cards-multi-tags` | 2026-11-25 19:34 | 4파일 · paymorevent/ 2 · docs/ 1 · 루트 1 | Mr. Cards 카드상품 검색: 혜택 태그 여러 개 선택 |
+| [#111](https://github.com/uio412-source/my-website/pull/111) | Claude | `ai/claude/agent-sync-rest` | 2026-11-25 22:11 | 5파일 · data/ 2 · docs/ 2 · tools/data 1 | 도구: 현황판 agent_sync.py — gh pr list가 막히면 REST로 PR … |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-25)
 
@@ -91,8 +89,8 @@ _지금 잠근 영역이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #99 data: 수집 2026-11-25 (BC 모두의카드 실적 … | 2026-11-25 15:09 | 0건 |
 | ChatGPT Dot | **없음 — 만들어 주세요** | - | - | 0건 |
-| Claude | `data/agent-notes/claude.json` | #101 Mr. Cards 내 혜택 개편: 카드별 묶음 · +/− 접… | 2026-11-25 19:31 | 1건 |
-| Pickle | `data/agent-notes/pickle.json` | #102 docs: GPT·Claude·Pickle 공용 작업 현황판… | 2026-11-25 19:33 | 2건 |
+| Claude | `data/agent-notes/claude.json` | #110 Mr. Cards: 광고성 이벤트를 '기타 광고'로 분류하고… | 2026-11-25 22:09 | 1건 |
+| Pickle | `data/agent-notes/pickle.json` | #109 fix: 발레파킹 '확인 중' 목록에서 해결된 우리카드 항목… | 2026-11-25 19:56 | 2건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
