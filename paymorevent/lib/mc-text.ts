@@ -16,7 +16,7 @@ export const feeLabel = (n: number | null | undefined) => n == null ? null : n =
 // ---------- 카드사 타일 ----------
 const ISSUER_TILE: Record<string, [string, number]> = {
   '삼성': ['삼성', 1], '국민': ['KB', 4], '신한': ['신한', 1], '우리': ['우리', 1], '하나': ['하나', 3],
-  '현대': ['현대', 5], '롯데': ['롯데', 2], '농협': ['NH', 3], 'BC': ['BC', 2],
+  '현대': ['현대', 5], '롯데': ['롯데', 2], '농협': ['NH', 3], 'BC': ['BC', 2], '새마을': ['MG', 2],
 };
 export function issuerTile(issuer: string): [string, number] {
   const g = issuerGroup(issuer);
@@ -24,8 +24,8 @@ export function issuerTile(issuer: string): [string, number] {
   const short = issuer.replace(/카드$|은행$|뱅크$/, '').replace(/^IBK기업$/, 'IBK').slice(0, 3);
   return [short || issuer.slice(0, 2), 1];
 }
-export const ISSUER_FILTERS = ['삼성', '국민', '신한', '우리', '하나', '현대', '롯데', '농협', 'BC', '기타'];
-export const issuerFilterLabel = (g: string) => g === '국민' ? 'KB국민' : g === '농협' ? 'NH농협' : g === 'BC' ? 'BC·은행' : g;
+export const ISSUER_FILTERS = ['삼성', '국민', '신한', '우리', '하나', '현대', '롯데', '농협', 'BC', '새마을', '기타'];
+export const issuerFilterLabel = (g: string) => g === '국민' ? 'KB국민' : g === '농협' ? 'NH농협' : g === 'BC' ? 'BC·은행' : g === '새마을' ? 'MG새마을금고' : g;
 
 // ---------- 혜택 정리 ----------
 const JUNK = /(?:란\s*\?|란$|안내$|안내\s*\(|^연회비|소액신용|하이브리드|체크카드\s*안내|유의\s*사항|이용\s*방법|발급\s*(?:안내|대상|조건)|가족카드|SFC|^기타$|^공통|서비스\s*안내|전월\s*(?:이용)?\s*실적|실적\s*(?:안내|기준|제외|산정)|이용\s*안내|제공\s*기준|후불\s*교통|결제일|결제\s*계좌|카드\s*(?:디자인|신청)|^[0-9.]+\s*$|^혜택\s*요약$|^주요\s*혜택$|^카드\s*혜택$|^부가\s*서비스$|^전월\s*이용\s*(?:금액|실적)|이상\s*시$|^주요\s*서비스$|구간$|^\d+만\s*[/~]|^서비스\s*(?:구분|내용|대상)$|^대상\s*가맹점|^적용\s*대상|^제공\s*(?:한도|조건)|상세\s*보기$)/;
@@ -151,6 +151,7 @@ const KO_READ: Record<string, string> = {
   zerose: '제로즈', unimile: '유니마일', every: '에브리', ten: '텐', core: '코어', day: '데이', tv: '티비', nol: '놀', velvet: '벨벳', save: '세이브',
   light: '라이트', blossom: '블라썸', pride: '프라이드', two: '투', time: '타임', wellness: '웰니스', sweet: '스위트', together: '투게더', dual: '듀얼',
   joy: '조이', rose: '로즈', buddy: '버디', seven: '세븐', art: '아트', work: '워크', with: '위드', we: '위', you: '유', for: '포', solid: '솔리드',
+  shopper: '쇼퍼', chairs: '체어스', qwerty: '쿼티', uni: '유니', wallet: '월렛', care: '케어', routine: '루틴',
   k: '케이', m: '엠', i: '아이',
 };
 export function koReading(name: string) {

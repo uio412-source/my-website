@@ -5,11 +5,12 @@ import type {Card, Offer, PickingScenario, RewardRate} from './catalog-types';
 import {cardThemes,ELIGIBILITY_THEMES,paymentEligibility} from './card-themes';
 import {rewardAtSpend} from './reward-calculation';
 import {allocateSpending} from './spending-allocation';
-export const ISSUERS=['삼성','국민','신한','우리','하나','현대','롯데','농협','BC'];
+export const ISSUERS=['삼성','국민','신한','우리','하나','현대','롯데','농협','BC','새마을'];
 export const BENEFIT_KINDS=['적립','할인','마일리지','호텔제휴','통신 및 제휴','K패스'];
 export function issuerGroup(issuer:string){
  if(/삼성/.test(issuer))return '삼성';if(/국민|KB/.test(issuer))return '국민';if(/신한/.test(issuer))return '신한';if(/우리/.test(issuer))return '우리';if(/하나/.test(issuer))return '하나';if(/현대/.test(issuer))return '현대';if(/롯데/.test(issuer))return '롯데';if(/농협|NH/.test(issuer))return '농협';
- if(/BC|기업|IBK|iM뱅크|대구|경남|부산|새마을|신협/.test(issuer))return 'BC';return '기타';
+ if(/새마을|MG새마을/.test(issuer))return '새마을';
+ if(/BC|기업|IBK|iM뱅크|대구|경남|부산|신협/.test(issuer))return 'BC';return '기타';
 }
 export function benefitKinds(c:Card){if(c.benefitKinds)return c.benefitKinds;const text=[c.name,...c.benefits.map(b=>b.title+' '+b.category)].join(' ');return BENEFIT_KINDS.filter(k=>k==='적립'?/적립|포인트|캐시백/.test(text):k==='할인'?/할인/.test(text):k==='마일리지'?/마일|스카이패스/.test(text):k==='호텔제휴'?/호텔|리조트|메리어트|힐튼|아코르/.test(text):k==='통신 및 제휴'?/통신|SKT|KT|LG U|제휴/.test(text):/K[- ]?패스|K[- ]?PASS/i.test(text));}
 export function picking(s:PickingScenario){
