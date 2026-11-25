@@ -1596,14 +1596,6 @@
   ],
   "pending": [
     {
-      "catalogId": "woori-103187",
-      "name": "ALL 우리카드 Infinite",
-      "issuer": "우리카드",
-      "brand": "Visa",
-      "source": "https://pc.wooricard.com/dcpc/yh1/bnf/bnf02/prgevnt/movePrgEvntDtl.do?evntSrno=30005131",
-      "note": "Visa Infinite 호텔 발레파킹 제공 확인. 서울 제휴 호텔과 상품별 실적·한도를 확인 중입니다."
-    },
-    {
       "catalogId": null,
       "name": "메리어트 본보이 더 프레스티지 삼성카드",
       "issuer": "삼성카드",
