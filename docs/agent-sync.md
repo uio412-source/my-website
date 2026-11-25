@@ -1,10 +1,12 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-25 19:35 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-25 22:07 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
 > 이 파일과 `data/agent-status.json`은 스크립트가 만드니 손으로 고치지 마세요(다음 실행 때 덮어씁니다).
+>
+> ⚠ gh를 부르지 못해 **PR 부분은 지난 생성 때 값**입니다(대기열·기록 부분은 최신).
 
 ## 1. 에이전트별 이름표 — 브랜치·파일이 겹치지 않게
 
@@ -80,7 +82,7 @@ _지금 잠근 영역이 없습니다._
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 1410 / 1431종 · **브랜드 프로그램** todo 73 · valet-only 4 / 94개
+- **남은 카드** 1425 / 1447종 · **브랜드 프로그램** todo 69 · valet-only 4 / 94개
 - **최근 수집일** — card-terms 2026-11-25 · brand-services 2026-11-25 · card-events 2026-11-25 · hotel-events 없음 · travel-events 없음 · card-products 없음
 
 ### 에이전트별 마지막 반영
@@ -89,15 +91,19 @@ _지금 잠근 영역이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #99 data: 수집 2026-11-25 (BC 모두의카드 실적 … | 2026-11-25 15:09 | 0건 |
 | ChatGPT Dot | **없음 — 만들어 주세요** | - | - | 0건 |
-| Claude | `data/agent-notes/claude.json` | #101 Mr. Cards 내 혜택 개편: 카드별 묶음 · +/− 접… | 2026-11-25 19:31 | 0건 |
+| Claude | `data/agent-notes/claude.json` | #101 Mr. Cards 내 혜택 개편: 카드별 묶음 · +/− 접… | 2026-11-25 19:31 | 1건 |
 | Pickle | `data/agent-notes/pickle.json` | #102 docs: GPT·Claude·Pickle 공용 작업 현황판… | 2026-11-25 19:33 | 2건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 1건
+### 다시 볼 것 (open) — 2건
 
+- **2026-11-25 · Claude · 신한 The More(더모아) 등 카드 DB에 없는 인기 카드**
+  - 사유: 내 카드 찾기에서 '더모아'를 쳐도 안 나옴 — catalog-snapshot.json에 카드가 없음(검색 문제 아님)
+  - 재시도: card-products 수집(상품공시실)으로 판매 중 카드 누락 확인 후 카드 DB에 추가
+  - 참고: roadmap 후보
 - **2026-11-25 · Pickle · samsung-aap1483 삼성카드 taptap O 등 삼성 상품설명서(대기열 맨 앞 10종)**
   - 사유: 삼성 카드 상세가 Nuxt 런타임으로 그려져 HTML에 상품설명서 PDF 링크가 없음. static11.samsungcard.com/.../YYMM_<코드>.pdf 파일명 추측 4건 모두 404 → 2회 실패로 중단
   - 재시도: ① 카드 상세를 브라우저로 렌더한 뒤 네트워크 응답(_next/data·api)에서 PDF 주소를 찾기 ② 삼성카드 고객센터 > 상품공시실 목록을 열어 카드명으로 검색해 내려받기 ③ 그래도 없으면 이 줄에 날짜만 더하고 다음 카드로
