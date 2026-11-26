@@ -113,6 +113,42 @@ export function SiteHeader(props: NavProps = {}) {
   </>;
 }
 
+// 'DB 작업' 진행률 — 빌드 때 data/collect-queue.json에서 줄여 넣은 값(vite.config.ts · scripts/db-progress.mjs)
+type DbRow = {label: string; done: number; total: number; unit: string};
+declare const __DB_PROGRESS__: {asOf: string; rows: DbRow[]} | null;
+
+const share = (done: number, total: number) => total ? done / total * 100 : 0;
+const shareText = (p: number) => `${p < 10 ? p.toFixed(1) : Math.round(p)}%`;
+
+function Meter({value, label}: {value: number; label: string}) {
+  return <span className="mc-dbp-bar" role="meter" aria-label={label} aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(value * 10) / 10}>
+    {value > 0 && <i style={{width: `${Math.min(value, 100)}%`}} />}
+  </span>;
+}
+
+function DbProgress() {
+  const data = __DB_PROGRESS__;
+  if (!data?.rows.length) return null;
+  const all = share(data.rows.reduce((n, r) => n + r.done, 0), data.rows.reduce((n, r) => n + r.total, 0));
+  const [, month, day] = data.asOf.split('-').map(Number);
+  return <section className="mc-dbp" aria-label="DB 작업 진행률">
+    <span className="mc-dbp-head"><span>DB 작업</span><b>{shareText(all)}</b><small>{month}/{day} 기준</small></span>
+    <Meter value={all} label="DB 작업 전체" />
+    <ul>
+      {data.rows.map(row => {
+        const p = share(row.done, row.total);
+        return <li key={row.label}>
+          <span>{row.label}</span>
+          <Meter value={p} label={row.label} />
+          <span className="mc-dbp-n">{row.done.toLocaleString('ko-KR')}/{row.total.toLocaleString('ko-KR')}{row.unit}</span>
+          <b>{shareText(p)}</b>
+        </li>;
+      })}
+    </ul>
+    <small>이벤트 출처는 최근 7일 안에 모은 곳</small>
+  </section>;
+}
+
 export function SiteFooter() {
   return <footer className="pm-footer">
     <a href={sitePath()} className="pm-footer-brand">Mr. <span>Cards</span></a>
@@ -122,5 +158,6 @@ export function SiteFooter() {
       <a href={sitePath('downloads/paymorevent-card-database.xlsx')} download="Mr.Cards-카드DB.xlsx" className="pm-db-link">카드 DB 엑셀</a>
       <a href={sitePath('../ungjup.html')} className="mc-family">Mr. Stocks 바로가기</a>
     </div>
+    <DbProgress />
   </footer>;
 }

@@ -428,7 +428,9 @@ def render_md(status: dict, notes: dict) -> str:
     add("")
     if q:
         add(f"- **다음 시작점** — cards `{next_start.get('cards')}` · brandPrograms `{next_start.get('brandPrograms')}`")
-        add(f"- **남은 카드** {cards.get('todo', '-')} / {cards.get('total', '-')}종 · **브랜드 프로그램** todo {brands.get('todo', '-')} · valet-only {brands.get('valetOnly', '-')} / {brands.get('total', '-')}개")
+        sources = counts.get("eventSources") or {}
+        add(f"- **남은 카드** {cards.get('todo', '-')} / {cards.get('total', '-')}종 · **브랜드 프로그램** todo {brands.get('todo', '-')} · valet-only {brands.get('valetOnly', '-')} / {brands.get('total', '-')}개"
+            f" · **이벤트 출처** 한 번이라도 모은 곳 {sources.get('collected', '-')} / {sources.get('total', '-')}곳")
         last = q.get("lastCollected") or {}
         add("- **최근 수집일** — " + " · ".join(f"{k} {v or '없음'}" for k, v in last.items()))
     else:

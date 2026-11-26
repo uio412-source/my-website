@@ -39,6 +39,10 @@ jobs:
       - name: 수집 데이터 합치기 (data/inbox → 이벤트 DB, docs/data-update.md)
         # 양식이 틀린 파일은 빼고 합칩니다. 결과는 배포본에만 들어가고 저장소에는 커밋하지 않습니다.
         run: python tools/data/inbox.py merge
+      - name: 수집 대기열 다시 계산 (Mr. Cards 하단 'DB 작업' 진행률용, 커밋 안 함)
+        # 수집 PR 머지 직후 배포는 automerge.py가 대기열을 커밋하기 전에 돌아서, 여기서 한 번 더 만들어 최신 숫자를 씁니다.
+        continue-on-error: true
+        run: python tools/data/queue.py
       - name: Mr. Travel 혜택 요약 (Mr. Cards 카드사 이벤트에서 해외·여행만)
         continue-on-error: true
         run: python tools/travel/benefits.py

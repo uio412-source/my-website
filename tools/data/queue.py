@@ -4,7 +4,8 @@
 
 - cards: 상품설명서(card-terms)를 정리할 카드. 인기·중요도 순(이미지·피킹률·프리미엄·일반 발급 카드 먼저).
 - brandPrograms: 카드사 × 국제브랜드 × 등급별 '선택 서비스' 안내(호텔 발레·공항 라운지·공항 발레·공항 커피 등).
-- eventSources: 이벤트를 모을 공식 목록(카드사·호텔 체인·항공사·면세점).
+- eventSources: 이벤트를 모을 공식 목록(카드사·호텔 체인·항공사·면세점). lastCollected = 그 출처를 마지막으로 모은 날
+  (수집 파일의 listUrls — 호텔은 이벤트 url — 에 그 출처의 공식 도메인이 있으면 그날 모은 것으로 봄).
 각 항목의 key를 수집 파일의 queueKey(또는 이벤트 파일 이름)에 적으면, 다음 실행 때 이미 한 항목을 건너뛸 수 있습니다.
 이미 data/inbox에 있는 key는 status를 done으로 표시합니다. 등급 뒤에 카드 구분을 붙인 key(예:
  hyundai-visa-infinite-the-black)는 대기열의 기본 key(hyundai-visa-infinite)도 done으로 봅니다.
@@ -14,6 +15,7 @@
 import gzip, json, re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[2]
 CATALOG = ROOT / "paymorevent/data/catalog-snapshot.json"
@@ -137,6 +139,28 @@ def last_collected() -> dict:
     return out
 
 
+def base_domain(url: str) -> str:
+    """https://m.hanacard.co.kr/… → hanacard.co.kr, https://card.pay.naver.com/… → naver.com"""
+    labels = (urlparse(url).hostname or "").lower().split(".")
+    n = 3 if len(labels) >= 3 and labels[-1] == "kr" and labels[-2] in ("co", "go", "or", "ne", "ac") else 2
+    return ".".join(labels[-n:])
+
+
+def source_days() -> dict:
+    """(종류, 공식 도메인)별 최근 수집일. 목록 주소(listUrls)를 보고, 목록 주소가 없는 종류(호텔)는 이벤트 url을 봅니다."""
+    out = {}
+    for folder, doc in inbox_docs():
+        got = doc.get("collectedAt")
+        if not (isinstance(got, str) and len(got) == 10):
+            continue
+        urls = doc.get("listUrls") if "listUrls" in doc else [e.get("url") for e in doc.get("events") or [] if isinstance(e, dict)]
+        for u in urls or []:
+            if isinstance(u, str) and u.startswith("http"):
+                key = (folder, base_domain(u))
+                out[key] = max(out.get(key, ""), got)
+    return out
+
+
 def main():
     all_brand = set()
     for issuer, brands in BRAND_ISSUERS.items():
@@ -176,7 +200,9 @@ def main():
                 progs.append({"key": key, "issuer": issuer, "brand": b, "tier": t, "where": BRAND_HINTS[issuer], "status": status})
 
     collected = last_collected()
-    kinds = ("card-terms", "brand-services", "card-events", "hotel-events", "travel-events", "card-products")
+    days = source_days()
+    sources = [{"key": f"{t}:{n}", "type": t, "name": n, "url": u, "lastCollected": days.get((t, base_domain(u)))} for t, n, u in EVENT_SOURCES]
+    kinds =("card-terms", "brand-services", "card-events", "hotel-events", "travel-events", "card-products")
     out = {
         "built": TODAY,
         "how": "status가 todo인 것부터 위에서 아래로. 시작 전에 이 파일·data/inbox/·열린 PR(gh pr list --state open)을 함께 보고 겹치지 않는 항목만 고릅니다(docs/data-update.md 9장 조율 규칙). 수집 파일에 queueKey로 key를 적으면 다음에 done이 됩니다(이 파일은 python tools/data/queue.py로 다시 만듦).",
@@ -189,8 +215,9 @@ def main():
             "cards": {"done": sum(r["status"] == "done" for r in rows), "todo": sum(r["status"] == "todo" for r in rows), "total": len(rows)},
             "brandPrograms": {"done": sum(p["status"] == "done" for p in progs), "valetOnly": sum(p["status"] == "valet-only" for p in progs),
                               "todo": sum(p["status"] == "todo" for p in progs), "total": len(progs)},
+            "eventSources": {"collected": sum(bool(s["lastCollected"]) for s in sources), "total": len(sources)},
         },
-        "eventSources": [{"key": f"{t}:{n}", "type": t, "name": n, "url": u} for t, n, u in EVENT_SOURCES],
+        "eventSources": sources,
         "brandPrograms": progs,
         "cards": rows,
     }
