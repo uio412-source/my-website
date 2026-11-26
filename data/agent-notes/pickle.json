@@ -1,9 +1,25 @@
 {
   "agent": "Pickle",
   "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-  "updatedAt": "2026-11-26T18:20:00+09:00",
+  "updatedAt": "2026-11-26T21:30:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-26T21:25:00+09:00",
+      "kind": "brand-services + card-terms",
+      "pr": 133,
+      "summary": "KB Visa Infinite 선택서비스 1프로그램(서비스 3, 호텔 45곳) · BC 상품설명서 3종(로스트아크·페이북머니 체크·밥바라밥) · KB 상품설명서 3종(NEED Global·YOU Prime·TBX). 예산 45/45·68/250·3/20",
+      "queueKeys": [
+        "kb-visa-infinite",
+        "bc-101686",
+        "bc-101681",
+        "bc-102095",
+        "kb-09137",
+        "kb-09771",
+        "kb-00218"
+      ],
+      "status": "merged"
+    },
     {
       "at": "2026-11-26T18:12:00+09:00",
       "kind": "hotels/valet",
@@ -97,6 +113,27 @@
   "skipped": [
     {
       "at": "2026-11-26",
+      "target": "BC 후불하이패스 2종(bc-103132 SIM·bc-103183 카드형) 상품설명서",
+      "status": "open",
+      "reason": "공개된 상품설명서가 2023-C1a-07886/07875(2023.07.18) 한 판본이고 혜택 표 없이 연회비(국내전용 2,000원)만 있음 — 올해·작년 문서 규칙 밖",
+      "retry": "카드사가 2025~2026년판을 올리면 같은 경로(bccard.com/down/individual/customer/<gdsno>.pdf)로 교체"
+    },
+    {
+      "at": "2026-11-26",
+      "target": "BC 플래티늄·다이아몬드 선택서비스 2026년판",
+      "status": "open",
+      "reason": "notice_20260522_1~3.pdf는 신구조문대비표라 2025(변경 전)·2026(변경 후) 열이 섞여 추출되고, vip.bccard.com 국내 발렛파킹 페이지는 2012년 문서라 쓸 수 없음",
+      "retry": "vip.bccard.com 카드별 안내장 PDF 또는 개정 후 단일 판본을 받아 bc-mastercard-platinum·bc-visa-platinum 등으로 수집"
+    },
+    {
+      "at": "2026-11-26",
+      "target": "KB 선택서비스 Mastercard World Elite·Amex Gold·Amex The Platinum",
+      "status": "workaround",
+      "reason": "img2.kbcard.com/obj/card/download/00123~00134_stpul_20260511.pdf 11종을 전수 확인 — Amex는 Ultra(00123)·Platinum(00124), Mastercard는 World/Platinum/Diamond만 있고 World Elite·Amex Gold·The Platinum 약관 없음",
+      "retry": "대기열 해당 key는 내리는 편이 맞음(등급 자체 미운영)"
+    },
+    {
+      "at": "2026-11-26",
       "target": "발레파킹 서울 호텔 이름 표기 불일치 3곳(노보텔 앰배서더 서울 용산·노보텔 스위트 앰배서더 서울 용산·이비스 스타일 앰배서더 서울 용산)",
       "status": "resolved",
       "reason": "#128 배포 로그에서 hotels/valet.json에 없는 표기로 나와 호텔 연결 실패",
@@ -113,9 +150,10 @@
     {
       "at": "2026-11-26",
       "target": "BC 상품설명서 이미지 PDF(로스트아크 101686·페이북머니 101681·102095·후불하이패스 103132·103183)",
-      "status": "open",
-      "reason": "텍스트 추출 0자(이미지 PDF). 이번 회차는 6종만 옮기고 나머지는 다음 회차로",
-      "retry": "fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮긴다. BC 다운로드는 200이어도 본문이 HTML(302 안내)일 수 있으니 file 명령으로 실제 PDF 확인"
+      "status": "workaround",
+      "reason": "이미지 PDF 5종 중 3종(101686 로스트아크·101681 페이북머니·102095 밥바라밥)을 PNG로 렌더해 옮김. 나머지 2종(후불하이패스 103132·103183)은 2023-07-18 심의필 문서뿐이라(올해·작년 규칙 밖) 제외",
+      "retry": "fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮긴다. BC 다운로드는 200이어도 본문이 HTML(302 안내)일 수 있으니 file 명령으로 실제 PDF 확인",
+      "ref": "#133"
     },
     {
       "at": "2026-11-26",
