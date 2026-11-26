@@ -1,271 +1,343 @@
 {
-  "agent": "Pickle",
-  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-  "updatedAt": "2026-11-27T02:55:00+09:00",
-  "lock": null,
-  "runs": [
-    {
-      "at": "2026-11-27T02:52:00+09:00",
-      "kind": "brand-services + card-terms",
-      "pr": 136,
-      "summary": "하나카드 국제브랜드 선택서비스 6프로그램(Mastercard Platinum·Titanium, Visa Signature·Infinite, Amex Platinum, UnionPay Diamond — 서비스 15, 대상 호텔 149곳) · KB 상품설명서 4종(WE:SH All+·YOU Wish·NEED Pay·Less Go, 혜택 24줄). 예산 28/45·188/250·2/20",
-      "queueKeys": [
-        "hana-mastercard-platinum",
-        "hana-mastercard-titanium",
-        "hana-visa-signature",
-        "hana-visa-infinite",
-        "hana-american-express-platinum",
-        "hana-unionpay-diamond",
-        "kb-09297",
-        "kb-09780",
-        "kb-09800",
-        "kb-09828"
-      ],
-      "status": "merged"
-    },
-    {
-      "at": "2026-11-26T21:25:00+09:00",
-      "kind": "brand-services + card-terms",
-      "pr": 133,
-      "summary": "KB Visa Infinite 선택서비스 1프로그램(서비스 3, 호텔 45곳) · BC 상품설명서 3종(로스트아크·페이북머니 체크·밥바라밥) · KB 상품설명서 3종(NEED Global·YOU Prime·TBX). 예산 45/45·68/250·3/20",
-      "queueKeys": [
-        "kb-visa-infinite",
-        "bc-101686",
-        "bc-101681",
-        "bc-102095",
-        "kb-09137",
-        "kb-09771",
-        "kb-00218"
-      ],
-      "status": "merged"
-    },
-    {
-      "at": "2026-11-26T18:12:00+09:00",
-      "kind": "hotels/valet",
-      "pr": 130,
-      "summary": "서울 드래곤 시티(dragon-city) aliases에 용산 3개 호텔 정식 표기 추가 — #128 배포 로그 '못 찾음' 0건",
-      "queueKeys": [],
-      "status": "merged"
-    },
-    {
-      "at": "2026-11-26T18:02:00+09:00",
-      "kind": "brand-services + card-terms",
-      "pr": 128,
-      "summary": "롯데 VISA Infinite·MasterCard TITANIUM 선택서비스 2프로그램(서비스 7, 호텔 75곳) · BC VISA Infinite 발렛 1프로그램(호텔 45곳) · BC 상품설명서 6종(혜택 28줄). 예산 21/45·37/250·3/20",
-      "queueKeys": [
-        "lotte-visa-infinite",
-        "lotte-mastercard-titanium",
-        "bc-visa-infinite",
-        "bc-105424",
-        "bc-103125",
-        "bc-101010",
-        "bc-101874",
-        "bc-102603",
-        "bc-101881"
-      ],
-      "status": "merged"
-    },
-    {
-      "at": "2026-11-26T02:55:00+09:00",
-      "kind": "brand-services + card-terms",
-      "pr": 118,
-      "summary": "NH농협(Mastercard World·Titanium·UnionPay Diamond)·롯데(Mastercard/Visa Platinum)·KB(Visa/Amex/Mastercard Platinum) 선택서비스 8프로그램(호텔 발레 대상 호텔 전체 포함, NH Titanium·KB Mastercard Platinum은 마티나·마티나골드 라운지) · KB 상품설명서 7종(EV·KB라이프·KT스카이라이프·E1 LPG·AK·Easy shopping·K-패스)",
-      "queueKeys": [
-        "nh-mastercard-world",
-        "nh-mastercard-titanium",
-        "nh-unionpay-diamond",
-        "lotte-mastercard-platinum",
-        "lotte-visa-platinum",
-        "kb-visa-platinum",
-        "kb-american-express-platinum",
-        "kb-mastercard-platinum",
-        "kb-00230",
-        "kb-09579",
-        "kb-04348",
-        "kb-04459",
-        "kb-04444",
-        "kb-09064",
-        "kb-09321"
-      ],
-      "status": "merged"
-    },
-    {
-      "at": "2026-11-25T19:45:00+09:00",
-      "kind": "docs/tools",
-      "pr": 102,
-      "summary": "공용 작업 현황판(docs/agent-sync.md·data/agent-status.json)·생성기(agent_sync.py)·에이전트별 기록 파일(data/agent-notes) 구축, 규칙을 data-update 9장·AGENTS·README에 연결",
-      "queueKeys": [],
-      "status": "merged"
-    },
-    {
-      "at": "2026-11-25T11:51:00+09:00",
-      "kind": "queue",
-      "pr": 95,
-      "summary": "수집 대기열 갱신 — #94 반영해 done 처리(카드 1,410 todo·브랜드 프로그램 73 todo)",
-      "queueKeys": []
-    },
-    {
-      "at": "2026-11-25T11:50:00+09:00",
-      "kind": "brand-services + card-terms",
-      "pr": 94,
-      "summary": "신한 브랜드 선택서비스 6개 프로그램(서비스 19) · BC 상품설명서 4종(혜택 22줄)",
-      "queueKeys": [
-        "shinhan-visa-infinite",
-        "shinhan-mastercard-world",
-        "shinhan-mastercard-platinum",
-        "shinhan-american-express-platinum",
-        "shinhan-unionpay-diamond",
-        "bc-104453",
-        "bc-104063",
-        "bc-101883",
-        "bc-101877"
-      ]
-    },
-    {
-      "at": "2026-11-25T10:35:00+09:00",
-      "kind": "docs",
-      "pr": 93,
-      "summary": "로드맵에 차트 요약 칸 삭제(#92) 기록",
-      "queueKeys": []
-    }
-  ],
-  "skipped": [
-    {
-      "at": "2026-11-27",
-      "target": "KB 상품설명서 3종(kb-09250 The Easy·kb-09561 WE:SH Travel·kb-09570 WE:SH Daily)",
-      "status": "open",
-      "reason": "카드사가 지금 올려 둔 최신 판본이 2020-10-08·2024-09-23·2024-07-01 심의필이라 '올해·작년 문서' 규칙 밖",
-      "retry": "2025~2026년판이 올라오면 대기열 termsUrl(img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf)에서 교체"
-    },
-    {
-      "at": "2026-11-27",
-      "target": "하나카드 선택서비스 5개 등급(hana-visa-platinum·mastercard-world-elite·amex-gold·amex-platinum-elite·amex-the-platinum)",
-      "status": "open",
-      "reason": "카드 상세 7장(hana-9894·13913·17503·17766·17768·17811·10764)을 확인했으나 해당 등급 leaflet PDF가 없음(VP/ME/AG 계열 404). 2021년판 02768_20210208.pdf만 노출",
-      "retry": "m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=… 페이지에 leaflet/[코드]/…pdf 링크가 있는 카드를 찾아 수집(현재 확인된 코드: MW·MP·MT·VS·VI·AP·UD)"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "BC 후불하이패스 2종(bc-103132 SIM·bc-103183 카드형) 상품설명서",
-      "status": "open",
-      "reason": "공개된 상품설명서가 2023-C1a-07886/07875(2023.07.18) 한 판본이고 혜택 표 없이 연회비(국내전용 2,000원)만 있음 — 올해·작년 문서 규칙 밖",
-      "retry": "카드사가 2025~2026년판을 올리면 같은 경로(bccard.com/down/individual/customer/<gdsno>.pdf)로 교체"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "BC 플래티늄·다이아몬드 선택서비스 2026년판",
-      "status": "open",
-      "reason": "notice_20260522_1~3.pdf는 신구조문대비표라 2025(변경 전)·2026(변경 후) 열이 섞여 추출되고, vip.bccard.com 국내 발렛파킹 페이지는 2012년 문서라 쓸 수 없음",
-      "retry": "vip.bccard.com 카드별 안내장 PDF 또는 개정 후 단일 판본을 받아 bc-mastercard-platinum·bc-visa-platinum 등으로 수집"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "KB 선택서비스 Mastercard World Elite·Amex Gold·Amex The Platinum",
-      "status": "workaround",
-      "reason": "img2.kbcard.com/obj/card/download/00123~00134_stpul_20260511.pdf 11종을 전수 확인 — Amex는 Ultra(00123)·Platinum(00124), Mastercard는 World/Platinum/Diamond만 있고 World Elite·Amex Gold·The Platinum 약관 없음",
-      "retry": "대기열 해당 key는 내리는 편이 맞음(등급 자체 미운영)"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "발레파킹 서울 호텔 이름 표기 불일치 3곳(노보텔 앰배서더 서울 용산·노보텔 스위트 앰배서더 서울 용산·이비스 스타일 앰배서더 서울 용산)",
-      "status": "resolved",
-      "reason": "#128 배포 로그에서 hotels/valet.json에 없는 표기로 나와 호텔 연결 실패",
-      "retry": "복합 호텔(서울드래곤시티)은 안내문 표기를 aliases에 그대로 넣기",
-      "ref": "#130 (별칭 3개 추가, 이후 배포 '못 찾음' 0건)"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "BC·IBK 상품설명서 PDF 경로",
-      "status": "workaround",
-      "reason": "bccard.com/down/individual/customer/<gdsno>.pdf 는 BC 바로카드만 유효. IBK·MG 등 타 은행 gdsno(103039·104506·225018 등)는 302/HTML",
-      "retry": "BC 바로카드 gdsno만 이 경로 사용. 다른 은행 카드는 해당 은행 카드 상세 페이지에서 PDF 링크 확인"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "BC 상품설명서 이미지 PDF(로스트아크 101686·페이북머니 101681·102095·후불하이패스 103132·103183)",
-      "status": "workaround",
-      "reason": "이미지 PDF 5종 중 3종(101686 로스트아크·101681 페이북머니·102095 밥바라밥)을 PNG로 렌더해 옮김. 나머지 2종(후불하이패스 103132·103183)은 2023-07-18 심의필 문서뿐이라(올해·작년 규칙 밖) 제외",
-      "retry": "fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮긴다. BC 다운로드는 200이어도 본문이 HTML(302 안내)일 수 있으니 file 명령으로 실제 PDF 확인",
-      "ref": "#133"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "BC 인피니트 브랜드서비스 2026년판",
-      "status": "open",
-      "reason": "공개된 BC INFINITE SERVICE GUIDE가 2025년판(2025-C1a-08892, 유효 2025-12-31)뿐이라 그대로 담고 validThrough 2025-12-31 표기",
-      "retry": "vip.bccard.com의 2026년판 가이드 확인 후 같은 id(bc-visa-infinite)로 교체"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "롯데 VISA Signature·Mastercard World Elite / NH Visa·Platinum 계열 선택서비스",
-      "status": "open",
-      "reason": "롯데는 <BRAND>_<TIER>_01_select_service_260514.pdf 규칙 밖(404). NH는 <Brand>_<Tier>_250910.pdf 형태가 302→/error/error.html",
-      "retry": "카드사 카드 상세 페이지에서 안내 PDF 링크를 직접 확인. 롯데는 VISA_INFINITE_01·MasterCard_TITANIUM_01만 규칙 확인됨"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "하나카드 나머지 등급 선택서비스(Visa/Signature/Infinite·Mastercard·AMEX 계열)",
-      "status": "open",
-      "reason": "m.hanacard.co.kr/leaflet/·/leaflet/MW/·/leaflet/index.do 모두 404(디렉터리 목록 없음). MW001~003만 수집됨",
-      "retry": "카드 상세 페이지를 브라우저로 렌더해 leaflet PDF 링크를 카드별로 확인(파일명 MW001_20260209.pdf 규칙은 디렉터리·등급 코드를 알아야 함)"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "NH농협카드 Mastercard Platinum 안내문",
-      "status": "open",
-      "reason": "card.nonghyup.com/file/ebank/form/pdf/Mastercard_Platinum_250910.pdf 본문이 Mastercard World 안내문과 동일(심의필 2025-C1a-12536·12377)해 Platinum 자료로 쓸 수 없음",
-      "retry": "NH농협카드 상품공시실에서 Platinum 전용 안내장을 찾아 교체. 없으면 대기열 key를 내리기"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "NH농협카드 국제브랜드 안내문 2026년판",
-      "status": "open",
-      "reason": "공개된 파일이 2025년판(심의필 2025-08-27·28, 유효 2025-12-31)뿐. 규칙상 작년 문서는 허용되어 그대로 담고 validThrough를 2025-12-31로 표기",
-      "retry": "card.nonghyup.com/file/ebank/form/pdf/<Brand>_<Tier>_<YYMMDD>.pdf 규칙으로 2026년판 확인 후 같은 id로 교체"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "card-events 롯데·NH농협·BC·IBK 이벤트 목록",
-      "status": "open",
-      "reason": "이벤트 목록 표가 ajax로만 그려져 정적 HTML에 이벤트가 없음(bccard.com·card.nonghyup.com·lottecard.co.kr)",
-      "retry": "브라우저로 목록을 렌더한 뒤 상세 페이지까지 확인해 수집(66·67·68행 참고)"
-    },
-    {
-      "at": "2026-11-26",
-      "target": "samsung-aap1483 삼성카드 taptap O 등 삼성 상품설명서(대기열 맨 앞 10종)",
-      "status": "open",
-      "reason": "삼성 카드 상세가 SPA(Nuxt)로 그려져 딥링크가 홈으로 리다이렉트. static11 파일명 추측 2026-11-26 6건(2606_MASTER_P/T/VISA_P/VISA_S/MASTER_WE/AMEX_G_005_all.pdf) 모두 404 — 기존 4건과 합쳐 10건 실패",
-      "retry": "① 카드 상세를 브라우저로 렌더한 뒤 네트워크 응답(_next/data·api)에서 PDF 주소를 찾기 ② 삼성카드 고객센터 > 상품공시실 목록을 열어 카드명으로 검색해 내려받기 ③ 그래도 없으면 이 줄에 날짜만 더하고 다음 카드로"
-    },
-    {
-      "at": "2026-11-25",
-      "target": "bc-103112 — 대기열 이름(K-패스 카드)과 상품설명서 내용(BC 바로 모두의카드) 불일치",
-      "status": "resolved",
-      "reason": "PDF 본문이 '모두의카드' 혜택 안내라 카드명이 맞지 않아 보류했음. 실제로는 2026-10-28 약관 개정으로 이름이 바뀐 같은 카드였고 카드 ID가 유지됨",
-      "retry": "카드명이 다르면 먼저 카드사 약관 개정·명칭 변경 공지를 확인(카드 ID로 찾기)",
-      "ref": "ChatGPT #97(수집) · #99(전월실적 제외 정정)"
-    },
-    {
-      "at": "2026-11-25",
-      "target": "신한 Titanium · AMEX Gold·PLATINUM ELITE·The Platinum 안내장",
-      "status": "resolved",
-      "reason": "신한 카드 상세 8장을 확인했지만 해당 등급 안내장이 없음. 신한 AMEX는 PLATINUM·PLATINUM ELITE 공통 안내장 1종(유형1 클래식+급)만 운영",
-      "retry": "없는 안내장이므로 다시 찾지 말 것 — 대기열 key는 내리거나 valet-only로 두고 다른 등급으로 넘어가기"
-    },
-    {
-      "at": "2026-11-25",
-      "target": "BC 상품설명서 6건(101874·101877·101881·101883·104063·104453)",
-      "status": "workaround",
-      "reason": "PDF가 이미지로만 되어 있어 텍스트 추출이 안 됨",
-      "retry": "공식 상품 페이지 본문으로 대체 확인(내용 일치 확인함). 글자 추출이 꼭 필요하면 OCR이 필요하고, 보통은 상품 페이지 본문으로 충분"
-    },
-    {
-      "at": "2026-11-25",
-      "target": "발레파킹 서울 호텔 이름 표기 불일치 5곳(글래드 여의도·노보텔 앰배서더 동대문·레스케이프 호텔·코트야드 바이 메리어트 서울 타임스퀘어·코트야드 서울 타임스퀘어)",
-      "status": "resolved",
-      "reason": "안내문 표기 그대로 넣어 hotels/valet.json에서 호텔을 못 찾음(4곳은 별칭 없음, 글래드 여의도는 목록에 없던 호텔)",
-      "retry": "호텔 이름이 안 맞으면 hotels/valet.json의 aliases에 안내문 표기를 넣기(새 호텔이면 ll 좌표와 함께 등록)",
-      "ref": "#86 (별칭 4개 추가·글래드 여의도 신규 등록, 못 찾음 0건)"
-    }
-  ]
+ "agent": "Pickle",
+ "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
+ "updatedAt": "2026-11-27T06:45:00+09:00",
+ "lock": null,
+ "runs": [
+  {
+   "at": "2026-11-27T02:52:00+09:00",
+   "kind": "brand-services + card-terms",
+   "pr": 136,
+   "summary": "하나카드 국제브랜드 선택서비스 6프로그램(Mastercard Platinum·Titanium, Visa Signature·Infinite, Amex Platinum, UnionPay Diamond — 서비스 15, 대상 호텔 149곳) · KB 상품설명서 4종(WE:SH All+·YOU Wish·NEED Pay·Less Go, 혜택 24줄). 예산 28/45·188/250·2/20",
+   "queueKeys": [
+    "hana-mastercard-platinum",
+    "hana-mastercard-titanium",
+    "hana-visa-signature",
+    "hana-visa-infinite",
+    "hana-american-express-platinum",
+    "hana-unionpay-diamond",
+    "kb-09297",
+    "kb-09780",
+    "kb-09800",
+    "kb-09828"
+   ],
+   "status": "merged"
+  },
+  {
+   "at": "2026-11-26T21:25:00+09:00",
+   "kind": "brand-services + card-terms",
+   "pr": 133,
+   "summary": "KB Visa Infinite 선택서비스 1프로그램(서비스 3, 호텔 45곳) · BC 상품설명서 3종(로스트아크·페이북머니 체크·밥바라밥) · KB 상품설명서 3종(NEED Global·YOU Prime·TBX). 예산 45/45·68/250·3/20",
+   "queueKeys": [
+    "kb-visa-infinite",
+    "bc-101686",
+    "bc-101681",
+    "bc-102095",
+    "kb-09137",
+    "kb-09771",
+    "kb-00218"
+   ],
+   "status": "merged"
+  },
+  {
+   "at": "2026-11-26T18:12:00+09:00",
+   "kind": "hotels/valet",
+   "pr": 130,
+   "summary": "서울 드래곤 시티(dragon-city) aliases에 용산 3개 호텔 정식 표기 추가 — #128 배포 로그 '못 찾음' 0건",
+   "queueKeys": [],
+   "status": "merged"
+  },
+  {
+   "at": "2026-11-26T18:02:00+09:00",
+   "kind": "brand-services + card-terms",
+   "pr": 128,
+   "summary": "롯데 VISA Infinite·MasterCard TITANIUM 선택서비스 2프로그램(서비스 7, 호텔 75곳) · BC VISA Infinite 발렛 1프로그램(호텔 45곳) · BC 상품설명서 6종(혜택 28줄). 예산 21/45·37/250·3/20",
+   "queueKeys": [
+    "lotte-visa-infinite",
+    "lotte-mastercard-titanium",
+    "bc-visa-infinite",
+    "bc-105424",
+    "bc-103125",
+    "bc-101010",
+    "bc-101874",
+    "bc-102603",
+    "bc-101881"
+   ],
+   "status": "merged"
+  },
+  {
+   "at": "2026-11-26T02:55:00+09:00",
+   "kind": "brand-services + card-terms",
+   "pr": 118,
+   "summary": "NH농협(Mastercard World·Titanium·UnionPay Diamond)·롯데(Mastercard/Visa Platinum)·KB(Visa/Amex/Mastercard Platinum) 선택서비스 8프로그램(호텔 발레 대상 호텔 전체 포함, NH Titanium·KB Mastercard Platinum은 마티나·마티나골드 라운지) · KB 상품설명서 7종(EV·KB라이프·KT스카이라이프·E1 LPG·AK·Easy shopping·K-패스)",
+   "queueKeys": [
+    "nh-mastercard-world",
+    "nh-mastercard-titanium",
+    "nh-unionpay-diamond",
+    "lotte-mastercard-platinum",
+    "lotte-visa-platinum",
+    "kb-visa-platinum",
+    "kb-american-express-platinum",
+    "kb-mastercard-platinum",
+    "kb-00230",
+    "kb-09579",
+    "kb-04348",
+    "kb-04459",
+    "kb-04444",
+    "kb-09064",
+    "kb-09321"
+   ],
+   "status": "merged"
+  },
+  {
+   "at": "2026-11-25T19:45:00+09:00",
+   "kind": "docs/tools",
+   "pr": 102,
+   "summary": "공용 작업 현황판(docs/agent-sync.md·data/agent-status.json)·생성기(agent_sync.py)·에이전트별 기록 파일(data/agent-notes) 구축, 규칙을 data-update 9장·AGENTS·README에 연결",
+   "queueKeys": [],
+   "status": "merged"
+  },
+  {
+   "at": "2026-11-25T11:51:00+09:00",
+   "kind": "queue",
+   "pr": 95,
+   "summary": "수집 대기열 갱신 — #94 반영해 done 처리(카드 1,410 todo·브랜드 프로그램 73 todo)",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-25T11:50:00+09:00",
+   "kind": "brand-services + card-terms",
+   "pr": 94,
+   "summary": "신한 브랜드 선택서비스 6개 프로그램(서비스 19) · BC 상품설명서 4종(혜택 22줄)",
+   "queueKeys": [
+    "shinhan-visa-infinite",
+    "shinhan-mastercard-world",
+    "shinhan-mastercard-platinum",
+    "shinhan-american-express-platinum",
+    "shinhan-unionpay-diamond",
+    "bc-104453",
+    "bc-104063",
+    "bc-101883",
+    "bc-101877"
+   ]
+  },
+  {
+   "at": "2026-11-25T10:35:00+09:00",
+   "kind": "docs",
+   "pr": 93,
+   "summary": "로드맵에 차트 요약 칸 삭제(#92) 기록",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-27T06:40:00+09:00",
+   "kind": "card-terms+brand-services",
+   "pr": 139,
+   "summary": "KB 국민카드 상품설명서 26종(혜택 143줄, 심의필 2025~2026년)·현대 AMEX The Platinum/Gold 선택제공서비스(호텔 발레 39/36곳)·롯데 Mastercard Platinum 공항라운지. 페이지 45/45·레코드 154/250",
+   "queueKeys": [
+    "kb-04366",
+    "kb-04367",
+    "kb-04368",
+    "kb-02212",
+    "kb-02219",
+    "kb-04124",
+    "kb-04291",
+    "kb-04494",
+    "kb-00236",
+    "kb-09659",
+    "kb-09792",
+    "kb-01506",
+    "kb-01507",
+    "kb-01508",
+    "kb-04417",
+    "kb-04418",
+    "kb-09127",
+    "kb-09128",
+    "kb-09129",
+    "kb-09139",
+    "kb-09200",
+    "kb-09790",
+    "kb-01914",
+    "kb-01998",
+    "kb-01570",
+    "kb-01574",
+    "hyundai-american-express-the-platinum",
+    "hyundai-american-express-gold",
+    "lotte-mastercard-platinum"
+   ]
+  }
+ ],
+ "skipped": [
+  {
+   "at": "2026-11-27",
+   "target": "KB 상품설명서 3종(kb-09250 The Easy·kb-09561 WE:SH Travel·kb-09570 WE:SH Daily)",
+   "status": "open",
+   "reason": "카드사가 지금 올려 둔 최신 판본이 2020-10-08·2024-09-23·2024-07-01 심의필이라 '올해·작년 문서' 규칙 밖",
+   "retry": "2025~2026년판이 올라오면 대기열 termsUrl(img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf)에서 교체"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "하나카드 선택서비스 5개 등급(hana-visa-platinum·mastercard-world-elite·amex-gold·amex-platinum-elite·amex-the-platinum)",
+   "status": "open",
+   "reason": "카드 상세 7장(hana-9894·13913·17503·17766·17768·17811·10764)을 확인했으나 해당 등급 leaflet PDF가 없음(VP/ME/AG 계열 404). 2021년판 02768_20210208.pdf만 노출",
+   "retry": "m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=… 페이지에 leaflet/[코드]/…pdf 링크가 있는 카드를 찾아 수집(현재 확인된 코드: MW·MP·MT·VS·VI·AP·UD)"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "BC 후불하이패스 2종(bc-103132 SIM·bc-103183 카드형) 상품설명서",
+   "status": "open",
+   "reason": "공개된 상품설명서가 2023-C1a-07886/07875(2023.07.18) 한 판본이고 혜택 표 없이 연회비(국내전용 2,000원)만 있음 — 올해·작년 문서 규칙 밖",
+   "retry": "카드사가 2025~2026년판을 올리면 같은 경로(bccard.com/down/individual/customer/<gdsno>.pdf)로 교체"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "BC 플래티늄·다이아몬드 선택서비스 2026년판",
+   "status": "open",
+   "reason": "notice_20260522_1~3.pdf는 신구조문대비표라 2025(변경 전)·2026(변경 후) 열이 섞여 추출되고, vip.bccard.com 국내 발렛파킹 페이지는 2012년 문서라 쓸 수 없음",
+   "retry": "vip.bccard.com 카드별 안내장 PDF 또는 개정 후 단일 판본을 받아 bc-mastercard-platinum·bc-visa-platinum 등으로 수집"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "KB 선택서비스 Mastercard World Elite·Amex Gold·Amex The Platinum",
+   "status": "workaround",
+   "reason": "img2.kbcard.com/obj/card/download/00123~00134_stpul_20260511.pdf 11종을 전수 확인 — Amex는 Ultra(00123)·Platinum(00124), Mastercard는 World/Platinum/Diamond만 있고 World Elite·Amex Gold·The Platinum 약관 없음",
+   "retry": "대기열 해당 key는 내리는 편이 맞음(등급 자체 미운영)"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "발레파킹 서울 호텔 이름 표기 불일치 3곳(노보텔 앰배서더 서울 용산·노보텔 스위트 앰배서더 서울 용산·이비스 스타일 앰배서더 서울 용산)",
+   "status": "resolved",
+   "reason": "#128 배포 로그에서 hotels/valet.json에 없는 표기로 나와 호텔 연결 실패",
+   "retry": "복합 호텔(서울드래곤시티)은 안내문 표기를 aliases에 그대로 넣기",
+   "ref": "#130 (별칭 3개 추가, 이후 배포 '못 찾음' 0건)"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "BC·IBK 상품설명서 PDF 경로",
+   "status": "workaround",
+   "reason": "bccard.com/down/individual/customer/<gdsno>.pdf 는 BC 바로카드만 유효. IBK·MG 등 타 은행 gdsno(103039·104506·225018 등)는 302/HTML",
+   "retry": "BC 바로카드 gdsno만 이 경로 사용. 다른 은행 카드는 해당 은행 카드 상세 페이지에서 PDF 링크 확인"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "BC 상품설명서 이미지 PDF(로스트아크 101686·페이북머니 101681·102095·후불하이패스 103132·103183)",
+   "status": "workaround",
+   "reason": "이미지 PDF 5종 중 3종(101686 로스트아크·101681 페이북머니·102095 밥바라밥)을 PNG로 렌더해 옮김. 나머지 2종(후불하이패스 103132·103183)은 2023-07-18 심의필 문서뿐이라(올해·작년 규칙 밖) 제외",
+   "retry": "fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮긴다. BC 다운로드는 200이어도 본문이 HTML(302 안내)일 수 있으니 file 명령으로 실제 PDF 확인",
+   "ref": "#133"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "BC 인피니트 브랜드서비스 2026년판",
+   "status": "open",
+   "reason": "공개된 BC INFINITE SERVICE GUIDE가 2025년판(2025-C1a-08892, 유효 2025-12-31)뿐이라 그대로 담고 validThrough 2025-12-31 표기",
+   "retry": "vip.bccard.com의 2026년판 가이드 확인 후 같은 id(bc-visa-infinite)로 교체"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "롯데 VISA Signature·Mastercard World Elite / NH Visa·Platinum 계열 선택서비스",
+   "status": "open",
+   "reason": "롯데는 <BRAND>_<TIER>_01_select_service_260514.pdf 규칙 밖(404). NH는 <Brand>_<Tier>_250910.pdf 형태가 302→/error/error.html",
+   "retry": "카드사 카드 상세 페이지에서 안내 PDF 링크를 직접 확인. 롯데는 VISA_INFINITE_01·MasterCard_TITANIUM_01만 규칙 확인됨"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "하나카드 나머지 등급 선택서비스(Visa/Signature/Infinite·Mastercard·AMEX 계열)",
+   "status": "open",
+   "reason": "m.hanacard.co.kr/leaflet/·/leaflet/MW/·/leaflet/index.do 모두 404(디렉터리 목록 없음). MW001~003만 수집됨",
+   "retry": "카드 상세 페이지를 브라우저로 렌더해 leaflet PDF 링크를 카드별로 확인(파일명 MW001_20260209.pdf 규칙은 디렉터리·등급 코드를 알아야 함)"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "NH농협카드 Mastercard Platinum 안내문",
+   "status": "open",
+   "reason": "card.nonghyup.com/file/ebank/form/pdf/Mastercard_Platinum_250910.pdf 본문이 Mastercard World 안내문과 동일(심의필 2025-C1a-12536·12377)해 Platinum 자료로 쓸 수 없음",
+   "retry": "NH농협카드 상품공시실에서 Platinum 전용 안내장을 찾아 교체. 없으면 대기열 key를 내리기"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "NH농협카드 국제브랜드 안내문 2026년판",
+   "status": "open",
+   "reason": "공개된 파일이 2025년판(심의필 2025-08-27·28, 유효 2025-12-31)뿐. 규칙상 작년 문서는 허용되어 그대로 담고 validThrough를 2025-12-31로 표기",
+   "retry": "card.nonghyup.com/file/ebank/form/pdf/<Brand>_<Tier>_<YYMMDD>.pdf 규칙으로 2026년판 확인 후 같은 id로 교체"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "card-events 롯데·NH농협·BC·IBK 이벤트 목록",
+   "status": "open",
+   "reason": "이벤트 목록 표가 ajax로만 그려져 정적 HTML에 이벤트가 없음(bccard.com·card.nonghyup.com·lottecard.co.kr)",
+   "retry": "브라우저로 목록을 렌더한 뒤 상세 페이지까지 확인해 수집(66·67·68행 참고)"
+  },
+  {
+   "at": "2026-11-26",
+   "target": "samsung-aap1483 삼성카드 taptap O 등 삼성 상품설명서(대기열 맨 앞 10종)",
+   "status": "open",
+   "reason": "삼성 카드 상세가 SPA(Nuxt)로 그려져 딥링크가 홈으로 리다이렉트. static11 파일명 추측 2026-11-26 6건(2606_MASTER_P/T/VISA_P/VISA_S/MASTER_WE/AMEX_G_005_all.pdf) 모두 404 — 기존 4건과 합쳐 10건 실패",
+   "retry": "① 카드 상세를 브라우저로 렌더한 뒤 네트워크 응답(_next/data·api)에서 PDF 주소를 찾기 ② 삼성카드 고객센터 > 상품공시실 목록을 열어 카드명으로 검색해 내려받기 ③ 그래도 없으면 이 줄에 날짜만 더하고 다음 카드로"
+  },
+  {
+   "at": "2026-11-25",
+   "target": "bc-103112 — 대기열 이름(K-패스 카드)과 상품설명서 내용(BC 바로 모두의카드) 불일치",
+   "status": "resolved",
+   "reason": "PDF 본문이 '모두의카드' 혜택 안내라 카드명이 맞지 않아 보류했음. 실제로는 2026-10-28 약관 개정으로 이름이 바뀐 같은 카드였고 카드 ID가 유지됨",
+   "retry": "카드명이 다르면 먼저 카드사 약관 개정·명칭 변경 공지를 확인(카드 ID로 찾기)",
+   "ref": "ChatGPT #97(수집) · #99(전월실적 제외 정정)"
+  },
+  {
+   "at": "2026-11-25",
+   "target": "신한 Titanium · AMEX Gold·PLATINUM ELITE·The Platinum 안내장",
+   "status": "resolved",
+   "reason": "신한 카드 상세 8장을 확인했지만 해당 등급 안내장이 없음. 신한 AMEX는 PLATINUM·PLATINUM ELITE 공통 안내장 1종(유형1 클래식+급)만 운영",
+   "retry": "없는 안내장이므로 다시 찾지 말 것 — 대기열 key는 내리거나 valet-only로 두고 다른 등급으로 넘어가기"
+  },
+  {
+   "at": "2026-11-25",
+   "target": "BC 상품설명서 6건(101874·101877·101881·101883·104063·104453)",
+   "status": "workaround",
+   "reason": "PDF가 이미지로만 되어 있어 텍스트 추출이 안 됨",
+   "retry": "공식 상품 페이지 본문으로 대체 확인(내용 일치 확인함). 글자 추출이 꼭 필요하면 OCR이 필요하고, 보통은 상품 페이지 본문으로 충분"
+  },
+  {
+   "at": "2026-11-25",
+   "target": "발레파킹 서울 호텔 이름 표기 불일치 5곳(글래드 여의도·노보텔 앰배서더 동대문·레스케이프 호텔·코트야드 바이 메리어트 서울 타임스퀘어·코트야드 서울 타임스퀘어)",
+   "status": "resolved",
+   "reason": "안내문 표기 그대로 넣어 hotels/valet.json에서 호텔을 못 찾음(4곳은 별칭 없음, 글래드 여의도는 목록에 없던 호텔)",
+   "retry": "호텔 이름이 안 맞으면 hotels/valet.json의 aliases에 안내문 표기를 넣기(새 호텔이면 ll 좌표와 함께 등록)",
+   "ref": "#86 (별칭 4개 추가·글래드 여의도 신규 등록, 못 찾음 0건)"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "KB 상품설명서 심의필 2024년 이전 6종(kb-09174 청춘대로 톡톡·kb-09061 굿데이·kb-09063 굿데이올림·kb-00235 에버온EV·kb-02065 국민행복·kb-02083 LG헬로비전Ⅱ)",
+   "status": "open",
+   "reason": "카드사가 올린 최신 판본의 심의필이 2024년(또는 2022년)이라 '올해·작년 문서' 규칙 밖",
+   "retry": "2025~2026년판이 올라오면 img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf 에서 교체"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "KB 상품설명서 이미지 PDF 6종(kb-07998 노리2 학생증·kb-09701 On the Go·kb-01664 노리·kb-09298 YOU Wish up·kb-09106 Biz Prime·kb-02066 국민행복체크)",
+   "status": "open",
+   "reason": "텍스트 추출이 2~1,043자로 거의 안 됨(이미지 PDF), kb-02066은 혜택 표 없음",
+   "retry": "fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮기기(회차당 2~3건씩)"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "kb-09821 마라톤카드 · kb-04131(요청 302 SCDSA002)",
+   "status": "open",
+   "reason": "마라톤카드는 연회비 표가 이미지로만 있어 금액 확인 불가, kb-04131은 PDF가 아닌 안내 페이지 응답",
+   "retry": "마라톤카드는 홈페이지 카드 상세의 연회비 표(텍스트)로 확인, kb-04131은 카드 상세에서 상품설명서 링크 재확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "우리카드(95)·하나카드(111)·현대카드(100) 대기열 termsUrl",
+   "status": "open",
+   "reason": "대기열이 가리키는 주소가 상품설명서가 아님 — 우리는 카드Clause HTML, 하나는 표준약관 PDF(credit_card_260512.pdf 45쪽), 현대는 브랜드 선택서비스 안내서",
+   "retry": "카드 상세(pc.wooricard.com·hanacard·hyundaicard)를 브라우저로 렌더해 '상품설명서' PDF 링크를 카드별로 다시 찾아 queue.py 입력 갱신"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "삼성카드 aap1910·신한카드 PC_26_01197 (Mastercard 프리미엄 서비스 안내)",
+   "status": "workaround",
+   "reason": "발레·라운지 항목이 없고 국내 특급호텔 객실·F&B 할인 목록(각 44·43곳) 위주라 brand-services 양식으로 담지 않음",
+   "retry": "hotel_benefit 카테고리로 호텔 목록을 담는 방식을 정한 뒤 다음 회차에 수집"
+  }
+ ]
 }

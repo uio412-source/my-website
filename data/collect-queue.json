@@ -15,14 +15,14 @@
  },
  "counts": {
   "cards": {
-   "done": 48,
-   "todo": 1399,
+   "done": 74,
+   "todo": 1373,
    "total": 1447
   },
   "brandPrograms": {
-   "done": 38,
-   "valetOnly": 4,
-   "todo": 52,
+   "done": 40,
+   "valetOnly": 3,
+   "todo": 51,
    "total": 94
   },
   "eventSources": {
@@ -585,7 +585,7 @@
    "brand": "American Express",
    "tier": "Gold",
    "where": "카드 상세 > 상품설명서 · 'Visa/Mastercard/AMEX 프리미엄 서비스' 안내",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-american-express-platinum",
@@ -609,7 +609,7 @@
    "brand": "American Express",
    "tier": "The Platinum",
    "where": "카드 상세 > 상품설명서 · 'Visa/Mastercard/AMEX 프리미엄 서비스' 안내",
-   "status": "valet-only"
+   "status": "done"
   },
   {
    "key": "woori-visa-platinum",
@@ -8035,7 +8035,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/01507__prdctOpmn_20260702.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09314",
@@ -8068,7 +8068,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/01508__prdctOpmn_20260626.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04425",
@@ -8123,7 +8123,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09792__prdctOpmn_20260807.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09790",
@@ -8134,7 +8134,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09790__prdctOpmn_20260626.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09137",
@@ -8167,7 +8167,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04366__prdctOpmn_20260626.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04550",
@@ -8200,7 +8200,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04418__prdctOpmn_20260629.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-02076",
@@ -8222,7 +8222,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/01506__prdctOpmn_20260626.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04288",
@@ -8288,7 +8288,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04367__prdctOpmn_20260626.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09297",
@@ -8387,7 +8387,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04368__prdctOpmn_20260626.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04350",
@@ -8442,7 +8442,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04417__prdctOpmn_20260630.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09063",
@@ -8486,7 +8486,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/_02219__prdctOpmn_20260330.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04345",
@@ -8574,7 +8574,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04494__prdctOpmn_20260626.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09084",
@@ -8596,7 +8596,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/00236__prdctOpmn_20260626.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-02210",
@@ -8816,7 +8816,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04291__prdctOpmn_20260417.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04423",
@@ -12908,7 +12908,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09139__prdctOpmn_20260626.pdf",
    "lastVerified": "2026-10-05",
    "priority": 55,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09138",
@@ -12930,7 +12930,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/_09129__prdctOpmn_20260430.pdf",
    "lastVerified": "2026-10-05",
    "priority": 55,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09127",
@@ -12941,7 +12941,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09127__prdctOpmn_20260430.pdf",
    "lastVerified": "2026-10-05",
    "priority": 55,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09128",
@@ -12952,7 +12952,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09128__prdctOpmn_20260430.pdf",
    "lastVerified": "2026-10-05",
    "priority": 55,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09125",
@@ -13128,7 +13128,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04124__prdctOpmn_20260330.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-01998",
@@ -13139,7 +13139,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/01998__prdctOpmn_20260818.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04919",
@@ -13183,7 +13183,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/_01574__prdctOpmn_20260716.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-01570",
@@ -13194,7 +13194,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/01570__prdctOpmn_20260716.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09349",
@@ -13227,7 +13227,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/01914__prdctOpmn_20260818.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09659",
@@ -13238,7 +13238,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09659__prdctOpmn_20260605.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90000396",
@@ -15328,7 +15328,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/02212__prdctOpmn_20260819.pdf",
    "lastVerified": "2026-10-05",
    "priority": 30,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "cu-1040",
@@ -15625,7 +15625,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09200__prdctOpmn_20260511.pdf",
    "lastVerified": "2026-10-05",
    "priority": 15,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15769-A15769",
