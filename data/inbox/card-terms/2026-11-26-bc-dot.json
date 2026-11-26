@@ -1,0 +1,125 @@
+{
+  "type": "card-terms",
+  "issuer": "BC카드",
+  "collectedAt": "2026-11-26",
+  "collector": "ChatGPT",
+  "cards": [
+    {
+      "cardId": "bc-101686",
+      "queueKey": "bc-101686",
+      "name": "로스트아크 카드",
+      "cardType": "credit",
+      "url": "https://m.bccard.com/app/mobileweb/view/home/CardDetail.do?cardGdsNo=1016860000&exec=cardDetail",
+      "termsUrl": "https://www.bccard.com/down/individual/customer/101686.pdf",
+      "docDate": "2026-08-07",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 10000
+        },
+        {
+          "brand": "Visa",
+          "amount": 12000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Visa"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 국내외 가맹점 승인일 기준. 무승인 거래는 전표 매입일 기준. 로스트아크 공식 홈페이지·인게임 샵 매출은 실적 포함.",
+      "grace": "최초 카드 사용 등록 다음 달 말까지 최소 실적 구간 혜택 제공.",
+      "spendExclusions": [
+        "단기카드대출",
+        "장기카드대출",
+        "연회비",
+        "수수료·이자·연체료",
+        "국세",
+        "지방세",
+        "관세",
+        "4대보험",
+        "공과금 및 공공기관 가맹점",
+        "초·중·고 학교납입금",
+        "대학등록금",
+        "아파트 관리비",
+        "기프트·선불카드 구매 및 충전",
+        "상품권 구매"
+      ],
+      "benefitExclusions": [
+        "단기카드대출",
+        "장기카드대출",
+        "연회비",
+        "수수료·이자·연체료",
+        "국세",
+        "지방세",
+        "관세",
+        "4대보험",
+        "공과금 및 공공기관 가맹점",
+        "초·중·고 학교납입금",
+        "대학등록금",
+        "아파트 관리비",
+        "기프트·선불카드 구매 및 충전",
+        "상품권 구매",
+        "로스트아크 모험가 전용 혜택 대상 가맹점(기본 할인만 제외)"
+      ],
+      "brandPrograms": [],
+      "benefits": [
+        {
+          "group": "게임",
+          "label": "로열 크리스탈",
+          "place": "로스트아크 공식 홈페이지 및 인게임 샵",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 500000,
+              "cap": 20000
+            },
+            {
+              "spend": 700000,
+              "cap": 25000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "로열 크리스탈 월 통합",
+          "conditions": [
+            "공식 채널의 로열 크리스탈 충전만. 공식 로스트아크 매출도 다음 달 실적에 인정.",
+            "전용 혜택 대상 가맹점은 기본 할인과 중복 적용하지 않음."
+          ]
+        },
+        {
+          "group": "기본",
+          "label": "국내 온라인",
+          "place": "국내 온라인 가맹점",
+          "value": "1.5%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "cap": 15000,
+          "capScope": "월",
+          "conditions": [
+            "로스트아크 전용 혜택 대상 가맹점 제외. 기본 혜택은 가장 높은 할인율만 적용."
+          ]
+        },
+        {
+          "group": "기본",
+          "label": "국내외 가맹점",
+          "place": "국내외 가맹점",
+          "value": "0.5%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "cap": 5000,
+          "capScope": "월",
+          "conditions": [
+            "로스트아크 전용 혜택 대상 가맹점 제외. 국내 온라인 1.5%와 중복 적용하지 않음."
+          ]
+        }
+      ]
+    }
+  ]
+}
