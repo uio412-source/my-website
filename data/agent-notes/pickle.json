@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-27T06:45:00+09:00",
+ "updatedAt": "2026-11-27T06:55:00+09:00",
  "lock": null,
  "runs": [
   {
@@ -163,6 +163,15 @@
     "hyundai-american-express-the-platinum",
     "hyundai-american-express-gold",
     "lotte-mastercard-platinum"
+   ]
+  },
+  {
+   "at": "2026-11-27T06:52:00+09:00",
+   "kind": "card-terms",
+   "pr": 142,
+   "summary": "KB On the Go 체크카드 상품설명서(이미지 PDF를 PNG로 렌더해 6줄 옮김)",
+   "queueKeys": [
+    "kb-09701"
    ]
   }
  ],
@@ -338,6 +347,20 @@
    "status": "workaround",
    "reason": "발레·라운지 항목이 없고 국내 특급호텔 객실·F&B 할인 목록(각 44·43곳) 위주라 brand-services 양식으로 담지 않음",
    "retry": "hotel_benefit 카테고리로 호텔 목록을 담는 방식을 정한 뒤 다음 회차에 수집"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "kb-09298 YOU Wish up 체크카드",
+   "status": "open",
+   "reason": "할인한도 표의 2구간(80만원) 칸이 병합돼 있어 구간별 한도를 확정할 수 없음",
+   "retry": "카드 상세 페이지 본문(할인한도 안내)으로 2구간 한도 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "kb-01664 노리 체크 · kb-07998 노리2 학생증 · kb-02066 국민행복체크",
+   "status": "open",
+   "reason": "이미지 PDF를 렌더해 봐도 혜택 표 판독이 어려움(kb-02066은 혜택 표 자체가 없음)",
+   "retry": "카드 상세 페이지의 혜택 표(텍스트)로 대체 수집"
   }
  ]
 }

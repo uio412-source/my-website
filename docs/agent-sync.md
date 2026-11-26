@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-27 06:46 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-27 06:48 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-27 06:46 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#142](https://github.com/uio412-source/my-website/pull/142) | Pickle | data: 수집 2026-11-27 3차 (KB On the Go 체크카드) | 2026-11-27 06:48 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#141](https://github.com/uio412-source/my-website/pull/141) | Claude | data: 수집 2026-11-27 (Claude · 신한 상품설명서 10종) | 2026-11-27 06:46 | 5파일 · data/ 3 · data/inbox/card-terms 1 · docs/… | 머지 |
 | [#138](https://github.com/uio412-source/my-website/pull/138) | ChatGPT | data: 수집 2026-11-27 (카드사 이벤트 5건) | 2026-11-27 06:43 | 5파일 · data/inbox/card-events 5 | 머지 |
 | [#140](https://github.com/uio412-source/my-website/pull/140) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 2차, #139 반영) | 2026-11-27 06:42 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#139](https://github.com/uio412-source/my-website/pull/139) | Pickle | data: 수집 2026-11-27 2차 (KB 상품설명서 26종 · 현대 AMEX 선택서비스 2 · 롯데… | 2026-11-27 06:40 | 3파일 · data/inbox/brand-services 2 · data/inbox/… | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-27 06:46 KST · `python tools/data/agent_sync.py` · 기�
 | [#120](https://github.com/uio412-source/my-website/pull/120) | Pickle | Mr. Hotels 발레: 안내문 표기 별칭 2개 추가 | 2026-11-26 02:59 | 1파일 · hotels/ 1 | 머지 |
 | [#119](https://github.com/uio412-source/my-website/pull/119) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-26 Pickle) | 2026-11-26 02:54 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#118](https://github.com/uio412-source/my-website/pull/118) | Pickle | data: 수집 2026-11-26 (NH·롯데·KB 브랜드 선택서비스 8 · KB 상품설명서 5종) | 2026-11-26 02:51 | 4파일 · data/inbox/brand-services 3 · data/inbox/… | 머지 |
-| [#117](https://github.com/uio412-source/my-website/pull/117) | Claude | Mr. Cards 텍스트 정리: 이벤트 이름 찌꺼기·안내 한 줄·원문 반복 줄 | 2026-11-25 22:48 | 12파일 · paymorevent/ 7 · data/ 2 · docs/ 2 외 1곳 | 머지 |
-| [#116](https://github.com/uio412-source/my-website/pull/116) | Claude | Mr. Stocks 텍스트 정리: 배당 세금 안내 접기·한 줄씩 | 2026-11-25 22:39 | 8파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -71,16 +71,14 @@ _지금 잠근 영역이 없습니다._
 
 ### 열린 PR
 
-| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
-|---|---|---|---|---|---|
-| [#141](https://github.com/uio412-source/my-website/pull/141) | Claude | `ai/claude/data-2026-11-27` | 2026-11-27 06:45 | 5파일 · data/ 3 · data/inbox/card-terms 1… | data: 수집 2026-11-27 (Claude · 신한 상품설명서 10종) |
+_열린 PR이 없습니다._
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-27)
 
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 1363 / 1447종 · **브랜드 프로그램** todo 51 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **남은 카드** 1362 / 1447종 · **브랜드 프로그램** todo 51 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
 - **최근 수집일** — card-terms 2026-11-27 · brand-services 2026-11-27 · card-events 2026-11-27 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
@@ -88,14 +86,14 @@ _지금 잠근 영역이 없습니다._
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #138 data: 수집 2026-11-27 (카드사 이벤트 5건) | 2026-11-27 06:43 | 0건 |
-| Claude | `data/agent-notes/claude.json` | #135 data: 수집 2026-11-26 (Claude · 상품설… | 2026-11-26 21:35 | 8건 |
-| Pickle | `data/agent-notes/pickle.json` | #140 docs: 수집 대기열·공용 현황판 갱신 (2026-11-2… | 2026-11-27 06:42 | 20건 |
+| Claude | `data/agent-notes/claude.json` | #141 data: 수집 2026-11-27 (Claude · 신한 … | 2026-11-27 06:46 | 8건 |
+| Pickle | `data/agent-notes/pickle.json` | #142 data: 수집 2026-11-27 3차 (KB On the… | 2026-11-27 06:48 | 22건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 23건
+### 다시 볼 것 (open) — 25건
 
 - **2026-11-27 · Pickle · KB 상품설명서 3종(kb-09250 The Easy·kb-09561 WE:SH Travel·kb-09570 WE:SH Daily)**
   - 사유: 카드사가 지금 올려 둔 최신 판본이 2020-10-08·2024-09-23·2024-07-01 심의필이라 '올해·작년 문서' 규칙 밖
@@ -106,6 +104,12 @@ _지금 잠근 영역이 없습니다._
 - **2026-11-27 · Pickle · KB 상품설명서 이미지 PDF 6종(kb-07998 노리2 학생증·kb-09701 On the Go·kb-01664 노리·kb-09298 YOU Wish up·kb-09106 Biz Prime·kb-02066 국민행복체크)**
   - 사유: 텍스트 추출이 2~1,043자로 거의 안 됨(이미지 PDF), kb-02066은 혜택 표 없음
   - 재시도: fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮기기(회차당 2~3건씩)
+- **2026-11-27 · Pickle · kb-01664 노리 체크 · kb-07998 노리2 학생증 · kb-02066 국민행복체크**
+  - 사유: 이미지 PDF를 렌더해 봐도 혜택 표 판독이 어려움(kb-02066은 혜택 표 자체가 없음)
+  - 재시도: 카드 상세 페이지의 혜택 표(텍스트)로 대체 수집
+- **2026-11-27 · Pickle · kb-09298 YOU Wish up 체크카드**
+  - 사유: 할인한도 표의 2구간(80만원) 칸이 병합돼 있어 구간별 한도를 확정할 수 없음
+  - 재시도: 카드 상세 페이지 본문(할인한도 안내)으로 2구간 한도 확인
 - **2026-11-27 · Pickle · kb-09821 마라톤카드 · kb-04131(요청 302 SCDSA002)**
   - 사유: 마라톤카드는 연회비 표가 이미지로만 있어 금액 확인 불가, kb-04131은 PDF가 아닌 안내 페이지 응답
   - 재시도: 마라톤카드는 홈페이지 카드 상세의 연회비 표(텍스트)로 확인, kb-04131은 카드 상세에서 상품설명서 링크 재확인
