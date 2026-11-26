@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 105,
-   "todo": 1342,
+   "done": 121,
+   "todo": 1326,
    "total": 1447
   },
   "brandPrograms": {
@@ -7815,7 +7815,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04409__prdctOpmn_20230921.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09060",
@@ -7914,7 +7914,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04431__prdctOpmn_20220617.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04415",
@@ -7925,7 +7925,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04415__prdctOpmn_20231201.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09321",
@@ -8013,7 +8013,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04290__prdctOpmn_20220727.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04348",
@@ -8233,7 +8233,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04288__prdctOpmn_20220531.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-00218",
@@ -8332,7 +8332,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04287__prdctOpmn_20220823.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09771",
@@ -8398,7 +8398,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04350__prdctOpmn_20210923.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09152",
@@ -8497,7 +8497,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/_04345__prdctOpmn_20220715.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04289",
@@ -8508,7 +8508,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04289__prdctOpmn_20220523.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09180",
@@ -8552,7 +8552,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04320__prdctOpmn_20220722.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04260",
@@ -8629,7 +8629,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04434__prdctOpmn_20220616.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04331",
@@ -8706,7 +8706,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04324__prdctOpmn_20220530.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-00235",
@@ -8761,7 +8761,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04361__prdctOpmn_20221018.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09348",
@@ -8805,7 +8805,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04336__prdctOpmn_20220617.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04291",
@@ -8827,7 +8827,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04423__prdctOpmn_20220617.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04325",
@@ -8838,7 +8838,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04325__prdctOpmn_20220617.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09293",
