@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-27 06:48 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-27 07:07 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,9 @@ _자동 생성 2026-11-27 06:48 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#145](https://github.com/uio412-source/my-website/pull/145) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 4차, #144 반영) | 2026-11-27 07:05 | 4파일 · data/ 3 · docs/ 1 | 머지 |
+| [#144](https://github.com/uio412-source/my-website/pull/144) | Pickle | data: 수집 2026-11-27 4차 (KB 상품설명서 20종) | 2026-11-27 07:03 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#143](https://github.com/uio412-source/my-website/pull/143) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 3차, #139·#142 반영) | 2026-11-27 06:49 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#142](https://github.com/uio412-source/my-website/pull/142) | Pickle | data: 수집 2026-11-27 3차 (KB On the Go 체크카드) | 2026-11-27 06:48 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#141](https://github.com/uio412-source/my-website/pull/141) | Claude | data: 수집 2026-11-27 (Claude · 신한 상품설명서 10종) | 2026-11-27 06:46 | 5파일 · data/ 3 · data/inbox/card-terms 1 · docs/… | 머지 |
 | [#138](https://github.com/uio412-source/my-website/pull/138) | ChatGPT | data: 수집 2026-11-27 (카드사 이벤트 5건) | 2026-11-27 06:43 | 5파일 · data/inbox/card-events 5 | 머지 |
@@ -57,9 +60,6 @@ _자동 생성 2026-11-27 06:48 KST · `python tools/data/agent_sync.py` · 기�
 | [#123](https://github.com/uio412-source/my-website/pull/123) | Claude | Mr. Travel 여행지: 입국 조건 다시 확인 + 한시 무비자 기한 + 공식 신청 링크 | 2026-11-26 14:15 | 8파일 · assets/ 2 · data/ 2 · docs/ 2 외 2곳 | 머지 |
 | [#122](https://github.com/uio412-source/my-website/pull/122) | Claude | Mr. Cards 바닥글에 DB 작업 진행률 작은 상자 | 2026-11-26 11:47 | 14파일 · paymorevent/ 4 · data/ 3 · docs/ 3 외 3곳 | 머지 |
 | [#121](https://github.com/uio412-source/my-website/pull/121) | ChatGPT | data: 수집 2026-11-26 (카드 이벤트·IBK 코웨이 상품 변경) | 2026-11-26 09:20 | 3파일 · data/inbox/card-events 2 · data/inbox/car… | 머지 |
-| [#120](https://github.com/uio412-source/my-website/pull/120) | Pickle | Mr. Hotels 발레: 안내문 표기 별칭 2개 추가 | 2026-11-26 02:59 | 1파일 · hotels/ 1 | 머지 |
-| [#119](https://github.com/uio412-source/my-website/pull/119) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-26 Pickle) | 2026-11-26 02:54 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#118](https://github.com/uio412-source/my-website/pull/118) | Pickle | data: 수집 2026-11-26 (NH·롯데·KB 브랜드 선택서비스 8 · KB 상품설명서 5종) | 2026-11-26 02:51 | 4파일 · data/inbox/brand-services 3 · data/inbox/… | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -71,14 +71,16 @@ _지금 잠근 영역이 없습니다._
 
 ### 열린 PR
 
-_열린 PR이 없습니다._
+| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
+|---|---|---|---|---|---|
+| [#146](https://github.com/uio412-source/my-website/pull/146) | Pickle | `ai/chatgpt/data-2026-11-27-pickle5` | 2026-11-27 07:07 | 1파일 · data/inbox/card-terms 1 | data: 수집 2026-11-27 5차 (KB 상품설명서 16종) |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-27)
 
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 1362 / 1447종 · **브랜드 프로그램** todo 51 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **남은 카드** 1332 / 1447종 · **브랜드 프로그램** todo 51 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
 - **최근 수집일** — card-terms 2026-11-27 · brand-services 2026-11-27 · card-events 2026-11-27 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
@@ -86,14 +88,14 @@ _열린 PR이 없습니다._
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #138 data: 수집 2026-11-27 (카드사 이벤트 5건) | 2026-11-27 06:43 | 0건 |
-| Claude | `data/agent-notes/claude.json` | #141 data: 수집 2026-11-27 (Claude · 신한 … | 2026-11-27 06:46 | 8건 |
-| Pickle | `data/agent-notes/pickle.json` | #142 data: 수집 2026-11-27 3차 (KB On the… | 2026-11-27 06:48 | 22건 |
+| Claude | `data/agent-notes/claude.json` | #141 data: 수집 2026-11-27 (Claude · 신한 … | 2026-11-27 06:46 | 7건 |
+| Pickle | `data/agent-notes/pickle.json` | #145 docs: 수집 대기열·공용 현황판 갱신 (2026-11-2… | 2026-11-27 07:05 | 22건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 25건
+### 다시 볼 것 (open) — 24건
 
 - **2026-11-27 · Pickle · KB 상품설명서 3종(kb-09250 The Easy·kb-09561 WE:SH Travel·kb-09570 WE:SH Daily)**
   - 사유: 카드사가 지금 올려 둔 최신 판본이 2020-10-08·2024-09-23·2024-07-01 심의필이라 '올해·작년 문서' 규칙 밖
@@ -165,9 +167,6 @@ _열린 PR이 없습니다._
 - **- · Claude · shinhan-201507300001 The CLASSIC+ · shinhan-202408120002 The Premium PET · shinhan-202404220001 AK PLAZA Plus · shinhan-201907220001 11번가 · shinhan-202309010001 CJ ONE 프리즘 · shinhan-202103160001 IKEA Family**
   - 사유: 공식 상세 페이지의 심의필이 2021~2024년(2024.10.24·2024.06.18·2024.04.24·2023.12.28·2023.08.11·2021.04.20)이라 '올해·작년 문서' 규칙 밖
   - 재시도: 신한 상세 페이지 하단 심의필이 2025년 이후로 바뀌면 같은 페이지에서 옮기기
-- **- · Claude · shinhan-201902270001 The BEST+ · shinhan-202603060001 The CLASSIC Air**
-  - 사유: Claude 세션에서 shinhancard.com은 Bash curl 프록시 403, WebFetch는 권한 요청 시간 초과. 신한 프리미엄 카드 상세에는 상품설명서 PDF 링크가 없고 브랜드 가이드 PDF(pconts/download/card/MO_26_*)만 있음
-  - 재시도: 브라우저가 있는 에이전트(Pickle)가 상세 페이지 본문(심의필 날짜)으로 옮기거나, 상품공시실에서 상품설명서 PDF 확인
 - **- · Claude · tools/data/inbox.py card-terms cardId 규칙**
   - 사유: ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)
   - 재시도: check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기
@@ -191,7 +190,7 @@ _열린 PR이 없습니다._
   - 사유: PDF가 이미지로만 되어 있어 텍스트 추출이 안 됨
   - 대신 이렇게: 공식 상품 페이지 본문으로 대체 확인(내용 일치 확인함). 글자 추출이 꼭 필요하면 OCR이 필요하고, 보통은 상품 페이지 본문으로 충분
 
-### 해결됨 (resolved) — 5건
+### 해결됨 (resolved) — 6건
 
 - **2026-11-26 · Pickle · 발레파킹 서울 호텔 이름 표기 불일치 3곳(노보텔 앰배서더 서울 용산·노보텔 스위트 앰배서더 서울 용산·이비스 스타일 앰배서더 서울 용산)**
   - 사유: #128 배포 로그에서 hotels/valet.json에 없는 표기로 나와 호텔 연결 실패
@@ -212,6 +211,10 @@ _열린 PR이 없습니다._
 - **2026-11-25 · Pickle · 신한 Titanium · AMEX Gold·PLATINUM ELITE·The Platinum 안내장**
   - 사유: 신한 카드 상세 8장을 확인했지만 해당 등급 안내장이 없음. 신한 AMEX는 PLATINUM·PLATINUM ELITE 공통 안내장 1종(유형1 클래식+급)만 운영
   - 해결 방법: 없는 안내장이므로 다시 찾지 말 것 — 대기열 key는 내리거나 valet-only로 두고 다른 등급으로 넘어가기
+- **- · Claude · shinhan-201902270001 The BEST+ · shinhan-202603060001 The CLASSIC Air**
+  - 사유: Claude 세션에서 shinhancard.com은 Bash curl 프록시 403, WebFetch는 권한 요청 시간 초과. 신한 프리미엄 카드 상세에는 상품설명서 PDF 링크가 없고 브랜드 가이드 PDF(pconts/download/card/MO_26_*)만 있음
+  - 해결 방법: 브라우저가 있는 에이전트(Pickle)가 상세 페이지 본문(심의필 날짜)으로 옮기거나, 상품공시실에서 상품설명서 PDF 확인
+  - 참고: 2026-11-27 Claude 2차 — shinhancard.com 상세 페이지 WebFetch로 읽힘(심의필 2026.09.17·2026.08.21)
 
 ## 5. 기록하는 법 — `data/agent-notes/<내 파일>.json`
 
