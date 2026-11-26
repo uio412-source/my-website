@@ -1,0 +1,68 @@
+{
+ "checked": "2026-11-26",
+ "about": "Mr. Pay 맨 위 혜택 배너(assets/js/pay.js의 promoBanner). 매일 확인해서 새 행사를 넣고 끝난 행사를 고칩니다. program: onnuri·naver·toss·combo(같이 쓰기). rate: 크게 보일 숫자. from·until: YYYY-MM-DD(없으면 null, until이 지나거나 from 전이면 자동으로 안 보임). untilText: 기사에 날짜 없이 '연말까지'처럼만 있을 때 화면에 그대로. link: 누르면 갈 Mr. Pay 화면. src·srcTitle: 출처.",
+ "items": [
+  {
+   "id": "naver-facesign-2026-11",
+   "program": "naver",
+   "rate": "10%",
+   "title": "네이버 페이스사인 적립",
+   "detail": "커넥트 단말기 매장에서 얼굴결제 · 월 최대 5만원",
+   "from": null,
+   "until": "2026-11-30",
+   "link": "./#naver",
+   "src": "https://biz.sbs.co.kr/amp/article/20000339581",
+   "srcTitle": "SBS Biz · 2026-10-13"
+  },
+  {
+   "id": "penuri-2026-11",
+   "program": "combo",
+   "rate": "7%+10%",
+   "title": "온누리 + 페이스사인 같이",
+   "detail": "온누리 앱에 등록한 카드를 Npay 결제카드로 두고 얼굴결제",
+   "from": null,
+   "until": "2026-11-30",
+   "link": "./#naver",
+   "src": "https://www.asiatoday.co.kr/kn/view.php?key=20261102010000483",
+   "srcTitle": "아시아투데이 · 2026-11-02"
+  },
+  {
+   "id": "toss-facepay-2026-q4",
+   "program": "toss",
+   "rate": "20%",
+   "title": "토스 페이스페이 적립",
+   "detail": "대상자만(앱에서 확인) · 참여일부터 30일, 하루 2천·최대 6만원",
+   "from": null,
+   "until": "2026-12-31",
+   "untilText": "연말까지",
+   "link": "./#toss",
+   "src": "https://biz.sbs.co.kr/amp/article/20000342045",
+   "srcTitle": "SBS Biz · 2026-10-26"
+  },
+  {
+   "id": "onnuri-digital",
+   "program": "onnuri",
+   "rate": "7%",
+   "title": "디지털 온누리 할인",
+   "detail": "온누리 앱에서 카드형·모바일로 살 때 선할인",
+   "from": null,
+   "until": null,
+   "link": "./",
+   "src": "https://biz.sbs.co.kr/amp/article/20000337784",
+   "srcTitle": "SBS Biz · 2026-10-01"
+  },
+  {
+   "id": "onnuri-2027",
+   "program": "onnuri",
+   "rate": "최대 10%",
+   "title": "내년 온누리 개편",
+   "detail": "할인 5% + 전통시장에서 쓰면 5% 환급(골목상권은 다름)",
+   "from": null,
+   "until": null,
+   "untilText": "2027년부터",
+   "link": "./",
+   "src": "https://www.segye.com/newsView/20261001503958",
+   "srcTitle": "세계일보 · 2026-10-01"
+  }
+ ]
+}

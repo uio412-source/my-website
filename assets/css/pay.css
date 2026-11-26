@@ -98,3 +98,48 @@
 .py-kind { display: flex; align-items: baseline; gap: 6px; margin: 14px 2px 6px; font-size: .82rem; font-weight: 800; color: var(--color-muted); }
 .py-kind span { font-weight: 600; }
 .py-where { font-size: .76rem; font-weight: 700; color: var(--color-text); overflow-wrap: anywhere; }
+
+/* ===== 혜택 배너 (pay.js의 promoBanner, 데이터 pay/promos.json) ===== */
+.py-promo {
+  --pc: var(--color-primary);
+  position: relative; display: grid; margin: 0 0 14px; padding: 12px 52px 12px 14px; cursor: pointer;
+  border-radius: var(--radius); border: 1px solid color-mix(in srgb, var(--pc) 35%, var(--color-border));
+  background: color-mix(in srgb, var(--pc) 9%, var(--color-bg)); overflow: hidden;
+  transition: background .4s ease, border-color .4s ease;
+}
+.py-promo[hidden] { display: none; }
+.py-promo:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.py-promo:has(.py-promo-item.on[data-p="onnuri"]) { --pc: var(--cat-4); }
+.py-promo:has(.py-promo-item.on[data-p="naver"]) { --pc: var(--cat-3); }
+.py-promo:has(.py-promo-item.on[data-p="toss"]) { --pc: var(--cat-1); }
+.py-promo:has(.py-promo-item.on[data-p="combo"]) { --pc: var(--cat-5); }
+.py-promo-item {
+  grid-area: 1 / 1; display: flex; align-items: center; gap: 12px; min-width: 0;
+  opacity: 0; transform: translateY(6px); visibility: hidden;
+  transition: opacity .5s ease, transform .5s ease, visibility 0s linear .5s;
+}
+.py-promo-item.on { opacity: 1; transform: none; visibility: visible; transition: opacity .5s ease, transform .5s ease; }
+.py-promo-rate {
+  flex: 0 0 auto; min-width: 64px; padding: 6px 8px; border-radius: 10px; text-align: center;
+  font-size: 1.15rem; font-weight: 900; letter-spacing: -.03em; line-height: 1.15; word-break: keep-all;
+  color: var(--color-action-text); background: var(--pc);
+}
+.py-promo-body { min-width: 0; }
+.py-promo-t { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 6px; font-size: .95rem; font-weight: 800; line-height: 1.35; }
+.py-promo-t small { font-size: .7rem; font-weight: 800; color: var(--pc); }
+.py-promo-t a, .py-promo-t b { color: var(--color-text); text-decoration: none; }
+.py-promo-t a:hover { text-decoration: underline; }
+.py-promo-d { margin-top: 2px; font-size: .78rem; color: var(--color-text); line-height: 1.45; word-break: keep-all; }
+.py-promo-m { margin-top: 2px; font-size: .72rem; color: var(--color-muted); }
+.py-promo-m a { color: var(--color-muted); }
+.py-promo-n { position: absolute; right: 12px; bottom: 10px; font-size: .7rem; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.py-promo.paused .py-promo-n::before { content: "❚❚ "; font-size: .6rem; }
+@media (max-width: 720px) {
+  .py-promo { padding: 10px 12px; }
+  .py-promo-item { align-items: flex-start; }
+  .py-promo-rate { min-width: 56px; font-size: 1.02rem; }
+  .py-promo-m { padding-right: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .py-promo-item, .py-promo-item.on { transition: none; transform: none; }
+}
