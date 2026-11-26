@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T07:58:02+09:00",
+  "generatedAt": "2026-11-27T08:00:35+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -276,13 +276,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T07:57:59+09:00",
+      "updatedAt": "2026-11-27T08:00:32+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 161,
-        "title": "data: 수집 2026-11-27 12차 (NH농협카드 상품설명서 10종)",
-        "mergedAt": "2026-11-26T22:57:49Z",
-        "mergedAtKST": "2026-11-27 07:57"
+        "number": 163,
+        "title": "data: 수집 2026-11-27 13차 (NH농협카드 상품설명서 10종)",
+        "mergedAt": "2026-11-26T23:00:22Z",
+        "mergedAtKST": "2026-11-27 08:00"
       },
       "runs": [
         {
@@ -640,6 +640,24 @@
             "nh-90010468",
             "nh-90010507"
           ]
+        },
+        {
+          "at": "2026-11-27T08:00:32+09:00",
+          "kind": "card-terms",
+          "pr": 163,
+          "summary": "13차: NH농협카드 상품설명서 10종·혜택 48줄",
+          "queueKeys": [
+            "nh-90000377",
+            "nh-90000378",
+            "nh-90000379",
+            "nh-90000380",
+            "nh-90000385",
+            "nh-90000397",
+            "nh-90000399",
+            "nh-90000412",
+            "nh-90010019",
+            "nh-90010115"
+          ]
         }
       ],
       "openIssues": 26
@@ -648,6 +666,34 @@
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 163,
+      "title": "data: 수집 2026-11-27 13차 (NH농협카드 상품설명서 10종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle13",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T23:00:22Z",
+      "mergedAtKST": "2026-11-27 08:00",
+      "createdAt": "2026-11-26T22:59:30Z",
+      "createdAtKST": "2026-11-27 07:59",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/163"
+    },
+    {
+      "number": 162,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #161 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle161",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T22:58:48Z",
+      "mergedAtKST": "2026-11-27 07:58",
+      "createdAt": "2026-11-26T22:58:08Z",
+      "createdAtKST": "2026-11-27 07:58",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/162"
+    },
     {
       "number": 161,
       "title": "data: 수집 2026-11-27 12차 (NH농협카드 상품설명서 10종)",
@@ -1179,34 +1225,6 @@
       "area": "4파일 · .github/ 2 · tools/pay 1 · 루트 1",
       "files": 4,
       "url": "https://github.com/uio412-source/my-website/pull/124"
-    },
-    {
-      "number": 123,
-      "title": "Mr. Travel 여행지: 입국 조건 다시 확인 + 한시 무비자 기한 + 공식 신청 링크",
-      "agent": "Claude",
-      "branch": "ai/claude/travel-entry-check",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T05:15:49Z",
-      "mergedAtKST": "2026-11-26 14:15",
-      "createdAt": "2026-11-26T05:14:10Z",
-      "createdAtKST": "2026-11-26 14:14",
-      "area": "8파일 · assets/ 2 · data/ 2 · docs/ 2 외 2곳",
-      "files": 8,
-      "url": "https://github.com/uio412-source/my-website/pull/123"
-    },
-    {
-      "number": 122,
-      "title": "Mr. Cards 바닥글에 DB 작업 진행률 작은 상자",
-      "agent": "Claude",
-      "branch": "ai/claude/cards-db-progress",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T02:47:49Z",
-      "mergedAtKST": "2026-11-26 11:47",
-      "createdAt": "2026-11-26T02:46:10Z",
-      "createdAtKST": "2026-11-26 11:46",
-      "area": "14파일 · paymorevent/ 4 · data/ 3 · docs/ 3 외 3곳",
-      "files": 14,
-      "url": "https://github.com/uio412-source/my-website/pull/122"
     }
   ],
   "queue": {
@@ -1217,8 +1235,8 @@
     },
     "counts": {
       "cards": {
-        "done": 231,
-        "todo": 1216,
+        "done": 241,
+        "todo": 1206,
         "total": 1447
       },
       "brandPrograms": {
