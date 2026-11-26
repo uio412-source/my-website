@@ -1,9 +1,16 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-25T23:55:00+09:00",
+  "updatedAt": "2026-11-26T11:55:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-26T11:55:00+09:00",
+      "kind": "code",
+      "pr": 122,
+      "summary": "Mr. Cards 바닥글 DB 작업 진행률 상자(상품설명서·브랜드 서비스·이벤트 출처 7일), queue.py eventSources.lastCollected·counts.eventSources, 배포 때 queue.py 재실행",
+      "queueKeys": []
+    },
     {
       "at": "2026-11-25T23:55:00+09:00",
       "kind": "code",
