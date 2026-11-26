@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-27 02:50 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-27 06:44 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,10 @@ _자동 생성 2026-11-27 02:50 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#138](https://github.com/uio412-source/my-website/pull/138) | ChatGPT | data: 수집 2026-11-27 (카드사 이벤트 5건) | 2026-11-27 06:43 | 5파일 · data/inbox/card-events 5 | 머지 |
+| [#140](https://github.com/uio412-source/my-website/pull/140) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 2차, #139 반영) | 2026-11-27 06:42 | 4파일 · data/ 3 · docs/ 1 | 머지 |
+| [#139](https://github.com/uio412-source/my-website/pull/139) | Pickle | data: 수집 2026-11-27 2차 (KB 상품설명서 26종 · 현대 AMEX 선택서비스 2 · 롯데… | 2026-11-27 06:40 | 3파일 · data/inbox/brand-services 2 · data/inbox/… | 머지 |
+| [#137](https://github.com/uio412-source/my-website/pull/137) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle, #136 반영) | 2026-11-27 02:54 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#136](https://github.com/uio412-source/my-website/pull/136) | Pickle | data: 수집 2026-11-27 (하나카드 브랜드 선택서비스 6 · KB 상품설명서 4종) | 2026-11-27 02:49 | 2파일 · data/inbox/brand-services 1 · data/inbox/… | 머지 |
 | [#135](https://github.com/uio412-source/my-website/pull/135) | Claude | data: 수집 2026-11-26 (Claude · 상품설명서 3종) | 2026-11-26 21:35 | 7파일 · data/ 3 · data/inbox/card-terms 3 · docs/… | 머지 |
 | [#132](https://github.com/uio412-source/my-website/pull/132) | ChatGPT | data: 수집 2026-11-26 (BC 로스트아크 상품설명서) | 2026-11-26 21:33 | 1파일 · data/inbox/card-terms 1 | 머지 |
@@ -56,10 +60,6 @@ _자동 생성 2026-11-27 02:50 KST · `python tools/data/agent_sync.py` · 기�
 | [#118](https://github.com/uio412-source/my-website/pull/118) | Pickle | data: 수집 2026-11-26 (NH·롯데·KB 브랜드 선택서비스 8 · KB 상품설명서 5종) | 2026-11-26 02:51 | 4파일 · data/inbox/brand-services 3 · data/inbox/… | 머지 |
 | [#117](https://github.com/uio412-source/my-website/pull/117) | Claude | Mr. Cards 텍스트 정리: 이벤트 이름 찌꺼기·안내 한 줄·원문 반복 줄 | 2026-11-25 22:48 | 12파일 · paymorevent/ 7 · data/ 2 · docs/ 2 외 1곳 | 머지 |
 | [#116](https://github.com/uio412-source/my-website/pull/116) | Claude | Mr. Stocks 텍스트 정리: 배당 세금 안내 접기·한 줄씩 | 2026-11-25 22:39 | 8파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳 | 머지 |
-| [#115](https://github.com/uio412-source/my-website/pull/115) | Claude | Mr. Hotels 텍스트 정리: 이벤트 조건 2줄·발레 카드 목록 접기·안내 한 줄 | 2026-11-25 22:36 | 9파일 · assets/ 4 · data/ 2 · docs/ 2 외 1곳 | 머지 |
-| [#114](https://github.com/uio412-source/my-website/pull/114) | Claude | Mr. Travel 텍스트 정리: 원문 요약 문장 빼고 목록은 더 보기로 | 2026-11-25 22:32 | 7파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳 | 머지 |
-| [#113](https://github.com/uio412-source/my-website/pull/113) | Claude | 광고성 이벤트 판단 보강 — Mr. Cards 전체와 Mr. Travel에서 빼기 | 2026-11-25 22:27 | 14파일 · paymorevent/ 5 · docs/ 3 · tools/travel … | 머지 |
-| [#112](https://github.com/uio412-source/my-website/pull/112) | Claude | docs: Claude 잠금 — 광고성 이벤트·전체 사이트 텍스트 정리 작업 중 | 2026-11-25 22:22 | 3파일 · data/ 2 · docs/ 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -78,22 +78,22 @@ _열린 PR이 없습니다._
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 1399 / 1447종 · **브랜드 프로그램** todo 52 · valet-only 4 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **남은 카드** 1389 / 1447종 · **브랜드 프로그램** todo 52 · valet-only 4 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
 - **최근 수집일** — card-terms 2026-11-27 · brand-services 2026-11-27 · card-events 2026-11-26 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
 
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
-| ChatGPT | `data/agent-notes/chatgpt.json` | #132 data: 수집 2026-11-26 (BC 로스트아크 상품설… | 2026-11-26 21:33 | 0건 |
-| Claude | `data/agent-notes/claude.json` | #135 data: 수집 2026-11-26 (Claude · 상품설… | 2026-11-26 21:35 | 6건 |
-| Pickle | `data/agent-notes/pickle.json` | #136 data: 수집 2026-11-27 (하나카드 브랜드 선택서… | 2026-11-27 02:49 | 15건 |
+| ChatGPT | `data/agent-notes/chatgpt.json` | #138 data: 수집 2026-11-27 (카드사 이벤트 5건) | 2026-11-27 06:43 | 0건 |
+| Claude | `data/agent-notes/claude.json` | #135 data: 수집 2026-11-26 (Claude · 상품설… | 2026-11-26 21:35 | 8건 |
+| Pickle | `data/agent-notes/pickle.json` | #140 docs: 수집 대기열·공용 현황판 갱신 (2026-11-2… | 2026-11-27 06:42 | 15건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 17건
+### 다시 볼 것 (open) — 19건
 
 - **2026-11-27 · Pickle · KB 상품설명서 3종(kb-09250 The Easy·kb-09561 WE:SH Travel·kb-09570 WE:SH Daily)**
   - 사유: 카드사가 지금 올려 둔 최신 판본이 2020-10-08·2024-09-23·2024-07-01 심의필이라 '올해·작년 문서' 규칙 밖
@@ -132,6 +132,9 @@ _열린 PR이 없습니다._
   - 사유: 내 카드 찾기에서 '더모아'를 쳐도 안 나옴 — catalog-snapshot.json에 카드가 없음(검색 문제 아님)
   - 재시도: card-products 수집(상품공시실)으로 판매 중 카드 누락 확인 후 카드 DB에 추가
   - 참고: roadmap 후보
+- **- · Claude · Claude 세션 WebFetch — 우리카드·현대카드·롯데카드 상품설명서**
+  - 사유: pc.wooricard.com PDF·상세는 오류 페이지/메인 화면만 옴, hyundaicard.com·image.lottecard.co.kr은 robots.txt 읽기 실패로 WebFetch 거부(셸은 허용 목록 밖). shinhancard.com 상세 페이지는 읽힘(연회비 칸은 JS 자리표시자)
+  - 재시도: 우리·현대·롯데는 브라우저가 있는 에이전트(Pickle)가 맡기. Claude는 신한 상세 페이지부터
 - **- · Claude · kj-CDR20180228002 광주·전남愛사랑플래티늄 · kj-CDR20210929001 HONORS V2**
   - 사유: kjbank.com 카드 상세가 INBN_GDS_NO를 무시하고 1st플래티늄 플러스만 보여 줌, 상품설명서 링크는 href=#(스크립트), curl 프록시 403
   - 재시도: 브라우저로 상품공시(/ib20/mnu/BHPCSCN040802)·약관(BHPCSCN040803)에서 카드명으로 PDF 받기, 또는 m.kjbank.com/mweb/spa/goodsDetail/?pick=C0xx
@@ -141,6 +144,9 @@ _열린 PR이 없습니다._
 - **- · Claude · lotte-P14724-A14724 디지로카 Monaco**
   - 사유: 상품설명서 cardProvisionPath/P14724-A14724.pdf는 찾았으나 글꼴이 깨져 심의필 날짜를 못 읽음(docDate 필수라 뺌). 대기열 termsUrl(VISA_PLATINUM_04_260514.pdf)은 상품설명서가 아니라 브랜드 서비스 안내
   - 재시도: PDF를 fitz로 PNG 렌더해 심의필 날짜를 눈으로 읽고 옮기기
+- **- · Claude · shinhan-201507300001 The CLASSIC+ · shinhan-202408120002 The Premium PET · shinhan-202404220001 AK PLAZA Plus · shinhan-201907220001 11번가 · shinhan-202309010001 CJ ONE 프리즘 · shinhan-202103160001 IKEA Family**
+  - 사유: 공식 상세 페이지의 심의필이 2021~2024년(2024.10.24·2024.06.18·2024.04.24·2023.12.28·2023.08.11·2021.04.20)이라 '올해·작년 문서' 규칙 밖
+  - 재시도: 신한 상세 페이지 하단 심의필이 2025년 이후로 바뀌면 같은 페이지에서 옮기기
 - **- · Claude · shinhan-201902270001 The BEST+ · shinhan-202603060001 The CLASSIC Air**
   - 사유: Claude 세션에서 shinhancard.com은 Bash curl 프록시 403, WebFetch는 권한 요청 시간 초과. 신한 프리미엄 카드 상세에는 상품설명서 PDF 링크가 없고 브랜드 가이드 PDF(pconts/download/card/MO_26_*)만 있음
   - 재시도: 브라우저가 있는 에이전트(Pickle)가 상세 페이지 본문(심의필 날짜)으로 옮기거나, 상품공시실에서 상품설명서 PDF 확인

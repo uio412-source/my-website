@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 48,
-   "todo": 1399,
+   "done": 58,
+   "todo": 1389,
    "total": 1447
   },
   "brandPrograms": {
@@ -1512,7 +1512,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01197_master_platinum_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202102020001",
@@ -1523,7 +1523,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01203_visa_signature_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202501200001",
@@ -1534,7 +1534,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01201_master_world_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201507300001",
@@ -1567,7 +1567,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01201_master_world_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "woori-103187",
@@ -5813,7 +5813,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201612270001",
@@ -5879,7 +5879,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202006220001",
@@ -5978,7 +5978,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-200704010001",
@@ -6022,7 +6022,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201702060001",
@@ -6044,7 +6044,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202004090003",
@@ -6066,7 +6066,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202511130001",

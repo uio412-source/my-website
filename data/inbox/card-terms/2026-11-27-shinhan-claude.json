@@ -1,0 +1,1706 @@
+{
+  "type": "card-terms",
+  "issuer": "신한카드",
+  "collectedAt": "2026-11-27",
+  "collector": "Claude",
+  "cards": [
+    {
+      "cardId": "shinhan-202510270001",
+      "queueKey": "shinhan-202510270001",
+      "name": "신한카드 The CLASSIC NEO",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/premium/1236160_2205.html",
+      "termsUrl": null,
+      "docDate": "2025-10-21",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 117000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 120000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 400000,
+      "spendBasis": "전월 1일~말일 일시불+할부(해외는 매입일, 교통카드는 전전월), 본인·가족 합산",
+      "grace": "최초 신규 발급 회원은 카드 등록월 다음 달까지 적립은 40만~100만원 구간, 할인·라운지는 실적 무관",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "할인서비스(이벤트 포함) 적용 거래",
+        "거래 취소금액"
+      ],
+      "benefitExclusions": [
+        "각종 수수료·이자",
+        "기프트카드·선불카드 구매·충전금액",
+        "포인트 사용거래 중 포인트 금액",
+        "무이자할부(슬림할부 등 부분 무이자 포함) 이용거래",
+        "상품권 구매",
+        "전자지급수단 구매·충전금액",
+        "할인서비스(이벤트 포함) 적용 거래",
+        "거래 취소금액",
+        "백화점 임대매장·주차장·문화센터",
+        "롯데·현대·신세계 아울렛",
+        "배달앱 현장결제",
+        "백화점·할인점·면세점·공항 입점 편의점",
+        "간편결제(PG명 표시) 결제",
+        "피부미용실",
+        "해외 현금인출",
+        "해외 일시불의 할부 전환 거래"
+      ],
+      "benefits": [
+        {
+          "group": "국내 적립",
+          "label": "보통의 하루",
+          "place": "쿠팡, CU·GS25·세븐일레븐·이마트24 오프라인, 땡겨요·쿠팡이츠·배달의민족, 병원·약국",
+          "value": "2%",
+          "valueType": "적립",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 30000
+            },
+            {
+              "spend": 1000000,
+              "cap": 60000
+            },
+            {
+              "spend": 1800000,
+              "cap": 100000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "국내 이용 통합 적립한도",
+          "limits": null,
+          "conditions": [
+            "마이신한포인트(1P=1원)"
+          ]
+        },
+        {
+          "group": "국내 적립",
+          "label": "선택적 Flex",
+          "place": "롯데·현대·신세계 백화점, 무신사·29CM, 미용실 4곳, 레저업종, 주유(LPG 제외), 국내 호텔·리조트",
+          "value": "3%",
+          "valueType": "적립",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 30000
+            },
+            {
+              "spend": 1000000,
+              "cap": 60000
+            },
+            {
+              "spend": 1800000,
+              "cap": 100000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "국내 이용 통합 적립한도",
+          "limits": null,
+          "conditions": []
+        },
+        {
+          "group": "국내 적립",
+          "label": "풍성한 소비",
+          "place": "자연드림·한살림·오아시스, 올리브영·다이소 오프라인",
+          "value": "5%",
+          "valueType": "적립",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 30000
+            },
+            {
+              "spend": 1000000,
+              "cap": 60000
+            },
+            {
+              "spend": 1800000,
+              "cap": 100000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "국내 이용 통합 적립한도",
+          "limits": null,
+          "conditions": []
+        },
+        {
+          "group": "해외 적립",
+          "label": "해외",
+          "place": "해외 이용금액(최종 원화 청구금액, 해외 현금인출 제외)",
+          "value": "1.5%",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "적립 한도 없음",
+          "conditions": [
+            "해외겸용(Mastercard) 카드로 이용 시"
+          ]
+        },
+        {
+          "group": null,
+          "label": "Brunch",
+          "place": "평일 11~14시 한식·양식·중식·일식·부페·대중음식·패스트푸드·커피전문점",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 20000,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "결제일 할인",
+            "토·일요일 제외"
+          ]
+        },
+        {
+          "group": "Gift",
+          "label": "Gift",
+          "place": "쿠팡·무신사·29CM·미용실 4곳·올리브영 또는 병원·약국·주유(LPG 제외) 중 택1",
+          "value": "7만P",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 1회",
+          "conditions": [
+            "택1한 사용처에서 7만원 이상 결제 시",
+            "연회비 정상 납부, 해당 연도 100만원 이상 이용",
+            "사전 신청, 분할결제 불가"
+          ]
+        },
+        {
+          "group": null,
+          "label": "공항라운지",
+          "place": "THE LOUNGE 전 세계 공항 라운지",
+          "value": "연 4회",
+          "valueType": "무료",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 4회(동반 1인 시 2회 차감)",
+          "conditions": [
+            "본인카드 전용, 가족카드 불가"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "shinhan-202102020001",
+      "queueKey": "shinhan-202102020001",
+      "name": "메리어트 본보이™ 더 베스트 신한카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/premium/1200288_2205.html",
+      "termsUrl": null,
+      "docDate": "2026-11-12",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 264000
+        },
+        {
+          "brand": "Visa",
+          "amount": 267000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Visa"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 일시불·할부(본인·가족 합산), 특별적립 실적은 해외 이용 제외",
+      "grace": "카드 사용 등록월 다음 달 말일까지 실적 무관 적용",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "거래 취소금액"
+      ],
+      "benefitExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "거래 취소금액",
+        "다른 프로모션·할인·쿠폰과 중복 혜택 거래",
+        "무이자할부(부분 무이자 포함)",
+        "국세",
+        "지방세",
+        "수도요금",
+        "4대보험",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "초·중·고 학교 납입금(스쿨뱅킹)",
+        "대학 등록금"
+      ],
+      "benefits": [
+        {
+          "group": "메리어트 포인트",
+          "label": "메리어트",
+          "place": "전세계 메리어트 참여 호텔(공식 채널 예약·결제, 호텔 현장 결제)",
+          "value": "1천원당 5P",
+          "valueType": "적립",
+          "minimumSpend": 300000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "일시불·할부 1천원당",
+            "국내전용 카드는 적용 안 됨"
+          ]
+        },
+        {
+          "group": "메리어트 포인트",
+          "label": "특별적립",
+          "place": "해외 일시불, 대한항공·아시아나·제주항공·진에어, 택시, 스타벅스·커피빈·폴바셋·투썸플레이스",
+          "value": "1천원당 3P",
+          "valueType": "적립",
+          "minimumSpend": 300000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "해외 할부 제외",
+            "국내전용 카드는 해외 특별적립 제외",
+            "기본적립과 중복 안 됨"
+          ]
+        },
+        {
+          "group": "메리어트 포인트",
+          "label": "기본적립",
+          "place": "그 외 국내 가맹점",
+          "value": "1천원당 1P",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": []
+        },
+        {
+          "group": "연간",
+          "label": "보너스 포인트",
+          "place": "청구주기 내 본인·가족 일시불+할부 합산",
+          "value": "5천P·1만P",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "1천만원 이상 5천 포인트",
+            "2천만원 이상 1만 포인트(누적 적용)"
+          ]
+        },
+        {
+          "group": "연간",
+          "label": "무료 숙박권",
+          "place": "3만 5천 포인트 이하 메리어트 호텔 1박",
+          "value": "1박",
+          "valueType": "무료",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 1회",
+          "conditions": [
+            "청구주기 내 100만원 이상 이용 시",
+            "가족카드 제외"
+          ]
+        },
+        {
+          "group": "연간",
+          "label": "엘리트 숙박 크레딧",
+          "place": "메리어트 본보이",
+          "value": "10박",
+          "valueType": "제공",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 1회",
+          "conditions": []
+        },
+        {
+          "group": "연간",
+          "label": "엘리트 등급",
+          "place": "메리어트 본보이 골드 엘리트·플래티넘 엘리트",
+          "value": "골드 기본",
+          "valueType": "제공",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "청구주기 내 6천만원 이상 이용 시 플래티넘"
+          ]
+        },
+        {
+          "group": null,
+          "label": "조식 할인",
+          "place": "국내 메리어트 호텔 조식",
+          "value": "5만원",
+          "valueType": "할인",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 2회, 1일 1회",
+          "conditions": [
+            "조식 결제 5만원 이상 시",
+            "가족카드 제외",
+            "별도 유료 메뉴·음료·룸서비스·룸패키지 포함 조식 제외"
+          ]
+        },
+        {
+          "group": null,
+          "label": "공항라운지",
+          "place": "The Lounge Members 앱 공항 라운지",
+          "value": "연 4회",
+          "valueType": "무료",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 4회, 본인 및 동반 1인",
+          "conditions": [
+            "이용권 발급 후 24시간 유효",
+            "탑승자와 가입자 이름 일치"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "shinhan-202501200001",
+      "queueKey": "shinhan-202501200001",
+      "name": "신한카드 The BEST-XO",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/premium/1231479_2205.html",
+      "termsUrl": null,
+      "docDate": "2026-09-08",
+      "annualFee": [
+        {
+          "brand": "국내전용(포인트형)",
+          "amount": 297000
+        },
+        {
+          "brand": "국내전용(스카이패스형)",
+          "amount": 317000
+        },
+        {
+          "brand": "Mastercard(포인트형)",
+          "amount": 300000
+        },
+        {
+          "brand": "Mastercard(스카이패스형)",
+          "amount": 320000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 500000,
+      "spendBasis": "전월 1일~말일 일시불+할부, 거래시점 기준(해외는 매입일, 교통카드는 전전월), 본인·가족 합산",
+      "grace": "최초 신규 발급 회원은 카드 사용 등록월 다음 달까지 50만~300만원 구간 서비스 적용",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "의약품전용몰(도매)·제약업종 구매금액",
+        "거래 취소금액"
+      ],
+      "benefitExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "의약품전용몰(도매)·제약업종 구매금액",
+        "포인트 사용거래 중 포인트 금액",
+        "무이자할부(슬림할부 등 부분 무이자 포함) 이용거래",
+        "할인서비스(이벤트 포함) 적용 거래",
+        "해외 일시불의 할부 전환 거래",
+        "거래 취소금액"
+      ],
+      "benefits": [
+        {
+          "group": "기본 리워드",
+          "label": "기본(포인트형)",
+          "place": "일시불·할부 전체",
+          "value": "1%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": []
+        },
+        {
+          "group": "기본 리워드",
+          "label": "추가(포인트형)",
+          "place": "전월 300만원 이상 시 일시불·할부 전체",
+          "value": "0.5%",
+          "valueType": "적립",
+          "minimumSpend": 3000000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": []
+        },
+        {
+          "group": "기본 리워드",
+          "label": "기본(스카이패스형)",
+          "place": "일시불·할부 전체",
+          "value": "1,500원당 1마일",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": []
+        },
+        {
+          "group": "기본 리워드",
+          "label": "추가(스카이패스형)",
+          "place": "전월 300만원 이상 시 일시불·할부 전체",
+          "value": "3,000원당 1마일",
+          "valueType": "적립",
+          "minimumSpend": 3000000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "추가 적립 월 최대 5,000마일",
+          "conditions": []
+        },
+        {
+          "group": "특별 리워드",
+          "label": "간편결제",
+          "place": "신한 SOL Pay, 신한 Super SOL, 네이버페이, 쿠페이 국내 결제",
+          "value": "0.5%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": 30000,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "기본 리워드에 추가 적립",
+            "월 최대 3만 포인트"
+          ]
+        },
+        {
+          "group": "특별 리워드",
+          "label": "해외 일시불",
+          "place": "해외 일시불",
+          "value": "1%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "기본 리워드에 추가 적립"
+          ]
+        },
+        {
+          "group": "특별 리워드",
+          "label": "주유",
+          "place": "주유소(휘발유·경유·등유, LPG 제외)",
+          "value": "3%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": 20000,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "기본 리워드에 추가 적립",
+            "월 최대 2만 포인트"
+          ]
+        },
+        {
+          "group": "Bonus Gift",
+          "label": "Bonus Gift",
+          "place": "연간 일시불·할부 누적 이용금액",
+          "value": "최대 17만원",
+          "valueType": "캐시백",
+          "minimumSpend": null,
+          "cap": 170000,
+          "capScope": "연",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "3,000만원 이상 7만원",
+            "6,000만원 이상 10만원 추가",
+            "본인카드만 제공(가족 실적 합산)"
+          ]
+        },
+        {
+          "group": "Life Experience",
+          "label": "커피",
+          "place": "스타벅스, 커피빈, 투썸플레이스",
+          "value": "건당 2,000원",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "일 1회, 월 5회",
+          "conditions": [
+            "4,000원 이상 결제 시",
+            "결제일 할인"
+          ]
+        },
+        {
+          "group": "Life Experience",
+          "label": "택시",
+          "place": "택시 업종, 카카오T, 우버 택시, 티머니GO",
+          "value": "7%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "cap": 20000,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "결제일 할인"
+          ]
+        },
+        {
+          "group": "Gift Option",
+          "label": "Gift Option",
+          "place": "신세계상품권 20만원·플래티넘 호텔·외식 23만원·마이리얼트립 23만원·마이신한포인트 20만점 등 택1",
+          "value": "택1",
+          "valueType": "제공",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 1회",
+          "conditions": [
+            "연회비 결제 또는 100만원 이상(일시불+할부) 이용",
+            "본인카드만",
+            "에어프레미아 25만원 이용권(포인트형만)·대한항공 1만 마일(스카이패스형만)"
+          ]
+        },
+        {
+          "group": null,
+          "label": "공항라운지",
+          "place": "THE LOUNGE 공항 라운지",
+          "value": "월 4회·연 10회",
+          "valueType": "무료",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "월 4회·연 10회, 동반 1인 시 2회 차감",
+          "conditions": [
+            "본인카드 회원",
+            "마티나 골드 라운지는 본인만, 1회에 2회 차감"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "shinhan-202308030001",
+      "queueKey": "shinhan-202308030001",
+      "name": "싱가포르항공 크리스플라이어 더 베스트 신한카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/premium/1221024_2205.html",
+      "termsUrl": null,
+      "docDate": "2026-05-28",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 247000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 250000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 500000,
+      "spendBasis": "전월 1일~말일 일시불+할부, 본인·가족 합산(교통카드는 전전월, 해외 무승인 매입은 매입월의 전월)",
+      "grace": "카드 사용 등록월의 다음 달 말까지 실적 무관 적립 등 제공",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "거래 취소금액"
+      ],
+      "benefitExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "거래 취소금액",
+        "다른 프로모션·할인·쿠폰과 중복 혜택 거래",
+        "무이자할부(부분 무이자 포함)",
+        "지방세",
+        "국세",
+        "4대보험",
+        "아파트관리비",
+        "도시가스",
+        "전기·수도요금",
+        "초·중·고 학교 납입금(스쿨뱅킹)",
+        "대학 등록금",
+        "해외 일시불의 할부 전환 거래",
+        "해외 가상화폐·사행성 가맹점"
+      ],
+      "benefits": [
+        {
+          "group": "크리스플라이어 마일",
+          "label": "기본적립",
+          "place": "국내·해외 이용금액",
+          "value": "1,500원당 2마일",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": []
+        },
+        {
+          "group": "크리스플라이어 마일",
+          "label": "추가적립1",
+          "place": "해외 일시불, 롯데·신라·신세계 면세점, 국내 실내외 골프장, 택시, 스타벅스(사이렌오더 포함)",
+          "value": "1,500원당 0.5마일",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "shared": "추가적립1·2 합산 월 2천 마일",
+          "limits": "월 2천 마일(추가적립2와 합산)",
+          "conditions": [
+            "간편결제명으로 표시되면 추가 적립 제외"
+          ]
+        },
+        {
+          "group": "크리스플라이어 마일",
+          "label": "추가적립2",
+          "place": "싱가포르항공(해외), 싱가포르항공·스쿠트항공 직판 항공권·기내면세점, 크리스샵, 크리스+, 펠라고",
+          "value": "1,500원당 1.5마일",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "shared": "추가적립1·2 합산 월 2천 마일",
+          "limits": "월 2천 마일(추가적립1과 합산)",
+          "conditions": []
+        },
+        {
+          "group": "크리스플라이어 마일",
+          "label": "부스터마일즈",
+          "place": "국내외 가맹점 이용금액",
+          "value": "1,500원당 1마일",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "월 최대 1만 마일",
+          "conditions": [
+            "별도 신청, 이용금액의 1% 서비스료",
+            "본인카드만 가입"
+          ]
+        },
+        {
+          "group": "연간",
+          "label": "웰컴 기프트",
+          "place": "최초 발급",
+          "value": "1만 5천 마일",
+          "valueType": "제공",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "1회",
+          "conditions": [
+            "초년도 청구주기 내 100만원 이상 이용 및 연회비 완납"
+          ]
+        },
+        {
+          "group": "연간",
+          "label": "연간 기프트",
+          "place": "연회비 청구주기",
+          "value": "1만 5천 마일",
+          "valueType": "제공",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 1회",
+          "conditions": [
+            "청구주기 내 100만원 이상 이용"
+          ]
+        },
+        {
+          "group": "연간",
+          "label": "보너스 마일리지",
+          "place": "연회비 청구주기",
+          "value": "2천 마일",
+          "valueType": "제공",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 1회",
+          "conditions": [
+            "청구주기 내 2천만원 이상 이용"
+          ]
+        },
+        {
+          "group": "연간",
+          "label": "엘리트 멤버십",
+          "place": "크리스플라이어 실버·골드 등급",
+          "value": "실버/골드",
+          "valueType": "제공",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "청구주기 내 500만원 이상 실버",
+            "청구주기 내 2천만원 이상 골드"
+          ]
+        },
+        {
+          "group": "연간",
+          "label": "마일리지 할인 쿠폰",
+          "place": "공제 마일리지",
+          "value": "최대 5천 마일",
+          "valueType": "할인",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "1회",
+          "conditions": [
+            "청구주기 내 1천만원 이상 이용",
+            "본인카드만"
+          ]
+        },
+        {
+          "group": null,
+          "label": "결제일 할인",
+          "place": "싱가포르항공 그룹 가맹점",
+          "value": "1만원",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 1회",
+          "conditions": [
+            "10만원 이하 거래"
+          ]
+        },
+        {
+          "group": null,
+          "label": "공항라운지",
+          "place": "The Lounge 공항 라운지",
+          "value": "연 2회",
+          "valueType": "무료",
+          "minimumSpend": 300000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 2회, 본인 1인만",
+          "conditions": [
+            "이용권 발급 후 24시간 유효"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "shinhan-202505230001",
+      "queueKey": "shinhan-202505230001",
+      "name": "GS ALL 신한카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1233141_2207.html",
+      "termsUrl": null,
+      "docDate": "2025-04-14",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 15000
+        },
+        {
+          "brand": "Visa",
+          "amount": 18000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Visa"
+      ],
+      "minimumSpend": 400000,
+      "spendBasis": "전월 1일~말일 일시불+할부(해외는 매입일, 교통카드는 전전월)",
+      "grace": "최초 신규 발급 회원은 카드 사용 등록월 다음 달 말까지 40만원 이상 구간 서비스 적용",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "거래 취소금액"
+      ],
+      "benefitExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "포인트 사용거래 중 포인트 금액",
+        "무이자할부(슬림할부 등 부분 무이자 포함) 이용거래",
+        "거래 취소금액"
+      ],
+      "benefits": [
+        {
+          "group": "GS 기본 적립",
+          "label": "GS25",
+          "place": "GS25",
+          "value": "10%",
+          "valueType": "적립",
+          "minimumSpend": 400000,
+          "cap": 20000,
+          "capScope": "월",
+          "shared": "GS 기본 적립 월 2만 포인트",
+          "limits": null,
+          "conditions": [
+            "1회 5천원 이상 결제 시",
+            "1일 최대 1만 포인트",
+            "GS ALL 포인트"
+          ]
+        },
+        {
+          "group": "GS 기본 적립",
+          "label": "GS SHOP",
+          "place": "GS SHOP",
+          "value": "5%",
+          "valueType": "적립",
+          "minimumSpend": 400000,
+          "cap": 20000,
+          "capScope": "월",
+          "shared": "GS 기본 적립 월 2만 포인트",
+          "limits": null,
+          "conditions": [
+            "1회 1만원 이상 결제 시",
+            "1일 최대 1만 포인트"
+          ]
+        },
+        {
+          "group": "GS 기본 적립",
+          "label": "GS THE FRESH",
+          "place": "GS THE FRESH",
+          "value": "5%",
+          "valueType": "적립",
+          "minimumSpend": 400000,
+          "cap": 20000,
+          "capScope": "월",
+          "shared": "GS 기본 적립 월 2만 포인트",
+          "limits": null,
+          "conditions": [
+            "1회 1만원 이상 결제 시",
+            "1일 최대 1만 포인트"
+          ]
+        },
+        {
+          "group": null,
+          "label": "GS Pay 추가",
+          "place": "GS Pay로 GS25·GS SHOP·GS THE FRESH 결제",
+          "value": "2%",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "cap": 5000,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "전월실적 조건 없음",
+            "담배·서비스 상품(종량제 봉투, 버스카드 충전 등)·수탁상품(복권, 상품권) 제외"
+          ]
+        },
+        {
+          "group": null,
+          "label": "기본적립",
+          "place": "국내외 가맹점(GS리테일 가맹점·GS Pay 결제 제외)",
+          "value": "0.1%",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "적립 한도 없음",
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "cardId": "shinhan-202508080001",
+      "queueKey": "shinhan-202508080001",
+      "name": "KT 으랏차차 신한카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1235115_2207.html",
+      "termsUrl": null,
+      "docDate": "2025-07-08",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 36000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 39000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 500000,
+      "spendBasis": "전월 1일~말일 일시불+할부, 거래시점 기준(해외는 매입일, 교통카드는 전전월)",
+      "grace": "최초 신규 발급 회원은 카드 사용 등록월 다음 달까지 50만~200만원 구간 서비스 적용",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "거래 취소금액",
+        "무이자할부(슬림할부 등 부분 무이자 포함) 이용거래"
+      ],
+      "benefitExclusions": [
+        "포인트 사용거래 중 포인트 금액",
+        "KT 통신요금 자동납부 할인 외 신한카드 할인서비스(이벤트 포함) 적용 거래",
+        "거래 취소금액"
+      ],
+      "benefits": [
+        {
+          "group": "KT",
+          "label": "통신요금 할인",
+          "place": "KT 통신요금 자동납부(모바일, 인터넷, TV, 집 전화, 하이오더 등)",
+          "value": "최대 3만 3천원",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 12000
+            },
+            {
+              "spend": 2000000,
+              "cap": 33000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "결제일 할인",
+            "여러 건이면 한도 내 거래 순서대로",
+            "일시적 요금납부 승인 제외"
+          ]
+        },
+        {
+          "group": "KT",
+          "label": "고액 결제 캐시백",
+          "place": "KT 통신요금 자동납부 월 합산 20만원 이상",
+          "value": "최대 7천원",
+          "valueType": "캐시백",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 3000
+            },
+            {
+              "spend": 2000000,
+              "cap": 7000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "매월 20일 지급",
+            "일시적 요금납부 승인 제외"
+          ]
+        },
+        {
+          "group": null,
+          "label": "신한은행 결제계좌",
+          "place": "결제계좌가 신한은행인 경우",
+          "value": "최대 5천원",
+          "valueType": "캐시백",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 2000
+            },
+            {
+              "spend": 2000000,
+              "cap": 5000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": "월 1회",
+          "conditions": [
+            "매월 20일 지급 시점에 결제계좌가 신한은행이어야 함"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "shinhan-202506090001",
+      "queueKey": "shinhan-202506090001",
+      "name": "LG전자 The 구독케어 신한카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1234346_2207.html",
+      "termsUrl": null,
+      "docDate": "2025-07-14",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 22000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 25000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 일시불+할부, 거래시점 기준(해외는 매입일, 교통카드는 전전월)",
+      "grace": "최초 신규 발급 회원은 카드 사용 등록월 다음 달까지 30만~70만원 구간 서비스 적용",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "거래 취소금액",
+        "무이자할부(슬림할부 등 부분 무이자 포함) 이용거래"
+      ],
+      "benefitExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "무이자할부(슬림할부 등 부분 무이자 포함) 이용거래",
+        "포인트 사용거래 중 포인트 금액",
+        "LG전자 구독요금 할인 외 신한카드 할인서비스(이벤트 포함) 적용 거래",
+        "거래 취소금액"
+      ],
+      "benefits": [
+        {
+          "group": "LG전자 구독",
+          "label": "구독요금 할인",
+          "place": "LG전자 구독요금 자동납부",
+          "value": "최대 2만원",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 13000
+            },
+            {
+              "spend": 700000,
+              "cap": 16000
+            },
+            {
+              "spend": 1300000,
+              "cap": 20000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "결제일 할인",
+            "여러 건이면 한도 내 거래 순서대로"
+          ]
+        },
+        {
+          "group": "LG전자 구독",
+          "label": "구독요금 적립",
+          "place": "LG전자 구독요금 자동납부",
+          "value": "1만 포인트",
+          "valueType": "적립",
+          "minimumSpend": 700000,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "월 1회",
+          "conditions": [
+            "할인 전 자동납부 금액 1회 7만원 이상",
+            "여러 건 합산 적용 안 됨",
+            "원문 표에 70만~130만원 구간 1만 포인트, 130만원 이상 칸은 비어 있음"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "shinhan-202506240002",
+      "queueKey": "shinhan-202506240002",
+      "name": "New T 우주 신한카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1234482_2207.html",
+      "termsUrl": null,
+      "docDate": "2025-04-22",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 18000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 21000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 400000,
+      "spendBasis": "전월 1일~말일 일시불+할부, 거래시점 기준(해외는 매입일, 교통카드는 전전월)",
+      "grace": "최초 신규 발급 회원은 카드 사용 등록월 다음 달까지 40만~80만원 구간 서비스 적용",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "거래 취소금액"
+      ],
+      "benefitExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "포인트 사용거래 중 포인트 금액",
+        "무이자할부(슬림할부 등 부분 무이자 포함) 이용거래",
+        "신한카드 할인서비스(이벤트 포함) 적용 거래",
+        "거래 취소금액"
+      ],
+      "benefits": [
+        {
+          "group": null,
+          "label": "T 우주 구독료",
+          "place": "T 우주 월 정기구독(SKT 대리점·콜센터·공식 홈페이지 직접 신청)",
+          "value": "100%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 13900
+            },
+            {
+              "spend": 800000,
+              "cap": 18900
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "결제일 할인"
+          ]
+        },
+        {
+          "group": null,
+          "label": "배달·생활편의",
+          "place": "배달의민족·요기요·쿠팡이츠·땡겨요, GS25·CU, 다이소, 올리브영, 스타벅스 자동충전",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 2000
+            },
+            {
+              "spend": 800000,
+              "cap": 4000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "월간 통합 할인한도",
+          "limits": null,
+          "conditions": [
+            "결제일 할인",
+            "키오스크·간편결제로 PG사명·간편결제명이 표시되면 제외"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "shinhan-202606100001",
+      "queueKey": "shinhan-202606100001",
+      "name": "SKT T&Life 신한카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/2013495_2207.html",
+      "termsUrl": null,
+      "docDate": "2026-05-27",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 27000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 30000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 일시불+할부, 거래시점 기준(해외는 매입일, 교통카드는 전전월)",
+      "grace": "최초 신규 발급 회원은 카드 사용 등록월(간편결제 등록 포함) 다음 달까지 30만~70만원 구간 서비스 적용",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "무이자할부(슬림할부 등 부분 무이자 포함) 이용거래",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "거래 취소금액"
+      ],
+      "benefitExclusions": [
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "포인트 사용거래 중 포인트 금액",
+        "무이자할부(슬림할부 등 부분 무이자 포함) 이용거래",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "다른 프로모션 할인이 적용된 거래",
+        "거래 취소금액",
+        "PG·간편결제 전용 가맹점으로 분류된 결제"
+      ],
+      "benefits": [
+        {
+          "group": null,
+          "label": "SKT 통신요금",
+          "place": "SKT 휴대폰·인터넷·TV 자동납부",
+          "value": "최대 1만원",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 6000
+            },
+            {
+              "spend": 700000,
+              "cap": 8000
+            },
+            {
+              "spend": 1200000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "결제일 할인",
+            "자동납부 건만, 여러 건이면 거래 순서대로"
+          ]
+        },
+        {
+          "group": null,
+          "label": "라이트할부",
+          "place": "SKT 라이트할부 상환 기간",
+          "value": "최대 2천원",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 1000
+            },
+            {
+              "spend": 700000,
+              "cap": 2000
+            },
+            {
+              "spend": 1200000,
+              "cap": 2000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": "월 1회",
+          "conditions": [
+            "결제일 할인",
+            "24개월 확정이자 5.9%, 36개월 확정이자 7.0%"
+          ]
+        },
+        {
+          "group": null,
+          "label": "T라이프",
+          "place": "편의점 4사·투썸·메가MGC·컴포즈·빽다방·스타벅스·올리브영·다이소, T 우주·넷플릭스·네이버플러스·쿠팡와우, 배민",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 5000
+            },
+            {
+              "spend": 700000,
+              "cap": 7000
+            },
+            {
+              "spend": 1200000,
+              "cap": 12000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "결제일 할인",
+            "편의점(GS25·CU·세븐일레븐·이마트24)·커피·잡화는 국내 오프라인 매장만",
+            "구독은 직접 접속 정기결제만(인앱·통신요금 합산결제 제외)",
+            "배민 현장결제·B마트·배민스토어·배민클럽 구독료 등 제외",
+            "임대 매장·선물하기·빽오더·컴포즈 오더 제외"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "shinhan-202607020001",
+      "queueKey": "shinhan-202607020001",
+      "name": "SK브로드밴드 신한카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/2013724_2207.html",
+      "termsUrl": null,
+      "docDate": "2026-06-16",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 27000
+        },
+        {
+          "brand": "Visa",
+          "amount": 30000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Visa"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 일시불+할부(해외는 매입일, 교통카드는 전전월)",
+      "grace": "최초 신규 발급 회원은 카드 사용 등록월(간편결제 등록 포함) 다음 달까지 30만~70만원 구간 서비스 적용",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "지방세",
+        "국세",
+        "지방세외수입",
+        "환경개선부담금",
+        "4대보험(국민연금, 고용보험, 건강보험, 산재보험)",
+        "유치원·초중고 납입금(스쿨뱅킹)",
+        "대학(원) 등록금",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "거래 취소금액",
+        "무이자할부(슬림할부 등 부분 무이자 포함) 이용거래",
+        "신한카드 할인서비스(이벤트 포함) 적용 거래"
+      ],
+      "benefitExclusions": [
+        "각종 수수료·이자(할부수수료, 연체이자 등)",
+        "기프트카드·선불카드 구매·충전금액",
+        "포인트 사용거래 중 포인트 금액",
+        "무이자할부(슬림할부 등 부분 무이자 포함) 이용거래",
+        "아파트관리비",
+        "도시가스",
+        "전기요금",
+        "TV수신료",
+        "수도요금",
+        "상품권·선불전자지급수단 구매·충전금액",
+        "포인트·캐시·사이버머니·예치금 등 전자지급수단 구매·충전금액",
+        "SK브로드밴드 신한카드 서비스 외 프로모션 할인 적용 거래",
+        "거래 취소금액"
+      ],
+      "benefits": [
+        {
+          "group": null,
+          "label": "SK브로드밴드 요금",
+          "place": "SK브로드밴드 요금 자동납부",
+          "value": "최대 2만원",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 13000
+            },
+            {
+              "spend": 700000,
+              "cap": 17000
+            },
+            {
+              "spend": 1200000,
+              "cap": 20000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "결제일 할인",
+            "카드 수령 후 고객센터(106)·홈페이지에서 직접 자동이체 신청한 경우만",
+            "간편결제(네이버페이·카카오페이 등) 납부 제외",
+            "여러 건이면 한도 내 거래 순서대로"
+          ]
+        }
+      ]
+    }
+  ]
+}
