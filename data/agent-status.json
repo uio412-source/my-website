@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T07:46:30+09:00",
+  "generatedAt": "2026-11-27T07:49:17+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -276,13 +276,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T08:40:00+09:00",
+      "updatedAt": "2026-11-27T07:49:15+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 153,
-        "title": "data: 수집 2026-11-27 8차 (NH농협카드 상품설명서 10종)",
-        "mergedAt": "2026-11-26T22:46:06Z",
-        "mergedAtKST": "2026-11-27 07:46"
+        "number": 155,
+        "title": "data: 수집 2026-11-27 9차 (NH농협카드 상품설명서 10종)",
+        "mergedAt": "2026-11-26T22:49:01Z",
+        "mergedAtKST": "2026-11-27 07:49"
       },
       "runs": [
         {
@@ -550,14 +550,60 @@
             "nh-90010051",
             "nh-90010178"
           ]
+        },
+        {
+          "at": "2026-11-27T07:49:15+09:00",
+          "kind": "card-terms",
+          "pr": 155,
+          "summary": "9차: NH농협카드 상품설명서 10종·혜택 41줄",
+          "queueKeys": [
+            "nh-90010006",
+            "nh-90010007",
+            "nh-90000184",
+            "nh-90000232",
+            "nh-90000233",
+            "nh-90000234",
+            "nh-90000237",
+            "nh-90000310",
+            "nh-90000323",
+            "nh-90000349"
+          ]
         }
       ],
-      "openIssues": 25
+      "openIssues": 26
     }
   },
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 155,
+      "title": "data: 수집 2026-11-27 9차 (NH농협카드 상품설명서 10종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle9",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T22:49:01Z",
+      "mergedAtKST": "2026-11-27 07:49",
+      "createdAt": "2026-11-26T22:48:14Z",
+      "createdAtKST": "2026-11-27 07:48",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/155"
+    },
+    {
+      "number": 154,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 8차, #153 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle8",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T22:47:27Z",
+      "mergedAtKST": "2026-11-27 07:47",
+      "createdAt": "2026-11-26T22:46:41Z",
+      "createdAtKST": "2026-11-27 07:46",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/154"
+    },
     {
       "number": 153,
       "title": "data: 수집 2026-11-27 8차 (NH농협카드 상품설명서 10종)",
@@ -1089,34 +1135,6 @@
       "area": "8파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳",
       "files": 8,
       "url": "https://github.com/uio412-source/my-website/pull/116"
-    },
-    {
-      "number": 115,
-      "title": "Mr. Hotels 텍스트 정리: 이벤트 조건 2줄·발레 카드 목록 접기·안내 한 줄",
-      "agent": "Claude",
-      "branch": "ai/claude/hotels-text-cleanup",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T13:36:33Z",
-      "mergedAtKST": "2026-11-25 22:36",
-      "createdAt": "2026-11-25T13:35:37Z",
-      "createdAtKST": "2026-11-25 22:35",
-      "area": "9파일 · assets/ 4 · data/ 2 · docs/ 2 외 1곳",
-      "files": 9,
-      "url": "https://github.com/uio412-source/my-website/pull/115"
-    },
-    {
-      "number": 114,
-      "title": "Mr. Travel 텍스트 정리: 원문 요약 문장 빼고 목록은 더 보기로",
-      "agent": "Claude",
-      "branch": "ai/claude/travel-text-cleanup",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T13:32:55Z",
-      "mergedAtKST": "2026-11-25 22:32",
-      "createdAt": "2026-11-25T13:31:58Z",
-      "createdAtKST": "2026-11-25 22:31",
-      "area": "7파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳",
-      "files": 7,
-      "url": "https://github.com/uio412-source/my-website/pull/114"
     }
   ],
   "queue": {
@@ -1127,8 +1145,8 @@
     },
     "counts": {
       "cards": {
-        "done": 191,
-        "todo": 1256,
+        "done": 201,
+        "todo": 1246,
         "total": 1447
       },
       "brandPrograms": {
@@ -1222,6 +1240,15 @@
       "status": "open",
       "reason": "마라톤카드는 연회비 표가 이미지로만 있어 금액 확인 불가, kb-04131은 PDF가 아닌 안내 페이지 응답",
       "retry": "마라톤카드는 홈페이지 카드 상세의 연회비 표(텍스트)로 확인, kb-04131은 카드 상세에서 상품설명서 링크 재확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "nh-90010006",
+      "status": "open",
+      "reason": "nh-90000319 국민행복카드는 A/B/C 타입별 혜택이 한 페이지에 섞여 있어 제외",
+      "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
       "ref": ""
     },
     {
