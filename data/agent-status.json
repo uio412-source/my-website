@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T06:48:27+09:00",
+  "generatedAt": "2026-11-27T07:04:10+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -210,15 +210,43 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T06:55:00+09:00",
+      "updatedAt": "2026-11-27T07:20:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 142,
-        "title": "data: 수집 2026-11-27 3차 (KB On the Go 체크카드)",
-        "mergedAt": "2026-11-26T21:48:12Z",
-        "mergedAtKST": "2026-11-27 06:48"
+        "number": 144,
+        "title": "data: 수집 2026-11-27 4차 (KB 상품설명서 20종)",
+        "mergedAt": "2026-11-26T22:03:51Z",
+        "mergedAtKST": "2026-11-27 07:03"
       },
       "runs": [
+        {
+          "at": "2026-11-27T07:15:00+09:00",
+          "kind": "collect",
+          "pr": 144,
+          "summary": "card-terms KB 20종 · 혜택 78줄 — 2025~2026년판 5종(쿠팡와우·제주항공 J포인트·LG전자·마라톤·국민행복체크)과 카드사가 지금 올려 둔 2024년 이전 최신 판본 15종",
+          "queueKeys": [
+            "kb-09293",
+            "kb-04420",
+            "kb-04425",
+            "kb-09821",
+            "kb-02066",
+            "kb-02083",
+            "kb-00235",
+            "kb-09561",
+            "kb-09923",
+            "kb-01690",
+            "kb-09061",
+            "kb-09174",
+            "kb-09243",
+            "kb-09244",
+            "kb-09247",
+            "kb-09291",
+            "kb-09383",
+            "kb-04491",
+            "kb-04485",
+            "kb-04260"
+          ]
+        },
         {
           "at": "2026-11-27T02:52:00+09:00",
           "kind": "brand-services + card-terms",
@@ -396,6 +424,34 @@
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 144,
+      "title": "data: 수집 2026-11-27 4차 (KB 상품설명서 20종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle4",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T22:03:51Z",
+      "mergedAtKST": "2026-11-27 07:03",
+      "createdAt": "2026-11-26T22:02:54Z",
+      "createdAtKST": "2026-11-27 07:02",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/144"
+    },
+    {
+      "number": 143,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 3차, #139·#142 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle3",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T21:49:05Z",
+      "mergedAtKST": "2026-11-27 06:49",
+      "createdAt": "2026-11-26T21:48:34Z",
+      "createdAtKST": "2026-11-27 06:48",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/143"
+    },
     {
       "number": 142,
       "title": "data: 수집 2026-11-27 3차 (KB On the Go 체크카드)",
@@ -901,20 +957,6 @@
       "url": "https://github.com/uio412-source/my-website/pull/107"
     },
     {
-      "number": 104,
-      "title": "Mr. Cards: MG새마을금고 카드 14종·우리카드 THE SHOPPER/PAY 추가, 한글 검색 보강",
-      "agent": "Pickle",
-      "branch": "ai/pickle/mg-woori-cards",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T10:44:07Z",
-      "mergedAtKST": "2026-11-25 19:44",
-      "createdAt": "2026-11-25T10:35:29Z",
-      "createdAtKST": "2026-11-25 19:35",
-      "area": "8파일 · paymorevent/ 6 · docs/ 1 · tools/data 1",
-      "files": 8,
-      "url": "https://github.com/uio412-source/my-website/pull/104"
-    },
-    {
       "number": 106,
       "title": "Mr. Cards: 카드 브랜드 이름 통일 (JCB·UnionPay·American Express)",
       "agent": "Claude",
@@ -941,20 +983,6 @@
       "area": "3파일 · data/ 2 · docs/ 1",
       "files": 3,
       "url": "https://github.com/uio412-source/my-website/pull/105"
-    },
-    {
-      "number": 103,
-      "title": "Mr. Cards 카드상품 검색: 혜택 태그 여러 개 선택",
-      "agent": "Claude",
-      "branch": "ai/claude/cards-multi-tags",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T10:35:35Z",
-      "mergedAtKST": "2026-11-25 19:35",
-      "createdAt": "2026-11-25T10:34:45Z",
-      "createdAtKST": "2026-11-25 19:34",
-      "area": "4파일 · paymorevent/ 2 · docs/ 1 · 루트 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/103"
     }
   ],
   "queue": {
@@ -965,8 +993,8 @@
     },
     "counts": {
       "cards": {
-        "done": 85,
-        "todo": 1362,
+        "done": 105,
+        "todo": 1342,
         "total": 1447
       },
       "brandPrograms": {
