@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T15:01:08+09:00",
+  "generatedAt": "2026-11-26T15:41:59+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -49,15 +49,22 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-26T16:20:00+09:00",
+      "updatedAt": "2026-11-26T16:55:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 124,
-        "title": "Mr. Pay: 온누리 가맹점 DB 만들기(상가정보로 업종 보강) + 월 1회 새 판 확인",
-        "mergedAt": "2026-11-26T05:59:37Z",
-        "mergedAtKST": "2026-11-26 14:59"
+        "number": 125,
+        "title": "Mr. Pay 화면: 가맹점(온누리 + 토스페이·네이버 얼굴결제 겹쳐 보기) · 브랜드",
+        "mergedAt": "2026-11-26T06:01:52Z",
+        "mergedAtKST": "2026-11-26 15:01"
       },
       "runs": [
+        {
+          "at": "2026-11-26T16:55:00+09:00",
+          "kind": "code",
+          "pr": 126,
+          "summary": "Mr. Pay 매장·시장 단위 겹쳐 보기(kind store/market, 마인웍스·서귀포중심상가), check_stores.py로 실제 DB 맞춤 확인 — HJ 제보(마인웍스 빠짐)",
+          "queueKeys": []
+        },
         {
           "at": "2026-11-26T16:20:00+09:00",
           "kind": "code",
@@ -255,17 +262,31 @@
   "locks": [],
   "openPRs": [
     {
-      "number": 125,
-      "title": "Mr. Pay 화면: 가맹점(온누리 + 토스페이·네이버 얼굴결제 겹쳐 보기) · 브랜드",
+      "number": 126,
+      "title": "Mr. Pay: 매장·시장 단위 겹쳐 보기 — 마인웍스처럼 온누리 + 네이버 페이스사인 되는 곳",
       "agent": "Claude",
-      "branch": "ai/claude/pay-site",
-      "createdAtKST": "2026-11-26 15:00",
-      "area": "12파일 · assets/ 3 · pay/ 3 · 루트 3 외 3곳",
-      "url": "https://github.com/uio412-source/my-website/pull/125",
+      "branch": "ai/claude/pay-store-overlap",
+      "createdAtKST": "2026-11-26 15:41",
+      "area": "7파일 · assets/ 2 · .github/ 1 · docs/ 1 외 3곳",
+      "url": "https://github.com/uio412-source/my-website/pull/126",
       "draft": false
     }
   ],
   "recentPRs": [
+    {
+      "number": 125,
+      "title": "Mr. Pay 화면: 가맹점(온누리 + 토스페이·네이버 얼굴결제 겹쳐 보기) · 브랜드",
+      "agent": "Claude",
+      "branch": "ai/claude/pay-site",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T06:01:52Z",
+      "mergedAtKST": "2026-11-26 15:01",
+      "createdAt": "2026-11-26T06:00:36Z",
+      "createdAtKST": "2026-11-26 15:00",
+      "area": "15파일 · assets/ 3 · pay/ 3 · 루트 3 외 4곳",
+      "files": 15,
+      "url": "https://github.com/uio412-source/my-website/pull/125"
+    },
     {
       "number": 124,
       "title": "Mr. Pay: 온누리 가맹점 DB 만들기(상가정보로 업종 보강) + 월 1회 새 판 확인",
@@ -797,20 +818,6 @@
       "area": "6파일 · tools/data 3 · data/ 1 · docs/ 1 외 1곳",
       "files": 6,
       "url": "https://github.com/uio412-source/my-website/pull/87"
-    },
-    {
-      "number": 86,
-      "title": "Mr. Hotels: 발레파킹 서울 호텔 별칭 추가, 같은 등급 안내문 머지 규칙 수정",
-      "agent": "Pickle",
-      "branch": "ai/pickle/fix-valet-aliases-and-merge",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T01:03:22Z",
-      "mergedAtKST": "2026-11-25 10:03",
-      "createdAt": "2026-11-25T00:56:57Z",
-      "createdAtKST": "2026-11-25 09:56",
-      "area": "5파일 · docs/ 2 · hotels/ 1 · tools/data 1 외 1곳",
-      "files": 5,
-      "url": "https://github.com/uio412-source/my-website/pull/86"
     }
   ],
   "queue": {

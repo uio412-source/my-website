@@ -1,9 +1,16 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-26T16:20:00+09:00",
+  "updatedAt": "2026-11-26T16:55:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-26T16:55:00+09:00",
+      "kind": "code",
+      "pr": 126,
+      "summary": "Mr. Pay 매장·시장 단위 겹쳐 보기(kind store/market, 마인웍스·서귀포중심상가), check_stores.py로 실제 DB 맞춤 확인 — HJ 제보(마인웍스 빠짐)",
+      "queueKeys": []
+    },
     {
       "at": "2026-11-26T16:20:00+09:00",
       "kind": "code",
