@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-26 18:02 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-26 18:20 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-26 18:02 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#130](https://github.com/uio412-source/my-website/pull/130) | Pickle | Mr. Hotels 발레: 서울 드래곤 시티 용산 3개 호텔 정식 표기 별칭 추가 | 2026-11-26 18:12 | 5파일 · data/ 3 · docs/ 1 · hotels/ 1 | 머지 |
+| [#129](https://github.com/uio412-source/my-website/pull/129) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-26 Pickle 4차) | 2026-11-26 18:05 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#128](https://github.com/uio412-source/my-website/pull/128) | Pickle | data: 수집 2026-11-26 (롯데 VISA Infinite·MasterCard Titanium 선… | 2026-11-26 18:02 | 3파일 · data/inbox/brand-services 2 · data/inbox/… | 머지 |
 | [#127](https://github.com/uio412-source/my-website/pull/127) | Claude | Mr. Pay: 맨 위 혜택 배너 (온누리 할인율 · 네이버 페이스사인 · 토스 페이스페이) | 2026-11-26 17:57 | 10파일 · pay/ 3 · assets/ 2 · data/ 2 외 2곳 | 머지 |
 | [#126](https://github.com/uio412-source/my-website/pull/126) | Claude | Mr. Pay: 매장·시장 단위 겹쳐 보기 — 마인웍스처럼 온누리 + 네이버 페이스사인 되는 곳 | 2026-11-26 15:45 | 10파일 · assets/ 2 · data/ 2 · docs/ 2 외 4곳 | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-26 18:02 KST · `python tools/data/agent_sync.py` · 기�
 | [#108](https://github.com/uio412-source/my-website/pull/108) | Pickle | Mr. Cards: MG·우리 신규 카드 한도 칸 중복 표기 정리 | 2026-11-25 19:50 | 2파일 · paymorevent/ 2 | 머지 |
 | [#107](https://github.com/uio412-source/my-website/pull/107) | Pickle | data: 우리카드 발레파킹 9개 프로그램 수집 · Marriott 호텔 사진 96곳 보강 | 2026-11-25 19:47 | 14파일 · paymorevent/ 6 · hotels/ 2 · data/ 1 외 5곳 | 머지 |
 | [#104](https://github.com/uio412-source/my-website/pull/104) | Pickle | Mr. Cards: MG새마을금고 카드 14종·우리카드 THE SHOPPER/PAY 추가, 한글 검색 보강 | 2026-11-25 19:44 | 8파일 · paymorevent/ 6 · docs/ 1 · tools/data 1 | 머지 |
-| [#106](https://github.com/uio412-source/my-website/pull/106) | Claude | Mr. Cards: 카드 브랜드 이름 통일 (JCB·UnionPay·American Express) | 2026-11-25 19:38 | 6파일 · paymorevent/ 4 · docs/ 1 · 루트 1 | 머지 |
-| [#105](https://github.com/uio412-source/my-website/pull/105) | Pickle | docs: 현황판 잠금 해제(#102 머지 반영) | 2026-11-25 19:35 | 3파일 · data/ 2 · docs/ 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -88,7 +88,7 @@ _열린 PR이 없습니다._
 | ChatGPT | `data/agent-notes/chatgpt.json` | #121 data: 수집 2026-11-26 (카드 이벤트·IBK 코… | 2026-11-26 09:20 | 0건 |
 | ChatGPT Dot | **없음 — 만들어 주세요** | - | - | 0건 |
 | Claude | `data/agent-notes/claude.json` | #127 Mr. Pay: 맨 위 혜택 배너 (온누리 할인율 · 네이버… | 2026-11-26 17:57 | 1건 |
-| Pickle | `data/agent-notes/pickle.json` | #128 data: 수집 2026-11-26 (롯데 VISA Infi… | 2026-11-26 18:02 | 10건 |
+| Pickle | `data/agent-notes/pickle.json` | #130 Mr. Hotels 발레: 서울 드래곤 시티 용산 3개 호텔… | 2026-11-26 18:12 | 10건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
@@ -134,8 +134,12 @@ _열린 PR이 없습니다._
   - 사유: PDF가 이미지로만 되어 있어 텍스트 추출이 안 됨
   - 대신 이렇게: 공식 상품 페이지 본문으로 대체 확인(내용 일치 확인함). 글자 추출이 꼭 필요하면 OCR이 필요하고, 보통은 상품 페이지 본문으로 충분
 
-### 해결됨 (resolved) — 4건
+### 해결됨 (resolved) — 5건
 
+- **2026-11-26 · Pickle · 발레파킹 서울 호텔 이름 표기 불일치 3곳(노보텔 앰배서더 서울 용산·노보텔 스위트 앰배서더 서울 용산·이비스 스타일 앰배서더 서울 용산)**
+  - 사유: #128 배포 로그에서 hotels/valet.json에 없는 표기로 나와 호텔 연결 실패
+  - 해결 방법: 복합 호텔(서울드래곤시티)은 안내문 표기를 aliases에 그대로 넣기
+  - 참고: #130 (별칭 3개 추가, 이후 배포 '못 찾음' 0건)
 - **2026-11-25 · Claude · 발레파킹 — 같은 카드사·브랜드·등급 안내문이 여러 개일 때 화면에 하나만 남던 문제**
   - 사유: merge_valet이 issuer+brand+tier가 같으면 무조건 덮어써서 KB Mastercard World가 39곳짜리(BeV III) 대신 13곳짜리만 표시됐음
   - 해결 방법: 대상 호텔이 더 많은 안내문을 남기고 카드별로 자기 안내의 호텔만 표시하도록 수정
