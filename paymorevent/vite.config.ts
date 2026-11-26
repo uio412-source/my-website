@@ -3,6 +3,7 @@ import {fileURLToPath} from 'node:url';
 import react from '@vitejs/plugin-react';
 import {defineConfig, type Plugin} from 'vite';
 import {buildCardFiles} from './scripts/card-list.mjs';
+import {dbProgress, kstToday} from './scripts/db-progress.mjs';
 import {applyVerifiedCardRules, readVerifiedCardRules} from './scripts/verified-card-rules.mjs';
 
 const base = '/my-website/paymorevent/';
@@ -37,9 +38,18 @@ function cardListFiles(): Plugin {
   };
 }
 
+// 푸터 'DB 작업' 진행률: 저장소의 data/collect-queue.json을 빌드 때 몇 숫자로 줄여 넣습니다(못 읽으면 숨김).
+function dbProgressDefine(): Plugin {
+  let progress = null;
+  try {
+    progress = dbProgress(JSON.parse(readFileSync(new URL('../data/collect-queue.json', import.meta.url), 'utf8')), kstToday());
+  } catch { /* 대기열이 없거나 깨져도 빌드는 계속 */ }
+  return {name: 'mr-cards-db-progress', config: () => ({define: {__DB_PROGRESS__: JSON.stringify(progress)}})};
+}
+
 export default defineConfig({
   base,
-  plugins: [react(), cardListFiles()],
+  plugins: [react(), cardListFiles(), dbProgressDefine()],
   resolve: {
     alias: [
       {find: '@', replacement: fileURLToPath(new URL('.', import.meta.url))},

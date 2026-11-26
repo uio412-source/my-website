@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-26 02:53 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-26 11:46 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,9 @@ _자동 생성 2026-11-26 02:53 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#121](https://github.com/uio412-source/my-website/pull/121) | ChatGPT | data: 수집 2026-11-26 (카드 이벤트·IBK 코웨이 상품 변경) | 2026-11-26 09:20 | 3파일 · data/inbox/card-events 2 · data/inbox/car… | 머지 |
+| [#120](https://github.com/uio412-source/my-website/pull/120) | Pickle | Mr. Hotels 발레: 안내문 표기 별칭 2개 추가 | 2026-11-26 02:59 | 1파일 · hotels/ 1 | 머지 |
+| [#119](https://github.com/uio412-source/my-website/pull/119) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-26 Pickle) | 2026-11-26 02:54 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#118](https://github.com/uio412-source/my-website/pull/118) | Pickle | data: 수집 2026-11-26 (NH·롯데·KB 브랜드 선택서비스 8 · KB 상품설명서 5종) | 2026-11-26 02:51 | 4파일 · data/inbox/brand-services 3 · data/inbox/… | 머지 |
 | [#117](https://github.com/uio412-source/my-website/pull/117) | Claude | Mr. Cards 텍스트 정리: 이벤트 이름 찌꺼기·안내 한 줄·원문 반복 줄 | 2026-11-25 22:48 | 12파일 · paymorevent/ 7 · data/ 2 · docs/ 2 외 1곳 | 머지 |
 | [#116](https://github.com/uio412-source/my-website/pull/116) | Claude | Mr. Stocks 텍스트 정리: 배당 세금 안내 접기·한 줄씩 | 2026-11-25 22:39 | 8파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳 | 머지 |
@@ -57,9 +60,6 @@ _자동 생성 2026-11-26 02:53 KST · `python tools/data/agent_sync.py` · 기�
 | [#99](https://github.com/uio412-source/my-website/pull/99) | ChatGPT | data: 수집 2026-11-25 (BC 모두의카드 실적 제외 정정) | 2026-11-25 15:09 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#97](https://github.com/uio412-source/my-website/pull/97) | ChatGPT | data: 수집 2026-11-25 (BC 바로 모두의카드 1종) | 2026-11-25 14:06 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#98](https://github.com/uio412-source/my-website/pull/98) | Claude | Mr. Hotels 발레: 표기만 다른 같은 카드를 한 장으로 묶고 카드 DB 연결 보강 | 2026-11-25 13:58 | 6파일 · paymorevent/ 2 · assets/ 1 · docs/ 1 외 2곳 | 머지 |
-| [#96](https://github.com/uio412-source/my-website/pull/96) | ChatGPT Dot | data: 수집 2026-11-25 (BC 바로 모두의카드 1종) | 2026-11-25 13:54 | 1파일 · data/inbox/card-terms 1 | 닫힘 |
-| [#95](https://github.com/uio412-source/my-website/pull/95) | Pickle | data: 수집 대기열 갱신 (2026-11-25 Pickle 3차) | 2026-11-25 11:51 | 1파일 · data/ 1 | 머지 |
-| [#94](https://github.com/uio412-source/my-website/pull/94) | Pickle | data: 수집 2026-11-25 (신한 브랜드 선택서비스 6 · BC 상품설명서 4종, Pickle 3… | 2026-11-25 11:50 | 2파일 · data/inbox/brand-services 1 · data/inbox/… | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -71,24 +71,26 @@ _지금 잠근 영역이 없습니다._
 
 ### 열린 PR
 
-_열린 PR이 없습니다._
+| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
+|---|---|---|---|---|---|
+| [#122](https://github.com/uio412-source/my-website/pull/122) | Claude | `ai/claude/cards-db-progress` | 2026-11-26 11:46 | 11파일 · paymorevent/ 4 · docs/ 2 · tools… | Mr. Cards 바닥글에 DB 작업 진행률 작은 상자 |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-26)
 
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 1418 / 1447종 · **브랜드 프로그램** todo 62 · valet-only 4 / 94개
-- **최근 수집일** — card-terms 2026-11-26 · brand-services 2026-11-26 · card-events 2026-11-25 · hotel-events 없음 · travel-events 없음 · card-products 없음
+- **남은 카드** 1418 / 1447종 · **브랜드 프로그램** todo 62 · valet-only 4 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **최근 수집일** — card-terms 2026-11-26 · brand-services 2026-11-26 · card-events 2026-11-26 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
 
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
-| ChatGPT | `data/agent-notes/chatgpt.json` | #99 data: 수집 2026-11-25 (BC 모두의카드 실적 … | 2026-11-25 15:09 | 0건 |
+| ChatGPT | `data/agent-notes/chatgpt.json` | #121 data: 수집 2026-11-26 (카드 이벤트·IBK 코… | 2026-11-26 09:20 | 0건 |
 | ChatGPT Dot | **없음 — 만들어 주세요** | - | - | 0건 |
 | Claude | `data/agent-notes/claude.json` | #117 Mr. Cards 텍스트 정리: 이벤트 이름 찌꺼기·안내 한… | 2026-11-25 22:48 | 1건 |
-| Pickle | `data/agent-notes/pickle.json` | #118 data: 수집 2026-11-26 (NH·롯데·KB 브랜드… | 2026-11-26 02:51 | 5건 |
+| Pickle | `data/agent-notes/pickle.json` | #120 Mr. Hotels 발레: 안내문 표기 별칭 2개 추가 | 2026-11-26 02:59 | 5건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 

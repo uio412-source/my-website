@@ -334,7 +334,7 @@
 
 같은 대기열을 여러 에이전트(ChatGPT 예약 작업 · Pickle · Claude)가 번갈아 가며 모읍니다. 같은 항목을 두 번 모으면 시간과 레코드를 버리고, 같은 이름의 파일이 겹치면 PR이 충돌합니다. **작업을 시작하기 전에 아래 넷을 확인하고, 겹치지 않는 항목만 고릅니다.**
 
-1. **대기열** `data/collect-queue.json` — `status`가 `todo`인 것만 고릅니다. `done`은 수집 완료, `valet-only`는 발레파킹만 넣어 둔 프로그램(라운지·공항 서비스가 남음)입니다. 파일 맨 위 `lastCollected`(종류별 최근 수집일)와 `nextStart`(종류별 다음 시작 key)에서 이어서 시작합니다.
+1. **대기열** `data/collect-queue.json` — `status`가 `todo`인 것만 고릅니다. `done`은 수집 완료, `valet-only`는 발레파킹만 넣어 둔 프로그램(라운지·공항 서비스가 남음)입니다. 파일 맨 위 `lastCollected`(종류별 최근 수집일)와 `nextStart`(종류별 다음 시작 key)에서 이어서 시작합니다. `eventSources`마다 붙은 `lastCollected`는 그 출처를 마지막으로 모은 날입니다(수집 파일 `listUrls`의 공식 도메인 기준, 호텔은 이벤트 `url`, `null`이면 아직 한 번도 안 모음) — 오래된 출처부터 챙기세요.
 2. **받은편지함** `data/inbox/**` — 파일 이름과 그 안의 `queueKey`·`cardId`·`id`를 모두 봅니다. 대기열이 낡았을 수 있으므로(자동 갱신이 아직 안 돌았거나 실패) 대기열에 `todo`로 남아 있어도 inbox에 key가 있으면 이미 한 항목입니다.
 3. **열린 PR** — `gh pr list --state open --json number,title,headRefName,files`로 다른 에이전트가 지금 올려 둔 PR이 건드리는 파일 이름과 key를 봅니다. 그 PR이 다루는 항목은 이번에 빼고, 머지된 뒤 다음 실행에서 이어 갑니다.
 4. **공용 현황판** `docs/agent-sync.md` · `data/agent-status.json` — 3장(잠금·열린 PR·다음 시작점)과 4장(실패·보류 로그)을 봅니다. 내가 하려는 항목이 4장에 `open`으로 있으면 같은 방법을 다시 시도하지 말고 거기 적힌 재시도 방법부터 씁니다.

@@ -4,10 +4,10 @@
  "lastCollected": {
   "card-terms": "2026-11-26",
   "brand-services": "2026-11-26",
-  "card-events": "2026-11-25",
+  "card-events": "2026-11-26",
   "hotel-events": null,
   "travel-events": null,
-  "card-products": null
+  "card-products": "2026-11-26"
  },
  "nextStart": {
   "cards": "samsung-aap1483",
@@ -24,6 +24,10 @@
    "valetOnly": 4,
    "todo": 62,
    "total": 94
+  },
+  "eventSources": {
+   "collected": 9,
+   "total": 30
   }
  },
  "eventSources": [
@@ -31,181 +35,211 @@
    "key": "card-events:신한카드",
    "type": "card-events",
    "name": "신한카드",
-   "url": "https://www.shinhancard.com/mob/MOBFW11011N/MOBFW11011C02.shc"
+   "url": "https://www.shinhancard.com/mob/MOBFW11011N/MOBFW11011C02.shc",
+   "lastCollected": "2026-11-25"
   },
   {
    "key": "card-events:KB국민카드",
    "type": "card-events",
    "name": "KB국민카드",
-   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001"
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "lastCollected": "2026-11-26"
   },
   {
    "key": "card-events:삼성카드",
    "type": "card-events",
    "name": "삼성카드",
-   "url": "https://www.samsungcard.com/personal/event/ing/UHPPBE1403M0.jsp"
+   "url": "https://www.samsungcard.com/personal/event/ing/UHPPBE1403M0.jsp",
+   "lastCollected": "2026-11-25"
   },
   {
    "key": "card-events:현대카드",
    "type": "card-events",
    "name": "현대카드",
-   "url": "https://www.hyundaicard.com/cpb/ev/CPBEV0101_06.hc"
+   "url": "https://www.hyundaicard.com/cpb/ev/CPBEV0101_06.hc",
+   "lastCollected": "2026-11-25"
   },
   {
    "key": "card-events:우리카드",
    "type": "card-events",
    "name": "우리카드",
-   "url": "https://pc.wooricard.com/dcpc/yh1/bnf/bnf01/H1BNF201S00.do"
+   "url": "https://pc.wooricard.com/dcpc/yh1/bnf/bnf01/H1BNF201S00.do",
+   "lastCollected": "2026-11-25"
   },
   {
    "key": "card-events:하나카드",
    "type": "card-events",
    "name": "하나카드",
-   "url": "https://m.hanacard.co.kr/MPAEVT100M.web"
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "lastCollected": "2026-11-26"
   },
   {
    "key": "card-events:롯데카드",
    "type": "card-events",
    "name": "롯데카드",
-   "url": "https://www.lottecard.co.kr/app/LPBNFDA_V100.lc"
+   "url": "https://www.lottecard.co.kr/app/LPBNFDA_V100.lc",
+   "lastCollected": "2026-11-24"
   },
   {
    "key": "card-events:NH농협카드",
    "type": "card-events",
    "name": "NH농협카드",
-   "url": "https://card.nonghyup.com/servlet/IpCb0005M.act"
+   "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
+   "lastCollected": "2026-11-23"
   },
   {
    "key": "card-events:BC카드",
    "type": "card-events",
    "name": "BC카드",
-   "url": "https://bccard.com/app/card/EvntBnftSubMainActn.do"
+   "url": "https://bccard.com/app/card/EvntBnftSubMainActn.do",
+   "lastCollected": null
   },
   {
    "key": "card-events:발급 캐시백(네이버페이)",
    "type": "card-events",
    "name": "발급 캐시백(네이버페이)",
-   "url": "https://card.pay.naver.com/home/promotion"
+   "url": "https://card.pay.naver.com/home/promotion",
+   "lastCollected": "2026-11-25"
   },
   {
    "key": "card-events:발급 캐시백(카카오페이)",
    "type": "card-events",
    "name": "발급 캐시백(카카오페이)",
-   "url": "https://card-hub.kakaopay.com"
+   "url": "https://card-hub.kakaopay.com",
+   "lastCollected": null
   },
   {
    "key": "card-events:발급 캐시백(페이북)",
    "type": "card-events",
    "name": "발급 캐시백(페이북)",
-   "url": "https://web.paybooc.co.kr"
+   "url": "https://web.paybooc.co.kr",
+   "lastCollected": null
   },
   {
    "key": "hotel-events:Marriott",
    "type": "hotel-events",
    "name": "Marriott",
-   "url": "https://www.marriott.com/ko/offers.mi"
+   "url": "https://www.marriott.com/ko/offers.mi",
+   "lastCollected": null
   },
   {
    "key": "hotel-events:Hilton",
    "type": "hotel-events",
    "name": "Hilton",
-   "url": "https://www.hilton.com/en/offers/"
+   "url": "https://www.hilton.com/en/offers/",
+   "lastCollected": null
   },
   {
    "key": "hotel-events:IHG",
    "type": "hotel-events",
    "name": "IHG",
-   "url": "https://www.ihg.com/content/kr/ko/offers"
+   "url": "https://www.ihg.com/content/kr/ko/offers",
+   "lastCollected": null
   },
   {
    "key": "hotel-events:Accor",
    "type": "hotel-events",
    "name": "Accor",
-   "url": "https://all.accor.com/a/ko/deals-corner.html"
+   "url": "https://all.accor.com/a/ko/deals-corner.html",
+   "lastCollected": null
   },
   {
    "key": "hotel-events:Hyatt",
    "type": "hotel-events",
    "name": "Hyatt",
-   "url": "https://world.hyatt.com/content/gp/ko/offers.html"
+   "url": "https://world.hyatt.com/content/gp/ko/offers.html",
+   "lastCollected": null
   },
   {
    "key": "travel-events:대한항공",
    "type": "travel-events",
    "name": "대한항공",
-   "url": "https://www.koreanair.com"
+   "url": "https://www.koreanair.com",
+   "lastCollected": null
   },
   {
    "key": "travel-events:아시아나항공",
    "type": "travel-events",
    "name": "아시아나항공",
-   "url": "https://flyasiana.com"
+   "url": "https://flyasiana.com",
+   "lastCollected": null
   },
   {
    "key": "travel-events:제주항공",
    "type": "travel-events",
    "name": "제주항공",
-   "url": "https://www.jejuair.net"
+   "url": "https://www.jejuair.net",
+   "lastCollected": null
   },
   {
    "key": "travel-events:진에어",
    "type": "travel-events",
    "name": "진에어",
-   "url": "https://www.jinair.com"
+   "url": "https://www.jinair.com",
+   "lastCollected": null
   },
   {
    "key": "travel-events:티웨이항공",
    "type": "travel-events",
    "name": "티웨이항공",
-   "url": "https://www.twayair.com"
+   "url": "https://www.twayair.com",
+   "lastCollected": null
   },
   {
    "key": "travel-events:에어부산",
    "type": "travel-events",
    "name": "에어부산",
-   "url": "https://www.airbusan.com"
+   "url": "https://www.airbusan.com",
+   "lastCollected": null
   },
   {
    "key": "travel-events:에어서울",
    "type": "travel-events",
    "name": "에어서울",
-   "url": "https://flyairseoul.com"
+   "url": "https://flyairseoul.com",
+   "lastCollected": null
   },
   {
    "key": "travel-events:에어프레미아",
    "type": "travel-events",
    "name": "에어프레미아",
-   "url": "https://www.airpremia.com"
+   "url": "https://www.airpremia.com",
+   "lastCollected": null
   },
   {
    "key": "travel-events:롯데면세점",
    "type": "travel-events",
    "name": "롯데면세점",
-   "url": "https://kor.lottedfs.com"
+   "url": "https://kor.lottedfs.com",
+   "lastCollected": null
   },
   {
    "key": "travel-events:신라면세점",
    "type": "travel-events",
    "name": "신라면세점",
-   "url": "https://www.shilladfs.com"
+   "url": "https://www.shilladfs.com",
+   "lastCollected": null
   },
   {
    "key": "travel-events:신세계면세점",
    "type": "travel-events",
    "name": "신세계면세점",
-   "url": "https://www.ssgdfs.com"
+   "url": "https://www.ssgdfs.com",
+   "lastCollected": null
   },
   {
    "key": "travel-events:현대면세점",
    "type": "travel-events",
    "name": "현대면세점",
-   "url": "https://www.hddfs.com"
+   "url": "https://www.hddfs.com",
+   "lastCollected": null
   },
   {
    "key": "travel-events:인천공항",
    "type": "travel-events",
    "name": "인천공항",
-   "url": "https://www.airport.kr"
+   "url": "https://www.airport.kr",
+   "lastCollected": null
   }
  ],
  "brandPrograms": [
