@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-27T08:09:57+09:00",
+ "updatedAt": "2026-11-27T08:12:20+09:00",
  "lock": null,
  "runs": [
   {
@@ -427,6 +427,17 @@
     "nh-90010626",
     "nh-90010629"
    ]
+  },
+  {
+   "at": "2026-11-27T08:12:20+09:00",
+   "kind": "card-terms",
+   "pr": 171,
+   "summary": "17차: 하나카드 브랜드 선택서비스 3개 등급(발렛 6개 서비스)",
+   "queueKeys": [
+    "hana-mastercard-world",
+    "hana-visa-signature",
+    "hana-visa-platinum"
+   ]
   }
  ],
  "skipped": [
@@ -649,6 +660,13 @@
    "target": "shinhan-201509030001",
    "status": "open",
    "reason": "신한 상세 페이지는 실적·혜택 제외 항목을 항목화해 싣지 않아 제외 목록을 빈 배열로 두었음(상품설명서 PDF로 보완 필요)",
+   "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "hana-mastercard-world",
+   "status": "open",
+   "reason": "같은 안내문의 호텔 객실·F&B 할인·골프·쇼핑 혜택은 hotel_benefit 등 별도 정리 필요",
    "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
   }
  ]
