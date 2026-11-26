@@ -15,14 +15,14 @@
  },
  "counts": {
   "cards": {
-   "done": 38,
-   "todo": 1409,
+   "done": 44,
+   "todo": 1403,
    "total": 1447
   },
   "brandPrograms": {
-   "done": 31,
+   "done": 32,
    "valetOnly": 4,
-   "todo": 59,
+   "todo": 58,
    "total": 94
   },
   "eventSources": {
@@ -361,7 +361,7 @@
    "brand": "Visa",
    "tier": "Infinite",
    "where": "카드 상세(card.kbcard.com/CXPRICAC0076.cms?…) > 상세혜택 > 티타늄/Visa 서비스 탭",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-mastercard-platinum",
@@ -7419,7 +7419,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/101686.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-105424",
@@ -8145,7 +8145,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09137__prdctOpmn_20260430.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09800",
@@ -8244,7 +8244,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/_00218__prdctOpmn_20260327.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09389",
@@ -8343,7 +8343,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09771__prdctOpmn_20260330.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09298",
@@ -13073,7 +13073,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/102095.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-101681",
@@ -13084,7 +13084,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/101681.pdf",
    "lastVerified": "2026-10-10",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-104417",

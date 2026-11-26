@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T21:32:26+09:00",
+  "generatedAt": "2026-11-26T21:34:22+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -10,10 +10,10 @@
       "updatedAt": "2026-11-25T19:40:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 121,
-        "title": "data: 수집 2026-11-26 (카드 이벤트·IBK 코웨이 상품 변경)",
-        "mergedAt": "2026-11-26T00:20:32Z",
-        "mergedAtKST": "2026-11-26 09:20"
+        "number": 132,
+        "title": "data: 수집 2026-11-26 (BC 로스트아크 상품설명서)",
+        "mergedAt": "2026-11-26T12:33:45Z",
+        "mergedAtKST": "2026-11-26 21:33"
       },
       "runs": [
         {
@@ -201,7 +201,7 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-26T18:20:00+09:00",
+      "updatedAt": "2026-11-26T21:30:00+09:00",
       "lock": null,
       "lastMergedPR": {
         "number": 134,
@@ -210,6 +210,22 @@
         "mergedAtKST": "2026-11-26 21:29"
       },
       "runs": [
+        {
+          "at": "2026-11-26T21:25:00+09:00",
+          "kind": "brand-services + card-terms",
+          "pr": 133,
+          "summary": "KB Visa Infinite 선택서비스 1프로그램(서비스 3, 호텔 45곳) · BC 상품설명서 3종(로스트아크·페이북머니 체크·밥바라밥) · KB 상품설명서 3종(NEED Global·YOU Prime·TBX). 예산 45/45·68/250·3/20",
+          "queueKeys": [
+            "kb-visa-infinite",
+            "bc-101686",
+            "bc-101681",
+            "bc-102095",
+            "kb-09137",
+            "kb-09771",
+            "kb-00218"
+          ],
+          "status": "merged"
+        },
         {
           "at": "2026-11-26T18:12:00+09:00",
           "kind": "hotels/valet",
@@ -300,23 +316,37 @@
           "queueKeys": []
         }
       ],
-      "openIssues": 10
+      "openIssues": 13
     }
   },
   "locks": [],
   "openPRs": [
     {
-      "number": 132,
-      "title": "data: 수집 2026-11-26 (BC 로스트아크 상품설명서)",
-      "agent": "ChatGPT",
-      "branch": "ai/chatgpt/data-2026-11-26-card-terms-dot",
-      "createdAtKST": "2026-11-26 21:23",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "url": "https://github.com/uio412-source/my-website/pull/132",
+      "number": 135,
+      "title": "data: 수집 2026-11-26 (Claude · 상품설명서 3종)",
+      "agent": "Claude",
+      "branch": "ai/claude/data-2026-11-26",
+      "createdAtKST": "2026-11-26 21:32",
+      "area": "7파일 · data/ 3 · data/inbox/card-terms 3 · docs/ 1",
+      "url": "https://github.com/uio412-source/my-website/pull/135",
       "draft": false
     }
   ],
   "recentPRs": [
+    {
+      "number": 132,
+      "title": "data: 수집 2026-11-26 (BC 로스트아크 상품설명서)",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/data-2026-11-26-card-terms-dot",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T12:33:45Z",
+      "mergedAtKST": "2026-11-26 21:33",
+      "createdAt": "2026-11-26T12:23:30Z",
+      "createdAtKST": "2026-11-26 21:23",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/132"
+    },
     {
       "number": 134,
       "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-26 Pickle 5차, #133 반영)",
@@ -848,20 +878,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/96"
-    },
-    {
-      "number": 95,
-      "title": "data: 수집 대기열 갱신 (2026-11-25 Pickle 3차)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/data-2026-11-25-queue",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T02:51:37Z",
-      "mergedAtKST": "2026-11-25 11:51",
-      "createdAt": "2026-11-25T02:50:45Z",
-      "createdAtKST": "2026-11-25 11:50",
-      "area": "1파일 · data/ 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/95"
     }
   ],
   "queue": {
@@ -872,14 +888,14 @@
     },
     "counts": {
       "cards": {
-        "done": 38,
-        "todo": 1409,
+        "done": 44,
+        "todo": 1403,
         "total": 1447
       },
       "brandPrograms": {
-        "done": 31,
+        "done": 32,
         "valetOnly": 4,
-        "todo": 59,
+        "todo": 58,
         "total": 94
       },
       "eventSources": {
@@ -900,19 +916,28 @@
     {
       "date": "2026-11-26",
       "agent": "Pickle",
-      "target": "BC 상품설명서 이미지 PDF(로스트아크 101686·페이북머니 101681·102095·후불하이패스 103132·103183)",
+      "target": "BC 인피니트 브랜드서비스 2026년판",
       "status": "open",
-      "reason": "텍스트 추출 0자(이미지 PDF). 이번 회차는 6종만 옮기고 나머지는 다음 회차로",
-      "retry": "fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮긴다. BC 다운로드는 200이어도 본문이 HTML(302 안내)일 수 있으니 file 명령으로 실제 PDF 확인",
+      "reason": "공개된 BC INFINITE SERVICE GUIDE가 2025년판(2025-C1a-08892, 유효 2025-12-31)뿐이라 그대로 담고 validThrough 2025-12-31 표기",
+      "retry": "vip.bccard.com의 2026년판 가이드 확인 후 같은 id(bc-visa-infinite)로 교체",
       "ref": ""
     },
     {
       "date": "2026-11-26",
       "agent": "Pickle",
-      "target": "BC 인피니트 브랜드서비스 2026년판",
+      "target": "BC 플래티늄·다이아몬드 선택서비스 2026년판",
       "status": "open",
-      "reason": "공개된 BC INFINITE SERVICE GUIDE가 2025년판(2025-C1a-08892, 유효 2025-12-31)뿐이라 그대로 담고 validThrough 2025-12-31 표기",
-      "retry": "vip.bccard.com의 2026년판 가이드 확인 후 같은 id(bc-visa-infinite)로 교체",
+      "reason": "notice_20260522_1~3.pdf는 신구조문대비표라 2025(변경 전)·2026(변경 후) 열이 섞여 추출되고, vip.bccard.com 국내 발렛파킹 페이지는 2012년 문서라 쓸 수 없음",
+      "retry": "vip.bccard.com 카드별 안내장 PDF 또는 개정 후 단일 판본을 받아 bc-mastercard-platinum·bc-visa-platinum 등으로 수집",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-26",
+      "agent": "Pickle",
+      "target": "BC 후불하이패스 2종(bc-103132 SIM·bc-103183 카드형) 상품설명서",
+      "status": "open",
+      "reason": "공개된 상품설명서가 2023-C1a-07886/07875(2023.07.18) 한 판본이고 혜택 표 없이 연회비(국내전용 2,000원)만 있음 — 올해·작년 문서 규칙 밖",
+      "retry": "카드사가 2025~2026년판을 올리면 같은 경로(bccard.com/down/individual/customer/<gdsno>.pdf)로 교체",
       "ref": ""
     },
     {
@@ -1026,10 +1051,28 @@
     {
       "date": "2026-11-26",
       "agent": "Pickle",
+      "target": "BC 상품설명서 이미지 PDF(로스트아크 101686·페이북머니 101681·102095·후불하이패스 103132·103183)",
+      "status": "workaround",
+      "reason": "이미지 PDF 5종 중 3종(101686 로스트아크·101681 페이북머니·102095 밥바라밥)을 PNG로 렌더해 옮김. 나머지 2종(후불하이패스 103132·103183)은 2023-07-18 심의필 문서뿐이라(올해·작년 규칙 밖) 제외",
+      "retry": "fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮긴다. BC 다운로드는 200이어도 본문이 HTML(302 안내)일 수 있으니 file 명령으로 실제 PDF 확인",
+      "ref": "#133"
+    },
+    {
+      "date": "2026-11-26",
+      "agent": "Pickle",
       "target": "BC·IBK 상품설명서 PDF 경로",
       "status": "workaround",
       "reason": "bccard.com/down/individual/customer/<gdsno>.pdf 는 BC 바로카드만 유효. IBK·MG 등 타 은행 gdsno(103039·104506·225018 등)는 302/HTML",
       "retry": "BC 바로카드 gdsno만 이 경로 사용. 다른 은행 카드는 해당 은행 카드 상세 페이지에서 PDF 링크 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-26",
+      "agent": "Pickle",
+      "target": "KB 선택서비스 Mastercard World Elite·Amex Gold·Amex The Platinum",
+      "status": "workaround",
+      "reason": "img2.kbcard.com/obj/card/download/00123~00134_stpul_20260511.pdf 11종을 전수 확인 — Amex는 Ultra(00123)·Platinum(00124), Mastercard는 World/Platinum/Diamond만 있고 World Elite·Amex Gold·The Platinum 약관 없음",
+      "retry": "대기열 해당 key는 내리는 편이 맞음(등급 자체 미운영)",
       "ref": ""
     },
     {
