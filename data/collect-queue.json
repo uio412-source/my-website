@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 84,
-   "todo": 1363,
+   "done": 85,
+   "todo": 1362,
    "total": 1447
   },
   "brandPrograms": {
@@ -13117,7 +13117,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09701__prdctOpmn_20260629.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04124",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T06:46:03+09:00",
+  "generatedAt": "2026-11-27T06:48:27+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -43,10 +43,10 @@
       "updatedAt": "2026-11-27T07:05:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 135,
-        "title": "data: 수집 2026-11-26 (Claude · 상품설명서 3종)",
-        "mergedAt": "2026-11-26T12:35:52Z",
-        "mergedAtKST": "2026-11-26 21:35"
+        "number": 141,
+        "title": "data: 수집 2026-11-27 (Claude · 신한 상품설명서 10종)",
+        "mergedAt": "2026-11-26T21:46:42Z",
+        "mergedAtKST": "2026-11-27 06:46"
       },
       "runs": [
         {
@@ -210,13 +210,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T06:45:00+09:00",
+      "updatedAt": "2026-11-27T06:55:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 140,
-        "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 2차, #139 반영)",
-        "mergedAt": "2026-11-26T21:42:23Z",
-        "mergedAtKST": "2026-11-27 06:42"
+        "number": 142,
+        "title": "data: 수집 2026-11-27 3차 (KB On the Go 체크카드)",
+        "mergedAt": "2026-11-26T21:48:12Z",
+        "mergedAtKST": "2026-11-27 06:48"
       },
       "runs": [
         {
@@ -379,25 +379,51 @@
             "hyundai-american-express-gold",
             "lotte-mastercard-platinum"
           ]
+        },
+        {
+          "at": "2026-11-27T06:52:00+09:00",
+          "kind": "card-terms",
+          "pr": 142,
+          "summary": "KB On the Go 체크카드 상품설명서(이미지 PDF를 PNG로 렌더해 6줄 옮김)",
+          "queueKeys": [
+            "kb-09701"
+          ]
         }
       ],
-      "openIssues": 20
+      "openIssues": 22
     }
   },
   "locks": [],
-  "openPRs": [
+  "openPRs": [],
+  "recentPRs": [
+    {
+      "number": 142,
+      "title": "data: 수집 2026-11-27 3차 (KB On the Go 체크카드)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle3",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T21:48:12Z",
+      "mergedAtKST": "2026-11-27 06:48",
+      "createdAt": "2026-11-26T21:47:18Z",
+      "createdAtKST": "2026-11-27 06:47",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/142"
+    },
     {
       "number": 141,
       "title": "data: 수집 2026-11-27 (Claude · 신한 상품설명서 10종)",
       "agent": "Claude",
       "branch": "ai/claude/data-2026-11-27",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T21:46:42Z",
+      "mergedAtKST": "2026-11-27 06:46",
+      "createdAt": "2026-11-26T21:45:03Z",
       "createdAtKST": "2026-11-27 06:45",
       "area": "5파일 · data/ 3 · data/inbox/card-terms 1 · docs/ 1",
-      "url": "https://github.com/uio412-source/my-website/pull/141",
-      "draft": false
-    }
-  ],
-  "recentPRs": [
+      "files": 5,
+      "url": "https://github.com/uio412-source/my-website/pull/141"
+    },
     {
       "number": 138,
       "title": "data: 수집 2026-11-27 (카드사 이벤트 5건)",
@@ -929,20 +955,6 @@
       "area": "4파일 · paymorevent/ 2 · docs/ 1 · 루트 1",
       "files": 4,
       "url": "https://github.com/uio412-source/my-website/pull/103"
-    },
-    {
-      "number": 102,
-      "title": "docs: GPT·Claude·Pickle 공용 작업 현황판(data/agent-notes → docs/agent-sync.md)과 기록 자동화",
-      "agent": "Pickle",
-      "branch": "ai/pickle/agent-sync-board",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T10:33:46Z",
-      "mergedAtKST": "2026-11-25 19:33",
-      "createdAt": "2026-11-25T10:32:44Z",
-      "createdAtKST": "2026-11-25 19:32",
-      "area": "10파일 · data/ 4 · docs/ 3 · 루트 2 외 1곳",
-      "files": 10,
-      "url": "https://github.com/uio412-source/my-website/pull/102"
     }
   ],
   "queue": {
@@ -953,8 +965,8 @@
     },
     "counts": {
       "cards": {
-        "done": 84,
-        "todo": 1363,
+        "done": 85,
+        "todo": 1362,
         "total": 1447
       },
       "brandPrograms": {
@@ -1003,6 +1015,24 @@
       "status": "open",
       "reason": "텍스트 추출이 2~1,043자로 거의 안 됨(이미지 PDF), kb-02066은 혜택 표 없음",
       "retry": "fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮기기(회차당 2~3건씩)",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "kb-01664 노리 체크 · kb-07998 노리2 학생증 · kb-02066 국민행복체크",
+      "status": "open",
+      "reason": "이미지 PDF를 렌더해 봐도 혜택 표 판독이 어려움(kb-02066은 혜택 표 자체가 없음)",
+      "retry": "카드 상세 페이지의 혜택 표(텍스트)로 대체 수집",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "kb-09298 YOU Wish up 체크카드",
+      "status": "open",
+      "reason": "할인한도 표의 2구간(80만원) 칸이 병합돼 있어 구간별 한도를 확정할 수 없음",
+      "retry": "카드 상세 페이지 본문(할인한도 안내)으로 2구간 한도 확인",
       "ref": ""
     },
     {
