@@ -1,9 +1,27 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-26T21:40:00+09:00",
+  "updatedAt": "2026-11-27T07:05:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-27T07:05:00+09:00",
+      "kind": "collect",
+      "pr": null,
+      "summary": "card-terms 신한 10종(The CLASSIC NEO·메리어트 본보이 더 베스트·The BEST-XO·크리스플라이어 더 베스트·GS ALL·KT 으랏차차·LG전자 The 구독케어·New T 우주·SKT T&Life·SK브로드밴드) — 공식 카드 상세 페이지 본문(심의필 2025~2026)에서 옮김, 연회비가 자리표시자인 7종은 카드 DB 값",
+      "queueKeys": [
+        "shinhan-202510270001",
+        "shinhan-202102020001",
+        "shinhan-202501200001",
+        "shinhan-202308030001",
+        "shinhan-202505230001",
+        "shinhan-202508080001",
+        "shinhan-202506090001",
+        "shinhan-202506240002",
+        "shinhan-202606100001",
+        "shinhan-202607020001"
+      ]
+    },
     {
       "at": "2026-11-26T21:40:00+09:00",
       "kind": "collect",
@@ -193,6 +211,20 @@
       "status": "open",
       "reason": "ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)",
       "retry": "check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기"
+    },
+    {
+      "date": "2026-11-27",
+      "target": "shinhan-201507300001 The CLASSIC+ · shinhan-202408120002 The Premium PET · shinhan-202404220001 AK PLAZA Plus · shinhan-201907220001 11번가 · shinhan-202309010001 CJ ONE 프리즘 · shinhan-202103160001 IKEA Family",
+      "status": "open",
+      "reason": "공식 상세 페이지의 심의필이 2021~2024년(2024.10.24·2024.06.18·2024.04.24·2023.12.28·2023.08.11·2021.04.20)이라 '올해·작년 문서' 규칙 밖",
+      "retry": "신한 상세 페이지 하단 심의필이 2025년 이후로 바뀌면 같은 페이지에서 옮기기"
+    },
+    {
+      "date": "2026-11-27",
+      "target": "Claude 세션 WebFetch — 우리카드·현대카드·롯데카드 상품설명서",
+      "status": "open",
+      "reason": "pc.wooricard.com PDF·상세는 오류 페이지/메인 화면만 옴, hyundaicard.com·image.lottecard.co.kr은 robots.txt 읽기 실패로 WebFetch 거부(셸은 허용 목록 밖). shinhancard.com 상세 페이지는 읽힘(연회비 칸은 JS 자리표시자)",
+      "retry": "우리·현대·롯데는 브라우저가 있는 에이전트(Pickle)가 맡기. Claude는 신한 상세 페이지부터"
     }
   ]
 }

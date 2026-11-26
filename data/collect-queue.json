@@ -4,7 +4,7 @@
  "lastCollected": {
   "card-terms": "2026-11-27",
   "brand-services": "2026-11-27",
-  "card-events": "2026-11-26",
+  "card-events": "2026-11-27",
   "hotel-events": null,
   "travel-events": null,
   "card-products": "2026-11-26"
@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 74,
-   "todo": 1373,
+   "done": 84,
+   "todo": 1363,
    "total": 1447
   },
   "brandPrograms": {
@@ -36,14 +36,14 @@
    "type": "card-events",
    "name": "신한카드",
    "url": "https://www.shinhancard.com/mob/MOBFW11011N/MOBFW11011C02.shc",
-   "lastCollected": "2026-11-25"
+   "lastCollected": "2026-11-27"
   },
   {
    "key": "card-events:KB국민카드",
    "type": "card-events",
    "name": "KB국민카드",
    "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
-   "lastCollected": "2026-11-26"
+   "lastCollected": "2026-11-27"
   },
   {
    "key": "card-events:삼성카드",
@@ -57,7 +57,7 @@
    "type": "card-events",
    "name": "현대카드",
    "url": "https://www.hyundaicard.com/cpb/ev/CPBEV0101_06.hc",
-   "lastCollected": "2026-11-25"
+   "lastCollected": "2026-11-27"
   },
   {
    "key": "card-events:우리카드",
@@ -71,7 +71,7 @@
    "type": "card-events",
    "name": "하나카드",
    "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
-   "lastCollected": "2026-11-26"
+   "lastCollected": "2026-11-27"
   },
   {
    "key": "card-events:롯데카드",
@@ -85,7 +85,7 @@
    "type": "card-events",
    "name": "NH농협카드",
    "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
-   "lastCollected": "2026-11-23"
+   "lastCollected": "2026-11-27"
   },
   {
    "key": "card-events:BC카드",
@@ -1512,7 +1512,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01197_master_platinum_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202102020001",
@@ -1523,7 +1523,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01203_visa_signature_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202501200001",
@@ -1534,7 +1534,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01201_master_world_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201507300001",
@@ -1567,7 +1567,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01201_master_world_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "woori-103187",
@@ -5813,7 +5813,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201612270001",
@@ -5879,7 +5879,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202006220001",
@@ -5978,7 +5978,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-200704010001",
@@ -6022,7 +6022,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201702060001",
@@ -6044,7 +6044,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202004090003",
@@ -6066,7 +6066,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202511130001",
