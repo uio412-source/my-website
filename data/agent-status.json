@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T08:03:27+09:00",
+  "generatedAt": "2026-11-27T08:05:51+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -276,13 +276,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T08:03:25+09:00",
+      "updatedAt": "2026-11-27T08:05:49+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 165,
-        "title": "data: 수집 2026-11-27 14차 (신한카드 상품설명서 9종)",
-        "mergedAt": "2026-11-26T23:03:15Z",
-        "mergedAtKST": "2026-11-27 08:03"
+        "number": 167,
+        "title": "data: 수집 2026-11-27 15차 (신한카드 상품설명서 8종)",
+        "mergedAt": "2026-11-26T23:05:40Z",
+        "mergedAtKST": "2026-11-27 08:05"
       },
       "runs": [
         {
@@ -675,6 +675,22 @@
             "shinhan-202005220001",
             "shinhan-202609080001"
           ]
+        },
+        {
+          "at": "2026-11-27T08:05:49+09:00",
+          "kind": "card-terms",
+          "pr": 167,
+          "summary": "15차: 신한카드 상품설명서 8종·혜택 27줄",
+          "queueKeys": [
+            "shinhan-201510260001",
+            "shinhan-202504010001",
+            "shinhan-202507040001",
+            "shinhan-201704010002",
+            "shinhan-200704010001",
+            "shinhan-201507300002",
+            "shinhan-200404010001",
+            "shinhan-200404010002"
+          ]
         }
       ],
       "openIssues": 27
@@ -683,6 +699,34 @@
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 167,
+      "title": "data: 수집 2026-11-27 15차 (신한카드 상품설명서 8종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle15",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T23:05:40Z",
+      "mergedAtKST": "2026-11-27 08:05",
+      "createdAt": "2026-11-26T23:04:48Z",
+      "createdAtKST": "2026-11-27 08:04",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/167"
+    },
+    {
+      "number": 166,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #165 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle165",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T23:04:13Z",
+      "mergedAtKST": "2026-11-27 08:04",
+      "createdAt": "2026-11-26T23:03:32Z",
+      "createdAtKST": "2026-11-27 08:03",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/166"
+    },
     {
       "number": 165,
       "title": "data: 수집 2026-11-27 14차 (신한카드 상품설명서 9종)",
@@ -1214,34 +1258,6 @@
       "area": "3파일 · data/inbox/brand-services 2 · data/inbox/card-terms 1",
       "files": 3,
       "url": "https://github.com/uio412-source/my-website/pull/128"
-    },
-    {
-      "number": 127,
-      "title": "Mr. Pay: 맨 위 혜택 배너 (온누리 할인율 · 네이버 페이스사인 · 토스 페이스페이)",
-      "agent": "Claude",
-      "branch": "ai/claude/pay-promo-banner",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T08:57:14Z",
-      "mergedAtKST": "2026-11-26 17:57",
-      "createdAt": "2026-11-26T08:54:44Z",
-      "createdAtKST": "2026-11-26 17:54",
-      "area": "10파일 · pay/ 3 · assets/ 2 · data/ 2 외 2곳",
-      "files": 10,
-      "url": "https://github.com/uio412-source/my-website/pull/127"
-    },
-    {
-      "number": 126,
-      "title": "Mr. Pay: 매장·시장 단위 겹쳐 보기 — 마인웍스처럼 온누리 + 네이버 페이스사인 되는 곳",
-      "agent": "Claude",
-      "branch": "ai/claude/pay-store-overlap",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T06:45:48Z",
-      "mergedAtKST": "2026-11-26 15:45",
-      "createdAt": "2026-11-26T06:41:29Z",
-      "createdAtKST": "2026-11-26 15:41",
-      "area": "10파일 · assets/ 2 · data/ 2 · docs/ 2 외 4곳",
-      "files": 10,
-      "url": "https://github.com/uio412-source/my-website/pull/126"
     }
   ],
   "queue": {
@@ -1252,8 +1268,8 @@
     },
     "counts": {
       "cards": {
-        "done": 249,
-        "todo": 1198,
+        "done": 257,
+        "todo": 1190,
         "total": 1447
       },
       "brandPrograms": {
