@@ -1,0 +1,1115 @@
+{
+  "type": "card-terms",
+  "issuer": "BC 바로카드",
+  "collectedAt": "2026-11-26",
+  "collector": "Pickle",
+  "cards": [
+    {
+      "cardId": "bc-105424",
+      "queueKey": "bc-105424",
+      "name": "모두의그린카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=105424&mbkNo=050",
+      "termsUrl": "https://www.bccard.com/down/individual/customer/105424.pdf",
+      "docDate": "2026-09-21",
+      "annualFee": [
+        {
+          "brand": "BC Global",
+          "amount": 13000
+        }
+      ],
+      "brands": [
+        "BC Global"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 이용금액(BC카드에 등록된 업종·가맹점 기준)",
+      "grace": "최초 카드 사용 등록일부터 다음 달 말일까지는 이용금액과 관계없이 최소 실적 구간 서비스 제공",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자",
+        "국세",
+        "지방세",
+        "건강보험",
+        "국민연금",
+        "고용보험",
+        "산재보험",
+        "상하수도 요금",
+        "전기요금",
+        "도시가스 요금",
+        "여권 발급비용",
+        "범칙금",
+        "과태료",
+        "국가·공공기관·공공단체가 개설한 가맹점 이용금액",
+        "아파트관리비",
+        "초·중·고등학교 납입금",
+        "대학 등록금",
+        "기프트·선불카드 구매 및 충전금액",
+        "상품권 구매금액"
+      ],
+      "benefitExclusions": [],
+      "benefits": [
+        {
+          "label": "아침카페",
+          "place": "스타벅스·투썸플레이스·이디야·메가MGC커피·폴바셋 등 (08시~10시)",
+          "value": "10%",
+          "valueType": "적립",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 2000
+            },
+            {
+              "spend": 600000,
+              "cap": 3000
+            },
+            {
+              "spend": 900000,
+              "cap": 4000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "에코머니 아침/점심 통합(월 2회)",
+          "limits": null,
+          "conditions": [
+            "건당 결제금액 1원 이상 건당 포인트 적립",
+            "아침/점심 서비스는 월 통합 2회 제공",
+            "PG·간편결제는 PG결제명이 '개인카드발급PG'·간편결제(네이버페이·카카오페이)인 경우 적립 제외"
+          ],
+          "group": "에코머니"
+        },
+        {
+          "label": "점심식당",
+          "place": "일반 음식점업(식당 및 레스토랑) (11시~14시)",
+          "value": "10%",
+          "valueType": "적립",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 2000
+            },
+            {
+              "spend": 600000,
+              "cap": 3000
+            },
+            {
+              "spend": 900000,
+              "cap": 4000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "에코머니 아침/점심 통합(월 2회)",
+          "limits": null,
+          "conditions": [
+            "호프·주점 등 주류업종 제외",
+            "아침/점심 서비스는 월 통합 2회 제공"
+          ],
+          "group": "에코머니"
+        },
+        {
+          "label": "대중교통",
+          "place": "시외버스·고속버스·택시·통행료·공항버스·티머니(카시)·교통카드 충전금액",
+          "value": "10~20%",
+          "valueType": "적립",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 600000,
+              "cap": 12000
+            },
+            {
+              "spend": 900000,
+              "cap": 16000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "전월실적 60만원 이상 15%·90만원 이상 20% 적립",
+            "교통카드 충전금액은 사용 시점 기준으로 적립"
+          ],
+          "group": "교통"
+        },
+        {
+          "label": "광역교통",
+          "place": "KTX·고속버스(고속버스 터미널 매표소·코레일 매표)",
+          "value": "20%",
+          "valueType": "적립",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 2000
+            },
+            {
+              "spend": 600000,
+              "cap": 3000
+            },
+            {
+              "spend": 900000,
+              "cap": 4000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "승차권 외 금액은 적립 미적용",
+            "고속버스는 터미널 매표소·코레일 매표 이용 건에 적용"
+          ],
+          "group": "교통"
+        },
+        {
+          "label": "친환경교통",
+          "place": "전기차 충전소·공유 모빌리티(카카오T바이크·따릉이·누비자·아울링 등)",
+          "value": "20%",
+          "valueType": "적립",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 2000
+            },
+            {
+              "spend": 600000,
+              "cap": 3000
+            },
+            {
+              "spend": 900000,
+              "cap": 4000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "전기차 충전요금·렌트요금 등 친환경 제주 전기차 렌트에 한정",
+            "공유 모빌리티는 대상 서비스 이용건에 적용"
+          ],
+          "group": "교통"
+        }
+      ]
+    },
+    {
+      "cardId": "bc-103125",
+      "queueKey": "bc-103125",
+      "name": "kt DC PLUS 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103125&mbkNo=050",
+      "termsUrl": "https://www.bccard.com/down/individual/customer/103125.pdf",
+      "docDate": "2026-05-08",
+      "annualFee": [
+        {
+          "brand": "BC",
+          "amount": 12000
+        },
+        {
+          "brand": "MasterCard",
+          "amount": 12000
+        },
+        {
+          "brand": "VISA",
+          "amount": 15000
+        }
+      ],
+      "brands": [
+        "BC",
+        "MasterCard",
+        "VISA"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 이용금액(BC카드에 등록된 업종·가맹점 기준)",
+      "grace": "최초 카드 사용 등록일부터 다음 달 말일까지는 이용금액과 관계없이 최소 실적 구간 서비스 제공",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자",
+        "국세",
+        "지방세",
+        "건강보험",
+        "국민연금",
+        "고용보험",
+        "산재보험",
+        "상하수도 요금",
+        "전기요금",
+        "도시가스 요금",
+        "여권 발급비용",
+        "범칙금",
+        "과태료",
+        "국가·공공기관·공공단체가 개설한 가맹점 이용금액",
+        "아파트관리비",
+        "초·중·고등학교 납입금",
+        "대학 등록금",
+        "기프트·선불카드 구매 및 충전금액",
+        "상품권 구매금액"
+      ],
+      "benefitExclusions": [],
+      "benefits": [
+        {
+          "label": "통신요금",
+          "place": "kt 통신요금 자동이체",
+          "value": "최대 13,000원",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 7000
+            },
+            {
+              "spend": 700000,
+              "cap": 13000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "kt 통신요금 할인",
+          "limits": null,
+          "conditions": [
+            "kt 통신요금 자동이체 등록(BC카드/해피포인트 또는 kt 고객센터 114)",
+            "kt 고객명의 요금에 한함",
+            "월 통합 할인한도 내에서 차감, 할인한도를 초과한 월 통신요금은 할인 미적용"
+          ],
+          "group": "통신"
+        },
+        {
+          "label": "주유",
+          "place": "SK 주유소·SK 충전소 (LPG는 할인 제외)",
+          "value": "1%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": null,
+          "cap": 1000,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "전월 국내외 가맹점 이용금액 30만원 이상 시 제공",
+            "인당 월 할인한도 1천원"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "bc-101010",
+      "queueKey": "bc-101010",
+      "name": "MACAO 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=101010&mbkNo=050",
+      "termsUrl": "https://www.bccard.com/down/individual/customer/101010.pdf",
+      "docDate": "2026-05-04",
+      "annualFee": [
+        {
+          "brand": "BC",
+          "amount": 12000
+        },
+        {
+          "brand": "MasterCard",
+          "amount": 12000
+        },
+        {
+          "brand": "VISA",
+          "amount": 12000
+        }
+      ],
+      "brands": [
+        "BC",
+        "MasterCard",
+        "VISA"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 이용금액(BC카드에 등록된 업종·가맹점 기준)",
+      "grace": "최초 카드 사용 등록일부터 다음 달 말일까지는 이용금액과 관계없이 최소 실적 구간 서비스 제공",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자",
+        "국세",
+        "지방세",
+        "건강보험",
+        "국민연금",
+        "고용보험",
+        "산재보험",
+        "상하수도 요금",
+        "전기요금",
+        "도시가스 요금",
+        "여권 발급비용",
+        "범칙금",
+        "과태료",
+        "국가·공공기관·공공단체가 개설한 가맹점 이용금액",
+        "아파트관리비",
+        "초·중·고등학교 납입금",
+        "대학 등록금",
+        "기프트·선불카드 구매 및 충전금액",
+        "상품권 구매금액"
+      ],
+      "benefitExclusions": [
+        "페이북(App) '내 외화 메뉴' 서비스 이용금액(VISA 카드)"
+      ],
+      "benefits": [
+        {
+          "label": "주유",
+          "place": "국내 대상 주유소(주유소 업종)",
+          "value": "3~10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 1000000,
+              "cap": 25000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "월 통합 할인한도",
+          "limits": null,
+          "conditions": [
+            "주유 금액 7만원 이상 10%·5만원 이상 7%·3만원 이상 5%·3만원 미만 3%",
+            "주유소 업종에 한해 제공, 유류비가 아닌 업종은 제외"
+          ],
+          "group": "넝수룩"
+        },
+        {
+          "label": "마트",
+          "place": "온라인 쇼핑(쿠팡·네이버페이·컬리·SSG.COM)·대형마트(이마트·홈플러스·롯데마트)·기타 마트",
+          "value": "3~10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 1000000,
+              "cap": 25000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "월 통합 할인한도",
+          "limits": null,
+          "conditions": [
+            "10만원 이상 결제 시 10%·5만원 이상 5%·5만원 미만 3%",
+            "상품권·선불카드(기프트카드) 구입 및 충전금액 제외",
+            "넷플릭스·온라인 오락실(게임) 등 일부 가맹점·에이전트 중개 가맹점 제외"
+          ],
+          "group": "담수룩"
+        },
+        {
+          "label": "해외",
+          "place": "해외 전 가맹점",
+          "value": "2%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "전월 실적·한도 없이 제공",
+            "페이북(App) '내 외화 메뉴' 서비스 이용금액(VISA 카드)은 제외",
+            "해외 이용 수수료는 별도 부과될 수 있음"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "bc-101874",
+      "queueKey": "bc-101874",
+      "name": "신세계 콰트로 플러스",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=101874&mbkNo=050",
+      "termsUrl": "https://www.bccard.com/down/individual/customer/101874.pdf",
+      "docDate": "2026-07-24",
+      "annualFee": [
+        {
+          "brand": "BC",
+          "amount": 5000
+        },
+        {
+          "brand": "MasterCard",
+          "amount": 5000
+        },
+        {
+          "brand": "VISA",
+          "amount": 5000
+        }
+      ],
+      "brands": [
+        "BC",
+        "MasterCard",
+        "VISA"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 이용금액(전월 실적 30만원 이상 시 다음 달 1일부터 말일까지 서비스 제공)",
+      "grace": "최초 카드 사용 등록일부터 다음 달 말일까지는 이용금액과 관계없이 최소 실적 구간 서비스 제공",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자",
+        "국세",
+        "지방세",
+        "건강보험",
+        "국민연금",
+        "고용보험",
+        "산재보험",
+        "상하수도 요금",
+        "전기요금",
+        "도시가스 요금",
+        "여권 발급비용",
+        "범칙금",
+        "과태료",
+        "국가·공공기관·공공단체가 개설한 가맹점 이용금액",
+        "아파트관리비",
+        "초·중·고등학교 납입금",
+        "대학 등록금",
+        "기프트·선불카드 구매 및 충전금액",
+        "상품권 구매금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "기프트·선불카드 구매 및 충전금액",
+        "상품권 구매금액"
+      ],
+      "benefits": [
+        {
+          "label": "쇼핑",
+          "place": "신세계백화점(문화센터 포함)·이마트(에브리데이·트레이더스 포함)·신세계면세점",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 700000,
+              "cap": 20000
+            },
+            {
+              "spend": 1200000,
+              "cap": 30000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "카테고리별 할인한도",
+          "limits": null,
+          "conditions": [
+            "신세계백화점 외 오프라인 매장 제외"
+          ]
+        },
+        {
+          "label": "교통",
+          "place": "모든 주유소(LPG 포함)·전기차 충전소·대중교통(버스·지하철)·택시 업종",
+          "value": "4%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 700000,
+              "cap": 20000
+            },
+            {
+              "spend": 1200000,
+              "cap": 30000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "카테고리별 할인한도",
+          "limits": null,
+          "conditions": [
+            "주유소 카테고리 중 유류품목 업종 제외"
+          ]
+        },
+        {
+          "label": "온라인몰",
+          "place": "SSG.COM·쿠팡·G마켓·옥션·11번가",
+          "value": "7%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 700000,
+              "cap": 20000
+            },
+            {
+              "spend": 1200000,
+              "cap": 30000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "카테고리별 할인한도",
+          "limits": null,
+          "conditions": [
+            "공항 백화점·쇼핑몰·할인점 내 입대매장 이용금액 제외"
+          ]
+        },
+        {
+          "label": "생활",
+          "place": "병원·약국, KT·SKT·LGU+ 휴대폰 요금 자동이체",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 700000,
+              "cap": 20000
+            },
+            {
+              "spend": 1200000,
+              "cap": 30000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "카테고리별 할인한도",
+          "limits": null,
+          "conditions": [
+            "종합병원·병의원·한의원·치과·동물병원·건강진단·산후조리원 등 기타요양기관 제외",
+            "휴대폰요금은 대상 통신사에 자동납부 신청 후 결제된 건에 한함(월 1회)"
+          ]
+        },
+        {
+          "label": "커피/외식",
+          "place": "스타벅스·투썸플레이스·이디야·롯데시네마",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 700000,
+              "cap": 20000
+            },
+            {
+              "spend": 1200000,
+              "cap": 30000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "카테고리별 할인한도",
+          "limits": null,
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "cardId": "bc-102603",
+      "queueKey": "bc-102603",
+      "name": "신세계 푸빌라",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102603&mbkNo=050",
+      "termsUrl": "https://www.bccard.com/down/individual/customer/102603.pdf",
+      "docDate": "2026-07-24",
+      "annualFee": [
+        {
+          "brand": "BC",
+          "amount": 10000
+        },
+        {
+          "brand": "MasterCard",
+          "amount": 12000
+        },
+        {
+          "brand": "VISA",
+          "amount": 12000
+        }
+      ],
+      "brands": [
+        "BC",
+        "MasterCard",
+        "VISA"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": "전월 실적 조건 없음(할인 한도 제한 없음)",
+      "grace": "최초 카드 사용 등록일부터 다음 달 말일까지는 이용금액과 관계없이 최소 실적 구간 서비스 제공",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자",
+        "국세",
+        "지방세",
+        "건강보험",
+        "국민연금",
+        "고용보험",
+        "산재보험",
+        "상하수도 요금",
+        "전기요금",
+        "도시가스 요금",
+        "여권 발급비용",
+        "범칙금",
+        "과태료",
+        "국가·공공기관·공공단체가 개설한 가맹점 이용금액",
+        "아파트관리비",
+        "초·중·고등학교 납입금",
+        "대학 등록금",
+        "기프트·선불카드 구매 및 충전금액",
+        "상품권 구매금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "국제브랜드 수수료",
+        "해외서비스 수수료"
+      ],
+      "benefits": [
+        {
+          "label": "국내",
+          "place": "국내 가맹점(특별 할인 가맹점 제외)",
+          "value": "0.7%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "기본할인과 특별할인은 중복 적용 불가",
+            "할인 한도 제한 없음"
+          ],
+          "group": "기본"
+        },
+        {
+          "label": "백화점",
+          "place": "신세계백화점(오프라인 매장)",
+          "value": "1.7%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "백화점 내 입대매장 제외",
+            "온라인 결제 시 적용 불가"
+          ],
+          "group": "특별"
+        },
+        {
+          "label": "SSGPAY",
+          "place": "SSGPAY 국내 오프라인 간편결제",
+          "value": "1.7%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "온라인 결제 시 적용 불가"
+          ],
+          "group": "특별"
+        },
+        {
+          "label": "아카데미",
+          "place": "신세계 아카데미(온·오프라인 전체)",
+          "value": "2.7%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "기본할인과 특별할인 중복 적용 불가"
+          ],
+          "group": "특별"
+        },
+        {
+          "label": "무이자할부",
+          "place": "국내 대형 가맹점(2~3개월 상시 무이자할부)",
+          "value": "2~3개월",
+          "valueType": "면제",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "무이자할부 이용금액은 청구 할인 서비스 제외",
+            "할부 가맹점은 5만원 이상 결제 시에 한함",
+            "일시불 거래를 할부로 전환할 경우 수수료 부과"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "bc-101881",
+      "queueKey": "bc-101881",
+      "name": "신세계 클리어 플러스",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=101881&mbkNo=050",
+      "termsUrl": "https://www.bccard.com/down/individual/customer/101881.pdf",
+      "docDate": "2026-06-08",
+      "annualFee": [
+        {
+          "brand": "BC",
+          "amount": 5000
+        },
+        {
+          "brand": "MasterCard",
+          "amount": 5000
+        },
+        {
+          "brand": "VISA",
+          "amount": 5000
+        }
+      ],
+      "brands": [
+        "BC",
+        "MasterCard",
+        "VISA"
+      ],
+      "minimumSpend": 200000,
+      "spendBasis": "전월 1일~말일 이용금액(전월 실적 20만원 이상 시 다음 달 1일부터 말일까지 서비스 제공)",
+      "grace": "최초 카드 사용 등록일부터 다음 달 말일까지는 이용금액과 관계없이 최소 실적 구간 서비스 제공",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "각종 수수료·이자",
+        "국세",
+        "지방세",
+        "건강보험",
+        "국민연금",
+        "고용보험",
+        "산재보험",
+        "상하수도 요금",
+        "전기요금",
+        "도시가스 요금",
+        "여권 발급비용",
+        "범칙금",
+        "과태료",
+        "국가·공공기관·공공단체가 개설한 가맹점 이용금액",
+        "아파트관리비",
+        "초·중·고등학교 납입금",
+        "대학 등록금",
+        "기프트·선불카드 구매 및 충전금액",
+        "상품권 구매금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "기프트·선불카드 구매 및 충전금액",
+        "상품권 구매금액"
+      ],
+      "benefits": [
+        {
+          "label": "점심식사",
+          "place": "국내 대상 식당(오전 11시~오후 2시)",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 2500
+            },
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 600000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "매일 할인",
+          "limits": null,
+          "conditions": [
+            "건당 1만원 이상 결제 시",
+            "신세계푸드·쉐이크쉑·엘리트(요) 등 중점 가맹점 제외"
+          ],
+          "group": "매일"
+        },
+        {
+          "label": "배달",
+          "place": "배달의민족·쿠팡이츠·요기요",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 2500
+            },
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 600000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "매일 할인",
+          "limits": null,
+          "conditions": [
+            "공식 앱 및 홈페이지를 통한 결제에 한함",
+            "가맹점 직접 결제 및 상품권 구매 건 제외"
+          ],
+          "group": "매일"
+        },
+        {
+          "label": "대중교통",
+          "place": "버스·지하철",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 2500
+            },
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 600000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "매일 할인",
+          "limits": null,
+          "conditions": [
+            "금액 조건 없음"
+          ],
+          "group": "매일"
+        },
+        {
+          "label": "신세계",
+          "place": "신세계백화점(문화센터 포함)·이마트(에브리데이·트레이더스)·신세계아울렛·SSG.COM·시코르·스타벅스",
+          "value": "7%",
+          "valueType": "할인",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 2500
+            },
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 600000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "라이프스타일 할인",
+          "limits": null,
+          "conditions": [
+            "건당 1만원 이상 결제 시",
+            "신세계백화점·시코르는 오프라인 매장에 한함"
+          ],
+          "group": "라이프스타일"
+        },
+        {
+          "label": "온라인쇼핑",
+          "place": "쿠팡·티몬·G마켓·11번가",
+          "value": "7%",
+          "valueType": "할인",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 2500
+            },
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 600000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "라이프스타일 할인",
+          "limits": null,
+          "conditions": [
+            "건당 1만원 이상 결제 시"
+          ],
+          "group": "라이프스타일"
+        },
+        {
+          "label": "뷰티",
+          "place": "올리브영",
+          "value": "7%",
+          "valueType": "할인",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 2500
+            },
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 600000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "라이프스타일 할인",
+          "limits": null,
+          "conditions": [
+            "오프라인 매장에 한함(온라인 취급점 제외)"
+          ],
+          "group": "라이프스타일"
+        },
+        {
+          "label": "통신",
+          "place": "KT·SKT·LGU+ 휴대폰요금 자동이체",
+          "value": "7%",
+          "valueType": "할인",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 2500
+            },
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 600000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "라이프스타일 할인",
+          "limits": null,
+          "conditions": [
+            "대상 통신사에 자동납부 신청 후 결제된 건에 한함(월 1회)"
+          ],
+          "group": "라이프스타일"
+        },
+        {
+          "label": "스트리밍",
+          "place": "넷플릭스·유튜브 프리미엄",
+          "value": "7%",
+          "valueType": "할인",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 2500
+            },
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 600000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "라이프스타일 할인",
+          "limits": null,
+          "conditions": [
+            "구글플레이·앱스토어, 1회성 일괄 구매, 에뮬레이트 결제 등 제외"
+          ],
+          "group": "라이프스타일"
+        }
+      ]
+    }
+  ]
+}
