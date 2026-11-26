@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-26 14:14 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-26 15:01 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-26 14:14 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#124](https://github.com/uio412-source/my-website/pull/124) | Claude | Mr. Pay: 온누리 가맹점 DB 만들기(상가정보로 업종 보강) + 월 1회 새 판 확인 | 2026-11-26 14:59 | 4파일 · .github/ 2 · tools/pay 1 · 루트 1 | 머지 |
+| [#123](https://github.com/uio412-source/my-website/pull/123) | Claude | Mr. Travel 여행지: 입국 조건 다시 확인 + 한시 무비자 기한 + 공식 신청 링크 | 2026-11-26 14:15 | 8파일 · assets/ 2 · data/ 2 · docs/ 2 외 2곳 | 머지 |
 | [#122](https://github.com/uio412-source/my-website/pull/122) | Claude | Mr. Cards 바닥글에 DB 작업 진행률 작은 상자 | 2026-11-26 11:47 | 14파일 · paymorevent/ 4 · data/ 3 · docs/ 3 외 3곳 | 머지 |
 | [#121](https://github.com/uio412-source/my-website/pull/121) | ChatGPT | data: 수집 2026-11-26 (카드 이벤트·IBK 코웨이 상품 변경) | 2026-11-26 09:20 | 3파일 · data/inbox/card-events 2 · data/inbox/car… | 머지 |
 | [#120](https://github.com/uio412-source/my-website/pull/120) | Pickle | Mr. Hotels 발레: 안내문 표기 별칭 2개 추가 | 2026-11-26 02:59 | 1파일 · hotels/ 1 | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-26 14:14 KST · `python tools/data/agent_sync.py` · 기�
 | [#102](https://github.com/uio412-source/my-website/pull/102) | Pickle | docs: GPT·Claude·Pickle 공용 작업 현황판(data/agent-notes → docs/a… | 2026-11-25 19:33 | 10파일 · data/ 4 · docs/ 3 · 루트 2 외 1곳 | 머지 |
 | [#101](https://github.com/uio412-source/my-website/pull/101) | Claude | Mr. Cards 내 혜택 개편: 카드별 묶음 · +/− 접기 · 텍스트 줄이기 · 카드 찾기 개선 | 2026-11-25 19:31 | 7파일 · paymorevent/ 5 · docs/ 1 · 루트 1 | 머지 |
 | [#100](https://github.com/uio412-source/my-website/pull/100) | Claude | Mr. Cards: 새 메뉴 '내 혜택' — 내 카드 등록 + 받을 수 있는 이벤트 모아 보기 | 2026-11-25 19:13 | 14파일 · paymorevent/ 11 · assets/ 1 · docs/ 1 외 … | 머지 |
-| [#99](https://github.com/uio412-source/my-website/pull/99) | ChatGPT | data: 수집 2026-11-25 (BC 모두의카드 실적 제외 정정) | 2026-11-25 15:09 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#97](https://github.com/uio412-source/my-website/pull/97) | ChatGPT | data: 수집 2026-11-25 (BC 바로 모두의카드 1종) | 2026-11-25 14:06 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -73,7 +73,7 @@ _지금 잠근 영역이 없습니다._
 
 | PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
 |---|---|---|---|---|---|
-| [#123](https://github.com/uio412-source/my-website/pull/123) | Claude | `ai/claude/travel-entry-check` | 2026-11-26 14:14 | 5파일 · assets/ 2 · docs/ 1 · travel/ 1 외… | Mr. Travel 여행지: 입국 조건 다시 확인 + 한시 무비자 기한 + 공식 신청 링크 |
+| [#125](https://github.com/uio412-source/my-website/pull/125) | Claude | `ai/claude/pay-site` | 2026-11-26 15:00 | 12파일 · assets/ 3 · pay/ 3 · 루트 3 외 3곳 | Mr. Pay 화면: 가맹점(온누리 + 토스페이·네이버 얼굴결제 겹쳐 보기) · 브랜드 |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-26)
 
@@ -89,7 +89,7 @@ _지금 잠근 영역이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #121 data: 수집 2026-11-26 (카드 이벤트·IBK 코… | 2026-11-26 09:20 | 0건 |
 | ChatGPT Dot | **없음 — 만들어 주세요** | - | - | 0건 |
-| Claude | `data/agent-notes/claude.json` | #122 Mr. Cards 바닥글에 DB 작업 진행률 작은 상자 | 2026-11-26 11:47 | 1건 |
+| Claude | `data/agent-notes/claude.json` | #124 Mr. Pay: 온누리 가맹점 DB 만들기(상가정보로 업종 … | 2026-11-26 14:59 | 1건 |
 | Pickle | `data/agent-notes/pickle.json` | #120 Mr. Hotels 발레: 안내문 표기 별칭 2개 추가 | 2026-11-26 02:59 | 5건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)

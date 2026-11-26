@@ -28,12 +28,13 @@ function useNav({current, onNav}: NavProps) {
   }));
 }
 
-// Mr. 사이트 전환 (Stocks·Hotels·Travel은 assets/js/main.js에서 같은 메뉴를 만듦)
+// Mr. 사이트 전환 (Stocks·Hotels·Travel·Pay는 assets/js/main.js에서 같은 메뉴를 만듦)
 const SITES = [
   {id: 'stocks', name: 'Stocks', desc: '줍줍 차트 · 관심종목 · 배당', href: () => sitePath('../ungjup.html')},
   {id: 'cards', name: 'Cards', desc: '카드상품 · 이벤트 · 내 혜택', href: () => sitePath()},
   {id: 'hotels', name: 'Hotels', desc: '호텔 지도 · 등급표 · 이벤트 · 발레파킹', href: () => sitePath('../hotels/')},
   {id: 'travel', name: 'Travel', desc: '해외여행 혜택 · 여행지 · 여행준비', href: () => sitePath('../travel/')},
+  {id: 'pay', name: 'Pay', desc: '온누리 · 토스페이 · 네이버페이 가맹점', href: () => sitePath('../pay/')},
 ] as const;
 
 function SiteSwitch() {

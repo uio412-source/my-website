@@ -1,0 +1,96 @@
+/* Mr. Pay — 가맹점 · 브랜드. 머리·탭·목록은 portfolio.css의 wl-* 를 같이 씀. 색은 style.css 변수만 사용 */
+
+.py section { padding: 0; }
+.py-combo { margin-bottom: 8px; }
+.py-note { margin: 0 2px 10px; font-size: .74rem; line-height: 1.5; color: var(--color-muted); }
+.py-note a, .py-foot a, .py-go, .py-facts a { color: var(--color-primary); font-weight: 700; text-decoration: none; }
+
+/* ----- 검색 · 필터 (왼쪽에 이름이 붙은 한 상자, Mr. Travel·Mr. Cards와 같은 모양) ----- */
+.py-search {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 0 14px;
+  border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-bg);
+}
+.py-search:focus-within { border-color: var(--color-primary); }
+.py-search svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--color-muted); }
+.py-search input {
+  flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--color-text);
+  font: inherit; font-size: .92rem; padding: 11px 0;
+}
+.py-filters { display: flex; flex-direction: column; margin-bottom: 14px; border: 1px solid var(--color-border); border-radius: 14px; overflow: hidden; }
+.py-filters:empty { display: none; }
+.py-frow { display: flex; align-items: center; min-width: 0; }
+.py-frow + .py-frow { border-top: 1px solid var(--color-border); }
+.py-flabel {
+  flex-shrink: 0; align-self: stretch; display: flex; align-items: center; width: 50px; padding-left: 12px;
+  font-size: .74rem; font-weight: 800; color: var(--color-muted); background: var(--color-bg-alt); border-right: 1px solid var(--color-border);
+}
+.py-chiprow { flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 9px 12px 9px 10px; }
+.py-chiprow::-webkit-scrollbar { display: none; }
+.py-chip {
+  flex-shrink: 0; font: inherit; font-size: .78rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+  padding: 4px 10px; border-radius: 8px; border: 1px solid transparent;
+  background: var(--color-bg-alt); color: var(--color-muted);
+}
+.py-chip span { margin-left: 4px; font-size: .7rem; opacity: .8; font-variant-numeric: tabular-nums; }
+.py-chip[aria-pressed="true"] { color: var(--color-primary); border-color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 8%, var(--color-bg)); }
+.py-sido { position: relative; flex-shrink: 0; display: inline-flex; }
+.py-sido select {
+  appearance: none; -webkit-appearance: none; font: inherit; font-size: .78rem; font-weight: 800; cursor: pointer;
+  padding: 4px 24px 4px 10px; border-radius: 8px; border: 1px solid var(--color-text);
+  background: var(--color-bg); color: var(--color-text);
+}
+.py-sido::after {
+  content: ""; position: absolute; right: 9px; top: 50%; width: 6px; height: 6px; margin-top: -5px;
+  border-right: 2px solid var(--color-text); border-bottom: 2px solid var(--color-text); transform: rotate(45deg); pointer-events: none;
+}
+
+/* ----- 가맹점 목록 ----- */
+.py-row, .py-brow { align-items: start; cursor: default; }
+.py-body { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.py-name { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+.py-name b { font-size: .93rem; font-weight: 700; color: var(--color-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.py-name small { flex-shrink: 0; font-size: .72rem; font-weight: 600; color: var(--color-muted); white-space: nowrap; }
+.py-addr { font-size: .76rem; color: var(--color-muted); line-height: 1.45; overflow-wrap: anywhere; }
+.py-addr em { font-style: normal; font-weight: 700; color: var(--color-text); }
+.py-goods { font-size: .76rem; color: var(--color-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.py-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
+.py-tags span {
+  font-size: .66rem; font-weight: 700; line-height: 1.6; padding: 0 7px; border-radius: 6px;
+  color: var(--color-muted); background: var(--color-bg-alt); white-space: nowrap;
+}
+/* 브랜드 배지·상태: 됨(초록) · 일부(노랑) · 예정(회색) */
+.py-tags .py-b, .py-st { color: var(--color-muted); background: var(--color-bg-alt); }
+.py-tags .py-b.ok, .py-st.ok { color: var(--cat-3); background: color-mix(in srgb, var(--cat-3) 14%, transparent); }
+.py-tags .py-b.part, .py-st.part { color: var(--color-text); background: color-mix(in srgb, var(--cat-4) 24%, transparent); }
+.py-tags .py-b.plan, .py-st.plan { color: var(--color-muted); background: transparent; box-shadow: inset 0 0 0 1px var(--color-border); }
+.py-map {
+  align-self: center; flex-shrink: 0; font-size: .74rem; font-weight: 700; text-decoration: none; white-space: nowrap;
+  padding: 5px 9px; border-radius: 8px; color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+}
+.tile.py-unk { --t: var(--color-muted); }
+.py-more {
+  display: block; width: 100%; margin-top: 6px; padding: 9px; border: 1px dashed var(--color-border); border-radius: 10px;
+  background: none; color: var(--color-primary); font: inherit; font-size: .82rem; font-weight: 700; cursor: pointer;
+}
+.py-more span { font-weight: 600; color: var(--color-muted); }
+.py-foot { margin: 14px 4px 0; font-size: .74rem; line-height: 1.6; color: var(--color-muted); }
+
+/* ----- 브랜드 ----- */
+.py-prog { padding: 4px 0 22px; scroll-margin-top: 72px; }
+.py-prog + .py-prog { border-top: 1px solid var(--color-border); padding-top: 20px; }
+.py-prog h2 { font-size: 1.12rem; margin: 0 0 8px; }
+.py-facts { margin: 0 0 12px; display: flex; flex-direction: column; gap: 4px; }
+.py-facts div { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 8px; font-size: .8rem; line-height: 1.5; }
+.py-facts dt { font-weight: 800; color: var(--color-muted); white-space: nowrap; }
+.py-facts dd { margin: 0; min-width: 0; }
+.py-side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; white-space: nowrap; }
+.py-st { font-size: .7rem; font-weight: 800; line-height: 1.7; padding: 0 8px; border-radius: 6px; }
+.py-side a { font-size: .72rem; font-weight: 700; text-decoration: none; color: var(--color-primary); }
+.py-go { display: inline-block; margin: 10px 2px 0; font-size: .82rem; }
+
+@media (max-width: 720px) {
+  .py-flabel { width: 44px; padding-left: 10px; }
+  .py-name { flex-wrap: wrap; row-gap: 0; }
+  .py-name b { white-space: normal; }
+}
+.py-brow .py-addr { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }

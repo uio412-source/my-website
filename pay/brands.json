@@ -1,0 +1,609 @@
+{
+ "checked": "2026-11-26",
+ "about": "토스페이·네이버페이 페이스사인(얼굴결제)을 받는 브랜드·장소. 매장 단위 공개 목록이 없어(앱 지도에만 있음) 공식 발표·보도에 나온 곳만 적음. status: 됨(지금 됨)·일부(일부 매장·시범)·예정(도입 발표만). kind: brand(상호에 들어가는 이름 → 온누리 가맹점 상호와 대조)·place(장소). match:false는 흔한 이름이라 상호 대조에서 뺌. 매월 초 확인.",
+ "programs": [
+  {
+   "id": "toss",
+   "name": "토스페이",
+   "how": "토스 앱 바코드·QR, 또는 토스 프론트 단말기에서 얼굴 인식(페이스페이)",
+   "find": "토스 앱 > 페이스페이 > 결제 가능 매장",
+   "url": "https://toss.im/tossfeed/article/facepay-faq",
+   "short": "토스페이"
+  },
+  {
+   "id": "naver",
+   "name": "네이버페이 페이스사인",
+   "how": "Npay 앱에 얼굴을 등록하고 Npay 커넥트 단말기에서 얼굴 인식",
+   "find": "네이버 지도 업체 정보의 '커넥트+' 표시",
+   "url": "https://navercorp.com/media/pressReleasesDetail?seq=33567",
+   "short": "네이버 얼굴결제"
+  }
+ ],
+ "brands": [
+  {
+   "name": "CU",
+   "aliases": [
+    "씨유",
+    "씨유(CU)"
+   ],
+   "kind": "brand",
+   "cat": "편의점",
+   "program": "toss",
+   "method": "바코드·QR · 페이스페이(일부)",
+   "status": "됨",
+   "scope": "전국 약 1만7천 점에서 토스페이 바코드 결제. 페이스페이는 일부 매장(2025-03부터)",
+   "date": "2023-07",
+   "src": "https://toss.im/tossfeed/article/tosspay-CU",
+   "srcTitle": "토스피드 · 토스페이 오프라인 결제 시작…CU 전국 1만7000개 지점 오픈"
+  },
+  {
+   "name": "GS25",
+   "aliases": [
+    "지에스25",
+    "GS 25"
+   ],
+   "kind": "brand",
+   "cat": "편의점",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "일부",
+   "scope": "일부 점포(2025-03 주요 점포 약 30곳에서 시작, 2025-12 기준 편의점 3사 일부 점포 시범). 바코드·QR 결제 발표는 못 찾음",
+   "date": "2025-03",
+   "src": "https://toss.im/tossfeed/article/tosspay",
+   "srcTitle": "토스피드 · 토스 '페이스페이' 첫선…편의점에서 얼굴로 결제"
+  },
+  {
+   "name": "세븐일레븐",
+   "aliases": [
+    "7-ELEVEN",
+    "7-Eleven",
+    "세븐일레븐(7-ELEVEN)"
+   ],
+   "kind": "brand",
+   "cat": "편의점",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "일부",
+   "scope": "일부 점포 시범(2025-05 뉴웨이브오리진점부터, 전국 확대는 계획만)",
+   "date": "2025-05",
+   "src": "https://toss.im/tossfeed/article/doublepass",
+   "srcTitle": "토스피드 · 토스, 세븐일레븐과 멤버십 '더블패스' 출시"
+  },
+  {
+   "name": "이마트24",
+   "aliases": [
+    "emart24",
+    "이마트 24"
+   ],
+   "kind": "brand",
+   "cat": "편의점",
+   "program": "toss",
+   "method": "QR · 페이스페이(본점)",
+   "status": "됨",
+   "scope": "토스페이 앱 QR 결제(2026-01 '올데이 텐텐' 멤버십). 페이스페이는 2025-12 본점에만 도입",
+   "date": "2026-01",
+   "src": "https://www.insight.co.kr/news/536438",
+   "srcTitle": "인사이트 · 이마트24서 토스페이로 결제하고 '20% 혜택' 받자"
+  },
+  {
+   "name": "한화생명볼파크",
+   "aliases": [
+    "대전 한화생명볼파크",
+    "한화생명 볼파크"
+   ],
+   "kind": "place",
+   "cat": "야구장",
+   "program": "toss",
+   "method": "페이스페이 · 토스 프론트",
+   "status": "됨",
+   "scope": "구장 안 모든 식음료 매장에 토스 프론트 설치",
+   "date": "2026-06",
+   "src": "https://toss.im/tossfeed/article/51439",
+   "srcTitle": "토스피드 · 토스, 한화이글스와 '브랜드데이'…야구장서 '페이스페이'로 '지갑 없는 직관'"
+  },
+  {
+   "name": "인천SSG랜더스필드",
+   "aliases": [
+    "SSG랜더스필드",
+    "SSG 랜더스필드",
+    "랜더스필드"
+   ],
+   "kind": "place",
+   "cat": "야구장",
+   "program": "toss",
+   "method": "바코드",
+   "status": "일부",
+   "scope": "구장 안 식음료 매장·굿즈샵 일부(2024 시즌부터)",
+   "date": "2024-03",
+   "src": "https://toss.im/tossfeed/article/26323",
+   "srcTitle": "토스피드 · 토스페이 오프라인 결제처에 SSG랜더스, 한화이글스 야구장 추가"
+  },
+  {
+   "name": "현대백화점 신촌점",
+   "aliases": [
+    "현대백화점 신촌",
+    "신촌 유플렉스"
+   ],
+   "kind": "place",
+   "cat": "백화점",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "일부",
+   "scope": "유플렉스 참여 브랜드 매장 9곳(뉴발란스·무신사 스탠다드·ABC마트·노스페이스 화이트라벨 등)",
+   "date": "2026-10",
+   "src": "https://www.etnews.com/20261009000057",
+   "srcTitle": "전자신문 · 토스, 얼굴결제 '페이스페이' 백화점 첫 진출"
+  },
+  {
+   "name": "현대면세점",
+   "aliases": [
+    "HYUNDAI DUTY FREE"
+   ],
+   "kind": "brand",
+   "cat": "면세점",
+   "program": "toss",
+   "method": "페이스페이 · QR(예정)",
+   "status": "일부",
+   "scope": "인천공항 T1점 페이스페이(2025-12-18 시작). 무역센터점 토스 QR 결제는 예정",
+   "date": "2025-12",
+   "src": "https://www.newsis.com/view/NISX20251224_0003454087",
+   "srcTitle": "뉴시스 · 편의점 이어 면세점서도 \"얼굴로 결제한다\""
+  },
+  {
+   "name": "신세계면세점",
+   "aliases": [
+    "SHINSEGAE DUTY FREE"
+   ],
+   "kind": "brand",
+   "cat": "면세점",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "예정",
+   "scope": "인천공항점·명동점 적용 계획(2025-10 MOU, 2025-12 기준 '내년 중 도입 목표')",
+   "date": "2025-10",
+   "src": "https://toss.im/tossfeed/article/41947",
+   "srcTitle": "토스피드 · 토스, 신세계면세점에 '토스페이' 도입"
+  },
+  {
+   "name": "블루핸즈",
+   "aliases": [
+    "현대 블루핸즈",
+    "현대자동차 블루핸즈",
+    "BLUEhands"
+   ],
+   "kind": "brand",
+   "cat": "자동차 정비",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "예정",
+   "scope": "전국 블루핸즈 매장에 순차 확대(매장 수 미공개)",
+   "date": "2026-05",
+   "src": "https://toss.im/tossfeed/article/50335",
+   "srcTitle": "토스피드 · 토스, 현대 전문 블루핸즈에 '페이스페이' 도입"
+  },
+  {
+   "name": "경기광주휴게소",
+   "aliases": [
+    "경기광주휴게소(광주방향)",
+    "경기광주 휴게소"
+   ],
+   "kind": "place",
+   "cat": "휴게소",
+   "program": "toss",
+   "method": "페이스페이 · 토스 프론트",
+   "status": "예정",
+   "scope": "광주 방향. 풀무원FnC 휴게소 중 첫 적용처로 발표(실제 운영 시작은 확인 안 됨)",
+   "date": "2026-05",
+   "src": "https://toss.im/tossfeed/article/50341",
+   "srcTitle": "토스피드 · 토스, 풀무원푸드앤컬처와 MOU…휴게소에 '페이스페이' 도입"
+  },
+  {
+   "name": "풀무원푸드앤컬처 휴게소",
+   "aliases": [
+    "풀무원FnC",
+    "풀무원푸드앤컬처"
+   ],
+   "kind": "brand",
+   "cat": "휴게소",
+   "program": "toss",
+   "method": "페이스페이 · 토스 프론트",
+   "status": "예정",
+   "scope": "풀무원FnC 운영 전국 주요 휴게소 20여 곳 순차(열린매장 토스 프론트, 키오스크 프론트캠)",
+   "date": "2026-05",
+   "src": "https://toss.im/tossfeed/article/50341",
+   "srcTitle": "토스피드 · 토스, 풀무원푸드앤컬처와 MOU…휴게소에 '페이스페이' 도입"
+  },
+  {
+   "name": "또래오래",
+   "aliases": [
+    "또래오래치킨"
+   ],
+   "kind": "brand",
+   "cat": "치킨",
+   "program": "toss",
+   "method": "페이스페이 · 토스 프론트",
+   "status": "예정",
+   "scope": "농협목우촌 MOU, 매장별 토스 프론트 순차 설치(매장 수 미공개)",
+   "date": "2026-07",
+   "src": "https://toss.im/tossfeed/article/51437",
+   "srcTitle": "토스피드 · 토스, 농협목우촌에 페이스페이 도입…외식 프랜차이즈 사용처 확대"
+  },
+  {
+   "name": "웰빙마을",
+   "aliases": [],
+   "kind": "brand",
+   "cat": "정육·축산물",
+   "program": "toss",
+   "method": "페이스페이 · 토스 프론트",
+   "status": "예정",
+   "scope": "농협목우촌 MOU, 매장별 순차 설치(매장 수 미공개)",
+   "date": "2026-07",
+   "src": "https://toss.im/tossfeed/article/51437",
+   "srcTitle": "토스피드 · 토스, 농협목우촌에 페이스페이 도입…외식 프랜차이즈 사용처 확대"
+  },
+  {
+   "name": "미소와돈",
+   "aliases": [],
+   "kind": "brand",
+   "cat": "음식점",
+   "program": "toss",
+   "method": "페이스페이 · 토스 프론트",
+   "status": "예정",
+   "scope": "농협목우촌 MOU, 매장별 순차 설치(매장 수 미공개)",
+   "date": "2026-07",
+   "src": "https://toss.im/tossfeed/article/51437",
+   "srcTitle": "토스피드 · 토스, 농협목우촌에 페이스페이 도입…외식 프랜차이즈 사용처 확대"
+  },
+  {
+   "name": "M카페",
+   "aliases": [
+    "엠카페"
+   ],
+   "kind": "brand",
+   "cat": "카페",
+   "program": "toss",
+   "method": "페이스페이 · 토스 프론트",
+   "status": "예정",
+   "scope": "농협목우촌 신규 카페 브랜드, 매장별 순차 설치(흔한 이름이라 상호 대조 시 오탐 주의)",
+   "date": "2026-07",
+   "src": "https://toss.im/tossfeed/article/51437",
+   "srcTitle": "토스피드 · 토스, 농협목우촌에 페이스페이 도입…외식 프랜차이즈 사용처 확대",
+   "match": false
+  },
+  {
+   "name": "멕시카나",
+   "aliases": [
+    "멕시카나치킨",
+    "MEXICANA"
+   ],
+   "kind": "brand",
+   "cat": "치킨",
+   "program": "toss",
+   "method": "페이스페이 · 토스 프론트",
+   "status": "예정",
+   "scope": "전국 700여 매장, 가맹점 신청 순서대로 토스 프론트 순차 설치",
+   "date": "2026-07",
+   "src": "https://toss.im/tossfeed/article/toss-mexicana-mou",
+   "srcTitle": "토스피드 · 토스, 멕시카나와 MOU…치킨 프랜차이즈 매장에 '페이스페이' 도입"
+  },
+  {
+   "name": "청와옥",
+   "aliases": [],
+   "kind": "brand",
+   "cat": "음식점",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "예정",
+   "scope": "청와옥과 주요 운영 브랜드 매장에 순차 설치(매장 수 미공개)",
+   "date": "2026-09",
+   "src": "https://m.inews24.com/v/2008751",
+   "srcTitle": "아이뉴스24 · 토스, 청와옥 '페이스페이' 도입"
+  },
+  {
+   "name": "홍익문고",
+   "aliases": [],
+   "kind": "place",
+   "cat": "서점",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "예정",
+   "scope": "신촌. 잇다POS 서점 중 첫 적용 서점으로 발표, 이후 전국 서점 순차",
+   "date": "2026-09",
+   "src": "https://supple.kr/news/cmudsqoet00drc2euaqgkdvcj",
+   "srcTitle": "서플 · 잇다, 토스와 서점 부문 얼굴 결제 '페이스페이' 도입 계약"
+  },
+  {
+   "name": "영풍문고",
+   "aliases": [
+    "YPBOOKS",
+    "YP BOOKS"
+   ],
+   "kind": "brand",
+   "cat": "서점",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "됨",
+   "scope": "페이스페이 할인·적립 가맹점으로 안내(2026-10). 2026-05에 '전 지점 도입 추진' 발표, 지금 매장 범위는 미공개",
+   "date": "2026-10",
+   "src": "https://biz.sbs.co.kr/amp/article/20000342045",
+   "srcTitle": "SBS Biz · 토스, '페이스페이' 20% 적립 프로모션…900만 가입자 돌파"
+  },
+  {
+   "name": "피자헛",
+   "aliases": [
+    "PIZZA HUT",
+    "Pizza Hut"
+   ],
+   "kind": "brand",
+   "cat": "피자",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "됨",
+   "scope": "페이스페이 할인·적립 가맹점으로 안내(2026-10), 매장 범위 미공개",
+   "date": "2026-10",
+   "src": "https://biz.sbs.co.kr/amp/article/20000342045",
+   "srcTitle": "SBS Biz · 토스, '페이스페이' 20% 적립 프로모션…900만 가입자 돌파"
+  },
+  {
+   "name": "경희대학교 서울캠퍼스",
+   "aliases": [
+    "경희대",
+    "경희대학교"
+   ],
+   "kind": "place",
+   "cat": "대학",
+   "program": "naver",
+   "method": "페이스사인(키오스크)",
+   "status": "됨",
+   "scope": "학생식당·카페테리아 등 7곳(청운관 학생식당 등)",
+   "date": "2024-03",
+   "src": "https://navercorp.com/media/pressReleasesDetail?seq=31664",
+   "srcTitle": "네이버 보도자료 · '페이스사인 결제' 경희대에 첫 상용화"
+  },
+  {
+   "name": "파리바게뜨",
+   "aliases": [
+    "파리바게트",
+    "PARIS BAGUETTE",
+    "파리바게뜨(PARIS BAGUETTE)"
+   ],
+   "kind": "brand",
+   "cat": "베이커리",
+   "program": "naver",
+   "method": "커넥트·페이스사인 (QR 결제는 됨)",
+   "status": "예정",
+   "scope": "전국 3,400여 매장 Npay QR 결제(2026-04·11 할인 행사). 커넥트·페이스사인은 2026 하반기 직영점부터 전 매장 순차",
+   "date": "2026-04",
+   "src": "https://www.navercorp.com/media/pressReleasesDetail?seq=34948",
+   "srcTitle": "네이버 보도자료 · 'Npay 커넥트', 전국 파리바게뜨에서 만난다"
+  },
+  {
+   "name": "배스킨라빈스",
+   "aliases": [
+    "배스킨라빈스31",
+    "베스킨라빈스",
+    "BASKIN ROBBINS"
+   ],
+   "kind": "brand",
+   "cat": "아이스크림",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "예정",
+   "scope": "2026 하반기 도입 계획(파리바게뜨 다음), 매장 범위 미공개",
+   "date": "2026-06",
+   "src": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034435",
+   "srcTitle": "네이버 보도자료 · Npay 커넥트 가맹점 10만 개 돌파"
+  },
+  {
+   "name": "던킨",
+   "aliases": [
+    "던킨도너츠",
+    "DUNKIN",
+    "DUNKIN'"
+   ],
+   "kind": "brand",
+   "cat": "도넛·카페",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "예정",
+   "scope": "2026 하반기 도입 계획, 매장 범위 미공개",
+   "date": "2026-06",
+   "src": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034435",
+   "srcTitle": "네이버 보도자료 · Npay 커넥트 가맹점 10만 개 돌파"
+  },
+  {
+   "name": "CJ푸드빌",
+   "aliases": [],
+   "kind": "brand",
+   "cat": "외식",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "예정",
+   "scope": "2026 하반기 도입 계획. 운영 브랜드(뚜레쥬르·빕스 등) 중 어느 곳인지는 미공개",
+   "date": "2026-06",
+   "src": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034435",
+   "srcTitle": "네이버 보도자료 · Npay 커넥트 가맹점 10만 개 돌파"
+  },
+  {
+   "name": "더벤티",
+   "aliases": [
+    "THE VENTI",
+    "더 벤티"
+   ],
+   "kind": "brand",
+   "cat": "카페",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "예정",
+   "scope": "2026 하반기 도입 계획, 매장 범위 미공개",
+   "date": "2026-06",
+   "src": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034435",
+   "srcTitle": "네이버 보도자료 · Npay 커넥트 가맹점 10만 개 돌파"
+  },
+  {
+   "name": "이삭토스트",
+   "aliases": [
+    "ISAAC TOAST",
+    "이삭 토스트"
+   ],
+   "kind": "brand",
+   "cat": "토스트",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "예정",
+   "scope": "2026 하반기 도입 계획, 매장 범위 미공개",
+   "date": "2026-06",
+   "src": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034435",
+   "srcTitle": "네이버 보도자료 · Npay 커넥트 가맹점 10만 개 돌파"
+  },
+  {
+   "name": "샤브올데이",
+   "aliases": [
+    "샤브 올데이"
+   ],
+   "kind": "brand",
+   "cat": "음식점",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "예정",
+   "scope": "2026 하반기 도입 계획, 매장 범위 미공개",
+   "date": "2026-06",
+   "src": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034435",
+   "srcTitle": "네이버 보도자료 · Npay 커넥트 가맹점 10만 개 돌파"
+  },
+  {
+   "name": "요거트월드",
+   "aliases": [
+    "요거트 월드"
+   ],
+   "kind": "brand",
+   "cat": "디저트",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "예정",
+   "scope": "2026 하반기 도입 계획, 매장 범위 미공개",
+   "date": "2026-06",
+   "src": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034435",
+   "srcTitle": "네이버 보도자료 · Npay 커넥트 가맹점 10만 개 돌파"
+  },
+  {
+   "name": "보그헤어",
+   "aliases": [
+    "보그 헤어"
+   ],
+   "kind": "brand",
+   "cat": "미용실",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "예정",
+   "scope": "2026 하반기 도입 계획, 매장 범위 미공개",
+   "date": "2026-06",
+   "src": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034435",
+   "srcTitle": "네이버 보도자료 · Npay 커넥트 가맹점 10만 개 돌파"
+  },
+  {
+   "name": "제오헤어",
+   "aliases": [
+    "제오 헤어"
+   ],
+   "kind": "brand",
+   "cat": "미용실",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "예정",
+   "scope": "2026 하반기 도입 계획, 매장 범위 미공개",
+   "date": "2026-06",
+   "src": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034435",
+   "srcTitle": "네이버 보도자료 · Npay 커넥트 가맹점 10만 개 돌파"
+  },
+  {
+   "name": "T스테이션",
+   "aliases": [
+    "티스테이션",
+    "T'station",
+    "T STATION"
+   ],
+   "kind": "brand",
+   "cat": "타이어·정비",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "예정",
+   "scope": "2026 하반기 도입 계획, 매장 범위 미공개",
+   "date": "2026-06",
+   "src": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034435",
+   "srcTitle": "네이버 보도자료 · Npay 커넥트 가맹점 10만 개 돌파"
+  },
+  {
+   "name": "아브뉴프랑",
+   "aliases": [
+    "아브뉴프랑 판교",
+    "아브뉴프랑 광교",
+    "아브뉴프랑 광명",
+    "AVENUE FRANCE"
+   ],
+   "kind": "place",
+   "cat": "상업시설",
+   "program": "naver",
+   "method": "커넥트 · 페이스사인",
+   "status": "일부",
+   "scope": "판교 일부 입점 매장에 커넥트 설치(페이스사인 최대 20% 적립, 11/30까지). 판교·광명·광교 입점 매장 전체 설치는 예정",
+   "date": "2026-11",
+   "src": "https://www.dailian.co.kr/news/view/1719739/%EB%84%A4%EC%9D%B4%EB%B2%84%ED%8E%98%EC%9D%B4-%EC%95%84%EB%B8%8C%EB%89%B4%ED%94%84%EB%9E%91%EC%82%BC%EC%84%B1%EA%B8%88%EA%B1%B0%EB%9E%98%EC%86%8C-Np-2026",
+   "srcTitle": "데일리안 · 네이버페이, 아브뉴프랑·삼성금거래소에 'Npay 커넥트' 도입 추진"
+  },
+  {
+   "name": "삼성금거래소",
+   "aliases": [],
+   "kind": "brand",
+   "cat": "금거래소",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "예정",
+   "scope": "대리점에 커넥트 설치 예정(호반프라퍼티 협약, 일정 미공개)",
+   "date": "2026-11",
+   "src": "https://www.hankyung.com/article/202611258911i",
+   "srcTitle": "한국경제 · 호반프라퍼티, 네이버페이와 협약…아브뉴프랑 3곳에 간편결제 도입"
+  },
+  {
+   "name": "쌤쌤쌤",
+   "aliases": [],
+   "kind": "brand",
+   "cat": "음식점",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "됨",
+   "scope": "운영 매장에 커넥트 도입(서울카페쇼 강연 안내 기준), 매장 수 미공개",
+   "date": "2026-11",
+   "src": "https://navercorp.com/media/pressReleasesDetail?seq=10034858",
+   "srcTitle": "네이버 보도자료 · Npay, '2026 서울카페쇼' 공식 스폰서 참가"
+  },
+  {
+   "name": "테디뵈르하우스",
+   "aliases": [
+    "테디뵈르 하우스"
+   ],
+   "kind": "brand",
+   "cat": "베이커리",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "됨",
+   "scope": "운영 매장에 커넥트 도입(서울카페쇼 강연 안내 기준), 매장 수 미공개",
+   "date": "2026-11",
+   "src": "https://navercorp.com/media/pressReleasesDetail?seq=10034858",
+   "srcTitle": "네이버 보도자료 · Npay, '2026 서울카페쇼' 공식 스폰서 참가"
+  },
+  {
+   "name": "브리나케오슈",
+   "aliases": [],
+   "kind": "brand",
+   "cat": "베이커리",
+   "program": "naver",
+   "method": "커넥트",
+   "status": "됨",
+   "scope": "제주 베이커리카페, Npay 커넥트 가맹점으로 소개",
+   "date": "2026-11",
+   "src": "https://navercorp.com/media/pressReleasesDetail?seq=10034858",
+   "srcTitle": "네이버 보도자료 · Npay, '2026 서울카페쇼' 공식 스폰서 참가"
+  }
+ ]
+}
