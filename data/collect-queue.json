@@ -15,14 +15,14 @@
  },
  "counts": {
   "cards": {
-   "done": 29,
-   "todo": 1418,
+   "done": 35,
+   "todo": 1412,
    "total": 1447
   },
   "brandPrograms": {
-   "done": 28,
+   "done": 31,
    "valetOnly": 4,
-   "todo": 62,
+   "todo": 59,
    "total": 94
   },
   "eventSources": {
@@ -793,7 +793,7 @@
    "brand": "Visa",
    "tier": "Infinite",
    "where": "image.lottecard.co.kr/webapp/file/ 의 브랜드 서비스 안내 PDF",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-mastercard-platinum",
@@ -809,7 +809,7 @@
    "brand": "Mastercard",
    "tier": "Titanium",
    "where": "image.lottecard.co.kr/webapp/file/ 의 브랜드 서비스 안내 PDF",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-mastercard-world",
@@ -953,7 +953,7 @@
    "brand": "Visa",
    "tier": "Infinite",
    "where": "www.bccard.com 카드 상세 > 상품설명서(/down/individual/…pdf)",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-mastercard-platinum",
@@ -7397,7 +7397,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/101010.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-103125",
@@ -7408,7 +7408,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/103125.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-101686",
@@ -7430,7 +7430,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/105424.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-101883",
@@ -7463,7 +7463,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/101874.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-101881",
@@ -7474,7 +7474,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/101881.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-102603",
@@ -7485,7 +7485,7 @@
    "termsUrl": "https://www.bccard.com/down/individual/customer/102603.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-105000",

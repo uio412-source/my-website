@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-26 17:56 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-26 18:02 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-26 17:56 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#128](https://github.com/uio412-source/my-website/pull/128) | Pickle | data: 수집 2026-11-26 (롯데 VISA Infinite·MasterCard Titanium 선… | 2026-11-26 18:02 | 3파일 · data/inbox/brand-services 2 · data/inbox/… | 머지 |
+| [#127](https://github.com/uio412-source/my-website/pull/127) | Claude | Mr. Pay: 맨 위 혜택 배너 (온누리 할인율 · 네이버 페이스사인 · 토스 페이스페이) | 2026-11-26 17:57 | 10파일 · pay/ 3 · assets/ 2 · data/ 2 외 2곳 | 머지 |
 | [#126](https://github.com/uio412-source/my-website/pull/126) | Claude | Mr. Pay: 매장·시장 단위 겹쳐 보기 — 마인웍스처럼 온누리 + 네이버 페이스사인 되는 곳 | 2026-11-26 15:45 | 10파일 · assets/ 2 · data/ 2 · docs/ 2 외 4곳 | 머지 |
 | [#125](https://github.com/uio412-source/my-website/pull/125) | Claude | Mr. Pay 화면: 가맹점(온누리 + 토스페이·네이버 얼굴결제 겹쳐 보기) · 브랜드 | 2026-11-26 15:01 | 15파일 · assets/ 3 · pay/ 3 · 루트 3 외 4곳 | 머지 |
 | [#124](https://github.com/uio412-source/my-website/pull/124) | Claude | Mr. Pay: 온누리 가맹점 DB 만들기(상가정보로 업종 보강) + 월 1회 새 판 확인 | 2026-11-26 14:59 | 4파일 · .github/ 2 · tools/pay 1 · 루트 1 | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-26 17:56 KST · `python tools/data/agent_sync.py` · 기�
 | [#104](https://github.com/uio412-source/my-website/pull/104) | Pickle | Mr. Cards: MG새마을금고 카드 14종·우리카드 THE SHOPPER/PAY 추가, 한글 검색 보강 | 2026-11-25 19:44 | 8파일 · paymorevent/ 6 · docs/ 1 · tools/data 1 | 머지 |
 | [#106](https://github.com/uio412-source/my-website/pull/106) | Claude | Mr. Cards: 카드 브랜드 이름 통일 (JCB·UnionPay·American Express) | 2026-11-25 19:38 | 6파일 · paymorevent/ 4 · docs/ 1 · 루트 1 | 머지 |
 | [#105](https://github.com/uio412-source/my-website/pull/105) | Pickle | docs: 현황판 잠금 해제(#102 머지 반영) | 2026-11-25 19:35 | 3파일 · data/ 2 · docs/ 1 | 머지 |
-| [#103](https://github.com/uio412-source/my-website/pull/103) | Claude | Mr. Cards 카드상품 검색: 혜택 태그 여러 개 선택 | 2026-11-25 19:35 | 4파일 · paymorevent/ 2 · docs/ 1 · 루트 1 | 머지 |
-| [#102](https://github.com/uio412-source/my-website/pull/102) | Pickle | docs: GPT·Claude·Pickle 공용 작업 현황판(data/agent-notes → docs/a… | 2026-11-25 19:33 | 10파일 · data/ 4 · docs/ 3 · 루트 2 외 1곳 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -71,16 +71,14 @@ _지금 잠근 영역이 없습니다._
 
 ### 열린 PR
 
-| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
-|---|---|---|---|---|---|
-| [#127](https://github.com/uio412-source/my-website/pull/127) | Claude | `ai/claude/pay-promo-banner` | 2026-11-26 17:54 | 7파일 · pay/ 3 · assets/ 2 · docs/ 1 외 1곳 | Mr. Pay: 맨 위 혜택 배너 (온누리 할인율 · 네이버 페이스사인 · 토스 페이스페… |
+_열린 PR이 없습니다._
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-26)
 
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 1418 / 1447종 · **브랜드 프로그램** todo 62 · valet-only 4 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **남은 카드** 1412 / 1447종 · **브랜드 프로그램** todo 59 · valet-only 4 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
 - **최근 수집일** — card-terms 2026-11-26 · brand-services 2026-11-26 · card-events 2026-11-26 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
@@ -89,15 +87,21 @@ _지금 잠근 영역이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #121 data: 수집 2026-11-26 (카드 이벤트·IBK 코… | 2026-11-26 09:20 | 0건 |
 | ChatGPT Dot | **없음 — 만들어 주세요** | - | - | 0건 |
-| Claude | `data/agent-notes/claude.json` | #126 Mr. Pay: 매장·시장 단위 겹쳐 보기 — 마인웍스처럼 … | 2026-11-26 15:45 | 1건 |
-| Pickle | `data/agent-notes/pickle.json` | #120 Mr. Hotels 발레: 안내문 표기 별칭 2개 추가 | 2026-11-26 02:59 | 5건 |
+| Claude | `data/agent-notes/claude.json` | #127 Mr. Pay: 맨 위 혜택 배너 (온누리 할인율 · 네이버… | 2026-11-26 17:57 | 1건 |
+| Pickle | `data/agent-notes/pickle.json` | #128 data: 수집 2026-11-26 (롯데 VISA Infi… | 2026-11-26 18:02 | 10건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 5건
+### 다시 볼 것 (open) — 9건
 
+- **2026-11-26 · Pickle · BC 상품설명서 이미지 PDF(로스트아크 101686·페이북머니 101681·102095·후불하이패스 103132·103183)**
+  - 사유: 텍스트 추출 0자(이미지 PDF). 이번 회차는 6종만 옮기고 나머지는 다음 회차로
+  - 재시도: fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮긴다. BC 다운로드는 200이어도 본문이 HTML(302 안내)일 수 있으니 file 명령으로 실제 PDF 확인
+- **2026-11-26 · Pickle · BC 인피니트 브랜드서비스 2026년판**
+  - 사유: 공개된 BC INFINITE SERVICE GUIDE가 2025년판(2025-C1a-08892, 유효 2025-12-31)뿐이라 그대로 담고 validThrough 2025-12-31 표기
+  - 재시도: vip.bccard.com의 2026년판 가이드 확인 후 같은 id(bc-visa-infinite)로 교체
 - **2026-11-26 · Pickle · NH농협카드 Mastercard Platinum 안내문**
   - 사유: card.nonghyup.com/file/ebank/form/pdf/Mastercard_Platinum_250910.pdf 본문이 Mastercard World 안내문과 동일(심의필 2025-C1a-12536·12377)해 Platinum 자료로 쓸 수 없음
   - 재시도: NH농협카드 상품공시실에서 Platinum 전용 안내장을 찾아 교체. 없으면 대기열 key를 내리기
@@ -108,15 +112,24 @@ _지금 잠근 영역이 없습니다._
   - 사유: 이벤트 목록 표가 ajax로만 그려져 정적 HTML에 이벤트가 없음(bccard.com·card.nonghyup.com·lottecard.co.kr)
   - 재시도: 브라우저로 목록을 렌더한 뒤 상세 페이지까지 확인해 수집(66·67·68행 참고)
 - **2026-11-26 · Pickle · samsung-aap1483 삼성카드 taptap O 등 삼성 상품설명서(대기열 맨 앞 10종)**
-  - 사유: 삼성 카드 상세가 Nuxt 런타임으로 그려져 HTML에 상품설명서 PDF 링크가 없음. static11.samsungcard.com/.../YYMM_<코드>.pdf 파일명 추측 4건 모두 404 → 2회 실패로 중단 (2026-11-26 실행에서도 같은 이유로 건너뜀)
+  - 사유: 삼성 카드 상세가 SPA(Nuxt)로 그려져 딥링크가 홈으로 리다이렉트. static11 파일명 추측 2026-11-26 6건(2606_MASTER_P/T/VISA_P/VISA_S/MASTER_WE/AMEX_G_005_all.pdf) 모두 404 — 기존 4건과 합쳐 10건 실패
   - 재시도: ① 카드 상세를 브라우저로 렌더한 뒤 네트워크 응답(_next/data·api)에서 PDF 주소를 찾기 ② 삼성카드 고객센터 > 상품공시실 목록을 열어 카드명으로 검색해 내려받기 ③ 그래도 없으면 이 줄에 날짜만 더하고 다음 카드로
+- **2026-11-26 · Pickle · 롯데 VISA Signature·Mastercard World Elite / NH Visa·Platinum 계열 선택서비스**
+  - 사유: 롯데는 <BRAND>_<TIER>_01_select_service_260514.pdf 규칙 밖(404). NH는 <Brand>_<Tier>_250910.pdf 형태가 302→/error/error.html
+  - 재시도: 카드사 카드 상세 페이지에서 안내 PDF 링크를 직접 확인. 롯데는 VISA_INFINITE_01·MasterCard_TITANIUM_01만 규칙 확인됨
+- **2026-11-26 · Pickle · 하나카드 나머지 등급 선택서비스(Visa/Signature/Infinite·Mastercard·AMEX 계열)**
+  - 사유: m.hanacard.co.kr/leaflet/·/leaflet/MW/·/leaflet/index.do 모두 404(디렉터리 목록 없음). MW001~003만 수집됨
+  - 재시도: 카드 상세 페이지를 브라우저로 렌더해 leaflet PDF 링크를 카드별로 확인(파일명 MW001_20260209.pdf 규칙은 디렉터리·등급 코드를 알아야 함)
 - **2026-11-25 · Claude · 신한 The More(더모아) 등 카드 DB에 없는 인기 카드**
   - 사유: 내 카드 찾기에서 '더모아'를 쳐도 안 나옴 — catalog-snapshot.json에 카드가 없음(검색 문제 아님)
   - 재시도: card-products 수집(상품공시실)으로 판매 중 카드 누락 확인 후 카드 DB에 추가
   - 참고: roadmap 후보
 
-### 다른 경로로 처리 (workaround) — 1건
+### 다른 경로로 처리 (workaround) — 2건
 
+- **2026-11-26 · Pickle · BC·IBK 상품설명서 PDF 경로**
+  - 사유: bccard.com/down/individual/customer/<gdsno>.pdf 는 BC 바로카드만 유효. IBK·MG 등 타 은행 gdsno(103039·104506·225018 등)는 302/HTML
+  - 대신 이렇게: BC 바로카드 gdsno만 이 경로 사용. 다른 은행 카드는 해당 은행 카드 상세 페이지에서 PDF 링크 확인
 - **2026-11-25 · Pickle · BC 상품설명서 6건(101874·101877·101881·101883·104063·104453)**
   - 사유: PDF가 이미지로만 되어 있어 텍스트 추출이 안 됨
   - 대신 이렇게: 공식 상품 페이지 본문으로 대체 확인(내용 일치 확인함). 글자 추출이 꼭 필요하면 OCR이 필요하고, 보통은 상품 페이지 본문으로 충분
