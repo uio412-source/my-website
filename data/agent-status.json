@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T08:05:51+09:00",
+  "generatedAt": "2026-11-27T08:09:59+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -276,13 +276,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T08:05:49+09:00",
+      "updatedAt": "2026-11-27T08:09:57+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 167,
-        "title": "data: 수집 2026-11-27 15차 (신한카드 상품설명서 8종)",
-        "mergedAt": "2026-11-26T23:05:40Z",
-        "mergedAtKST": "2026-11-27 08:05"
+        "number": 169,
+        "title": "data: 수집 2026-11-27 16차 (NH농협카드 상품설명서 9종)",
+        "mergedAt": "2026-11-26T23:09:47Z",
+        "mergedAtKST": "2026-11-27 08:09"
       },
       "runs": [
         {
@@ -691,6 +691,23 @@
             "shinhan-200404010001",
             "shinhan-200404010002"
           ]
+        },
+        {
+          "at": "2026-11-27T08:09:57+09:00",
+          "kind": "card-terms",
+          "pr": 169,
+          "summary": "16차: NH농협카드 상품설명서 9종·혜택 50줄",
+          "queueKeys": [
+            "nh-90010600",
+            "nh-90010476",
+            "nh-90010611",
+            "nh-90010179",
+            "nh-90010137",
+            "nh-90010504",
+            "nh-90010505",
+            "nh-90010626",
+            "nh-90010629"
+          ]
         }
       ],
       "openIssues": 27
@@ -699,6 +716,34 @@
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 169,
+      "title": "data: 수집 2026-11-27 16차 (NH농협카드 상품설명서 9종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle16",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T23:09:47Z",
+      "mergedAtKST": "2026-11-27 08:09",
+      "createdAt": "2026-11-26T23:08:55Z",
+      "createdAtKST": "2026-11-27 08:08",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/169"
+    },
+    {
+      "number": 168,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #167 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle167",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T23:06:38Z",
+      "mergedAtKST": "2026-11-27 08:06",
+      "createdAt": "2026-11-26T23:05:57Z",
+      "createdAtKST": "2026-11-27 08:05",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/168"
+    },
     {
       "number": 167,
       "title": "data: 수집 2026-11-27 15차 (신한카드 상품설명서 8종)",
@@ -1230,34 +1275,6 @@
       "area": "5파일 · data/ 3 · docs/ 1 · hotels/ 1",
       "files": 5,
       "url": "https://github.com/uio412-source/my-website/pull/130"
-    },
-    {
-      "number": 129,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-26 Pickle 4차)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-26",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T09:05:39Z",
-      "mergedAtKST": "2026-11-26 18:05",
-      "createdAt": "2026-11-26T09:03:29Z",
-      "createdAtKST": "2026-11-26 18:03",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/129"
-    },
-    {
-      "number": 128,
-      "title": "data: 수집 2026-11-26 (롯데 VISA Infinite·MasterCard Titanium 선택서비스 · BC 인피니트 발렛 · BC 상품설명서 6종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-26-pickle2",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T09:02:00Z",
-      "mergedAtKST": "2026-11-26 18:02",
-      "createdAt": "2026-11-26T08:59:43Z",
-      "createdAtKST": "2026-11-26 17:59",
-      "area": "3파일 · data/inbox/brand-services 2 · data/inbox/card-terms 1",
-      "files": 3,
-      "url": "https://github.com/uio412-source/my-website/pull/128"
     }
   ],
   "queue": {
@@ -1268,8 +1285,8 @@
     },
     "counts": {
       "cards": {
-        "done": 257,
-        "todo": 1190,
+        "done": 266,
+        "todo": 1181,
         "total": 1447
       },
       "brandPrograms": {
