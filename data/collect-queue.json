@@ -20,9 +20,9 @@
    "total": 1447
   },
   "brandPrograms": {
-   "done": 40,
+   "done": 41,
    "valetOnly": 3,
-   "todo": 51,
+   "todo": 50,
    "total": 94
   },
   "eventSources": {
@@ -681,7 +681,7 @@
    "brand": "Visa",
    "tier": "Platinum",
    "where": "m.hanacard.co.kr/leaflet/ 의 브랜드 공통서비스 PDF(예: MW003_2026….pdf = Mastercard World)",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-visa-signature",

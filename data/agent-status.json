@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T08:09:59+09:00",
+  "generatedAt": "2026-11-27T08:12:22+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -276,13 +276,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T08:09:57+09:00",
+      "updatedAt": "2026-11-27T08:12:20+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 169,
-        "title": "data: 수집 2026-11-27 16차 (NH농협카드 상품설명서 9종)",
-        "mergedAt": "2026-11-26T23:09:47Z",
-        "mergedAtKST": "2026-11-27 08:09"
+        "number": 171,
+        "title": "data: 수집 2026-11-27 17차 (하나카드 브랜드 선택서비스 3개 등급 발렛파킹)",
+        "mergedAt": "2026-11-26T23:12:11Z",
+        "mergedAtKST": "2026-11-27 08:12"
       },
       "runs": [
         {
@@ -708,14 +708,53 @@
             "nh-90010626",
             "nh-90010629"
           ]
+        },
+        {
+          "at": "2026-11-27T08:12:20+09:00",
+          "kind": "card-terms",
+          "pr": 171,
+          "summary": "17차: 하나카드 브랜드 선택서비스 3개 등급(발렛 6개 서비스)",
+          "queueKeys": [
+            "hana-mastercard-world",
+            "hana-visa-signature",
+            "hana-visa-platinum"
+          ]
         }
       ],
-      "openIssues": 27
+      "openIssues": 28
     }
   },
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 171,
+      "title": "data: 수집 2026-11-27 17차 (하나카드 브랜드 선택서비스 3개 등급 발렛파킹)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle17",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T23:12:11Z",
+      "mergedAtKST": "2026-11-27 08:12",
+      "createdAt": "2026-11-26T23:11:19Z",
+      "createdAtKST": "2026-11-27 08:11",
+      "area": "1파일 · data/inbox/brand-services 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/171"
+    },
+    {
+      "number": 170,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #169 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle169",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T23:10:46Z",
+      "mergedAtKST": "2026-11-27 08:10",
+      "createdAt": "2026-11-26T23:10:04Z",
+      "createdAtKST": "2026-11-27 08:10",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/170"
+    },
     {
       "number": 169,
       "title": "data: 수집 2026-11-27 16차 (NH농협카드 상품설명서 9종)",
@@ -1247,34 +1286,6 @@
       "area": "3파일 · data/inbox/card-terms 2 · data/inbox/brand-services 1",
       "files": 3,
       "url": "https://github.com/uio412-source/my-website/pull/133"
-    },
-    {
-      "number": 131,
-      "title": "docs: 현황판 갱신 (2026-11-26 Pickle — #130 드래곤시티 별칭 해결)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/notes-2026-11-26-pickle2",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T09:21:23Z",
-      "mergedAtKST": "2026-11-26 18:21",
-      "createdAt": "2026-11-26T09:20:26Z",
-      "createdAtKST": "2026-11-26 18:20",
-      "area": "3파일 · data/ 2 · docs/ 1",
-      "files": 3,
-      "url": "https://github.com/uio412-source/my-website/pull/131"
-    },
-    {
-      "number": 130,
-      "title": "Mr. Hotels 발레: 서울 드래곤 시티 용산 3개 호텔 정식 표기 별칭 추가",
-      "agent": "Pickle",
-      "branch": "ai/pickle/valet-dragon-city-aliases",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T09:12:55Z",
-      "mergedAtKST": "2026-11-26 18:12",
-      "createdAt": "2026-11-26T09:10:54Z",
-      "createdAtKST": "2026-11-26 18:10",
-      "area": "5파일 · data/ 3 · docs/ 1 · hotels/ 1",
-      "files": 5,
-      "url": "https://github.com/uio412-source/my-website/pull/130"
     }
   ],
   "queue": {
@@ -1290,9 +1301,9 @@
         "total": 1447
       },
       "brandPrograms": {
-        "done": 40,
+        "done": 41,
         "valetOnly": 3,
-        "todo": 51,
+        "todo": 50,
         "total": 94
       },
       "eventSources": {
@@ -1353,6 +1364,15 @@
       "status": "open",
       "reason": "카드별 혜택 표가 이미지이거나 여러 장에 흩어져 있어 이번 회차에 판독·정리하지 못함",
       "retry": "PDF 페이지를 PNG로 렌더해 표를 읽고 카드별로 나눠 수집",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "hana-mastercard-world",
+      "status": "open",
+      "reason": "같은 안내문의 호텔 객실·F&B 할인·골프·쇼핑 혜택은 hotel_benefit 등 별도 정리 필요",
+      "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
       "ref": ""
     },
     {
