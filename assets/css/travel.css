@@ -147,10 +147,23 @@
 }
 .tv-meter .scale { display: flex; justify-content: space-between; margin-top: 3px; font-size: .62rem; color: var(--color-muted); }
 
-.tv-facts { margin: 0 0 14px; }
-.tv-facts div { display: grid; grid-template-columns: 44px 1fr; gap: 8px; font-size: .8rem; }
-.tv-facts dt { font-weight: 800; color: var(--color-muted); }
-.tv-facts dd { margin: 0; }
+.tv-facts { margin: 0 0 4px; display: flex; flex-direction: column; gap: 8px; }
+.tv-facts div { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 8px; font-size: .8rem; line-height: 1.5; }
+.tv-facts dt { font-weight: 800; color: var(--color-muted); white-space: nowrap; }
+.tv-facts dd { margin: 0; min-width: 0; }
+/* 한시 무비자 끝나는 날: 60일 안이면 노랑, 지나면 빨강 */
+.tv-until {
+  display: inline-block; margin-left: 6px; padding: 0 7px; border-radius: 6px; font-size: .72rem; font-weight: 800;
+  color: var(--color-muted); background: var(--color-bg-alt); white-space: nowrap;
+}
+.tv-until.soon { color: var(--color-text); background: color-mix(in srgb, var(--cat-4) 22%, transparent); }
+.tv-until.over { color: var(--color-up); background: color-mix(in srgb, var(--color-up) 12%, transparent); white-space: normal; }
+.tv-apply { display: flex; flex-direction: column; gap: 4px; }
+.tv-apply a { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; text-decoration: none; color: var(--color-text); }
+.tv-apply b { color: var(--color-primary); font-weight: 800; white-space: nowrap; }
+.tv-apply a:hover b { text-decoration: underline; }
+.tv-apply small { font-size: .74rem; color: var(--color-muted); }
+.tv-src { margin: 0 0 14px 56px; font-size: .68rem; color: var(--color-muted); }
 .tv-bn {
   display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 11px 14px; border-radius: 12px;
   text-decoration: none; color: var(--color-text); font-size: .86rem; font-weight: 700;
