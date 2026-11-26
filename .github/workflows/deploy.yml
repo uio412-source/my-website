@@ -49,6 +49,19 @@ jobs:
       - name: Mr. Travel 여행준비 (항공권·호텔·공항 이동·면세점·라운지)
         continue-on-error: true
         run: python tools/travel/prep.py
+      - name: Mr. Pay 원본 캐시 키 (달마다 바뀜 → 매월 첫 배포에 원본 새 판 확인)
+        id: paymonth
+        run: echo "m=$(TZ=Asia/Seoul date +%Y-%m)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/mrpay
+          key: mrpay-${{ steps.paymonth.outputs.m }}
+          restore-keys: mrpay-
+      - name: Mr. Pay 가맹점 DB (온누리 + 상가정보 업종, tools/pay/build.py)
+        # 실패하면 Mr. Pay 화면은 '준비 중'만 보이고 다른 사이트 배포는 계속합니다.
+        continue-on-error: true
+        timeout-minutes: 25
+        run: python tools/pay/build.py
       - name: 호텔 대표 이미지 찾기
         # Marriott 등 이미지 주소가 정해지지 않은 호텔의 og:image를 찾습니다. 실패해도 배포는 계속합니다.
         continue-on-error: true
