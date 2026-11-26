@@ -1,0 +1,574 @@
+{
+  "type": "card-terms",
+  "issuer": "KB국민카드",
+  "collectedAt": "2026-11-27",
+  "collector": "Pickle",
+  "cards": [
+    {
+      "cardId": "kb-09297",
+      "queueKey": "kb-09297",
+      "name": "KB WE:SH All+ 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09297&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/09297__prdctOpmn_20260626.pdf",
+      "docDate": "2025-03-20",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 55000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 55000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 400000,
+      "spendBasis": "전월 1일~말일 KB WE:SH All+ 카드 일시불·할부 승인금액(해외는 매입완료 기준)",
+      "grace": "최초 카드 사용등록 후 다음달 말일까지는 전월 40만원 미만도 제공",
+      "spendExclusions": [
+        "무이자할부 이용금액",
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "상품권 및 선불카드 구입·충전금액",
+        "아파트관리비",
+        "유치원/초·중·고 학교납입금 전체",
+        "정부지원금(보육료·유치원보조비·바우처 이용금액 등)",
+        "대학(원) 등록금",
+        "국세",
+        "지방세",
+        "공과금(전기·수도 등)",
+        "4대 사회보험료(건강·연금·고용·산재)",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "신차 구매 청구(환급) 할인 전표 전체",
+        "RF후불교통요금",
+        "취소금액"
+      ],
+      "benefitExclusions": [
+        "무이자할부 이용금액",
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "상품권 및 선불카드 구입·충전금액",
+        "아파트관리비",
+        "유치원/초·중·고 학교납입금 전체",
+        "정부지원금(보육료·유치원보조비·바우처 이용금액 등)",
+        "대학(원) 등록금",
+        "국세",
+        "지방세",
+        "공과금(전기·수도 등)",
+        "4대 사회보험료(건강·연금·고용·산재)",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "신차 구매 청구(환급) 할인 전표 전체",
+        "RF후불교통요금",
+        "취소금액"
+      ],
+      "benefits": [
+        {
+          "group": "할인",
+          "label": "국내",
+          "place": "국내 가맹점",
+          "value": "1%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": null,
+          "capScope": null,
+          "conditions": [
+            "전월 이용실적 40만원 이상 시 제공"
+          ]
+        },
+        {
+          "group": "할인",
+          "label": "해외",
+          "place": "해외 가맹점",
+          "value": "2%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": null,
+          "capScope": null,
+          "conditions": [
+            "국내외겸용 카드에 한함"
+          ]
+        },
+        {
+          "group": "할인",
+          "label": "쇼핑",
+          "place": "네이버플러스 멤버십, 쿠팡 로켓와우 멤버십 자동납부 요금",
+          "value": "50%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "shared": "쇼핑·OTT·이동통신 통합 한도",
+          "conditions": [
+            "공식 홈페이지를 통한 정기 결제 건에 한함"
+          ]
+        },
+        {
+          "group": "할인",
+          "label": "OTT",
+          "place": "넷플릭스, 유튜브프리미엄, 웨이브, 티빙, 디즈니플러스 자동납부 요금",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "shared": "쇼핑·OTT·이동통신 통합 한도"
+        },
+        {
+          "group": "할인",
+          "label": "통신",
+          "place": "SKT, KT, LG U+, Liiv M 이동통신 요금 자동납부",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "shared": "쇼핑·OTT·이동통신 통합 한도",
+          "conditions": [
+            "인터넷·IPTV 등 결합상품 할인 제외"
+          ]
+        },
+        {
+          "group": "적립",
+          "label": "분기 보너스",
+          "place": "분기 이용실적 400만원 이상",
+          "value": "1만점",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": 40000,
+          "capScope": "연",
+          "limits": "분기 1회",
+          "conditions": [
+            "분기 종료월 익월 말일 이내 포인트리 적립",
+            "연 최대 4만점"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "kb-09780",
+      "queueKey": "kb-09780",
+      "name": "KB YOU Wish 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09780&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/09780__prdctOpmn_20260415.pdf",
+      "docDate": "2026-04-15",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 15000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 15000
+        },
+        {
+          "brand": "Amex",
+          "amount": 15000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard",
+        "Amex"
+      ],
+      "minimumSpend": 400000,
+      "spendBasis": "전월 1일~말일 승인금액 기준",
+      "grace": "최초 카드 사용등록 후 다음달 말일(실적유예기간)까지는 전월 40만원 미만도 제공",
+      "spendExclusions": [],
+      "benefitExclusions": [],
+      "benefits": [
+        {
+          "group": "위시 베이직",
+          "label": "Pay",
+          "place": "국내 가맹점 KB Pay 결제",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "shared": "위시 베이직 통합 한도",
+          "conditions": [
+            "건당 2,500원 한도",
+            "해외 가맹점 결제 제외"
+          ]
+        },
+        {
+          "group": "위시 베이직",
+          "label": "음식",
+          "place": "음식점(한식·일식·중식·양식·뷔페·패밀리레스토랑·일반음식점), 편의점(GS25·CU)",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "shared": "위시 베이직 통합 한도",
+          "conditions": [
+            "건당 2,500원 한도",
+            "편의점은 오프라인 결제만"
+          ]
+        },
+        {
+          "group": "위시 베이직",
+          "label": "통신",
+          "place": "SKT, KT, LG U+, Liiv M 이동통신 자동납부 요금",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "shared": "위시 베이직 통합 한도",
+          "conditions": [
+            "건당 2,500원 한도",
+            "인터넷·IPTV 결합상품 제외"
+          ]
+        },
+        {
+          "group": "위시 베이직",
+          "label": "구독",
+          "place": "넷플릭스, 유튜브프리미엄, 웨이브, 티빙, 디즈니플러스 정기결제",
+          "value": "30%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "shared": "위시 베이직 통합 한도",
+          "conditions": [
+            "건당 2,500원 한도",
+            "유튜브는 프리미엄 멤버십 결제 건만"
+          ]
+        },
+        {
+          "group": "위시 픽(3개 중 택1)",
+          "label": "배달",
+          "place": "배달앱(배달의민족, 요기요, 마켓컬리), 커피·음료전문점",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "conditions": [
+            "배달은 건별 결제 제외"
+          ]
+        },
+        {
+          "group": "위시 픽(3개 중 택1)",
+          "label": "일상",
+          "place": "택시, 커피·음료전문점",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월"
+        },
+        {
+          "group": "위시 픽(3개 중 택1)",
+          "label": "영화관",
+          "place": "CGV, 롯데시네마, 메가박스",
+          "value": "30%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "limits": "연 4회(연 2만원) 이내",
+          "conditions": [
+            "매점·관람권(상품권) 구입, 예매대행사이트 제외"
+          ]
+        },
+        {
+          "group": "위시 픽(3개 중 택1)",
+          "label": "관리",
+          "place": "미용실, 스포츠(종합스포츠센터·골프연습장·테니스장·수영장·요가·볼링장·스포츠용품점·레저용품점), 온라인서점(교보문고·YES24), 올리브영",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 10000,
+          "capScope": "월",
+          "conditions": [
+            "올리브영은 오프라인 매장과 온라인 공식 쇼핑몰(앱)"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "kb-09800",
+      "queueKey": "kb-09800",
+      "name": "KB NEED Pay 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09800&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/09800__prdctOpmn_20260330.pdf",
+      "docDate": "2026-02-25",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 19000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 19000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 400000,
+      "spendBasis": "전월 1일~말일 승인금액 기준(해외는 일시불 매입완료 기준)",
+      "grace": "최초 사용등록 후 다음달 말일(실적유예기간)까지는 전월 40만원 미만도 40~80만원 구간 한도의 50% 제공",
+      "spendExclusions": [
+        "할인 적용 받은 매출",
+        "(부분)무이자할부 이용금액",
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "상품권 및 선불카드 구입·충전금액",
+        "아파트관리비",
+        "유치원/초·중·고 학교납입금 전체",
+        "정부지원금(보육료·유치원보조비·바우처 이용금액 등)",
+        "대학(원) 등록금",
+        "국세",
+        "지방세",
+        "공과금(전기·수도 등)",
+        "도시가스",
+        "4대 사회보험료(건강·연금·고용·산재)",
+        "각종 수수료 및 이자",
+        "연체료",
+        "연회비",
+        "무승인전표(RF후불교통요금·자판기·터널이용료·항공기내 이용 등)",
+        "취소금액"
+      ],
+      "benefitExclusions": [],
+      "benefits": [
+        {
+          "group": "간편결제(4개 Pay 중 택1)",
+          "label": "KB Pay",
+          "place": "국내 온·오프라인 가맹점 KB Pay 결제",
+          "value": "15%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 15000
+            },
+            {
+              "spend": 800000,
+              "cap": 30000
+            }
+          ],
+          "capScope": "월",
+          "conditions": [
+            "건당 3천원 한도"
+          ]
+        },
+        {
+          "group": "간편결제(4개 Pay 중 택1)",
+          "label": "네이버페이",
+          "place": "국내 온·오프라인 가맹점 네이버페이 결제",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 20000
+            }
+          ],
+          "capScope": "월",
+          "conditions": [
+            "건당 2천원 한도"
+          ]
+        },
+        {
+          "group": "간편결제(4개 Pay 중 택1)",
+          "label": "카카오페이",
+          "place": "국내 온·오프라인 가맹점 카카오페이 결제",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 20000
+            }
+          ],
+          "capScope": "월",
+          "conditions": [
+            "건당 2천원 한도"
+          ]
+        },
+        {
+          "group": "간편결제(4개 Pay 중 택1)",
+          "label": "토스페이",
+          "place": "국내 온·오프라인 가맹점 토스페이 결제",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 20000
+            }
+          ],
+          "capScope": "월",
+          "conditions": [
+            "건당 2천원 한도"
+          ]
+        },
+        {
+          "group": "국내 할인",
+          "label": "패션몰",
+          "place": "무신사, 지그재그, W컨셉, 29CM, 에이블리에서 KB Pay 결제",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 800000,
+              "cap": 5000
+            }
+          ],
+          "capScope": "월",
+          "conditions": [
+            "공식 홈페이지·모바일앱 결제만(오프라인 매장 제외)"
+          ]
+        },
+        {
+          "group": "디지털",
+          "label": "구독",
+          "place": "넷플릭스·유튜브·디즈니플러스·티빙·웨이브·스포티파이, 네이버플러스멤버십·컬리멤버스·배민클럽",
+          "value": "30%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": 5000,
+          "capScope": "월",
+          "conditions": [
+            "건당 3천원 한도",
+            "공식 홈페이지 정기 이용권 결제만(인앱·단건·포인트 충전 제외)"
+          ]
+        },
+        {
+          "group": "해외",
+          "label": "해외",
+          "place": "해외 온·오프라인 가맹점",
+          "value": "2%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "cap": null,
+          "capScope": null,
+          "conditions": [
+            "국내외겸용 카드에 한함",
+            "해외이용수수료 별도"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "kb-09828",
+      "queueKey": "kb-09828",
+      "name": "KB Less Go 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09828&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/09828__prdctOpmn_20260731.pdf",
+      "docDate": "2026-07-31",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 25000
+        },
+        {
+          "brand": "Visa",
+          "amount": 25000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Visa"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": "전월 1일~말일 승인금액 기준",
+      "grace": "최초 사용등록 후 다음달 말일(실적유예기간)까지는 전월 40만원 미만도 월 10,000원 한도 제공",
+      "spendExclusions": [],
+      "benefitExclusions": [],
+      "benefits": [
+        {
+          "group": "상품서비스",
+          "label": "국내",
+          "place": "국내 가맹점",
+          "value": "1%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "conditions": [
+            "전월 이용실적·할인한도 없음",
+            "당사 가맹점 업종 분류 기준"
+          ]
+        },
+        {
+          "group": "상품서비스",
+          "label": "해외",
+          "place": "해외 가맹점",
+          "value": "1.4%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "conditions": [
+            "국내외겸용 카드에 한함",
+            "해외이용수수료 별도"
+          ]
+        },
+        {
+          "group": "상품서비스",
+          "label": "항공권",
+          "place": "와이페이모어를 통해 구매한 항공권",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 20000
+            },
+            {
+              "spend": 800000,
+              "cap": 30000
+            }
+          ],
+          "capScope": "월",
+          "conditions": [
+            "국내 1% + 항공권 추가 9% 청구할인 형태",
+            "외화 결제 건은 항공권 할인 미제공"
+          ]
+        }
+      ]
+    }
+  ]
+}
