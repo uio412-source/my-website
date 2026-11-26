@@ -1,9 +1,9 @@
 {
- "built": "2026-11-26",
+ "built": "2026-11-27",
  "how": "status가 todo인 것부터 위에서 아래로. 시작 전에 이 파일·data/inbox/·열린 PR(gh pr list --state open)을 함께 보고 겹치지 않는 항목만 고릅니다(docs/data-update.md 9장 조율 규칙). 수집 파일에 queueKey로 key를 적으면 다음에 done이 됩니다(이 파일은 python tools/data/queue.py로 다시 만듦).",
  "lastCollected": {
-  "card-terms": "2026-11-26",
-  "brand-services": "2026-11-26",
+  "card-terms": "2026-11-27",
+  "brand-services": "2026-11-27",
   "card-events": "2026-11-26",
   "hotel-events": null,
   "travel-events": null,
@@ -15,14 +15,14 @@
  },
  "counts": {
   "cards": {
-   "done": 44,
-   "todo": 1403,
+   "done": 48,
+   "todo": 1399,
    "total": 1447
   },
   "brandPrograms": {
-   "done": 32,
+   "done": 38,
    "valetOnly": 4,
-   "todo": 58,
+   "todo": 52,
    "total": 94
   },
   "eventSources": {
@@ -689,7 +689,7 @@
    "brand": "Visa",
    "tier": "Signature",
    "where": "m.hanacard.co.kr/leaflet/ 의 브랜드 공통서비스 PDF(예: MW003_2026….pdf = Mastercard World)",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-visa-infinite",
@@ -697,7 +697,7 @@
    "brand": "Visa",
    "tier": "Infinite",
    "where": "m.hanacard.co.kr/leaflet/ 의 브랜드 공통서비스 PDF(예: MW003_2026….pdf = Mastercard World)",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-mastercard-platinum",
@@ -705,7 +705,7 @@
    "brand": "Mastercard",
    "tier": "Platinum",
    "where": "m.hanacard.co.kr/leaflet/ 의 브랜드 공통서비스 PDF(예: MW003_2026….pdf = Mastercard World)",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-mastercard-titanium",
@@ -713,7 +713,7 @@
    "brand": "Mastercard",
    "tier": "Titanium",
    "where": "m.hanacard.co.kr/leaflet/ 의 브랜드 공통서비스 PDF(예: MW003_2026….pdf = Mastercard World)",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-mastercard-world",
@@ -745,7 +745,7 @@
    "brand": "American Express",
    "tier": "Platinum",
    "where": "m.hanacard.co.kr/leaflet/ 의 브랜드 공통서비스 PDF(예: MW003_2026….pdf = Mastercard World)",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-american-express-platinum-elite",
@@ -769,7 +769,7 @@
    "brand": "UnionPay",
    "tier": "Diamond",
    "where": "m.hanacard.co.kr/leaflet/ 의 브랜드 공통서비스 PDF(예: MW003_2026….pdf = Mastercard World)",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-visa-platinum",
@@ -8090,7 +8090,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09828__prdctOpmn_20260731.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04241",
@@ -8156,7 +8156,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09800__prdctOpmn_20260330.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04366",
@@ -8299,7 +8299,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09297__prdctOpmn_20260626.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09570",
@@ -8365,7 +8365,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09780__prdctOpmn_20260415.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09924",

@@ -1,9 +1,28 @@
 {
   "agent": "Pickle",
   "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-  "updatedAt": "2026-11-26T21:30:00+09:00",
+  "updatedAt": "2026-11-27T02:55:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-27T02:52:00+09:00",
+      "kind": "brand-services + card-terms",
+      "pr": 136,
+      "summary": "하나카드 국제브랜드 선택서비스 6프로그램(Mastercard Platinum·Titanium, Visa Signature·Infinite, Amex Platinum, UnionPay Diamond — 서비스 15, 대상 호텔 149곳) · KB 상품설명서 4종(WE:SH All+·YOU Wish·NEED Pay·Less Go, 혜택 24줄). 예산 28/45·188/250·2/20",
+      "queueKeys": [
+        "hana-mastercard-platinum",
+        "hana-mastercard-titanium",
+        "hana-visa-signature",
+        "hana-visa-infinite",
+        "hana-american-express-platinum",
+        "hana-unionpay-diamond",
+        "kb-09297",
+        "kb-09780",
+        "kb-09800",
+        "kb-09828"
+      ],
+      "status": "merged"
+    },
     {
       "at": "2026-11-26T21:25:00+09:00",
       "kind": "brand-services + card-terms",
@@ -111,6 +130,20 @@
     }
   ],
   "skipped": [
+    {
+      "at": "2026-11-27",
+      "target": "KB 상품설명서 3종(kb-09250 The Easy·kb-09561 WE:SH Travel·kb-09570 WE:SH Daily)",
+      "status": "open",
+      "reason": "카드사가 지금 올려 둔 최신 판본이 2020-10-08·2024-09-23·2024-07-01 심의필이라 '올해·작년 문서' 규칙 밖",
+      "retry": "2025~2026년판이 올라오면 대기열 termsUrl(img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf)에서 교체"
+    },
+    {
+      "at": "2026-11-27",
+      "target": "하나카드 선택서비스 5개 등급(hana-visa-platinum·mastercard-world-elite·amex-gold·amex-platinum-elite·amex-the-platinum)",
+      "status": "open",
+      "reason": "카드 상세 7장(hana-9894·13913·17503·17766·17768·17811·10764)을 확인했으나 해당 등급 leaflet PDF가 없음(VP/ME/AG 계열 404). 2021년판 02768_20210208.pdf만 노출",
+      "retry": "m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=… 페이지에 leaflet/[코드]/…pdf 링크가 있는 카드를 찾아 수집(현재 확인된 코드: MW·MP·MT·VS·VI·AP·UD)"
+    },
     {
       "at": "2026-11-26",
       "target": "BC 후불하이패스 2종(bc-103132 SIM·bc-103183 카드형) 상품설명서",

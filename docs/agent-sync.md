@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-26 21:34 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-27 02:50 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-26 21:34 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#136](https://github.com/uio412-source/my-website/pull/136) | Pickle | data: 수집 2026-11-27 (하나카드 브랜드 선택서비스 6 · KB 상품설명서 4종) | 2026-11-27 02:49 | 2파일 · data/inbox/brand-services 1 · data/inbox/… | 머지 |
+| [#135](https://github.com/uio412-source/my-website/pull/135) | Claude | data: 수집 2026-11-26 (Claude · 상품설명서 3종) | 2026-11-26 21:35 | 7파일 · data/ 3 · data/inbox/card-terms 3 · docs/… | 머지 |
 | [#132](https://github.com/uio412-source/my-website/pull/132) | ChatGPT | data: 수집 2026-11-26 (BC 로스트아크 상품설명서) | 2026-11-26 21:33 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#134](https://github.com/uio412-source/my-website/pull/134) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-26 Pickle 5차, #133 반영) | 2026-11-26 21:29 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#133](https://github.com/uio412-source/my-website/pull/133) | Pickle | data: 수집 2026-11-26 5차 (KB Visa Infinite 선택서비스 · BC·KB 상품설명… | 2026-11-26 21:25 | 3파일 · data/inbox/card-terms 2 · data/inbox/bran… | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-26 21:34 KST · `python tools/data/agent_sync.py` · 기�
 | [#114](https://github.com/uio412-source/my-website/pull/114) | Claude | Mr. Travel 텍스트 정리: 원문 요약 문장 빼고 목록은 더 보기로 | 2026-11-25 22:32 | 7파일 · assets/ 2 · data/ 2 · docs/ 2 외 1곳 | 머지 |
 | [#113](https://github.com/uio412-source/my-website/pull/113) | Claude | 광고성 이벤트 판단 보강 — Mr. Cards 전체와 Mr. Travel에서 빼기 | 2026-11-25 22:27 | 14파일 · paymorevent/ 5 · docs/ 3 · tools/travel … | 머지 |
 | [#112](https://github.com/uio412-source/my-website/pull/112) | Claude | docs: Claude 잠금 — 광고성 이벤트·전체 사이트 텍스트 정리 작업 중 | 2026-11-25 22:22 | 3파일 · data/ 2 · docs/ 1 | 머지 |
-| [#111](https://github.com/uio412-source/my-website/pull/111) | Claude | 도구: 현황판 agent_sync.py — gh pr list가 막히면 REST로 PR 이력 읽기 | 2026-11-25 22:12 | 5파일 · data/ 2 · docs/ 2 · tools/data 1 | 머지 |
-| [#110](https://github.com/uio412-source/my-website/pull/110) | Claude | Mr. Cards: 광고성 이벤트를 '기타 광고'로 분류하고 내 카드 이벤트에서 제외 | 2026-11-25 22:09 | 9파일 · docs/ 3 · paymorevent/ 3 · data/ 2 외 1곳 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -71,33 +71,36 @@ _지금 잠근 영역이 없습니다._
 
 ### 열린 PR
 
-| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
-|---|---|---|---|---|---|
-| [#135](https://github.com/uio412-source/my-website/pull/135) | Claude | `ai/claude/data-2026-11-26` | 2026-11-26 21:32 | 7파일 · data/ 3 · data/inbox/card-terms 3… | data: 수집 2026-11-26 (Claude · 상품설명서 3종) |
+_열린 PR이 없습니다._
 
-### 수집 대기열 (`data/collect-queue.json`, built 2026-11-26)
+### 수집 대기열 (`data/collect-queue.json`, built 2026-11-27)
 
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 1403 / 1447종 · **브랜드 프로그램** todo 58 · valet-only 4 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
-- **최근 수집일** — card-terms 2026-11-26 · brand-services 2026-11-26 · card-events 2026-11-26 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
+- **남은 카드** 1399 / 1447종 · **브랜드 프로그램** todo 52 · valet-only 4 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **최근 수집일** — card-terms 2026-11-27 · brand-services 2026-11-27 · card-events 2026-11-26 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
 
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #132 data: 수집 2026-11-26 (BC 로스트아크 상품설… | 2026-11-26 21:33 | 0건 |
-| ChatGPT Dot | **없음 — 만들어 주세요** | - | - | 0건 |
-| Claude | `data/agent-notes/claude.json` | #127 Mr. Pay: 맨 위 혜택 배너 (온누리 할인율 · 네이버… | 2026-11-26 17:57 | 6건 |
-| Pickle | `data/agent-notes/pickle.json` | #134 docs: 수집 대기열·공용 현황판 갱신 (2026-11-2… | 2026-11-26 21:29 | 13건 |
+| Claude | `data/agent-notes/claude.json` | #135 data: 수집 2026-11-26 (Claude · 상품설… | 2026-11-26 21:35 | 6건 |
+| Pickle | `data/agent-notes/pickle.json` | #136 data: 수집 2026-11-27 (하나카드 브랜드 선택서… | 2026-11-27 02:49 | 15건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 15건
+### 다시 볼 것 (open) — 17건
 
+- **2026-11-27 · Pickle · KB 상품설명서 3종(kb-09250 The Easy·kb-09561 WE:SH Travel·kb-09570 WE:SH Daily)**
+  - 사유: 카드사가 지금 올려 둔 최신 판본이 2020-10-08·2024-09-23·2024-07-01 심의필이라 '올해·작년 문서' 규칙 밖
+  - 재시도: 2025~2026년판이 올라오면 대기열 termsUrl(img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf)에서 교체
+- **2026-11-27 · Pickle · 하나카드 선택서비스 5개 등급(hana-visa-platinum·mastercard-world-elite·amex-gold·amex-platinum-elite·amex-the-platinum)**
+  - 사유: 카드 상세 7장(hana-9894·13913·17503·17766·17768·17811·10764)을 확인했으나 해당 등급 leaflet PDF가 없음(VP/ME/AG 계열 404). 2021년판 02768_20210208.pdf만 노출
+  - 재시도: m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=… 페이지에 leaflet/[코드]/…pdf 링크가 있는 카드를 찾아 수집(현재 확인된 코드: MW·MP·MT·VS·VI·AP·UD)
 - **2026-11-26 · Pickle · BC 인피니트 브랜드서비스 2026년판**
   - 사유: 공개된 BC INFINITE SERVICE GUIDE가 2025년판(2025-C1a-08892, 유효 2025-12-31)뿐이라 그대로 담고 validThrough 2025-12-31 표기
   - 재시도: vip.bccard.com의 2026년판 가이드 확인 후 같은 id(bc-visa-infinite)로 교체

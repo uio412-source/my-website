@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T21:34:22+09:00",
+  "generatedAt": "2026-11-27T02:50:13+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -37,25 +37,16 @@
       ],
       "openIssues": 0
     },
-    "ChatGPT Dot": {
-      "noteFile": null,
-      "role": "",
-      "updatedAt": null,
-      "lock": null,
-      "lastMergedPR": null,
-      "runs": [],
-      "openIssues": 0
-    },
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
       "updatedAt": "2026-11-26T21:40:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 127,
-        "title": "Mr. Pay: 맨 위 혜택 배너 (온누리 할인율 · 네이버 페이스사인 · 토스 페이스페이)",
-        "mergedAt": "2026-11-26T08:57:14Z",
-        "mergedAtKST": "2026-11-26 17:57"
+        "number": 135,
+        "title": "data: 수집 2026-11-26 (Claude · 상품설명서 3종)",
+        "mergedAt": "2026-11-26T12:35:52Z",
+        "mergedAtKST": "2026-11-26 21:35"
       },
       "runs": [
         {
@@ -201,15 +192,34 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-26T21:30:00+09:00",
+      "updatedAt": "2026-11-27T02:55:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 134,
-        "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-26 Pickle 5차, #133 반영)",
-        "mergedAt": "2026-11-26T12:29:00Z",
-        "mergedAtKST": "2026-11-26 21:29"
+        "number": 136,
+        "title": "data: 수집 2026-11-27 (하나카드 브랜드 선택서비스 6 · KB 상품설명서 4종)",
+        "mergedAt": "2026-11-26T17:49:39Z",
+        "mergedAtKST": "2026-11-27 02:49"
       },
       "runs": [
+        {
+          "at": "2026-11-27T02:52:00+09:00",
+          "kind": "brand-services + card-terms",
+          "pr": 136,
+          "summary": "하나카드 국제브랜드 선택서비스 6프로그램(Mastercard Platinum·Titanium, Visa Signature·Infinite, Amex Platinum, UnionPay Diamond — 서비스 15, 대상 호텔 149곳) · KB 상품설명서 4종(WE:SH All+·YOU Wish·NEED Pay·Less Go, 혜택 24줄). 예산 28/45·188/250·2/20",
+          "queueKeys": [
+            "hana-mastercard-platinum",
+            "hana-mastercard-titanium",
+            "hana-visa-signature",
+            "hana-visa-infinite",
+            "hana-american-express-platinum",
+            "hana-unionpay-diamond",
+            "kb-09297",
+            "kb-09780",
+            "kb-09800",
+            "kb-09828"
+          ],
+          "status": "merged"
+        },
         {
           "at": "2026-11-26T21:25:00+09:00",
           "kind": "brand-services + card-terms",
@@ -316,23 +326,40 @@
           "queueKeys": []
         }
       ],
-      "openIssues": 13
+      "openIssues": 15
     }
   },
   "locks": [],
-  "openPRs": [
+  "openPRs": [],
+  "recentPRs": [
+    {
+      "number": 136,
+      "title": "data: 수집 2026-11-27 (하나카드 브랜드 선택서비스 6 · KB 상품설명서 4종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T17:49:39Z",
+      "mergedAtKST": "2026-11-27 02:49",
+      "createdAt": "2026-11-26T17:39:23Z",
+      "createdAtKST": "2026-11-27 02:39",
+      "area": "2파일 · data/inbox/brand-services 1 · data/inbox/card-terms 1",
+      "files": 2,
+      "url": "https://github.com/uio412-source/my-website/pull/136"
+    },
     {
       "number": 135,
       "title": "data: 수집 2026-11-26 (Claude · 상품설명서 3종)",
       "agent": "Claude",
       "branch": "ai/claude/data-2026-11-26",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T12:35:52Z",
+      "mergedAtKST": "2026-11-26 21:35",
+      "createdAt": "2026-11-26T12:32:45Z",
       "createdAtKST": "2026-11-26 21:32",
       "area": "7파일 · data/ 3 · data/inbox/card-terms 3 · docs/ 1",
-      "url": "https://github.com/uio412-source/my-website/pull/135",
-      "draft": false
-    }
-  ],
-  "recentPRs": [
+      "files": 7,
+      "url": "https://github.com/uio412-source/my-website/pull/135"
+    },
     {
       "number": 132,
       "title": "data: 수집 2026-11-26 (BC 로스트아크 상품설명서)",
@@ -864,38 +891,24 @@
       "area": "6파일 · paymorevent/ 2 · assets/ 1 · docs/ 1 외 2곳",
       "files": 6,
       "url": "https://github.com/uio412-source/my-website/pull/98"
-    },
-    {
-      "number": 96,
-      "title": "data: 수집 2026-11-25 (BC 바로 모두의카드 1종)",
-      "agent": "ChatGPT Dot",
-      "branch": "ai/dot/data-2026-11-25",
-      "state": "CLOSED",
-      "mergedAt": null,
-      "mergedAtKST": "-",
-      "createdAt": "2026-11-25T04:54:31Z",
-      "createdAtKST": "2026-11-25 13:54",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/96"
     }
   ],
   "queue": {
-    "built": "2026-11-26",
+    "built": "2026-11-27",
     "nextStart": {
       "cards": "samsung-aap1483",
       "brandPrograms": "shinhan-mastercard-titanium"
     },
     "counts": {
       "cards": {
-        "done": 44,
-        "todo": 1403,
+        "done": 48,
+        "todo": 1399,
         "total": 1447
       },
       "brandPrograms": {
-        "done": 32,
+        "done": 38,
         "valetOnly": 4,
-        "todo": 58,
+        "todo": 52,
         "total": 94
       },
       "eventSources": {
@@ -904,8 +917,8 @@
       }
     },
     "lastCollected": {
-      "card-terms": "2026-11-26",
-      "brand-services": "2026-11-26",
+      "card-terms": "2026-11-27",
+      "brand-services": "2026-11-27",
       "card-events": "2026-11-26",
       "hotel-events": null,
       "travel-events": null,
@@ -913,6 +926,24 @@
     }
   },
   "skipped": [
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "KB 상품설명서 3종(kb-09250 The Easy·kb-09561 WE:SH Travel·kb-09570 WE:SH Daily)",
+      "status": "open",
+      "reason": "카드사가 지금 올려 둔 최신 판본이 2020-10-08·2024-09-23·2024-07-01 심의필이라 '올해·작년 문서' 규칙 밖",
+      "retry": "2025~2026년판이 올라오면 대기열 termsUrl(img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf)에서 교체",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "하나카드 선택서비스 5개 등급(hana-visa-platinum·mastercard-world-elite·amex-gold·amex-platinum-elite·amex-the-platinum)",
+      "status": "open",
+      "reason": "카드 상세 7장(hana-9894·13913·17503·17766·17768·17811·10764)을 확인했으나 해당 등급 leaflet PDF가 없음(VP/ME/AG 계열 404). 2021년판 02768_20210208.pdf만 노출",
+      "retry": "m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=… 페이지에 leaflet/[코드]/…pdf 링크가 있는 카드를 찾아 수집(현재 확인된 코드: MW·MP·MT·VS·VI·AP·UD)",
+      "ref": ""
+    },
     {
       "date": "2026-11-26",
       "agent": "Pickle",
