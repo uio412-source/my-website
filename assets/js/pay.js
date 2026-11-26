@@ -24,16 +24,41 @@
   const loadBrands = () => MS.getJSON('brands.json').catch(() => ({ programs: [], brands: [] }));
   const loadMeta = () => MS.getJSON('data/onnuri/meta.json').catch(() => null);
 
-  // 브랜드 이름(영문은 단어 경계, 한글은 포함)으로 상호를 맞춤 → [{brand}]
-  const brandMatcher = (brands) => {
-    const keys = brands.filter((b) => b.kind === 'brand' && b.match !== false).flatMap((b) => [b.name, ...(b.aliases || [])].filter(Boolean).map((n) => {
-      const ascii = /^[\x20-\x7e]+$/.test(n);
-      return { b, ascii, key: norm(n), rx: ascii ? new RegExp('(^|[^a-z0-9])' + n.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[^a-z0-9])') : null };
-    }));
-    return (name) => {
-      const lo = String(name).toLowerCase(), nn = norm(name), hits = [];
-      for (const k of keys) if ((k.ascii ? k.rx.test(lo) : k.key && nn.includes(k.key)) && !hits.includes(k.b)) hits.push(k.b);
-      return hits;
+  // brands.json 항목으로 온누리 가맹점을 맞춤 → [{b: 항목, kind: 'store'|'market'|'brand'}]
+  //  store(매장 하나): 같은 시도 + 상호가 같거나(짧은 쪽 3자 이상이면 서로 포함) + sgg가 주소·시장 위치에 있거나 시장 이름이 맞음
+  //  market(시장·상점가): 같은 시도 + 소속 시장 이름에 들어 있음 + 디지털 가맹(얼굴결제는 온누리 카드형만 됨)
+  //  brand(프랜차이즈): 상호에 브랜드 이름(영문은 단어 경계)  — tools/pay/check_stores.py와 같은 규칙
+  const KIND_RANK = { store: 0, market: 1, brand: 2 };
+  const makeMatcher = (entries) => {
+    const prep = entries.filter((b) => b.match !== false && KIND_RANK[b.kind || 'brand'] != null).map((b) => {
+      const names = [b.name, ...(b.aliases || [])].filter(Boolean);
+      return {
+        b, kind: b.kind || 'brand', sido: b.sido || '', sgg: norm(b.sgg), market: norm(b.market),
+        keys: names.map((n) => {
+          const ascii = /^[\x20-\x7e]+$/.test(n);
+          return { key: norm(n), rx: ascii ? new RegExp('(^|[^a-z0-9])' + n.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[^a-z0-9])') : null };
+        }).filter((k) => k.key),
+      };
+    });
+    const sameName = (nn, key) => nn === key || (Math.min(nn.length, key.length) >= 3 && (nn.includes(key) || key.includes(nn)));
+    return (s, sido) => {
+      const hits = [];
+      const nn = norm(s.name), lo = String(s.name).toLowerCase(), mk = norm(s.market);
+      const where = norm([s.sgg, s.addr, s.short].join(' '));
+      for (const e of prep) {
+        if (e.kind !== 'brand' && e.sido && sido && e.sido !== sido.name && e.sido !== sido.id) continue;
+        let ok = false;
+        if (e.kind === 'brand') ok = e.keys.some((k) => (k.rx ? k.rx.test(lo) : nn.includes(k.key)));
+        else if (e.kind === 'store') {
+          ok = e.keys.some((k) => sameName(nn, k.key)) &&
+            (!e.sgg && !e.market ? true : (e.sgg && where.includes(e.sgg)) || (e.market && mk.includes(e.market)));
+        } else if (e.kind === 'market') {
+          const mkeys = e.market ? [e.market, ...e.keys.map((k) => k.key)] : e.keys.map((k) => k.key);
+          ok = !!s.digital && !!mk && mkeys.some((k) => k.length >= 2 && mk.includes(k));
+        }
+        if (ok && !hits.some((h) => h.b === e.b)) hits.push({ b: e.b, kind: e.kind });
+      }
+      return hits.sort((x, y) => KIND_RANK[x.kind] - KIND_RANK[y.kind]);
     };
   };
 
@@ -50,7 +75,7 @@
   async function storesPage() {
     const [meta, bdata] = await Promise.all([loadMeta(), loadBrands()]);
     const programs = bdata.programs || [];
-    const brandsOf = brandMatcher(bdata.brands || []);
+    const hitsOf = makeMatcher(bdata.brands || []);
     if (!meta || !meta.sidos || !meta.sidos.length) {
       $('sub').textContent = '온누리 가맹점';
       $('list').innerHTML = '<div class="wl-rows"><p class="wl-empty" role="status">가맹점 DB 준비 중이에요. 다음 배포 때 채워져요.</p></div>';
@@ -74,6 +99,7 @@
     const loadSido = async (id) => {
       if (!cache[id]) {
         const d = await MS.getJSON(`data/onnuri/${id}.json`);
+        const sidoInfo = meta.sidos.find((x) => x.id === id);
         // 시장 표(이름·시군구·동) + 가맹점 줄. 원본 소재지가 시도뿐이라 주소는 상가정보와 맞춘 곳만 있고,
         // 나머지는 시장 위치(그 시장 가맹점들이 모인 시군구·동)를 보여 줌
         const mk = d.markets.map((r) => Object.fromEntries(d.mcols.map((c, i) => [c, r[i]])));
@@ -83,7 +109,7 @@
           s.market = m.name || '';
           s.sgg = m.sgg || '위치 모름';
           s.short = s.addr || (m.sgg ? `${m.sgg}${m.dong ? ' ' + m.dong : ''} 일대` : '');
-          s.brands = brandsOf(s.name);
+          s.brands = hitsOf(s, sidoInfo);
           s.hay = norm([s.name, s.market, s.goods, s.addr, m.sgg, m.dong, s.biz, s.cat].join(' '));
           return s;
         });
@@ -96,7 +122,7 @@
       if (skip !== 'cat' && state.cat !== 'all' && (s.cat || '미확인') !== state.cat) return false;
       if (skip !== 'kind' && state.kind === 'paper' && !s.paper) return false;
       if (skip !== 'kind' && state.kind === 'digital' && !s.digital) return false;
-      if (skip !== 'combo' && state.combo !== 'all' && !s.brands.some((b) => b.program === state.combo)) return false;
+      if (skip !== 'combo' && state.combo !== 'all' && !s.brands.some((h) => h.b.program === state.combo)) return false;
       if (state.q) for (const t of state.q) if (!s.hay.includes(t)) return false;
       return true;
     };
@@ -118,12 +144,12 @@
       // 결제 조합 탭
       const comboN = count('combo', (s) => 'all');
       const progN = {};
-      for (const s of rows) if (pass(s, 'combo')) for (const p of new Set(s.brands.map((b) => b.program))) progN[p] = (progN[p] || 0) + 1;
+      for (const s of rows) if (pass(s, 'combo')) for (const p of new Set(s.brands.map((h) => h.b.program))) progN[p] = (progN[p] || 0) + 1;
       $('combo').innerHTML = [['all', '온누리 전체', comboN.all || 0], ...programs.map((p) => [p.id, `+ ${p.short || p.name}`, progN[p.id] || 0])]
         .map(([id, label, n]) => `<button type="button" role="tab" data-id="${id}" aria-selected="${id === state.combo}">${esc(label)}<span>${num(n)}</span></button>`).join('');
       const prog = programs.find((p) => p.id === state.combo);
       $('note').hidden = !prog;
-      if (prog) $('note').innerHTML = `상호에 ${esc(prog.short || prog.name)} 브랜드가 들어간 가맹점 · 매장마다 다를 수 있어 지도에서 확인 · <a href="brands.html#${prog.id}">브랜드 목록</a>`;
+      if (prog) $('note').innerHTML = `매장·시장은 공개 글·보도로 확인한 곳, 브랜드는 상호에 이름이 든 곳 · 매장마다 다를 수 있어 지도에서 확인 · <a href="brands.html#${prog.id}">목록</a>`;
 
       // 필터 (지역은 시도 고르기 + 시군구, 업종, 상품권 종류)
       const sggN = count('sgg', (s) => s.sgg);
@@ -143,18 +169,24 @@
       if (prog) list.sort((a, b) => (statusRank(a, prog.id) - statusRank(b, prog.id)));
       const shown = list.slice(0, state.limit);
       const head = `<div class="wl-block-head">${esc(sido ? sido.name : '')}${state.sgg !== 'all' ? ' ' + esc(state.sgg) : ''}${state.cat !== 'all' ? ' · ' + esc(state.cat === '미확인' ? '업종 미확인' : state.cat) : ''}<span>${num(list.length)}곳</span></div>`;
-      const empty = prog ? `이 조건에서 ${esc(prog.name)} 브랜드 매장은 아직 없어요. <a href="brands.html#${prog.id}">브랜드 목록 보기</a>` : '조건에 맞는 가맹점이 없어요.';
+      const empty = prog ? `이 조건에서 ${esc(prog.name)} 되는 곳은 아직 못 찾았어요. <a href="brands.html#${prog.id}">목록 보기</a>` : '조건에 맞는 가맹점이 없어요.';
       $('list').innerHTML = head + (list.length ? `<div class="wl-rows">${shown.map(row).join('')}</div>` +
         (list.length > shown.length ? `<button type="button" class="py-more" data-more="1">${num(Math.min(50, list.length - shown.length))}곳 더 보기 <span>(남은 ${num(list.length - shown.length)}곳)</span></button>` : '')
         : `<div class="wl-rows"><p class="wl-empty">${empty}</p></div>`);
     }
-    const statusRank = (s, pid) => Math.min(...s.brands.filter((b) => b.program === pid).map((b) => ({ ok: 0, part: 1, plan: 2 }[STATUS[b.status]] ?? 3)), 9);
+    // 매장 확인 → 시장 → 브랜드, 같은 종류면 됨 → 일부 → 예정
+    const statusRank = (s, pid) => Math.min(...s.brands.filter((h) => h.b.program === pid)
+      .map((h) => KIND_RANK[h.kind] * 10 + ({ ok: 0, part: 1, plan: 2 }[STATUS[h.b.status]] ?? 3)), 99);
 
     function row(s) {
       const tags = [];
       if (s.paper) tags.push('<span>지류</span>');
       if (s.digital) tags.push('<span>디지털</span>');
-      for (const b of s.brands) tags.push(`<span class="py-b ${STATUS[b.status] || ''}" title="${esc(b.name)} · ${esc(b.scope || '')}">${esc(SHORT[b.program] || b.program)} ${esc(b.status)}</span>`);
+      for (const h of s.brands) {
+        const b = h.b, who = SHORT[b.program] || b.program;
+        const label = h.kind === 'store' ? `${who} 매장 확인` : h.kind === 'market' ? `${who} 시장` : `${who} ${b.status}`;
+        tags.push(`<span class="py-b ${h.kind === 'brand' ? STATUS[b.status] || '' : 'ok'}" title="${esc(b.name)} · ${esc(b.scope || '')}">${esc(label)}</span>`);
+      }
       return `<article class="wl-row py-row">
         ${catTile(s)}
         <div class="py-body">
@@ -163,7 +195,7 @@
           ${s.goods ? `<div class="py-goods">${esc(s.goods)}</div>` : ''}
           <div class="py-tags">${tags.join('')}</div>
         </div>
-        <a class="py-map" href="${esc(mapUrl(s))}" target="_blank" rel="noopener" aria-label="${esc(s.name)} 지도에서 보기">지도</a>
+        <a class="py-map" href="${esc(mapUrl(s))}" target="_blank" rel="noopener" aria-label="${esc(s.name)} 지도에서 보기${state.combo === 'naver' ? '(커넥트+ 표시 확인)' : ''}">${state.combo === 'naver' ? '커넥트<br>확인' : '지도'}</a>
       </article>`;
     }
 
@@ -204,32 +236,44 @@
   async function brandsPage() {
     const [meta, bdata] = await Promise.all([loadMeta(), loadBrands()]);
     const programs = bdata.programs || [], brands = bdata.brands || [];
-    const nb = brands.filter((b) => b.kind === 'brand').length, np = brands.length - nb;
-    $('sub').textContent = `브랜드 ${nb}개 · 장소 ${np}곳${bdata.checked ? ` · ${ymd(bdata.checked)} 확인` : ''}`;
+    const KIND = [['store', '매장'], ['market', '시장'], ['brand', '브랜드'], ['place', '장소']];
+    const cnt = (k) => brands.filter((b) => (b.kind || 'brand') === k).length;
+    $('sub').textContent = KIND.map(([k, n]) => (cnt(k) ? `${n} ${cnt(k)}` : '')).filter(Boolean).join(' · ') + (bdata.checked ? ` · ${ymd(bdata.checked)} 확인` : '');
     const ORDER = { '됨': 0, '일부': 1, '예정': 2 };
-    $('brands').innerHTML = programs.map((p) => {
-      const list = brands.filter((b) => b.program === p.id).sort((a, b) => (ORDER[a.status] ?? 3) - (ORDER[b.status] ?? 3) || (a.kind === 'place') - (b.kind === 'place'));
-      return `<section class="py-prog" id="${esc(p.id)}">
-        <h2>${esc(p.name)}</h2>
-        <dl class="py-facts">
-          <div><dt>결제</dt><dd>${esc(p.how)}</dd></div>
-          <div><dt>매장 찾기</dt><dd>${esc(p.find)}${p.url ? ` · <a href="${esc(p.url)}" target="_blank" rel="noopener">공식 안내 ↗</a>` : ''}</dd></div>
-        </dl>
-        ${list.length ? `<div class="wl-rows">${list.map((b) => `<article class="wl-row py-brow">
-          <span class="tile" data-tone="${b.kind === 'place' ? 3 : p.id === 'toss' ? 1 : 3}" data-len="${Math.min(4, b.name.slice(0, 2).length)}" aria-hidden="true">${esc(b.kind === 'place' ? '장소' : b.name.slice(0, 2))}</span>
+    const ON = { '됨': 'ok', '확인 필요': 'plan' };
+    const item = (b, p) => {
+      const kind = b.kind || 'brand';
+      const tile = kind === 'store' ? '매장' : kind === 'market' ? '시장' : kind === 'place' ? '장소' : b.name.slice(0, 2);
+      const where = [b.sido, b.sgg, b.market !== b.name ? b.market : ''].filter(Boolean).join(' ');
+      return `<article class="wl-row py-brow">
+          <span class="tile" data-tone="${kind === 'brand' ? (p.id === 'toss' ? 1 : 3) : kind === 'place' ? 3 : 2}" data-len="${Math.min(4, tile.length)}" aria-hidden="true">${esc(tile)}</span>
           <div class="py-body">
             <div class="py-name"><b>${esc(b.name)}</b><small>${esc(b.cat || '')}</small></div>
+            ${where ? `<div class="py-where">${esc(where)}</div>` : ''}
             <div class="py-addr">${[b.method, b.scope, b.date].filter(Boolean).map(esc).join(' · ')}</div>
           </div>
           <div class="py-side">
             <span class="py-st ${STATUS[b.status] || ''}">${esc(b.status)}</span>
+            ${b.onnuri ? `<span class="py-st ${ON[b.onnuri] || ''}">온누리 ${esc(b.onnuri)}</span>` : ''}
             ${b.src ? `<a href="${esc(b.src)}" target="_blank" rel="noopener" title="${esc(b.srcTitle || '출처')}">출처 ↗</a>` : ''}
           </div>
-        </article>`).join('')}</div>` : '<div class="wl-rows"><p class="wl-empty">정리된 브랜드가 아직 없어요.</p></div>'}
-        ${list.some((b) => b.kind === 'brand') ? `<a class="py-go" href="./#${esc(p.id)}">온누리 가맹점 중 이 브랜드 매장 보기 →</a>` : ''}
+        </article>`;
+    };
+    $('brands').innerHTML = programs.map((p) => {
+      const mine = brands.filter((b) => b.program === p.id);
+      const groups = KIND.map(([k, n]) => [n, mine.filter((b) => (b.kind || 'brand') === k).sort((a, b) => (ORDER[a.status] ?? 3) - (ORDER[b.status] ?? 3))]).filter(([, l]) => l.length);
+      return `<section class="py-prog" id="${esc(p.id)}">
+        <h2>${esc(p.name)}</h2>
+        <dl class="py-facts">
+          <div><dt>결제</dt><dd>${esc(p.how)}${p.howSrc ? ` · <a href="${esc(p.howSrc)}" target="_blank" rel="noopener">근거 ↗</a>` : ''}</dd></div>
+          <div><dt>매장 찾기</dt><dd>${esc(p.find)}${p.url ? ` · <a href="${esc(p.url)}" target="_blank" rel="noopener">공식 안내 ↗</a>` : ''}</dd></div>
+        </dl>
+        ${groups.length ? groups.map(([n, l]) => `<h3 class="py-kind">${esc(n)} <span>${l.length}</span></h3><div class="wl-rows">${l.map((b) => item(b, p)).join('')}</div>`).join('')
+          : '<div class="wl-rows"><p class="wl-empty">정리된 곳이 아직 없어요.</p></div>'}
+        ${mine.some((b) => (b.kind || 'brand') !== 'place') ? `<a class="py-go" href="./#${esc(p.id)}">온누리 가맹점 중 이 목록에 맞는 곳 보기 →</a>` : ''}
       </section>`;
-    }).join('') || '<div class="wl-rows"><p class="wl-empty">브랜드 목록 준비 중이에요.</p></div>';
-    $('foot').innerHTML = '매장 단위 공개 목록이 없어 공식 발표·보도된 브랜드·장소만 모았어요(됨·일부·예정) · 매월 초 확인' + (meta ? ' · ' + sourcesLine(meta) : '');
+    }).join('') || '<div class="wl-rows"><p class="wl-empty">목록 준비 중이에요.</p></div>';
+    $('foot').innerHTML = '매장 단위 공개 목록이 없어 공식 발표·보도·매장 공개 안내로 확인한 곳만 모았어요(됨·일부·예정) · 매월 초 확인' + (meta ? ' · ' + sourcesLine(meta) : '');
     if (location.hash) { const el = document.getElementById(location.hash.slice(1)); el && el.scrollIntoView(); }
   }
 
