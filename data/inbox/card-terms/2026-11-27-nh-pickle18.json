@@ -1,0 +1,1197 @@
+{
+ "type": "card-terms",
+ "issuer": "NH농협카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "nh-90010058",
+   "queueKey": "nh-90010058",
+   "name": "ON PLATINUM카드(스카이패스)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010058&WRS_TUP_C=F10052",
+   "termsUrl": null,
+   "docDate": "2025-07-11",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 128000
+    },
+    {
+     "brand": "마스터카드",
+     "amount": 130000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "마스터카드"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefitExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefits": [
+    {
+     "label": "스카이패스 적립",
+     "place": "국내·외 가맹점",
+     "value": "1,500원당 1마일",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월실적 조건·적립한도 없음",
+      "1,500원 미만 소수점 마일리지는 반올림 적립"
+     ]
+    },
+    {
+     "label": "보너스 마일리지",
+     "place": "분기 국내·외 일시불·할부 이용실적",
+     "value": "1,500마일",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "분기 1회, 연 4회",
+     "conditions": [
+      "분기 150만원 이상 1,500마일·100만~150만원 750마일",
+      "연회비 납부 및 분기 실적 충족 시 다음 분기 첫 달 15일 이후 적립",
+      "본인카드 실적 기준"
+     ]
+    },
+    {
+     "label": "공항 라운지",
+     "place": "국내·외 공항 라운지(The Lounge Members)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "통합 일 1회, 연 3회",
+     "conditions": [
+      "더 라운지 앱에서 카드 등록 후 이용권 발급",
+      "이용권은 발급 후 24시간 유효"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010471",
+   "queueKey": "nh-90010471",
+   "name": "NH 모두의카드(신용)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010471&WRS_TUP_C=F10727",
+   "termsUrl": null,
+   "docDate": "2026-09-09",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 13000
+    },
+    {
+     "brand": "비자",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "비자"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefitExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefits": [
+    {
+     "label": "버스·지하철",
+     "place": "버스(시내·마을·광역·고속시외)·지하철",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "모빌리티 서비스 월 통합 할인한도",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 10000
+      },
+      {
+       "spend": 800000,
+       "cap": 20000
+      }
+     ]
+    },
+    {
+     "label": "택시",
+     "place": "일반 택시·카카오T택시",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "모빌리티 서비스 월 통합 할인한도"
+    },
+    {
+     "label": "철도",
+     "place": "일반·KTX·SRT",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "모빌리티 서비스 월 통합 할인한도"
+    },
+    {
+     "label": "렌터카·카쉐어링",
+     "place": "렌터카·쏘카·그린카",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "모빌리티 서비스 월 통합 할인한도"
+    },
+    {
+     "label": "전기차 충전",
+     "place": "환경부 공공 급속충전기 충전요금",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "모빌리티 서비스 월 통합 할인한도",
+     "conditions": [
+      "현장결제 및 멤버십카드 간편결제 포함"
+     ]
+    },
+    {
+     "label": "이동통신요금",
+     "place": "SKT·KT·LG U+ 자동납부",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "라이프서비스① 월 통합 할인한도",
+     "limits": "월 1회",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      }
+     ]
+    },
+    {
+     "label": "오픈마켓·배달앱",
+     "place": "쿠팡·11번가·G마켓·옥션·농협몰, 배달의민족·요기요",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "라이프서비스① 월 통합 할인한도"
+    },
+    {
+     "label": "스포츠·H&B",
+     "place": "종합스포츠센터·요가·수영장·볼링장, 올리브영",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "라이프서비스① 월 통합 할인한도",
+     "conditions": [
+      "오프라인 매장 현장 결제만"
+     ]
+    },
+    {
+     "label": "커피전문점",
+     "place": "스타벅스·이디야·커피빈·투썸플레이스",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "월 2회",
+     "conditions": [
+      "건당 1만원 이상 결제",
+      "전월실적 40만원 이상 시 제공(라이프서비스②)"
+     ]
+    },
+    {
+     "label": "편의점",
+     "place": "GS25·CU",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 1000,
+     "capScope": "월",
+     "conditions": [
+      "건당 1만원 이상 결제",
+      "커피전문점 할인과 개별 한도"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010008",
+   "queueKey": "nh-90010008",
+   "name": "NH농협 올바른LIFE카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010008&WRS_TUP_C=M11097",
+   "termsUrl": null,
+   "docDate": "2023-12-28",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 8000
+    },
+    {
+     "brand": "비자",
+     "amount": 10000
+    },
+    {
+     "brand": "더블류",
+     "amount": 8000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "비자",
+    "더블류"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefitExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefits": [
+    {
+     "label": "기본 적립",
+     "place": "국내·외 모든 가맹점",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "적립한도 제한 없음",
+      "전월실적 상관없이 적립"
+     ]
+    },
+    {
+     "label": "추가 적립",
+     "place": "생활(하나로마트·클럽·편의점·주유소)·여가(커피·영화·서점·문화센터)·해외",
+     "value": "+0.3~0.5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 30만원 이상 +0.3%, 80만원 이상 +0.5%",
+      "이용건당 1만원 이상 시 적립",
+      "역사·백화점·할인점·쇼핑몰 입점 매장 제외"
+     ]
+    },
+    {
+     "label": "리워드 포인트",
+     "place": "연간 이용실적 1,000만원 이상",
+     "value": "1만 포인트",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 1회",
+     "conditions": [
+      "카드발급월 포함 12개월 이용액 기준"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010604",
+   "queueKey": "nh-90010604",
+   "name": "NH올원더풀카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010604&WRS_TUP_C=F10807",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 28000
+    },
+    {
+     "brand": "마스터카드",
+     "amount": 30000
+    },
+    {
+     "brand": "유피아이",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "마스터카드",
+    "유피아이"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefitExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefits": [
+    {
+     "label": "생활소비(할인PACK)",
+     "place": "백화점·대형마트·홈쇼핑·주유·충전 5%, 이동통신·아파트관리비 자동납부 3%",
+     "value": "3~5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "영역별 월 할인한도",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 8000
+      },
+      {
+       "spend": 800000,
+       "cap": 15000
+      }
+     ],
+     "conditions": [
+      "백화점·대형마트는 오프라인 직접 결제만",
+      "기업형 슈퍼마켓(에브리데이·롯데슈퍼) 제외"
+     ]
+    },
+    {
+     "label": "건강·자기관리(할인PACK)",
+     "place": "병원·약국·미용실·피부미용원 10%, 종합스포츠센터·헬스장·골프연습장·요가·필라테스·안경점 5%",
+     "value": "5~10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "영역별 월 할인한도",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 8000
+      },
+      {
+       "spend": 800000,
+       "cap": 15000
+      }
+     ],
+     "conditions": [
+      "동물병원 제외",
+      "오프라인 직접 결제만"
+     ]
+    },
+    {
+     "label": "교통(할인PACK)",
+     "place": "버스·지하철 15%, KTX·SRT·고속버스·택시 5%, 카카오T대리 5%",
+     "value": "5~15%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "영역별 월 할인한도",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 8000
+      },
+      {
+       "spend": 800000,
+       "cap": 15000
+      }
+     ],
+     "conditions": [
+      "버스·지하철은 후불교통 이용 시",
+      "카카오T대리는 자동결제서비스 등록 건"
+     ]
+    },
+    {
+     "label": "여가(할인PACK)",
+     "place": "디지털구독(유튜브프리미엄·넷플릭스) 30%, 영화관 10%, 카페 10%, 베이커리 5%",
+     "value": "5~30%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "영역별 월 할인한도",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 8000
+      },
+      {
+       "spend": 800000,
+       "cap": 15000
+      }
+     ],
+     "conditions": [
+      "디지털구독은 공식 홈페이지·앱 정기결제만",
+      "영화관은 예매·결제만(매점 제외)",
+      "카페·베이커리 앱 주문·상품권 제외(스타벅스 사이렌오더 포함)"
+     ]
+    },
+    {
+     "label": "기본적립(적립PACK)",
+     "place": "국내·외 가맹점",
+     "value": "1.0%",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "cap": 50000,
+     "capScope": "월",
+     "limits": "일 1만 포인트",
+     "conditions": [
+      "NH포인트 적립"
+     ]
+    },
+    {
+     "label": "스마트적립(적립PACK)",
+     "place": "건강·H&B·쇼핑·여행·여가 5개 영역 중 당월 1위 +3.0%·2위 +2.0% 추가",
+     "value": "총 3~4%",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "cap": 10000,
+     "capScope": "월",
+     "conditions": [
+      "영역별 이용금액 1·2위 자동 적용",
+      "추가적립은 이용월 익월 15일 이후 일괄 적립"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90000351",
+   "queueKey": "nh-90000351",
+   "name": "New후불하이패스카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90000351&WRS_TUP_C=M11058",
+   "termsUrl": null,
+   "docDate": "2023-12-28",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 2000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "출퇴근 통행료",
+     "place": "한국도로공사 관리 고속도로 20km 미만 구간(민자 제외)",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "출근 05:00~07:00, 퇴근 20:00~22:00",
+      "1~3종 차량, 하이패스 결제"
+     ]
+    },
+    {
+     "label": "출퇴근 통행료",
+     "place": "같은 구간",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "출근 07:00~09:00, 퇴근 18:00~20:00",
+      "토·일·공휴일 제외",
+      "출구요금소 통과시각 기준"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90000375",
+   "queueKey": "nh-90000375",
+   "name": "SIM형후불하이패스카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90000375&WRS_TUP_C=M11062",
+   "termsUrl": null,
+   "docDate": "2023-07-28",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 2000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "출퇴근 통행료",
+     "place": "한국도로공사 관리 고속도로 20km 미만 구간(민자 제외)",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "출근 05:00~07:00, 퇴근 20:00~22:00",
+      "SIM형 하이패스 단말기 필요"
+     ]
+    },
+    {
+     "label": "출퇴근 통행료",
+     "place": "같은 구간",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "출근 07:00~09:00, 퇴근 18:00~20:00",
+      "토·일·공휴일 제외"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010513",
+   "queueKey": "nh-90010513",
+   "name": "zgm point카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010513&WRS_TUP_C=F10776",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 50000
+    },
+    {
+     "brand": "비자",
+     "amount": 55000
+    },
+    {
+     "brand": "마스터카드",
+     "amount": 55000
+    },
+    {
+     "brand": "유피아이",
+     "amount": 55000
+    },
+    {
+     "brand": "제이씨비",
+     "amount": 55000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "비자",
+    "마스터카드",
+    "유피아이",
+    "제이씨비"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefitExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefits": [
+    {
+     "label": "기본 적립",
+     "place": "국내·외 전 가맹점",
+     "value": "0.8~1.8%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": 100000,
+     "capScope": "월",
+     "conditions": [
+      "전월 50만원 미만 0.8%",
+      "전월 50만~200만원: 건당 20만원 미만 1.2%·20만원 이상 1.4%",
+      "전월 200만원 이상 1.8%",
+      "발급 당월은 0.8% 적용"
+     ]
+    },
+    {
+     "label": "추가 적립",
+     "place": "기본적립된 포인트의 5%",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 1회",
+     "conditions": [
+      "카드발급월 포함 12개월 1,800만원 이상 이용",
+      "카드발급월 20일경 적립"
+     ]
+    },
+    {
+     "label": "해피포인트",
+     "place": "SPC 가맹점",
+     "value": "해피포인트 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월실적 관계없이 제공",
+      "적립률은 해피포인트 앱·약관 참고"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010515",
+   "queueKey": "nh-90010515",
+   "name": "zgm 할인카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010515&WRS_TUP_C=F10783",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 27000
+    },
+    {
+     "brand": "비자",
+     "amount": 30000
+    },
+    {
+     "brand": "마스터카드",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "비자",
+    "마스터카드"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefitExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefits": [
+    {
+     "label": "기본할인",
+     "place": "국내 전 가맹점 1%, NH페이 온라인 결제 2%, 해외 전 가맹점 2%",
+     "value": "1~2%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 40000,
+     "capScope": "월",
+     "conditions": [
+      "일 1만원, 월 통합 4만원",
+      "생활할인과 중복 적용 불가",
+      "간편결제 승인 건은 제외될 수 있음"
+     ]
+    },
+    {
+     "label": "생활할인",
+     "place": "공과금(아파트관리비·전기·도시가스)·이동통신·새벽배송(쿠팡·컬리·오아시스)·대형마트·보험·반려동물",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "생활할인 월 통합 2만원",
+     "conditions": [
+      "영역당 월 5천원",
+      "공과금·통신은 자동납부 건만",
+      "알뜰폰·TV·인터넷 요금 제외"
+     ]
+    },
+    {
+     "label": "디지털구독",
+     "place": "유튜브프리미엄·넷플릭스·티빙·웨이브",
+     "value": "30%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "생활할인 월 통합 2만원",
+     "conditions": [
+      "월 이용권 정기결제만"
+     ]
+    },
+    {
+     "label": "공항 라운지",
+     "place": "국내·외 공항 라운지(The Lounge)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "통합 월 1회, 연 2회"
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010543",
+   "queueKey": "nh-90010543",
+   "name": "미미카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010543&WRS_TUP_C=F10793",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 28000
+    },
+    {
+     "brand": "마스터카드",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "마스터카드"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefitExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefits": [
+    {
+     "label": "음식점",
+     "place": "한식·중식·양식·일식·패스트푸드·휴게음식점·뷔페(패밀리레스토랑)",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "일 1회, 월 4회",
+     "conditions": [
+      "오전 5시~9시 결제",
+      "일 최대 5천원",
+      "입점 음식점·간편결제·키오스크 제외될 수 있음"
+     ]
+    },
+    {
+     "label": "쌀 구독서비스",
+     "place": "농협식품 쌀·즉석밥·쌀국수 세트",
+     "value": "제공",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "분기 1회, 연 4회",
+     "conditions": [
+      "분기 이용실적에 따라 정기배송",
+      "본인수령·선물하기 중 택1"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010005",
+   "queueKey": "nh-90010005",
+   "name": "적립조아카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010005&WRS_TUP_C=176468",
+   "termsUrl": null,
+   "docDate": "2023-12-29",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    },
+    {
+     "brand": "비자",
+     "amount": 12000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "비자"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefitExclusions": [
+    "대학(대학원)등록금",
+    "교육비(학부모부담금)",
+    "임대료",
+    "각종 세금 및 공과금",
+    "상하수도요금",
+    "과태료(범칙금)",
+    "우체국 우편요금",
+    "사회보험(국민건강·국민연금·고용·산재)",
+    "아파트관리비",
+    "도시가스요금",
+    "전기요금",
+    "상품권 및 선불카드류 구매(충전 포함)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "거래취소금액"
+   ],
+   "benefits": [
+    {
+     "label": "국내 적립",
+     "place": "국내 전 가맹점",
+     "value": "0.5~1.2%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "건당 10만원 미만 0.5%(전월 50만원 이상 0.7%)",
+      "건당 10만원 이상 0.7%(전월 50만원 이상 1.2%)",
+      "적립한도 없음"
+     ]
+    },
+    {
+     "label": "해외 적립",
+     "place": "해외 온·오프라인",
+     "value": "1~1.5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 50만원 미만 1%, 50만원 이상 1.5%",
+      "적립한도 없음"
+     ]
+    },
+    {
+     "label": "해외 감사포인트",
+     "place": "해외 10만원 이상 결제",
+     "value": "5천 TOP포인트",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 1회",
+     "conditions": [
+      "매년 1~12월 중 첫 번째 10만원 이상 건"
+     ]
+    }
+   ]
+  }
+ ]
+}
