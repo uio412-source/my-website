@@ -1,0 +1,614 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-26",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09137",
+   "queueKey": "kb-09137",
+   "name": "NEED Global 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09137&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09137__prdctOpmn_20260430.pdf",
+   "docDate": "2026-04-21",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월 이용실적 조건 없음",
+   "spendExclusions": [
+    "무이자할부 이용금액",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "상품권 및 선불카드 구입·충전금액",
+    "아파트관리비",
+    "유치원·초·중·고 학교납입금 전체",
+    "정부지원금",
+    "대학(원) 등록금",
+    "국세",
+    "지방세",
+    "공과금(전기·수도)",
+    "도시가스",
+    "4대 사회보험료",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "RF후불교통요금",
+    "취소금액"
+   ],
+   "benefitExclusions": [
+    "할인받은 이용건의 매출 전체"
+   ],
+   "benefits": [
+    {
+     "group": "기본",
+     "label": "국내",
+     "place": "국내 가맹점",
+     "value": "0.5%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "tiers": null,
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "전월실적 조건 및 할인 한도 없음",
+      "청구할인"
+     ]
+    },
+    {
+     "group": "기본",
+     "label": "해외",
+     "place": "해외 가맹점",
+     "value": "3.5%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "tiers": null,
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "국내외겸용 카드에 한해 제공",
+      "해외이용 수수료 별도"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09771",
+   "queueKey": "kb-09771",
+   "name": "YOU Prime 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09771&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09771__prdctOpmn_20260330.pdf",
+   "docDate": "2026-01-19",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 30000
+    },
+    {
+     "brand": "JCB",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard",
+    "JCB"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) 일시불·할부 승인금액, 해외이용금액은 전월 1일~말일 매입완료 기준",
+   "spendExclusions": [
+    "취소금액",
+    "무이자할부 이용금액",
+    "상품권 및 선불카드 구입·충전금액",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "국세",
+    "지방세",
+    "공과금(전기·수도)",
+    "도시가스",
+    "아파트관리비",
+    "4대 사회보험료",
+    "정부지원금",
+    "초·중·고 학교납입금",
+    "대학(원) 등록금",
+    "연회비",
+    "무승인전표",
+    "유치원·학교납입금"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액",
+    "상품권 및 선불카드 구입·충전금액",
+    "할인 적용받은 매출(일상팩·가족팩)"
+   ],
+   "benefits": [
+    {
+     "group": "일상팩",
+     "label": "주유",
+     "place": "주유소·충전소 업종, 전기차 충전",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "서비스팩 2종 중 일상팩 선택 시"
+     ]
+    },
+    {
+     "group": "일상팩",
+     "label": "배달",
+     "place": "배달의민족·쿠팡이츠(KB Pay 공식 모바일앱 결제, 배달 현장결제 제외)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "멤버십 이용권은 할인 대상 제외"
+     ]
+    },
+    {
+     "group": "일상팩",
+     "label": "통신/보험/앱",
+     "place": "SKT·KT·LG U+·Liiv M 이동통신 자동납부, 손해·생명보험 업종, 구글플레이스토어·애플 앱스토어",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "이동통신 인터넷·IPTV 등 결합상품 제외"
+     ]
+    },
+    {
+     "group": "일상팩",
+     "label": "온라인쇼핑",
+     "place": "네이버플러스스토어·쿠팡·무신사·지그재그·29CM·W컨셉·오늘의집(KB Pay 결제)",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": null
+    },
+    {
+     "group": "일상팩",
+     "label": "편의점",
+     "place": "GS25·CU 오프라인 매장",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "백화점·대형마트 등 입점매장 및 온라인 결제 제외"
+     ]
+    },
+    {
+     "group": "일상팩",
+     "label": "취미/자기관리",
+     "place": "스포츠용품점·레저용품점·골프(연습)장·테니스장·볼링장·스키장·수영장·미용실·이용원 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": null
+    },
+    {
+     "group": "가족팩",
+     "label": "생활요금",
+     "place": "아파트관리비·도시가스·보험료 업종",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "서비스팩 2종 중 가족팩 선택 시"
+     ]
+    },
+    {
+     "group": "가족팩",
+     "label": "온라인장보기",
+     "place": "네이버플러스스토어·쿠팡·마켓컬리·오아시스마켓(KB Pay 결제)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": null
+    },
+    {
+     "group": "가족팩",
+     "label": "일상케어",
+     "place": "종합병원·일반/치과/한방병원·의원·약국·한약방·미용실·세탁소 업종",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": null
+    },
+    {
+     "group": "가족팩",
+     "label": "학원",
+     "place": "학원·문화센터·학습지 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": null
+    },
+    {
+     "group": "가족팩",
+     "label": "대형마트",
+     "place": "이마트·트레이더스 홀세일 클럽·롯데마트 오프라인(건당 5만원 이상)",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "온라인몰·주차장·상품권·임대매장·SSM 제외"
+     ]
+    },
+    {
+     "group": "가족팩",
+     "label": "카페",
+     "place": "커피전문점 오프라인 결제(앱 주문 제외), 유아전문교육기관·놀이시설 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 7000
+      },
+      {
+       "spend": 1600000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "백화점·대형마트 등 일부 입점매장 제외"
+     ]
+    },
+    {
+     "group": "기본",
+     "label": "해외이용 수수료",
+     "place": "해외 가맹점(국내외겸용 카드)",
+     "value": "1.25%",
+     "valueType": "면제",
+     "minimumSpend": 0,
+     "tiers": null,
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "국제브랜드 수수료 1% + 해외서비스 수수료 0.25% 면제",
+      "해외단기카드대출(현금서비스)은 면제 제외"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-00218",
+   "queueKey": "kb-00218",
+   "name": "TBX 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=00218&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/_00218__prdctOpmn_20260327.pdf",
+   "docDate": "2025-03-17",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) 일시불·할부 승인금액, 해외이용금액은 전월 1일~말일 매입완료 기준",
+   "spendExclusions": [
+    "(부분)무이자할부 이용금액",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "상품권 및 선불카드 구입·충전금액",
+    "아파트관리비",
+    "유류화물차 승인금액",
+    "유치원·초·중·고 학교납입금 전체",
+    "대학(원) 등록금",
+    "정부지원금",
+    "4대 사회보험료",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "국세",
+    "지방세",
+    "각종 공과금",
+    "무승인전표",
+    "취소금액"
+   ],
+   "benefitExclusions": [
+    "할인받은 이용건의 매출 전체"
+   ],
+   "benefits": [
+    {
+     "group": "리워드",
+     "label": "라이트할부 이용",
+     "place": "KB국민TBX 카드 월 청구금액에서 할인(전월 말일 기준 라이트할부 잔액 있음)",
+     "value": "최대 12,000원",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 8000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      },
+      {
+       "spend": 1000000,
+       "cap": 12000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "카드 청구금액이 혜택금액보다 적으면 잔여 한도만큼 캐시백"
+     ]
+    },
+    {
+     "group": "리워드",
+     "label": "라이트할부 미이용",
+     "place": "KB국민TBX 카드 월 청구금액에서 할인(전월 말일 기준 라이트할부 잔액 없음)",
+     "value": "최대 5,000원",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 3000
+      },
+      {
+       "spend": 800000,
+       "cap": 4000
+      },
+      {
+       "spend": 1000000,
+       "cap": 5000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "최초 사용등록일로부터 다음 달 말까지는 5만원 이상 사용 시 1,500원 제공"
+     ]
+    },
+    {
+     "group": "할부",
+     "label": "라이트할부",
+     "place": "TBX 대리점에서 30만원 이상 12·18·24개월 할부 결제",
+     "value": "12개월 5.0%/연",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "tiers": null,
+     "cap": null,
+     "capScope": "건",
+     "shared": null,
+     "limits": "월 1건·연 3건",
+     "conditions": [
+      "18·24개월은 6.0%/연",
+      "원금균등상환, 중도상환 위약금 없음"
+     ]
+    }
+   ]
+  }
+ ]
+}
