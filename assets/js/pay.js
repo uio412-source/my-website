@@ -277,6 +277,58 @@
     if (location.hash) { const el = document.getElementById(location.hash.slice(1)); el && el.scrollIntoView(); }
   }
 
+  // ======================= 혜택 배너 (두 화면 맨 위) =======================
+  // pay/promos.json: 온누리 할인율·네이버 페이스사인·토스 페이스페이 행사. 매일 확인해서 고치고,
+  // until이 지나거나 from 전인 행사는 자동으로 안 보임. 5초마다 넘어가고, 마우스·키보드 포커스면 멈춤, 빈 곳을 누르면 다음.
+  async function promoBanner() {
+    const box = $('promo');
+    if (!box) return;
+    const d = await MS.getJSON('promos.json').catch(() => null);
+    const kst = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+    const items = ((d && d.items) || []).filter((x) => (!x.until || x.until >= kst) && (!x.from || x.from <= kst));
+    if (!items.length) { box.hidden = true; return; }
+    const LABEL = { onnuri: '온누리', naver: '네이버페이', toss: '토스페이', combo: '같이 쓰기' };
+    const dday = (x) => {
+      if (!x.until) return x.untilText || '';
+      const n = Math.round((Date.parse(x.until) - Date.parse(kst)) / 864e5);
+      const left = n <= 0 ? '오늘까지' : `D-${n}`;
+      return `${x.untilText || ymd(x.until) + '까지'} · ${left}`;
+    };
+    box.innerHTML = items.map((x, k) => `<div class="py-promo-item" data-p="${esc(x.program)}" aria-hidden="${k ? 'true' : 'false'}">
+        <span class="py-promo-rate">${esc(x.rate)}</span>
+        <div class="py-promo-body">
+          <div class="py-promo-t"><small>${esc(LABEL[x.program] || '')}</small>${x.link ? `<a href="${esc(x.link)}">${esc(x.title)}</a>` : `<b>${esc(x.title)}</b>`}</div>
+          <div class="py-promo-d">${esc(x.detail)}</div>
+          <div class="py-promo-m">${[dday(x) && esc(dday(x)), x.src && `<a href="${esc(x.src)}" target="_blank" rel="noopener" title="${esc(x.srcTitle || '출처')}">출처 ↗</a>`].filter(Boolean).join(' · ')}</div>
+        </div>
+      </div>`).join('') + (items.length > 1 ? '<span class="py-promo-n" aria-hidden="true"></span>' : '');
+    box.hidden = false;
+    const els = box.querySelectorAll('.py-promo-item'), cnt = box.querySelector('.py-promo-n');
+    let i = 0, timer = null, held = false;
+    const show = (k) => {
+      i = (k + els.length) % els.length;
+      els.forEach((el, j) => { el.classList.toggle('on', j === i); el.setAttribute('aria-hidden', j === i ? 'false' : 'true'); });
+      if (cnt) cnt.textContent = `${i + 1} / ${els.length}`;
+    };
+    const stop = () => { clearInterval(timer); timer = null; };
+    const start = () => { stop(); if (els.length > 1 && !held && !document.hidden) timer = setInterval(() => show(i + 1), 5000); };
+    const hold = (v) => { held = v; box.classList.toggle('paused', v); v ? stop() : start(); };
+    box.addEventListener('mouseenter', () => hold(true));
+    box.addEventListener('mouseleave', () => hold(false));
+    box.addEventListener('focusin', () => { if (box.matches(':focus-visible')) hold(true); });
+    box.addEventListener('focusout', () => hold(false));
+    box.addEventListener('click', (e) => { if (e.target.closest('a')) return; show(i + 1); start(); });
+    box.addEventListener('keydown', (e) => {
+      if (e.target !== box) return;
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight') { e.preventDefault(); show(i + 1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); show(i - 1); }
+    });
+    document.addEventListener('visibilitychange', start);
+    show(0);
+    start();
+  }
+  promoBanner().catch((e) => console.error(e));
+
   const run = page === 'stores' ? storesPage : page === 'brands' ? brandsPage : null;
   if (run) run().catch((e) => { console.error(e); const l = $('list') || $('brands'); if (l) l.innerHTML = '<div class="wl-rows"><p class="wl-empty">불러오지 못했어요. 새로고침해 주세요.</p></div>'; });
 })();

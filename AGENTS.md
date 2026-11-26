@@ -59,6 +59,7 @@
     - `market`(시장·상점가에 단말기가 깔린 경우): 같은 시도 + 소속 시장 이름에 `market`(또는 이름·별칭)이 들어 있고 **디지털 가맹**인 곳만(얼굴결제는 온누리 카드형만 됨). 배지 '네이버 시장'.
     - `brand`(프랜차이즈): 상호에 브랜드 이름·별칭(`aliases`, 영문은 단어 경계). `place`(장소)는 맞추지 않습니다.
     - 목록은 매장 → 시장 → 브랜드 순, 화면에 '매장·시장은 공개 글·보도로 확인한 곳, 브랜드는 상호에 이름이 든 곳 · 지도에서 확인'을 한 줄로. 브랜드 화면은 프로그램마다 매장·시장·브랜드·장소로 묶습니다. PR에서 `pay-db-check.yml`이 실제 DB로 `check_stores.py`를 돌려 항목마다 맞은 가맹점을 로그에 남깁니다(`pay/brands.json`만 바꿔도 돌아감).
+  - **혜택 배너**(두 화면 맨 위 `#py-promo`, `pay.js`의 `promoBanner`, 데이터 `pay/promos.json`): 온누리 할인율·네이버 페이스사인·토스 페이스페이 행사를 5초마다 돌려 보여 줍니다(마우스·키보드 포커스면 멈춤, 빈 곳을 누르면 다음). 항목은 `program`(onnuri·naver·toss·combo, 색이 바뀜)·`rate`(크게)·`title`·`detail`·`from`·`until`(지나면 자동으로 숨김, 기사에 날짜 없이 '연말까지'뿐이면 `until`은 그달 말일 + `untilText`)·`link`(Mr. Pay 화면)·`src`·`srcTitle`. 매일 예약 작업 **'Mr. Pay 행사 매일 확인'**이 새 행사를 찾아 넣고 끝난 행사·바뀐 조건을 고칩니다(공식·보도로 확인한 것만).
   - 가맹점 화면: 결제 조합 탭(온누리 전체 · + 토스페이 · + 네이버 얼굴결제, 주소 `#toss`·`#naver`, 탭 이름은 `brands.json`의 `programs[].short`) → 검색(상호·시장·품목·주소, 여러 단어, 띄어쓰기 무시) → 필터 상자(지역: 시도 고르기 + 시군구, 업종: 대분류 + 업종 미확인, 종류: 지류·디지털) → 한 줄 목록(상호·업종 소분류 / 시장·주소 / 취급품목 / 지류·디지털·브랜드 배지, 오른쪽 네이버 지도 검색 링크), 50곳씩 '더 보기'. 시도 파일은 고를 때만 받고, 고른 시도는 브라우저 `mrpay.sido`에 저장. DB가 없으면 '가맹점 DB 준비 중' 한 줄.
 - **데이터 수집**: 외부 AI·사람은 큰 DB를 직접 고치지 않고 `data/inbox/<종류>/YYYY-MM-DD-<출처>.json`만 추가하는 PR을 올립니다. 양식·찾는 요령·실행 한도·하루 순서(매일 카드사 이벤트·상품공시실·상품설명서 10종, 토요일 여행 이벤트·브랜드 서비스)는 `docs/data-update.md`. PR 검사는 `.github/workflows/data-check.yml`(`tools/data/inbox.py validate`), 배포 때 `tools/data/inbox.py merge`가 합칩니다(결과는 커밋 안 함).
   - **자동 머지**(`.github/workflows/data-automerge.yml` → `tools/data/automerge.py`): `ai/chatgpt/data-*` 브랜치 PR이 열리면 10분 기다린 뒤, 바뀐 파일이 전부 `data/inbox` 새 JSON이고 main의 `inbox.py validate`를 통과하면 머지하고 배포(`deploy.yml`)를 직접 실행합니다(GITHUB_TOKEN 머지는 push 배포를 안 일으켜서). 안 맞으면 머지하지 않고 PR에 이유를 댓글로 남기며, 3시간마다 놓친 PR을 다시 봅니다. `pull_request_target`이라 PR 쪽 코드는 실행하지 않습니다. 이 두 파일을 고칠 때 이 원칙(PR에서는 inbox JSON만 가져옴)을 지키세요. 머지 뒤에는 수집 대기열(`data/collect-queue.json`)을 다시 만들어 그 파일만 커밋합니다(실패해도 머지·배포에는 영향 없음).
@@ -92,7 +93,7 @@ tools/travel/benefits.py Mr. Cards 데이터 → travel/benefits.json
 tools/travel/prep.py     Mr. Cards·Hotels 데이터 → travel/prep.json (여행준비)
 tools/travel/world.mjs   세계지도 → travel/world.json (지도 바꿀 때만)
 assets/js/pay.js       Mr. Pay (가맹점 · 브랜드)
-pay/                  Mr. Pay 페이지와 brands.json(손으로 정리), data/onnuri/는 배포 때 생성(커밋 안 함)
+pay/                  Mr. Pay 페이지와 brands.json·promos.json(손으로 정리, 혜택 배너는 매일 확인), data/onnuri/는 배포 때 생성(커밋 안 함)
 tools/pay/build.py    공공데이터포털 온누리·상가정보 → pay/data/onnuri/ (원본 새 판은 매월 첫 배포에 확인)
 tools/pay/check_stores.py pay/brands.json 매장·시장·브랜드가 온누리 가맹점과 맞는지 확인(PR 검사)
 tools/data/inbox.py      수집 파일(data/inbox) 검사·배포 때 합치기
