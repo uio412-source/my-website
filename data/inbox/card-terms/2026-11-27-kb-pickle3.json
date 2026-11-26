@@ -1,0 +1,165 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09701",
+   "queueKey": "kb-09701",
+   "name": "KB On the Go 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09701&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09701__prdctOpmn_20260629.pdf",
+   "docDate": "2026-06-29",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 승인금액 기준",
+   "grace": "최초 사용등록 후 다음달 말일까지 30만원 미만이어도 30~60만원 구간 한도의 50% 할인(보험 제외)",
+   "spendExclusions": [
+    "포인트리 충전금액",
+    "상품권 및 선불카드 구입·충전금액",
+    "아파트관리비",
+    "정부지원금(보육료·유치원보조비·바우처)",
+    "대학(원)등록금",
+    "국세·지방세",
+    "4대 사회보험료(건강·연금·고용·산재)",
+    "각종 수수료 및 이자",
+    "연체료",
+    "무승인전표(RF후불교통요금·자판기·터널이용료·고속버스 취소 반환 수수료 등)",
+    "취소금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 선불카드 구입·충전금액"
+   ],
+   "benefits": [
+    {
+     "group": "할인서비스",
+     "label": "주유",
+     "place": "주유소 업종",
+     "value": "3%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 3000
+      },
+      {
+       "spend": 600000,
+       "cap": 6000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": "월간 통합할인한도",
+     "conditions": [
+      "건당 10만원 이용금액까지 제공",
+      "30만원 구간 월 통합한도 1만원·60만원 구간 2만원"
+     ]
+    },
+    {
+     "group": "할인서비스",
+     "label": "커피",
+     "place": "커피·음료전문점 업종",
+     "value": "3%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 3000
+      },
+      {
+       "spend": 600000,
+       "cap": 6000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": "월간 통합할인한도"
+    },
+    {
+     "group": "할인서비스",
+     "label": "패스트푸드",
+     "place": "패스트푸드 업종",
+     "value": "3%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 3000
+      },
+      {
+       "spend": 600000,
+       "cap": 6000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": "월간 통합할인한도"
+    },
+    {
+     "group": "할인서비스",
+     "label": "알뜰폰",
+     "place": "Liiv M(리브엠) 통신요금",
+     "value": "3,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 1회",
+     "shared": "월간 통합할인한도",
+     "conditions": [
+      "건당 3만원 이상 이용 시"
+     ]
+    },
+    {
+     "group": "할인서비스",
+     "label": "이동통신",
+     "place": "SKT·KT·LG U+ 통신요금",
+     "value": "2,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "월 1회",
+     "shared": "월간 통합할인한도",
+     "conditions": [
+      "건당 5만원 이상 이용 시"
+     ]
+    },
+    {
+     "group": "할인서비스",
+     "label": "보험",
+     "place": "KB손해보험",
+     "value": "10,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "연",
+     "limits": "연 1회",
+     "conditions": [
+      "건당 10만원 이상 이용 시",
+      "통합할인한도에서 제외"
+     ]
+    }
+   ]
+  }
+ ]
+}
