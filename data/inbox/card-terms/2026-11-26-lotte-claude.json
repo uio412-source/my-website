@@ -1,0 +1,174 @@
+{
+  "type": "card-terms",
+  "issuer": "롯데카드",
+  "collectedAt": "2026-11-26",
+  "collector": "Claude",
+  "cards": [
+    {
+      "cardId": null,
+      "queueKey": "lotte-P14715-A14715",
+      "name": "LOCA Professional",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14715-A14715",
+      "termsUrl": "https://image.lottecard.co.kr/UploadFiles/cardProvisionPath/P14715-A14715.pdf",
+      "docDate": "2023-11-15",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 300000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 300000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": null,
+      "grace": null,
+      "spendExclusions": [],
+      "benefitExclusions": [
+        "LOCA Professional 카드가 아닌 롯데카드 이용금액",
+        "모든 무이자할부 이용금액",
+        "나누기 혜택 이용금액",
+        "국세",
+        "지방세",
+        "수도요금",
+        "도시가스비",
+        "공과금",
+        "건강보험",
+        "국민연금",
+        "고용보험",
+        "산재 보험",
+        "초·중·고교 납입금",
+        "대학등록금",
+        "LH·SH 공사 공공임대료",
+        "부동산 임대료",
+        "장애인 고용부담금",
+        "아파트관리비",
+        "오토·스마트 캐시백 신청 이용 금액",
+        "기프트·선불카드 충전 및 구매",
+        "포인트 충전",
+        "상품권(모바일 상품권 포함) 구매",
+        "대중교통(시내·광역·시외버스, 지하철)",
+        "택시",
+        "고속도로 통행요금",
+        "고속버스",
+        "무승인전표(자판기, 터널통행료, 항공 기내 이용)",
+        "벌금",
+        "과태료",
+        "민원 발급 수수료",
+        "관세 납부",
+        "인지세",
+        "송달료",
+        "단기카드 대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비",
+        "이자 및 각종 수수료",
+        "추가 캐시백: 롯데카드 이자상품(유이자할부·분할납부·리볼빙 이용 중 결제한 금액)"
+      ],
+      "brandPrograms": [
+        "lotte-mastercard-world-07"
+      ],
+      "benefits": [
+        {
+          "group": "캐시백",
+          "label": "기본 캐시백",
+          "place": "국내 모든 가맹점, 해외 모든 이용금액",
+          "value": "1%",
+          "valueType": "캐시백",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "실적 조건 및 한도 없이 제공",
+            "할부 이용 시 이용일 기준 전체 금액에 캐시백(무이자할부 제외)",
+            "다음 달 25일(휴일이면 다음 영업일) 결제계좌로 입금"
+          ]
+        },
+        {
+          "group": "캐시백",
+          "label": "즉시결제 추가",
+          "place": "국내 모든 가맹점, 해외 모든 이용금액(즉시결제한 금액)",
+          "value": "1%",
+          "valueType": "캐시백",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "일시불 이용 건별로 이용 다음날부터 5영업일 이내 즉시결제한 금액 기준",
+            "롯데카드앱 또는 홈페이지에서 이용건별 즉시결제 시에만 제공",
+            "Weekly 자동결제 추가 캐시백과 중복 제공되지 않음"
+          ]
+        },
+        {
+          "group": "캐시백",
+          "label": "Weekly 자동결제 추가",
+          "place": "일주일 간 일시불 이용금액 자동결제",
+          "value": "1%",
+          "valueType": "캐시백",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "일주일 간 일시불 합산 이용금액(접수 완료 기준) 5만원 이상인 경우에만 자동결제",
+            "해당 주차의 결제금액 전액이 출금되어야 제공",
+            "즉시결제 추가 캐시백과 중복 제공되지 않음"
+          ]
+        },
+        {
+          "group": null,
+          "label": "LOCA 나누기",
+          "place": "건당 3만원 이상 이용 건(롯데카드앱에서 신청)",
+          "value": "최대 10개월 무이자",
+          "valueType": "면제",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "3만원 이상~30만원 미만 3개월",
+            "30만원 이상~100만원 미만 3개월 또는 6개월",
+            "100만원 이상 3개월 또는 6개월 또는 10개월",
+            "이용일로부터 10일 이내 롯데카드앱에서 신청(홈페이지·콜센터·카드센터 불가)",
+            "지난달 실적 기준과 상관 없이 제공, 나누기 이용 시 캐시백 미제공"
+          ]
+        },
+        {
+          "group": null,
+          "label": "SPECIAL GIFT",
+          "place": "롯데상품권카드",
+          "value": "50,000원",
+          "valueType": "제공",
+          "minimumSpend": null,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "1회차: 카드발급받은 달 포함 4개월간 일시불 및 할부 이용실적 1,000만원 이상",
+            "1회차 이후: 3개월간 일시불 및 할부 이용실적 1,000만원 이상",
+            "이용실적 달성 시 청구지 주소로 자동 배송",
+            "연회비 완납 회원만 제공(연회비 면제·가족카드 제외)"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 35,
-   "todo": 1412,
+   "done": 38,
+   "todo": 1409,
    "total": 1447
   },
   "brandPrograms": {
@@ -1160,7 +1160,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20180228002",
@@ -1193,7 +1193,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P10351-A10351",
@@ -1259,7 +1259,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201902270001",
