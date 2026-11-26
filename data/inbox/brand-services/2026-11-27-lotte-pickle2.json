@@ -1,0 +1,37 @@
+{
+ "type": "brand-services",
+ "issuer": "롯데카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "programs": [
+  {
+   "id": "lotte-mastercard-platinum",
+   "queueKey": "lotte-mastercard-platinum",
+   "brand": "Mastercard",
+   "tier": "Platinum",
+   "provider": "issuer_selection",
+   "docTitle": "MasterCard PLATINUM 12 선택 서비스",
+   "url": "https://image.lottecard.co.kr/UploadFiles/cardProvisionPath/2024-B00005_20260519_10004.pdf",
+   "docDate": "2026-05-07",
+   "validThrough": "2026-12-31",
+   "cards": [
+    "롯데멤버스 카드 - 프리미엄",
+    "롯데 패밀리 W 멤버스 카드 - 프리미엄"
+   ],
+   "services": [
+    {
+     "category": "airport_lounge",
+     "title": "공항라운지 무료입장 서비스",
+     "minimumSpend": 500000,
+     "annualLimit": 2,
+     "coverage": "스카이허브(인천 T1 동·서·탑승동, 김포 국제선, 김해 국제선), 마티나(인천 T2)",
+     "conditions": [
+      "지난 달 1일~말일 이용실적 50만원 이상",
+      "최초 발급 시 카드 발급일~다음 달 말일까지 실적 무관",
+      "동반자 입장료는 고객 부담(마스터카드 제휴가 성인 34,000원)"
+     ]
+    }
+   ]
+  }
+ ]
+}
