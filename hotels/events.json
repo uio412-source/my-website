@@ -65,19 +65,19 @@
    "program": "accor",
    "brand": "ALL Accor",
    "title": "아태·중동·아프리카 연말 세일",
-   "benefit": "참여 호텔 최대 25% 할인 · ALL 회원 추가 할인",
+   "benefit": "참여 호텔 15% 할인 · 최소 1박",
    "kind": "할인",
    "register": false,
-   "bookBy": "2026-12-11",
+   "bookBy": "2026-12-01",
    "stayTo": "2027-04-19",
-   "endsAt": "2026-12-11",
+   "endsAt": "2026-12-01",
    "region": "아시아·태평양 · 중동 · 아프리카",
    "points": [
-    "2026년 12월 11일까지 예약, 2027년 4월 19일까지 투숙",
-    "최소 1박부터, 비회원 할인에 ALL 회원 할인이 더해짐",
-    "선결제·환불 불가 요금이 섞여 있으니 예약 시 취소 조건 확인"
+    "2026년 12월 1일까지 예약, 2026년 11월 5일~2027년 4월 19일 투숙",
+    "참여 프리미엄·미드스케일·이코노미 호텔에 적용",
+    "예약 시 전액 선결제, 변경·환불 불가"
    ],
-   "url": "https://all.accor.com/a/ko/deals-corner.html"
+   "url": "https://all.accor.com/a/ko/offers/meapac/hotel-escape-sale.html"
   },
   {
    "id": "accor-seoul-gangnam-cinema",
