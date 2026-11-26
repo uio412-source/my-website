@@ -21,12 +21,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: 지난 원본 캐시 불러오기(있으면)
-        uses: actions/cache/restore@v4
+      - name: 원본 캐시 (PR에서 다시 돌릴 때 350MB를 또 받지 않게)
+        uses: actions/cache@v4
         with:
           path: ~/.cache/mrpay
-          key: mrpay-check-none
-          restore-keys: mrpay-
+          key: mrpay-check-${{ github.run_id }}
+          restore-keys: |
+            mrpay-check-
+            mrpay-
       - name: 가맹점 DB 만들기 (새 판 확인 강제)
         run: python tools/pay/build.py --force
       - name: 결과 요약
