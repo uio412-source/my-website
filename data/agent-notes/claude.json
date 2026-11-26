@@ -1,13 +1,41 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-27T08:10:00+09:00",
+  "updatedAt": "2026-11-27T08:50:00+09:00",
   "lock": null,
   "runs": [
     {
-      "at": "2026-11-27T08:10:00+09:00",
+      "at": "2026-11-27T08:50:00+09:00",
       "kind": "collect",
       "pr": null,
+      "summary": "card-terms 신한 3차 20종(하이마트·한화이글스·Mercedes-Benz Avantgarde·Discount Plan+·Hi-Point Plan+·SOL Plan+·Simple Plan+·Haru·더한섬 등 신용 13, SOL트래블J·SOL트립앤J·SOL트립앤샵·처음·전통시장사랑 등 체크 7) — 체크카드는 준법감시 심의필 날짜를 docDate로",
+      "queueKeys": [
+        "shinhan-202510220001",
+        "shinhan-202508040001",
+        "shinhan-202603110003",
+        "shinhan-202503040001",
+        "shinhan-202512010002",
+        "shinhan-202608270001",
+        "shinhan-202605190001",
+        "shinhan-202604300001",
+        "shinhan-202503280002",
+        "shinhan-202501160002",
+        "shinhan-202607130001",
+        "shinhan-202606010001",
+        "shinhan-202504290002",
+        "shinhan-202512150001",
+        "shinhan-202511070001",
+        "shinhan-202512230005",
+        "shinhan-202507090001",
+        "shinhan-202504150002",
+        "shinhan-202503040002",
+        "shinhan-202510100002"
+      ]
+    },
+    {
+      "at": "2026-11-27T08:10:00+09:00",
+      "kind": "collect",
+      "pr": 147,
       "summary": "card-terms 신한 2차 30종(The BEST+·The CLASSIC Air·SOL Plan 계열·Discount Plan·ECO Plan·Hi-Point Plan·Simple 계열·Toss One·스타벅스·스타필드·이마트·카카오뱅크 2종·렌탈·구독 제휴 카드 등) — 공식 카드 상세 페이지(심의필 2025~2026), 연회비 29종은 카드 DB 값",
       "queueKeys": [
         "shinhan-201902270001",
@@ -264,6 +292,13 @@
       "status": "open",
       "reason": "pc.wooricard.com PDF·상세는 오류 페이지/메인 화면만 옴, hyundaicard.com·image.lottecard.co.kr은 robots.txt 읽기 실패로 WebFetch 거부(셸은 허용 목록 밖). shinhancard.com 상세 페이지는 읽힘(연회비 칸은 JS 자리표시자)",
       "retry": "우리·현대·롯데는 브라우저가 있는 에이전트(Pickle)가 맡기. Claude는 신한 상세 페이지부터"
+    },
+    {
+      "date": "2026-11-27",
+      "target": "shinhan-202501310002 Point Plan 체크(SOL 모임) · shinhan-202609080001 FOCUS 신한카드 체크",
+      "status": "open",
+      "reason": "SOL 모임은 준법감시 심의필 2024.06.10(올해·작년 규칙 밖). FOCUS는 외국인 전용 체크카드인데 WebFetch 요약에서 심의필 날짜를 못 읽음",
+      "retry": "SOL 모임은 새 판이 나오면, FOCUS는 상세 페이지 하단 심의필을 짧은 질문으로 다시 읽기"
     }
   ]
 }
