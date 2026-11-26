@@ -1,9 +1,27 @@
 {
   "agent": "Pickle",
   "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-  "updatedAt": "2026-11-26T02:56:00+09:00",
+  "updatedAt": "2026-11-26T18:10:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-26T18:02:00+09:00",
+      "kind": "brand-services + card-terms",
+      "pr": 128,
+      "summary": "롯데 VISA Infinite·MasterCard TITANIUM 선택서비스 2프로그램(서비스 7, 호텔 75곳) · BC VISA Infinite 발렛 1프로그램(호텔 45곳) · BC 상품설명서 6종(혜택 28줄). 예산 21/45·37/250·3/20",
+      "queueKeys": [
+        "lotte-visa-infinite",
+        "lotte-mastercard-titanium",
+        "bc-visa-infinite",
+        "bc-105424",
+        "bc-103125",
+        "bc-101010",
+        "bc-101874",
+        "bc-102603",
+        "bc-101881"
+      ],
+      "status": "merged"
+    },
     {
       "at": "2026-11-26T02:55:00+09:00",
       "kind": "brand-services + card-terms",
@@ -71,6 +89,41 @@
   "skipped": [
     {
       "at": "2026-11-26",
+      "target": "BC·IBK 상품설명서 PDF 경로",
+      "status": "workaround",
+      "reason": "bccard.com/down/individual/customer/<gdsno>.pdf 는 BC 바로카드만 유효. IBK·MG 등 타 은행 gdsno(103039·104506·225018 등)는 302/HTML",
+      "retry": "BC 바로카드 gdsno만 이 경로 사용. 다른 은행 카드는 해당 은행 카드 상세 페이지에서 PDF 링크 확인"
+    },
+    {
+      "at": "2026-11-26",
+      "target": "BC 상품설명서 이미지 PDF(로스트아크 101686·페이북머니 101681·102095·후불하이패스 103132·103183)",
+      "status": "open",
+      "reason": "텍스트 추출 0자(이미지 PDF). 이번 회차는 6종만 옮기고 나머지는 다음 회차로",
+      "retry": "fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮긴다. BC 다운로드는 200이어도 본문이 HTML(302 안내)일 수 있으니 file 명령으로 실제 PDF 확인"
+    },
+    {
+      "at": "2026-11-26",
+      "target": "BC 인피니트 브랜드서비스 2026년판",
+      "status": "open",
+      "reason": "공개된 BC INFINITE SERVICE GUIDE가 2025년판(2025-C1a-08892, 유효 2025-12-31)뿐이라 그대로 담고 validThrough 2025-12-31 표기",
+      "retry": "vip.bccard.com의 2026년판 가이드 확인 후 같은 id(bc-visa-infinite)로 교체"
+    },
+    {
+      "at": "2026-11-26",
+      "target": "롯데 VISA Signature·Mastercard World Elite / NH Visa·Platinum 계열 선택서비스",
+      "status": "open",
+      "reason": "롯데는 <BRAND>_<TIER>_01_select_service_260514.pdf 규칙 밖(404). NH는 <Brand>_<Tier>_250910.pdf 형태가 302→/error/error.html",
+      "retry": "카드사 카드 상세 페이지에서 안내 PDF 링크를 직접 확인. 롯데는 VISA_INFINITE_01·MasterCard_TITANIUM_01만 규칙 확인됨"
+    },
+    {
+      "at": "2026-11-26",
+      "target": "하나카드 나머지 등급 선택서비스(Visa/Signature/Infinite·Mastercard·AMEX 계열)",
+      "status": "open",
+      "reason": "m.hanacard.co.kr/leaflet/·/leaflet/MW/·/leaflet/index.do 모두 404(디렉터리 목록 없음). MW001~003만 수집됨",
+      "retry": "카드 상세 페이지를 브라우저로 렌더해 leaflet PDF 링크를 카드별로 확인(파일명 MW001_20260209.pdf 규칙은 디렉터리·등급 코드를 알아야 함)"
+    },
+    {
+      "at": "2026-11-26",
       "target": "NH농협카드 Mastercard Platinum 안내문",
       "status": "open",
       "reason": "card.nonghyup.com/file/ebank/form/pdf/Mastercard_Platinum_250910.pdf 본문이 Mastercard World 안내문과 동일(심의필 2025-C1a-12536·12377)해 Platinum 자료로 쓸 수 없음",
@@ -94,7 +147,7 @@
       "at": "2026-11-26",
       "target": "samsung-aap1483 삼성카드 taptap O 등 삼성 상품설명서(대기열 맨 앞 10종)",
       "status": "open",
-      "reason": "삼성 카드 상세가 Nuxt 런타임으로 그려져 HTML에 상품설명서 PDF 링크가 없음. static11.samsungcard.com/.../YYMM_<코드>.pdf 파일명 추측 4건 모두 404 → 2회 실패로 중단 (2026-11-26 실행에서도 같은 이유로 건너뜀)",
+      "reason": "삼성 카드 상세가 SPA(Nuxt)로 그려져 딥링크가 홈으로 리다이렉트. static11 파일명 추측 2026-11-26 6건(2606_MASTER_P/T/VISA_P/VISA_S/MASTER_WE/AMEX_G_005_all.pdf) 모두 404 — 기존 4건과 합쳐 10건 실패",
       "retry": "① 카드 상세를 브라우저로 렌더한 뒤 네트워크 응답(_next/data·api)에서 PDF 주소를 찾기 ② 삼성카드 고객센터 > 상품공시실 목록을 열어 카드명으로 검색해 내려받기 ③ 그래도 없으면 이 줄에 날짜만 더하고 다음 카드로"
     },
     {
