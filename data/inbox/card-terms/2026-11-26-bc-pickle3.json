@@ -1,0 +1,344 @@
+{
+ "type": "card-terms",
+ "issuer": "BC카드",
+ "collectedAt": "2026-11-26",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "bc-101686",
+   "queueKey": "bc-101686",
+   "name": "로스트아크 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=101686&mbkNo=050",
+   "termsUrl": "https://www.bccard.com/down/individual/customer/101686.pdf",
+   "docDate": "2026-08-07",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    },
+    {
+     "brand": "Visa",
+     "amount": 12000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월 1일부터 말일(매출 승인일)까지 국내 가맹점 이용금액 30만원 이상(모집 크리스탈 혜택)",
+   "spendExclusions": [
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "연회비",
+    "각종 수수료/이자",
+    "제세공과금",
+    "국세·지방세",
+    "상품권 구매 및 충전",
+    "아파트관리비",
+    "초·중·고등학교 학교납입금",
+    "대학등록금"
+   ],
+   "benefitExclusions": [
+    "로스트아크 모험가 전용 혜택 대상 가맹점",
+    "할인받은 이용건의 해당 매출 전체"
+   ],
+   "benefits": [
+    {
+     "group": "로스트아크",
+     "label": "모험가 전용",
+     "place": "로스트아크 홈페이지 및 인게임 상점을 통한 로열 크리스탈 충전",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 10000
+      },
+      {
+       "spend": 500000,
+       "cap": 20000
+      },
+      {
+       "spend": 700000,
+       "cap": 25000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": "월 통합 한도",
+     "conditions": [
+      "로스트아크 모험가 전용 혜택과 기본 혜택은 중복 적용되지 않음"
+     ]
+    },
+    {
+     "group": "기본",
+     "label": "국내",
+     "place": "국내 가맹점",
+     "value": "0.5%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "tiers": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "전월실적 조건 없음",
+      "기본 혜택 중복 시 가장 낮은 할인율만 적용"
+     ]
+    },
+    {
+     "group": "기본",
+     "label": "국내 온라인",
+     "place": "국내 온라인 가맹점",
+     "value": "1.5%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "tiers": null,
+     "cap": 15000,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "전월실적 조건 없음"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "bc-101681",
+   "queueKey": "bc-101681",
+   "name": "페이북 머니 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=101681&mbkNo=050",
+   "termsUrl": "https://www.bccard.com/down/individual/customer/101681.pdf",
+   "docDate": "2026-04-29",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월 이용실적 조건 없음",
+   "spendExclusions": [
+    "제세공과금",
+    "국세·지방세",
+    "관세",
+    "건강보험",
+    "국민연금",
+    "고용보험",
+    "산재보험",
+    "상하수도·도시가스",
+    "여객·항공·버스·철도",
+    "아파트관리비",
+    "초·중·고등학교 학교납입금",
+    "대학등록금",
+    "상품권 구매 및 충전",
+    "SMS 이용수수료"
+   ],
+   "benefitExclusions": [
+    "SUPER·SPECIAL·STANDARD 간 중복 적립 불가",
+    "매출 취소 시 적립 취소"
+   ],
+   "benefits": [
+    {
+     "group": "페이북 머니",
+     "label": "SUPER",
+     "place": "온·오프라인 우리 가맹점 페이북 결제, 온·오프라인 가맹점 페이북 QR 결제",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "tiers": null,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "월 통합 한도 1만원",
+     "conditions": [
+      "페이북 머니로 적립(1페이북 머니 = 1원)"
+     ]
+    },
+    {
+     "group": "페이북 머니",
+     "label": "SPECIAL",
+     "place": "독서실·공고로고·영풍문고·알라딘, 올리브영·다이소·더세임, CU·배스킨라빈스·파리바게뜨·롯데리아 등 3종 카테고리",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "tiers": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "월 통합 한도 1만원",
+     "conditions": [
+      "오프라인 가맹점 현장 체크카드 결제에 한함",
+      "오프라인 가맹점에서 페이북 등록 체크카드 QR 결제 시 SUPER 1% 적용",
+      "백화점·대형할인점 내 매장 및 입점매장 결제 제외"
+     ]
+    },
+    {
+     "group": "페이북 머니",
+     "label": "STANDARD",
+     "place": "일반 가맹점(SUPER·SPECIAL 적립 대상 제외)",
+     "value": "0.2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "tiers": null,
+     "cap": null,
+     "capScope": "월",
+     "shared": "월 통합 한도 1만원",
+     "conditions": [
+      "간편결제 자동 반영분 제외"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "bc-102095",
+   "queueKey": "bc-102095",
+   "name": "밥바라밥 페이북머니 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=102095&mbkNo=050",
+   "termsUrl": "https://www.bccard.com/down/individual/customer/102095.pdf",
+   "docDate": "2026-04-29",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월 1일부터 말일(매출 승인일)까지 국내 가맹점 이용금액, 전월 20만원 이상이면 당월 1일부터 말일까지 적용",
+   "spendExclusions": [
+    "종일카페·점심식사·저녁간식 카테고리 적립 대상 매출",
+    "제수수료·이자",
+    "국세",
+    "지방세",
+    "관세",
+    "건강보험",
+    "국민연금",
+    "고용보험",
+    "산재보험",
+    "장애인고용부담금",
+    "상하수도·도시가스",
+    "아파트관리비",
+    "초·중·고등학교 학교납입금",
+    "대학등록금",
+    "상품권 구매 및 충전"
+   ],
+   "benefitExclusions": [
+    "페이북 머니 적립 제외 항목(국세·지방세·공과금 등)"
+   ],
+   "benefits": [
+    {
+     "group": "밥바라밥",
+     "label": "종일카페",
+     "place": "스타벅스·커피빈·투썸플레이스·이디야커피·폴바셋",
+     "value": "8%",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "tiers": [
+      {
+       "spend": 200000,
+       "cap": 2000
+      },
+      {
+       "spend": 400000,
+       "cap": 3000
+      },
+      {
+       "spend": 600000,
+       "cap": 4000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": "월 통합 한도(20만원 1만원·40만원 1.5만원·60만원 2만원)",
+     "conditions": [
+      "중복 해당 시 가장 낮은 8%만 적용"
+     ]
+    },
+    {
+     "group": "밥바라밥",
+     "label": "점심식사",
+     "place": "전국 음식점 업종(오전 11시~오후 2시 결제)",
+     "value": "8%",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "tiers": [
+      {
+       "spend": 200000,
+       "cap": 4000
+      },
+      {
+       "spend": 400000,
+       "cap": 6000
+      },
+      {
+       "spend": 600000,
+       "cap": 8000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": "월 통합 한도(20만원 1만원·40만원 1.5만원·60만원 2만원)",
+     "conditions": [
+      "시간대 중복 시 카테고리 중 가장 낮은 8% 적용"
+     ]
+    },
+    {
+     "group": "밥바라밥",
+     "label": "저녁간식",
+     "place": "편의점(CU·GS25·이마트24·세븐일레븐)·배달(배달의민족·요기요·쿠팡이츠)·베이커리·버거·온라인 간편결제(오후 5시~오후 9시)",
+     "value": "8%",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "tiers": [
+      {
+       "spend": 200000,
+       "cap": 4000
+      },
+      {
+       "spend": 400000,
+       "cap": 6000
+      },
+      {
+       "spend": 600000,
+       "cap": 8000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": "월 통합 한도(20만원 1만원·40만원 1.5만원·60만원 2만원)",
+     "conditions": [
+      "백화점·쇼핑몰·할인점 내 매장 및 입점매장 제외"
+     ]
+    },
+    {
+     "group": "밥바라밥",
+     "label": "기본",
+     "place": "국내 가맹점 이용금액 전체",
+     "value": "0.1%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "tiers": null,
+     "cap": null,
+     "capScope": "월",
+     "shared": null,
+     "conditions": [
+      "전월실적 조건 및 적립 한도 없음",
+      "KT그룹희망나눔단을 통해 취약계층 생필품 지원"
+     ]
+    }
+   ]
+  }
+ ]
+}
