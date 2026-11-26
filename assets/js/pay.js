@@ -26,7 +26,7 @@
 
   // 브랜드 이름(영문은 단어 경계, 한글은 포함)으로 상호를 맞춤 → [{brand}]
   const brandMatcher = (brands) => {
-    const keys = brands.filter((b) => b.kind === 'brand').flatMap((b) => [b.name, ...(b.aliases || [])].filter(Boolean).map((n) => {
+    const keys = brands.filter((b) => b.kind === 'brand' && b.match !== false).flatMap((b) => [b.name, ...(b.aliases || [])].filter(Boolean).map((n) => {
       const ascii = /^[\x20-\x7e]+$/.test(n);
       return { b, ascii, key: norm(n), rx: ascii ? new RegExp('(^|[^a-z0-9])' + n.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[^a-z0-9])') : null };
     }));
@@ -74,14 +74,17 @@
     const loadSido = async (id) => {
       if (!cache[id]) {
         const d = await MS.getJSON(`data/onnuri/${id}.json`);
-        const ix = Object.fromEntries(d.cols.map((c, i) => [c, i]));
+        // 시장 표(이름·시군구·동) + 가맹점 줄. 원본 소재지가 시도뿐이라 주소는 상가정보와 맞춘 곳만 있고,
+        // 나머지는 시장 위치(그 시장 가맹점들이 모인 시군구·동)를 보여 줌
+        const mk = d.markets.map((r) => Object.fromEntries(d.mcols.map((c, i) => [c, r[i]])));
         cache[id] = d.rows.map((r) => {
-          const s = Object.fromEntries(d.cols.map((c) => [c, r[ix[c]]]));
-          const parts = String(s.addr || '').split(' ');
-          s.sgg = parts[1] && parts[2] && /시$/.test(parts[1]) && /구$/.test(parts[2]) ? parts[1] + ' ' + parts[2] : (parts[1] || '');
-          s.short = parts.slice(1).join(' ');
+          const s = Object.fromEntries(d.cols.map((c, i) => [c, r[i]]));
+          const m = mk[s.m] || {};
+          s.market = m.name || '';
+          s.sgg = m.sgg || '위치 모름';
+          s.short = s.addr || (m.sgg ? `${m.sgg}${m.dong ? ' ' + m.dong : ''} 일대` : '');
           s.brands = brandsOf(s.name);
-          s.hay = norm([s.name, s.market, s.goods, s.addr, s.biz, s.cat].join(' '));
+          s.hay = norm([s.name, s.market, s.goods, s.addr, m.sgg, m.dong, s.biz, s.cat].join(' '));
           return s;
         });
       }
@@ -108,7 +111,7 @@
       const t = c ? (c === '수리·개인' ? '생활' : c.replace(/·.*/, '').slice(0, 2)) : '?';
       return `<span class="tile${c ? '' : ' py-unk'}" data-tone="${TONE[c] || 1}" data-len="${t.length}" aria-hidden="true">${esc(t)}</span>`;
     };
-    const mapUrl = (s) => 'https://map.naver.com/p/search/' + encodeURIComponent(`${s.name} ${s.short}`);
+    const mapUrl = (s) => 'https://map.naver.com/p/search/' + encodeURIComponent(s.addr ? `${s.name} ${s.addr}` : `${s.name} ${s.market}`);
 
     function render() {
       const sido = meta.sidos.find((s) => s.id === state.sido);
@@ -155,8 +158,8 @@
       return `<article class="wl-row py-row">
         ${catTile(s)}
         <div class="py-body">
-          <div class="py-name"><b>${esc(s.name)}</b>${s.biz ? `<small>${esc(s.biz)}</small>` : ''}</div>
-          <div class="py-addr">${s.market ? `<em>${esc(s.market)}</em> · ` : ''}${esc(s.short)}</div>
+          <div class="py-name"><b>${esc(s.name)}</b>${s.biz ? `<small>${esc(s.biz)}</small>` : s.inf ? '<small>업종 추정</small>' : ''}</div>
+          <div class="py-addr">${s.market ? `<em>${esc(s.market)}</em>${s.short ? ' · ' : ''}` : ''}${esc(s.short)}</div>
           ${s.goods ? `<div class="py-goods">${esc(s.goods)}</div>` : ''}
           <div class="py-tags">${tags.join('')}</div>
         </div>
