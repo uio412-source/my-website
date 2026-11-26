@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-27T08:05:49+09:00",
+ "updatedAt": "2026-11-27T08:09:57+09:00",
  "lock": null,
  "runs": [
   {
@@ -409,6 +409,23 @@
     "shinhan-201507300002",
     "shinhan-200404010001",
     "shinhan-200404010002"
+   ]
+  },
+  {
+   "at": "2026-11-27T08:09:57+09:00",
+   "kind": "card-terms",
+   "pr": 169,
+   "summary": "16차: NH농협카드 상품설명서 9종·혜택 50줄",
+   "queueKeys": [
+    "nh-90010600",
+    "nh-90010476",
+    "nh-90010611",
+    "nh-90010179",
+    "nh-90010137",
+    "nh-90010504",
+    "nh-90010505",
+    "nh-90010626",
+    "nh-90010629"
    ]
   }
  ],
