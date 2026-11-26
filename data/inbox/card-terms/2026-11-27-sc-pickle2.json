@@ -1,0 +1,218 @@
+{
+ "type": "card-terms",
+ "issuer": "SC제일은행",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "sc-4240",
+   "queueKey": "sc-4240",
+   "name": "SC제일은행 삼성체크카드 YOUNG",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.standardchartered.co.kr/",
+   "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218275_S_ch_PointCashbackYoung.pdf",
+   "docDate": "2022-07-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "grace": "발급월+1개월까지는 전월 이용금액 관계없이 제공",
+   "spendExclusions": [
+    "캐시백이 제공된 전체 이용금액(대중교통·이동통신 10%, 편의점·커피·제과 1,000원 캐시백)",
+    "고용·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "대학 등록금",
+    "선불카드 충전",
+    "모바일 티머니",
+    "스마트오토서비스 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부",
+    "삼성카드 할인이 적용된 이용금액",
+    "국세·지방세·공과금",
+    "대학 등록금",
+    "고속버스(차내 단말기·앱 결제)",
+    "고속도로 통행요금",
+    "선불카드 충전",
+    "상품권 구매",
+    "기프트카드 구매",
+    "문자알림서비스"
+   ],
+   "benefits": [
+    {
+     "label": "대중교통",
+     "place": "버스, 지하철(시외·고속버스 제외)",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 2500,
+     "capScope": "일",
+     "conditions": [
+      "전월 대중교통·이동통신요금 이용금액 30만원 이상 시"
+     ]
+    },
+    {
+     "label": "이동통신",
+     "place": "SKT, KT, LG U+ 이동통신요금 자동납부",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 2500,
+     "capScope": "일",
+     "conditions": [
+      "결합상품요금·휴대전화 단말기 구매금액·대리점 카드 결제 제외"
+     ]
+    },
+    {
+     "label": "편의점·커피·제과",
+     "place": "편의점, 커피전문점, 제과업종",
+     "value": "1,000원",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 1000,
+     "capScope": "건",
+     "limits": "월 최대 3회",
+     "conditions": [
+      "건당 6,000원 이상 결제 시 1,000원 캐시백",
+      "커피 업종은 상품권 구매·충전권 선불카드 구매건 제외"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "sc-4239",
+   "queueKey": "sc-4239",
+   "name": "SC제일은행 삼성체크카드 CASHBACK",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.standardchartered.co.kr/",
+   "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218276_S_ch_PointCashbackYoung.pdf",
+   "docDate": "2022-07-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "입출 및 연간 이용금액 기준(전월 30만원 이상이면 우대율)",
+   "spendExclusions": [
+    "캐시백·포인트 적립 제외 대상 이용금액",
+    "고용·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "대학 등록금",
+    "선불카드 충전(삼성유포인트카드, 삼성전자 멤버십 BLUE 삼성선불카드, 삼성올앳카드 등)",
+    "모바일 티머니",
+    "스마트오토서비스 이용금액"
+   ],
+   "benefitExclusions": [
+    "캐시백·포인트 적립 제외 대상 이용금액",
+    "고용·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "대학 등록금",
+    "선불카드 충전(삼성유포인트카드, 삼성전자 멤버십 BLUE 삼성선불카드, 삼성올앳카드 등)",
+    "모바일 티머니",
+    "스마트오토서비스 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "일반 가맹점",
+     "place": "모든 가맹점(적립 제외 대상 제외)",
+     "value": "0.2%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "전월 이용금액 30만원 이상이면 0.4%",
+      "업종별 캐시백이 더 크면 그 혜택만 적용"
+     ]
+    },
+    {
+     "label": "음식점·주유·할인점",
+     "place": "음식점(한식·양식·일식·중식·뷔페·패밀리레스토랑·일반음식점·패스트푸드), 주유(전국 주유소·LPG충전소), 할인점(이마트·홈플러스·롯데마트·백화점)",
+     "value": "0.3%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "전월 이용금액 30만원 이상이면 0.6%"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "sc-4238",
+   "queueKey": "sc-4238",
+   "name": "SC제일은행 삼성체크카드 POINT",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.standardchartered.co.kr/",
+   "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218277_S_ch_PointCashbackYoung.pdf",
+   "docDate": "2022-07-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "입출 및 연간 이용금액 기준(전월 30만원 이상이면 우대 적립률)",
+   "spendExclusions": [
+    "캐시백·포인트 적립 제외 대상 이용금액",
+    "고용·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "대학 등록금",
+    "선불카드 충전(삼성유포인트카드, 삼성전자 멤버십 BLUE 삼성선불카드, 삼성올앳카드 등)",
+    "모바일 티머니",
+    "스마트오토서비스 이용금액"
+   ],
+   "benefitExclusions": [
+    "캐시백·포인트 적립 제외 대상 이용금액",
+    "고용·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "대학 등록금",
+    "선불카드 충전(삼성유포인트카드, 삼성전자 멤버십 BLUE 삼성선불카드, 삼성올앳카드 등)",
+    "모바일 티머니",
+    "스마트오토서비스 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "일반 가맹점",
+     "place": "모든 가맹점(적립 제외 대상 제외)",
+     "value": "0.2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "전월 이용금액 30만원 이상이면 0.4%",
+      "빅포인트 적립(유효기간 5년)"
+     ]
+    },
+    {
+     "label": "음식점·주유·할인점",
+     "place": "음식점(한식·양식·일식·중식·뷔페·패밀리레스토랑·일반음식점·패스트푸드), 주유(전국 주유소·LPG충전소), 할인점(이마트·홈플러스·롯데마트·백화점)",
+     "value": "0.4%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "전월 이용금액 30만원 이상이면 0.8%"
+     ]
+    }
+   ]
+  }
+ ]
+}
