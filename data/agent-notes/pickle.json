@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-27T08:00:32+09:00",
+ "updatedAt": "2026-11-27T08:03:25+09:00",
  "lock": null,
  "runs": [
   {
@@ -377,6 +377,23 @@
     "nh-90010019",
     "nh-90010115"
    ]
+  },
+  {
+   "at": "2026-11-27T08:03:25+09:00",
+   "kind": "card-terms",
+   "pr": 165,
+   "summary": "14차: 신한카드 상품설명서 9종·혜택 38줄",
+   "queueKeys": [
+    "shinhan-201509030001",
+    "shinhan-202001290001",
+    "shinhan-201309240001",
+    "shinhan-202309260001",
+    "shinhan-202309260002",
+    "shinhan-201802130001",
+    "shinhan-202504290002",
+    "shinhan-202005220001",
+    "shinhan-202609080001"
+   ]
   }
  ],
  "skipped": [
@@ -592,6 +609,13 @@
    "target": "nh-90010006",
    "status": "open",
    "reason": "nh-90000319 국민행복카드는 A/B/C 타입별 혜택이 한 페이지에 섞여 있어 제외",
+   "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "shinhan-201509030001",
+   "status": "open",
+   "reason": "신한 상세 페이지는 실적·혜택 제외 항목을 항목화해 싣지 않아 제외 목록을 빈 배열로 두었음(상품설명서 PDF로 보완 필요)",
    "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
   }
  ]
