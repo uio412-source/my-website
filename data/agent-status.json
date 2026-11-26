@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T07:08:08+09:00",
+  "generatedAt": "2026-11-27T07:13:57+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -210,15 +210,41 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T07:50:00+09:00",
+      "updatedAt": "2026-11-27T08:25:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 146,
-        "title": "data: 수집 2026-11-27 5차 (KB 상품설명서 16종)",
-        "mergedAt": "2026-11-26T22:07:56Z",
-        "mergedAtKST": "2026-11-27 07:07"
+        "number": 150,
+        "title": "data: 수집 2026-11-27 7차 (SC제일은행 삼성체크카드 3종)",
+        "mergedAt": "2026-11-26T22:13:40Z",
+        "mergedAtKST": "2026-11-27 07:13"
       },
       "runs": [
+        {
+          "at": "2026-11-27T08:20:00+09:00",
+          "kind": "collect",
+          "pr": 150,
+          "summary": "card-terms SC제일은행 삼성체크카드 3종(YOUNG·CASHBACK·POINT) — 공통 안내장(2022.7) 이미지 표를 렌더해 옮김",
+          "queueKeys": [
+            "sc-4238",
+            "sc-4239",
+            "sc-4240"
+          ]
+        },
+        {
+          "at": "2026-11-27T08:10:00+09:00",
+          "kind": "collect",
+          "pr": 149,
+          "summary": "card-terms KB 3종(Liiv M Ⅱ·요기패스·다담) · SC제일은행 4종(디지털·드라이브·데일리·라이프) — SC제일은행 카드는 처음 수집",
+          "queueKeys": [
+            "kb-04241",
+            "kb-04284",
+            "kb-09169",
+            "sc-5600",
+            "sc-5601",
+            "sc-4625",
+            "sc-4628"
+          ]
+        },
         {
           "at": "2026-11-27T07:45:00+09:00",
           "kind": "collect",
@@ -442,7 +468,7 @@
           ]
         }
       ],
-      "openIssues": 22
+      "openIssues": 24
     }
   },
   "locks": [],
@@ -459,6 +485,48 @@
     }
   ],
   "recentPRs": [
+    {
+      "number": 150,
+      "title": "data: 수집 2026-11-27 7차 (SC제일은행 삼성체크카드 3종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle7",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T22:13:40Z",
+      "mergedAtKST": "2026-11-27 07:13",
+      "createdAt": "2026-11-26T22:12:51Z",
+      "createdAtKST": "2026-11-27 07:12",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/150"
+    },
+    {
+      "number": 149,
+      "title": "data: 수집 2026-11-27 6차 (KB 3종 · SC제일은행 4종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle6",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T22:11:53Z",
+      "mergedAtKST": "2026-11-27 07:11",
+      "createdAt": "2026-11-26T22:10:59Z",
+      "createdAtKST": "2026-11-27 07:10",
+      "area": "2파일 · data/inbox/card-terms 2",
+      "files": 2,
+      "url": "https://github.com/uio412-source/my-website/pull/149"
+    },
+    {
+      "number": 148,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 5차)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/queue-2026-11-27-pickle5",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T22:08:50Z",
+      "mergedAtKST": "2026-11-27 07:08",
+      "createdAt": "2026-11-26T22:08:14Z",
+      "createdAtKST": "2026-11-27 07:08",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/148"
+    },
     {
       "number": 146,
       "title": "data: 수집 2026-11-27 5차 (KB 상품설명서 16종)",
@@ -962,48 +1030,6 @@
       "area": "5파일 · data/ 2 · docs/ 2 · tools/data 1",
       "files": 5,
       "url": "https://github.com/uio412-source/my-website/pull/111"
-    },
-    {
-      "number": 110,
-      "title": "Mr. Cards: 광고성 이벤트를 '기타 광고'로 분류하고 내 카드 이벤트에서 제외",
-      "agent": "Claude",
-      "branch": "ai/claude/cards-ad-events",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T13:09:42Z",
-      "mergedAtKST": "2026-11-25 22:09",
-      "createdAt": "2026-11-25T13:08:48Z",
-      "createdAtKST": "2026-11-25 22:08",
-      "area": "9파일 · docs/ 3 · paymorevent/ 3 · data/ 2 외 1곳",
-      "files": 9,
-      "url": "https://github.com/uio412-source/my-website/pull/110"
-    },
-    {
-      "number": 109,
-      "title": "fix: 발레파킹 '확인 중' 목록에서 해결된 우리카드 항목 제거",
-      "agent": "Pickle",
-      "branch": "ai/pickle/woori-valet-pending",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T10:56:32Z",
-      "mergedAtKST": "2026-11-25 19:56",
-      "createdAt": "2026-11-25T10:56:15Z",
-      "createdAtKST": "2026-11-25 19:56",
-      "area": "1파일 · hotels/ 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/109"
-    },
-    {
-      "number": 108,
-      "title": "Mr. Cards: MG·우리 신규 카드 한도 칸 중복 표기 정리",
-      "agent": "Pickle",
-      "branch": "ai/pickle/mg-woori-capfix",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T10:50:18Z",
-      "mergedAtKST": "2026-11-25 19:50",
-      "createdAt": "2026-11-25T10:49:19Z",
-      "createdAtKST": "2026-11-25 19:49",
-      "area": "2파일 · paymorevent/ 2",
-      "files": 2,
-      "url": "https://github.com/uio412-source/my-website/pull/108"
     }
   ],
   "queue": {
@@ -1014,8 +1040,8 @@
     },
     "counts": {
       "cards": {
-        "done": 121,
-        "todo": 1326,
+        "done": 131,
+        "todo": 1316,
         "total": 1447
       },
       "brandPrograms": {
@@ -1042,6 +1068,15 @@
     {
       "date": "2026-11-27",
       "agent": "Pickle",
+      "target": "KB 나머지 상품설명서(kb-04285 스카이패스 티타늄·kb-09138 HERITAGE Classic·kb-09152 가온플래티늄·kb-09113/09114 KB Pay 챌린지·kb-09115/09116 AMEX Blue/Rose Gold)",
+      "status": "open",
+      "reason": "마일리지·스탬프 표가 이미지이거나 여러 장에 걸쳐 있어 이번 회차에 확정하지 못함",
+      "retry": "표 페이지만 고해상도로 렌더해 값 확인 후 수집",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
       "target": "KB 상품설명서 3종(kb-09250 The Easy·kb-09561 WE:SH Travel·kb-09570 WE:SH Daily)",
       "status": "open",
       "reason": "카드사가 지금 올려 둔 최신 판본이 2020-10-08·2024-09-23·2024-07-01 심의필이라 '올해·작년 문서' 규칙 밖",
@@ -1064,6 +1099,15 @@
       "status": "open",
       "reason": "텍스트 추출이 2~1,043자로 거의 안 됨(이미지 PDF), kb-02066은 혜택 표 없음",
       "retry": "fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮기기(회차당 2~3건씩)",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "SC제일은행 가이드북 5종(sc-4420 신세계이마트·sc-4753 글로벌 체크·sc-5349 스페셜마일리지·sc-5944/5945 M/X CHECK·sc-6266 ZERO·sc-6273 대한항공 060·sc-6277 현대카드M)",
+      "status": "open",
+      "reason": "카드별 혜택 표가 이미지이거나 여러 장에 흩어져 있어 이번 회차에 판독·정리하지 못함",
+      "retry": "PDF 페이지를 PNG로 렌더해 표를 읽고 카드별로 나눠 수집",
       "ref": ""
     },
     {

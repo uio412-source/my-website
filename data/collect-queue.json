@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 121,
-   "todo": 1326,
+   "done": 131,
+   "todo": 1316,
    "total": 1447
   },
   "brandPrograms": {
@@ -8101,7 +8101,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04241__prdctOpmn_20220530.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09923",
@@ -8475,7 +8475,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09169__prdctOpmn_20241129.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-02219",
@@ -8739,7 +8739,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04283__prdctOpmn_20231201.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-02171",
@@ -9300,7 +9300,7 @@
    "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218268_S_Daily.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "sc-5601",
@@ -9311,7 +9311,7 @@
    "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218271_S_Drive.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "sc-5600",
@@ -9322,7 +9322,7 @@
    "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218270_S_Digital.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "sc-4628",
@@ -9333,7 +9333,7 @@
    "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218269_S_Life.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "sc-5349",
@@ -13414,7 +13414,7 @@
    "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218276_S_ch_PointCashbackYoung.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "sc-4238",
@@ -13425,7 +13425,7 @@
    "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218277_S_ch_PointCashbackYoung.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "sc-4240",
@@ -13436,7 +13436,7 @@
    "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218275_S_ch_PointCashbackYoung.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "sc-5944",
