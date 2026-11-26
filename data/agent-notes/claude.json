@@ -1,13 +1,51 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-27T07:05:00+09:00",
+  "updatedAt": "2026-11-27T08:10:00+09:00",
   "lock": null,
   "runs": [
     {
-      "at": "2026-11-27T07:05:00+09:00",
+      "at": "2026-11-27T08:10:00+09:00",
       "kind": "collect",
       "pr": null,
+      "summary": "card-terms 신한 2차 30종(The BEST+·The CLASSIC Air·SOL Plan 계열·Discount Plan·ECO Plan·Hi-Point Plan·Simple 계열·Toss One·스타벅스·스타필드·이마트·카카오뱅크 2종·렌탈·구독 제휴 카드 등) — 공식 카드 상세 페이지(심의필 2025~2026), 연회비 29종은 카드 DB 값",
+      "queueKeys": [
+        "shinhan-201902270001",
+        "shinhan-202603060001",
+        "shinhan-202511130001",
+        "shinhan-202508180004",
+        "shinhan-202606010002",
+        "shinhan-202606100002",
+        "shinhan-202509150002",
+        "shinhan-202506190002",
+        "shinhan-202506240001",
+        "shinhan-202509150001",
+        "shinhan-202511240001",
+        "shinhan-202512050001",
+        "shinhan-202604300002",
+        "shinhan-202505230002",
+        "shinhan-202507310001",
+        "shinhan-202503280001",
+        "shinhan-202604090001",
+        "shinhan-202607130002",
+        "shinhan-202508180003",
+        "shinhan-202512230004",
+        "shinhan-202508290001",
+        "shinhan-202501150002",
+        "shinhan-202504150001",
+        "shinhan-202512040001",
+        "shinhan-202608030001",
+        "shinhan-202509240001",
+        "shinhan-202506170001",
+        "shinhan-202606090001",
+        "shinhan-202605270002",
+        "shinhan-202507080001"
+      ]
+    },
+    {
+      "at": "2026-11-27T07:05:00+09:00",
+      "kind": "collect",
+      "pr": 141,
       "summary": "card-terms 신한 10종(The CLASSIC NEO·메리어트 본보이 더 베스트·The BEST-XO·크리스플라이어 더 베스트·GS ALL·KT 으랏차차·LG전자 The 구독케어·New T 우주·SKT T&Life·SK브로드밴드) — 공식 카드 상세 페이지 본문(심의필 2025~2026)에서 옮김, 연회비가 자리표시자인 7종은 카드 DB 값",
       "queueKeys": [
         "shinhan-202510270001",
@@ -180,9 +218,10 @@
     {
       "date": "2026-11-26",
       "target": "shinhan-201902270001 The BEST+ · shinhan-202603060001 The CLASSIC Air",
-      "status": "open",
+      "status": "resolved",
       "reason": "Claude 세션에서 shinhancard.com은 Bash curl 프록시 403, WebFetch는 권한 요청 시간 초과. 신한 프리미엄 카드 상세에는 상품설명서 PDF 링크가 없고 브랜드 가이드 PDF(pconts/download/card/MO_26_*)만 있음",
-      "retry": "브라우저가 있는 에이전트(Pickle)가 상세 페이지 본문(심의필 날짜)으로 옮기거나, 상품공시실에서 상품설명서 PDF 확인"
+      "retry": "브라우저가 있는 에이전트(Pickle)가 상세 페이지 본문(심의필 날짜)으로 옮기거나, 상품공시실에서 상품설명서 PDF 확인",
+      "ref": "2026-11-27 Claude 2차 — shinhancard.com 상세 페이지 WebFetch로 읽힘(심의필 2026.09.17·2026.08.21)"
     },
     {
       "date": "2026-11-26",

@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-27 07:13 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-27 07:17 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,7 @@ _자동 생성 2026-11-27 07:13 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#151](https://github.com/uio412-source/my-website/pull/151) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 6·7차) | 2026-11-27 07:16 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#150](https://github.com/uio412-source/my-website/pull/150) | Pickle | data: 수집 2026-11-27 7차 (SC제일은행 삼성체크카드 3종) | 2026-11-27 07:13 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#149](https://github.com/uio412-source/my-website/pull/149) | Pickle | data: 수집 2026-11-27 6차 (KB 3종 · SC제일은행 4종) | 2026-11-27 07:11 | 2파일 · data/inbox/card-terms 2 | 머지 |
 | [#148](https://github.com/uio412-source/my-website/pull/148) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 5차) | 2026-11-27 07:08 | 4파일 · data/ 3 · docs/ 1 | 머지 |
@@ -59,7 +60,6 @@ _자동 생성 2026-11-27 07:13 KST · `python tools/data/agent_sync.py` · 기�
 | [#128](https://github.com/uio412-source/my-website/pull/128) | Pickle | data: 수집 2026-11-26 (롯데 VISA Infinite·MasterCard Titanium 선… | 2026-11-26 18:02 | 3파일 · data/inbox/brand-services 2 · data/inbox/… | 머지 |
 | [#127](https://github.com/uio412-source/my-website/pull/127) | Claude | Mr. Pay: 맨 위 혜택 배너 (온누리 할인율 · 네이버 페이스사인 · 토스 페이스페이) | 2026-11-26 17:57 | 10파일 · pay/ 3 · assets/ 2 · data/ 2 외 2곳 | 머지 |
 | [#126](https://github.com/uio412-source/my-website/pull/126) | Claude | Mr. Pay: 매장·시장 단위 겹쳐 보기 — 마인웍스처럼 온누리 + 네이버 페이스사인 되는 곳 | 2026-11-26 15:45 | 10파일 · assets/ 2 · data/ 2 · docs/ 2 외 4곳 | 머지 |
-| [#125](https://github.com/uio412-source/my-website/pull/125) | Claude | Mr. Pay 화면: 가맹점(온누리 + 토스페이·네이버 얼굴결제 겹쳐 보기) · 브랜드 | 2026-11-26 15:01 | 15파일 · assets/ 3 · pay/ 3 · 루트 3 외 4곳 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -80,7 +80,7 @@ _지금 잠근 영역이 없습니다._
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 1316 / 1447종 · **브랜드 프로그램** todo 51 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **남은 카드** 1286 / 1447종 · **브랜드 프로그램** todo 51 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
 - **최근 수집일** — card-terms 2026-11-27 · brand-services 2026-11-27 · card-events 2026-11-27 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
@@ -88,14 +88,14 @@ _지금 잠근 영역이 없습니다._
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #138 data: 수집 2026-11-27 (카드사 이벤트 5건) | 2026-11-27 06:43 | 0건 |
-| Claude | `data/agent-notes/claude.json` | #141 data: 수집 2026-11-27 (Claude · 신한 … | 2026-11-27 06:46 | 8건 |
-| Pickle | `data/agent-notes/pickle.json` | #150 data: 수집 2026-11-27 7차 (SC제일은행 삼성… | 2026-11-27 07:13 | 24건 |
+| Claude | `data/agent-notes/claude.json` | #141 data: 수집 2026-11-27 (Claude · 신한 … | 2026-11-27 06:46 | 7건 |
+| Pickle | `data/agent-notes/pickle.json` | #151 docs: 수집 대기열·공용 현황판 갱신 (2026-11-2… | 2026-11-27 07:16 | 24건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 27건
+### 다시 볼 것 (open) — 26건
 
 - **2026-11-27 · Pickle · KB 나머지 상품설명서(kb-04285 스카이패스 티타늄·kb-09138 HERITAGE Classic·kb-09152 가온플래티늄·kb-09113/09114 KB Pay 챌린지·kb-09115/09116 AMEX Blue/Rose Gold)**
   - 사유: 마일리지·스탬프 표가 이미지이거나 여러 장에 걸쳐 있어 이번 회차에 확정하지 못함
@@ -173,9 +173,6 @@ _지금 잠근 영역이 없습니다._
 - **- · Claude · shinhan-201507300001 The CLASSIC+ · shinhan-202408120002 The Premium PET · shinhan-202404220001 AK PLAZA Plus · shinhan-201907220001 11번가 · shinhan-202309010001 CJ ONE 프리즘 · shinhan-202103160001 IKEA Family**
   - 사유: 공식 상세 페이지의 심의필이 2021~2024년(2024.10.24·2024.06.18·2024.04.24·2023.12.28·2023.08.11·2021.04.20)이라 '올해·작년 문서' 규칙 밖
   - 재시도: 신한 상세 페이지 하단 심의필이 2025년 이후로 바뀌면 같은 페이지에서 옮기기
-- **- · Claude · shinhan-201902270001 The BEST+ · shinhan-202603060001 The CLASSIC Air**
-  - 사유: Claude 세션에서 shinhancard.com은 Bash curl 프록시 403, WebFetch는 권한 요청 시간 초과. 신한 프리미엄 카드 상세에는 상품설명서 PDF 링크가 없고 브랜드 가이드 PDF(pconts/download/card/MO_26_*)만 있음
-  - 재시도: 브라우저가 있는 에이전트(Pickle)가 상세 페이지 본문(심의필 날짜)으로 옮기거나, 상품공시실에서 상품설명서 PDF 확인
 - **- · Claude · tools/data/inbox.py card-terms cardId 규칙**
   - 사유: ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)
   - 재시도: check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기
@@ -199,7 +196,7 @@ _지금 잠근 영역이 없습니다._
   - 사유: PDF가 이미지로만 되어 있어 텍스트 추출이 안 됨
   - 대신 이렇게: 공식 상품 페이지 본문으로 대체 확인(내용 일치 확인함). 글자 추출이 꼭 필요하면 OCR이 필요하고, 보통은 상품 페이지 본문으로 충분
 
-### 해결됨 (resolved) — 5건
+### 해결됨 (resolved) — 6건
 
 - **2026-11-26 · Pickle · 발레파킹 서울 호텔 이름 표기 불일치 3곳(노보텔 앰배서더 서울 용산·노보텔 스위트 앰배서더 서울 용산·이비스 스타일 앰배서더 서울 용산)**
   - 사유: #128 배포 로그에서 hotels/valet.json에 없는 표기로 나와 호텔 연결 실패
@@ -220,6 +217,10 @@ _지금 잠근 영역이 없습니다._
 - **2026-11-25 · Pickle · 신한 Titanium · AMEX Gold·PLATINUM ELITE·The Platinum 안내장**
   - 사유: 신한 카드 상세 8장을 확인했지만 해당 등급 안내장이 없음. 신한 AMEX는 PLATINUM·PLATINUM ELITE 공통 안내장 1종(유형1 클래식+급)만 운영
   - 해결 방법: 없는 안내장이므로 다시 찾지 말 것 — 대기열 key는 내리거나 valet-only로 두고 다른 등급으로 넘어가기
+- **- · Claude · shinhan-201902270001 The BEST+ · shinhan-202603060001 The CLASSIC Air**
+  - 사유: Claude 세션에서 shinhancard.com은 Bash curl 프록시 403, WebFetch는 권한 요청 시간 초과. 신한 프리미엄 카드 상세에는 상품설명서 PDF 링크가 없고 브랜드 가이드 PDF(pconts/download/card/MO_26_*)만 있음
+  - 해결 방법: 브라우저가 있는 에이전트(Pickle)가 상세 페이지 본문(심의필 날짜)으로 옮기거나, 상품공시실에서 상품설명서 PDF 확인
+  - 참고: 2026-11-27 Claude 2차 — shinhancard.com 상세 페이지 WebFetch로 읽힘(심의필 2026.09.17·2026.08.21)
 
 ## 5. 기록하는 법 — `data/agent-notes/<내 파일>.json`
 
