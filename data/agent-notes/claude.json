@@ -1,9 +1,16 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-26T16:55:00+09:00",
+  "updatedAt": "2026-11-26T17:58:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-26T17:58:00+09:00",
+      "kind": "code",
+      "pr": 127,
+      "summary": "Mr. Pay 혜택 배너(pay/promos.json, 5초 롤링, 끝난 행사 자동 숨김) + 예약 작업 'Mr. Pay 행사·매장 매일 확인'(매일 10:17 KST) 만듦 — HJ 요청",
+      "queueKeys": []
+    },
     {
       "at": "2026-11-26T16:55:00+09:00",
       "kind": "code",

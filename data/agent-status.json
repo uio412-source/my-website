@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T15:41:59+09:00",
+  "generatedAt": "2026-11-26T17:56:39+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -49,15 +49,22 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-26T16:55:00+09:00",
+      "updatedAt": "2026-11-26T17:58:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 125,
-        "title": "Mr. Pay 화면: 가맹점(온누리 + 토스페이·네이버 얼굴결제 겹쳐 보기) · 브랜드",
-        "mergedAt": "2026-11-26T06:01:52Z",
-        "mergedAtKST": "2026-11-26 15:01"
+        "number": 126,
+        "title": "Mr. Pay: 매장·시장 단위 겹쳐 보기 — 마인웍스처럼 온누리 + 네이버 페이스사인 되는 곳",
+        "mergedAt": "2026-11-26T06:45:48Z",
+        "mergedAtKST": "2026-11-26 15:45"
       },
       "runs": [
+        {
+          "at": "2026-11-26T17:58:00+09:00",
+          "kind": "code",
+          "pr": 127,
+          "summary": "Mr. Pay 혜택 배너(pay/promos.json, 5초 롤링, 끝난 행사 자동 숨김) + 예약 작업 'Mr. Pay 행사·매장 매일 확인'(매일 10:17 KST) 만듦 — HJ 요청",
+          "queueKeys": []
+        },
         {
           "at": "2026-11-26T16:55:00+09:00",
           "kind": "code",
@@ -262,17 +269,31 @@
   "locks": [],
   "openPRs": [
     {
-      "number": 126,
-      "title": "Mr. Pay: 매장·시장 단위 겹쳐 보기 — 마인웍스처럼 온누리 + 네이버 페이스사인 되는 곳",
+      "number": 127,
+      "title": "Mr. Pay: 맨 위 혜택 배너 (온누리 할인율 · 네이버 페이스사인 · 토스 페이스페이)",
       "agent": "Claude",
-      "branch": "ai/claude/pay-store-overlap",
-      "createdAtKST": "2026-11-26 15:41",
-      "area": "7파일 · assets/ 2 · .github/ 1 · docs/ 1 외 3곳",
-      "url": "https://github.com/uio412-source/my-website/pull/126",
+      "branch": "ai/claude/pay-promo-banner",
+      "createdAtKST": "2026-11-26 17:54",
+      "area": "7파일 · pay/ 3 · assets/ 2 · docs/ 1 외 1곳",
+      "url": "https://github.com/uio412-source/my-website/pull/127",
       "draft": false
     }
   ],
   "recentPRs": [
+    {
+      "number": 126,
+      "title": "Mr. Pay: 매장·시장 단위 겹쳐 보기 — 마인웍스처럼 온누리 + 네이버 페이스사인 되는 곳",
+      "agent": "Claude",
+      "branch": "ai/claude/pay-store-overlap",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T06:45:48Z",
+      "mergedAtKST": "2026-11-26 15:45",
+      "createdAt": "2026-11-26T06:41:29Z",
+      "createdAtKST": "2026-11-26 15:41",
+      "area": "10파일 · assets/ 2 · data/ 2 · docs/ 2 외 4곳",
+      "files": 10,
+      "url": "https://github.com/uio412-source/my-website/pull/126"
+    },
     {
       "number": 125,
       "title": "Mr. Pay 화면: 가맹점(온누리 + 토스페이·네이버 얼굴결제 겹쳐 보기) · 브랜드",
@@ -804,20 +825,6 @@
       "area": "3파일 · docs/ 1 · tools/data 1 · 루트 1",
       "files": 3,
       "url": "https://github.com/uio412-source/my-website/pull/88"
-    },
-    {
-      "number": 87,
-      "title": "data: 멀티 에이전트 조율 규칙과 수집 대기열 갱신(중복 수집 방지)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/multi-agent-coordination",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T01:10:39Z",
-      "mergedAtKST": "2026-11-25 10:10",
-      "createdAt": "2026-11-25T01:10:07Z",
-      "createdAtKST": "2026-11-25 10:10",
-      "area": "6파일 · tools/data 3 · data/ 1 · docs/ 1 외 1곳",
-      "files": 6,
-      "url": "https://github.com/uio412-source/my-website/pull/87"
     }
   ],
   "queue": {
