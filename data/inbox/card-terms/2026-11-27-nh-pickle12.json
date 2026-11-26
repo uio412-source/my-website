@@ -1,0 +1,1199 @@
+{
+ "type": "card-terms",
+ "issuer": "NH농협카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "nh-90010158",
+   "queueKey": "nh-90010158",
+   "name": "올바른지구카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010158&WRS_TUP_C=F10080",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "일반",
+     "amount": 13000
+    },
+    {
+     "brand": "일반",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "일반",
+    "일반"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "교통",
+     "place": "버스·지하철·택시·철도(KTX·SRT)",
+     "value": "7%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "교통 서비스 통합 할인한도",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 10000
+      },
+      {
+       "spend": 800000,
+       "cap": 20000
+      }
+     ],
+     "conditions": [
+      "고속·시외버스 포함",
+      "카카오T택시 자동결제 포함"
+     ]
+    },
+    {
+     "label": "공유모빌리티",
+     "place": "렌터카·쏘카·그린카·카카오T바이크",
+     "value": "7%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "교통 서비스 통합 할인한도"
+    },
+    {
+     "label": "전기차 충전",
+     "place": "환경부 공공급속충전기(현장결제·멤버십 간편결제)",
+     "value": "7%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "교통 서비스 통합 할인한도"
+    },
+    {
+     "label": "이동통신",
+     "place": "SKT·KT·LG U+ 자동납부",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 1회"
+    },
+    {
+     "label": "오픈마켓·배달앱",
+     "place": "쿠팡·11번가·G마켓·옥션·농협몰, 배달의민족·요기요",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 10000,
+     "capScope": "월",
+     "shared": "생활 서비스 통합 할인한도",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      }
+     ]
+    },
+    {
+     "label": "스포츠·H&B",
+     "place": "종합스포츠센터·요가·수영장·볼링장, 올리브영·랄라블라",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "생활 서비스 통합 할인한도",
+     "conditions": [
+      "온라인결제 제외"
+     ]
+    },
+    {
+     "label": "커피·편의점",
+     "place": "스타벅스·이디야·커피빈·투썸플레이스 2,000원(월 2회), GS25·CU 1,000원(월 2회)",
+     "value": "1,000~2,000원",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "이용건당 1만원 이상",
+      "스타벅스 사이렌오더 포함"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010161",
+   "queueKey": "nh-90010161",
+   "name": "올바른HOMETOWN카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010161&WRS_TUP_C=F10093",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "일반",
+     "amount": 12000
+    },
+    {
+     "brand": "일반",
+     "amount": 14000
+    }
+   ],
+   "brands": [
+    "일반",
+    "일반"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "하나로마트·클럽",
+     "place": "하나로마트·하나로클럽(오프라인)",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "월 통합 할인한도",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 10000
+      },
+      {
+       "spend": 800000,
+       "cap": 15000
+      },
+      {
+       "spend": 1500000,
+       "cap": 20000
+      }
+     ]
+    },
+    {
+     "label": "슈퍼마켓",
+     "place": "슈퍼마켓 업종(잡화점·편의점 제외)",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "월 통합 할인한도"
+    },
+    {
+     "label": "병의원·약국",
+     "place": "병의원·약국 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "월 통합 할인한도"
+    },
+    {
+     "label": "홈쇼핑",
+     "place": "TV·전화 주문 홈쇼핑",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "월 통합 할인한도"
+    },
+    {
+     "label": "건강식품",
+     "place": "건강식품 업종(백화점·할인점 구매 제외)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "월 통합 할인한도"
+    },
+    {
+     "label": "대중교통",
+     "place": "버스·지하철(후불교통 실물카드)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "월 통합 할인한도",
+     "conditions": [
+      "시외·고속버스 제외"
+     ]
+    },
+    {
+     "label": "보이스피싱 보상보험",
+     "place": "보이스피싱 피해(스미싱·파밍 제외)",
+     "value": "최대 1,000만원",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "연 1회",
+     "conditions": [
+      "자기부담금 30% 공제",
+      "본인회원만(가족카드 제외)",
+      "NH농협손해보험 제공"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010162",
+   "queueKey": "nh-90010162",
+   "name": "GS리테일 NH농협카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010162&WRS_TUP_C=F10095",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "일반",
+     "amount": 12000
+    },
+    {
+     "brand": "일반",
+     "amount": 14000
+    }
+   ],
+   "brands": [
+    "일반",
+    "일반"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "GS리테일 적립",
+     "place": "GS25·GS THE FRESH·GS SHOP·GS Fresh Mall(GS리테일 앱·웹 포함)",
+     "value": "2%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "GS ALL 포인트, 연간 적립한도 500만점",
+      "상품권·선불카드·주차 등 비쇼핑 항목 제외",
+      "담배·서비스 상품·수탁상품 제외"
+     ]
+    },
+    {
+     "label": "국내 적립",
+     "place": "국내 전 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": 30000,
+     "capScope": "월",
+     "conditions": [
+      "NH포인트, 월 3만원 한도"
+     ]
+    },
+    {
+     "label": "해외 적립",
+     "place": "국외 전 가맹점",
+     "value": "2%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "국내·외 통합 월 적립한도"
+    },
+    {
+     "label": "공항 라운지",
+     "place": "인천공항 제1·2여객터미널(스카이허브·마티나), 김포·김해공항(스카이허브)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 1회, 연 2회"
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010166",
+   "queueKey": "nh-90010166",
+   "name": "나무 NH농협카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010166&WRS_TUP_C=F10094",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "일반",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "일반"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "스마트 캐시백 1위 영역",
+     "place": "온라인쇼핑·배달앱, 오프라인쇼핑·잡화, 이동통신·구독, 대중교통·택시, 커피·편의점, 해외 중 당월 1위",
+     "value": "8%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": 16000,
+     "capScope": "월",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 8000
+      },
+      {
+       "spend": 800000,
+       "cap": 11000
+      },
+      {
+       "spend": 1500000,
+       "cap": 16000
+      }
+     ],
+     "conditions": [
+      "나무증권 계좌로 캐시백(현금화 가능)",
+      "익월 15일 이후 입금"
+     ]
+    },
+    {
+     "label": "스마트 캐시백 2위 영역",
+     "place": "6개 영역 중 당월 2위",
+     "value": "4%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": 14000,
+     "capScope": "월",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 7000
+      },
+      {
+       "spend": 800000,
+       "cap": 9000
+      },
+      {
+       "spend": 1500000,
+       "cap": 14000
+      }
+     ],
+     "conditions": [
+      "1·2위 합계 40만원 1만5천원·80만원 2만원·150만원 3만원"
+     ]
+    },
+    {
+     "label": "나무멤버스",
+     "place": "나무멤버스 월 이용료",
+     "value": "최대 2,900원",
+     "valueType": "캐시백",
+     "minimumSpend": 400000,
+     "cap": 2900,
+     "capScope": "월",
+     "conditions": [
+      "나무증권 앱에서 제공하는 서비스",
+      "무료 이용기간 중에는 캐시백 없음"
+     ]
+    },
+    {
+     "label": "공항 라운지",
+     "place": "인천공항 제1·2여객터미널(스카이허브·마티나), 김포·김해공항(스카이허브)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 1회, 연 2회"
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010184",
+   "queueKey": "nh-90010184",
+   "name": "zgm.휴가중카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010184&WRS_TUP_C=F10102",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "Plus",
+     "amount": 25000
+    }
+   ],
+   "brands": [
+    "Plus"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "해외 적립",
+     "place": "해외 전 가맹점(해외직구·온라인 포함)",
+     "value": "2~5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 10만 포인트",
+     "conditions": [
+      "기본 2%, 전월 국내실적 50만~150만원 +1%(3%)·150만원 이상 +3%(5%)",
+      "추가적립은 월 이용액 100만원까지",
+      "해외 ATM 이용액 제외"
+     ]
+    },
+    {
+     "label": "국내 적립",
+     "place": "국내 전 가맹점",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월실적·적립한도 조건 없음"
+     ]
+    },
+    {
+     "label": "항공권·면세점 적립",
+     "place": "국내 항공사 홈페이지·모바일앱 항공권, 국내 오프라인 면세점",
+     "value": "+0.5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": 10000,
+     "capScope": "월",
+     "conditions": [
+      "월 1만 포인트 한도, 초과분은 기본적립 0.5%",
+      "인터넷·기내 면세점 제외"
+     ]
+    },
+    {
+     "label": "호텔스닷컴",
+     "place": "호텔스닷컴 전용 페이지 예약(쿠폰코드 NH20)",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 4회",
+     "conditions": [
+      "객실 요금만 할인(세금·수수료 제외)",
+      "NH농협카드 앱·웹·PC의 전용 페이지 경유"
+     ]
+    },
+    {
+     "label": "공항 라운지",
+     "place": "국내·외 공항 라운지(더 라운지)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 1회, 연 2회"
+    },
+    {
+     "label": "여행자보험",
+     "place": "해외·국내 여행 중 상해, 휴일·골프 상해, 여행불편",
+     "value": "최대 6억원",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "본인 여행비용을 카드로 전액 결제 시 상해보상 적용",
+      "NH농협손해보험 제공"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010213",
+   "queueKey": "nh-90010213",
+   "name": "zgm.rounding카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010213&WRS_TUP_C=F10144",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "Plus",
+     "amount": 23000
+    },
+    {
+     "brand": "Plus",
+     "amount": 25000
+    }
+   ],
+   "brands": [
+    "Plus",
+    "Plus"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "골프",
+     "place": "골프장·골프연습장·스크린골프",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 20000,
+     "capScope": "월",
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 5000
+      },
+      {
+       "spend": 500000,
+       "cap": 10000
+      },
+      {
+       "spend": 1000000,
+       "cap": 15000
+      },
+      {
+       "spend": 2000000,
+       "cap": 20000
+      }
+     ],
+     "conditions": [
+      "쇼골프 연습장 결제 건 제외"
+     ]
+    },
+    {
+     "label": "쇼골프",
+     "place": "쇼골프 연습장 타석권",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "건",
+     "limits": "월 2회"
+    },
+    {
+     "label": "홀인원 축하금",
+     "place": "엑스골프 앱·웹 예약 후 대상카드 결제, 정규 18홀 이상",
+     "value": "100만원",
+     "valueType": "제공",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "연 1회",
+     "conditions": [
+      "공식 홀인원 증서 필요",
+      "프로·이벤트 홀 제외"
+     ]
+    },
+    {
+     "label": "커피",
+     "place": "스타벅스·이디야·메가커피·투썸플레이스",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월",
+     "conditions": [
+      "결제 건당 5천원 이상",
+      "이디야·메가커피·투썸은 현장결제만"
+     ]
+    },
+    {
+     "label": "공항 라운지",
+     "place": "인천공항 제1·2여객터미널(스카이허브·마티나), 김포·김해공항",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 1회, 연 2회"
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010216",
+   "queueKey": "nh-90010216",
+   "name": "zgm.고향으로카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010216&WRS_TUP_C=F10110",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "일반",
+     "amount": 12000
+    }
+   ],
+   "brands": [
+    "일반"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "기본 적립",
+     "place": "국내·해외 전 가맹점",
+     "value": "0.7%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월실적·적립한도 조건 없음",
+      "NH포인트 적립"
+     ]
+    },
+    {
+     "label": "주말 추가 적립",
+     "place": "토·일요일 국내 이용 가맹점",
+     "value": "+0.3%",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "적립한도 없음"
+     ]
+    },
+    {
+     "label": "고향사랑 우대 적립",
+     "place": "기부지역 광역시·도 오프라인 가맹점 또는 전국 농협판매장·농협운영주유소(토·일)",
+     "value": "+0.7%",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 통합 1만 포인트",
+     "conditions": [
+      "고향사랑기부제 기부 고객만 제공",
+      "두 영역 중복 불가(최대 0.7%)",
+      "기부한 해부터 다음 해 12월 말까지 적용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010467",
+   "queueKey": "nh-90010467",
+   "name": "zgm.play카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010467&WRS_TUP_C=F10087",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "일반",
+     "amount": 12000
+    }
+   ],
+   "brands": [
+    "일반"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": "최초 카드사용등록일부터 다음 달 말일까지 최소실적구간 제공(놀이공원 제외)",
+   "spendExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "영화",
+     "place": "CGV·롯데시네마·메가박스",
+     "value": "5,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "shared": "공통서비스 합계 한도",
+     "limits": "일 1회, 월 2회, 연 12회",
+     "conditions": [
+      "이용건당 1만원 이상",
+      "영화예매권 결제만, 예매대행사이트·매점 제외"
+     ]
+    },
+    {
+     "label": "커피",
+     "place": "스타벅스·투썸플레이스·커피빈",
+     "value": "30%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "공통서비스 합계 한도",
+     "limits": "일 1회, 월 2회",
+     "conditions": [
+      "이용건당 5천원 이상 결제 시"
+     ]
+    },
+    {
+     "label": "외식",
+     "place": "패스트푸드 업종",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "공통서비스 합계 한도",
+     "limits": "일 1회, 월 2회",
+     "conditions": [
+      "이용건당 5천원 이상 결제 시"
+     ]
+    },
+    {
+     "label": "미용실",
+     "place": "미용실 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "공통서비스 합계 한도",
+     "limits": "일 1회, 월 1회",
+     "conditions": [
+      "이용건당 1만원 이상",
+      "H&B·편의점과 일 1회 통합"
+     ]
+    },
+    {
+     "label": "쇼핑·서점",
+     "place": "쿠팡·티몬, 교보문고·영풍문고·YES24·알라딘",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "공통서비스 합계 한도",
+     "limits": "일 1회",
+     "conditions": [
+      "이용건당 2만원 이상"
+     ]
+    },
+    {
+     "label": "선택서비스",
+     "place": "온라인-플레이: 인앱결제(플레이스토어·앱스토어·원스토어)·PC게임 충전·PC게임방·이동통신 10% / 오프라인-플레이: 피트니스·교통 10%",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "conditions": [
+      "온라인-플레이/오프라인-플레이 중 택1",
+      "전월 30만원 이상 5천원, 70만원 이상 1만원 한도",
+      "공통서비스 한도와 별도"
+     ]
+    },
+    {
+     "label": "놀이공원",
+     "place": "롯데월드·에버랜드·서울랜드·캐리비안베이",
+     "value": "자유이용권 50%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 1회, 연 6회",
+     "conditions": [
+      "현장 할인",
+      "캐리비안베이는 입장료 30%",
+      "월 할인한도에서 차감되지 않음"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010468",
+   "queueKey": "nh-90010468",
+   "name": "zgm.play++카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010468&WRS_TUP_C=F10728",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "TwoPlus",
+     "amount": 63000
+    },
+    {
+     "brand": "TwoPlus",
+     "amount": 65000
+    }
+   ],
+   "brands": [
+    "TwoPlus",
+    "TwoPlus"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "영화",
+     "place": "CGV·롯데시네마·메가박스",
+     "value": "5,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "shared": "공통서비스 합계 한도",
+     "limits": "일 1회, 월 2회, 연 12회",
+     "conditions": [
+      "이용건당 1만원 이상",
+      "영화예매권 결제만, 예매대행사이트·매점 제외"
+     ]
+    },
+    {
+     "label": "커피",
+     "place": "스타벅스·투썸플레이스·커피빈",
+     "value": "30%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "공통서비스 합계 한도",
+     "limits": "일 1회, 월 2회",
+     "conditions": [
+      "이용건당 5천원 이상 결제 시"
+     ]
+    },
+    {
+     "label": "외식",
+     "place": "패스트푸드 업종",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "공통서비스 합계 한도",
+     "limits": "일 1회, 월 2회",
+     "conditions": [
+      "이용건당 5천원 이상 결제 시"
+     ]
+    },
+    {
+     "label": "미용실",
+     "place": "미용실 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "공통서비스 합계 한도",
+     "limits": "일 1회, 월 1회",
+     "conditions": [
+      "이용건당 1만원 이상",
+      "H&B·편의점과 일 1회 통합"
+     ]
+    },
+    {
+     "label": "쇼핑·서점",
+     "place": "쿠팡·티몬, 교보문고·영풍문고·YES24·알라딘",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "공통서비스 합계 한도",
+     "limits": "일 1회",
+     "conditions": [
+      "이용건당 2만원 이상"
+     ]
+    },
+    {
+     "label": "선택서비스",
+     "place": "온라인-플레이: 인앱결제·PC게임 충전·PC게임방·이동통신 10% / 오프라인-플레이: 피트니스·교통 10%",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "conditions": [
+      "온라인-플레이/오프라인-플레이 중 택1",
+      "전월 30만원 이상 5천원, 70만원 이상 1만원 한도",
+      "공통서비스 한도와 별도"
+     ]
+    },
+    {
+     "label": "놀이공원",
+     "place": "롯데월드·에버랜드·서울랜드·캐리비안베이",
+     "value": "자유이용권 50%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 1회, 연 6회",
+     "conditions": [
+      "현장 할인",
+      "캐리비안베이는 입장료 30%",
+      "월 할인한도에서 차감되지 않음"
+     ]
+    },
+    {
+     "label": "프리미엄 바우처",
+     "place": "소노호텔앤리조트 워터파크·온천·눈썰매장 2인 입장교환권",
+     "value": "2인 입장권 1매",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "연 1회",
+     "conditions": [
+      "초년도 10만원, 차년도부터 100만원 이상 이용 시",
+      "본인회원만(가족카드 제외)",
+      "지류 바우처, 분실·훼손 재발행 불가"
+     ]
+    },
+    {
+     "label": "공항 라운지",
+     "place": "국내·외 공항 라운지(더 라운지)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 1회, 연 2회"
+    }
+   ]
+  },
+  {
+   "cardId": "nh-90010507",
+   "queueKey": "nh-90010507",
+   "name": "KT할부 Plus NH농협카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.nonghyup.com/servlet/IpCc2021R.act?CD_WRS_SQNO=90010507&WRS_TUP_C=F10779",
+   "termsUrl": null,
+   "docDate": "2026-07-02",
+   "annualFee": [
+    {
+     "brand": "Plus",
+     "amount": 20000
+    },
+    {
+     "brand": "Plus",
+     "amount": 23000
+    }
+   ],
+   "brands": [
+    "Plus",
+    "Plus"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 기프트카드 구매(충전 포함)",
+    "대학등록금",
+    "제세공과금(국세·지방세·우체국 우편요금)",
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "KT 라이트할부",
+     "place": "KT 단말기 24·36개월 라이트할부(원금균등상환)",
+     "value": "최대 1만5천원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 15000,
+     "capScope": "월",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 10000
+      },
+      {
+       "spend": 800000,
+       "cap": 12000
+      },
+      {
+       "spend": 1200000,
+       "cap": 15000
+      }
+     ],
+     "conditions": [
+      "24개월 연 5.9%·36개월 연 7.0% 확정이자",
+      "KT 직영점·대리점·지정 가맹점만",
+      "월 청구금액이 할인액보다 적으면 청구금액까지만 할인"
+     ]
+    },
+    {
+     "label": "KT 통신요금",
+     "place": "KT 통신요금 자동납부",
+     "value": "최대 1만원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 10000,
+     "capScope": "월",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      }
+     ],
+     "conditions": [
+      "라이트할부 할인과 중복 불가",
+      "단말기 통신요금 자동납부만(결합상품·알뜰폰 제외)"
+     ]
+    },
+    {
+     "label": "커피·베이커리·영화",
+     "place": "스타벅스·이디야 10%, 파리바게뜨·파리크라상·던킨도너츠·배스킨라빈스 10%, CGV 1천원",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 통합 1만원",
+     "conditions": [
+      "건당 1만원 이상",
+      "이디야·베이커리는 오프라인 직접 결제만",
+      "백화점·할인점·마트 입점매장 제외"
+     ]
+    }
+   ]
+  }
+ ]
+}
