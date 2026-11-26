@@ -257,7 +257,7 @@ def iter_sangga(zbytes: bytes):
     """상가(상권)정보 ZIP 안의 시도별 CSV를 한 줄씩."""
     with zipfile.ZipFile(io.BytesIO(zbytes)) as z:
         names = [n for n in z.namelist() if n.lower().endswith(".csv")]
-        log("상가정보 파일:", len(names), "개")
+        log("상가정보 파일:", len(names), "개", [n.encode("cp437", "replace").decode("cp949", "replace") if not n.isascii() else n for n in z.namelist()][:30])
         for n in names:
             raw = z.read(n)
             text = decode(raw)
@@ -267,8 +267,12 @@ def iter_sangga(zbytes: bytes):
             if "name" not in idx or ("road" not in idx and "jibun" not in idx):
                 log("상가정보: 칸을 못 맞춤", n, head[:12])
                 continue
+            sidos = Counter()
             for r in rows:
-                yield {k: (r[i].strip() if i < len(r) else "") for k, i in idx.items()}
+                g = {k: (r[i].strip() if i < len(r) else "") for k, i in idx.items()}
+                sidos[g.get("sido", "")] += 1
+                yield g
+            log("  ", len(raw) // 1_000_000, "MB", dict(sidos.most_common(3)))
 
 
 MAX_CANDS = 80  # '제일상회'처럼 아주 흔한 상호는 후보를 이만큼만 봄
@@ -281,11 +285,12 @@ def match(stores: list[dict], sangga_rows) -> tuple[Counter, dict]:
     for i, s in enumerate(stores):
         by_key[(s["short"], nname(s["name"]))].append(i)
     cands = defaultdict(list)
-    seen, cats = 0, Counter()
+    seen, cats, other = 0, Counter(), Counter()
     for g in sangga_rows:
         seen += 1
         short = SIDO_OF.get(g.get("sido", ""), (None, None))[1]
         if not short:
+            other[g.get("sido", "")] += 1
             continue
         cats[g.get("cat", "")] += 1
         keys = {nname(g.get("name", ""))}
@@ -296,6 +301,8 @@ def match(stores: list[dict], sangga_rows) -> tuple[Counter, dict]:
                 if len(cands[i]) < MAX_CANDS:
                     cands[i].append(g)
     log(f"상가정보 {seen:,}곳 · 대분류 {dict(cats.most_common())}")
+    if other:
+        log("상가정보 시도명을 못 읽은 줄:", dict(other.most_common(5)))
     log(f"같은 시도·상호 후보가 있는 온누리 가맹점 {len(cands):,}곳")
 
     # 시장 위치: 가맹점마다 후보 시군구(·동)에 1/후보수 표를 줌
