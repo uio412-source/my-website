@@ -1,0 +1,267 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-04241",
+   "queueKey": "kb-04241",
+   "name": "KB국민 Liiv M Ⅱ 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04241&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/04241__prdctOpmn_20220530.pdf",
+   "docDate": "2021-03-05",
+   "annualFee": [
+    {
+     "brand": "국내전용(Local)",
+     "amount": 15000
+    },
+    {
+     "brand": "해외겸용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용(Local)",
+    "해외겸용"
+   ],
+   "minimumSpend": 300000,
+   "grace": "최초 사용등록일로부터 다음달 말일까지 이용실적이 없어도 1구간(30만원 이상) 할인 적용",
+   "spendExclusions": [
+    "할인받은 이용건(해당 매출 전체)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "국세",
+    "지방세",
+    "공과금(전기·수도)",
+    "아파트관리비",
+    "정부지원금",
+    "대학(원) 등록금",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "상품권 및 선불카드 구입·충전금액",
+    "취소금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 선불카드 구입·충전금액"
+   ],
+   "benefits": [
+    {
+     "label": "통신요금",
+     "place": "Liiv M 통신요금 자동납부",
+     "value": "12,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 12000
+      },
+      {
+       "spend": 700000,
+       "cap": 17000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "자동납부 승인금액이 할인금액보다 작으면 승인금액까지만 할인",
+      "여러 건이면 합산해 월 할인금액 내에서 할인"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-04284",
+   "queueKey": "kb-04284",
+   "name": "요기패스 신용카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04284&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/04283__prdctOpmn_20231201.pdf",
+   "docDate": "2021-08-02",
+   "annualFee": [
+    {
+     "brand": "국내전용(Local)",
+     "amount": 15000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용(Local)",
+    "국내외겸용"
+   ],
+   "minimumSpend": 300000,
+   "grace": "최초 사용등록일로부터 다음달 말일까지 실적 30만원 미만이어도 할인 제공",
+   "spendExclusions": [
+    "할인받은 이용건(해당 매출 전체)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "국세",
+    "지방세",
+    "공과금(전기·수도)",
+    "아파트관리비",
+    "정부지원금",
+    "대학(원) 등록금",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "상품권 및 선불카드 구입·충전금액",
+    "취소금액"
+   ],
+   "benefitExclusions": [
+    "상품권 및 선불카드 구입·충전금액"
+   ],
+   "benefits": [
+    {
+     "label": "요기패스",
+     "place": "요기패스 멤버십 구독료 자동납부",
+     "value": "9,900원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 9900,
+     "capScope": "월",
+     "conditions": [
+      "구독료 결제금액이 9,900원 미만이면 결제금액만큼만 청구할인"
+     ]
+    },
+    {
+     "label": "생활업종",
+     "place": "커피, 편의점, 패스트푸드, 패밀리레스토랑, 미용실",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 10000
+      },
+      {
+       "spend": 600000,
+       "cap": 20000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "건당 1만원 이상 결제 시"
+     ]
+    },
+    {
+     "label": "구독",
+     "place": "넷플릭스, 웨이브",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월"
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09169",
+   "queueKey": "kb-09169",
+   "name": "KB국민 다담카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09169&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09169__prdctOpmn_20241129.pdf",
+   "docDate": "2024-04-02",
+   "annualFee": [
+    {
+     "brand": "모바일단독 K-WORLD",
+     "amount": 9000
+    },
+    {
+     "brand": "플라스틱 K-WORLD",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "모바일단독",
+    "플라스틱"
+   ],
+   "minimumSpend": 300000,
+   "grace": "최초 사용등록일로부터 다음달 말일까지 실적이 없어도 기본할인서비스 제공",
+   "spendExclusions": [
+    "할인받은 이용건(해당 매출 전체)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "국세",
+    "지방세",
+    "공과금(전기·수도)",
+    "아파트관리비",
+    "정부지원금",
+    "대학(원) 등록금",
+    "각종 수수료 및 이자",
+    "연체료",
+    "연회비",
+    "상품권 및 선불카드 구입·충전금액",
+    "취소금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액",
+    "상품권 및 선불카드 구입·충전금액"
+   ],
+   "benefits": [
+    {
+     "label": "대중교통",
+     "place": "버스, 지하철(시외·고속버스 제외)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월"
+    },
+    {
+     "label": "이동통신",
+     "place": "SKT, KT, LG U+ 이동통신요금 자동납부",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월"
+    },
+    {
+     "label": "주유",
+     "place": "SK주유소(충전소)",
+     "value": "리터당 60원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 이용금액 20만원까지",
+     "conditions": [
+      "SK에너지 고시 휘발유가 기준, 경유·등유·LPG는 휘발유가로 환산"
+     ]
+    },
+    {
+     "label": "영화",
+     "place": "CGV, 메가박스 온라인 예매",
+     "value": "3,500원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 3500,
+     "capScope": "건",
+     "limits": "일 2회, 월 4회, 연 10회"
+    },
+    {
+     "label": "놀이공원",
+     "place": "롯데월드 어드벤처",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "건",
+     "limits": "회원별 일 1매, 월 2매, 연 5매"
+    }
+   ]
+  }
+ ]
+}
