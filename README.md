@@ -1,4 +1,4 @@
-# my-website — Mr. Stocks · Mr. Cards · Mr. Hotels · Mr. Travel
+# my-website — Mr. Stocks · Mr. Cards · Mr. Hotels · Mr. Travel · Mr. Pay
 
 카드·주식·호텔·여행 정보를 한 저장소에서 만드는 정적 웹사이트입니다(HTML/CSS/JS + Mr. Cards만 React/Vite). `main` 브랜치에 merge되면 **GitHub Pages로 자동 배포**됩니다.
 
@@ -20,6 +20,8 @@
 | **Mr. Travel** | `/travel/index.html` | 카드사 해외·여행 혜택(공통·나라별·트래블카드) | `travel/benefits.json` (배포 때 `tools/travel/benefits.py`) |
 | | `/travel/places.html` | 세계지도 나라별 성수기·항공권·호텔 시세 | `travel/places.json`, `travel/world.json` |
 | | `/travel/prep.html` | 여행준비 5단계(항공권·호텔·이동·면세점·라운지) | `travel/prep.json` (배포 때 `tools/travel/prep.py`) |
+| **Mr. Pay** | `/pay/` | 온누리 가맹점(지역·업종·품목 검색) + 토스페이·네이버페이 페이스사인 브랜드 겹쳐 보기 | `pay/data/onnuri/*.json` (배포 때 `tools/pay/build.py`, 원본 새 판은 매월 초 확인) |
+| | `/pay/brands.html` | 토스페이·네이버페이 페이스사인 브랜드·장소(출처·상태) | `pay/brands.json` (손으로 정리) |
 
 ## 데이터 수집·생성
 
@@ -31,6 +33,7 @@
 | `tools/data/inbox.py merge` | 카드사 이벤트·호텔 이벤트·여행 이벤트·브랜드 서비스 | 매 배포 |
 | `tools/travel/benefits.py` | `travel/benefits.json` | 매 배포 |
 | `tools/travel/prep.py` | `travel/prep.json` | 매 배포 |
+| `tools/pay/build.py` | `pay/data/onnuri/*.json` (온누리 가맹점 + 상가정보 업종·좌표) | 매 배포(원본 새 판 확인은 매월 첫 배포, `actions/cache`) |
 | `tools/hotels/images.py` | `hotels/images.json` (대표 이미지 캐시) | 매 배포 |
 | `tools/data/queue.py` | `data/collect-queue.json` (무엇을 먼저 모을지) | 수집 PR 머지 뒤 자동 |
 | `tools/data/agent_sync.py` | `docs/agent-sync.md` · `data/agent-status.json` (에이전트별 최근 PR·잠금·실패 로그) | 기록을 바꿀 때(사람·에이전트) |

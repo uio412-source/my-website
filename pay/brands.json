@@ -1,0 +1,17 @@
+{
+  "checked": "2026-11-26",
+  "about": "토스페이·네이버페이 페이스사인은 매장 단위 공개 목록이 없어 공식 발표·보도된 브랜드(kind brand)와 장소(kind place)만 손으로 정리합니다. status: 됨(전 매장 가능으로 발표) · 일부(일부 매장) · 예정(도입 계획). 가맹점 화면의 '온누리 + 토스페이/네이버' 겹쳐 보기는 온누리 가맹점 상호에 kind brand의 name·aliases가 들어 있는지로만 판단합니다.",
+  "programs": [
+    { "id": "toss", "name": "토스페이", "short": "토스페이", "how": "토스 프론트 단말기에서 얼굴(페이스페이)·바코드로 결제", "find": "토스 앱 › 페이스페이 › 결제 가능 매장", "url": "https://toss.im/tossfeed/article/facepay-faq" },
+    { "id": "naver", "name": "네이버페이 페이스사인", "short": "네이버 얼굴결제", "how": "Npay 커넥트 단말기에서 얼굴로 결제", "find": "네이버 지도 가게 정보의 '커넥트+' 표시", "url": "https://biz.sbs.co.kr/amp/article/20000339581" }
+  ],
+  "brands": [
+    { "name": "CU", "aliases": ["씨유"], "kind": "brand", "cat": "편의점", "program": "toss", "method": "바코드", "status": "됨", "scope": "전국 매장", "date": "2023-07", "src": "https://toss.im/tossfeed/article/tosspay-CU", "srcTitle": "토스피드" },
+    { "name": "토스 프론트 설치 매장", "aliases": [], "kind": "place", "cat": "여러 업종", "program": "toss", "method": "얼굴·바코드", "status": "됨", "scope": "약 50만 매장", "date": "2026-09", "src": "https://toss.im/tossfeed/article/tossplace-story-1", "srcTitle": "토스피드" },
+    { "name": "파리바게뜨", "aliases": ["파리바게트"], "kind": "brand", "cat": "베이커리", "program": "naver", "method": "커넥트 단말", "status": "예정", "scope": "약 3,400곳", "date": "2026 하반기", "src": "https://zdnet.co.kr/view/?no=20260619150600", "srcTitle": "지디넷코리아" },
+    { "name": "이삭토스트", "aliases": [], "kind": "brand", "cat": "분식", "program": "naver", "method": "커넥트 단말", "status": "예정", "scope": "가맹점", "date": "2026 하반기", "src": "https://zdnet.co.kr/view/?no=20260619150600", "srcTitle": "지디넷코리아" },
+    { "name": "더벤티", "aliases": [], "kind": "brand", "cat": "카페", "program": "naver", "method": "커넥트 단말", "status": "예정", "scope": "가맹점", "date": "2026 하반기", "src": "https://zdnet.co.kr/view/?no=20260619150600", "srcTitle": "지디넷코리아" },
+    { "name": "경희대 서울캠퍼스", "aliases": [], "kind": "place", "cat": "학교 식당·카페", "program": "naver", "method": "얼굴", "status": "일부", "scope": "교내 식당·카페", "date": "2024-03", "src": "https://navercorp.com/media/pressReleasesDetail?seq=31664", "srcTitle": "네이버 보도자료" },
+    { "name": "고속도로 휴게소 4곳", "aliases": [], "kind": "place", "cat": "휴게소", "program": "naver", "method": "키오스크 얼굴결제", "status": "예정", "scope": "4곳", "date": "2026-12", "src": "https://www.fnnews.com/news/202611111352287483", "srcTitle": "파이낸셜뉴스" }
+  ]
+}

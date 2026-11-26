@@ -11,7 +11,7 @@ MS.getJSON = (url) => {
 };
 
 (() => {
-// Mr. Hotels·Mr. Travel 같은 하위 사이트는 <html data-site="hotels|travel">이고 폴더 한 단계 아래에 있음
+// Mr. Hotels·Mr. Travel·Mr. Pay 같은 하위 사이트는 <html data-site="hotels|travel|pay">이고 폴더 한 단계 아래에 있음
 const subSite = document.documentElement.dataset.site || "";
 const isHotels = subSite !== ""; // 종목 데이터 배지·새로고침 버튼은 Mr. Stocks에서만
 const siteRoot = subSite ? "../" : "";
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   sysDark.addEventListener("change", () => { label(); window.dispatchEvent(new Event("themechange")); });
 });
 
-// ---------- 공통: 사이트 전환 (Stocks·Hotels·Travel). Mr. Cards 메뉴는 paymorevent/components/customer-shell.tsx ----------
+// ---------- 공통: 사이트 전환 (Stocks·Hotels·Travel·Pay). Mr. Cards 메뉴는 paymorevent/components/customer-shell.tsx ----------
 document.addEventListener("DOMContentLoaded", () => {
   const logo = document.querySelector(".site-header .logo");
   if (!logo) return;
@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `<a href="${siteRoot}paymorevent/"><b>Mr. <span>Cards</span></b><small>카드상품 · 이벤트 · 내 혜택</small></a>` +
     `<a href="${siteRoot}hotels/"${subSite === "hotels" ? ' aria-current="true"' : ""}><b>Mr. <span>Hotels</span></b><small>호텔 지도 · 등급표 · 이벤트 · 발레파킹</small></a>` +
     `<a href="${siteRoot}travel/"${subSite === "travel" ? ' aria-current="true"' : ""}><b>Mr. <span>Travel</span></b><small>해외여행 혜택 · 여행지 · 여행준비</small></a>` +
+    `<a href="${siteRoot}pay/"${subSite === "pay" ? ' aria-current="true"' : ""}><b>Mr. <span>Pay</span></b><small>온누리 · 토스페이 · 네이버페이 가맹점</small></a>` +
     "</div>";
   box.prepend(logo);
   const btn = box.querySelector(".site-switch-btn");

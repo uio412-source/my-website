@@ -19,7 +19,7 @@ META = re.compile(r'<meta name="mrs-build" content="[^"]*">')
 def main(version):
     (ROOT / "version.json").write_text(json.dumps(
         {"v": version, "built": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}))
-    for page in sorted([*ROOT.glob("*.html"), *(ROOT / "hotels").glob("*.html"), *(ROOT / "travel").glob("*.html")]):
+    for page in sorted([*ROOT.glob("*.html"), *(ROOT / "hotels").glob("*.html"), *(ROOT / "travel").glob("*.html"), *(ROOT / "pay").glob("*.html")]):
         html = page.read_text(encoding="utf-8")
         tag = f'<meta name="mrs-build" content="{version}">'
         html = META.sub(tag, html) if META.search(html) else html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  ' + tag, 1)
