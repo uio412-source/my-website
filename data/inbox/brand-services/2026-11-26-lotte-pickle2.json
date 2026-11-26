@@ -1,0 +1,569 @@
+{
+  "type": "brand-services",
+  "issuer": "롯데카드",
+  "collectedAt": "2026-11-26",
+  "collector": "Pickle",
+  "programs": [
+    {
+      "id": "lotte-visa-infinite",
+      "queueKey": "lotte-visa-infinite",
+      "brand": "Visa",
+      "tier": "Infinite",
+      "provider": "issuer_selection",
+      "docTitle": "VISA INFINITE 01 선택 서비스",
+      "url": "https://image.lottecard.co.kr/webapp/file/VISA_INFINITE_01_select_service_260514.pdf",
+      "docDate": "2026-05-07",
+      "validThrough": "2026-12-31",
+      "cards": [
+        "롯데 인피니트 카드",
+        "로열 30 인피니트 카드"
+      ],
+      "services": [
+        {
+          "category": "hotel_valet",
+          "title": "특급호텔 발렛파킹 서비스",
+          "minimumSpend": 0,
+          "monthlyLimit": 5,
+          "quotaScope": "per_hotel",
+          "sharedWith": "호텔별 월 5회(본인+가족카드 합산)",
+          "freeHours": null,
+          "holderOnly": false,
+          "useRequired": true,
+          "hotels": [
+            {
+              "name": "그랜드 워커힐 서울",
+              "city": "서울"
+            },
+            {
+              "name": "그랜드 하얏트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "글래드 강남 코엑스센터",
+              "city": "서울"
+            },
+            {
+              "name": "노보텔 앰배서더 서울 강남",
+              "city": "서울"
+            },
+            {
+              "name": "호텔 나루 서울 엠갤러리",
+              "city": "서울"
+            },
+            {
+              "name": "노보텔 앰배서더 서울 동대문 호텔 & 레지던스",
+              "city": "서울"
+            },
+            {
+              "name": "더 플라자",
+              "city": "서울"
+            },
+            {
+              "name": "몬드리안 서울 이태원",
+              "city": "서울"
+            },
+            {
+              "name": "레스케이프 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "르 메르디앙 & 목시 서울 명동",
+              "city": "서울"
+            },
+            {
+              "name": "메리어트 이그제큐티브 아파트먼트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "메이필드 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "안다즈 서울 강남",
+              "city": "서울"
+            },
+            {
+              "name": "반얀트리 클럽 앤 스파 서울",
+              "city": "서울"
+            },
+            {
+              "name": "서울가든호텔",
+              "city": "서울"
+            },
+            {
+              "name": "AC 호텔 바이 메리어트 서울 강남",
+              "city": "서울"
+            },
+            {
+              "name": "비스타 워커힐 서울",
+              "city": "서울"
+            },
+            {
+              "name": "서울 드래곤 시티",
+              "city": "서울"
+            },
+            {
+              "name": "서울신라호텔",
+              "city": "서울"
+            },
+            {
+              "name": "스위스 그랜드 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "호텔 코리아나",
+              "city": "서울"
+            },
+            {
+              "name": "오크우드 프리미어 코엑스 센터",
+              "city": "서울"
+            },
+            {
+              "name": "앰배서더 서울 풀만 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "코트야드 메리어트 서울 타임스퀘어",
+              "city": "서울"
+            },
+            {
+              "name": "콘래드 서울",
+              "city": "서울"
+            },
+            {
+              "name": "파크 하얏트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "JW 메리어트 동대문 스퀘어 서울",
+              "city": "서울"
+            },
+            {
+              "name": "포시즌스 호텔 서울",
+              "city": "서울"
+            },
+            {
+              "name": "소피텔 앰배서더 서울호텔 & 서비스드 레지던스",
+              "city": "서울"
+            },
+            {
+              "name": "그랜드 조선 부산",
+              "city": "기타"
+            },
+            {
+              "name": "JW 메리어트 제주 리조트 & 스파",
+              "city": "기타"
+            },
+            {
+              "name": "웨스틴 조선 부산",
+              "city": "기타"
+            },
+            {
+              "name": "파크 하얏트 부산",
+              "city": "기타"
+            },
+            {
+              "name": "대구 메리어트 호텔",
+              "city": "기타"
+            },
+            {
+              "name": "호텔 인터불고 대구",
+              "city": "기타"
+            },
+            {
+              "name": "그랜드 머큐어 앰배서더 창원",
+              "city": "기타"
+            },
+            {
+              "name": "그랜드 하얏트 인천",
+              "city": "기타"
+            },
+            {
+              "name": "인스파이어 엔터테인먼트 리조트",
+              "city": "기타"
+            },
+            {
+              "name": "소노캄 고양",
+              "city": "기타"
+            },
+            {
+              "name": "소노캄 여수",
+              "city": "기타"
+            },
+            {
+              "name": "세인트존스 호텔",
+              "city": "기타"
+            }
+          ],
+          "hotelRules": [
+            {
+              "name": "그랜드 하얏트 서울",
+              "receiptMin": null,
+              "monthlyLimit": null,
+              "note": "당일 결제 영수증 제시"
+            },
+            {
+              "name": "호텔 나루 서울 엠갤러리",
+              "receiptMin": null,
+              "monthlyLimit": null,
+              "note": "당일 결제 영수증 제시"
+            },
+            {
+              "name": "몬드리안 서울 이태원",
+              "receiptMin": 25000,
+              "monthlyLimit": null,
+              "note": "2만5천원 당일 결제 영수증 제시"
+            },
+            {
+              "name": "레스케이프 호텔",
+              "receiptMin": 30000,
+              "monthlyLimit": null,
+              "note": "3만원 당일 결제 영수증 제시"
+            },
+            {
+              "name": "호텔 코리아나",
+              "receiptMin": 25000,
+              "monthlyLimit": null,
+              "note": "2만5천원 당일 결제 영수증 제시"
+            },
+            {
+              "name": "오크우드 프리미어 코엑스 센터",
+              "receiptMin": null,
+              "monthlyLimit": null,
+              "note": "당일 결제 영수증 제시, 만차 시 3시간 무료 주차권 제공·이용 한도 1회 차감"
+            },
+            {
+              "name": "파크 하얏트 서울",
+              "receiptMin": 20000,
+              "monthlyLimit": null,
+              "note": "2만원 당일 결제 영수증 필수 지참"
+            },
+            {
+              "name": "JW 메리어트 동대문 스퀘어 서울",
+              "receiptMin": null,
+              "monthlyLimit": null,
+              "note": "당일 결제 영수증 필수 지참"
+            },
+            {
+              "name": "포시즌스 호텔 서울",
+              "receiptMin": 30000,
+              "monthlyLimit": null,
+              "note": "3만원 당일 결제 영수증 필수 지참"
+            },
+            {
+              "name": "소피텔 앰배서더 서울호텔 & 서비스드 레지던스",
+              "receiptMin": null,
+              "monthlyLimit": null,
+              "note": "객실·식음·스파 이용 시 제공, 외주(리테일) 업장 제외"
+            },
+            {
+              "name": "그랜드 조선 부산",
+              "receiptMin": null,
+              "monthlyLimit": null,
+              "note": "당일 결제 영수증 제시"
+            },
+            {
+              "name": "웨스틴 조선 부산",
+              "receiptMin": null,
+              "monthlyLimit": null,
+              "note": "당일 결제 영수증 제시"
+            },
+            {
+              "name": "세인트존스 호텔",
+              "receiptMin": null,
+              "monthlyLimit": null,
+              "note": "당일 결제 영수증 제시"
+            }
+          ],
+          "conditions": [
+            "호텔 객실 및 식음료 업장(연회장 제외) 이용을 위해 내방한 본인에 한해 제공",
+            "본인카드·가족카드 이용횟수 합산",
+            "호텔 요청 시 당일 이용 영수증 제시(미지참 시 발렛·주차요금 부과)",
+            "서울 드래곤 시티는 용산 4개 호텔 어느 곳이든 이용 가능"
+          ]
+        },
+        {
+          "category": "airport_valet",
+          "title": "인천공항 발렛파킹 서비스",
+          "minimumSpend": 0,
+          "monthlyLimit": 5,
+          "quotaScope": "per_service",
+          "sharedWith": "인천공항 월 5회(본인+가족카드 합산)",
+          "coverage": "인천공항 제1·2여객터미널",
+          "holderOnly": false,
+          "conditions": [
+            "사전예약 고객 대상(제1여객터미널 Maxerve·제2여객터미널 아마노코리아 예약 사이트)",
+            "발렛파킹 비용과 1일 3시간 이내 주차비 무료, 초과 주차요금은 별도 부담",
+            "그랜드 워커힐 서울과 비스타 워커힐 서울 발렛파킹은 통합 운영"
+          ]
+        },
+        {
+          "category": "airport_valet",
+          "title": "김포공항 발렛파킹 서비스",
+          "minimumSpend": 0,
+          "monthlyLimit": 2,
+          "annualLimit": 12,
+          "quotaScope": "per_service",
+          "sharedWith": "김포공항 월 2회·연 12회",
+          "coverage": "김포공항 국내선",
+          "holderOnly": false,
+          "conditions": [
+            "발렛파킹 서비스 제공시간 05:00~21:00(차량 출차는 24시간)",
+            "발렛파킹 비용만 무료, 주차비는 별도 정산"
+          ]
+        },
+        {
+          "category": "airport_valet",
+          "title": "김해공항 발렛파킹 서비스",
+          "minimumSpend": 0,
+          "monthlyLimit": 2,
+          "annualLimit": 12,
+          "quotaScope": "per_service",
+          "sharedWith": "김해공항 월 2회·연 12회",
+          "coverage": "김해공항 국내선·국제선",
+          "holderOnly": false,
+          "conditions": [
+            "입차 24시간 이전 지정주차장(나파크) 홈페이지·유선 예약 필수",
+            "발렛파킹 이용 시 1일 주차 무료, 추가 주차비는 별도 정산",
+            "발렛·출차 서비스 제공시간 06:30~21:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lotte-mastercard-titanium",
+      "queueKey": "lotte-mastercard-titanium",
+      "brand": "Mastercard",
+      "tier": "Titanium",
+      "provider": "issuer_selection",
+      "docTitle": "MasterCard TITANIUM 01 선택 서비스",
+      "url": "https://image.lottecard.co.kr/webapp/file/MasterCard_TITANIUM_01_select_service_260514.pdf",
+      "docDate": "2026-05-07",
+      "validThrough": "2026-12-31",
+      "cards": [
+        "롯데 티타늄 법인카드",
+        "캐논파트너스 롯데티타늄 법인카드",
+        "Gowid 롯데법인카드"
+      ],
+      "services": [
+        {
+          "category": "hotel_valet",
+          "title": "특급호텔 발렛파킹 서비스",
+          "minimumSpend": 0,
+          "monthlyLimit": 3,
+          "quotaScope": "per_hotel",
+          "sharedWith": "호텔별 월 3회(본인+가족카드 합산)",
+          "freeHours": 3,
+          "holderOnly": false,
+          "useRequired": true,
+          "hotels": [
+            {
+              "name": "앰배서더 서울 풀만 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "그랜드 워커힐 서울",
+              "city": "서울"
+            },
+            {
+              "name": "그랜드 하얏트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "노보텔 앰배서더 서울 강남",
+              "city": "서울"
+            },
+            {
+              "name": "노보텔 앰배서더 서울 동대문 호텔 & 레지던스",
+              "city": "서울"
+            },
+            {
+              "name": "메리어트 이그제큐티브 아파트먼트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "메이필드 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "몬드리안 서울 이태원",
+              "city": "서울"
+            },
+            {
+              "name": "반얀트리 클럽 앤 스파 서울",
+              "city": "서울"
+            },
+            {
+              "name": "서울가든호텔",
+              "city": "서울"
+            },
+            {
+              "name": "비스타 워커힐 서울",
+              "city": "서울"
+            },
+            {
+              "name": "스위스 그랜드 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "서울 드래곤 시티",
+              "city": "서울"
+            },
+            {
+              "name": "레스케이프 호텔",
+              "city": "서울"
+            },
+            {
+              "name": "코트야드 메리어트 서울 타임스퀘어",
+              "city": "서울"
+            },
+            {
+              "name": "콘래드 서울",
+              "city": "서울"
+            },
+            {
+              "name": "글래드 강남 코엑스센터",
+              "city": "서울"
+            },
+            {
+              "name": "서울신라호텔",
+              "city": "서울"
+            },
+            {
+              "name": "호텔 나루 서울 엠갤러리",
+              "city": "서울"
+            },
+            {
+              "name": "파크 하얏트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "JW 메리어트 동대문 스퀘어 서울",
+              "city": "서울"
+            },
+            {
+              "name": "JW 메리어트 호텔 서울",
+              "city": "서울"
+            },
+            {
+              "name": "호텔코리아나",
+              "city": "서울"
+            },
+            {
+              "name": "그랜드 하얏트 인천",
+              "city": "기타"
+            },
+            {
+              "name": "세인트존스 호텔",
+              "city": "기타"
+            },
+            {
+              "name": "호텔 인터불고 대구",
+              "city": "기타"
+            },
+            {
+              "name": "소노캄 고양",
+              "city": "기타"
+            },
+            {
+              "name": "소노캄 여수",
+              "city": "기타"
+            },
+            {
+              "name": "파크 하얏트 부산",
+              "city": "기타"
+            },
+            {
+              "name": "그랜드 머큐어 앰배서더 창원",
+              "city": "기타"
+            },
+            {
+              "name": "힐튼 경주",
+              "city": "기타"
+            },
+            {
+              "name": "대구 메리어트 호텔",
+              "city": "기타"
+            },
+            {
+              "name": "파라다이스호텔 부산",
+              "city": "기타"
+            },
+            {
+              "name": "JW 메리어트 제주 리조트 & 스파",
+              "city": "기타"
+            }
+          ],
+          "hotelRules": [
+            {
+              "name": "몬드리안 서울 이태원",
+              "receiptMin": 25000,
+              "monthlyLimit": null,
+              "note": "2만5천원 이상 당일 호텔 이용 영수증 제시"
+            },
+            {
+              "name": "레스케이프 호텔",
+              "receiptMin": 30000,
+              "monthlyLimit": null,
+              "note": "3만원 이상 당일 호텔 이용 영수증 제시"
+            },
+            {
+              "name": "JW 메리어트 호텔 서울",
+              "receiptMin": 50000,
+              "monthlyLimit": null,
+              "note": "5만원 이상 당일 호텔 이용 영수증 제시"
+            },
+            {
+              "name": "호텔코리아나",
+              "receiptMin": 25000,
+              "monthlyLimit": null,
+              "note": "2만5천원 이상 당일 호텔 이용 영수증 제시"
+            },
+            {
+              "name": "글래드 강남 코엑스센터",
+              "receiptMin": null,
+              "monthlyLimit": null,
+              "note": "만차 시 3시간 무료 주차권 제공·이용 한도 차감"
+            }
+          ],
+          "conditions": [
+            "발렛파킹 서비스는 본인 차량에 한해 제공(타인 차량 제외)",
+            "호텔 객실 및 식음료 업장(연회 이용고객 제외) 이용 고객에게 제공, 영수증 요구 가능",
+            "발렛파킹 이용 시 2~3시간 이내 주차비용 포함",
+            "본인카드·가족카드 이용횟수 합산"
+          ]
+        },
+        {
+          "category": "airport_valet",
+          "title": "인천공항 발렛파킹 서비스",
+          "minimumSpend": 0,
+          "monthlyLimit": 3,
+          "quotaScope": "per_service",
+          "sharedWith": "인천공항 월 3회(본인+가족카드 합산)",
+          "coverage": "인천공항 제1·2여객터미널",
+          "holderOnly": false,
+          "conditions": [
+            "사전예약 고객 대상(제1여객터미널 Maxerve·제2여객터미널 아마노코리아 예약 사이트)",
+            "주차비는 무료가 아니며 별도 유료 정산",
+            "제1여객터미널 3층 승용차 전용도로 5분 이상 정차 시 과태료"
+          ]
+        },
+        {
+          "category": "airport_lounge",
+          "title": "공항라운지 무료입장 서비스",
+          "minimumSpend": 0,
+          "annualLimit": 2,
+          "quotaScope": "per_service",
+          "coverage": "인천공항 스카이허브(동편·서편·탑승동)·마티나, 김포국제선, 김해국제선",
+          "guestCount": 0,
+          "holderOnly": false,
+          "conditions": [
+            "라운지 안내 데스크에서 보딩패스와 카드 제시",
+            "동반자 입장료는 고객 부담(마스터카드 결제 시 최대 2인 제휴가 34,000원/성인)",
+            "본인카드·가족카드 이용횟수 합산"
+          ]
+        }
+      ]
+    }
+  ]
+}
