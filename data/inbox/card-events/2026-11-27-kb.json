@@ -1,0 +1,33 @@
+{
+  "type": "card-events",
+  "issuer": "KB국민카드",
+  "collectedAt": "2026-11-27",
+  "collector": "ChatGPT",
+  "listUrls": [
+    "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001"
+  ],
+  "events": [
+    {
+      "id": "kb-202611-kblife-autopay",
+      "kind": "card",
+      "title": "KB라이프 딱좋은요즘건강 보험료자동납부 청구할인!",
+      "summary": "최초 자동납부 시 24개월간 월 최대 1만원 추가 청구할인",
+      "category": "통신사 등 제휴",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "KB라이프 딱좋은 요즘 건강 KB카드"
+      ],
+      "conditions": [
+        "대상 카드로 KB라이프생명 보험료 자동납부 신청. 기존 자동납부 이력 제외",
+        "전월 실적 20만원 이상, 자동납부 건당 1만원 이상",
+        "12월까지 최초 승인, 12월 납부분부터 적용",
+        "기본 할인을 차감한 보험료 잔액 범위에서 월 최대 1만원 추가 할인"
+      ],
+      "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?eventNum=1002521&mainCC=a",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ]
+}

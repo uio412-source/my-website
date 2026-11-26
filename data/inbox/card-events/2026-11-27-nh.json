@@ -1,0 +1,34 @@
+{
+  "type": "card-events",
+  "issuer": "NH농협카드",
+  "collectedAt": "2026-11-27",
+  "collector": "ChatGPT",
+  "listUrls": [
+    "https://card.nonghyup.com/servlet/IpCb0005M.act"
+  ],
+  "events": [
+    {
+      "id": "nh-202611-nh-money-on",
+      "kind": "card",
+      "title": "NH머니 혜택ON!",
+      "summary": "지정 8곳 10% 월 최대 3천원, 국내 적립 대상 가맹점 0.5% 추가",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-03",
+      "endsAt": "2026-12-24",
+      "entryRequired": false,
+      "cards": [
+        "NANA카드"
+      ],
+      "conditions": [
+        "NH pay 앱에서 NH pay머니로 결제하거나 NANA 실물카드로 결제",
+        "10% 대상은 CU·GS25·세븐일레븐·이마트24·배달의민족·요기요·다이소·올리브영 온라인몰",
+        "8곳 통합 월 3천원 한도. 국내 가맹점 0.5% 적립은 별도 한도 없이 중복 적용",
+        "0.5% 적립은 세금·공과금·관리비·상품권·선불 충전·후불교통·택시 등 제외",
+        "12월 30일까지 매입된 건에 대해 결제 후 5영업일 이내 지급. 적립금은 결제용"
+      ],
+      "url": "https://card.nonghyup.com/servlet/IpCb2002R.act?EVT_CRT_SQNO=6545",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ]
+}

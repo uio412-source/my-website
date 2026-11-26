@@ -1,0 +1,33 @@
+{
+  "type": "card-events",
+  "issuer": "신한카드",
+  "collectedAt": "2026-11-27",
+  "collector": "ChatGPT",
+  "listUrls": [
+    "https://www.shinhancard.com/mob/MOBFW11011N/MOBFW11011C02.shc"
+  ],
+  "events": [
+    {
+      "id": "shinhan-202604-sol-trip-j-shopping",
+      "kind": "card",
+      "title": "일본 유니클로&무지 등 5% 할인!",
+      "summary": "일본 유니클로·무지, 괌·하와이 ABC스토어 5% 캐시백",
+      "category": "해외/여행",
+      "startsAt": "2026-04-21",
+      "endsAt": "2026-12-31",
+      "entryRequired": false,
+      "cards": [
+        "신한카드 SOL트립앤J 체크"
+      ],
+      "conditions": [
+        "일본 유니클로·무지 합산 반기 5천원, 연 1만원 한도",
+        "괌·하와이 ABC스토어도 별도 반기 5천원, 연 1만원 한도",
+        "전월 실적 무관. 12월 31일까지 매입 완료된 거래 대상",
+        "매입일 기준 해당 결제일에 지급"
+      ],
+      "url": "https://www.shinhancard.com/pconts/html/benefit/event/1238481_2239.html",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ]
+}
