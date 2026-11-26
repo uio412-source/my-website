@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T02:50:13+09:00",
+  "generatedAt": "2026-11-27T06:41:18+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -192,13 +192,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T02:55:00+09:00",
+      "updatedAt": "2026-11-27T06:45:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 136,
-        "title": "data: 수집 2026-11-27 (하나카드 브랜드 선택서비스 6 · KB 상품설명서 4종)",
-        "mergedAt": "2026-11-26T17:49:39Z",
-        "mergedAtKST": "2026-11-27 02:49"
+        "number": 139,
+        "title": "data: 수집 2026-11-27 2차 (KB 상품설명서 26종 · 현대 AMEX 선택서비스 2 · 롯데 Mastercard Platinum)",
+        "mergedAt": "2026-11-26T21:40:07Z",
+        "mergedAtKST": "2026-11-27 06:40"
       },
       "runs": [
         {
@@ -324,14 +324,90 @@
           "pr": 93,
           "summary": "로드맵에 차트 요약 칸 삭제(#92) 기록",
           "queueKeys": []
+        },
+        {
+          "at": "2026-11-27T06:40:00+09:00",
+          "kind": "card-terms+brand-services",
+          "pr": 139,
+          "summary": "KB 국민카드 상품설명서 26종(혜택 143줄, 심의필 2025~2026년)·현대 AMEX The Platinum/Gold 선택제공서비스(호텔 발레 39/36곳)·롯데 Mastercard Platinum 공항라운지. 페이지 45/45·레코드 154/250",
+          "queueKeys": [
+            "kb-04366",
+            "kb-04367",
+            "kb-04368",
+            "kb-02212",
+            "kb-02219",
+            "kb-04124",
+            "kb-04291",
+            "kb-04494",
+            "kb-00236",
+            "kb-09659",
+            "kb-09792",
+            "kb-01506",
+            "kb-01507",
+            "kb-01508",
+            "kb-04417",
+            "kb-04418",
+            "kb-09127",
+            "kb-09128",
+            "kb-09129",
+            "kb-09139",
+            "kb-09200",
+            "kb-09790",
+            "kb-01914",
+            "kb-01998",
+            "kb-01570",
+            "kb-01574",
+            "hyundai-american-express-the-platinum",
+            "hyundai-american-express-gold",
+            "lotte-mastercard-platinum"
+          ]
         }
       ],
-      "openIssues": 15
+      "openIssues": 20
     }
   },
   "locks": [],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 138,
+      "title": "data: 수집 2026-11-27 (카드사 이벤트 5건)",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/data-2026-11-27-card-events",
+      "createdAtKST": "2026-11-27 06:33",
+      "area": "5파일 · data/inbox/card-events 5",
+      "url": "https://github.com/uio412-source/my-website/pull/138",
+      "draft": false
+    }
+  ],
   "recentPRs": [
+    {
+      "number": 139,
+      "title": "data: 수집 2026-11-27 2차 (KB 상품설명서 26종 · 현대 AMEX 선택서비스 2 · 롯데 Mastercard Platinum)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle2",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T21:40:07Z",
+      "mergedAtKST": "2026-11-27 06:40",
+      "createdAt": "2026-11-26T21:39:18Z",
+      "createdAtKST": "2026-11-27 06:39",
+      "area": "3파일 · data/inbox/brand-services 2 · data/inbox/card-terms 1",
+      "files": 3,
+      "url": "https://github.com/uio412-source/my-website/pull/139"
+    },
+    {
+      "number": 137,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle, #136 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T17:54:49Z",
+      "mergedAtKST": "2026-11-27 02:54",
+      "createdAt": "2026-11-26T17:50:27Z",
+      "createdAtKST": "2026-11-27 02:50",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/137"
+    },
     {
       "number": 136,
       "title": "data: 수집 2026-11-27 (하나카드 브랜드 선택서비스 6 · KB 상품설명서 4종)",
@@ -849,48 +925,6 @@
       "area": "14파일 · paymorevent/ 11 · assets/ 1 · docs/ 1 외 1곳",
       "files": 14,
       "url": "https://github.com/uio412-source/my-website/pull/100"
-    },
-    {
-      "number": 99,
-      "title": "data: 수집 2026-11-25 (BC 모두의카드 실적 제외 정정)",
-      "agent": "ChatGPT",
-      "branch": "ai/chatgpt/data-2026-11-25-bc-correction",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T06:09:16Z",
-      "mergedAtKST": "2026-11-25 15:09",
-      "createdAt": "2026-11-25T05:59:01Z",
-      "createdAtKST": "2026-11-25 14:59",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/99"
-    },
-    {
-      "number": 97,
-      "title": "data: 수집 2026-11-25 (BC 바로 모두의카드 1종)",
-      "agent": "ChatGPT",
-      "branch": "ai/chatgpt/data-2026-11-25-bc",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T05:06:33Z",
-      "mergedAtKST": "2026-11-25 14:06",
-      "createdAt": "2026-11-25T04:56:20Z",
-      "createdAtKST": "2026-11-25 13:56",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/97"
-    },
-    {
-      "number": 98,
-      "title": "Mr. Hotels 발레: 표기만 다른 같은 카드를 한 장으로 묶고 카드 DB 연결 보강",
-      "agent": "Claude",
-      "branch": "ai/claude/valet-card-names",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T04:58:10Z",
-      "mergedAtKST": "2026-11-25 13:58",
-      "createdAt": "2026-11-25T04:57:07Z",
-      "createdAtKST": "2026-11-25 13:57",
-      "area": "6파일 · paymorevent/ 2 · assets/ 1 · docs/ 1 외 2곳",
-      "files": 6,
-      "url": "https://github.com/uio412-source/my-website/pull/98"
     }
   ],
   "queue": {
@@ -901,14 +935,14 @@
     },
     "counts": {
       "cards": {
-        "done": 48,
-        "todo": 1399,
+        "done": 74,
+        "todo": 1373,
         "total": 1447
       },
       "brandPrograms": {
-        "done": 38,
-        "valetOnly": 4,
-        "todo": 52,
+        "done": 40,
+        "valetOnly": 3,
+        "todo": 51,
         "total": 94
       },
       "eventSources": {
@@ -933,6 +967,42 @@
       "status": "open",
       "reason": "카드사가 지금 올려 둔 최신 판본이 2020-10-08·2024-09-23·2024-07-01 심의필이라 '올해·작년 문서' 규칙 밖",
       "retry": "2025~2026년판이 올라오면 대기열 termsUrl(img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf)에서 교체",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "KB 상품설명서 심의필 2024년 이전 6종(kb-09174 청춘대로 톡톡·kb-09061 굿데이·kb-09063 굿데이올림·kb-00235 에버온EV·kb-02065 국민행복·kb-02083 LG헬로비전Ⅱ)",
+      "status": "open",
+      "reason": "카드사가 올린 최신 판본의 심의필이 2024년(또는 2022년)이라 '올해·작년 문서' 규칙 밖",
+      "retry": "2025~2026년판이 올라오면 img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf 에서 교체",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "KB 상품설명서 이미지 PDF 6종(kb-07998 노리2 학생증·kb-09701 On the Go·kb-01664 노리·kb-09298 YOU Wish up·kb-09106 Biz Prime·kb-02066 국민행복체크)",
+      "status": "open",
+      "reason": "텍스트 추출이 2~1,043자로 거의 안 됨(이미지 PDF), kb-02066은 혜택 표 없음",
+      "retry": "fitz로 페이지를 PNG(폭 1400px)로 렌더해 눈으로 읽어 옮기기(회차당 2~3건씩)",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "kb-09821 마라톤카드 · kb-04131(요청 302 SCDSA002)",
+      "status": "open",
+      "reason": "마라톤카드는 연회비 표가 이미지로만 있어 금액 확인 불가, kb-04131은 PDF가 아닌 안내 페이지 응답",
+      "retry": "마라톤카드는 홈페이지 카드 상세의 연회비 표(텍스트)로 확인, kb-04131은 카드 상세에서 상품설명서 링크 재확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "우리카드(95)·하나카드(111)·현대카드(100) 대기열 termsUrl",
+      "status": "open",
+      "reason": "대기열이 가리키는 주소가 상품설명서가 아님 — 우리는 카드Clause HTML, 하나는 표준약관 PDF(credit_card_260512.pdf 45쪽), 현대는 브랜드 선택서비스 안내서",
+      "retry": "카드 상세(pc.wooricard.com·hanacard·hyundaicard)를 브라우저로 렌더해 '상품설명서' PDF 링크를 카드별로 다시 찾아 queue.py 입력 갱신",
       "ref": ""
     },
     {
@@ -1077,6 +1147,15 @@
       "status": "open",
       "reason": "ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)",
       "retry": "check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "삼성카드 aap1910·신한카드 PC_26_01197 (Mastercard 프리미엄 서비스 안내)",
+      "status": "workaround",
+      "reason": "발레·라운지 항목이 없고 국내 특급호텔 객실·F&B 할인 목록(각 44·43곳) 위주라 brand-services 양식으로 담지 않음",
+      "retry": "hotel_benefit 카테고리로 호텔 목록을 담는 방식을 정한 뒤 다음 회차에 수집",
       "ref": ""
     },
     {
