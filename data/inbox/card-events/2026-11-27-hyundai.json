@@ -1,0 +1,31 @@
+{
+  "type": "card-events",
+  "issuer": "현대카드",
+  "collectedAt": "2026-11-27",
+  "collector": "ChatGPT",
+  "listUrls": [
+    "https://www.hyundaicard.com/cpb/ev/CPBEV0101_06.hc"
+  ],
+  "events": [
+    {
+      "id": "hyundai-202611-monthly-benefits",
+      "kind": "card",
+      "title": "11월 종합 혜택 안내",
+      "summary": "컬리·롯데ON 행사상품 최대 15% 즉시할인 등",
+      "category": "기타",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "현대카드 기존 보유 회원 대상. 법인·체크·하이브리드·Gift카드 제외",
+        "컬리·롯데ON은 배송비 제외 결제액 기준. 간편결제 제외",
+        "상품별 최소 결제액·할인율·한도 상이. 예산 소진 시 조기 종료 가능",
+        "Hmall은 11월 27일·29일 현대카드 할인가 표시 상품 5만원 이상 결제 시 5%, 일 20만원 한도"
+      ],
+      "url": "https://gwww.hyundaicard.com/cpb/ev/CPBEV0101_06.hc?bnftWebEvntCd=C01046&searchWord=",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ]
+}

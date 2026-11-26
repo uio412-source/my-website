@@ -1,0 +1,31 @@
+{
+  "type": "card-events",
+  "issuer": "하나카드",
+  "collectedAt": "2026-11-27",
+  "collector": "ChatGPT",
+  "listUrls": [
+    "https://m.hanacard.co.kr/MPAEVT100M.web"
+  ],
+  "events": [
+    {
+      "id": "hana-202611-first-overseas-pick",
+      "kind": "card",
+      "title": "일본, 베트남, 중국 해외 첫 결제 50% 적립쿠폰",
+      "summary": "3개국 대상 가맹점 이용액 50% 적립, 국가별 최대 5천 하나머니",
+      "category": "해외/여행",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "2025년 7월 이후 해외 온·오프라인 하나카드 결제 이력이 없는 개인 신용·체크 회원",
+        "국가별 하나Pick 쿠폰 신청 후 해당 국가 온·오프라인 결제. 국가별 기간 이용액 합산, 1인 1회",
+        "하나BC·법인·선불·기프트 제외",
+        "2027년 1월 10일까지 접수된 매출 대상. 1월 31일까지 지급"
+      ],
+      "url": "https://m.hanacard.co.kr/MKEVT1010M.web?EVN_SEQ=60623",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ]
+}
