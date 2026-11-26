@@ -1,9 +1,23 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-26T15:10:00+09:00",
+  "updatedAt": "2026-11-26T16:20:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-26T16:20:00+09:00",
+      "kind": "code",
+      "pr": 125,
+      "summary": "새 사이트 Mr. Pay 화면(pay/: 가맹점 온누리 + 토스페이·네이버 얼굴결제 브랜드 겹쳐 보기, 브랜드 목록 38곳·출처), 사이트 전환 메뉴 추가",
+      "queueKeys": []
+    },
+    {
+      "at": "2026-11-26T16:00:00+09:00",
+      "kind": "tool",
+      "pr": 124,
+      "summary": "tools/pay/build.py: 공공데이터포털 온누리(22만)·상가정보(275만) 원본을 키 없이 받아 시장 위치로 맞춤(주소·업종 59%), 매월 첫 배포에 새 판 확인(actions/cache), PR 검사 pay-db-check.yml",
+      "queueKeys": []
+    },
     {
       "at": "2026-11-26T15:10:00+09:00",
       "kind": "code",
