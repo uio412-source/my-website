@@ -6,6 +6,8 @@ on:
   pull_request:
     paths:
       - "tools/pay/**"
+      - "tools/pay/check_stores.py"
+      - "pay/brands.json"
       - ".github/workflows/pay-db-check.yml"
   workflow_dispatch:
 
@@ -41,3 +43,5 @@ jobs:
           for s in m["sources"]: print(s)
           for s in m["sidos"]: print(s["name"], s["count"], list(s["cats"].items())[:6], [g["name"] for g in s["sigungu"][:5]])
           PY
+      - name: 매장·시장·브랜드가 온누리 가맹점과 맞는지 (tools/pay/check_stores.py)
+        run: python tools/pay/check_stores.py
