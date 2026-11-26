@@ -35,7 +35,7 @@ from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-VERSION = 2  # 맞추는 규칙·출력 모양을 바꾸면 올림(캐시된 결과를 다시 만듦)
+VERSION = 3  # 맞추는 규칙·출력 모양을 바꾸면 올림(캐시된 결과를 다시 만듦)
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "pay" / "data" / "onnuri"
 CACHE = Path(os.environ.get("MRPAY_CACHE", Path.home() / ".cache" / "mrpay"))
@@ -66,13 +66,15 @@ SIDO = [
     ("chungbuk", "충북", ("충청북도", "충북")),
     ("chungnam", "충남", ("충청남도", "충남")),
     ("jeonbuk", "전북", ("전북특별자치도", "전라북도", "전북")),
-    ("jeonnam", "전남", ("전라남도", "전남")),
+    # 전남·광주 통합: 온누리 원본(2026-07-31판)은 '전남' 하나로, 상가정보(2026-09판)는 '전남광주통합특별시'로 적음
+    ("jeonnam", "전남", ("전남광주통합특별시", "전남광주특별시", "전라남도", "전남")),
     ("gyeongbuk", "경북", ("경상북도", "경북")),
     ("gyeongnam", "경남", ("경상남도", "경남")),
     ("jeju", "제주", ("제주특별자치도", "제주도", "제주")),
 ]
 SIDO_OF = {alias: (code, short) for code, short, aliases in SIDO for alias in aliases}
-SIDO_NAME = {code: short for code, short, _ in SIDO} | {"etc": "기타"}
+SIDO_SHORT = {code: short for code, short, _ in SIDO} | {"etc": "기타"}
+SIDO_NAME = SIDO_SHORT | {"jeonnam": "전남·광주"}  # 화면에 보이는 이름
 
 # 원본 칸(띄어쓰기 지운 이름) → 내부 키
 ONNURI_COLS = {
@@ -358,8 +360,8 @@ def match(stores: list[dict], sangga_rows) -> tuple[Counter, dict]:
 
 # 못 맞춘 가맹점의 업종 추정(취급품목 → 상호 순서). 대분류 이름은 상가정보에 실제로 있는 이름으로 바꿔 씀
 GUESS = [
-    ("음식", r"식당|음식|분식|김밥|국밥|칼국수|떡볶이|순대국|치킨|통닭|닭강정|족발|보쌈|횟집|회센터|고기집|고깃집|구이|갈비|한식|중식|중국집|짜장|일식|초밥|돈까스|돈가스|카페|커피|다방|제과|베이커리|빵|호떡|도넛|호프|주점|포차|막걸리|백반|찌개|냉면|국수|만두|전집|빈대떡|어묵|튀김|도시락|아구찜|해장국|감자탕|곱창"),
-    ("소매", r"과일|채소|야채|청과|수산|생선|건어물|젓갈|정육|축산|한우|고기|떡|반찬|김치|곡물|양곡|쌀|잡곡|건강원|인삼|약초|농산|식품|슈퍼|마트|상회|의류|옷|신발|가방|잡화|이불|침구|그릇|주방|철물|공구|전자|가전|휴대폰|안경|꽃|화원|문구|완구|한복|원단|포목|수예|금은방|귀금속|시계|화장품|참기름|방앗간|기름|닭|계란|두부|묵|홍어|굴비|김|미역|조미|양념|주류|담배|약국|건강식품|농약|종묘|사료|애견"),
+    ("음식", r"식당|음식|분식|김밥|국밥|칼국수|떡볶이|순대국|치킨|통닭|닭강정|족발|보쌈|횟집|회센터|고기집|고깃집|구이|갈비|한식|중식|중국집|짜장|일식|초밥|돈까스|돈가스|카페|커피|다방|제과|베이커리|빵|호떡|도넛|호프|주점|포차|막걸리|백반|찌개|냉면|국수|만두|전집|빈대떡|어묵|튀김|도시락|아구찜|해장국|감자탕|곱창|피자|파스타|햄버거|버거|활어|횟|회집|장어|삼계탕|닭갈비|순대|떡갈비|한정식|뷔페|술|맥주"),
+    ("소매", r"과일|채소|야채|청과|수산|생선|건어물|젓갈|정육|축산|한우|고기|떡|반찬|김치|곡물|양곡|쌀|잡곡|건강원|인삼|약초|농산|식품|슈퍼|마트|상회|의류|옷|신발|가방|잡화|이불|침구|그릇|주방|철물|공구|전자|가전|휴대폰|안경|꽃|화원|문구|완구|한복|원단|포목|수예|금은방|귀금속|시계|화장품|참기름|방앗간|기름|닭|계란|두부|묵|홍어|굴비|김|미역|조미|양념|주류|담배|약국|건강식품|농약|종묘|사료|애견|한과|정장|양복|양품|속옷|내의|모자|액세서리|악세사리|정수기|가구|커튼|타일|페인트|자전거|낚시|등산|스포츠용품|화장지|생활용품|도자기|유기|공예|기념품|특산품|전통주|커피원두|차|홍삼|버섯|견과|건과|약재|한약재"),
     ("수리·개인", r"미용|헤어|이용원|이발|네일|세탁|수선|사진|열쇠|구두|목욕|사우나|피부|마사지|수리"),
 ]
 
@@ -405,7 +407,7 @@ def write(stores: list[dict], versions: dict, stat: Counter, home: dict, out: Pa
         mi = {m: i for i, m in enumerate(mk_names)}
         mk_rows, sgg_count = [], Counter()
         for m in mk_names:
-            sgg, dong = home.get((SIDO_NAME.get(code, ""), m), ("", ""))
+            sgg, dong = home.get((SIDO_SHORT.get(code, ""), m), ("", ""))
             pts = sorted((x["lat"], x["lon"]) for x in group[m] if x.get("lat"))
             lat, lon = (round(pts[len(pts) // 2][0], 5), round(pts[len(pts) // 2][1], 5)) if pts else (None, None)
             mk_rows.append([m, sgg, dong, lat, lon, len(group[m])])
