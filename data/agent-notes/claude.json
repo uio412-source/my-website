@@ -1,9 +1,20 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-26T17:58:00+09:00",
+  "updatedAt": "2026-11-26T21:40:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-26T21:40:00+09:00",
+      "kind": "collect",
+      "pr": null,
+      "summary": "card-terms 3종(신한 The ACE BLUE LABEL·롯데 LOCA Professional·광주 1st플래티늄 플러스) — 신한·광주는 상품설명서 PDF 대신 공식 카드 상세 페이지(심의필 날짜)에서 옮김(termsUrl null)",
+      "queueKeys": [
+        "shinhan-201707170003",
+        "lotte-P14715-A14715",
+        "kj-CDR20171201011"
+      ]
+    },
     {
       "at": "2026-11-26T17:58:00+09:00",
       "kind": "code",
@@ -147,6 +158,41 @@
       "reason": "merge_valet이 issuer+brand+tier가 같으면 무조건 덮어써서 KB Mastercard World가 39곳짜리(BeV III) 대신 13곳짜리만 표시됐음",
       "retry": "대상 호텔이 더 많은 안내문을 남기고 카드별로 자기 안내의 호텔만 표시하도록 수정",
       "ref": "#86 · #98에서 해결"
+    },
+    {
+      "date": "2026-11-26",
+      "target": "shinhan-201902270001 The BEST+ · shinhan-202603060001 The CLASSIC Air",
+      "status": "open",
+      "reason": "Claude 세션에서 shinhancard.com은 Bash curl 프록시 403, WebFetch는 권한 요청 시간 초과. 신한 프리미엄 카드 상세에는 상품설명서 PDF 링크가 없고 브랜드 가이드 PDF(pconts/download/card/MO_26_*)만 있음",
+      "retry": "브라우저가 있는 에이전트(Pickle)가 상세 페이지 본문(심의필 날짜)으로 옮기거나, 상품공시실에서 상품설명서 PDF 확인"
+    },
+    {
+      "date": "2026-11-26",
+      "target": "lotte-P10351-A10351 다이아몬드 위버스카이 SKYPASS · lotte-P02914-A02914 플래티넘 위버스카이 SKYPASS",
+      "status": "open",
+      "reason": "image.lottecard.co.kr/UploadFiles/cardProvisionPath/<vtCdKndC>.pdf가 오래된 카드에선 2020년 브랜드 서비스 안내(UnionPay DIAMOND·AMEX PLATINUM ELITE). www·mo.lottecard.co.kr은 WebFetch robots 실패",
+      "retry": "브라우저로 카드 상세를 렌더해 '상품설명서' 링크 확인(cardProvisionPath/<심의번호>_<날짜>_<번호>.pdf 형태 추정)"
+    },
+    {
+      "date": "2026-11-26",
+      "target": "lotte-P14724-A14724 디지로카 Monaco",
+      "status": "open",
+      "reason": "상품설명서 cardProvisionPath/P14724-A14724.pdf는 찾았으나 글꼴이 깨져 심의필 날짜를 못 읽음(docDate 필수라 뺌). 대기열 termsUrl(VISA_PLATINUM_04_260514.pdf)은 상품설명서가 아니라 브랜드 서비스 안내",
+      "retry": "PDF를 fitz로 PNG 렌더해 심의필 날짜를 눈으로 읽고 옮기기"
+    },
+    {
+      "date": "2026-11-26",
+      "target": "kj-CDR20180228002 광주·전남愛사랑플래티늄 · kj-CDR20210929001 HONORS V2",
+      "status": "open",
+      "reason": "kjbank.com 카드 상세가 INBN_GDS_NO를 무시하고 1st플래티늄 플러스만 보여 줌, 상품설명서 링크는 href=#(스크립트), curl 프록시 403",
+      "retry": "브라우저로 상품공시(/ib20/mnu/BHPCSCN040802)·약관(BHPCSCN040803)에서 카드명으로 PDF 받기, 또는 m.kjbank.com/mweb/spa/goodsDetail/?pick=C0xx"
+    },
+    {
+      "date": "2026-11-26",
+      "target": "tools/data/inbox.py card-terms cardId 규칙",
+      "status": "open",
+      "reason": "ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)",
+      "retry": "check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기"
     }
   ]
 }

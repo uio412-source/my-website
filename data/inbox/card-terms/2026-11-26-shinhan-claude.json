@@ -1,0 +1,325 @@
+{
+  "type": "card-terms",
+  "issuer": "신한카드",
+  "collectedAt": "2026-11-26",
+  "collector": "Claude",
+  "cards": [
+    {
+      "cardId": "shinhan-201707170003",
+      "queueKey": "shinhan-201707170003",
+      "name": "신한카드 The ACE BLUE LABEL",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.shinhancard.com/pconts/html/card/apply/premium/1188283_2205.html",
+      "termsUrl": null,
+      "docDate": "2026-08-28",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 705000
+        },
+        {
+          "brand": "UnionPay",
+          "amount": 700000
+        }
+      ],
+      "brands": [
+        "Visa",
+        "UnionPay"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "전월 1일~말일 일시불·할부 승인 기준(해외 이용은 카드사 접수일 기준)",
+      "grace": "신규 회원은 카드 등록월 다음 달 말일까지 실적 무관 Premium Box·의료비·폴바셋·공항라운지·JDC 면세점(최소 월 8천원) 제공",
+      "spendExclusions": [
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "각종 수수료",
+        "이자",
+        "거래 취소금액"
+      ],
+      "benefitExclusions": [
+        "무이자 할부 이용금액(Tops 무이자/슬림 할부 포함)",
+        "할인 적용된 이용금액",
+        "단기카드대출(현금서비스)",
+        "장기카드대출(카드론)",
+        "연회비 결제 금액",
+        "포인트 사용금액",
+        "선불카드 충전금액",
+        "Gift카드 구매금액",
+        "각종 수수료 및 이자(할부수수료, 연체이자 등)",
+        "지방세",
+        "수도요금",
+        "국세",
+        "오토리스 대금"
+      ],
+      "brandPrograms": [
+        "shinhan-visa-infinite",
+        "shinhan-unionpay-diamond"
+      ],
+      "benefits": [
+        {
+          "group": "Gift Option",
+          "label": "특급호텔 멤버십",
+          "place": "더 파르나스, 앰배서더 호텔(전국), 롯데호텔(부산), 조선호텔앤리조트, 콘래드 서울, 파라다이스 부산",
+          "value": "1년 멤버십",
+          "valueType": "제공",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": "Gift Option 연 1회 택1",
+          "limits": "연 1회(3개 옵션 중 택1)",
+          "conditions": [
+            "발급 초년도: 연회비 납부 및 일시불·할부 이용금액 50만원 이상 시",
+            "2차년도부터: 연회비 납부 및 전년도 일시불·할부 이용금액 600만원 이상 시",
+            "본인 회원에 한함"
+          ]
+        },
+        {
+          "group": "Gift Option",
+          "label": "동반자 항공권",
+          "place": "대한항공 동남아/중국/일본 노선(이코노미 클래스 기준)",
+          "value": "동반 1인 무료",
+          "valueType": "무료",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": "Gift Option 연 1회 택1",
+          "limits": "연 1회(3개 옵션 중 택1)",
+          "conditions": [
+            "대한항공 본인 왕복항공권 구매 시 제공",
+            "발급 초년도: 연회비 납부 및 일시불·할부 이용금액 50만원 이상 시",
+            "2차년도부터: 연회비 납부 및 전년도 일시불·할부 이용금액 600만원 이상 시",
+            "본인 회원에 한함"
+          ]
+        },
+        {
+          "group": "Gift Option",
+          "label": "해외호텔 2박",
+          "place": "동남아/유럽/미주 지역 해외 호텔",
+          "value": "최대 2박",
+          "valueType": "무료",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "shared": "Gift Option 연 1회 택1",
+          "limits": "연 1회(3개 옵션 중 택1)",
+          "conditions": [
+            "1박 기준 최대 US$ 250",
+            "발급 초년도: 연회비 납부 및 일시불·할부 이용금액 50만원 이상 시",
+            "2차년도부터: 연회비 납부 및 전년도 일시불·할부 이용금액 600만원 이상 시",
+            "본인 회원에 한함"
+          ]
+        },
+        {
+          "group": "Premium Box",
+          "label": "클럽 라운지",
+          "place": "서울 신라, 페어몬트 서울, 웨스틴조선 서울, JW 메리어트 호텔 서울, 노보텔 앰배서더 서울 강남, 더블트리 바이 힐튼 서울 판교, 파라다이스부산, 그랜드 조선 부산",
+          "value": "클럽 라운지 이용",
+          "valueType": "제공",
+          "minimumSpend": 300000,
+          "cap": null,
+          "capScope": null,
+          "shared": "Premium Box 통합 월 1회·연 3회",
+          "limits": "통합 월 1회·연(1~12월) 3회",
+          "conditions": [
+            "서비스 제공 호텔 객실 예약 시 제공",
+            "본인 및 가족카드 횟수 합산 기준"
+          ]
+        },
+        {
+          "group": "Premium Box",
+          "label": "호텔 스파",
+          "place": "포시즌스 호텔 서울, 반얀트리 클럽 앤 스파 서울, 파크하얏트 부산, 비스타 워커힐 서울",
+          "value": "10만원",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "cap": null,
+          "capScope": null,
+          "shared": "Premium Box 통합 월 1회·연 3회",
+          "limits": "통합 월 1회·연(1~12월) 3회",
+          "conditions": [
+            "스파 20만원 이상 이용 시",
+            "본인 및 가족카드 횟수 합산 기준"
+          ]
+        },
+        {
+          "group": "Premium Box",
+          "label": "골프공",
+          "place": "골프공 1더즌(12구) 증정",
+          "value": "1더즌(12구)",
+          "valueType": "무료",
+          "minimumSpend": 300000,
+          "cap": null,
+          "capScope": null,
+          "shared": "Premium Box 통합 월 1회·연 3회",
+          "limits": "통합 월 1회·연(1~12월) 3회",
+          "conditions": [
+            "본인 및 가족카드 횟수 합산 기준"
+          ]
+        },
+        {
+          "group": "Reward",
+          "label": "대한항공 마일",
+          "place": "The ACE BLUE LABEL 스카이패스 카드 일시불·할부 이용금액",
+          "value": "1,500원당 1마일",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "limits": null,
+          "conditions": [
+            "스카이패스·아시아나클럽 중 발급 시 선택",
+            "단위금액 미만은 반올림하여 적립"
+          ]
+        },
+        {
+          "group": "Reward",
+          "label": "아시아나 마일",
+          "place": "The ACE BLUE LABEL 아시아나클럽 카드 일시불·할부 이용금액",
+          "value": "1,000원당 1마일",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "limits": null,
+          "conditions": [
+            "스카이패스·아시아나클럽 중 발급 시 선택",
+            "단위금액 미만은 반올림하여 적립"
+          ]
+        },
+        {
+          "group": "마이신한포인트",
+          "label": "특별적립",
+          "place": "국내 특급호텔, 해외, 면세점 업종, 골프 업종(실내 골프장, 실외 골프장)",
+          "value": "1%",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "limits": null,
+          "conditions": [
+            "일시불·할부 이용금액에 한함",
+            "상기 업종 On-line 이용금액은 적립 제외"
+          ]
+        },
+        {
+          "group": "마이신한포인트",
+          "label": "주유",
+          "place": "GS칼텍스",
+          "value": "3%",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "limits": null,
+          "conditions": [
+            "일시불·할부 이용금액 기준 월 30만원까지 적립",
+            "LPG 이용금액 적립 제외"
+          ]
+        },
+        {
+          "group": "마이신한포인트",
+          "label": "분기 보너스",
+          "place": "일시불·할부 이용금액(본인·가족카드 합산)",
+          "value": "25,000점",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "limits": "분기 1회(본인 회원 기준)",
+          "conditions": [
+            "분기당 일시불·할부 이용금액 1천만원 이상 시"
+          ]
+        },
+        {
+          "group": "생활",
+          "label": "의료비",
+          "place": "개인/종합병원, 치과 병원, 한의원, 보건소(동물병원 제외)",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "cap": 30000,
+          "capScope": "월",
+          "limits": "연 20만원 한도",
+          "conditions": [
+            "결제일 할인",
+            "할인액 기준 월 3만원, 연 20만원까지"
+          ]
+        },
+        {
+          "group": "생활",
+          "label": "폴바셋",
+          "place": "폴바셋",
+          "value": "결제일 할인",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "cap": 11400,
+          "capScope": "월",
+          "limits": "월 2회",
+          "conditions": [
+            "4,900원 이상 결제 시",
+            "매장 현장 결제에 한함",
+            "통합 월 한도 초과 시 횟수와 상관없이 할인 미제공"
+          ]
+        },
+        {
+          "group": "여행",
+          "label": "공항라운지",
+          "place": "Priority Pass 또는 LOUNGEKEY PASS 제휴 공항라운지",
+          "value": "무료",
+          "valueType": "무료",
+          "minimumSpend": 300000,
+          "cap": null,
+          "capScope": null,
+          "limits": null,
+          "conditions": [
+            "VISA 브랜드에 한함(UPI Diamond 카드 미제공)",
+            "본인 회원만(가족카드 미제공)",
+            "동반인 라운지 이용료(US$27)는 회원 부담",
+            "전월실적 미달 시 본인 이용료(US$27) 청구"
+          ]
+        },
+        {
+          "group": "여행",
+          "label": "JDC 면세점",
+          "place": "제주 JDC 면세점",
+          "value": "8%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 8000
+            },
+            {
+              "spend": 600000,
+              "cap": 32000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "limits": null,
+          "conditions": [
+            "전월 30만원 이상 60만원 미만 월 8천원, 60만원 이상 월 3만2천원"
+          ]
+        },
+        {
+          "group": "골프",
+          "label": "골프 부킹",
+          "place": "국내 제휴 골프장(제주 포함)",
+          "value": "예약 대행",
+          "valueType": "무료",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "limits": null,
+          "conditions": [
+            "부킹 무료상담 및 예약 대행",
+            "라운딩 2주 전까지 신청",
+            "당일 취소·노쇼 시 비회원 그린피 4인 기준 위약금"
+          ]
+        }
+      ]
+    }
+  ]
+}
