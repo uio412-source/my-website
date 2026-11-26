@@ -1,0 +1,41 @@
+# Mr. Pay 가맹점 DB 만들기(tools/pay/build.py)를 PR에서 미리 돌려 보는 검사.
+# 공공데이터포털에서 온누리·상가정보 원본을 받아 맞춘 결과 숫자를 로그에 남깁니다(결과 파일은 커밋 안 함).
+name: Mr. Pay DB check
+
+on:
+  pull_request:
+    paths:
+      - "tools/pay/**"
+      - ".github/workflows/pay-db-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-db:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 지난 원본 캐시 불러오기(있으면)
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.cache/mrpay
+          key: mrpay-check-none
+          restore-keys: mrpay-
+      - name: 가맹점 DB 만들기 (새 판 확인 강제)
+        run: python tools/pay/build.py --force
+      - name: 결과 요약
+        run: |
+          ls -la pay/data/onnuri
+          python - <<'PY'
+          import json
+          m = json.load(open("pay/data/onnuri/meta.json"))
+          print({k: m[k] for k in ("built", "total", "matched", "match")})
+          for s in m["sources"]: print(s)
+          for s in m["sidos"]: print(s["name"], s["count"], list(s["cats"].items())[:6], [g["name"] for g in s["sigungu"][:5]])
+          PY

@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 node_modules/
+
+# Mr. Pay 가맹점 DB (배포 때 tools/pay/build.py가 만듦, 커밋 안 함)
+pay/data/onnuri/
