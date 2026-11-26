@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T07:04:10+09:00",
+  "generatedAt": "2026-11-27T07:08:08+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -210,15 +210,39 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T07:20:00+09:00",
+      "updatedAt": "2026-11-27T07:50:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 144,
-        "title": "data: 수집 2026-11-27 4차 (KB 상품설명서 20종)",
-        "mergedAt": "2026-11-26T22:03:51Z",
-        "mergedAtKST": "2026-11-27 07:03"
+        "number": 146,
+        "title": "data: 수집 2026-11-27 5차 (KB 상품설명서 16종)",
+        "mergedAt": "2026-11-26T22:07:56Z",
+        "mergedAtKST": "2026-11-27 07:07"
       },
       "runs": [
+        {
+          "at": "2026-11-27T07:45:00+09:00",
+          "kind": "collect",
+          "pr": 146,
+          "summary": "card-terms KB 16종 · 혜택 34줄 — 제휴·렌탈/통신 자동납부형 카드(GS SHOP·삼성페이·toss·이마트II·Wavve·T-economy·랭킹닭컴·KMVNO·밀크T·알뜰폰HubⅡ·쿠쿠렌탈Ⅱ·청호나이스Ⅱ·딜라이브·코웨이Ⅱ·CHALLENGE BAG·H.Point)",
+          "queueKeys": [
+            "kb-04431",
+            "kb-04434",
+            "kb-04350",
+            "kb-04361",
+            "kb-04287",
+            "kb-04288",
+            "kb-04289",
+            "kb-04290",
+            "kb-04320",
+            "kb-04324",
+            "kb-04325",
+            "kb-04336",
+            "kb-04345",
+            "kb-04423",
+            "kb-04409",
+            "kb-04415"
+          ]
+        },
         {
           "at": "2026-11-27T07:15:00+09:00",
           "kind": "collect",
@@ -422,8 +446,47 @@
     }
   },
   "locks": [],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 147,
+      "title": "data: 수집 2026-11-27 2차 (Claude · 신한 상품설명서 30종)",
+      "agent": "Claude",
+      "branch": "ai/claude/data-2026-11-27-2",
+      "createdAtKST": "2026-11-27 07:08",
+      "area": "5파일 · data/ 3 · data/inbox/card-terms 1 · docs/ 1",
+      "url": "https://github.com/uio412-source/my-website/pull/147",
+      "draft": false
+    }
+  ],
   "recentPRs": [
+    {
+      "number": 146,
+      "title": "data: 수집 2026-11-27 5차 (KB 상품설명서 16종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle5",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T22:07:56Z",
+      "mergedAtKST": "2026-11-27 07:07",
+      "createdAt": "2026-11-26T22:07:08Z",
+      "createdAtKST": "2026-11-27 07:07",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/146"
+    },
+    {
+      "number": 145,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 4차, #144 반영)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/queue-2026-11-27-pickle4",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T22:05:13Z",
+      "mergedAtKST": "2026-11-27 07:05",
+      "createdAt": "2026-11-26T22:04:24Z",
+      "createdAtKST": "2026-11-27 07:04",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/145"
+    },
     {
       "number": 144,
       "title": "data: 수집 2026-11-27 4차 (KB 상품설명서 20종)",
@@ -941,48 +1004,6 @@
       "area": "2파일 · paymorevent/ 2",
       "files": 2,
       "url": "https://github.com/uio412-source/my-website/pull/108"
-    },
-    {
-      "number": 107,
-      "title": "data: 우리카드 발레파킹 9개 프로그램 수집 · Marriott 호텔 사진 96곳 보강",
-      "agent": "Pickle",
-      "branch": "ai/pickle/woori-valet-hotel-images",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T10:47:10Z",
-      "mergedAtKST": "2026-11-25 19:47",
-      "createdAt": "2026-11-25T10:46:28Z",
-      "createdAtKST": "2026-11-25 19:46",
-      "area": "14파일 · paymorevent/ 6 · hotels/ 2 · data/ 1 외 5곳",
-      "files": 14,
-      "url": "https://github.com/uio412-source/my-website/pull/107"
-    },
-    {
-      "number": 106,
-      "title": "Mr. Cards: 카드 브랜드 이름 통일 (JCB·UnionPay·American Express)",
-      "agent": "Claude",
-      "branch": "ai/claude/cards-brand-names",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T10:38:17Z",
-      "mergedAtKST": "2026-11-25 19:38",
-      "createdAt": "2026-11-25T10:37:30Z",
-      "createdAtKST": "2026-11-25 19:37",
-      "area": "6파일 · paymorevent/ 4 · docs/ 1 · 루트 1",
-      "files": 6,
-      "url": "https://github.com/uio412-source/my-website/pull/106"
-    },
-    {
-      "number": 105,
-      "title": "docs: 현황판 잠금 해제(#102 머지 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/agent-sync-lock-clear",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T10:35:44Z",
-      "mergedAtKST": "2026-11-25 19:35",
-      "createdAt": "2026-11-25T10:35:34Z",
-      "createdAtKST": "2026-11-25 19:35",
-      "area": "3파일 · data/ 2 · docs/ 1",
-      "files": 3,
-      "url": "https://github.com/uio412-source/my-website/pull/105"
     }
   ],
   "queue": {
@@ -993,8 +1014,8 @@
     },
     "counts": {
       "cards": {
-        "done": 105,
-        "todo": 1342,
+        "done": 121,
+        "todo": 1326,
         "total": 1447
       },
       "brandPrograms": {
