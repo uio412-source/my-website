@@ -1,9 +1,17 @@
 {
   "agent": "Pickle",
   "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-  "updatedAt": "2026-11-26T18:10:00+09:00",
+  "updatedAt": "2026-11-26T18:20:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-26T18:12:00+09:00",
+      "kind": "hotels/valet",
+      "pr": 130,
+      "summary": "서울 드래곤 시티(dragon-city) aliases에 용산 3개 호텔 정식 표기 추가 — #128 배포 로그 '못 찾음' 0건",
+      "queueKeys": [],
+      "status": "merged"
+    },
     {
       "at": "2026-11-26T18:02:00+09:00",
       "kind": "brand-services + card-terms",
@@ -87,6 +95,14 @@
     }
   ],
   "skipped": [
+    {
+      "at": "2026-11-26",
+      "target": "발레파킹 서울 호텔 이름 표기 불일치 3곳(노보텔 앰배서더 서울 용산·노보텔 스위트 앰배서더 서울 용산·이비스 스타일 앰배서더 서울 용산)",
+      "status": "resolved",
+      "reason": "#128 배포 로그에서 hotels/valet.json에 없는 표기로 나와 호텔 연결 실패",
+      "retry": "복합 호텔(서울드래곤시티)은 안내문 표기를 aliases에 그대로 넣기",
+      "ref": "#130 (별칭 3개 추가, 이후 배포 '못 찾음' 0건)"
+    },
     {
       "at": "2026-11-26",
       "target": "BC·IBK 상품설명서 PDF 경로",
