@@ -195,7 +195,7 @@
           ${s.goods ? `<div class="py-goods">${esc(s.goods)}</div>` : ''}
           <div class="py-tags">${tags.join('')}</div>
         </div>
-        <a class="py-map" href="${esc(mapUrl(s))}" target="_blank" rel="noopener" aria-label="${esc(s.name)} 지도에서 보기">지도</a>
+        <a class="py-map" href="${esc(mapUrl(s))}" target="_blank" rel="noopener" aria-label="${esc(s.name)} 지도에서 보기${state.combo === 'naver' ? '(커넥트+ 표시 확인)' : ''}">${state.combo === 'naver' ? '커넥트<br>확인' : '지도'}</a>
       </article>`;
     }
 
@@ -244,7 +244,7 @@
     const item = (b, p) => {
       const kind = b.kind || 'brand';
       const tile = kind === 'store' ? '매장' : kind === 'market' ? '시장' : kind === 'place' ? '장소' : b.name.slice(0, 2);
-      const where = [b.sido, b.sgg, b.market].filter(Boolean).join(' ');
+      const where = [b.sido, b.sgg, b.market !== b.name ? b.market : ''].filter(Boolean).join(' ');
       return `<article class="wl-row py-brow">
           <span class="tile" data-tone="${kind === 'brand' ? (p.id === 'toss' ? 1 : 3) : kind === 'place' ? 3 : 2}" data-len="${Math.min(4, tile.length)}" aria-hidden="true">${esc(tile)}</span>
           <div class="py-body">

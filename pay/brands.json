@@ -35,10 +35,11 @@
    "sido": "서울",
    "sgg": "강서구",
    "market": "화곡중앙시장",
-   "scope": "온누리 7% 할인과 페이스사인 적립 중복 가능(매장 안내)",
+   "scope": "온누리·서울사랑상품권 가맹, 온누리 7% 할인과 페이스사인 적립 중복 가능(매장 안내) · 화곡중앙시장 아케이드",
    "date": "2026-10",
    "src": "https://bbs.ruliweb.com/market/board/320101/read/150094",
-   "srcTitle": "루리웹 · 마인웍스 매장 안내"
+   "srcTitle": "루리웹 · 마인웍스 매장 안내",
+   "src2": "https://bbs.ruliweb.com/market/board/320101/read/150010"
   },
   {
    "name": "CU",
@@ -624,6 +625,23 @@
    "date": "2026-11",
    "src": "https://navercorp.com/media/pressReleasesDetail?seq=10034858",
    "srcTitle": "네이버 보도자료 · Npay, '2026 서울카페쇼' 공식 스폰서 참가"
+  },
+  {
+   "name": "서귀포중심상가",
+   "aliases": [],
+   "kind": "market",
+   "cat": "상점가",
+   "program": "naver",
+   "method": "Npay 커넥트 도입 추진(글로컬상권 협약)",
+   "status": "예정",
+   "onnuri": "확인 필요",
+   "sido": "제주",
+   "sgg": "서귀포시",
+   "market": "서귀포중심상가",
+   "scope": "중기부 글로컬상권(2027년까지) 협약으로 커넥트 단말기 도입 추진, 매장 수·설치 시기 미정",
+   "date": "2026-11",
+   "src": "https://www.fnnews.com/news/202611081428238446",
+   "srcTitle": "파이낸셜뉴스 · 서귀포 중심상가 네이버페이 결제망 도입 추진"
   }
  ]
 }
