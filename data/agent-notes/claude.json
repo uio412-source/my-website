@@ -1,9 +1,16 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-26T11:55:00+09:00",
+  "updatedAt": "2026-11-26T15:10:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-26T15:10:00+09:00",
+      "kind": "code",
+      "pr": 123,
+      "summary": "Mr. Travel 여행지 입국 조건 재확인(몽골 90일·괌 G-CNMI ETA·All Indonesia·EES), 한시 무비자 entryUntil D-day/기한 지남, 출발 전 정부 공식 신청 링크 15종(apply)",
+      "queueKeys": []
+    },
     {
       "at": "2026-11-26T11:55:00+09:00",
       "kind": "code",
