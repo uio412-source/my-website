@@ -1,0 +1,508 @@
+{
+ "type": "card-terms",
+ "issuer": "SC제일은행",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "sc-5600",
+   "queueKey": "sc-5600",
+   "name": "SC제일은행 디지털 삼성카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.standardchartered.co.kr/",
+   "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218270_S_Digital.pdf",
+   "docDate": "2021-04-12",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 9900
+    },
+    {
+     "brand": "해외겸용",
+     "amount": 9900
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "해외겸용"
+   ],
+   "minimumSpend": 300000,
+   "grace": "발급월+1개월까지는 전월 이용금액 30만원 미만이어도 30만원~60만원 구간 혜택 제공",
+   "spendExclusions": [
+    "할인이 제공된 전체 이용금액(온라인쇼핑몰·커피전문점·편의점·이동통신 7%, 스트리밍·멤버십 25%)",
+    "건강보험·국민연금·고용보험·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "초·중·고등학교 학교납입금",
+    "대학 등록금",
+    "대중교통",
+    "택시",
+    "아파트 관리비",
+    "부동산 임대료",
+    "기프트·선불카드 구매 및 충전",
+    "상품권 구매건"
+   ],
+   "benefitExclusions": [
+    "무이자할부",
+    "삼성카드 할인이 적용된 일시불·할부 이용금액",
+    "건강보험·국민연금·고용보험·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "초·중·고등학교 학교납입금",
+    "대학 등록금",
+    "대중교통",
+    "택시",
+    "고속버스(차내 단말기·고속버스 앱 결제)",
+    "고속도로 통행요금",
+    "부동산 임대료",
+    "기프트·선불카드 구매 및 충전",
+    "상품권 구매",
+    "문자알림서비스",
+    "스마트오토서비스 이용금액"
+   ],
+   "benefits": [
+    {
+     "group": "7% 할인",
+     "label": "온라인쇼핑몰",
+     "place": "삼성카드 쇼핑, G마켓, 옥션, 11번가, 인터파크, 쿠팡, 티몬, 위메프, SSG.COM, 롯데ON",
+     "value": "7%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 4000
+      },
+      {
+       "spend": 600000,
+       "cap": 8000
+      },
+      {
+       "spend": 900000,
+       "cap": 12000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": "통합 월 할인한도"
+    },
+    {
+     "group": "7% 할인",
+     "label": "커피·편의점",
+     "place": "커피전문점(스타벅스·이디야·투썸·카페베네·탐앤탐스·커피빈·엔제리너스·할리스·파스쿠찌·아티제·폴바셋·블루보틀), 편의점(CU·GS25·세븐일레븐·미니스톱·이마트24)",
+     "value": "7%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 4000
+      },
+      {
+       "spend": 600000,
+       "cap": 8000
+      },
+      {
+       "spend": 900000,
+       "cap": 12000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": "통합 월 할인한도",
+     "conditions": [
+      "편의점은 오프라인 결제만(백화점·할인점·쇼핑몰 임대매장 제외)",
+      "커피전문점은 오프라인 결제만(스타벅스 사이렌오더 포함)"
+     ]
+    },
+    {
+     "group": "7% 할인",
+     "label": "이동통신",
+     "place": "SKT, KT, LG U+ 이동통신요금 자동납부",
+     "value": "7%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 4000
+      },
+      {
+       "spend": 600000,
+       "cap": 8000
+      },
+      {
+       "spend": 900000,
+       "cap": 12000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "shared": "통합 월 할인한도",
+     "conditions": [
+      "결합상품요금, 단말기 구매금액, 대리점 카드 결제건 제외"
+     ]
+    },
+    {
+     "group": "멤버십 25%",
+     "label": "스트리밍·멤버십",
+     "place": "넷플릭스·웨이브·티빙·왓챠·멜론·FLO, 쿠팡 로켓와우 멤버십 정기결제",
+     "value": "25%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "conditions": [
+      "간편결제·앱스토어 인앱결제 제외"
+     ]
+    },
+    {
+     "group": "해외",
+     "label": "해외 1%",
+     "place": "해외 가맹점 및 해외 직접구매 이용건",
+     "value": "1%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "해외겸용카드에 한함",
+      "전월 이용금액 관계없이 할인한도 없음"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "sc-5601",
+   "queueKey": "sc-5601",
+   "name": "SC제일은행 드라이브 삼성카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.standardchartered.co.kr/",
+   "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218271_S_Drive.pdf",
+   "docDate": "2021-04-12",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 9900
+    },
+    {
+     "brand": "해외겸용",
+     "amount": 9900
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "해외겸용"
+   ],
+   "minimumSpend": 100000,
+   "grace": "발급월+1개월까지는 전월 이용금액 30만원 미만이어도 30만원~60만원 구간 혜택 제공",
+   "spendExclusions": [
+    "할인이 제공된 전체 이용금액",
+    "건강보험·국민연금·고용보험·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "학교납입금",
+    "대학 등록금",
+    "아파트 관리비(생활요금 자동납부 대상 제외)",
+    "기프트·선불카드 구매 및 충전",
+    "상품권 구매건"
+   ],
+   "benefitExclusions": [
+    "무이자할부",
+    "삼성카드 할인이 적용된 이용금액",
+    "국세·지방세·공과금",
+    "학교납입금",
+    "대학 등록금",
+    "고속도로 통행요금",
+    "부동산 임대료",
+    "기프트·선불카드 구매 및 충전",
+    "상품권 구매",
+    "LPG 충전소"
+   ],
+   "benefits": [
+    {
+     "label": "주유",
+     "place": "모든 주유소(SK에너지 고시 휘발유가 기준, LPG 충전소 제외)",
+     "value": "리터당 60원",
+     "valueType": "할인",
+     "minimumSpend": 100000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 20000
+      },
+      {
+       "spend": 600000,
+       "cap": 20000
+      },
+      {
+       "spend": 900000,
+       "cap": 20000
+      }
+     ],
+     "cap": 20000,
+     "capScope": "월",
+     "conditions": [
+      "전월 생활요금 자동납부 1건 이상이면 리터당 80~120원(구간별)",
+      "1회당 주유금액 10만원까지",
+      "경유·등유는 휘발유가로 환산"
+     ]
+    },
+    {
+     "label": "배달·편의점",
+     "place": "배달의민족·요기요, CU·GS25·세븐일레븐·미니스톱·이마트24",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "conditions": [
+      "배달앱은 공식 홈페이지·앱 결제만(가맹점 직접 결제 제외)",
+      "편의점은 오프라인 결제만(임대매장 제외)"
+     ]
+    },
+    {
+     "label": "온라인쇼핑몰 1%",
+     "place": "삼성카드 쇼핑, G마켓, 옥션, 11번가, 인터파크, 쿠팡, 티몬, 위메프, SSG.COM, 롯데ON",
+     "value": "1%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "전월 이용금액 관계없이 할인한도 없음"
+     ]
+    },
+    {
+     "label": "해외 1%",
+     "place": "해외 가맹점 및 해외 직접구매 이용건",
+     "value": "1%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "해외겸용카드에 한함",
+      "전월 이용금액 관계없이 할인한도 없음"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "sc-4625",
+   "queueKey": "sc-4625",
+   "name": "SC제일은행 데일리 삼성카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.standardchartered.co.kr/",
+   "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218268_S_Daily.pdf",
+   "docDate": "2017-08-16",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 9900
+    },
+    {
+     "brand": "해외겸용",
+     "amount": 9900
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "해외겸용"
+   ],
+   "minimumSpend": 300000,
+   "spendExclusions": [
+    "할인이 제공된 전체 이용금액",
+    "건강보험·국민연금·고용보험·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "초·중·고등학교 학교납입금",
+    "대학 등록금",
+    "대중교통",
+    "택시",
+    "아파트 관리비",
+    "부동산 임대료",
+    "기프트·선불카드 구매 및 충전",
+    "상품권 구매건"
+   ],
+   "benefitExclusions": [
+    "무이자할부",
+    "다이어트할부",
+    "삼성카드 할인이 적용된 일시불·할부 이용금액",
+    "고용·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "대학 등록금",
+    "대중교통",
+    "택시",
+    "고속버스(차내 단말기·고속버스 앱 결제)",
+    "고속도로 통행요금",
+    "모바일 티머니",
+    "선불카드 충전",
+    "상품권 구매",
+    "기프트카드 구매"
+   ],
+   "benefits": [
+    {
+     "label": "국내외 가맹점",
+     "place": "국내외 가맹점 및 해외 직접구매 이용건",
+     "value": "0.5%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "전월 이용금액 관계없이 할인한도 없음"
+     ]
+    },
+    {
+     "label": "대중교통",
+     "place": "버스, 지하철, 택시 등 대중교통",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "5% 통합할인한도",
+     "conditions": [
+      "할인한도 초과 시 다음 거래부터 기본 0.5% 적용"
+     ]
+    },
+    {
+     "label": "이동통신",
+     "place": "SKT·KT·LG U+ 이동통신요금 자동납부",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "5% 통합할인한도"
+    },
+    {
+     "label": "커피전문점",
+     "place": "10대 커피전문점",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "5% 통합할인한도"
+    },
+    {
+     "label": "편의점",
+     "place": "편의점",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "5% 통합할인한도"
+    }
+   ]
+  },
+  {
+   "cardId": "sc-4628",
+   "queueKey": "sc-4628",
+   "name": "SC제일은행 라이프 삼성카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.standardchartered.co.kr/",
+   "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218269_S_Life.pdf",
+   "docDate": "2017-08-16",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 9900
+    },
+    {
+     "brand": "해외겸용",
+     "amount": 9900
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "해외겸용"
+   ],
+   "minimumSpend": 300000,
+   "spendExclusions": [
+    "할인이 제공된 전체 이용금액",
+    "건강보험·국민연금·고용보험·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "초·중·고등학교 학교납입금",
+    "대학 등록금",
+    "대중교통",
+    "택시",
+    "아파트 관리비",
+    "부동산 임대료",
+    "기프트·선불카드 구매 및 충전",
+    "상품권 구매건"
+   ],
+   "benefitExclusions": [
+    "무이자할부",
+    "다이어트할부",
+    "삼성카드 할인이 적용된 일시불·할부 이용금액",
+    "고용·산재보험 및 장애인 고용부담금",
+    "국세·지방세·공과금",
+    "대학 등록금",
+    "대중교통",
+    "택시",
+    "고속버스(차내 단말기·고속버스 앱 결제)",
+    "고속도로 통행요금",
+    "모바일 티머니",
+    "선불카드 충전",
+    "상품권 구매",
+    "기프트카드 구매"
+   ],
+   "benefits": [
+    {
+     "label": "국내외 가맹점",
+     "place": "국내외 가맹점 및 해외 직접구매 이용건",
+     "value": "0.5%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "전월 이용금액 관계없이 할인한도 없음"
+     ]
+    },
+    {
+     "label": "할인점·오픈마켓",
+     "place": "할인점, 오픈마켓, 소셜커머스",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "5% 통합할인한도",
+     "conditions": [
+      "할인한도 초과 시 다음 거래부터 기본 0.5% 적용"
+     ]
+    },
+    {
+     "label": "병원·약국",
+     "place": "병원, 약국",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "5% 통합할인한도"
+    },
+    {
+     "label": "베이커리",
+     "place": "파리바게뜨, 배스킨라빈스, 던킨도너츠",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "5% 통합할인한도"
+    },
+    {
+     "label": "편의점",
+     "place": "편의점",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "5% 통합할인한도"
+    }
+   ]
+  }
+ ]
+}

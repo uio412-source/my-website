@@ -1,9 +1,59 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-27T07:20:00+09:00",
+ "updatedAt": "2026-11-27T08:25:00+09:00",
  "lock": null,
  "runs": [
+  {
+   "at": "2026-11-27T08:20:00+09:00",
+   "kind": "collect",
+   "pr": 150,
+   "summary": "card-terms SC제일은행 삼성체크카드 3종(YOUNG·CASHBACK·POINT) — 공통 안내장(2022.7) 이미지 표를 렌더해 옮김",
+   "queueKeys": [
+    "sc-4238",
+    "sc-4239",
+    "sc-4240"
+   ]
+  },
+  {
+   "at": "2026-11-27T08:10:00+09:00",
+   "kind": "collect",
+   "pr": 149,
+   "summary": "card-terms KB 3종(Liiv M Ⅱ·요기패스·다담) · SC제일은행 4종(디지털·드라이브·데일리·라이프) — SC제일은행 카드는 처음 수집",
+   "queueKeys": [
+    "kb-04241",
+    "kb-04284",
+    "kb-09169",
+    "sc-5600",
+    "sc-5601",
+    "sc-4625",
+    "sc-4628"
+   ]
+  },
+  {
+   "at": "2026-11-27T07:45:00+09:00",
+   "kind": "collect",
+   "pr": 146,
+   "summary": "card-terms KB 16종 · 혜택 34줄 — 제휴·렌탈/통신 자동납부형 카드(GS SHOP·삼성페이·toss·이마트II·Wavve·T-economy·랭킹닭컴·KMVNO·밀크T·알뜰폰HubⅡ·쿠쿠렌탈Ⅱ·청호나이스Ⅱ·딜라이브·코웨이Ⅱ·CHALLENGE BAG·H.Point)",
+   "queueKeys": [
+    "kb-04431",
+    "kb-04434",
+    "kb-04350",
+    "kb-04361",
+    "kb-04287",
+    "kb-04288",
+    "kb-04289",
+    "kb-04290",
+    "kb-04320",
+    "kb-04324",
+    "kb-04325",
+    "kb-04336",
+    "kb-04345",
+    "kb-04423",
+    "kb-04409",
+    "kb-04415"
+   ]
+  },
   {
    "at": "2026-11-27T07:15:00+09:00",
    "kind": "collect",
@@ -204,6 +254,20 @@
   }
  ],
  "skipped": [
+  {
+   "at": "2026-11-27",
+   "target": "KB 나머지 상품설명서(kb-04285 스카이패스 티타늄·kb-09138 HERITAGE Classic·kb-09152 가온플래티늄·kb-09113/09114 KB Pay 챌린지·kb-09115/09116 AMEX Blue/Rose Gold)",
+   "status": "open",
+   "reason": "마일리지·스탬프 표가 이미지이거나 여러 장에 걸쳐 있어 이번 회차에 확정하지 못함",
+   "retry": "표 페이지만 고해상도로 렌더해 값 확인 후 수집"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "SC제일은행 가이드북 5종(sc-4420 신세계이마트·sc-4753 글로벌 체크·sc-5349 스페셜마일리지·sc-5944/5945 M/X CHECK·sc-6266 ZERO·sc-6273 대한항공 060·sc-6277 현대카드M)",
+   "status": "open",
+   "reason": "카드별 혜택 표가 이미지이거나 여러 장에 흩어져 있어 이번 회차에 판독·정리하지 못함",
+   "retry": "PDF 페이지를 PNG로 렌더해 표를 읽고 카드별로 나눠 수집"
+  },
   {
    "at": "2026-11-27",
    "target": "KB 상품설명서 3종(kb-09250 The Easy·kb-09561 WE:SH Travel·kb-09570 WE:SH Daily)",
