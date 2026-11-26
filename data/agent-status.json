@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T07:51:52+09:00",
+  "generatedAt": "2026-11-27T07:54:54+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -276,13 +276,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T07:51:50+09:00",
+      "updatedAt": "2026-11-27T07:54:53+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 157,
-        "title": "data: 수집 2026-11-27 10차 (NH농협카드 상품설명서 10종)",
-        "mergedAt": "2026-11-26T22:51:43Z",
-        "mergedAtKST": "2026-11-27 07:51"
+        "number": 159,
+        "title": "data: 수집 2026-11-27 11차 (NH농협카드 상품설명서 10종)",
+        "mergedAt": "2026-11-26T22:54:33Z",
+        "mergedAtKST": "2026-11-27 07:54"
       },
       "runs": [
         {
@@ -586,6 +586,42 @@
             "nh-90000413",
             "nh-90000414"
           ]
+        },
+        {
+          "at": "2026-11-27T07:54:37+09:00",
+          "kind": "card-terms",
+          "pr": 159,
+          "summary": "11차: NH농협카드 상품설명서 10종·혜택 50줄",
+          "queueKeys": [
+            "nh-90000417",
+            "nh-90000418",
+            "nh-90010012",
+            "nh-90010021",
+            "nh-90010031",
+            "nh-90010034",
+            "nh-90010035",
+            "nh-90010118",
+            "nh-90010119",
+            "nh-90010141"
+          ]
+        },
+        {
+          "at": "2026-11-27T07:54:53+09:00",
+          "kind": "card-terms",
+          "pr": 159,
+          "summary": "11차: NH농협카드 상품설명서 10종·혜택 50줄",
+          "queueKeys": [
+            "nh-90000417",
+            "nh-90000418",
+            "nh-90010012",
+            "nh-90010021",
+            "nh-90010031",
+            "nh-90010034",
+            "nh-90010035",
+            "nh-90010118",
+            "nh-90010119",
+            "nh-90010141"
+          ]
         }
       ],
       "openIssues": 26
@@ -594,6 +630,34 @@
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 159,
+      "title": "data: 수집 2026-11-27 11차 (NH농협카드 상품설명서 10종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle11",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T22:54:33Z",
+      "mergedAtKST": "2026-11-27 07:54",
+      "createdAt": "2026-11-26T22:53:42Z",
+      "createdAtKST": "2026-11-27 07:53",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/159"
+    },
+    {
+      "number": 158,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #157 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle157",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T22:52:42Z",
+      "mergedAtKST": "2026-11-27 07:52",
+      "createdAt": "2026-11-26T22:52:01Z",
+      "createdAtKST": "2026-11-27 07:52",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/158"
+    },
     {
       "number": 157,
       "title": "data: 수집 2026-11-27 10차 (NH농협카드 상품설명서 10종)",
@@ -1125,34 +1189,6 @@
       "area": "1파일 · hotels/ 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/120"
-    },
-    {
-      "number": 119,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-26 Pickle)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/agent-sync-2026-11-26",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T17:54:36Z",
-      "mergedAtKST": "2026-11-26 02:54",
-      "createdAt": "2026-11-25T17:53:25Z",
-      "createdAtKST": "2026-11-26 02:53",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/119"
-    },
-    {
-      "number": 118,
-      "title": "data: 수집 2026-11-26 (NH·롯데·KB 브랜드 선택서비스 8 · KB 상품설명서 5종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-26-pickle",
-      "state": "MERGED",
-      "mergedAt": "2026-11-25T17:51:39Z",
-      "mergedAtKST": "2026-11-26 02:51",
-      "createdAt": "2026-11-25T17:39:48Z",
-      "createdAtKST": "2026-11-26 02:39",
-      "area": "4파일 · data/inbox/brand-services 3 · data/inbox/card-terms 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/118"
     }
   ],
   "queue": {
@@ -1163,8 +1199,8 @@
     },
     "counts": {
       "cards": {
-        "done": 211,
-        "todo": 1236,
+        "done": 221,
+        "todo": 1226,
         "total": 1447
       },
       "brandPrograms": {
