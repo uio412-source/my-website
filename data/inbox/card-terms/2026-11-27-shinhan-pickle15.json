@@ -1,0 +1,547 @@
+{
+ "type": "card-terms",
+ "issuer": "신한카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "shinhan-201510260001",
+   "queueKey": "shinhan-201510260001",
+   "name": "신한은행 체크카드(주거래 우대)",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1187975_2206.html",
+   "termsUrl": null,
+   "docDate": "2026-07-29",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 0
+    },
+    {
+     "brand": "UPI",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa",
+    "UPI"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본 적립",
+     "place": "국내·외 가맹점",
+     "value": "0.3%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "포인트 적립"
+     ]
+    },
+    {
+     "label": "쇼핑·해외 추가 적립",
+     "place": "할인점·백화점·온라인몰, 해외 가맹점",
+     "value": "+0.7%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "기본적립과 합산 총 1%"
+     ]
+    },
+    {
+     "label": "생활 가맹점 추가 적립",
+     "place": "이동통신(SKT·KT·LG U+) 자동이체, 버스·지하철 후불교통, 도시가스",
+     "value": "+1.7%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "기본적립과 합산 총 2%"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202504010001",
+   "queueKey": "shinhan-202504010001",
+   "name": "신한카드 화물 유가보조금(S-OIL)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1232445_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-04-22",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 0
+    },
+    {
+     "brand": "Master",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Local",
+    "Master"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "S-OIL 화물우대",
+     "place": "S-OIL 화물우대주유소",
+     "value": "리터당 55원",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "현장 할인"
+     ]
+    },
+    {
+     "label": "유가보조금",
+     "place": "전국 주유소 주유",
+     "value": "유가보조금 지원",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "화물자동차 유가보조금 자동 지급",
+      "잔여한도 문자메시지 무료"
+     ]
+    },
+    {
+     "label": "S-OIL 멤버십",
+     "place": "S-OIL 보너스카드",
+     "value": "멤버십 혜택",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202507040001",
+   "queueKey": "shinhan-202507040001",
+   "name": "Npay biz 신한카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1234666_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-06-30",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 17000
+    },
+    {
+     "brand": "Visa",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "Local",
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "Npay 적립",
+     "place": "네이버페이 온라인 간편결제",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 이용금액 관계없이 적립한도 없음"
+     ]
+    },
+    {
+     "label": "기본 적립",
+     "place": "국내 이용금액 1%, 해외 이용금액 1.5%",
+     "value": "1~1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "사업 운영 경비",
+     "place": "통신요금·렌탈·보안·방역",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "사업 필수 경비",
+     "place": "4대보험(국민연금·건강·고용·산재), 전기요금, 도시가스, 주유, 할인점",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": 20000,
+     "capScope": "월",
+     "conditions": [
+      "전월 50만원 미만 미제공, 50만~100만원 1만·100만~150만원 2만·150만원 이상 3만 포인트"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201704010002",
+   "queueKey": "shinhan-201704010002",
+   "name": "신한카드 신세계 PLATINUM",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188436_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-07-08",
+   "annualFee": [
+    {
+     "brand": "Master",
+     "amount": 45000
+    },
+    {
+     "brand": "UPI",
+     "amount": 42000
+    }
+   ],
+   "brands": [
+    "Master",
+    "UPI"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "항공 마일리지",
+     "place": "전 가맹점(대한항공·아시아나항공 택1)",
+     "value": "1마일",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "신세계 추가 적립",
+     "place": "신세계백화점",
+     "value": "+1마일",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "면세 할인",
+     "place": "신세계면세점 시내점",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "해외 캐시백",
+     "place": "해외 매출",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-200704010001",
+   "queueKey": "shinhan-200704010001",
+   "name": "신한카드 LG트윈스",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188426_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-06-26",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "LG트윈스 입장권",
+     "place": "LG트윈스 정규시즌 홈경기",
+     "value": "3,000원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "일 1회",
+     "conditions": [
+      "정규시즌 내 횟수 제한 없음",
+      "본인 할인"
+     ]
+    },
+    {
+     "label": "LG트윈스 용품",
+     "place": "잠실 경기장 내·외 오프라인 매장",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "현장 할인"
+     ]
+    },
+    {
+     "label": "영화",
+     "place": "전국 CGV",
+     "value": "3,000원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "일 1회 2매·월 5회·연 12회",
+     "conditions": [
+      "2매 기준 현장할인"
+     ]
+    },
+    {
+     "label": "테마파크",
+     "place": "롯데월드·서울랜드·에버랜드·캐리비안베이",
+     "value": "자유이용권 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "각 일 1회·연 3회",
+     "conditions": [
+      "본인"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201507300002",
+   "queueKey": "shinhan-201507300002",
+   "name": "신한카드 마일리지 플래티늄",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1187946_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-06-26",
+   "annualFee": [
+    {
+     "brand": "Master",
+     "amount": 40000
+    },
+    {
+     "brand": "Visa",
+     "amount": 40000
+    },
+    {
+     "brand": "URS",
+     "amount": 37000
+    }
+   ],
+   "brands": [
+    "Master",
+    "Visa",
+    "URS"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "항공 마일리지",
+     "place": "전 가맹점(대한항공·아시아나 택1)",
+     "value": "1마일",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "대한항공 1,500원당 1마일, 아시아나 1,000원당 1마일(택1)"
+     ]
+    },
+    {
+     "label": "추가 적립",
+     "place": "골프장·해외 일시불·주유·쇼핑·요식",
+     "value": "추가 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "마이신한포인트 추가 적립"
+     ]
+    },
+    {
+     "label": "Platinum# 서비스",
+     "place": "인천공항 우대, 주요지역 주차장 무료이용, 전국 7개 거리 패션·요식 2%",
+     "value": "제공",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-200404010001",
+   "queueKey": "shinhan-200404010001",
+   "name": "신한카드 SK내트럭",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188464_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-07-23",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "주유 할인",
+     "place": "SK내트럭 주유소",
+     "value": "리터당 40원",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "결제일할인 25원 + 현장할인 15원 = 총 40원/ℓ"
+     ]
+    },
+    {
+     "label": "유가보조금",
+     "place": "전국 주유소 주유",
+     "value": "유가보조금 지원",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "화물운전자 유가보조금 자동 지급",
+      "잔여한도 SMS 무료"
+     ]
+    },
+    {
+     "label": "제휴 적립",
+     "place": "금호타이어 KTS대리점 0.5%, 대보그룹 고속도로 휴게소 주유소 1.5%·휴게소 0.1%",
+     "value": "0.1~1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-200404010002",
+   "queueKey": "shinhan-200404010002",
+   "name": "신한카드 SK내트럭(후불)",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1188366_2206.html",
+   "termsUrl": null,
+   "docDate": "2025-07-23",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "주유 할인",
+     "place": "SK내트럭 주유소",
+     "value": "리터당 40원",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "결제일할인 25원 + 현장할인 15원 = 총 40원/ℓ"
+     ]
+    },
+    {
+     "label": "유가보조금",
+     "place": "전국 주유소 주유",
+     "value": "유가보조금 지원",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "화물운전자 유가보조금 자동 지급",
+      "잔여한도 SMS 무료"
+     ]
+    },
+    {
+     "label": "제휴 적립",
+     "place": "금호타이어 KTS대리점 0.5%, 대보그룹 고속도로 휴게소 주유소 1.5%·휴게소 0.1%",
+     "value": "0.1~1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  }
+ ]
+}
