@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T08:00:35+09:00",
+  "generatedAt": "2026-11-27T08:03:27+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -276,13 +276,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T08:00:32+09:00",
+      "updatedAt": "2026-11-27T08:03:25+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 163,
-        "title": "data: 수집 2026-11-27 13차 (NH농협카드 상품설명서 10종)",
-        "mergedAt": "2026-11-26T23:00:22Z",
-        "mergedAtKST": "2026-11-27 08:00"
+        "number": 165,
+        "title": "data: 수집 2026-11-27 14차 (신한카드 상품설명서 9종)",
+        "mergedAt": "2026-11-26T23:03:15Z",
+        "mergedAtKST": "2026-11-27 08:03"
       },
       "runs": [
         {
@@ -658,14 +658,59 @@
             "nh-90010019",
             "nh-90010115"
           ]
+        },
+        {
+          "at": "2026-11-27T08:03:25+09:00",
+          "kind": "card-terms",
+          "pr": 165,
+          "summary": "14차: 신한카드 상품설명서 9종·혜택 38줄",
+          "queueKeys": [
+            "shinhan-201509030001",
+            "shinhan-202001290001",
+            "shinhan-201309240001",
+            "shinhan-202309260001",
+            "shinhan-202309260002",
+            "shinhan-201802130001",
+            "shinhan-202504290002",
+            "shinhan-202005220001",
+            "shinhan-202609080001"
+          ]
         }
       ],
-      "openIssues": 26
+      "openIssues": 27
     }
   },
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 165,
+      "title": "data: 수집 2026-11-27 14차 (신한카드 상품설명서 9종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle14",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T23:03:15Z",
+      "mergedAtKST": "2026-11-27 08:03",
+      "createdAt": "2026-11-26T23:02:23Z",
+      "createdAtKST": "2026-11-27 08:02",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/165"
+    },
+    {
+      "number": 164,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #163 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle163",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T23:01:22Z",
+      "mergedAtKST": "2026-11-27 08:01",
+      "createdAt": "2026-11-26T23:00:41Z",
+      "createdAtKST": "2026-11-27 08:00",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/164"
+    },
     {
       "number": 163,
       "title": "data: 수집 2026-11-27 13차 (NH농협카드 상품설명서 10종)",
@@ -1197,34 +1242,6 @@
       "area": "10파일 · assets/ 2 · data/ 2 · docs/ 2 외 4곳",
       "files": 10,
       "url": "https://github.com/uio412-source/my-website/pull/126"
-    },
-    {
-      "number": 125,
-      "title": "Mr. Pay 화면: 가맹점(온누리 + 토스페이·네이버 얼굴결제 겹쳐 보기) · 브랜드",
-      "agent": "Claude",
-      "branch": "ai/claude/pay-site",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T06:01:52Z",
-      "mergedAtKST": "2026-11-26 15:01",
-      "createdAt": "2026-11-26T06:00:36Z",
-      "createdAtKST": "2026-11-26 15:00",
-      "area": "15파일 · assets/ 3 · pay/ 3 · 루트 3 외 4곳",
-      "files": 15,
-      "url": "https://github.com/uio412-source/my-website/pull/125"
-    },
-    {
-      "number": 124,
-      "title": "Mr. Pay: 온누리 가맹점 DB 만들기(상가정보로 업종 보강) + 월 1회 새 판 확인",
-      "agent": "Claude",
-      "branch": "ai/claude/pay-onnuri-db",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T05:59:37Z",
-      "mergedAtKST": "2026-11-26 14:59",
-      "createdAt": "2026-11-26T05:31:35Z",
-      "createdAtKST": "2026-11-26 14:31",
-      "area": "4파일 · .github/ 2 · tools/pay 1 · 루트 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/124"
     }
   ],
   "queue": {
@@ -1235,8 +1252,8 @@
     },
     "counts": {
       "cards": {
-        "done": 241,
-        "todo": 1206,
+        "done": 249,
+        "todo": 1198,
         "total": 1447
       },
       "brandPrograms": {
@@ -1348,6 +1365,15 @@
       "status": "open",
       "reason": "서비스 팩(쇼핑·일상·복지) 표가 병합 셀이라 영역별 월 할인한도를 개별 확인할 수 없음(온라인 쇼핑만 '월 1만원' 표기)",
       "retry": "카드 상세의 팩별 상세 안내(또는 상품설명서 PDF)에서 영역별 할인한도 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "shinhan-201509030001",
+      "status": "open",
+      "reason": "신한 상세 페이지는 실적·혜택 제외 항목을 항목화해 싣지 않아 제외 목록을 빈 배열로 두었음(상품설명서 PDF로 보완 필요)",
+      "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
       "ref": ""
     },
     {
