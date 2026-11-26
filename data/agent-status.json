@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T11:46:39+09:00",
+  "generatedAt": "2026-11-26T14:14:38+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -49,15 +49,22 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-26T11:55:00+09:00",
+      "updatedAt": "2026-11-26T15:10:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 117,
-        "title": "Mr. Cards 텍스트 정리: 이벤트 이름 찌꺼기·안내 한 줄·원문 반복 줄",
-        "mergedAt": "2026-11-25T13:48:56Z",
-        "mergedAtKST": "2026-11-25 22:48"
+        "number": 122,
+        "title": "Mr. Cards 바닥글에 DB 작업 진행률 작은 상자",
+        "mergedAt": "2026-11-26T02:47:49Z",
+        "mergedAtKST": "2026-11-26 11:47"
       },
       "runs": [
+        {
+          "at": "2026-11-26T15:10:00+09:00",
+          "kind": "code",
+          "pr": 123,
+          "summary": "Mr. Travel 여행지 입국 조건 재확인(몽골 90일·괌 G-CNMI ETA·All Indonesia·EES), 한시 무비자 entryUntil D-day/기한 지남, 출발 전 정부 공식 신청 링크 15종(apply)",
+          "queueKeys": []
+        },
         {
           "at": "2026-11-26T11:55:00+09:00",
           "kind": "code",
@@ -234,17 +241,31 @@
   "locks": [],
   "openPRs": [
     {
-      "number": 122,
-      "title": "Mr. Cards 바닥글에 DB 작업 진행률 작은 상자",
+      "number": 123,
+      "title": "Mr. Travel 여행지: 입국 조건 다시 확인 + 한시 무비자 기한 + 공식 신청 링크",
       "agent": "Claude",
-      "branch": "ai/claude/cards-db-progress",
-      "createdAtKST": "2026-11-26 11:46",
-      "area": "11파일 · paymorevent/ 4 · docs/ 2 · tools/data 2 외 3곳",
-      "url": "https://github.com/uio412-source/my-website/pull/122",
+      "branch": "ai/claude/travel-entry-check",
+      "createdAtKST": "2026-11-26 14:14",
+      "area": "5파일 · assets/ 2 · docs/ 1 · travel/ 1 외 1곳",
+      "url": "https://github.com/uio412-source/my-website/pull/123",
       "draft": false
     }
   ],
   "recentPRs": [
+    {
+      "number": 122,
+      "title": "Mr. Cards 바닥글에 DB 작업 진행률 작은 상자",
+      "agent": "Claude",
+      "branch": "ai/claude/cards-db-progress",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T02:47:49Z",
+      "mergedAtKST": "2026-11-26 11:47",
+      "createdAt": "2026-11-26T02:46:10Z",
+      "createdAtKST": "2026-11-26 11:46",
+      "area": "14파일 · paymorevent/ 4 · data/ 3 · docs/ 3 외 3곳",
+      "files": 14,
+      "url": "https://github.com/uio412-source/my-website/pull/122"
+    },
     {
       "number": 121,
       "title": "data: 수집 2026-11-26 (카드 이벤트·IBK 코웨이 상품 변경)",
@@ -776,20 +797,6 @@
       "area": "6파일 · data/inbox/card-events 6",
       "files": 6,
       "url": "https://github.com/uio412-source/my-website/pull/84"
-    },
-    {
-      "number": 83,
-      "title": "data: 수집 2026-11-25 (삼성·하나 발렛·라운지 서비스, KB·BC 상품설명서)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-25-pickle",
-      "state": "MERGED",
-      "mergedAt": "2026-11-24T23:46:26Z",
-      "mergedAtKST": "2026-11-25 08:46",
-      "createdAt": "2026-11-24T23:36:09Z",
-      "createdAtKST": "2026-11-25 08:36",
-      "area": "4파일 · data/inbox/brand-services 2 · data/inbox/card-terms 2",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/83"
     }
   ],
   "queue": {

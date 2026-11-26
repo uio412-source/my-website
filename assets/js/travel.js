@@ -302,6 +302,14 @@
     const SHARE = [0.15, 0.35, 0.6];
     const monthly = (p, key) => p[key + 'M'] || p.season.map((v) => Math.round(p[key][0] + (p[key][1] - p[key][0]) * SHARE[v]));
     const priceRow = (vals, p) => vals.map((v, i) => `<span class="pv s${p.season[i]}${i === MONTH ? ' now' : ''}">${v}</span>`).join('');
+    // 한시 무비자 등 끝나는 날(entryUntil): 60일 안이면 강조, 지나면 '기한 지남'으로 바꿔 지난 조건을 그대로 믿지 않게
+    const entryChecked = pdata.entryChecked;
+    const untilTag = (p) => {
+      if (!p.entryUntil) return '';
+      const d = Math.round((Date.parse(p.entryUntil) - Date.parse(TODAY)) / 864e5);
+      if (d < 0) return `<span class="tv-until over">한시 기한(${ymd(p.entryUntil)}) 지남 · 연장됐는지 확인</span>`;
+      return `<span class="tv-until${d <= 60 ? ' soon' : ''}">${ymd(p.entryUntil)} 입국분까지 한시 · ${d ? 'D-' + d : '오늘까지'}</span>`;
+    };
     const seasonCells = (s, big) => s.map((v, i) => `<span class="m s${v}${i === MONTH ? ' now' : ''}" title="${i + 1}월 ${SEASON[v]}">${big ? `<b>${i + 1}</b>` : ''}</span>`).join('');
     function detail() {
       const p = byId[sel];
@@ -334,7 +342,10 @@
             <div class="v">${won(p.hotel[0])} ~ ${won(p.hotel[1])}원</div>${bar(p.hotel[0], p.hotel[1], 300)}
             <div class="scale"><span>0</span><span>150만</span><span>300만원+</span></div></div>
         </div>
-        <dl class="tv-facts"><div><dt>입국</dt><dd>${esc(p.entry)}</dd></div></dl>
+        <dl class="tv-facts"><div><dt>입국</dt><dd>${esc(p.entry)}${untilTag(p)}</dd></div>
+          ${p.apply && p.apply.length ? `<div><dt>출발 전</dt><dd class="tv-apply">${p.apply.map((a) => `<a href="${esc(a.u)}" target="_blank" rel="noopener"><b>${esc(a.t)} ↗</b><small>${esc(a.d)}</small></a>`).join('')}</dd></div>` : ''}
+        </dl>
+        ${entryChecked ? `<p class="tv-src">입국 조건 ${ymd(entryChecked)} 확인${p.apply && p.apply.length ? ' · 링크는 정부 공식 사이트' : ''}</p>` : ''}
         <a class="tv-bn" href="./#place-${p.id}"><span>${p.flag} ${esc(p.name)} 카드 혜택</span><b>${bn.length}건 보기 →</b></a>
         ${bn.length ? `<ul class="tv-bn-list">${bn.slice(0, 3).map((e) => `<li><span>${esc((ISSUER[e.issuer] || [e.issuer])[0])}</span>${esc(e.title)}</li>`).join('')}</ul>` : ''}`;
       [...$('chips').children].forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.id === sel)));
