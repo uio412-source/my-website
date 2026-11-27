@@ -1,0 +1,213 @@
+{
+ "type": "card-terms",
+ "issuer": "롯데카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15732-A15732",
+   "name": "트래블월렛 하이브리드 롯데카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15732-A15732",
+   "termsUrl": null,
+   "docDate": "2025-06-10",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": null,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "트래블 포인트",
+     "place": "국내외 가맹점(신용거래)",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "해외 이용 수수료",
+     "place": "선불·신용결제 해외 이용",
+     "value": "면제",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13870-A13870",
+   "name": "하나은행 밀리언달러 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13870-A13870",
+   "termsUrl": null,
+   "docDate": "2026-10-21",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": null,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "해외 캐시백",
+     "place": "해외 가맹점",
+     "value": "0.2%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "온라인은 최대 5%"
+     ]
+    },
+    {
+     "label": "국내 할인",
+     "place": "국내 가맹점",
+     "value": "0.5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "특화 영역 최대 50%"
+     ]
+    },
+    {
+     "label": "해외 수수료",
+     "place": "해외 이용 수수료",
+     "value": "면제",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전액 면제"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P14426-A14426",
+   "name": "한샘 X LOCA 플랜+카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14426-A14426",
+   "termsUrl": null,
+   "docDate": "2026-11-09",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": null,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "플랜할인",
+     "place": "한샘에서 50만원 이상 이용",
+     "value": "300,000원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "20만원/30만원 플랜할인 적용"
+     ]
+    },
+    {
+     "label": "기본 적립",
+     "place": "플랜할인 미이용 시 전 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "L.POINT 적립"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15769-A15769",
+   "name": "LOCA Biz+",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15769-A15769",
+   "termsUrl": null,
+   "docDate": "2026-05-07",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 200000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 1000000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본 혜택",
+     "place": "국내외 가맹점",
+     "value": "1%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구할인"
+    },
+    {
+     "label": "추가 혜택",
+     "place": "사업경비 영역",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 1000000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구할인",
+     "conditions": [
+      "지난달 금융 이용잔액 300만원 이상 5%(월 5만원 한도), 300만원 미만 3%(월 3만원 한도)"
+     ]
+    }
+   ]
+  }
+ ]
+}
