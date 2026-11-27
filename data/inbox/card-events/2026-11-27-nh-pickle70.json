@@ -1,0 +1,150 @@
+{
+ "type": "card-events",
+ "issuer": "NH농협카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "listUrls": [
+  "https://card.nonghyup.com/servlet/IpCb0005M.act"
+ ],
+ "events": [
+  {
+   "id": "nh-202601-wicard-hotel-baekmidang",
+   "kind": "card",
+   "title": "[위카드(7종)] 호텔·백미당 혜택",
+   "summary": "호텔·백미당 제휴 혜택",
+   "category": "기타",
+   "startsAt": "2026-01-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [
+    "위카드"
+   ],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202601-baekmidang-drink",
+   "kind": "card",
+   "title": "백미당에서 무료 음료 1잔 제공",
+   "summary": "무료 음료 1잔 제공",
+   "category": "기타",
+   "startsAt": "2026-01-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202611-partner-cashback",
+   "kind": "card",
+   "title": "제휴카드 쓰고 매달 캐시백 받자!",
+   "summary": "제휴카드 매달 캐시백",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202601-agl-golf-30",
+   "kind": "card",
+   "title": "AGL 전세계 실시간 골프 부킹 서비스 30% 할인",
+   "summary": "골프 부킹 30% 할인",
+   "category": "기타",
+   "startsAt": "2026-01-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202601-smartscore-insurance",
+   "kind": "card",
+   "title": "스마트스코어 선결제 골프예약 시 무료 홀인원보험 이용권 증정",
+   "summary": "무료 홀인원보험 이용권 증정",
+   "category": "기타",
+   "startsAt": "2026-01-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202407-mtr-service",
+   "kind": "card",
+   "title": "MTR서비스 안내",
+   "summary": "MTR 서비스 이용 안내",
+   "category": "기타",
+   "startsAt": "2024-07-18",
+   "endsAt": "2029-06-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202601-car-purchase-12",
+   "kind": "card",
+   "title": "NH농협카드로 자동차 구매 시 최대 1.2% 혜택",
+   "summary": "자동차 구매 시 최대 1.2% 혜택",
+   "category": "기타",
+   "startsAt": "2026-01-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202601-speedmate-coupon",
+   "kind": "card",
+   "title": "자동차 정비는 NH농협카드로! 스피드메이트 할인 쿠폰 이용하세요",
+   "summary": "스피드메이트 할인 쿠폰",
+   "category": "기타",
+   "startsAt": "2026-01-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202610-agoda-10",
+   "kind": "card",
+   "title": "아고다 전세계 호텔 최대 10% 할인",
+   "summary": "아고다 호텔 최대 10% 할인",
+   "category": "해외/여행",
+   "startsAt": "2026-10-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "아고다 결제 시"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  }
+ ]
+}
