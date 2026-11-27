@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 356,
-   "todo": 1091,
+   "done": 366,
+   "todo": 1081,
    "total": 1447
   },
   "brandPrograms": {
@@ -15713,7 +15713,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 10,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "im-311773",
@@ -16395,7 +16395,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90010564",
@@ -16406,7 +16406,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90010539",
@@ -16417,7 +16417,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90000081",
@@ -16450,7 +16450,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "im-311786",
@@ -16703,7 +16703,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": -10,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90010181",
@@ -16714,7 +16714,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": -10,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90010045",
@@ -16725,7 +16725,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": -10,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20171202007",
@@ -16835,7 +16835,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": -20,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90010046",
@@ -16846,7 +16846,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": -20,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90010538",
