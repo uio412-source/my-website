@@ -1,0 +1,360 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "hyundai-kwwlshc",
+   "name": "교원웰스 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=KWWLSHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03477",
+   "docDate": "2026-05-20",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "교원웰스 렌탈",
+     "place": "교원웰스 렌탈/구독료 정기결제",
+     "value": "16,000원",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 8000
+      },
+      {
+       "spend": 800000,
+       "cap": 12000
+      },
+      {
+       "spend": 1200000,
+       "cap": 16000
+      }
+     ],
+     "conditions": [
+      "전월 이용 금액 40만원 미만 시 청구 할인 제외",
+      "정기결제 건에 한해 적용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-nxtrhc",
+   "name": "넥센타이어 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=NXTRHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03481",
+   "docDate": "2026-05-20",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "넥센타이어 렌탈",
+     "place": "넥센타이어 렌탈/구독료 정기결제",
+     "value": "16,000원",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 8000
+      },
+      {
+       "spend": 800000,
+       "cap": 12000
+      },
+      {
+       "spend": 1200000,
+       "cap": 16000
+      }
+     ],
+     "conditions": [
+      "전월 이용 금액 40만원 미만 시 청구 할인 제외",
+      "정기결제 건에 한해 적용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-bdfrhc",
+   "name": "바디프랜드 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=BDFRHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03473",
+   "docDate": "2026-05-20",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "바디프랜드 렌탈",
+     "place": "바디프랜드 렌탈/구독료 정기결제",
+     "value": "16,000원",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 8000
+      },
+      {
+       "spend": 800000,
+       "cap": 12000
+      },
+      {
+       "spend": 1200000,
+       "cap": 16000
+      }
+     ],
+     "conditions": [
+      "전월 이용 금액 40만원 미만 시 청구 할인 제외",
+      "정기결제 건에 한해 적용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-crmhc",
+   "name": "세라젬 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=CRMHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03475",
+   "docDate": "2026-05-20",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "세라젬 렌탈",
+     "place": "세라젬 렌탈/구독료 정기결제",
+     "value": "16,000원",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 8000
+      },
+      {
+       "spend": 800000,
+       "cap": 12000
+      },
+      {
+       "spend": 1200000,
+       "cap": 16000
+      }
+     ],
+     "conditions": [
+      "전월 이용 금액 40만원 미만 시 청구 할인 제외",
+      "정기결제 건에 한해 적용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-alb",
+   "name": "알파벳카드B",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ALB",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03433",
+   "docDate": "2026-04-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "뷰티·헬스·패션",
+     "place": "뷰티, 헬스, 패션",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "커피·편의점·교통",
+     "place": "커피전문점, 편의점, 대중교통",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-ald",
+   "name": "알파벳카드D BOLD",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ALD",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03464",
+   "docDate": "2026-06-17",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 50000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 50000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "외식·배달",
+     "place": "일반음식점, 배달 앱",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "커피·편의점·교통",
+     "place": "커피전문점, 편의점, 대중교통",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "공항 라운지",
+     "place": "인천국제공항 라운지(THE LOUNGE)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "공항 발레파킹",
+     "place": "인천국제공항 발레파킹",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  }
+ ]
+}
