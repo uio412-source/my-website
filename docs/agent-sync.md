@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-27 14:03 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-27 22:25 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,7 @@ _자동 생성 2026-11-27 14:03 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#237](https://github.com/uio412-source/my-website/pull/237) | Claude | Mr. Cards 카드 상세: 상품설명서 정리본 반영 (전월실적 333장·혜택 표 469장) | 2026-11-27 14:04 | 15파일 · paymorevent/ 7 · docs/ 3 · data/ 2 외 2곳 | 머지 |
 | [#236](https://github.com/uio412-source/my-website/pull/236) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #235 반영) | 2026-11-27 12:05 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#235](https://github.com/uio412-source/my-website/pull/235) | Pickle | data: 수집 2026-11-27 47차 (롯데카드 상품설명서 10종) | 2026-11-27 12:04 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#234](https://github.com/uio412-source/my-website/pull/234) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #233 반영) | 2026-11-27 11:59 | 4파일 · data/ 3 · docs/ 1 | 머지 |
@@ -59,7 +60,6 @@ _자동 생성 2026-11-27 14:03 KST · `python tools/data/agent_sync.py` · 기�
 | [#215](https://github.com/uio412-source/my-website/pull/215) | Pickle | data: 수집 2026-11-27 37차 (신한카드 상품설명서 10종) | 2026-11-27 11:02 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#214](https://github.com/uio412-source/my-website/pull/214) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #213 반영) | 2026-11-27 10:57 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#213](https://github.com/uio412-source/my-website/pull/213) | Pickle | data: 수집 2026-11-27 36차 (신한카드 상품설명서 11종) | 2026-11-27 10:56 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#212](https://github.com/uio412-source/my-website/pull/212) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #211 반영) | 2026-11-27 10:50 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -73,14 +73,14 @@ _지금 잠근 영역이 없습니다._
 
 | PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
 |---|---|---|---|---|---|
-| [#237](https://github.com/uio412-source/my-website/pull/237) | Claude | `ai/claude/cards-terms-detail` | 2026-11-27 14:02 | 12파일 · paymorevent/ 7 · docs/ 2 · 루트 2 … | Mr. Cards 카드 상세: 상품설명서 정리본 반영 (전월실적 333장·혜택 표 469… |
+| [#238](https://github.com/uio412-source/my-website/pull/238) | Pickle | `ai/chatgpt/data-2026-11-27-pickle…` | 2026-11-27 22:22 | 1파일 · data/inbox/card-terms 1 | data: 수집 2026-11-27 48차 (롯데카드 상품설명서 5종) |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-27)
 
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 856 / 1447종 · **브랜드 프로그램** todo 50 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **남은 카드** 830 / 1447종 · **브랜드 프로그램** todo 50 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
 - **최근 수집일** — card-terms 2026-11-27 · brand-services 2026-11-27 · card-events 2026-11-27 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
@@ -88,14 +88,14 @@ _지금 잠근 영역이 없습니다._
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
-| Claude | `data/agent-notes/claude.json` | #205 pay: 매일 확인 2026-11-27 — 아브뉴프랑 판교 … | 2026-11-27 10:35 | 10건 |
+| Claude | `data/agent-notes/claude.json` | #237 Mr. Cards 카드 상세: 상품설명서 정리본 반영 (전월… | 2026-11-27 14:04 | 14건 |
 | Pickle | `data/agent-notes/pickle.json` | #236 docs: 수집 대기열·공용 현황판 갱신 (2026-11-2… | 2026-11-27 12:05 | 35건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 40건
+### 다시 볼 것 (open) — 44건
 
 - **2026-11-27 · Pickle · KB 나머지 상품설명서(kb-04285 스카이패스 티타늄·kb-09138 HERITAGE Classic·kb-09152 가온플래티늄·kb-09113/09114 KB Pay 챌린지·kb-09115/09116 AMEX Blue/Rose Gold)**
   - 사유: 마일리지·스탬프 표가 이미지이거나 여러 장에 걸쳐 있어 이번 회차에 확정하지 못함
@@ -194,6 +194,18 @@ _지금 잠근 영역이 없습니다._
 - **- · Claude · Claude 세션 WebFetch — 우리카드·현대카드·롯데카드 상품설명서**
   - 사유: pc.wooricard.com PDF·상세는 오류 페이지/메인 화면만 옴, hyundaicard.com·image.lottecard.co.kr은 robots.txt 읽기 실패로 WebFetch 거부(셸은 허용 목록 밖). shinhancard.com 상세 페이지는 읽힘(연회비 칸은 JS 자리표시자)
   - 재시도: 우리·현대·롯데는 브라우저가 있는 에이전트(Pickle)가 맡기. Claude는 신한 상세 페이지부터
+- **- · Claude · hana-16798 대구로 카드**
+  - 사유: 상세 페이지(CD_PD_SEQ=16798)가 카드 정보 없이 배너만 보여 줌(1회)
+  - 재시도: 하나카드 카드 목록에서 대구로 카드 새 주소 찾기
+- **- · Claude · hana-16937 하나증권 캐시백 투자 · hana-16773 에너지 더블 · hana-16729 국민연금증 연금하나 · hana-15125 CLUB H 아멕스 리저브 · hana-14410 밀리언달러 · hana-14247 햇살론 · hana-13913 스카이패스 아멕스 플래티늄 · hana-12943 원큐 · hana-12933 MULTI Oil · hana-12802 국민 행복**
+  - 사유: 여신금융협회 심의필 2020~2023년 + 준법심의 2026년 — 오전 기록(Club Leaders 등)과 같은 경우, 기준일 규칙 확인 대기
+  - 재시도: HJ가 준법심의 날짜를 기준일로 인정하면 같은 페이지(m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=…)에서 옮기기
+- **- · Claude · hana-17034 K-패스 하나 체크카드**
+  - 사유: 공식 페이지 카드명이 '모두의카드 하나 체크카드'(준법심의 2026-11-16)로 바뀌어 카드 DB 이름과 달라 화면에 안 붙음
+  - 재시도: 카드 DB 이름을 바꾸거나 card-products changed로 올린 뒤 같은 페이지에서 옮기기
+- **- · Claude · hana-17767 JADE First · hana-17307 건설올패스 MULTI Any 체크 · hana-16736 국민연금증 1Q 체크 · hana-16351 등유나눔 1Q 체크 · hana-16145 금쪽이 Young Hana+ 체크 · hana-15005 HoYoverse 체크 · hana-13824 MULTI Any 체크 · hana-12954 부산 동백전 체크 · hana-12796 국민행복 체크 · hana-11459 VIVA+ Allpoint 체크 · hana-11306 L.PAY 체크 · hana-10539 리틀프렌즈 체크 · hana-10223 길한통 체크 · hana-9049 VIVA+ 체크 · hana-2635 해피포인트 체크 · hana-2622 CJ ONE 체크**
+  - 사유: 심의필·준법심의 모두 2019~2024년(올해·작년 규칙 밖)
+  - 재시도: 새 판이 올라오면 같은 페이지에서
 - **- · Claude · hana-17768 JADE First Centum · hana-17766 JADE Prime · hana-19217 JADE Prime 골드클럽 · hana-18242 카카오페이 트래블로그 체크 · hana-17668 토스하나 2.0 · hana-10764 CLUB1 200**
   - 사유: 심의필·준법심의 모두 2022~2024년(올해·작년 규칙 밖)
   - 재시도: 새 판이 올라오면 같은 페이지에서

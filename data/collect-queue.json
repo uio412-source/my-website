@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 591,
-   "todo": 856,
+   "done": 617,
+   "todo": 830,
    "total": 1447
   },
   "brandPrograms": {
@@ -11885,7 +11885,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/credit_card_260512.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-16953",
@@ -12017,7 +12017,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/credit_card_260512.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-18408",
@@ -12028,7 +12028,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/credit_card_260512.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-18679",
@@ -12039,7 +12039,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/credit_card_260512.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-13913",
@@ -14184,7 +14184,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-11306",
@@ -14250,7 +14250,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-11459",
@@ -14283,7 +14283,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-13799",
@@ -14294,7 +14294,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-17307",
@@ -14327,7 +14327,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-16145",
@@ -14360,7 +14360,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-18054",
@@ -14382,7 +14382,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-18270",
@@ -14426,7 +14426,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-12781",
@@ -14437,7 +14437,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-12954",
@@ -14459,7 +14459,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-19264",
@@ -14481,7 +14481,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-9646",
@@ -14492,7 +14492,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-9658",
@@ -14503,7 +14503,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-18242",
@@ -14536,7 +14536,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-17601",
@@ -14547,7 +14547,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-4228",
@@ -14558,7 +14558,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-5276",
@@ -14569,7 +14569,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-2635",
@@ -15152,7 +15152,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/credit_card_260512.pdf",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-18601",
@@ -15185,7 +15185,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/credit_card_260512.pdf",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-15862",
@@ -15196,7 +15196,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/credit_card_260512.pdf",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hana-15864",
@@ -15229,7 +15229,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/credit_card_260512.pdf",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-nolhc",
@@ -16813,7 +16813,7 @@
    "termsUrl": "https://www.hanacard.co.kr/ATTACH/WWW/pdf/provision/checkcard_personal_terms_20260914.pdf",
    "lastVerified": "2026-10-05",
    "priority": -10,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-phhcc",
