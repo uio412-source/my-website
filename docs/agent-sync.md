@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-27 09:05 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-27 09:08 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,7 @@ _자동 생성 2026-11-27 09:05 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#178](https://github.com/uio412-source/my-website/pull/178) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #177 반영) | 2026-11-27 09:06 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#177](https://github.com/uio412-source/my-website/pull/177) | Pickle | data: 수집 2026-11-27 19차 (NH농협카드 상품설명서 10종) | 2026-11-27 09:05 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#176](https://github.com/uio412-source/my-website/pull/176) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #175 반영) | 2026-11-27 09:00 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#175](https://github.com/uio412-source/my-website/pull/175) | Pickle | data: 수집 2026-11-27 18차 (NH농협카드 상품설명서 10종) | 2026-11-27 08:59 | 1파일 · data/inbox/card-terms 1 | 머지 |
@@ -59,7 +60,6 @@ _자동 생성 2026-11-27 09:05 KST · `python tools/data/agent_sync.py` · 기�
 | [#155](https://github.com/uio412-source/my-website/pull/155) | Pickle | data: 수집 2026-11-27 9차 (NH농협카드 상품설명서 10종) | 2026-11-27 07:49 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#154](https://github.com/uio412-source/my-website/pull/154) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 8차, #153 반영) | 2026-11-27 07:47 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#153](https://github.com/uio412-source/my-website/pull/153) | Pickle | data: 수집 2026-11-27 8차 (NH농협카드 상품설명서 10종) | 2026-11-27 07:46 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#152](https://github.com/uio412-source/my-website/pull/152) | Claude | data: 수집 2026-11-27 3차 (Claude · 신한 상품설명서 20종) | 2026-11-27 07:45 | 5파일 · data/ 3 · data/inbox/card-terms 1 · docs/… | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -73,6 +73,7 @@ _지금 잠근 영역이 없습니다._
 
 | PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
 |---|---|---|---|---|---|
+| [#179](https://github.com/uio412-source/my-website/pull/179) | Pickle | `ai/chatgpt/data-2026-11-27-pickle…` | 2026-11-27 09:08 | 1파일 · data/inbox/card-terms 1 | data: 수집 2026-11-27 20차 (NH농협카드 상품설명서 10종) |
 | [#173](https://github.com/uio412-source/my-website/pull/173) | ChatGPT | `ai/chatgpt/fix-accor-meapac-booki…` | 2026-11-27 08:46 | 1파일 · hotels/ 1 | fix(hotels): 아코르 아태 세일 예약 마감 정정 |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-27)
@@ -87,15 +88,15 @@ _지금 잠근 영역이 없습니다._
 
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
-| ChatGPT | `data/agent-notes/chatgpt.json` | #138 data: 수집 2026-11-27 (카드사 이벤트 5건) | 2026-11-27 06:43 | 0건 |
+| ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
 | Claude | `data/agent-notes/claude.json` | #174 data: 수집 2026-11-27 (Claude · 하나카… | 2026-11-27 08:54 | 10건 |
-| Pickle | `data/agent-notes/pickle.json` | #177 data: 수집 2026-11-27 19차 (NH농협카드 상… | 2026-11-27 09:05 | 29건 |
+| Pickle | `data/agent-notes/pickle.json` | #178 docs: 수집 대기열·공용 현황판 갱신 (2026-11-2… | 2026-11-27 09:06 | 30건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 34건
+### 다시 볼 것 (open) — 35건
 
 - **2026-11-27 · Pickle · KB 나머지 상품설명서(kb-04285 스카이패스 티타늄·kb-09138 HERITAGE Classic·kb-09152 가온플래티늄·kb-09113/09114 KB Pay 챌린지·kb-09115/09116 AMEX Blue/Rose Gold)**
   - 사유: 마일리지·스탬프 표가 이미지이거나 여러 장에 걸쳐 있어 이번 회차에 확정하지 못함
@@ -126,6 +127,9 @@ _지금 잠근 영역이 없습니다._
   - 재시도: 마라톤카드는 홈페이지 카드 상세의 연회비 표(텍스트)로 확인, kb-04131은 카드 상세에서 상품설명서 링크 재확인
 - **2026-11-27 · Pickle · nh-90010006**
   - 사유: nh-90000319 국민행복카드는 A/B/C 타입별 혜택이 한 페이지에 섞여 있어 제외
+  - 재시도: 다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인
+- **2026-11-27 · Pickle · nh-90010033**
+  - 사유: nh-90010003·nh-90000240 혜택 탭 없음, nh-90010461 영역별 적립률 표 판독 불가 — 상품공시실 PDF로 재확인
   - 재시도: 다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인
 - **2026-11-27 · Pickle · nh-90010058**
   - 사유: nh-90000239 국민연금증카드: 카드 상세에 혜택 표 없이 공통 확인사항만 있음 — 상품공시실 상품설명서로 재확인 필요

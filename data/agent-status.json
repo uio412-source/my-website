@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T09:05:56+09:00",
+  "generatedAt": "2026-11-27T09:08:47+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -9,12 +9,7 @@
       "role": "ChatGPT 예약 작업·Dot — 데이터 수집(data/inbox) 담당. 브랜치 ai/chatgpt/data-*, 파일 YYYY-MM-DD-<출처>.json(접미사 없음).",
       "updatedAt": "2026-11-25T19:40:00+09:00",
       "lock": null,
-      "lastMergedPR": {
-        "number": 138,
-        "title": "data: 수집 2026-11-27 (카드사 이벤트 5건)",
-        "mergedAt": "2026-11-26T21:43:15Z",
-        "mergedAtKST": "2026-11-27 06:43"
-      },
+      "lastMergedPR": null,
       "runs": [
         {
           "at": "2026-11-25T15:09:00+09:00",
@@ -314,13 +309,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T09:05:54+09:00",
+      "updatedAt": "2026-11-27T09:08:45+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 177,
-        "title": "data: 수집 2026-11-27 19차 (NH농협카드 상품설명서 10종)",
-        "mergedAt": "2026-11-27T00:05:40Z",
-        "mergedAtKST": "2026-11-27 09:05"
+        "number": 178,
+        "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #177 반영)",
+        "mergedAt": "2026-11-27T00:06:42Z",
+        "mergedAtKST": "2026-11-27 09:06"
       },
       "runs": [
         {
@@ -793,13 +788,41 @@
             "nh-90010011",
             "nh-90010120"
           ]
+        },
+        {
+          "at": "2026-11-27T09:08:45+09:00",
+          "kind": "card-terms",
+          "pr": 179,
+          "summary": "20차: NH농협카드 상품설명서 10종·혜택 29줄",
+          "queueKeys": [
+            "nh-90010033",
+            "nh-90000410",
+            "nh-90010512",
+            "nh-90010029",
+            "nh-90010561",
+            "nh-90010013",
+            "nh-90010030",
+            "nh-90010042",
+            "nh-90000390",
+            "nh-90010133"
+          ]
         }
       ],
-      "openIssues": 29
+      "openIssues": 30
     }
   },
   "locks": [],
   "openPRs": [
+    {
+      "number": 179,
+      "title": "data: 수집 2026-11-27 20차 (NH농협카드 상품설명서 10종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle20",
+      "createdAtKST": "2026-11-27 09:08",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "url": "https://github.com/uio412-source/my-website/pull/179",
+      "draft": false
+    },
     {
       "number": 173,
       "title": "fix(hotels): 아코르 아태 세일 예약 마감 정정",
@@ -812,6 +835,20 @@
     }
   ],
   "recentPRs": [
+    {
+      "number": 178,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #177 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle177",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T00:06:42Z",
+      "mergedAtKST": "2026-11-27 09:06",
+      "createdAt": "2026-11-27T00:06:01Z",
+      "createdAtKST": "2026-11-27 09:06",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/178"
+    },
     {
       "number": 177,
       "title": "data: 수집 2026-11-27 19차 (NH농협카드 상품설명서 10종)",
@@ -1317,20 +1354,6 @@
       "url": "https://github.com/uio412-source/my-website/pull/141"
     },
     {
-      "number": 138,
-      "title": "data: 수집 2026-11-27 (카드사 이벤트 5건)",
-      "agent": "ChatGPT",
-      "branch": "ai/chatgpt/data-2026-11-27-card-events",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T21:43:15Z",
-      "mergedAtKST": "2026-11-27 06:43",
-      "createdAt": "2026-11-26T21:33:02Z",
-      "createdAtKST": "2026-11-27 06:33",
-      "area": "5파일 · data/inbox/card-events 5",
-      "files": 5,
-      "url": "https://github.com/uio412-source/my-website/pull/138"
-    },
-    {
       "number": 140,
       "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 2차, #139 반영)",
       "agent": "Pickle",
@@ -1343,20 +1366,6 @@
       "area": "4파일 · data/ 3 · docs/ 1",
       "files": 4,
       "url": "https://github.com/uio412-source/my-website/pull/140"
-    },
-    {
-      "number": 139,
-      "title": "data: 수집 2026-11-27 2차 (KB 상품설명서 26종 · 현대 AMEX 선택서비스 2 · 롯데 Mastercard Platinum)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle2",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T21:40:07Z",
-      "mergedAtKST": "2026-11-27 06:40",
-      "createdAt": "2026-11-26T21:39:18Z",
-      "createdAtKST": "2026-11-27 06:39",
-      "area": "3파일 · data/inbox/brand-services 2 · data/inbox/card-terms 1",
-      "files": 3,
-      "url": "https://github.com/uio412-source/my-website/pull/139"
     }
   ],
   "queue": {
@@ -1479,6 +1488,15 @@
       "target": "nh-90010006",
       "status": "open",
       "reason": "nh-90000319 국민행복카드는 A/B/C 타입별 혜택이 한 페이지에 섞여 있어 제외",
+      "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "nh-90010033",
+      "status": "open",
+      "reason": "nh-90010003·nh-90000240 혜택 탭 없음, nh-90010461 영역별 적립률 표 판독 불가 — 상품공시실 PDF로 재확인",
       "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
       "ref": ""
     },
