@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T02:48:24+09:00",
+  "generatedAt": "2026-11-28T02:54:57+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -357,13 +357,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-28T02:50:00+09:00",
+      "updatedAt": "2026-11-28T02:55:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 272,
-        "title": "data: 수집 2026-11-28 1차 (하나 AMEX PLATINUM ELITE·롯데 Visa Signature·SC 6종)",
-        "mergedAt": "2026-11-27T17:47:53Z",
-        "mergedAtKST": "2026-11-28 02:47"
+        "number": 274,
+        "title": "data: 수집 2026-11-28 3차 (SC제일은행 ZERO Edition3 카드명 정정)",
+        "mergedAt": "2026-11-27T17:54:36Z",
+        "mergedAtKST": "2026-11-28 02:54"
       },
       "runs": [
         {
@@ -1622,6 +1622,15 @@
           "queueKeys": [
             "hyundai-cstmbe2"
           ]
+        },
+        {
+          "at": "2026-11-28T02:55:00+09:00",
+          "kind": "card-terms",
+          "pr": 274,
+          "summary": "SC제일은행 ZERO Edition3(sc-6266) 카드명을 카드 DB 표기와 같게 정정해 카드 상세에 붙도록 수정",
+          "queueKeys": [
+            "sc-6266"
+          ]
         }
       ],
       "openIssues": 55
@@ -1630,6 +1639,34 @@
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 274,
+      "title": "data: 수집 2026-11-28 3차 (SC제일은행 ZERO Edition3 카드명 정정)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle2",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T17:54:36Z",
+      "mergedAtKST": "2026-11-28 02:54",
+      "createdAt": "2026-11-27T17:53:37Z",
+      "createdAtKST": "2026-11-28 02:53",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/274"
+    },
+    {
+      "number": 273,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-28 Pickle 1차 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/sync-2026-11-28",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T17:50:07Z",
+      "mergedAtKST": "2026-11-28 02:50",
+      "createdAt": "2026-11-27T17:48:38Z",
+      "createdAtKST": "2026-11-28 02:48",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/273"
+    },
     {
       "number": 272,
       "title": "data: 수집 2026-11-28 1차 (하나 AMEX PLATINUM ELITE·롯데 Visa Signature·SC 6종)",
@@ -2161,34 +2198,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/235"
-    },
-    {
-      "number": 234,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #233 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-pickle233",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T02:59:48Z",
-      "mergedAtKST": "2026-11-27 11:59",
-      "createdAt": "2026-11-27T02:59:07Z",
-      "createdAtKST": "2026-11-27 11:59",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/234"
-    },
-    {
-      "number": 233,
-      "title": "data: 수집 2026-11-27 46차 (롯데카드 상품설명서 10종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle46",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T02:58:42Z",
-      "mergedAtKST": "2026-11-27 11:58",
-      "createdAt": "2026-11-27T02:54:39Z",
-      "createdAtKST": "2026-11-27 11:54",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/233"
     }
   ],
   "queue": {

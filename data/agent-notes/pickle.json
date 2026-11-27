@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-28T02:50:00+09:00",
+ "updatedAt": "2026-11-28T02:55:00+09:00",
  "lock": null,
  "runs": [
   {
@@ -1259,6 +1259,15 @@
    "summary": "현대카드 코스트코 리워드 비즈니스 Edition2 상품설명서 정리",
    "queueKeys": [
     "hyundai-cstmbe2"
+   ]
+  },
+  {
+   "at": "2026-11-28T02:55:00+09:00",
+   "kind": "card-terms",
+   "pr": 274,
+   "summary": "SC제일은행 ZERO Edition3(sc-6266) 카드명을 카드 DB 표기와 같게 정정해 카드 상세에 붙도록 수정",
+   "queueKeys": [
+    "sc-6266"
    ]
   }
  ],
