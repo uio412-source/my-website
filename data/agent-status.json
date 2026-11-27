@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T11:15:30+09:00",
+  "generatedAt": "2026-11-27T11:21:20+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -316,13 +316,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T11:15:27+09:00",
+      "updatedAt": "2026-11-27T11:21:17+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 219,
-        "title": "data: 수집 2026-11-27 39차 (신한카드 상품설명서 10종)",
-        "mergedAt": "2026-11-27T02:15:12Z",
-        "mergedAtKST": "2026-11-27 11:15"
+        "number": 221,
+        "title": "data: 수집 2026-11-27 40차 (신한카드 상품설명서 10종)",
+        "mergedAt": "2026-11-27T02:21:01Z",
+        "mergedAtKST": "2026-11-27 11:21"
       },
       "runs": [
         {
@@ -1155,6 +1155,24 @@
             "shinhan-202410040001",
             "shinhan-202001160006"
           ]
+        },
+        {
+          "at": "2026-11-27T11:21:17+09:00",
+          "kind": "card-terms",
+          "pr": 221,
+          "summary": "40차: 신한카드 상품설명서 10종·혜택 29줄",
+          "queueKeys": [
+            "shinhan-201703020001",
+            "shinhan-202108020001",
+            "shinhan-201806280001",
+            "shinhan-202207140001",
+            "shinhan-202401290001",
+            "shinhan-202205310001",
+            "shinhan-202401290002",
+            "shinhan-202504010002",
+            "shinhan-202401290003",
+            "shinhan-202401290005"
+          ]
         }
       ],
       "openIssues": 34
@@ -1163,6 +1181,34 @@
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 221,
+      "title": "data: 수집 2026-11-27 40차 (신한카드 상품설명서 10종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle40",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T02:21:01Z",
+      "mergedAtKST": "2026-11-27 11:21",
+      "createdAt": "2026-11-27T02:17:00Z",
+      "createdAtKST": "2026-11-27 11:17",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/221"
+    },
+    {
+      "number": 220,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #219 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle219",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T02:16:17Z",
+      "mergedAtKST": "2026-11-27 11:16",
+      "createdAt": "2026-11-27T02:15:36Z",
+      "createdAtKST": "2026-11-27 11:15",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/220"
+    },
     {
       "number": 219,
       "title": "data: 수집 2026-11-27 39차 (신한카드 상품설명서 10종)",
@@ -1694,34 +1740,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/182"
-    },
-    {
-      "number": 181,
-      "title": "docs: 수집 대기열 갱신 (#179 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-2026-11-27-pickle20b",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T00:12:34Z",
-      "mergedAtKST": "2026-11-27 09:12",
-      "createdAt": "2026-11-27T00:11:48Z",
-      "createdAtKST": "2026-11-27 09:11",
-      "area": "1파일 · data/ 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/181"
-    },
-    {
-      "number": 180,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #179 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-pickle179",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T00:09:32Z",
-      "mergedAtKST": "2026-11-27 09:09",
-      "createdAt": "2026-11-27T00:08:52Z",
-      "createdAtKST": "2026-11-27 09:08",
-      "area": "3파일 · data/ 2 · docs/ 1",
-      "files": 3,
-      "url": "https://github.com/uio412-source/my-website/pull/180"
     }
   ],
   "queue": {
@@ -1732,8 +1750,8 @@
     },
     "counts": {
       "cards": {
-        "done": 516,
-        "todo": 931,
+        "done": 526,
+        "todo": 921,
         "total": 1447
       },
       "brandPrograms": {
