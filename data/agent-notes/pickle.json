@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-28T00:32:31+09:00",
+ "updatedAt": "2026-11-28T02:50:00+09:00",
  "lock": null,
  "runs": [
   {
@@ -1219,6 +1219,47 @@
    "pr": 270,
    "summary": "현대카드 이벤트 22건",
    "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T02:50:00+09:00",
+   "kind": "brand-services",
+   "pr": 272,
+   "summary": "하나카드 AMEX PLATINUM ELITE(AE001, 선택서비스 6종·발레 호텔 25곳)",
+   "queueKeys": [
+    "hana-american-express-platinum-elite"
+   ]
+  },
+  {
+   "at": "2026-11-28T02:50:00+09:00",
+   "kind": "brand-services",
+   "pr": 272,
+   "summary": "롯데카드 Visa Signature(VISA_SIGNATURE_02, 서비스 4종·발레 호텔 42곳)",
+   "queueKeys": [
+    "lotte-visa-signature"
+   ]
+  },
+  {
+   "at": "2026-11-28T02:50:00+09:00",
+   "kind": "card-terms",
+   "pr": 272,
+   "summary": "SC제일은행 6종(5349·6273·6277·6266·5944·5945) 상품설명서 정리",
+   "queueKeys": [
+    "sc-5349",
+    "sc-6273",
+    "sc-6277",
+    "sc-6266",
+    "sc-5944",
+    "sc-5945"
+   ]
+  },
+  {
+   "at": "2026-11-28T02:50:00+09:00",
+   "kind": "card-terms",
+   "pr": 272,
+   "summary": "현대카드 코스트코 리워드 비즈니스 Edition2 상품설명서 정리",
+   "queueKeys": [
+    "hyundai-cstmbe2"
+   ]
   }
  ],
  "skipped": [
@@ -1582,6 +1623,62 @@
    "status": "open",
    "reason": "혜택이 브랜드 서비스(라운지·발레파킹·리무진)뿐이고 연회비 표를 확정하지 못해 card-terms 대신 brand-services로 남김",
    "retry": "브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "삼성카드 상품설명서 140종",
+   "status": "open",
+   "reason": "카드 상세 딥링크가 홈으로 리다이렉트되고 브라우저로도 상세 진입 불가, static11 PDF 파일명 추측 404 (2026-11-28 브라우저 재확인)",
+   "retry": "상품공시실 목록에서 카드별 PDF 링크를 직접 확인하거나 다른 에이전트가 확보한 링크 사용"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "KB국민카드 남은 50종 상품설명서",
+   "status": "open",
+   "reason": "후보 12종 PDF 확인 결과 6종은 이미지 PDF(텍스트 2~1,043자), 나머지는 심의필 2020~2024년판뿐",
+   "retry": "심의필 2025~2026년판이 올라오면 img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf 교체"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "SC제일은행 sc-4420 신세계이마트 삼성카드 2 · sc-4753 글로벌 삼성체크",
+   "status": "open",
+   "reason": "안내장 심의필이 2016-07-19·2018-02-21로 '올해·작년 문서' 규칙 밖",
+   "retry": "2025~2026년판 안내장이 올라오면 교체"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "하나카드 브랜드서비스 World Elite·AMEX Gold·AMEX The Platinum",
+   "status": "open",
+   "reason": "leaflet 코드(WE·AG·AT·TP·AA·AM·PA)와 날짜 8종 조합 256건을 확인했으나 파일 없음. 하나 leaflet에는 AE(PLATINUM ELITE)·MW·MP·MT·VS·VI·VP·AP·UD만 존재",
+   "retry": "해당 등급 카드 상세(hana-15125·13913 등)에서 leaflet 링크 확인, 없으면 상품설명서 PDF로 대체"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "우리카드·롯데카드·신한카드·BC카드 카드 상세 상품설명서",
+   "status": "open",
+   "reason": "상세 페이지 HTML에 상품설명서 링크가 없고 스크립트로만 그려짐(우리 H1CRD101S02·롯데 LPCDADB_V100·신한 pconts·BC CreditCardMain 모두)",
+   "retry": "브라우저로 상세 탭을 렌더해 PDF 링크 확인"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "현대카드 AMEX PLATINUM ELITE(안내서 c=03184)",
+   "status": "open",
+   "reason": "표지·제목은 PLATINUM ELITE 서비스 안내서이나 본문 '전월 이용금액 산정 기준'에 American Express® Green Card Edition2가 적혀 있어 대상 카드 확정 불가",
+   "retry": "AMEX PLATINUM ELITE 해당 카드 상세에서 같은 안내서의 대상 카드 표기를 확인한 뒤 수집"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "NH농협카드 VISA Platinum·VISA Signature·Mastercard Platinum 브랜드서비스",
+   "status": "workaround",
+   "reason": "안내문(VISA_Platinum_251001.pdf·VISA_Signature_251001.pdf·Mastercard_Platinum_251001.pdf)은 확보했으나 '국내 호텔 발레파킹' 대상 호텔 목록이 안내문에 없어 hotel_valet 필수 항목을 채울 수 없음",
+   "retry": "카드 상세·상품설명서에서 대상 호텔 목록을 확인한 뒤 수집"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "롯데카드 브랜드서비스 나머지 등급(VISA_SIGNATURE 외)",
+   "status": "open",
+   "reason": "image.lottecard.co.kr/webapp/file/<BRAND>_<등급>_<NN>_select_service_260514.pdf 이름 규칙으로 216건을 확인했으나 VISA_SIGNATURE_02만 존재",
+   "retry": "해당 등급 롯데카드 상세 페이지에서 select_service PDF 링크 확인(카드 상세에 링크가 있는 카드만 노출)"
   }
  ]
 }
