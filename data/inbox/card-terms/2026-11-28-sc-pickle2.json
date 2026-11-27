@@ -1,0 +1,61 @@
+{
+  "type": "card-terms",
+  "issuer": "SC제일은행",
+  "collectedAt": "2026-11-28",
+  "collector": "Pickle",
+  "cards": [
+    {
+      "cardId": "sc-6266",
+      "queueKey": "sc-6266",
+      "name": "SC제일은행-현대카드 ZERO Edition3 (포인트형)",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.standardchartered.co.kr/np/kr/pl/cd/CardDetail.jsp?cardKind=1&id=6266",
+      "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1246649_T_AOB-20251125-0945-27_SC_ZERO_Ed3_POINT_V2.pdf",
+      "docDate": "2025-11-07",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 15000
+        },
+        {
+          "brand": "국내전용",
+          "amount": 15000
+        }
+      ],
+      "brands": [
+        "Visa",
+        "국내전용"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": "전월 실적 조건 없음",
+      "grace": null,
+      "spendExclusions": [],
+      "benefitExclusions": [
+        "전기 요금·도시가스 요금·아파트 관리비·부동산 임대료",
+        "TV 수신료·자동납부 서비스 이용 수수료",
+        "사립유치원·초중고·대학 등록금 납입",
+        "건강보험·국민연금·고용보험·산재보험료",
+        "고속도로 통행요금·후불하이패스·고속버스 결제",
+        "현대카드 할인·무이자 할부 적용 결제 건 전체 금액"
+      ],
+      "benefits": [
+        {
+          "group": null,
+          "label": "기본",
+          "place": "국내외 가맹점",
+          "value": "1.2%",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "limits": "실적·한도 제한 없음",
+          "conditions": [
+            "M포인트 적립",
+            "해외 이용 적립은 국내외겸용 카드에 한함"
+          ]
+        }
+      ]
+    }
+  ]
+}
