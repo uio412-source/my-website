@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 551,
-   "todo": 896,
+   "done": 561,
+   "todo": 886,
    "total": 1447
   },
   "brandPrograms": {
@@ -3591,7 +3591,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15644-A15644",
@@ -3602,7 +3602,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P14445-A14445",
@@ -3613,7 +3613,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15912-A15912",
@@ -3624,7 +3624,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13464-A13464",
@@ -3635,7 +3635,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13846-A13846",
@@ -3646,7 +3646,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13586-A13586",
@@ -3657,7 +3657,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P14428-A14428",
@@ -3668,7 +3668,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P14028-A14028",
@@ -3679,7 +3679,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13379-A13379",
@@ -3690,7 +3690,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P14345-A14345",
