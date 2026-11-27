@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 02:48 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 02:54 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-28 02:48 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#274](https://github.com/uio412-source/my-website/pull/274) | Pickle | data: 수집 2026-11-28 3차 (SC제일은행 ZERO Edition3 카드명 정정) | 2026-11-28 02:54 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#273](https://github.com/uio412-source/my-website/pull/273) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-28 Pickle 1차 반영) | 2026-11-28 02:50 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#272](https://github.com/uio412-source/my-website/pull/272) | Pickle | data: 수집 2026-11-28 1차 (하나 AMEX PLATINUM ELITE·롯데 Visa Sign… | 2026-11-28 02:47 | 4파일 · data/inbox/brand-services 2 · data/inbox/… | 머지 |
 | [#271](https://github.com/uio412-source/my-website/pull/271) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 51~77차 반영) | 2026-11-28 00:34 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#270](https://github.com/uio412-source/my-website/pull/270) | Pickle | data: 수집 2026-11-27 77차 (현대카드 이벤트 22건) | 2026-11-28 00:32 | 1파일 · data/inbox/card-events 1 | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-28 02:48 KST · `python tools/data/agent_sync.py` · 기�
 | [#252](https://github.com/uio412-source/my-website/pull/252) | Pickle | data: 수집 2026-11-27 59차 (IBK기업은행 7종) | 2026-11-27 23:18 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#251](https://github.com/uio412-source/my-website/pull/251) | Pickle | data: 수집 2026-11-27 58차 (현대카드 the Red·제휴 9종) | 2026-11-27 23:12 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#250](https://github.com/uio412-source/my-website/pull/250) | Pickle | data: 수집 2026-11-27 57차 (현대카드 GOLD·SC the Red 등 7종) | 2026-11-27 23:08 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#249](https://github.com/uio412-source/my-website/pull/249) | Pickle | data: 수집 2026-11-27 56차 (현대카드 ZERO·MY BUSINESS 9종) | 2026-11-27 23:04 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#248](https://github.com/uio412-source/my-website/pull/248) | Pickle | data: 수집 2026-11-27 55차 (현대카드 Boutique·X 8종) | 2026-11-27 22:59 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -87,7 +87,7 @@ _열린 PR이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
 | Claude | `data/agent-notes/claude.json` | #239 data: 수집 2026-11-27 4차 (Claude · … | 2026-11-27 22:26 | 14건 |
-| Pickle | `data/agent-notes/pickle.json` | #272 data: 수집 2026-11-28 1차 (하나 AMEX P… | 2026-11-28 02:47 | 55건 |
+| Pickle | `data/agent-notes/pickle.json` | #274 data: 수집 2026-11-28 3차 (SC제일은행 ZE… | 2026-11-28 02:54 | 55건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
