@@ -1,0 +1,393 @@
+{
+ "type": "card-terms",
+ "issuer": "IBK기업은행",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "ibk-103039",
+   "name": "K22 Mileage SKYPASS",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103039&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-08-12",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 219000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 220000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본적립",
+     "place": "국내(더블적립 가맹점 제외)",
+     "value": "1,500원",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "더블적립",
+     "place": "해외, 항공, 호텔, 면세점",
+     "value": "1,500원",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 10만 마일리지",
+     "conditions": [
+      "중복적립 불가, 초과분은 기본적립"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-103038",
+   "name": "K22 Point",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103038&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-08-12",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 219000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 220000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본적립",
+     "place": "국내(더블적립 가맹점 제외)",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "더블적립",
+     "place": "해외, 항공, 호텔, 면세점",
+     "value": "2%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 10만 포인트",
+     "conditions": [
+      "중복적립 불가, 초과분은 기본적립"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-225018",
+   "name": "인피니트 스카이패스 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=225018&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-07-28",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 1000000
+    },
+    {
+     "brand": "Visa Infinite",
+     "amount": 1000000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Visa Infinite"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "마일리지적립",
+     "place": "국내외 일시불·할부 이용금액",
+     "value": "1,500원",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "소기업 제공",
+     "place": "국내외 이용금액(법인·소기업 지정자)",
+     "value": "3,000원",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "기업 지정카드는 연간 3만 마일리지까지"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-104506",
+   "name": "BLISS Mileage",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=104506&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2026-03-12",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 100000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 99000
+    }
+   ],
+   "brands": [
+    "Mastercard",
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본적립",
+     "place": "국내·외 전 가맹점",
+     "value": "1,500원",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "특화적립",
+     "place": "쿠팡, 네이버스마트스토어, SSG.com, 마켓컬리, 넷플릭스, 유튜브 프리미엄, 디즈니플러스, 배달의민족, 쿠팡이츠",
+     "value": "1,500원",
+     "valueType": "적립",
+     "minimumSpend": 800000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "특화적립은 기본적립과 중복 제공되지 않음"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-104561",
+   "name": "BLISS Point",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=104561&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2026-03-12",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 100000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 99000
+    }
+   ],
+   "brands": [
+    "Mastercard",
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본적립",
+     "place": "국내·외 전 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "IBK포인트 적립"
+     ]
+    },
+    {
+     "label": "특화적립",
+     "place": "온라인 등 5개 영역 대상 가맹점",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 800000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "특화적립은 기본적립과 중복 제공되지 않음"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-033103",
+   "name": "BLISS.5 (IBK) SKYPASS",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=033103&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2026-02-10",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 100000
+    },
+    {
+     "brand": "BC 글로벌",
+     "amount": 95000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 90000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "BC 글로벌",
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "마일리지적립",
+     "place": "국내외 일시불·유이자할부 이용금액",
+     "value": "1,500원",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "대한항공 SKYPASS 마일리지"
+     ]
+    },
+    {
+     "label": "소기업 제공",
+     "place": "국내외 이용금액(법인·소기업 지정자)",
+     "value": "3,000원",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "기업회원은 연간 최대 6만 마일리지"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-034721",
+   "name": "BLISS.5 (IBK) TOP",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=034721&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2026-02-10",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 100000
+    },
+    {
+     "brand": "BC 글로벌",
+     "amount": 95000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 90000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "BC 글로벌",
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "포인트적립",
+     "place": "국내외 일시불·유이자할부 이용금액",
+     "value": "1,500원",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "개인 1건당 최고 10만 포인트"
+     ]
+    },
+    {
+     "label": "소기업 제공",
+     "place": "국내외 이용금액(법인·소기업 지정자)",
+     "value": "3,000원",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "기업 월 10만 포인트까지 법인포인트"
+     ]
+    }
+   ]
+  }
+ ]
+}
