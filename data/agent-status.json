@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T08:53:34+09:00",
+  "generatedAt": "2026-11-27T08:59:18+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -43,10 +43,10 @@
       "updatedAt": "2026-11-27T09:40:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 152,
-        "title": "data: 수집 2026-11-27 3차 (Claude · 신한 상품설명서 20종)",
-        "mergedAt": "2026-11-26T22:45:23Z",
-        "mergedAtKST": "2026-11-27 07:45"
+        "number": 174,
+        "title": "data: 수집 2026-11-27 (Claude · 하나카드 상품설명서 30종)",
+        "mergedAt": "2026-11-26T23:54:15Z",
+        "mergedAtKST": "2026-11-27 08:54"
       },
       "runs": [
         {
@@ -314,13 +314,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T08:12:20+09:00",
+      "updatedAt": "2026-11-27T08:59:16+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 172,
-        "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #171 반영)",
-        "mergedAt": "2026-11-26T23:13:08Z",
-        "mergedAtKST": "2026-11-27 08:13"
+        "number": 175,
+        "title": "data: 수집 2026-11-27 18차 (NH농협카드 상품설명서 10종)",
+        "mergedAt": "2026-11-26T23:59:02Z",
+        "mergedAtKST": "2026-11-27 08:59"
       },
       "runs": [
         {
@@ -757,9 +757,27 @@
             "hana-visa-signature",
             "hana-visa-platinum"
           ]
+        },
+        {
+          "at": "2026-11-27T08:59:16+09:00",
+          "kind": "card-terms",
+          "pr": 175,
+          "summary": "18차: NH농협카드 상품설명서 10종·혜택 38줄",
+          "queueKeys": [
+            "nh-90010058",
+            "nh-90010471",
+            "nh-90010008",
+            "nh-90010604",
+            "nh-90000351",
+            "nh-90000375",
+            "nh-90010513",
+            "nh-90010515",
+            "nh-90010543",
+            "nh-90010005"
+          ]
         }
       ],
-      "openIssues": 28
+      "openIssues": 29
     }
   },
   "locks": [],
@@ -776,6 +794,34 @@
     }
   ],
   "recentPRs": [
+    {
+      "number": 175,
+      "title": "data: 수집 2026-11-27 18차 (NH농협카드 상품설명서 10종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle18",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T23:59:02Z",
+      "mergedAtKST": "2026-11-27 08:59",
+      "createdAt": "2026-11-26T23:55:00Z",
+      "createdAtKST": "2026-11-27 08:55",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/175"
+    },
+    {
+      "number": 174,
+      "title": "data: 수집 2026-11-27 (Claude · 하나카드 상품설명서 30종)",
+      "agent": "Claude",
+      "branch": "ai/claude/data-2026-11-27-hana",
+      "state": "MERGED",
+      "mergedAt": "2026-11-26T23:54:15Z",
+      "mergedAtKST": "2026-11-27 08:54",
+      "createdAt": "2026-11-26T23:53:56Z",
+      "createdAtKST": "2026-11-27 08:53",
+      "area": "5파일 · data/ 3 · data/inbox/card-terms 1 · docs/ 1",
+      "files": 5,
+      "url": "https://github.com/uio412-source/my-website/pull/174"
+    },
     {
       "number": 172,
       "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #171 반영)",
@@ -1293,34 +1339,6 @@
       "area": "2파일 · data/inbox/brand-services 1 · data/inbox/card-terms 1",
       "files": 2,
       "url": "https://github.com/uio412-source/my-website/pull/136"
-    },
-    {
-      "number": 135,
-      "title": "data: 수집 2026-11-26 (Claude · 상품설명서 3종)",
-      "agent": "Claude",
-      "branch": "ai/claude/data-2026-11-26",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T12:35:52Z",
-      "mergedAtKST": "2026-11-26 21:35",
-      "createdAt": "2026-11-26T12:32:45Z",
-      "createdAtKST": "2026-11-26 21:32",
-      "area": "7파일 · data/ 3 · data/inbox/card-terms 3 · docs/ 1",
-      "files": 7,
-      "url": "https://github.com/uio412-source/my-website/pull/135"
-    },
-    {
-      "number": 134,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-26 Pickle 5차, #133 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-26-pickle3",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T12:29:00Z",
-      "mergedAtKST": "2026-11-26 21:29",
-      "createdAt": "2026-11-26T12:27:36Z",
-      "createdAtKST": "2026-11-26 21:27",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/134"
     }
   ],
   "queue": {
@@ -1331,8 +1349,8 @@
     },
     "counts": {
       "cards": {
-        "done": 296,
-        "todo": 1151,
+        "done": 306,
+        "todo": 1141,
         "total": 1447
       },
       "brandPrograms": {
@@ -1443,6 +1461,15 @@
       "target": "nh-90010006",
       "status": "open",
       "reason": "nh-90000319 국민행복카드는 A/B/C 타입별 혜택이 한 페이지에 섞여 있어 제외",
+      "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "nh-90010058",
+      "status": "open",
+      "reason": "nh-90000239 국민연금증카드: 카드 상세에 혜택 표 없이 공통 확인사항만 있음 — 상품공시실 상품설명서로 재확인 필요",
       "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
       "ref": ""
     },
