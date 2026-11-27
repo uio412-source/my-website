@@ -287,6 +287,8 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .cd-g-lim { text-align: center; font-size: .76rem; }
 .cd-g-lim span { display: block; }
 .cd-g-lim span + span { color: var(--mc-muted); }
+.cd-g-lim .tier { font-size: .7rem; }
+.cd-g-val b.long { white-space: normal; font-size: .84rem; }
 
 /* 기본 정보 · 피킹률 · 결제 · 이벤트 */
 .cd-info tbody th { width: 28%; }

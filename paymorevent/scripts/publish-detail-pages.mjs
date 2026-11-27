@@ -2,10 +2,13 @@ import {mkdir, readFile, writeFile} from 'node:fs/promises';
 import {gunzipSync} from 'node:zlib';
 import {CARD_LIST_FILE, CARD_SEARCH_FILE} from './card-list.mjs';
 import {applyVerifiedCardRules, readVerifiedCardRules} from './verified-card-rules.mjs';
+import {attachTerms, readCardTerms} from './card-terms.mjs';
 
 const dist = new URL('../dist/', import.meta.url);
 const rules = readVerifiedCardRules();
-const cards = applyVerifiedCardRules(JSON.parse(gunzipSync(await readFile(new URL('../data/cards.json.gz', import.meta.url)))), rules);
+// 상품설명서 정리본(data/card-terms.json, 배포 때 tools/data/inbox.py merge가 만듦)을 카드 상세에만 붙입니다(scripts/card-terms.mjs).
+const termed = attachTerms(applyVerifiedCardRules(JSON.parse(gunzipSync(await readFile(new URL('../data/cards.json.gz', import.meta.url)))), rules), readCardTerms());
+const cards = termed.cards;
 const events = JSON.parse(await readFile(new URL('../data/events.json', import.meta.url), 'utf8'));
 const page = await readFile(new URL('index.html', dist), 'utf8');
 // 카드 목록의 원본은 저장소의 data/catalog-snapshot.json. dist에 12.5MB를 내보내지 않고 여기서 직접 읽습니다.
@@ -54,3 +57,6 @@ for (const event of events) {
   await createPage('events', event.id);
 }
 console.log(`Published ${cards.length} card and ${events.length} event detail routes.`);
+const {stats} = termed;
+console.log(`상품설명서 정리본 ${stats.terms}종 중 ${stats.attached}종을 카드 상세에 붙임 (혜택 표까지 ${stats.table}종, 나머지는 전월실적·제외 항목만)`);
+if (stats.skipped.length) console.log(`이름·신용/체크가 카드 DB와 달라 안 붙인 정리본 ${stats.skipped.length}종:\n  ` + stats.skipped.join('\n  '));

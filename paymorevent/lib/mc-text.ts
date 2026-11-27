@@ -268,6 +268,8 @@ export type BenefitRow = {
   group: string | null; name: string; where: string; value: {main: string; sub: string}; conds: string[]; tiers: string[]; lines: string[];
   /** 표 칸용: 구분(짧은 이름) · 적용처 · 한도 · 전월실적 · 그 밖의 조건(횟수·건당 최소) */
   label: string; place: string; limit: string | null; shared: boolean; spend: string | null; extras: string[];
+  /** 상품설명서 정리본(lib/card-terms.ts): 같은 통합 한도 묶음 이름 · 실적 구간별 한도 줄 */
+  sharedKey?: string; tierText?: string[];
 };
 /** 표 머리글 조각인지: 숫자·%가 없고 '대상·가맹점·할인율…' 같은 항목 이름이 2개 이상 */
 const HEADER_WORD = /대상|가맹점|할인율|적립률|한도|구분|내용|영역|비고|조건/g;

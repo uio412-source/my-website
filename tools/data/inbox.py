@@ -13,7 +13,7 @@ data/inbox/<종류>/YYYY-MM-DD-<출처>.json 파일만 새로 추가합니다(�
 - travel-events  → travel/vendor-events.json     (항공사·면세점·여행사 자체 이벤트, 여행준비 화면이 읽음)
 - brand-services → paymorevent/data/brand-services.json (국제브랜드·카드사 선택 서비스 전체)
                    + hotel_valet 서비스는 hotels/valet.json 프로그램으로 (서울 호텔 이름을 id로 연결, 못 찾은 호텔은 보고)
-- card-terms     → paymorevent/data/card-terms.json (상품설명서 표준 정리본, 검토 후 카드 DB에 반영)
+- card-terms     → paymorevent/data/card-terms.json (상품설명서 표준 정리본, 빌드 때 카드 상세에 붙임: paymorevent/scripts/card-terms.mjs)
 - card-products  → 검토 대기열(신상품·단종 알림). 사이트에는 자동 반영하지 않음
 - 파일 이름 순(= 날짜 순)으로 적용하므로 나중에 수집한 값이 이깁니다.
 """
