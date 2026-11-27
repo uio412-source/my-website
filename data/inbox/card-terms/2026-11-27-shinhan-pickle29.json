@@ -1,0 +1,815 @@
+{
+ "type": "card-terms",
+ "issuer": "신한카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "shinhan-202211300002",
+   "queueKey": "shinhan-202211300002",
+   "name": "신세계사이먼 프리미엄 아울렛 신한카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1219848_2207.html",
+   "termsUrl": null,
+   "docDate": "2022-12-12",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 20000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 23000
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "아울렛 할인",
+     "place": "신세계사이먼 프리미엄 아울렛",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "일 1회, 월 6회",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 20000
+      },
+      {
+       "spend": 800000,
+       "cap": 30000
+      },
+      {
+       "spend": 1200000,
+       "cap": 50000
+      }
+     ],
+     "conditions": [
+      "상품권·주차장·임대매장 제외"
+     ]
+    },
+    {
+     "label": "신세계 계열사 할인",
+     "place": "이마트·트레이더스·에브리데이·이마트24·SSG닷컴",
+     "value": "7%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "오프라인 매장만(앱·웹 결제 제외)",
+      "SSG닷컴은 신세계백화점몰 제외"
+     ]
+    },
+    {
+     "label": "주유 할인",
+     "place": "GS칼텍스·S-OIL(LPG충전소 제외)",
+     "value": "리터당 40원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201502100001",
+   "queueKey": "shinhan-201502100001",
+   "name": "신한카드 B.Big(삑)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1187938_2207.html",
+   "termsUrl": null,
+   "docDate": "2020-03-09",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 13000
+    },
+    {
+     "brand": "UnionPay",
+     "amount": 10000
+    },
+    {
+     "brand": "S&",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "UnionPay",
+    "S&"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "버스·지하철 할인",
+     "place": "버스·지하철 후불교통",
+     "value": "일 200~600원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 200
+      },
+      {
+       "spend": 500000,
+       "cap": 400
+      },
+      {
+       "spend": 1000000,
+       "cap": 600
+      }
+     ],
+     "conditions": [
+      "이용일 기준 정액 할인",
+      "비교통 카드는 미제공"
+     ]
+    },
+    {
+     "label": "택시·KTX 할인",
+     "place": "택시·KTX",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 15000,
+     "capScope": "월",
+     "conditions": [
+      "전월 이용실적 기준"
+     ]
+    },
+    {
+     "label": "영화 할인",
+     "place": "영화 예매",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201907110002",
+   "queueKey": "shinhan-201907110002",
+   "name": "신한카드 Deep Making",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188286_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-11-26",
+   "annualFee": [
+    {
+     "brand": "Visa 플래티늄",
+     "amount": 30000
+    },
+    {
+     "brand": "URS 플래티늄",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "Visa 플래티늄",
+    "URS 플래티늄"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "Making 17",
+     "place": "쇼핑·여행·푸드·생활 17개 영역 중 영역별 1~5% 적립률 직접 선택(합계 17%)",
+     "value": "최대 5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": 7000,
+     "capScope": "월",
+     "conditions": [
+      "선택영역별 월 7천 포인트 한도",
+      "미선택 시 전 영역 1% 자동 지정",
+      "변경 횟수 제한 없음(다음 달 1일 적용)"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201807260001",
+   "queueKey": "shinhan-201807260001",
+   "name": "신한카드 Deep On Platinum+",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188280_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-11-19",
+   "annualFee": [
+    {
+     "brand": "Mastercard 플래티늄",
+     "amount": 33000
+    },
+    {
+     "brand": "UnionPay 플래티늄",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "Mastercard 플래티늄",
+    "UnionPay 플래티늄"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "간편결제 할인",
+     "place": "신한 SOL페이·삼성페이·LG페이·스마일페이·네이버페이·SK페이·카카오페이·페이코·SSG페이·L페이",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 6회",
+     "conditions": [
+      "국내 온라인 결제만",
+      "1회 2만원 이상(최대 5천원 할인)"
+     ]
+    },
+    {
+     "label": "온라인 배달·슈퍼 추가 할인",
+     "place": "요기요·GS프레시·오아시스마켓(온라인)",
+     "value": "추가 10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "간편결제 할인 월 6회",
+     "conditions": [
+      "최대 총 20%",
+      "1회 최대 1만원"
+     ]
+    },
+    {
+     "label": "편의점 할인",
+     "place": "GS25·CU·세븐일레븐·이마트24(오프라인)",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "생활 할인",
+     "place": "올리브영·다이소",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "커피 할인",
+     "place": "스타벅스·투썸플레이스",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "월납 할인",
+     "place": "쿠팡·위메프 정기배송, 프레딧, 리디북스",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202001290002",
+   "queueKey": "shinhan-202001290002",
+   "name": "신한카드 Deep Once Plus",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1192801_2207.html",
+   "termsUrl": null,
+   "docDate": "2026-10-29",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 27000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "렌탈 적립",
+     "place": "LG전자 케어솔루션·코웨이·SK매직·쿠쿠홈시스·BS온·웰릭스렌탈·넥센타이어·바디프랜드·교원웰스·모두렌탈 자동납부",
+     "value": "최대 7,000P",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "렌탈사별 월 1건, 통합 월 5건",
+     "conditions": [
+      "전월 40만~80만원 3천, 80만~120만원 5천, 120만원 이상 7천 포인트",
+      "건당 1만원 이상"
+     ]
+    },
+    {
+     "label": "생활월납 적립",
+     "place": "아파트관리비·이동통신 등 7개 생활월납 자동납부",
+     "value": "최대 6,000P",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "통합 월 3건",
+     "conditions": [
+      "전월 이용금액 구간별 차등"
+     ]
+    },
+    {
+     "label": "디지털 구독 적립",
+     "place": "7개 디지털 구독 정기결제",
+     "value": "최대 6,000P",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "통합 월 3건"
+    },
+    {
+     "label": "Plus 적립",
+     "place": "커피·편의점·해외(온·오프라인)",
+     "value": "최대 3,000P",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201807100001",
+   "queueKey": "shinhan-201807100001",
+   "name": "신한카드 Deep Store",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188279_2207.html",
+   "termsUrl": null,
+   "docDate": "2026-09-30",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 16000
+    },
+    {
+     "brand": "S&",
+     "amount": 13000
+    }
+   ],
+   "brands": [
+    "Mastercard",
+    "S&"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "생활쇼핑 할인",
+     "place": "동네 슈퍼·잡화점 등 생활쇼핑 가맹점(3대 할인점·창고형 제외)",
+     "value": "10~15%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 8회",
+     "conditions": [
+      "기본 10%, 1회 5만원 이상 시 추가 5%(월 4회)",
+      "1회 10만원까지 할인"
+     ]
+    },
+    {
+     "label": "커피·제과 할인",
+     "place": "커피전문점·제과점",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "주말 할인",
+     "place": "복합 쇼핑몰, 3대 마트",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "주말 결제 건"
+     ]
+    },
+    {
+     "label": "영화 할인",
+     "place": "롯데시네마 현장 예매",
+     "value": "5,000원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "주말"
+     ]
+    },
+    {
+     "label": "해외 적립",
+     "place": "해외 이용(Master 브랜드)",
+     "value": "0.18%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "해외서비스 수수료 상당 마이신한포인트"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201907110001",
+   "queueKey": "shinhan-201907110001",
+   "name": "신한카드 Deep Taking",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188287_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-11-24",
+   "annualFee": [
+    {
+     "brand": "Visa 플래티늄",
+     "amount": 20000
+    },
+    {
+     "brand": "URS 플래티늄",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "Visa 플래티늄",
+    "URS 플래티늄"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "Taking 10",
+     "place": "17개 서비스 영역 중 월 이용금액 상위 5개 영역",
+     "value": "각 2%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 10000
+      },
+      {
+       "spend": 800000,
+       "cap": 30000
+      },
+      {
+       "spend": 1200000,
+       "cap": 50000
+      }
+     ],
+     "conditions": [
+      "영역별 월 1만 포인트 한도",
+      "이용월 익월 10일 일괄 적립"
+     ]
+    },
+    {
+     "label": "My Pick",
+     "place": "My Pick 가맹점 월 3·6·9번째 이용",
+     "value": "1,000P",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202211210005",
+   "queueKey": "shinhan-202211210005",
+   "name": "신한카드 EVerywhere",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1219683_2207.html",
+   "termsUrl": null,
+   "docDate": "2026-10-30",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 19000
+    },
+    {
+     "brand": "Visa",
+     "amount": 22000
+    }
+   ],
+   "brands": [
+    "Local",
+    "Visa"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "전기차 충전 캐시백",
+     "place": "전기차 충전소(EVerywhere Station)",
+     "value": "30~50%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 15000
+      },
+      {
+       "spend": 800000,
+       "cap": 20000
+      }
+     ],
+     "conditions": [
+      "전월 40만~80만원 30%, 80만원 이상 50%",
+      "간편결제명으로 승인된 건 제외",
+      "아파트 관리비 포함 충전 제외"
+     ]
+    },
+    {
+     "label": "디지털 구독 캐시백",
+     "place": "디지털 구독",
+     "value": "20%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "이동통신 캐시백",
+     "place": "이동통신요금",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "편의점 캐시백",
+     "place": "편의점",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "커피·베이커리 캐시백",
+     "place": "커피전문점·베이커리",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "주차 캐시백",
+     "place": "모두의 주차장·카카오T주차",
+     "value": "5,000원",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202201200001",
+   "queueKey": "shinhan-202201200001",
+   "name": "신한카드 Eats More(이츠모아)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1215320_2207.html",
+   "termsUrl": null,
+   "docDate": "2026-09-23",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 15000
+    },
+    {
+     "brand": "Visa",
+     "amount": 18000
+    }
+   ],
+   "brands": [
+    "Local",
+    "Visa"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본 적립",
+     "place": "국내외 가맹점 5천원 이상 결제",
+     "value": "1천원 미만 잔돈",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 8000
+      },
+      {
+       "spend": 800000,
+       "cap": 15000
+      },
+      {
+       "spend": 1200000,
+       "cap": 30000
+      }
+     ],
+     "conditions": [
+      "결제금액의 1천원 미만 금액을 마이신한포인트로 적립",
+      "동일 가맹점 1일 1회·월 3회"
+     ]
+    },
+    {
+     "label": "추가 적립",
+     "place": "요식업종·배달앱·온라인마켓",
+     "value": "건당 정액",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "신한 SOL페이 앱 결제 시 건당 100포인트 추가"
+     ]
+    },
+    {
+     "label": "적립포인트 투자",
+     "place": "신한은행 달러 예금 계좌",
+     "value": "제공",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201702200001",
+   "queueKey": "shinhan-201702200001",
+   "name": "신한카드 Edu",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188281_2207.html",
+   "termsUrl": null,
+   "docDate": "2024-07-24",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 23000
+    },
+    {
+     "brand": "S&",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "Mastercard",
+    "S&"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "교육 캐시백",
+     "place": "일반전문학원·학습지·유치원(방문 결제)",
+     "value": "5~10%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 15000
+      },
+      {
+       "spend": 1000000,
+       "cap": 30000
+      },
+      {
+       "spend": 1500000,
+       "cap": 45000
+      }
+     ],
+     "conditions": [
+      "전월 50만~100만원 5%, 100만~150만원 7%, 150만원 이상 10%"
+     ]
+    },
+    {
+     "label": "교육 추가 캐시백",
+     "place": "교육업종 결제 건수",
+     "value": "3,000~5,000원",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "승인금액 20만원 이상 거래 기준 2건 3천·3건 4천·4건 이상 5천원"
+     ]
+    },
+    {
+     "label": "아파트 관리비 캐시백",
+     "place": "아파트 관리비",
+     "value": "5,000원",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "교육업종 결제와 관리비 결제 동시 충족 시"
+     ]
+    },
+    {
+     "label": "생활 캐시백",
+     "place": "3대 마트(홈플러스·이마트·롯데마트), 의료업종(병원·약국)",
+     "value": "1%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  }
+ ]
+}
