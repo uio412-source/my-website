@@ -1,0 +1,539 @@
+{
+ "type": "card-terms",
+ "issuer": "롯데카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "lotte-P14345-A14345",
+   "name": "LOCA CLASSIC 롯데마트",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14345-A14345",
+   "termsUrl": null,
+   "docDate": "2023-04-25",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본 할인",
+     "place": "국내·외 가맹점",
+     "value": "0.5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "지난달 100만원 미만"
+     ]
+    },
+    {
+     "label": "특별 할인",
+     "place": "국내·외 가맹점",
+     "value": "1.0%",
+     "valueType": "할인",
+     "minimumSpend": 1000000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "지난달 100만원 이상",
+      "기본할인과 중복 불가"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13746-A13746",
+   "name": "LOCA LIKIT",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13746-A13746",
+   "termsUrl": null,
+   "docDate": "2024-11-11",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "커피 할인",
+     "place": "스타벅스",
+     "value": "50~60%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "영화 할인",
+     "place": "롯데시네마·CGV",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "대중교통 할인",
+     "place": "시내버스·지하철",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "이동통신 할인",
+     "place": "SKT·KT·LG U+",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "배달앱 할인",
+     "place": "배달의민족·쿠팡이츠",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15830-A15830",
+   "name": "LOCA LIKIT 1.5",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15830-A15830",
+   "termsUrl": null,
+   "docDate": "2026-04-15",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "국내 할인",
+     "place": "국내 가맹점",
+     "value": "0.8%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "실적·한도 조건 없음"
+     ]
+    },
+    {
+     "label": "해외 할인",
+     "place": "해외 가맹점",
+     "value": "1.5%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "무이자 할부",
+     "place": "국내 가맹점",
+     "value": "2~3개월 무이자",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15835-A15835",
+   "name": "LOCA LIKIT 2.0",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15835-A15835",
+   "termsUrl": null,
+   "docDate": "2026-04-15",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "국내 할인",
+     "place": "국내 가맹점",
+     "value": "1.2%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "실적·한도 조건 없음"
+     ]
+    },
+    {
+     "label": "해외 할인",
+     "place": "해외 가맹점",
+     "value": "2.0%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "무이자 할부",
+     "place": "국내 가맹점",
+     "value": "2~3개월 무이자",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13943-A13943",
+   "name": "LOCA LIKIT Eat",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13943-A13943",
+   "termsUrl": null,
+   "docDate": "2024-11-05",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "결제일 할인",
+     "place": "음식점, 배달의민족·쿠팡이츠·요기요, 스타벅스·투썸플레이스·할리스커피·폴바셋(커피)",
+     "value": "60%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "실적·할인한도 기준은 상품설명서 할인 공통기준 참조"
+     ]
+    },
+    {
+     "label": "멤버십 할인",
+     "place": "쿠팡 로켓와우, 네이버플러스 멤버십",
+     "value": "60%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13949-A13949",
+   "name": "LOCA LIKIT Play",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13949-A13949",
+   "termsUrl": null,
+   "docDate": "2024-11-13",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "결제일 할인",
+     "place": "SK에너지·S-OIL·GS칼텍스·현대오일뱅크(주유), 롯데시네마·CGV·메가박스(영화), 넷플릭스·왓챠·유튜브·멜론·지니(스트리밍)",
+     "value": "60%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "실적·할인한도 기준은 상품설명서 할인 공통기준 참조"
+     ]
+    },
+    {
+     "label": "멤버십 할인",
+     "place": "쿠팡 로켓와우, 네이버플러스 멤버십",
+     "value": "60%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13955-A13955",
+   "name": "LOCA LIKIT Shop",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13955-A13955",
+   "termsUrl": null,
+   "docDate": "2026-04-09",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "결제일 할인",
+     "place": "쿠팡·SSG.COM·티몬(온라인 쇼핑), 미용실, GS25·CU·세븐일레븐(편의점)",
+     "value": "60%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "실적·할인한도 기준은 상품설명서 할인 공통기준 참조"
+     ]
+    },
+    {
+     "label": "멤버십 할인",
+     "place": "쿠팡 로켓와우, 네이버플러스 멤버십",
+     "value": "60%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13561-A13561",
+   "name": "LOCA MONEY 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13561-A13561",
+   "termsUrl": null,
+   "docDate": "2021-09-30",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본 적립",
+     "place": "국내·외 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "로카코인, 적립한도 없음"
+     ]
+    },
+    {
+     "label": "특별 적립",
+     "place": "국내·외 가맹점",
+     "value": "2%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "지난달 월 평균 단기카드대출 잔액 등 조건 충족 시"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13828-A13828",
+   "name": "LOCA X BS RENTAL",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13828-A13828",
+   "termsUrl": null,
+   "docDate": "2026-09-02",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "렌탈료 할인",
+     "place": "BS렌탈 렌탈료 자동납부",
+     "value": "10,000~15,000원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 10000
+      },
+      {
+       "spend": 700000,
+       "cap": 15000
+      }
+     ],
+     "conditions": [
+      "자동납부 필수"
+     ]
+    },
+    {
+     "label": "캐시백",
+     "place": "카드 결제계좌",
+     "value": "캐시백",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13354-A13354",
+   "name": "LOCA X LG전자",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13354-A13354",
+   "termsUrl": null,
+   "docDate": "2021-09-30",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "베스트할부",
+     "place": "LG베스트샵 할부",
+     "value": "연 6.9%",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "24·36개월, 이용금액 10만원 이상",
+      "원금균등방식, 이용 횟수 제한 없음",
+      "백화점·대리점 등 일부 매장 제외"
+     ]
+    },
+    {
+     "label": "L.POINT 적립",
+     "place": "롯데카드 가맹점",
+     "value": "L.POINT 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  }
+ ]
+}
