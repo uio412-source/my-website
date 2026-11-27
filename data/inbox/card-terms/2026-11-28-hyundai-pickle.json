@@ -1,0 +1,100 @@
+{
+  "type": "card-terms",
+  "issuer": "현대카드",
+  "collectedAt": "2026-11-28",
+  "collector": "Pickle",
+  "cards": [
+    {
+      "cardId": "hyundai-cstmbe2",
+      "queueKey": "hyundai-cstmbe2",
+      "name": "코스트코 리워드 비즈니스 현대카드 Edition2",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=CSTMBe2",
+      "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03182",
+      "docDate": "2025-08-14",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 20000
+        },
+        {
+          "brand": "국내전용",
+          "amount": 20000
+        }
+      ],
+      "brands": [
+        "Visa",
+        "국내전용"
+      ],
+      "minimumSpend": 500000,
+      "spendBasis": "전월 1일~말일 본인+가족 카드 일시불·할부 이용금액",
+      "grace": "최초 신규 발급 시 발급월 기준 다음 달 이용 건까지 실적 미달도 적립",
+      "spendExclusions": [
+        "장기카드대출(카드론)",
+        "단기카드대출(현금서비스)",
+        "연회비·제수수료·이자",
+        "공과금 납부액(국세·관세·지방세·상하수도 요금 등)",
+        "전기 요금·도시가스 요금·아파트 관리비",
+        "사립유치원·초중고·대학 등록금, 자동납부서비스 이용 수수료",
+        "상품권 등 현금성 유가증권 구매·선불카드 충전",
+        "건강보험·국민연금·고용보험·산재보험료",
+        "고속도로 통행요금·후불하이패스·고속버스, 무이자 할부"
+      ],
+      "benefitExclusions": [
+        "장기카드대출(카드론)",
+        "단기카드대출(현금서비스)",
+        "연회비·제수수료·이자",
+        "공과금 납부액(국세·관세·지방세·상하수도 요금 등)",
+        "전기 요금·도시가스 요금·아파트 관리비",
+        "사립유치원·초중고·대학 등록금, 자동납부서비스 이용 수수료",
+        "상품권 등 현금성 유가증권 구매·선불카드 충전",
+        "당사 할인서비스·무이자 할부 이용금액"
+      ],
+      "benefits": [
+        {
+          "group": "기본 혜택",
+          "label": "기본",
+          "place": "코스트코 매장·온라인몰 외 국내외 가맹점",
+          "value": "1%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "limits": "적립 한도 없음",
+          "conditions": [
+            "코스트코 리워드 포인트 적립"
+          ]
+        },
+        {
+          "group": "추가 혜택",
+          "label": "코스트코 온라인몰",
+          "place": "코스트코 온라인몰",
+          "value": "3%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "limits": "통합 연 50만 포인트",
+          "conditions": [
+            "적립 포인트는 매년 12월 바우처로 1회 제공"
+          ]
+        },
+        {
+          "group": "추가 혜택",
+          "label": "코스트코 매장",
+          "place": "코스트코 매장",
+          "value": "2%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "limits": "통합 연 50만 포인트",
+          "conditions": [
+            "추가 혜택 대상점 이용 시 기본 혜택 미제공"
+          ]
+        }
+      ]
+    }
+  ]
+}
