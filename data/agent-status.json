@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T10:31:56+09:00",
+  "generatedAt": "2026-11-27T10:36:45+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -38,10 +38,10 @@
       "updatedAt": "2026-11-27T10:28:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 174,
-        "title": "data: 수집 2026-11-27 (Claude · 하나카드 상품설명서 30종)",
-        "mergedAt": "2026-11-26T23:54:15Z",
-        "mergedAtKST": "2026-11-27 08:54"
+        "number": 205,
+        "title": "pay: 매일 확인 2026-11-27 — 아브뉴프랑 판교 20% 배너, 교촌치킨·아트앤하트 추가",
+        "mergedAt": "2026-11-27T01:35:31Z",
+        "mergedAtKST": "2026-11-27 10:35"
       },
       "runs": [
         {
@@ -316,13 +316,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T10:30:00+09:00",
+      "updatedAt": "2026-11-27T10:36:43+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 206,
-        "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #204 반영)",
-        "mergedAt": "2026-11-27T01:30:49Z",
-        "mergedAtKST": "2026-11-27 10:30"
+        "number": 207,
+        "title": "data: 수집 2026-11-27 33차 (신한카드 상품설명서 10종)",
+        "mergedAt": "2026-11-27T01:36:16Z",
+        "mergedAtKST": "2026-11-27 10:36"
       },
       "runs": [
         {
@@ -1029,23 +1029,31 @@
             "shinhan-202109170001",
             "shinhan-202205170001"
           ]
+        },
+        {
+          "at": "2026-11-27T10:36:43+09:00",
+          "kind": "card-terms",
+          "pr": 207,
+          "summary": "33차: 신한카드 상품설명서 10종·혜택 28줄",
+          "queueKeys": [
+            "shinhan-199902110001",
+            "shinhan-202206170001",
+            "shinhan-201907220002",
+            "shinhan-201807200001",
+            "shinhan-200804080001",
+            "shinhan-202210270005",
+            "shinhan-202401040002",
+            "shinhan-201807110002",
+            "shinhan-201709180002",
+            "shinhan-202006220002"
+          ]
         }
       ],
-      "openIssues": 33
+      "openIssues": 34
     }
   },
   "locks": [],
   "openPRs": [
-    {
-      "number": 205,
-      "title": "pay: 매일 확인 2026-11-27 — 아브뉴프랑 판교 20% 배너, 교촌치킨·아트앤하트 추가",
-      "agent": "Claude",
-      "branch": "ai/claude/pay-daily-2026-11-27",
-      "createdAtKST": "2026-11-27 10:29",
-      "area": "6파일 · data/ 2 · docs/ 2 · pay/ 2",
-      "url": "https://github.com/uio412-source/my-website/pull/205",
-      "draft": false
-    },
     {
       "number": 173,
       "title": "fix(hotels): 아코르 아태 세일 예약 마감 정정",
@@ -1058,6 +1066,34 @@
     }
   ],
   "recentPRs": [
+    {
+      "number": 207,
+      "title": "data: 수집 2026-11-27 33차 (신한카드 상품설명서 10종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle33",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T01:36:16Z",
+      "mergedAtKST": "2026-11-27 10:36",
+      "createdAt": "2026-11-27T01:32:13Z",
+      "createdAtKST": "2026-11-27 10:32",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/207"
+    },
+    {
+      "number": 205,
+      "title": "pay: 매일 확인 2026-11-27 — 아브뉴프랑 판교 20% 배너, 교촌치킨·아트앤하트 추가",
+      "agent": "Claude",
+      "branch": "ai/claude/pay-daily-2026-11-27",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T01:35:31Z",
+      "mergedAtKST": "2026-11-27 10:35",
+      "createdAt": "2026-11-27T01:29:53Z",
+      "createdAtKST": "2026-11-27 10:29",
+      "area": "6파일 · data/ 2 · docs/ 2 · pay/ 2",
+      "files": 6,
+      "url": "https://github.com/uio412-source/my-website/pull/205"
+    },
     {
       "number": 206,
       "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #204 반영)",
@@ -1575,20 +1611,6 @@
       "area": "4파일 · data/ 3 · docs/ 1",
       "files": 4,
       "url": "https://github.com/uio412-source/my-website/pull/168"
-    },
-    {
-      "number": 167,
-      "title": "data: 수집 2026-11-27 15차 (신한카드 상품설명서 8종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle15",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T23:05:40Z",
-      "mergedAtKST": "2026-11-27 08:05",
-      "createdAt": "2026-11-26T23:04:48Z",
-      "createdAtKST": "2026-11-27 08:04",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/167"
     }
   ],
   "queue": {
@@ -1599,8 +1621,8 @@
     },
     "counts": {
       "cards": {
-        "done": 446,
-        "todo": 1001,
+        "done": 456,
+        "todo": 991,
         "total": 1447
       },
       "brandPrograms": {
@@ -1766,6 +1788,15 @@
       "status": "open",
       "reason": "서비스 팩(쇼핑·일상·복지) 표가 병합 셀이라 영역별 월 할인한도를 개별 확인할 수 없음(온라인 쇼핑만 '월 1만원' 표기)",
       "retry": "카드 상세의 팩별 상세 안내(또는 상품설명서 PDF)에서 영역별 할인한도 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "shinhan-199902110001",
+      "status": "open",
+      "reason": "shinhan-201803300001 PREMIER GOLD EDITION: 상세 페이지에 OVERVIEW·카드디자인만 있고 혜택 표 없음",
+      "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
       "ref": ""
     },
     {
