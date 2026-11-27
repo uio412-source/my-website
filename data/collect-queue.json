@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 622,
-   "todo": 825,
+   "done": 639,
+   "todo": 808,
    "total": 1447
   },
   "brandPrograms": {
@@ -1842,7 +1842,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03483",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-to",
@@ -1864,7 +1864,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03485",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-hge2",
@@ -1875,7 +1875,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03487",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-hge2p",
@@ -1886,7 +1886,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03489",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-smekkobp",
@@ -1897,7 +1897,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03206",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mxbe2",
@@ -1908,7 +1908,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03199",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-spm",
@@ -1919,7 +1919,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03197",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-spmmb",
@@ -1930,7 +1930,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03329",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mbto",
@@ -1941,7 +1941,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03407",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-103862",
@@ -12160,7 +12160,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03364",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mlgte3",
@@ -12171,7 +12171,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02904",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-lgehc",
@@ -12193,7 +12193,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03255",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-msce4",
@@ -12204,7 +12204,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03288",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mzrscmbe3",
@@ -12215,7 +12215,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03303",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-lttdshc",
@@ -12226,7 +12226,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03217",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mskte3",
@@ -12237,7 +12237,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02902",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-skihc",
@@ -12259,7 +12259,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03385",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-kwwlshc",
