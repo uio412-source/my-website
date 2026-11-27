@@ -1,0 +1,460 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "hyundai-hco",
+   "name": "알파벳카드O",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=HCO",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03352",
+   "docDate": "2025-09-08",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "주유·정비",
+     "place": "주유소, 충전소, 차량 정비소, 세차장",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "커피·편의점·교통",
+     "place": "커피전문점, 편의점, 대중교통",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "생활 요금",
+     "place": "이동통신 요금, 아파트 관리비, 도시가스 요금 정기결제",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-alp",
+   "name": "알파벳카드P",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ALP",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03435",
+   "docDate": "2026-04-24",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "온라인 간편결제",
+     "place": "온라인 간편결제",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "커피·편의점·교통",
+     "place": "커피전문점, 편의점, 대중교통",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-alr",
+   "name": "알파벳카드R",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ALR",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03437",
+   "docDate": "2026-04-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "생활 요금·구독",
+     "place": "생활 요금, 이동통신 요금, 디지털 콘텐츠, 온라인쇼핑 멤버십 정기결제",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "커피·편의점·교통",
+     "place": "커피전문점, 편의점, 대중교통",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-hcs",
+   "name": "알파벳카드S",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=HCS",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03350",
+   "docDate": "2025-09-08",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "쇼핑",
+     "place": "온라인몰, 대형마트, 슈퍼마켓, 백화점, 프리미엄 아울렛",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "커피·편의점·교통",
+     "place": "커피전문점, 편의점, 대중교통",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-als",
+   "name": "알파벳카드S BOLD",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ALS",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03466",
+   "docDate": "2026-06-17",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 50000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 50000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "쇼핑",
+     "place": "온라인몰, 대형마트, 슈퍼마켓, 백화점, 프리미엄 아울렛",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "커피·편의점·교통",
+     "place": "커피전문점, 편의점, 대중교통",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "공항 라운지",
+     "place": "인천국제공항 라운지(THE LOUNGE)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "공항 발레파킹",
+     "place": "인천국제공항 발레파킹",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-hct",
+   "name": "알파벳카드T",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=HCT",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03358",
+   "docDate": "2025-12-11",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "국내 가맹점",
+     "place": "국내 가맹점",
+     "value": "0.7%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인",
+     "conditions": [
+      "실적·한도 제한 없이 제공"
+     ]
+    },
+    {
+     "label": "해외 가맹점",
+     "place": "해외 온·오프라인 가맹점",
+     "value": "2%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인",
+     "conditions": [
+      "실적·한도 제한 없이 제공"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-hcd",
+   "name": "알파벳카드D",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=HCD",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03354",
+   "docDate": "2025-09-08",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "외식·배달",
+     "place": "일반음식점, 배달 앱",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "커피·편의점·교통",
+     "place": "커피전문점, 편의점, 대중교통",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-hch",
+   "name": "알파벳카드H",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=HCH",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03356",
+   "docDate": "2025-09-08",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "교육·병원",
+     "place": "교육, 병원",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "커피·편의점·교통",
+     "place": "커피전문점, 편의점, 대중교통",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    },
+    {
+     "label": "생활 요금",
+     "place": "이동통신 요금, 아파트 관리비, 도시가스 요금 정기결제",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "limits": "청구 할인"
+    }
+   ]
+  }
+ ]
+}
