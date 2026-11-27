@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T05:04:38+09:00",
+  "generatedAt": "2026-11-28T05:05:49+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -47,7 +47,7 @@
         {
           "at": "2026-11-28T05:03:00+09:00",
           "kind": "collect",
-          "pr": null,
+          "pr": 277,
           "summary": "card-terms MG새마을금고 4종(MG+ BLACK·Blue·W·신용카드 Primo — 하나카드 MGINTROM 상세, 심의필 2025~2026) · 케이뱅크 3종(KT멤버십 더블혜택·모임·플러스 체크 — 준법감시인 심의필 2026-09-21) · 혜택 44줄. 예약 실행 WebFetch는 대기열 주소를 바로 못 열어(권한 대기 시간 초과) WebSearch 결과 주소로 열었음",
           "queueKeys": [
             "mg-15273",
@@ -1652,7 +1652,18 @@
     }
   },
   "locks": [],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 277,
+      "title": "data: 수집 2026-11-28 (Claude · 상품설명서 7종)",
+      "agent": "Claude",
+      "branch": "ai/claude/data-2026-11-28",
+      "createdAtKST": "2026-11-28 05:05",
+      "area": "6파일 · data/ 3 · data/inbox/card-terms 2 · docs/ 1",
+      "url": "https://github.com/uio412-source/my-website/pull/277",
+      "draft": true
+    }
+  ],
   "recentPRs": [
     {
       "number": 276,
@@ -2199,20 +2210,6 @@
       "area": "5파일 · data/ 3 · data/inbox/card-terms 1 · docs/ 1",
       "files": 5,
       "url": "https://github.com/uio412-source/my-website/pull/239"
-    },
-    {
-      "number": 237,
-      "title": "Mr. Cards 카드 상세: 상품설명서 정리본 반영 (전월실적 333장·혜택 표 469장)",
-      "agent": "Claude",
-      "branch": "ai/claude/cards-terms-detail",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T05:04:18Z",
-      "mergedAtKST": "2026-11-27 14:04",
-      "createdAt": "2026-11-27T05:02:49Z",
-      "createdAtKST": "2026-11-27 14:02",
-      "area": "15파일 · paymorevent/ 7 · docs/ 3 · data/ 2 외 2곳",
-      "files": 15,
-      "url": "https://github.com/uio412-source/my-website/pull/237"
     }
   ],
   "queue": {

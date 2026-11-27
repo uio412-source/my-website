@@ -7,7 +7,7 @@
     {
       "at": "2026-11-28T05:03:00+09:00",
       "kind": "collect",
-      "pr": null,
+      "pr": 277,
       "summary": "card-terms MG새마을금고 4종(MG+ BLACK·Blue·W·신용카드 Primo — 하나카드 MGINTROM 상세, 심의필 2025~2026) · 케이뱅크 3종(KT멤버십 더블혜택·모임·플러스 체크 — 준법감시인 심의필 2026-09-21) · 혜택 44줄. 예약 실행 WebFetch는 대기열 주소를 바로 못 열어(권한 대기 시간 초과) WebSearch 결과 주소로 열었음",
       "queueKeys": [
         "mg-15273",

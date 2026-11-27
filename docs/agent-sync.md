@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 05:04 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 05:05 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -71,7 +71,9 @@ _지금 잠근 영역이 없습니다._
 
 ### 열린 PR
 
-_열린 PR이 없습니다._
+| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
+|---|---|---|---|---|---|
+| [#277](https://github.com/uio412-source/my-website/pull/277) (초안) | Claude | `ai/claude/data-2026-11-28` | 2026-11-28 05:05 | 6파일 · data/ 3 · data/inbox/card-terms 2… | data: 수집 2026-11-28 (Claude · 상품설명서 7종) |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-28)
 
