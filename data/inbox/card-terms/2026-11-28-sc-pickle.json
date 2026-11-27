@@ -1,0 +1,509 @@
+{
+  "type": "card-terms",
+  "issuer": "SC제일은행",
+  "collectedAt": "2026-11-28",
+  "collector": "Pickle",
+  "cards": [
+    {
+      "cardId": "sc-5349",
+      "queueKey": "sc-5349",
+      "name": "SC제일은행 삼성카드 스페셜마일리지(스카이패스)",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.standardchartered.co.kr/np/kr/pl/cd/CardDetail.jsp?cardKind=1&id=5349",
+      "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1218272_S_SpecialMileage.pdf",
+      "docDate": "2025-01-14",
+      "annualFee": [
+        {
+          "brand": "American Express",
+          "amount": 99000
+        },
+        {
+          "brand": "국내전용",
+          "amount": 97000
+        }
+      ],
+      "brands": [
+        "American Express",
+        "국내전용"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": "전월 이용금액 조건 없음(기본·특별 적립 모두 전월 실적 무관)",
+      "grace": null,
+      "spendExclusions": [],
+      "benefitExclusions": [
+        "법인공용카드·무이자할부·다이어트할부",
+        "삼성카드 할인 적용 일시불·할부 이용금액",
+        "국세·지방세·공과금, 대학 등록금",
+        "대중교통·택시·고속버스·고속도로 통행요금·모바일 티머니",
+        "선불카드 충전(삼성유포인트·삼성전자 멤버십 BLUE·삼성올앳)",
+        "문자알림서비스·스마트오토서비스·이마트 이클럽",
+        "고용·산재보험 및 장애인 고용부담금"
+      ],
+      "benefits": [
+        {
+          "group": "기본 적립",
+          "label": "기본",
+          "place": "모든 가맹점",
+          "value": "1마일",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "limits": "적립한도 없음",
+          "conditions": [
+            "결제건당 접수금액 1,000원당 스카이패스 1마일리지"
+          ]
+        },
+        {
+          "group": "특별 적립(택1)",
+          "label": "해외",
+          "place": "해외 가맹점 및 해외 직접구매 이용건",
+          "value": "2마일",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "limits": "월 2,000마일리지",
+          "conditions": [
+            "해외형 선택 시"
+          ]
+        },
+        {
+          "group": "특별 적립(택1)",
+          "label": "할인점",
+          "place": "이마트(에브리데이·트레이더스 포함), 홈플러스, 롯데마트, 롯데마트맥스",
+          "value": "2마일",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "limits": "월 1,000마일리지",
+          "conditions": [
+            "국내형 선택 시"
+          ]
+        },
+        {
+          "group": "특별 적립(택1)",
+          "label": "주유",
+          "place": "SK에너지, GS칼텍스, 현대오일뱅크, S-OIL, 알뜰주유소 및 LPG충전소",
+          "value": "2마일",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "limits": "월 1,000마일리지",
+          "conditions": [
+            "국내형 선택 시"
+          ]
+        },
+        {
+          "group": "특별 적립(택1)",
+          "label": "커피",
+          "place": "스타벅스, 투썸플레이스, 카페베네, 탐앤탐스, 커피빈, 엔제리너스, 할리스커피, 파스쿠찌, 아티제, 폴 바셋",
+          "value": "2마일",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "limits": "월 2,000마일리지",
+          "conditions": [
+            "국내형 선택 시",
+            "특별 적립과 기본 적립은 중복 적용되지 않음"
+          ]
+        },
+        {
+          "group": null,
+          "label": "아웃백",
+          "place": "아웃백스테이크하우스",
+          "value": "30,000원",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "cap": 30000,
+          "capScope": "월",
+          "limits": "월 1회, 연 2회",
+          "conditions": [
+            "6만원 이상 결제 시 결제일할인(청구할인)",
+            "테이블당 적용, 분할 결제·타 카드 결제 시 미제공"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "sc-6273",
+      "queueKey": "sc-6273",
+      "name": "SC제일은행-대한항공카드 060",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.standardchartered.co.kr/np/kr/pl/cd/CardDetail.jsp?cardKind=1&id=6273",
+      "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1246891_T_AOB-20251125-0945-27_SC_koreanair_060_V2.pdf",
+      "docDate": "2025-02-26",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 60000
+        },
+        {
+          "brand": "국내전용",
+          "amount": 60000
+        }
+      ],
+      "brands": [
+        "Visa",
+        "국내전용"
+      ],
+      "minimumSpend": 500000,
+      "spendBasis": "전월 1일~말일 본인+가족 카드 일시불·할부 이용금액",
+      "grace": "최초 신규 발급 시 카드 수령 등록월 다음 달 이용 건까지 실적 미달도 혜택 제공",
+      "spendExclusions": [
+        "장기카드대출(카드론)",
+        "단기카드대출(현금서비스)",
+        "연회비·제수수료·이자",
+        "국제브랜드 수수료·해외서비스 수수료",
+        "공과금 납부액(국세·관세·지방세·상하수도 요금·과태료 등)",
+        "상품권 등 현금성 유가증권 구매·선불카드 충전"
+      ],
+      "benefitExclusions": [
+        "전기 요금·도시가스 요금·아파트 관리비·부동산 임대료",
+        "TV 수신료·자동납부 서비스 이용 수수료",
+        "사립유치원·초중고·대학 등록금 납입",
+        "건강보험·국민연금·고용보험·산재보험료",
+        "고속도로 통행요금·후불하이패스·고속버스 결제",
+        "현대카드 할인·무이자 할부 적용 결제 건 전체 금액"
+      ],
+      "benefits": [
+        {
+          "group": "기본 혜택",
+          "label": "국내",
+          "place": "국내 가맹점(추가 혜택 대상점 제외)",
+          "value": "1마일",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "limits": "한도 없음",
+          "conditions": [
+            "1,000원당 스카이패스 1마일리지"
+          ]
+        },
+        {
+          "group": "추가 혜택",
+          "label": "대한항공",
+          "place": "대한항공 직판 항공권(홈페이지·앱·서비스센터·국내 지점, 원화 결제)",
+          "value": "2마일",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "limits": "연 2만 마일리지",
+          "conditions": [
+            "초과 시 1마일리지 적립",
+            "본인+가족 카드 합산 한도"
+          ]
+        },
+        {
+          "group": "추가 혜택",
+          "label": "해외",
+          "place": "해외 가맹점(온라인몰 포함, 외화 결제)",
+          "value": "2마일",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "limits": "월 4천 마일리지",
+          "conditions": [
+            "초과 시 1마일리지 적립"
+          ]
+        },
+        {
+          "group": null,
+          "label": "항공권 쿠폰",
+          "place": "대한항공 직판 국제선 항공권",
+          "value": "50,000원",
+          "valueType": "할인",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "limits": "연 1장",
+          "conditions": [
+            "5만원 이상 원화 결제 시 사용, 한국어 접속 필수",
+            "순수 항공 운임 기준(세금·유류할증료 제외)"
+          ]
+        },
+        {
+          "group": null,
+          "label": "연간 보너스",
+          "place": "연간 카드 이용실적",
+          "value": "1,000마일",
+          "valueType": "적립",
+          "minimumSpend": null,
+          "cap": null,
+          "capScope": null,
+          "limits": "연 1회",
+          "conditions": [
+            "발급 첫해 누적 100만원 이상, 2차년도 이후 전년 600만원 이상 이용 시"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "sc-6277",
+      "queueKey": "sc-6277",
+      "name": "SC제일은행-현대카드 M",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.standardchartered.co.kr/np/kr/pl/cd/CardDetail.jsp?cardKind=1&id=6277",
+      "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1246900_T_AOB-20251126-1632-53_SC_M_V2.pdf",
+      "docDate": "2025-11-07",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 30000
+        },
+        {
+          "brand": "국내전용",
+          "amount": 30000
+        }
+      ],
+      "brands": [
+        "Visa",
+        "국내전용"
+      ],
+      "minimumSpend": 500000,
+      "spendBasis": "전월 1일~말일 SC제일은행-현대카드M(본인+가족) 일시불·할부 이용금액",
+      "grace": "신규 발급 시 카드 수령 등록월 다음 달 이용 건까지 실적 미달도 혜택 제공",
+      "spendExclusions": [
+        "장기카드대출(카드론)",
+        "단기카드대출(현금서비스)",
+        "연회비·제수수료·이자",
+        "국제브랜드 수수료·해외서비스 수수료",
+        "공과금 납부액(국세·관세·지방세·상하수도 요금·과태료 등)",
+        "상품권 등 현금성 유가증권 구매·선불카드 충전"
+      ],
+      "benefitExclusions": [
+        "전기 요금·도시가스 요금·아파트 관리비·부동산 임대료",
+        "TV 수신료·자동납부 서비스 이용 수수료",
+        "사립유치원·초중고·대학 등록금 납입",
+        "건강보험·국민연금·고용보험·산재보험료",
+        "고속도로 통행요금·후불하이패스·고속버스 결제",
+        "현대카드 할인·무이자 할부 적용 결제 건 전체 금액"
+      ],
+      "benefits": [
+        {
+          "group": "기본 혜택",
+          "label": "기본",
+          "place": "국내외 가맹점",
+          "value": "1.5%",
+          "valueType": "적립",
+          "minimumSpend": 500000,
+          "cap": null,
+          "capScope": null,
+          "limits": "1회·연간 한도 없음",
+          "conditions": [
+            "M포인트 적립"
+          ]
+        },
+        {
+          "group": "추가 혜택",
+          "label": "온라인·외식·해외",
+          "place": "네이버쇼핑·쿠팡·G마켓·옥션·11번가·SSG.COM·컬리, 일반음식점, 해외 가맹점",
+          "value": "5%",
+          "valueType": "적립",
+          "minimumSpend": 1000000,
+          "cap": null,
+          "capScope": null,
+          "limits": "월 1만 M포인트 통합",
+          "conditions": [
+            "본인+가족 카드 합산 한도",
+            "추가 혜택 적용 시 기본 혜택 중복 없음"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "sc-6266",
+      "queueKey": "sc-6266",
+      "name": "SC제일은행-현대카드 ZERO Edition3",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.standardchartered.co.kr/np/kr/pl/cd/CardDetail.jsp?cardKind=1&id=6266",
+      "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1246649_T_AOB-20251125-0945-27_SC_ZERO_Ed3_POINT_V2.pdf",
+      "docDate": "2025-11-07",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 15000
+        },
+        {
+          "brand": "국내전용",
+          "amount": 15000
+        }
+      ],
+      "brands": [
+        "Visa",
+        "국내전용"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": "전월 실적 조건 없음",
+      "grace": null,
+      "spendExclusions": [],
+      "benefitExclusions": [
+        "전기 요금·도시가스 요금·아파트 관리비·부동산 임대료",
+        "TV 수신료·자동납부 서비스 이용 수수료",
+        "사립유치원·초중고·대학 등록금 납입",
+        "건강보험·국민연금·고용보험·산재보험료",
+        "고속도로 통행요금·후불하이패스·고속버스 결제",
+        "현대카드 할인·무이자 할부 적용 결제 건 전체 금액"
+      ],
+      "benefits": [
+        {
+          "group": null,
+          "label": "기본",
+          "place": "국내외 가맹점",
+          "value": "1.2%",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "limits": "실적·한도 제한 없음",
+          "conditions": [
+            "M포인트 적립",
+            "해외 이용 적립은 국내외겸용 카드에 한함"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "sc-5944",
+      "queueKey": "sc-5944",
+      "name": "SC제일은행-현대카드M CHECK",
+      "cardType": "debit",
+      "status": "active",
+      "url": "https://www.standardchartered.co.kr/np/kr/pl/cd/CardDetail.jsp?cardKind=2&id=5944",
+      "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1246647_T_AOB-20251125-0945-27_SC_MXCHECK_V2.pdf",
+      "docDate": "2025-11-07",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 0
+        }
+      ],
+      "brands": [
+        "Visa"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": "전월 1일~말일 SC제일은행-현대카드M CHECK 이용금액(100만원 이상 시 1% 적용)",
+      "grace": null,
+      "spendExclusions": [
+        "장기카드대출(카드론)",
+        "단기카드대출(현금서비스)",
+        "연회비·제수수료·이자",
+        "타 카드 이용금액"
+      ],
+      "benefitExclusions": [
+        "공과금 납부액(국세·관세·지방세·상하수도 요금·과태료 등)",
+        "전기 요금·도시가스 요금·아파트 관리비",
+        "초중고·대학 등록금, 자동납부 서비스 이용 수수료",
+        "상품권 등 현금성 유가증권 구매·선불카드 충전",
+        "건강보험·국민연금·고용보험·산재보험료",
+        "고속도로 통행요금·고속버스 결제, 할인·무이자 할부 이용금액"
+      ],
+      "benefits": [
+        {
+          "group": null,
+          "label": "적립",
+          "place": "국내외 모든 가맹점",
+          "value": "1%",
+          "valueType": "적립",
+          "minimumSpend": 1000000,
+          "cap": null,
+          "capScope": null,
+          "limits": "연간 한도 없음",
+          "conditions": [
+            "M포인트 적립, 매출전표 매입 시점 기준 즉시 적립"
+          ]
+        },
+        {
+          "group": null,
+          "label": "적립",
+          "place": "국내외 모든 가맹점",
+          "value": "0.5%",
+          "valueType": "적립",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "limits": "연간 한도 없음",
+          "conditions": [
+            "전월 이용금액 100만원 미만 시"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "sc-5945",
+      "queueKey": "sc-5945",
+      "name": "SC제일은행-현대카드X CHECK",
+      "cardType": "debit",
+      "status": "active",
+      "url": "https://www.standardchartered.co.kr/np/kr/pl/cd/CardDetail.jsp?cardKind=2&id=5945",
+      "termsUrl": "https://www.standardchartered.co.kr/hp/file/ap/pd/1246647_T_AOB-20251125-0945-27_SC_MXCHECK_V2.pdf",
+      "docDate": "2025-11-07",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 0
+        }
+      ],
+      "brands": [
+        "Visa"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": "전월 1일~말일 SC제일은행-현대카드X CHECK 이용금액(100만원 이상 시 0.6% 적용)",
+      "grace": null,
+      "spendExclusions": [
+        "장기카드대출(카드론)",
+        "단기카드대출(현금서비스)",
+        "연회비·제수수료·이자",
+        "타 카드 이용금액"
+      ],
+      "benefitExclusions": [
+        "공과금 납부액(국세·관세·지방세·상하수도 요금·과태료 등)",
+        "전기 요금·도시가스 요금·아파트 관리비",
+        "초중고·대학 등록금, 자동납부 서비스 이용 수수료",
+        "상품권 등 현금성 유가증권 구매·선불카드 충전",
+        "건강보험·국민연금·고용보험·산재보험료",
+        "고속도로 통행요금·고속버스 결제, 할인·무이자 할부 이용금액"
+      ],
+      "benefits": [
+        {
+          "group": null,
+          "label": "캐시백",
+          "place": "국내외 모든 가맹점",
+          "value": "0.6%",
+          "valueType": "캐시백",
+          "minimumSpend": 1000000,
+          "cap": null,
+          "capScope": null,
+          "limits": "연간 한도 없음",
+          "conditions": [
+            "X캐시백 적립, 매달 10일 결제 계좌 자동 입금"
+          ]
+        },
+        {
+          "group": null,
+          "label": "캐시백",
+          "place": "국내외 모든 가맹점",
+          "value": "0.3%",
+          "valueType": "캐시백",
+          "minimumSpend": 0,
+          "cap": null,
+          "capScope": null,
+          "limits": "연간 한도 없음",
+          "conditions": [
+            "전월 이용금액 100만원 미만 시"
+          ]
+        }
+      ]
+    }
+  ]
+}
