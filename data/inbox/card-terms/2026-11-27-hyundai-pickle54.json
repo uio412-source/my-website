@@ -1,0 +1,737 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "hyundai-smekkob",
+   "name": "카카오뱅크 BUSINESS 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=SMEKKOB",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03205",
+   "docDate": "2025-07-24",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "국내외 가맹점",
+     "place": "국내외 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "사업성 경비",
+     "place": "사업성 경비 영역",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-smecn",
+   "name": "캐시노트 BUSINESS 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=SMECN",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03343",
+   "docDate": "2026-05-08",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "국내외 가맹점",
+     "place": "국내외 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "사업성 경비",
+     "place": "사업성 경비 영역",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "캐시노트플러스",
+     "place": "캐시노트플러스 멤버십",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 33000,
+     "capScope": "월",
+     "conditions": [
+      "M포인트 사용, 월 최대 3만 3천 M포인트"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-smekbnk",
+   "name": "케이뱅크 BUSINESS 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=SMEKBNK",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03470",
+   "docDate": "2026-05-29",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "국내외 가맹점",
+     "place": "국내외 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "사업성 경비",
+     "place": "사업성 경비 영역",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-zkoe2",
+   "name": "케이뱅크-현대카드Z Play",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ZKOE2",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03448",
+   "docDate": "2026-07-20",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "영역별",
+     "place": "온라인몰",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "일반음식점",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "영화",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "해외 가맹점",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "디지털 콘텐츠 서비스",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-zkfe2",
+   "name": "케이뱅크-현대카드Z family Edition2",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ZKFE2",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03444",
+   "docDate": "2026-07-20",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "영역별",
+     "place": "온라인몰",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "병원·약국",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "학원",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "주유",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "생활 요금 정기결제",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-zkwe2",
+   "name": "케이뱅크-현대카드Z work Edition2",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ZKWE2",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03446",
+   "docDate": "2026-07-20",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "영역별",
+     "place": "온라인몰",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "편의점",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "커피전문점",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "대중교통",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    },
+    {
+     "label": "영역별",
+     "place": "도서",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 6000
+      },
+      {
+       "spend": 1000000,
+       "cap": 10000
+      }
+     ],
+     "shared": "월 할인한도",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 월 6천원, 100만원 이상 월 1만원 한도"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-cwyhc",
+   "name": "코웨이 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=CWYHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03412",
+   "docDate": "2026-01-06",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "코웨이 렌탈",
+     "place": "코웨이 렌탈/구독료 정기결제",
+     "value": "16,000원",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 16000,
+     "capScope": "월",
+     "conditions": [
+      "전월 이용 금액(40만·80만·120만원)별 할인 한도 차등, 최대 1만 6천원",
+      "전월 이용 금액 40만원 미만 시 청구 할인 제외"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-cckhc",
+   "name": "쿠쿠 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=CCKHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03416",
+   "docDate": "2026-01-22",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "쿠쿠 렌탈",
+     "place": "쿠쿠 렌탈/구독료 정기결제",
+     "value": "16,000원",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 16000,
+     "capScope": "월",
+     "conditions": [
+      "전월 이용 금액(40만·80만·120만원)별 할인 한도 차등, 최대 1만 6천원",
+      "전월 이용 금액 40만원 미만 시 청구 할인 제외"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "hyundai-chhhc",
+   "name": "청호나이스 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=CHHHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03418",
+   "docDate": "2026-01-22",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "청호나이스 렌탈",
+     "place": "청호나이스 렌탈/구독료 정기결제",
+     "value": "16,000원",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 16000,
+     "capScope": "월",
+     "conditions": [
+      "전월 이용 금액(40만·80만·120만원)별 할인 한도 차등, 최대 1만 6천원",
+      "전월 이용 금액 40만원 미만 시 청구 할인 제외"
+     ]
+    }
+   ]
+  }
+ ]
+}
