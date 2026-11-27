@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-27 10:10 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-27 10:17 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-27 10:10 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#200](https://github.com/uio412-source/my-website/pull/200) | Pickle | data: 수집 2026-11-27 30차 (신한카드 상품설명서 10종) | 2026-11-27 10:16 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#199](https://github.com/uio412-source/my-website/pull/199) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #198 반영) | 2026-11-27 10:11 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#198](https://github.com/uio412-source/my-website/pull/198) | Pickle | data: 수집 2026-11-27 29차 (신한카드 상품설명서 10종) | 2026-11-27 10:10 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#197](https://github.com/uio412-source/my-website/pull/197) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #196 반영) | 2026-11-27 10:04 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#196](https://github.com/uio412-source/my-website/pull/196) | Pickle | data: 수집 2026-11-27 28차 (신한카드 상품설명서 10종) | 2026-11-27 10:03 | 1파일 · data/inbox/card-terms 1 | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-27 10:10 KST · `python tools/data/agent_sync.py` · 기�
 | [#178](https://github.com/uio412-source/my-website/pull/178) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #177 반영) | 2026-11-27 09:06 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#177](https://github.com/uio412-source/my-website/pull/177) | Pickle | data: 수집 2026-11-27 19차 (NH농협카드 상품설명서 10종) | 2026-11-27 09:05 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#176](https://github.com/uio412-source/my-website/pull/176) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #175 반영) | 2026-11-27 09:00 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#175](https://github.com/uio412-source/my-website/pull/175) | Pickle | data: 수집 2026-11-27 18차 (NH농협카드 상품설명서 10종) | 2026-11-27 08:59 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#174](https://github.com/uio412-source/my-website/pull/174) | Claude | data: 수집 2026-11-27 (Claude · 하나카드 상품설명서 30종) | 2026-11-27 08:54 | 5파일 · data/ 3 · data/inbox/card-terms 1 · docs/… | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -80,7 +80,7 @@ _지금 잠근 영역이 없습니다._
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 1031 / 1447종 · **브랜드 프로그램** todo 50 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **남은 카드** 1021 / 1447종 · **브랜드 프로그램** todo 50 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
 - **최근 수집일** — card-terms 2026-11-27 · brand-services 2026-11-27 · card-events 2026-11-27 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
@@ -89,7 +89,7 @@ _지금 잠근 영역이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
 | Claude | `data/agent-notes/claude.json` | #174 data: 수집 2026-11-27 (Claude · 하나카… | 2026-11-27 08:54 | 10건 |
-| Pickle | `data/agent-notes/pickle.json` | #198 data: 수집 2026-11-27 29차 (신한카드 상품설… | 2026-11-27 10:10 | 33건 |
+| Pickle | `data/agent-notes/pickle.json` | #200 data: 수집 2026-11-27 30차 (신한카드 상품설… | 2026-11-27 10:16 | 33건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
