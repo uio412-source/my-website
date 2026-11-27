@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T10:30:02+09:00",
+  "generatedAt": "2026-11-27T10:31:56+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -35,7 +35,7 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-27T09:40:00+09:00",
+      "updatedAt": "2026-11-27T10:28:00+09:00",
       "lock": null,
       "lastMergedPR": {
         "number": 174,
@@ -44,6 +44,13 @@
         "mergedAtKST": "2026-11-27 08:54"
       },
       "runs": [
+        {
+          "at": "2026-11-27T10:28:00+09:00",
+          "kind": "code",
+          "pr": 205,
+          "summary": "Mr. Pay 매일 확인 — 배너에 아브뉴프랑 판교 페이스사인 20%(~11/30, 서울신문) 추가, 브랜드에 교촌치킨(토스 페이스페이·일부, 토스피드)·아트앤하트(네이버 커넥트·일부) 추가. 네이버 10%(~11/30)·토스 20%(연말)·온누리 7%·2027 개편은 그대로",
+          "queueKeys": []
+        },
         {
           "at": "2026-11-27T09:40:00+09:00",
           "kind": "collect",
@@ -312,10 +319,10 @@
       "updatedAt": "2026-11-27T10:30:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 204,
-        "title": "data: 수집 2026-11-27 32차 (신한카드 상품설명서 10종)",
-        "mergedAt": "2026-11-27T01:29:35Z",
-        "mergedAtKST": "2026-11-27 10:29"
+        "number": 206,
+        "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #204 반영)",
+        "mergedAt": "2026-11-27T01:30:49Z",
+        "mergedAtKST": "2026-11-27 10:30"
       },
       "runs": [
         {
@@ -1052,6 +1059,20 @@
   ],
   "recentPRs": [
     {
+      "number": 206,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #204 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle204",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T01:30:49Z",
+      "mergedAtKST": "2026-11-27 10:30",
+      "createdAt": "2026-11-27T01:30:08Z",
+      "createdAtKST": "2026-11-27 10:30",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/206"
+    },
+    {
       "number": 204,
       "title": "data: 수집 2026-11-27 32차 (신한카드 상품설명서 10종)",
       "agent": "Pickle",
@@ -1568,20 +1589,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/167"
-    },
-    {
-      "number": 166,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #165 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-pickle165",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T23:04:13Z",
-      "mergedAtKST": "2026-11-27 08:04",
-      "createdAt": "2026-11-26T23:03:32Z",
-      "createdAtKST": "2026-11-27 08:03",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/166"
     }
   ],
   "queue": {
