@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 466,
-   "todo": 981,
+   "done": 475,
+   "todo": 972,
    "total": 1447
   },
   "brandPrograms": {
@@ -10400,7 +10400,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202604300001",
@@ -10422,7 +10422,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202005220001",
@@ -10444,7 +10444,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01208_amex_platinum_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201709220001",
@@ -10455,7 +10455,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202503280002",
@@ -10477,7 +10477,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01197_master_platinum_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202303160001",
@@ -10488,7 +10488,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01197_master_platinum_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202501160002",
@@ -10510,7 +10510,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202607130001",
@@ -10532,7 +10532,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202304130004",
@@ -10543,7 +10543,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202309260002",
