@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-27T22:21:45+09:00",
+  "generatedAt": "2026-11-27T22:25:54+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
-  "prFresh": false,
+  "prFresh": true,
   "agents": {
     "ChatGPT": {
       "noteFile": "data/agent-notes/chatgpt.json",
@@ -38,10 +38,10 @@
       "updatedAt": "2026-11-27T23:00:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 205,
-        "title": "pay: 매일 확인 2026-11-27 — 아브뉴프랑 판교 20% 배너, 교촌치킨·아트앤하트 추가",
-        "mergedAt": "2026-11-27T01:35:31Z",
-        "mergedAtKST": "2026-11-27 10:35"
+        "number": 237,
+        "title": "Mr. Cards 카드 상세: 상품설명서 정리본 반영 (전월실적 333장·혜택 표 469장)",
+        "mergedAt": "2026-11-27T05:04:18Z",
+        "mergedAtKST": "2026-11-27 14:04"
       },
       "runs": [
         {
@@ -1343,17 +1343,31 @@
   "locks": [],
   "openPRs": [
     {
-      "number": 237,
-      "title": "Mr. Cards 카드 상세: 상품설명서 정리본 반영 (전월실적 333장·혜택 표 469장)",
-      "agent": "Claude",
-      "branch": "ai/claude/cards-terms-detail",
-      "createdAtKST": "2026-11-27 14:02",
-      "area": "12파일 · paymorevent/ 7 · docs/ 2 · 루트 2 외 1곳",
-      "url": "https://github.com/uio412-source/my-website/pull/237",
+      "number": 238,
+      "title": "data: 수집 2026-11-27 48차 (롯데카드 상품설명서 5종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle48",
+      "createdAtKST": "2026-11-27 22:22",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "url": "https://github.com/uio412-source/my-website/pull/238",
       "draft": false
     }
   ],
   "recentPRs": [
+    {
+      "number": 237,
+      "title": "Mr. Cards 카드 상세: 상품설명서 정리본 반영 (전월실적 333장·혜택 표 469장)",
+      "agent": "Claude",
+      "branch": "ai/claude/cards-terms-detail",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T05:04:18Z",
+      "mergedAtKST": "2026-11-27 14:04",
+      "createdAt": "2026-11-27T05:02:49Z",
+      "createdAtKST": "2026-11-27 14:02",
+      "area": "15파일 · paymorevent/ 7 · docs/ 3 · data/ 2 외 2곳",
+      "files": 15,
+      "url": "https://github.com/uio412-source/my-website/pull/237"
+    },
     {
       "number": 236,
       "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #235 반영)",
@@ -1885,20 +1899,6 @@
       "area": "4파일 · data/ 3 · docs/ 1",
       "files": 4,
       "url": "https://github.com/uio412-source/my-website/pull/199"
-    },
-    {
-      "number": 198,
-      "title": "data: 수집 2026-11-27 29차 (신한카드 상품설명서 10종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle29",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T01:10:00Z",
-      "mergedAtKST": "2026-11-27 10:10",
-      "createdAt": "2026-11-27T01:05:58Z",
-      "createdAtKST": "2026-11-27 10:05",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/198"
     }
   ],
   "queue": {
