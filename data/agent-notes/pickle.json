@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-27T10:30:00+09:00",
+ "updatedAt": "2026-11-27T10:36:43+09:00",
  "lock": null,
  "runs": [
   {
@@ -708,6 +708,24 @@
     "shinhan-202109170001",
     "shinhan-202205170001"
    ]
+  },
+  {
+   "at": "2026-11-27T10:36:43+09:00",
+   "kind": "card-terms",
+   "pr": 207,
+   "summary": "33차: 신한카드 상품설명서 10종·혜택 28줄",
+   "queueKeys": [
+    "shinhan-199902110001",
+    "shinhan-202206170001",
+    "shinhan-201907220002",
+    "shinhan-201807200001",
+    "shinhan-200804080001",
+    "shinhan-202210270005",
+    "shinhan-202401040002",
+    "shinhan-201807110002",
+    "shinhan-201709180002",
+    "shinhan-202006220002"
+   ]
   }
  ],
  "skipped": [
@@ -972,6 +990,13 @@
    "target": "nh-90010570",
    "status": "open",
    "reason": "nh-90000319·nh-90000320 국민행복카드: 국가 바우처 통합카드로 카드사 혜택 표 없음(피킹률 0 오표시 방지 위해 미수집)",
+   "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "shinhan-199902110001",
+   "status": "open",
+   "reason": "shinhan-201803300001 PREMIER GOLD EDITION: 상세 페이지에 OVERVIEW·카드디자인만 있고 혜택 표 없음",
    "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
   }
  ]
