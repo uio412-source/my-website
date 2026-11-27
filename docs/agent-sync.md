@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-27 22:25 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-27 22:27 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-27 22:25 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#238](https://github.com/uio412-source/my-website/pull/238) | Pickle | data: 수집 2026-11-27 48차 (롯데카드 상품설명서 5종) | 2026-11-27 22:26 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#239](https://github.com/uio412-source/my-website/pull/239) | Claude | data: 수집 2026-11-27 4차 (Claude · 하나카드 상품설명서 26종) | 2026-11-27 22:26 | 5파일 · data/ 3 · data/inbox/card-terms 1 · docs/… | 머지 |
 | [#237](https://github.com/uio412-source/my-website/pull/237) | Claude | Mr. Cards 카드 상세: 상품설명서 정리본 반영 (전월실적 333장·혜택 표 469장) | 2026-11-27 14:04 | 15파일 · paymorevent/ 7 · docs/ 3 · data/ 2 외 2곳 | 머지 |
 | [#236](https://github.com/uio412-source/my-website/pull/236) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #235 반영) | 2026-11-27 12:05 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#235](https://github.com/uio412-source/my-website/pull/235) | Pickle | data: 수집 2026-11-27 47차 (롯데카드 상품설명서 10종) | 2026-11-27 12:04 | 1파일 · data/inbox/card-terms 1 | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-27 22:25 KST · `python tools/data/agent_sync.py` · 기�
 | [#217](https://github.com/uio412-source/my-website/pull/217) | Pickle | data: 수집 2026-11-27 38차 (신한카드 상품설명서 10종) | 2026-11-27 11:09 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#216](https://github.com/uio412-source/my-website/pull/216) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #215 반영) | 2026-11-27 11:03 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#215](https://github.com/uio412-source/my-website/pull/215) | Pickle | data: 수집 2026-11-27 37차 (신한카드 상품설명서 10종) | 2026-11-27 11:02 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#214](https://github.com/uio412-source/my-website/pull/214) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #213 반영) | 2026-11-27 10:57 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#213](https://github.com/uio412-source/my-website/pull/213) | Pickle | data: 수집 2026-11-27 36차 (신한카드 상품설명서 11종) | 2026-11-27 10:56 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -71,16 +71,14 @@ _지금 잠근 영역이 없습니다._
 
 ### 열린 PR
 
-| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
-|---|---|---|---|---|---|
-| [#238](https://github.com/uio412-source/my-website/pull/238) | Pickle | `ai/chatgpt/data-2026-11-27-pickle…` | 2026-11-27 22:22 | 1파일 · data/inbox/card-terms 1 | data: 수집 2026-11-27 48차 (롯데카드 상품설명서 5종) |
+_열린 PR이 없습니다._
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-27)
 
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 830 / 1447종 · **브랜드 프로그램** todo 50 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **남은 카드** 825 / 1447종 · **브랜드 프로그램** todo 50 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
 - **최근 수집일** — card-terms 2026-11-27 · brand-services 2026-11-27 · card-events 2026-11-27 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
@@ -88,8 +86,8 @@ _지금 잠근 영역이 없습니다._
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
-| Claude | `data/agent-notes/claude.json` | #237 Mr. Cards 카드 상세: 상품설명서 정리본 반영 (전월… | 2026-11-27 14:04 | 14건 |
-| Pickle | `data/agent-notes/pickle.json` | #236 docs: 수집 대기열·공용 현황판 갱신 (2026-11-2… | 2026-11-27 12:05 | 35건 |
+| Claude | `data/agent-notes/claude.json` | #239 data: 수집 2026-11-27 4차 (Claude · … | 2026-11-27 22:26 | 14건 |
+| Pickle | `data/agent-notes/pickle.json` | #238 data: 수집 2026-11-27 48차 (롯데카드 상품설… | 2026-11-27 22:26 | 35건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
