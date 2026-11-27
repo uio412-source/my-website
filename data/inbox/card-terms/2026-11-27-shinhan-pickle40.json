@@ -1,0 +1,601 @@
+{
+ "type": "card-terms",
+ "issuer": "신한카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "shinhan-201703020001",
+   "queueKey": "shinhan-201703020001",
+   "name": "요기요 신한카드 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1188364_2206.html",
+   "termsUrl": null,
+   "docDate": "2021-01-15",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 0
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "요기요 할인",
+     "place": "요기요 결제금액",
+     "value": "15%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "일 1회, 월 4회",
+     "conditions": [
+      "일 최대 2천원"
+     ]
+    },
+    {
+     "label": "이디야 할인",
+     "place": "이디야",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "일 1회, 월 3회",
+     "conditions": [
+      "건당 7천원 이상"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202108020001",
+   "queueKey": "shinhan-202108020001",
+   "name": "장애인 통합복지 신한카드 Lady 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1210854_2206.html",
+   "termsUrl": null,
+   "docDate": "2023-12-27",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "LPG 충전 할인",
+     "place": "LPG충전소",
+     "value": "리터당 30원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "무임교통",
+     "place": "전철",
+     "value": "무임승차",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "중증장애인 보호자 동반 무임승차"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201806280001",
+   "queueKey": "shinhan-201806280001",
+   "name": "청년동행 신한카드 Deep Dream 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1188256_2206.html",
+   "termsUrl": null,
+   "docDate": "2022-10-25",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 0
+    },
+    {
+     "brand": "UnionPay",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa",
+    "UnionPay"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "모두드림 적립",
+     "place": "국내·외 이용 가맹점",
+     "value": "0.2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 실적·적립한도 없음"
+     ]
+    },
+    {
+     "label": "더해드림 적립",
+     "place": "자주 가는 DREAM 영역",
+     "value": "0.6%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "기본의 3배"
+     ]
+    },
+    {
+     "label": "챙겨드림 적립",
+     "place": "DREAM 영역 중 최다 이용 영역",
+     "value": "1.0%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "기본의 5배"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202207140001",
+   "queueKey": "shinhan-202207140001",
+   "name": "119 소방사랑 GS칼텍스 신한카드 Big Plus",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1217719_2207.html",
+   "termsUrl": null,
+   "docDate": "2021-10-06",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 12000
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "주유 적립",
+     "place": "GS칼텍스 주유소",
+     "value": "리터당 80포인트",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "테마파크 할인",
+     "place": "서울랜드·롯데월드",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "영화 할인",
+     "place": "인터파크 온라인 영화 예매",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "쇼핑 무이자 할부",
+     "place": "3대 백화점·할인점",
+     "value": "2~3개월 무이자",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202401290001",
+   "queueKey": "shinhan-202401290001",
+   "name": "E1 LPG 화물복지 신한카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1225906_2207.html",
+   "termsUrl": null,
+   "docDate": "2024-02-26",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 0
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "LPG 충전 할인",
+     "place": "E1 LPG 충전소",
+     "value": "결제일 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "LPG 충전 적립",
+     "place": "E1 LPG 충전소",
+     "value": "오렌지포인트 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "유가보조금 지원",
+     "place": "충전 시",
+     "value": "화물자동차 유가보조금",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "화물운송사업자 전용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202205310001",
+   "queueKey": "shinhan-202205310001",
+   "name": "E1 개인택시운송사업자 신한카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1217024_2207.html",
+   "termsUrl": null,
+   "docDate": "2022-07-04",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 0
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "오렌지포인트 적립",
+     "place": "E1 충전소 이용금액",
+     "value": "최대 1%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "LPG 충전 할인",
+     "place": "E1 충전소 LPG 충전",
+     "value": "최대 1%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "생활 할인",
+     "place": "요식업 등 생활 가맹점",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202401290002",
+   "queueKey": "shinhan-202401290002",
+   "name": "GS칼텍스 LPG 화물복지 신한카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1225986_2207.html",
+   "termsUrl": null,
+   "docDate": "2024-02-29",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 0
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "LPG 충전 할인",
+     "place": "GS칼텍스 LPG 충전소",
+     "value": "결제일 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "GS&POINT",
+     "place": "GS칼텍스 LPG 충전소",
+     "value": "GS&POINT 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "유가보조금 지원",
+     "place": "충전 시",
+     "value": "화물자동차 유가보조금",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "화물운송사업자 전용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202504010002",
+   "queueKey": "shinhan-202504010002",
+   "name": "HD현대오일뱅크 55 화물복지 신한카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1232454_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-04-22",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 0
+    },
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Local",
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "유가보조금 지원",
+     "place": "주유 시",
+     "value": "화물자동차 유가보조금",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "화물운송사업자 전용"
+     ]
+    },
+    {
+     "label": "주유 할인",
+     "place": "HD현대오일뱅크 화물우대주유소",
+     "value": "리터당 55원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "현장 할인"
+     ]
+    },
+    {
+     "label": "보너스카드 혜택",
+     "place": "HD현대오일뱅크",
+     "value": "보너스카드 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202401290003",
+   "queueKey": "shinhan-202401290003",
+   "name": "HD현대오일뱅크 LPG 화물복지 신한카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1225987_2207.html",
+   "termsUrl": null,
+   "docDate": "2024-02-29",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 0
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "LPG 충전 할인",
+     "place": "HD현대오일뱅크 LPG 충전소",
+     "value": "결제일 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "LPG 충전 적립",
+     "place": "HD현대오일뱅크 LPG 충전소",
+     "value": "보너스 포인트 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "유가보조금 지원",
+     "place": "충전 시",
+     "value": "화물자동차 유가보조금",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202401290005",
+   "queueKey": "shinhan-202401290005",
+   "name": "S-OIL LPG 화물복지 신한카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1226001_2207.html",
+   "termsUrl": null,
+   "docDate": "2024-02-27",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 0
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "LPG 충전 할인",
+     "place": "S-OIL LPG 충전소",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "보너스카드 혜택",
+     "place": "S-OIL 충전소",
+     "value": "보너스 포인트 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "유가보조금 지원",
+     "place": "충전 시",
+     "value": "화물자동차 유가보조금",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  }
+ ]
+}
