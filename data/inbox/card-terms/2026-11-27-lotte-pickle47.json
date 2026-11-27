@@ -1,0 +1,503 @@
+{
+ "type": "card-terms",
+ "issuer": "롯데카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "lotte-P14034-A14034",
+   "name": "LOCA in MEGACITY",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14034-A14034",
+   "termsUrl": null,
+   "docDate": "2026-09-23",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "테마파크 할인",
+     "place": "롯데월드 부산, 스카이라인루지 부산",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 10000,
+     "capScope": "월"
+    },
+    {
+     "label": "관람권 할인",
+     "place": "롯데자이언츠",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 3000,
+     "capScope": "월"
+    },
+    {
+     "label": "오프라인 쇼핑 할인",
+     "place": "롯데백화점·롯데마트·메가마트·탑마트·하나로마트",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "부산·울산·경남 지역 특화"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P14123-A14123",
+   "name": "LOCA 나누기 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14123-A14123",
+   "termsUrl": null,
+   "docDate": "2022-07-20",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "LOCA 나누기",
+     "place": "일시불 결제 건",
+     "value": "납부개월수 변경",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "롯데카드 앱으로 납부개월수 변경(할부 전환)"
+     ]
+    },
+    {
+     "label": "L.POINT",
+     "place": "롯데카드 가맹점",
+     "value": "L.POINT 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P12921-A12921",
+   "name": "LOTTE ONers 롯데카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P12921-A12921",
+   "termsUrl": null,
+   "docDate": "2026-11-09",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 5000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "특별 적립",
+     "place": "LOTTE ON 온라인 쇼핑몰",
+     "value": "3%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "conditions": [
+      "건당 2천 포인트"
+     ]
+    },
+    {
+     "label": "기본 적립",
+     "place": "롯데카드 가맹점",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P14114-A14114",
+   "name": "MY RENTAL+ 롯데카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14114-A14114",
+   "termsUrl": null,
+   "docDate": "2026-11-03",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 18000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "렌탈료 할인",
+     "place": "롯데렌탈 렌탈 상품 월 대여료 자동결제",
+     "value": "5,000~30,000원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "월 대여료 자동결제 시"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P14826-A14826",
+   "name": "Mobile x LOCA SE",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14826-A14826",
+   "termsUrl": null,
+   "docDate": "2026-09-09",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "이동통신요금 할인",
+     "place": "이동통신요금 자동납부",
+     "value": "10,000~7,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "1~24개월차 1만원, 25개월 이후 7,000원"
+     ]
+    },
+    {
+     "label": "기타 할인",
+     "place": "L.POINT 제휴 가맹점",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15883-A15883",
+   "name": "SK인텔릭스 롯데카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15883-A15883",
+   "termsUrl": null,
+   "docDate": "2026-07-21",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "구독료 할인",
+     "place": "SK인텔릭스 구독료",
+     "value": "결제일 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "지난달 이용실적 기준"
+     ]
+    },
+    {
+     "label": "장기할부 캐시백",
+     "place": "장기할부 결제",
+     "value": "캐시백",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "L.POINT",
+     "place": "롯데카드 가맹점",
+     "value": "L.POINT 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15909-A15909",
+   "name": "T 라이트 롯데카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15909-A15909",
+   "termsUrl": null,
+   "docDate": "2026-09-17",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 25000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "T 라이트 할부",
+     "place": "T 통신기기 할부",
+     "value": "장기할부",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 말일 기준 T 라이트 할부 잔액 유무로 적용"
+     ]
+    },
+    {
+     "label": "캐시백",
+     "place": "카드 결제계좌",
+     "value": "최대 10,000원",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "T 라이트 할부 이용 후 전월실적 충족 시"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P01795-A01795",
+   "name": "The CJ 롯데카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P01795-A01795",
+   "termsUrl": null,
+   "docDate": "2025-08-06",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 5000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 6000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "CJ온스타일 할인",
+     "place": "CJ온스타일(방송·카탈로그 포함)",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 실적 무관"
+     ]
+    },
+    {
+     "label": "올리브영 할인·적립",
+     "place": "올리브영",
+     "value": "10% 할인+1% 적립",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 실적 무관"
+     ]
+    },
+    {
+     "label": "할인쿠폰",
+     "place": "CJ온스타일",
+     "value": "5천~2만원권 4종",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "본인 회원, 발급 후 1~7일 뒤 다운로드"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P14447-A14447",
+   "name": "Toss Mobile x LOCA",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14447-A14447",
+   "termsUrl": null,
+   "docDate": "2024-10-30",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "통신요금 할인",
+     "place": "통신요금 자동납부",
+     "value": "10,000~20,000원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "25개월 이후 일괄 7,000원 할인"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P14430-A14430",
+   "name": "Trip to 로카",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14430-A14430",
+   "termsUrl": null,
+   "docDate": "2026-10-02",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "국내 가맹점 할인",
+     "place": "국내 가맹점",
+     "value": "결제일 할인",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "해외 가맹점 할인",
+     "place": "해외 가맹점",
+     "value": "결제일 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  }
+ ]
+}
