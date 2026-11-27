@@ -1,0 +1,389 @@
+{
+ "type": "card-terms",
+ "issuer": "롯데카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15862-A15862",
+   "name": "YBM X 디지로카_와옹(데님)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15862-A15862",
+   "termsUrl": null,
+   "docDate": "2026-06-25",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "Visa",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "YBM",
+     "place": "YBM 주관 어학시험 및 IT시험(TOEIC, TOEIC Speaking Test, JPT, MOS 등), YBM연수원, YBM어학원, Appletree, Gate, C-Gate, PSA, KISA, YBM유학센터",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 7000
+      },
+      {
+       "spend": 1000000,
+       "cap": 12000
+      },
+      {
+       "spend": 1500000,
+       "cap": 35000
+      }
+     ]
+    },
+    {
+     "label": "생활 업종",
+     "place": "세븐일레븐, GS25, CU, 이마트24",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 5000
+      },
+      {
+       "spend": 1000000,
+       "cap": 7000
+      },
+      {
+       "spend": 1500000,
+       "cap": 10000
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P11881-A11881",
+   "name": "경차 smart 롯데카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P11881-A11881",
+   "termsUrl": null,
+   "docDate": "2026-10-29",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "주유",
+     "place": "리터당 80원",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "교통",
+     "place": "시내버스/지하철/택시",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "쇼핑",
+     "place": "롯데마트(VIC마켓 포함)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 2회, 건당 5천원 한도"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15841-A15841",
+   "name": "다이소엔로카",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15841-A15841",
+   "termsUrl": null,
+   "docDate": "2026-09-08",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 20000
+    },
+    {
+     "brand": "American Express",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "American Express",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "다이소(온/오프)",
+     "place": "다이소(온/오프)",
+     "value": "30%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 15000
+      },
+      {
+       "spend": 600000,
+       "cap": 25000
+      }
+     ]
+    },
+    {
+     "label": "특별업종",
+     "place": "음식점, 배달앱",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 3000
+      },
+      {
+       "spend": 600000,
+       "cap": 5000
+      }
+     ]
+    },
+    {
+     "label": "특별업종",
+     "place": "영화, 여행",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 3000
+      },
+      {
+       "spend": 600000,
+       "cap": 5000
+      }
+     ]
+    },
+    {
+     "label": "특별업종",
+     "place": "병원, 약국",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 3000
+      },
+      {
+       "spend": 600000,
+       "cap": 5000
+      }
+     ]
+    },
+    {
+     "label": "특별업종",
+     "place": "OTT",
+     "value": "30%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 3000
+      },
+      {
+       "spend": 600000,
+       "cap": 5000
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15787-A15787",
+   "name": "디지로카 Link",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15787-A15787",
+   "termsUrl": null,
+   "docDate": "2025-12-30",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "Mastercard"
+   ],
+   "minimumSpend": 1000000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "150만원 이상",
+     "place": "국내외 가맹점",
+     "value": "2%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "3만원",
+     "place": "마트·슈퍼",
+     "value": "7%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "1만5천원",
+     "place": "커피·편의점",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "100만원 이상",
+     "place": "국내외 가맹점",
+     "value": "1.5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "2만원",
+     "place": "마트·슈퍼",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "1만원",
+     "place": "커피·편의점",
+     "value": "7%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13473-A13473",
+   "name": "롤라카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13473-A13473",
+   "termsUrl": null,
+   "docDate": "2026-10-29",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "Mastercard"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "롯데그룹사",
+     "place": "롯데그룹사",
+     "value": "7%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "SK주유소",
+     "place": "SK주유소",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  }
+ ]
+}
