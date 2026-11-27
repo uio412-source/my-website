@@ -1,0 +1,254 @@
+{
+ "type": "card-terms",
+ "issuer": "IBK기업은행",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "ibk-103214",
+   "name": "I-어디로든그린카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103214&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2026-02-10",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "친환경 자동차 충전",
+     "place": "전기차·수소차 충전(30만원 이상)",
+     "value": "20%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "conditions": [
+      "그린카드 포인트 적립",
+      "충전소 멤버십 등록·현장결제에 한함"
+     ]
+    },
+    {
+     "label": "친환경 자동차 충전",
+     "place": "전기차·수소차 충전(60만원 이상)",
+     "value": "40%",
+     "valueType": "적립",
+     "minimumSpend": 600000,
+     "cap": 20000,
+     "capScope": "월"
+    },
+    {
+     "label": "공유 모빌리티",
+     "place": "공유 모빌리티",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-104311",
+   "name": "I-Campus(일상생활형)",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=104311&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-09-30",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "대중교통",
+     "place": "버스, 지하철",
+     "value": "100원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 1000,
+     "capScope": "월",
+     "conditions": [
+      "건당 100원 할인, 후불교통 이용 건"
+     ]
+    },
+    {
+     "label": "커피",
+     "place": "스타벅스, 커피빈, 탐앤탐스, 투썸플레이스, 할리스 등",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "통합 1일 1회, 월 2회",
+     "conditions": [
+      "1회 이용금액 1만원 한도"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-103814",
+   "name": "I-HEROES",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=103814&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-07-23",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "학원",
+     "place": "외국어·컴퓨터·기능·예체능 등 학원 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": 3000,
+     "capScope": "월",
+     "conditions": [
+      "건당 5만원 이상, 월 1회, 오프라인 가맹점"
+     ]
+    },
+    {
+     "label": "서점",
+     "place": "교보문고, 영풍문고, YES24",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": 2000,
+     "capScope": "월",
+     "conditions": [
+      "건당 2만원 이상, 월 1회"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-104084",
+   "name": "I-Travel",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=104084&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-04-28",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "대한항공 마일리지",
+     "place": "국내·외 가맹점",
+     "value": "원당1마일",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "건당 3만원 이상 결제 건, 월 적립한도 없음"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-104050",
+   "name": "IBK BUDDY CHECK",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=104050&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-03-06",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "대중교통",
+     "place": "버스 / 지하철",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": 2000,
+     "capScope": "월",
+     "conditions": [
+      "후불교통 이용 건, 고속·시외·공항버스·공항철도 제외"
+     ]
+    },
+    {
+     "label": "이동통신",
+     "place": "SKT, KT, LGU+",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": 2000,
+     "capScope": "월",
+     "conditions": [
+      "건당 5만원 이상 휴대전화 요금 자동납부 건"
+     ]
+    }
+   ]
+  }
+ ]
+}
