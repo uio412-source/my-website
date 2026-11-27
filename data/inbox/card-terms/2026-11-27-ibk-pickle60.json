@@ -1,0 +1,324 @@
+{
+ "type": "card-terms",
+ "issuer": "IBK기업은행",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "ibk-102475",
+   "name": "I-ALL",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=102475&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2026-01-07",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 14000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "ALL",
+     "place": "국내외 가맹점",
+     "value": "0.5%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 실적조건 없음, 할인한도 없음",
+      "LIVING·MEMBERSHIP 대상 가맹점 제외"
+     ]
+    },
+    {
+     "label": "LIVING",
+     "place": "LIVING 영역(온라인쇼핑·홈쇼핑·배달앱·대형마트·커피·편의점·교통)",
+     "value": "1%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "LIVING",
+     "place": "LIVING 영역(최근 3개월 매달 50만원 이상 연속 이용)",
+     "value": "1.5%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "3개월 연속 조건 충족 시"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-103401",
+   "name": "I-Mileage(대한항공마일리지)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=103401&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-07-17",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 41000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 42000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본 마일리지",
+     "place": "국내·해외 가맹점(대한항공)",
+     "value": "원당1마일",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 제한없음",
+     "conditions": [
+      "대한항공·아시아나 택1"
+     ]
+    },
+    {
+     "label": "기본 마일리지",
+     "place": "국내·해외 가맹점(아시아나)",
+     "value": "원당1.5마일",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 제한없음",
+     "conditions": [
+      "대한항공·아시아나 택1"
+     ]
+    },
+    {
+     "label": "추가 마일리지",
+     "place": "해외가맹점·국내면세점(대한항공)",
+     "value": "원당1마일",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 2,000 마일리지"
+    },
+    {
+     "label": "추가 마일리지",
+     "place": "해외가맹점·국내면세점(아시아나)",
+     "value": "원당1.5마일",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 2,400 마일리지"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-104073",
+   "name": "I-기후동행카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=104073&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-03-06",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 14000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "ALL",
+     "place": "국내 가맹점",
+     "value": "0.5%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 실적조건 없음, 할인한도 없음",
+      "LIVING·MEMBERSHIP 대상 가맹점 제외"
+     ]
+    },
+    {
+     "label": "LIVING",
+     "place": "LIVING 영역(온라인쇼핑·홈쇼핑·배달앱·대형마트·커피·편의점·교통)",
+     "value": "1%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "LIVING",
+     "place": "LIVING 영역(최근 3개월 매달 50만원 이상 연속 이용)",
+     "value": "1.5%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "3개월 연속 조건 충족 시"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-756147",
+   "name": "Hola IYTC 국제청소년증 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756147&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-12-16",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "해외 캐시백",
+     "place": "해외 가맹점 이용금액",
+     "value": "1%",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "1회 승인금액 USD 50 이상 시",
+      "호텔·주유소·도박·렌터카·통신 가맹점 제외"
+     ]
+    },
+    {
+     "label": "교육",
+     "place": "인터넷 토익시험 접수, 온라인 서적(교보문고·영풍문고·YES24) 2만원 이상 구매",
+     "value": "4,000원",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-756202",
+   "name": "안녕 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756202&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-07-25",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "대중교통",
+     "place": "대중교통(버스, 지하철) 이용금액",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 3만원까지",
+     "conditions": [
+      "후불교통카드 이용분에 한함"
+     ]
+    },
+    {
+     "label": "편의점",
+     "place": "편의점 이용금액",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "문화·레저",
+     "place": "놀이공원",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "무료입장 또는 최대 50% 할인",
+      "전월 이용실적과 관계없이 제공"
+     ]
+    }
+   ]
+  }
+ ]
+}
