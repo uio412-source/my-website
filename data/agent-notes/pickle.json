@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-27T11:32:56+09:00",
+ "updatedAt": "2026-11-27T11:40:35+09:00",
  "lock": null,
  "runs": [
   {
@@ -882,6 +882,24 @@
     "shinhan-202104070001",
     "shinhan-199902110078",
     "shinhan-202511280001"
+   ]
+  },
+  {
+   "at": "2026-11-27T11:40:35+09:00",
+   "kind": "card-terms",
+   "pr": 227,
+   "summary": "43차: 롯데카드 상품설명서 10종·혜택 40줄",
+   "queueKeys": [
+    "lotte-P10351-A10351",
+    "lotte-P02914-A02914",
+    "lotte-P14724-A14724",
+    "lotte-P00201-A00201",
+    "lotte-P15651-A15651",
+    "lotte-P13512-A13512",
+    "lotte-P14735-A14735",
+    "lotte-P02117-A02117",
+    "lotte-P00276-B01417",
+    "lotte-P15672-A15672"
    ]
   }
  ],
