@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T11:59:02+09:00",
+  "generatedAt": "2026-11-27T12:05:03+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -316,13 +316,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T11:58:59+09:00",
+      "updatedAt": "2026-11-27T12:04:59+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 233,
-        "title": "data: 수집 2026-11-27 46차 (롯데카드 상품설명서 10종)",
-        "mergedAt": "2026-11-27T02:58:42Z",
-        "mergedAtKST": "2026-11-27 11:58"
+        "number": 235,
+        "title": "data: 수집 2026-11-27 47차 (롯데카드 상품설명서 10종)",
+        "mergedAt": "2026-11-27T03:04:43Z",
+        "mergedAtKST": "2026-11-27 12:04"
       },
       "runs": [
         {
@@ -1276,6 +1276,24 @@
             "lotte-P14349-A14349",
             "lotte-P13719-A13719"
           ]
+        },
+        {
+          "at": "2026-11-27T12:04:59+09:00",
+          "kind": "card-terms",
+          "pr": 235,
+          "summary": "47차: 롯데카드 상품설명서 10종·혜택 21줄",
+          "queueKeys": [
+            "lotte-P14034-A14034",
+            "lotte-P14123-A14123",
+            "lotte-P12921-A12921",
+            "lotte-P14114-A14114",
+            "lotte-P14826-A14826",
+            "lotte-P15883-A15883",
+            "lotte-P15909-A15909",
+            "lotte-P01795-A01795",
+            "lotte-P14447-A14447",
+            "lotte-P14430-A14430"
+          ]
         }
       ],
       "openIssues": 35
@@ -1284,6 +1302,34 @@
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 235,
+      "title": "data: 수집 2026-11-27 47차 (롯데카드 상품설명서 10종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle47",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T03:04:43Z",
+      "mergedAtKST": "2026-11-27 12:04",
+      "createdAt": "2026-11-27T03:00:40Z",
+      "createdAtKST": "2026-11-27 12:00",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/235"
+    },
+    {
+      "number": 234,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #233 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle233",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T02:59:48Z",
+      "mergedAtKST": "2026-11-27 11:59",
+      "createdAt": "2026-11-27T02:59:07Z",
+      "createdAtKST": "2026-11-27 11:59",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/234"
+    },
     {
       "number": 233,
       "title": "data: 수집 2026-11-27 46차 (롯데카드 상품설명서 10종)",
@@ -1815,34 +1861,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/196"
-    },
-    {
-      "number": 195,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #194 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-pickle194",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T00:58:15Z",
-      "mergedAtKST": "2026-11-27 09:58",
-      "createdAt": "2026-11-27T00:57:34Z",
-      "createdAtKST": "2026-11-27 09:57",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/195"
-    },
-    {
-      "number": 194,
-      "title": "data: 수집 2026-11-27 27차 (신한카드 상품설명서 10종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle27",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T00:57:01Z",
-      "mergedAtKST": "2026-11-27 09:57",
-      "createdAt": "2026-11-27T00:52:59Z",
-      "createdAtKST": "2026-11-27 09:52",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/194"
     }
   ],
   "queue": {
@@ -1853,8 +1871,8 @@
     },
     "counts": {
       "cards": {
-        "done": 581,
-        "todo": 866,
+        "done": 591,
+        "todo": 856,
         "total": 1447
       },
       "brandPrograms": {
