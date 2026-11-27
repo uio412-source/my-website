@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 536,
-   "todo": 911,
+   "done": 541,
+   "todo": 906,
    "total": 1447
   },
   "brandPrograms": {
@@ -16098,7 +16098,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 10,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "post-everrich",
@@ -16538,7 +16538,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202104070001",
@@ -16549,7 +16549,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-199902110078",
@@ -16560,7 +16560,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202101270002",
@@ -16582,7 +16582,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "woori-100930",
