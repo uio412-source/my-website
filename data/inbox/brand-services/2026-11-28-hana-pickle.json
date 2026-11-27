@@ -1,0 +1,235 @@
+{
+  "type": "brand-services",
+  "issuer": "하나카드",
+  "collectedAt": "2026-11-28",
+  "collector": "Pickle",
+  "programs": [
+    {
+      "id": "hana-american-express-platinum-elite",
+      "queueKey": "hana-american-express-platinum-elite",
+      "brand": "American Express",
+      "tier": "PLATINUM ELITE",
+      "provider": "issuer_selection",
+      "docTitle": "AMEX Platinum Elite 선택서비스 안내",
+      "url": "https://m.hanacard.co.kr/leaflet/AE/AE001_20260305.pdf",
+      "docDate": "2026-04-13",
+      "validThrough": "2026-12-31",
+      "cards": [
+        "하나 CLUB H 아메리칸 익스프레스 리저브 카드"
+      ],
+      "services": [
+        {
+          "category": "airport_coffee",
+          "title": "공항 커피 서비스",
+          "minimumSpend": 500000,
+          "monthlyLimit": 1,
+          "annualLimit": 12,
+          "quotaScope": "per_service",
+          "sharedWith": null,
+          "conditions": [
+            "인천·김포공항 내 주요 커피 매장 핫아메리카노(S) 무료",
+            "지난달(1일~말일) 국내외 일시불·할부 50만원 이상 이용 시 제공",
+            "최초 카드사용 등록 후 다음 달 말일까지는 50만원 미만이어도 제공",
+            "대상 카드와 당일 출국 항공권 함께 제시"
+          ]
+        },
+        {
+          "category": "airport_limousine",
+          "title": "공항리무진/공항철도 서비스",
+          "minimumSpend": 500000,
+          "dailyLimit": 1,
+          "annualLimit": 12,
+          "quotaScope": "per_service",
+          "conditions": [
+            "공항리무진·공항철도 편도 티켓 무료(통합 일 1회, 연 12회)",
+            "아멕스 프리미엄 카드로 50만원 이상 항공권 구매 후 카드와 e티켓 제시",
+            "탑승일 일주일 내 e티켓 제시, 본인 항공권에 한함",
+            "공항철도는 앱 예약·발권 후 이용 가능(현장 매표소 불가)"
+          ]
+        },
+        {
+          "category": "airport_valet",
+          "title": "인천/김포공항 발렛파킹 서비스",
+          "minimumSpend": 500000,
+          "monthlyLimit": 2,
+          "quotaScope": "shared_group",
+          "sharedWith": "인천공항 제1·2여객터미널과 김포공항 통합 월 2회",
+          "conditions": [
+            "인천공항 제1·2여객터미널 및 김포공항 국내선 무료 발렛파킹",
+            "지난달 50만원 이상 이용 시 제공, 최초 사용 등록 후 다음 달 말일까지는 면제",
+            "발렛파킹 비용만 무료이며 주차요금은 별도 정산",
+            "연휴·명절·성수기에는 사전 예약 권장"
+          ]
+        },
+        {
+          "category": "hotel_valet",
+          "title": "특급호텔 발렛파킹 서비스",
+          "minimumSpend": 500000,
+          "monthlyLimit": 2,
+          "quotaScope": "hotel_shared",
+          "sharedWith": "국내 호텔 통합 월 2회",
+          "freeHours": 3,
+          "holderOnly": true,
+          "useRequired": true,
+          "hotels": [
+            {
+              "name": "앰배서더 서울 풀만",
+              "city": "서울"
+            },
+            {
+              "name": "그랜드 워커힐 서울",
+              "city": "서울"
+            },
+            {
+              "name": "그랜드 하얏트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "몬드리안 서울 이태원",
+              "city": "서울"
+            },
+            {
+              "name": "노보텔 앰배서더 서울 강남",
+              "city": "서울"
+            },
+            {
+              "name": "노보텔 앰배서더 서울 동대문",
+              "city": "서울"
+            },
+            {
+              "name": "르메르디앙 서울 명동",
+              "city": "서울"
+            },
+            {
+              "name": "메이필드 호텔 서울",
+              "city": "서울"
+            },
+            {
+              "name": "코트야드 메리어트 서울 타임스퀘어",
+              "city": "서울"
+            },
+            {
+              "name": "메리어트 이그제큐티브 아파트먼트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "반얀트리 클럽 앤 스파 서울",
+              "city": "서울"
+            },
+            {
+              "name": "비스타 워커힐 서울",
+              "city": "서울"
+            },
+            {
+              "name": "서울신라호텔",
+              "city": "서울"
+            },
+            {
+              "name": "더 플라자 서울",
+              "city": "서울"
+            },
+            {
+              "name": "콘래드 서울",
+              "city": "서울"
+            },
+            {
+              "name": "파크 하얏트 서울",
+              "city": "서울"
+            },
+            {
+              "name": "JW 메리어트 동대문 스퀘어 서울",
+              "city": "서울"
+            },
+            {
+              "name": "JW 메리어트 호텔 서울",
+              "city": "서울"
+            },
+            {
+              "name": "안다즈 서울 강남",
+              "city": "서울"
+            },
+            {
+              "name": "포시즌스 호텔 서울",
+              "city": "서울"
+            },
+            {
+              "name": "그랜드 하얏트 인천",
+              "city": "인천"
+            },
+            {
+              "name": "그랜드 조선 부산",
+              "city": "부산"
+            },
+            {
+              "name": "파크 하얏트 부산",
+              "city": "부산"
+            },
+            {
+              "name": "호텔 인터불고 대구",
+              "city": "대구"
+            },
+            {
+              "name": "힐튼 경주",
+              "city": "경주"
+            }
+          ],
+          "hotelRules": [
+            {
+              "name": "JW 메리어트 호텔 서울",
+              "receiptMin": 50000,
+              "monthlyLimit": null,
+              "note": "당일 호텔 이용 영수증 제시"
+            },
+            {
+              "name": "몬드리안 서울 이태원",
+              "receiptMin": 25000,
+              "monthlyLimit": null,
+              "note": "당일 호텔 이용 영수증 제시"
+            },
+            {
+              "name": "포시즌스 호텔 서울",
+              "receiptMin": 30000,
+              "monthlyLimit": null,
+              "note": "당일 호텔 이용 영수증 제시"
+            },
+            {
+              "name": "파크 하얏트 서울",
+              "receiptMin": 20000,
+              "monthlyLimit": null,
+              "note": "당일 호텔 이용 영수증 제시"
+            }
+          ],
+          "conditions": [
+            "호텔 객실·식음료 업장(연회장 제외) 이용한 본인 회원에 한해 제공",
+            "지난달 50만원 이상 이용 시 제공",
+            "1일 3시간 무료 주차 제공, 초과 시 주차요금 별도"
+          ]
+        },
+        {
+          "category": "other",
+          "title": "공항 Books Store 할인서비스",
+          "minimumSpend": 500000,
+          "monthlyLimit": 1,
+          "annualLimit": 12,
+          "quotaScope": "per_service",
+          "conditions": [
+            "인천공항 Books Store 전 매장에서 도서 1권 이상·5천원 이상 결제 시 3천원 할인"
+          ]
+        },
+        {
+          "category": "hotel_benefit",
+          "title": "Be My Guest 서비스",
+          "minimumSpend": 500000,
+          "monthlyLimit": 1,
+          "annualLimit": 3,
+          "quotaScope": "per_service",
+          "conditions": [
+            "호텔·패밀리레스토랑 6만원 이상 결제 시 3만원 현장할인",
+            "호텔 델리 4만원 이상 결제 시 2만원 현장할인",
+            "다른 프로모션·혜택과 중복 적용 불가"
+          ]
+        }
+      ]
+    }
+  ]
+}
