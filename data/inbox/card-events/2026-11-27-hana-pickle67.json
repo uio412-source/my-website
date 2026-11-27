@@ -1,0 +1,235 @@
+{
+ "type": "card-events",
+ "issuer": "하나카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "listUrls": [
+  "https://m.hanacard.co.kr/MPAEVT100M.web"
+ ],
+ "events": [
+  {
+   "id": "hana-202612-amex-lounge-2",
+   "kind": "card",
+   "title": "AMEX 공항라운지 이용권 최대 2장을 한번에!",
+   "summary": "AMEX 공항라운지 이용권 최대 2장",
+   "category": "해외/여행",
+   "startsAt": "2026-12-01",
+   "endsAt": "2027-01-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "대상 카드: AMEX 브랜드 카드"
+   ],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202611-mega-coffee-2",
+   "kind": "card",
+   "title": "약정만하고 메가MGC커피 2잔!",
+   "summary": "메가MGC커피 2잔 제공",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-26",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202611-narasarang-coupang-35",
+   "kind": "card",
+   "title": "하나 나라사랑카드 쿠팡이츠 최대 3만 5천원 혜택!",
+   "summary": "쿠팡이츠 최대 3만 5천원 혜택",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-23",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [
+    "하나 나라사랑카드"
+   ],
+   "conditions": [],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202611-unionpay-agoda-25",
+   "kind": "card",
+   "title": "유니온페이 아고다 국내외 숙소 최대 25% 할인",
+   "summary": "아고다 숙소 최대 25% 할인",
+   "category": "해외/여행",
+   "startsAt": "2026-11-20",
+   "endsAt": "2027-01-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "유니온페이 카드 결제"
+   ],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202607-narasarang-boost-6",
+   "kind": "card",
+   "title": "하나 나라사랑카드 나라사랑 BOOST 캐시백 최대 6만원",
+   "summary": "BOOST 캐시백 최대 6만원",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-07-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [
+    "하나 나라사랑카드"
+   ],
+   "conditions": [],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202610-stay-booking",
+   "kind": "card",
+   "title": "하나카드로 숙박 예약해요",
+   "summary": "하나카드 숙박 예약 혜택",
+   "category": "해외/여행",
+   "startsAt": "2026-10-06",
+   "endsAt": "2027-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202611-homeshopping",
+   "kind": "card",
+   "title": "온·오프라인 홈쇼핑 혜택",
+   "summary": "홈쇼핑 온·오프라인 혜택",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202611-travel",
+   "kind": "card",
+   "title": "온·오프라인 여행 혜택",
+   "summary": "여행 온·오프라인 혜택",
+   "category": "해외/여행",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202611-mart-cvs",
+   "kind": "card",
+   "title": "온·오프라인 대형마트·편의점 혜택",
+   "summary": "대형마트·편의점 혜택",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202611-online-shopping",
+   "kind": "card",
+   "title": "온·오프라인 온라인쇼핑 생활 혜택",
+   "summary": "온라인쇼핑·생활 혜택",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202611-clubdoasis-50",
+   "kind": "card",
+   "title": "클럽디오아시스 스파&워터파크 최대 50% 현장할인",
+   "summary": "스파&워터파크 최대 50% 현장할인",
+   "category": "기타",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202611-overseas-first-50",
+   "kind": "card",
+   "title": "일본, 베트남, 중국 해외 첫 결제 50% 적립쿠폰",
+   "summary": "해외 첫 결제 50% 적립쿠폰",
+   "category": "해외/여행",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "일본·베트남·중국 첫 결제 건"
+   ],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202611-narasarang-px",
+   "kind": "card",
+   "title": "하나 나라사랑데이 PX 50% 추가 혜택!",
+   "summary": "PX 50% 추가 혜택",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [
+    "하나 나라사랑카드"
+   ],
+   "conditions": [],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "hana-202611-schoolbanking",
+   "kind": "card",
+   "title": "스쿨뱅킹 자동납부하고 사립유치원, 학교 5천 머니 적립",
+   "summary": "스쿨뱅킹 자동납부 시 5천 머니 적립",
+   "category": "기타",
+   "startsAt": "2026-11-01",
+   "endsAt": "2027-01-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "스쿨뱅킹 자동납부 등록"
+   ],
+   "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  }
+ ]
+}
