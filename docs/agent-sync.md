@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-27 10:29 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-27 10:30 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,7 @@ _자동 생성 2026-11-27 10:29 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#204](https://github.com/uio412-source/my-website/pull/204) | Pickle | data: 수집 2026-11-27 32차 (신한카드 상품설명서 10종) | 2026-11-27 10:29 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#203](https://github.com/uio412-source/my-website/pull/203) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #202 반영) | 2026-11-27 10:24 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#202](https://github.com/uio412-source/my-website/pull/202) | Pickle | data: 수집 2026-11-27 31차 (신한카드 상품설명서 10종) | 2026-11-27 10:23 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#201](https://github.com/uio412-source/my-website/pull/201) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #200 반영) | 2026-11-27 10:17 | 4파일 · data/ 3 · docs/ 1 | 머지 |
@@ -59,7 +60,6 @@ _자동 생성 2026-11-27 10:29 KST · `python tools/data/agent_sync.py` · 기�
 | [#182](https://github.com/uio412-source/my-website/pull/182) | Pickle | data: 수집 2026-11-27 21차 (NH농협카드 상품설명서 10종) | 2026-11-27 09:17 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#181](https://github.com/uio412-source/my-website/pull/181) | Pickle | docs: 수집 대기열 갱신 (#179 반영) | 2026-11-27 09:12 | 1파일 · data/ 1 | 머지 |
 | [#179](https://github.com/uio412-source/my-website/pull/179) | Pickle | data: 수집 2026-11-27 20차 (NH농협카드 상품설명서 10종) | 2026-11-27 09:11 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#180](https://github.com/uio412-source/my-website/pull/180) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #179 반영) | 2026-11-27 09:09 | 3파일 · data/ 2 · docs/ 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -73,7 +73,8 @@ _지금 잠근 영역이 없습니다._
 
 | PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
 |---|---|---|---|---|---|
-| [#204](https://github.com/uio412-source/my-website/pull/204) | Pickle | `ai/chatgpt/data-2026-11-27-pickle…` | 2026-11-27 10:25 | 1파일 · data/inbox/card-terms 1 | data: 수집 2026-11-27 32차 (신한카드 상품설명서 10종) |
+| [#206](https://github.com/uio412-source/my-website/pull/206) | Pickle | `ai/pickle/queue-sync-2026-11-27-p…` | 2026-11-27 10:30 | 4파일 · data/ 3 · docs/ 1 | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #204 반영) |
+| [#205](https://github.com/uio412-source/my-website/pull/205) | Claude | `ai/claude/pay-daily-2026-11-27` | 2026-11-27 10:29 | 6파일 · data/ 2 · docs/ 2 · pay/ 2 | pay: 매일 확인 2026-11-27 — 아브뉴프랑 판교 20% 배너, 교촌치킨·아트앤… |
 | [#173](https://github.com/uio412-source/my-website/pull/173) | ChatGPT | `ai/chatgpt/fix-accor-meapac-booki…` | 2026-11-27 08:46 | 1파일 · hotels/ 1 | fix(hotels): 아코르 아태 세일 예약 마감 정정 |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-27)
@@ -90,7 +91,7 @@ _지금 잠근 영역이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
 | Claude | `data/agent-notes/claude.json` | #174 data: 수집 2026-11-27 (Claude · 하나카… | 2026-11-27 08:54 | 10건 |
-| Pickle | `data/agent-notes/pickle.json` | #203 docs: 수집 대기열·공용 현황판 갱신 (2026-11-2… | 2026-11-27 10:24 | 33건 |
+| Pickle | `data/agent-notes/pickle.json` | #204 data: 수집 2026-11-27 32차 (신한카드 상품설… | 2026-11-27 10:29 | 33건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
