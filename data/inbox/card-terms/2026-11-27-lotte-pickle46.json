@@ -1,0 +1,550 @@
+{
+ "type": "card-terms",
+ "issuer": "롯데카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15638-A15638",
+   "name": "LOCA X 기후동행카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15638-A15638",
+   "termsUrl": null,
+   "docDate": "2026-09-11",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "국내 가맹점 할인",
+     "place": "국내 가맹점",
+     "value": "결제일 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "기후동행요금 할인",
+     "place": "기후동행카드 요금",
+     "value": "결제일 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13834-A13834",
+   "name": "LOCA X 웰스",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13834-A13834",
+   "termsUrl": null,
+   "docDate": "2026-09-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "렌탈료 할인",
+     "place": "렌탈료·상조납입금 등 자동납부",
+     "value": "결제일 할인",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "지난달 이용실적 구간별 할인한도"
+     ]
+    },
+    {
+     "label": "캐시백",
+     "place": "카드 결제계좌",
+     "value": "캐시백",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13840-A13840",
+   "name": "LOCA X 현대큐밍",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13840-A13840",
+   "termsUrl": null,
+   "docDate": "2026-09-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "렌탈료 할인",
+     "place": "현대큐밍 렌탈료 자동납부",
+     "value": "10,000원~",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "지난달 30만원 이상 1만원(자동납부 필수), 구간별 한도"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13399-A13399",
+   "name": "LOCA for Auto",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13399-A13399",
+   "termsUrl": null,
+   "docDate": "2025-01-23",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "주유 할인",
+     "place": "SK에너지·S-OIL·GS칼텍스·현대오일뱅크",
+     "value": "리터당 100원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "월 이용금액 30만원까지"
+     ]
+    },
+    {
+     "label": "자동차보험 할인",
+     "place": "손해보험",
+     "value": "10,000원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 1회"
+    },
+    {
+     "label": "편의점 할인",
+     "place": "GS25·CU·세븐일레븐",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월"
+    },
+    {
+     "label": "배달앱 할인",
+     "place": "배달앱",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13391-A13391",
+   "name": "LOCA for Coffee",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13391-A13391",
+   "termsUrl": null,
+   "docDate": "2025-01-23",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "커피 할인",
+     "place": "스타벅스·폴바셋·빽다방·투썸플레이스",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 10000,
+     "capScope": "월"
+    },
+    {
+     "label": "스트리밍 할인",
+     "place": "넷플릭스·유튜브·왓챠·멜론·지니뮤직",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 10000,
+     "capScope": "월"
+    },
+    {
+     "label": "교통 할인",
+     "place": "버스·지하철·택시",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월"
+    },
+    {
+     "label": "배달앱 할인",
+     "place": "배달의민족·요기요",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월"
+    },
+    {
+     "label": "온라인쇼핑 할인",
+     "place": "쿠팡·SSG닷컴 등",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13403-A13403",
+   "name": "LOCA for Edu",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13403-A13403",
+   "termsUrl": null,
+   "docDate": "2025-01-23",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 1500000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "교육 할인",
+     "place": "학원·학습지·유치원(건당 10만원 이상)",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 25000,
+     "capScope": "월"
+    },
+    {
+     "label": "서점·문구 할인",
+     "place": "서점·문구점",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13407-A13407",
+   "name": "LOCA for Health",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13407-A13407",
+   "termsUrl": null,
+   "docDate": "2025-01-23",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 1500000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "병원 할인",
+     "place": "병원·약국·동물병원",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 20000,
+     "capScope": "월"
+    },
+    {
+     "label": "쇼핑 할인",
+     "place": "백화점",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 10000,
+     "capScope": "월"
+    },
+    {
+     "label": "슈퍼 할인",
+     "place": "슈퍼",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 10000,
+     "capScope": "월"
+    },
+    {
+     "label": "대중교통 할인",
+     "place": "버스·지하철",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13395-A13395",
+   "name": "LOCA for Shopping",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13395-A13395",
+   "termsUrl": null,
+   "docDate": "2026-04-15",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "마트 할인",
+     "place": "이마트·홈플러스·롯데마트",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 15000,
+     "capScope": "월",
+     "conditions": [
+      "일 5천원 한도"
+     ]
+    },
+    {
+     "label": "온라인쇼핑 할인",
+     "place": "쿠팡·SSG.COM·티몬·G마켓·옥션·11번가",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 15000,
+     "capScope": "월",
+     "conditions": [
+      "일 5천원 한도"
+     ]
+    },
+    {
+     "label": "홈쇼핑 할인",
+     "place": "롯데·GS·NS·현대·CJ·홈앤쇼핑",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 10000,
+     "capScope": "월",
+     "conditions": [
+      "일 5천원 한도"
+     ]
+    },
+    {
+     "label": "편의점 할인",
+     "place": "세븐일레븐·GS25·CU",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P14349-A14349",
+   "name": "LOCA for 롯데마트",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14349-A14349",
+   "termsUrl": null,
+   "docDate": "2026-09-23",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "롯데마트·MAXX 할인",
+     "place": "롯데마트·MAXX",
+     "value": "5~10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 15000
+      },
+      {
+       "spend": 1000000,
+       "cap": 30000
+      }
+     ],
+     "conditions": [
+      "전월 50만~100만원 5%(일 5천원), 100만원 이상 10%(일 1만원)",
+      "50만원 미만은 1천원 미만 금액 할인"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13719-A13719",
+   "name": "LOCA in BUSAN",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13719-A13719",
+   "termsUrl": null,
+   "docDate": "2026-09-23",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "아울렛·이케아 할인",
+     "place": "롯데아울렛·신세계아울렛·이케아",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 30000,
+     "capScope": "월",
+     "conditions": [
+      "일 1만원 한도"
+     ]
+    },
+    {
+     "label": "마트 할인",
+     "place": "롯데마트·이마트·탑마트·메가마트·하나로마트",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "오프라인 결제만"
+     ]
+    }
+   ]
+  }
+ ]
+}
