@@ -1,0 +1,661 @@
+{
+ "type": "card-terms",
+ "issuer": "신한카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "shinhan-202304130005",
+   "queueKey": "shinhan-202304130005",
+   "name": "신한카드 Pick I 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1221538_2206.html",
+   "termsUrl": null,
+   "docDate": "2026-06-19",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Mastercard"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "편의점 적립",
+     "place": "GS25·CU·세븐일레븐·이마트24",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "커피 적립",
+     "place": "커피 업종",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "해외 적립",
+     "place": "해외 이용금액",
+     "value": "적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202402020002",
+   "queueKey": "shinhan-202402020002",
+   "name": "신한카드 Point Plan 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1226114_2206.html",
+   "termsUrl": null,
+   "docDate": "2024-06-10",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 0
+    },
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Local",
+    "Visa"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "일상 생활비 적립",
+     "place": "국내 결제 건당 금액별 0.2~1%",
+     "value": "0.2~1%",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "신한 SOL페이 결제 시 0.1% 추가",
+      "건당 금액 구간별 차등"
+     ]
+    },
+    {
+     "label": "해외 적립",
+     "place": "해외 일시불",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "주말 배달앱 적립",
+     "place": "주말 배달앱 결제",
+     "value": "적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "가족행사월 추가",
+     "place": "5월·12월 일상 생활비 적립",
+     "value": "5천 포인트 추가",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202408300001",
+   "queueKey": "shinhan-202408300001",
+   "name": "신한카드 Point Plan 체크 SOL",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1229580_2206.html",
+   "termsUrl": null,
+   "docDate": "2024-06-10",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "일상 생활비 적립",
+     "place": "국내 결제 건당 금액별 0.2~1%",
+     "value": "0.2~1%",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "신한 SOL페이 결제 시 0.1% 추가",
+      "건당 금액 구간별 차등"
+     ]
+    },
+    {
+     "label": "해외 적립",
+     "place": "해외 일시불",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "주말 배달앱 적립",
+     "place": "주말 배달앱 결제",
+     "value": "적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "가족행사월 추가",
+     "place": "5월·12월 일상 생활비 적립",
+     "value": "5천 포인트 추가",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202411040001",
+   "queueKey": "shinhan-202411040001",
+   "name": "신한카드 Point Plan 체크 캐릭터형(짱구)",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1230740_2206.html",
+   "termsUrl": null,
+   "docDate": "2024-11-01",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "일상 생활비 적립",
+     "place": "국내 결제 건당 금액별 0.2~1%",
+     "value": "0.2~1%",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "신한 SOL페이 결제 시 0.1% 추가",
+      "건당 금액 구간별 차등"
+     ]
+    },
+    {
+     "label": "해외 적립",
+     "place": "해외 일시불",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "주말 배달앱 적립",
+     "place": "주말 배달앱 결제",
+     "value": "적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "가족행사월 추가",
+     "place": "5월·12월 일상 생활비 적립",
+     "value": "5천 포인트 추가",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202407110001",
+   "queueKey": "shinhan-202407110001",
+   "name": "신한카드 Point Plan+",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1228407_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-11-13",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 30000
+    },
+    {
+     "brand": "Visa 플래티늄",
+     "amount": 33000
+    }
+   ],
+   "brands": [
+    "Local",
+    "Visa 플래티늄"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "일상 생활비 적립",
+     "place": "국내 건당 결제금액별 0.7~3%",
+     "value": "0.7~3%",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "신한 SOL페이 결제 시 0.5% 추가",
+      "건당 금액 구간별 차등"
+     ]
+    },
+    {
+     "label": "해외 적립",
+     "place": "해외 일시불",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "가족행사월 추가",
+     "place": "5월·12월 일상 생활비 적립",
+     "value": "1만 포인트 추가",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201301300001",
+   "queueKey": "shinhan-201301300001",
+   "name": "신한카드 S-Choice(선택형) 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1188347_2206.html",
+   "termsUrl": null,
+   "docDate": "2020-07-27",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 0
+    },
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Mastercard",
+    "Visa"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "선택형 할인(교통)",
+     "place": "버스·지하철·택시",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "선택형 할인(커피)",
+     "place": "모든 커피 전문점",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "선택형 할인(쇼핑)",
+     "place": "4대 백화점, 3대 할인점",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201405080001",
+   "queueKey": "shinhan-201405080001",
+   "name": "신한카드 S-Line 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1188362_2206.html",
+   "termsUrl": null,
+   "docDate": "2026-06-23",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 0
+    },
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Local",
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본 적립",
+     "place": "전 가맹점",
+     "value": "0.2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "특별 적립",
+     "place": "전 가맹점",
+     "value": "+0.3%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "리워드 총 0.2~0.5%"
+     ]
+    },
+    {
+     "label": "요식 할인",
+     "place": "요식업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "오전 11시~오후 2시"
+     ]
+    },
+    {
+     "label": "교통·주유 할인",
+     "place": "버스·지하철 또는 주유 택1",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202409110004",
+   "queueKey": "shinhan-202409110004",
+   "name": "신한카드 SOL글로벌 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1229905_2206.html",
+   "termsUrl": null,
+   "docDate": "2024-09-24",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "필수 생활비 캐시백",
+     "place": "대중교통(버스·지하철), 이동통신요금",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "일상 생활비 캐시백",
+     "place": "대형마트, 음식점, 병원·약국",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202409110003",
+   "queueKey": "shinhan-202409110003",
+   "name": "신한카드 SOL글로벌U 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1229908_2206.html",
+   "termsUrl": null,
+   "docDate": "2024-09-24",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "필수 생활비 캐시백",
+     "place": "대중교통(버스·지하철), 이동통신요금",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "일상 생활비 캐시백",
+     "place": "커피·편의점, 배달앱, 쇼핑",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "지역건강보험료",
+     "place": "지역건강보험료 자동이체",
+     "value": "캐시백",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202406130001",
+   "queueKey": "shinhan-202406130001",
+   "name": "신한카드 SOL트래블",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1227751_2207.html",
+   "termsUrl": null,
+   "docDate": "2024-07-01",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 27000
+    },
+    {
+     "brand": "Mastercard 플래티늄",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard 플래티늄"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "해외 수수료 면제",
+     "place": "해외 이용",
+     "value": "면제",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "국제브랜드 1%·해외서비스 0.18%·환전수수료 면제",
+      "환율 우대 100%",
+      "해외 ATM 인출 수수료(건당 $3)"
+     ]
+    },
+    {
+     "label": "해외 이용 적립",
+     "place": "해외 이용금액",
+     "value": "적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202401190001",
+   "queueKey": "shinhan-202401190001",
+   "name": "신한카드 SOL트래블 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1225714_2206.html",
+   "termsUrl": null,
+   "docDate": "2026-06-10",
+   "annualFee": [
+    {
+     "brand": "Mastercard 플래티늄",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Mastercard 플래티늄"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "현지통화 결제",
+     "place": "해외 이용",
+     "value": "환전수수료 면제",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "해외 수수료 면제",
+     "place": "해외 이용",
+     "value": "국제브랜드 1%·해외서비스 0.2%",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "해외 ATM",
+     "place": "해외 ATM 인출",
+     "value": "수수료 면제",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  }
+ ]
+}
