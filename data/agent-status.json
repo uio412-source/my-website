@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T00:32:34+09:00",
+  "generatedAt": "2026-11-28T02:48:24+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -357,13 +357,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-28T00:32:31+09:00",
+      "updatedAt": "2026-11-28T02:50:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 270,
-        "title": "data: 수집 2026-11-27 77차 (현대카드 이벤트 22건)",
-        "mergedAt": "2026-11-27T15:32:08Z",
-        "mergedAtKST": "2026-11-28 00:32"
+        "number": 272,
+        "title": "data: 수집 2026-11-28 1차 (하나 AMEX PLATINUM ELITE·롯데 Visa Signature·SC 6종)",
+        "mergedAt": "2026-11-27T17:47:53Z",
+        "mergedAtKST": "2026-11-28 02:47"
       },
       "runs": [
         {
@@ -1581,14 +1581,83 @@
           "pr": 270,
           "summary": "현대카드 이벤트 22건",
           "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T02:50:00+09:00",
+          "kind": "brand-services",
+          "pr": 272,
+          "summary": "하나카드 AMEX PLATINUM ELITE(AE001, 선택서비스 6종·발레 호텔 25곳)",
+          "queueKeys": [
+            "hana-american-express-platinum-elite"
+          ]
+        },
+        {
+          "at": "2026-11-28T02:50:00+09:00",
+          "kind": "brand-services",
+          "pr": 272,
+          "summary": "롯데카드 Visa Signature(VISA_SIGNATURE_02, 서비스 4종·발레 호텔 42곳)",
+          "queueKeys": [
+            "lotte-visa-signature"
+          ]
+        },
+        {
+          "at": "2026-11-28T02:50:00+09:00",
+          "kind": "card-terms",
+          "pr": 272,
+          "summary": "SC제일은행 6종(5349·6273·6277·6266·5944·5945) 상품설명서 정리",
+          "queueKeys": [
+            "sc-5349",
+            "sc-6273",
+            "sc-6277",
+            "sc-6266",
+            "sc-5944",
+            "sc-5945"
+          ]
+        },
+        {
+          "at": "2026-11-28T02:50:00+09:00",
+          "kind": "card-terms",
+          "pr": 272,
+          "summary": "현대카드 코스트코 리워드 비즈니스 Edition2 상품설명서 정리",
+          "queueKeys": [
+            "hyundai-cstmbe2"
+          ]
         }
       ],
-      "openIssues": 47
+      "openIssues": 55
     }
   },
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 272,
+      "title": "data: 수집 2026-11-28 1차 (하나 AMEX PLATINUM ELITE·롯데 Visa Signature·SC 6종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T17:47:53Z",
+      "mergedAtKST": "2026-11-28 02:47",
+      "createdAt": "2026-11-27T17:45:38Z",
+      "createdAtKST": "2026-11-28 02:45",
+      "area": "4파일 · data/inbox/brand-services 2 · data/inbox/card-terms 2",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/272"
+    },
+    {
+      "number": 271,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 51~77차 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-final",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T15:34:48Z",
+      "mergedAtKST": "2026-11-28 00:34",
+      "createdAt": "2026-11-27T15:32:39Z",
+      "createdAtKST": "2026-11-28 00:32",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/271"
+    },
     {
       "number": 270,
       "title": "data: 수집 2026-11-27 77차 (현대카드 이벤트 22건)",
@@ -2120,34 +2189,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/233"
-    },
-    {
-      "number": 232,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #231 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-pickle231",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T02:53:43Z",
-      "mergedAtKST": "2026-11-27 11:53",
-      "createdAt": "2026-11-27T02:53:02Z",
-      "createdAtKST": "2026-11-27 11:53",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/232"
-    },
-    {
-      "number": 231,
-      "title": "data: 수집 2026-11-27 45차 (롯데카드 상품설명서 10종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle45",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T02:52:38Z",
-      "mergedAtKST": "2026-11-27 11:52",
-      "createdAt": "2026-11-27T02:48:36Z",
-      "createdAtKST": "2026-11-27 11:48",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/231"
     }
   ],
   "queue": {
@@ -2158,14 +2199,14 @@
     },
     "counts": {
       "cards": {
-        "done": 753,
-        "todo": 694,
+        "done": 760,
+        "todo": 687,
         "total": 1447
       },
       "brandPrograms": {
-        "done": 41,
+        "done": 43,
         "valetOnly": 3,
-        "todo": 50,
+        "todo": 48,
         "total": 94
       },
       "eventSources": {
@@ -2174,8 +2215,8 @@
       }
     },
     "lastCollected": {
-      "card-terms": "2026-11-27",
-      "brand-services": "2026-11-27",
+      "card-terms": "2026-11-28",
+      "brand-services": "2026-11-28",
       "card-events": "2026-11-27",
       "hotel-events": null,
       "travel-events": null,
@@ -2183,6 +2224,69 @@
     }
   },
   "skipped": [
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "KB국민카드 남은 50종 상품설명서",
+      "status": "open",
+      "reason": "후보 12종 PDF 확인 결과 6종은 이미지 PDF(텍스트 2~1,043자), 나머지는 심의필 2020~2024년판뿐",
+      "retry": "심의필 2025~2026년판이 올라오면 img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf 교체",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "SC제일은행 sc-4420 신세계이마트 삼성카드 2 · sc-4753 글로벌 삼성체크",
+      "status": "open",
+      "reason": "안내장 심의필이 2016-07-19·2018-02-21로 '올해·작년 문서' 규칙 밖",
+      "retry": "2025~2026년판 안내장이 올라오면 교체",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "롯데카드 브랜드서비스 나머지 등급(VISA_SIGNATURE 외)",
+      "status": "open",
+      "reason": "image.lottecard.co.kr/webapp/file/<BRAND>_<등급>_<NN>_select_service_260514.pdf 이름 규칙으로 216건을 확인했으나 VISA_SIGNATURE_02만 존재",
+      "retry": "해당 등급 롯데카드 상세 페이지에서 select_service PDF 링크 확인(카드 상세에 링크가 있는 카드만 노출)",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "삼성카드 상품설명서 140종",
+      "status": "open",
+      "reason": "카드 상세 딥링크가 홈으로 리다이렉트되고 브라우저로도 상세 진입 불가, static11 PDF 파일명 추측 404 (2026-11-28 브라우저 재확인)",
+      "retry": "상품공시실 목록에서 카드별 PDF 링크를 직접 확인하거나 다른 에이전트가 확보한 링크 사용",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "우리카드·롯데카드·신한카드·BC카드 카드 상세 상품설명서",
+      "status": "open",
+      "reason": "상세 페이지 HTML에 상품설명서 링크가 없고 스크립트로만 그려짐(우리 H1CRD101S02·롯데 LPCDADB_V100·신한 pconts·BC CreditCardMain 모두)",
+      "retry": "브라우저로 상세 탭을 렌더해 PDF 링크 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "하나카드 브랜드서비스 World Elite·AMEX Gold·AMEX The Platinum",
+      "status": "open",
+      "reason": "leaflet 코드(WE·AG·AT·TP·AA·AM·PA)와 날짜 8종 조합 256건을 확인했으나 파일 없음. 하나 leaflet에는 AE(PLATINUM ELITE)·MW·MP·MT·VS·VI·VP·AP·UD만 존재",
+      "retry": "해당 등급 카드 상세(hana-15125·13913 등)에서 leaflet 링크 확인, 없으면 상품설명서 PDF로 대체",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "현대카드 AMEX PLATINUM ELITE(안내서 c=03184)",
+      "status": "open",
+      "reason": "표지·제목은 PLATINUM ELITE 서비스 안내서이나 본문 '전월 이용금액 산정 기준'에 American Express® Green Card Edition2가 적혀 있어 대상 카드 확정 불가",
+      "retry": "AMEX PLATINUM ELITE 해당 카드 상세에서 같은 안내서의 대상 카드 표기를 확인한 뒤 수집",
+      "ref": ""
+    },
     {
       "date": "2026-11-27",
       "agent": "Pickle",
@@ -2685,6 +2789,15 @@
       "status": "open",
       "reason": "ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)",
       "retry": "check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "NH농협카드 VISA Platinum·VISA Signature·Mastercard Platinum 브랜드서비스",
+      "status": "workaround",
+      "reason": "안내문(VISA_Platinum_251001.pdf·VISA_Signature_251001.pdf·Mastercard_Platinum_251001.pdf)은 확보했으나 '국내 호텔 발레파킹' 대상 호텔 목록이 안내문에 없어 hotel_valet 필수 항목을 채울 수 없음",
+      "retry": "카드 상세·상품설명서에서 대상 호텔 목록을 확인한 뒤 수집",
       "ref": ""
     },
     {

@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 00:32 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 02:48 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-28 00:32 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#272](https://github.com/uio412-source/my-website/pull/272) | Pickle | data: 수집 2026-11-28 1차 (하나 AMEX PLATINUM ELITE·롯데 Visa Sign… | 2026-11-28 02:47 | 4파일 · data/inbox/brand-services 2 · data/inbox/… | 머지 |
+| [#271](https://github.com/uio412-source/my-website/pull/271) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 51~77차 반영) | 2026-11-28 00:34 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#270](https://github.com/uio412-source/my-website/pull/270) | Pickle | data: 수집 2026-11-27 77차 (현대카드 이벤트 22건) | 2026-11-28 00:32 | 1파일 · data/inbox/card-events 1 | 머지 |
 | [#269](https://github.com/uio412-source/my-website/pull/269) | Pickle | data: 수집 2026-11-27 76차 (KB국민카드 이벤트 11건) | 2026-11-28 00:27 | 1파일 · data/inbox/card-events 1 | 머지 |
 | [#268](https://github.com/uio412-source/my-website/pull/268) | Pickle | data: 수집 2026-11-27 75차 (KB국민카드 이벤트 10건) | 2026-11-28 00:24 | 1파일 · data/inbox/card-events 1 | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-28 00:32 KST · `python tools/data/agent_sync.py` · 기�
 | [#250](https://github.com/uio412-source/my-website/pull/250) | Pickle | data: 수집 2026-11-27 57차 (현대카드 GOLD·SC the Red 등 7종) | 2026-11-27 23:08 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#249](https://github.com/uio412-source/my-website/pull/249) | Pickle | data: 수집 2026-11-27 56차 (현대카드 ZERO·MY BUSINESS 9종) | 2026-11-27 23:04 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#248](https://github.com/uio412-source/my-website/pull/248) | Pickle | data: 수집 2026-11-27 55차 (현대카드 Boutique·X 8종) | 2026-11-27 22:59 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#247](https://github.com/uio412-source/my-website/pull/247) | Pickle | data: 수집 2026-11-27 54차 (현대카드 BUSINESS·케이뱅크Z·렌탈 9종) | 2026-11-27 22:56 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#246](https://github.com/uio412-source/my-website/pull/246) | Pickle | data: 수집 2026-11-27 53차 (현대카드 제휴 6종) | 2026-11-27 22:52 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -78,8 +78,8 @@ _열린 PR이 없습니다._
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 694 / 1447종 · **브랜드 프로그램** todo 50 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
-- **최근 수집일** — card-terms 2026-11-27 · brand-services 2026-11-27 · card-events 2026-11-27 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
+- **남은 카드** 687 / 1447종 · **브랜드 프로그램** todo 48 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **최근 수집일** — card-terms 2026-11-28 · brand-services 2026-11-28 · card-events 2026-11-27 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
 
@@ -87,14 +87,35 @@ _열린 PR이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
 | Claude | `data/agent-notes/claude.json` | #239 data: 수집 2026-11-27 4차 (Claude · … | 2026-11-27 22:26 | 14건 |
-| Pickle | `data/agent-notes/pickle.json` | #270 data: 수집 2026-11-27 77차 (현대카드 이벤트… | 2026-11-28 00:32 | 47건 |
+| Pickle | `data/agent-notes/pickle.json` | #272 data: 수집 2026-11-28 1차 (하나 AMEX P… | 2026-11-28 02:47 | 55건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 56건
+### 다시 볼 것 (open) — 63건
 
+- **2026-11-28 · Pickle · KB국민카드 남은 50종 상품설명서**
+  - 사유: 후보 12종 PDF 확인 결과 6종은 이미지 PDF(텍스트 2~1,043자), 나머지는 심의필 2020~2024년판뿐
+  - 재시도: 심의필 2025~2026년판이 올라오면 img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf 교체
+- **2026-11-28 · Pickle · SC제일은행 sc-4420 신세계이마트 삼성카드 2 · sc-4753 글로벌 삼성체크**
+  - 사유: 안내장 심의필이 2016-07-19·2018-02-21로 '올해·작년 문서' 규칙 밖
+  - 재시도: 2025~2026년판 안내장이 올라오면 교체
+- **2026-11-28 · Pickle · 롯데카드 브랜드서비스 나머지 등급(VISA_SIGNATURE 외)**
+  - 사유: image.lottecard.co.kr/webapp/file/<BRAND>_<등급>_<NN>_select_service_260514.pdf 이름 규칙으로 216건을 확인했으나 VISA_SIGNATURE_02만 존재
+  - 재시도: 해당 등급 롯데카드 상세 페이지에서 select_service PDF 링크 확인(카드 상세에 링크가 있는 카드만 노출)
+- **2026-11-28 · Pickle · 삼성카드 상품설명서 140종**
+  - 사유: 카드 상세 딥링크가 홈으로 리다이렉트되고 브라우저로도 상세 진입 불가, static11 PDF 파일명 추측 404 (2026-11-28 브라우저 재확인)
+  - 재시도: 상품공시실 목록에서 카드별 PDF 링크를 직접 확인하거나 다른 에이전트가 확보한 링크 사용
+- **2026-11-28 · Pickle · 우리카드·롯데카드·신한카드·BC카드 카드 상세 상품설명서**
+  - 사유: 상세 페이지 HTML에 상품설명서 링크가 없고 스크립트로만 그려짐(우리 H1CRD101S02·롯데 LPCDADB_V100·신한 pconts·BC CreditCardMain 모두)
+  - 재시도: 브라우저로 상세 탭을 렌더해 PDF 링크 확인
+- **2026-11-28 · Pickle · 하나카드 브랜드서비스 World Elite·AMEX Gold·AMEX The Platinum**
+  - 사유: leaflet 코드(WE·AG·AT·TP·AA·AM·PA)와 날짜 8종 조합 256건을 확인했으나 파일 없음. 하나 leaflet에는 AE(PLATINUM ELITE)·MW·MP·MT·VS·VI·VP·AP·UD만 존재
+  - 재시도: 해당 등급 카드 상세(hana-15125·13913 등)에서 leaflet 링크 확인, 없으면 상품설명서 PDF로 대체
+- **2026-11-28 · Pickle · 현대카드 AMEX PLATINUM ELITE(안내서 c=03184)**
+  - 사유: 표지·제목은 PLATINUM ELITE 서비스 안내서이나 본문 '전월 이용금액 산정 기준'에 American Express® Green Card Edition2가 적혀 있어 대상 카드 확정 불가
+  - 재시도: AMEX PLATINUM ELITE 해당 카드 상세에서 같은 안내서의 대상 카드 표기를 확인한 뒤 수집
 - **2026-11-27 · Pickle · BC카드 4종**
   - 사유: KaPick·그린카드 상세에 혜택 표 없음, 후불하이패스 2종은 2023년 심의필
   - 재시도: 브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인
@@ -265,8 +286,11 @@ _열린 PR이 없습니다._
   - 사유: ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)
   - 재시도: check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기
 
-### 다른 경로로 처리 (workaround) — 5건
+### 다른 경로로 처리 (workaround) — 6건
 
+- **2026-11-28 · Pickle · NH농협카드 VISA Platinum·VISA Signature·Mastercard Platinum 브랜드서비스**
+  - 사유: 안내문(VISA_Platinum_251001.pdf·VISA_Signature_251001.pdf·Mastercard_Platinum_251001.pdf)은 확보했으나 '국내 호텔 발레파킹' 대상 호텔 목록이 안내문에 없어 hotel_valet 필수 항목을 채울 수 없음
+  - 대신 이렇게: 카드 상세·상품설명서에서 대상 호텔 목록을 확인한 뒤 수집
 - **2026-11-27 · Pickle · 삼성카드 aap1910·신한카드 PC_26_01197 (Mastercard 프리미엄 서비스 안내)**
   - 사유: 발레·라운지 항목이 없고 국내 특급호텔 객실·F&B 할인 목록(각 44·43곳) 위주라 brand-services 양식으로 담지 않음
   - 대신 이렇게: hotel_benefit 카테고리로 호텔 목록을 담는 방식을 정한 뒤 다음 회차에 수집
