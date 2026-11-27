@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T11:27:15+09:00",
+  "generatedAt": "2026-11-27T11:32:58+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -316,13 +316,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T11:27:12+09:00",
+      "updatedAt": "2026-11-27T11:32:56+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 223,
-        "title": "data: 수집 2026-11-27 41차 (신한카드 상품설명서 10종)",
-        "mergedAt": "2026-11-27T02:26:57Z",
-        "mergedAtKST": "2026-11-27 11:26"
+        "number": 225,
+        "title": "data: 수집 2026-11-27 42차 (신한카드 상품설명서 5종)",
+        "mergedAt": "2026-11-27T02:32:42Z",
+        "mergedAtKST": "2026-11-27 11:32"
       },
       "runs": [
         {
@@ -1191,14 +1191,55 @@
             "shinhan-202311100002",
             "shinhan-202410180001"
           ]
+        },
+        {
+          "at": "2026-11-27T11:32:56+09:00",
+          "kind": "card-terms",
+          "pr": 225,
+          "summary": "42차: 신한카드 상품설명서 5종·혜택 16줄",
+          "queueKeys": [
+            "shinhan-202007270001",
+            "shinhan-201507270002",
+            "shinhan-202104070001",
+            "shinhan-199902110078",
+            "shinhan-202511280001"
+          ]
         }
       ],
-      "openIssues": 34
+      "openIssues": 35
     }
   },
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 225,
+      "title": "data: 수집 2026-11-27 42차 (신한카드 상품설명서 5종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle42",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T02:32:42Z",
+      "mergedAtKST": "2026-11-27 11:32",
+      "createdAt": "2026-11-27T02:28:38Z",
+      "createdAtKST": "2026-11-27 11:28",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/225"
+    },
+    {
+      "number": 224,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #223 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle223",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T02:28:01Z",
+      "mergedAtKST": "2026-11-27 11:28",
+      "createdAt": "2026-11-27T02:27:20Z",
+      "createdAtKST": "2026-11-27 11:27",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/224"
+    },
     {
       "number": 223,
       "title": "data: 수집 2026-11-27 41차 (신한카드 상품설명서 10종)",
@@ -1730,34 +1771,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/186"
-    },
-    {
-      "number": 185,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #184 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-pickle184",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T00:25:32Z",
-      "mergedAtKST": "2026-11-27 09:25",
-      "createdAt": "2026-11-27T00:24:51Z",
-      "createdAtKST": "2026-11-27 09:24",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/185"
-    },
-    {
-      "number": 184,
-      "title": "data: 수집 2026-11-27 22차 (NH농협카드 상품설명서 10종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle22",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T00:24:27Z",
-      "mergedAtKST": "2026-11-27 09:24",
-      "createdAt": "2026-11-27T00:20:24Z",
-      "createdAtKST": "2026-11-27 09:20",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/184"
     }
   ],
   "queue": {
@@ -1768,8 +1781,8 @@
     },
     "counts": {
       "cards": {
-        "done": 536,
-        "todo": 911,
+        "done": 541,
+        "todo": 906,
         "total": 1447
       },
       "brandPrograms": {
@@ -1952,6 +1965,15 @@
       "target": "shinhan-201509030001",
       "status": "open",
       "reason": "신한 상세 페이지는 실적·혜택 제외 항목을 항목화해 싣지 않아 제외 목록을 빈 배열로 두었음(상품설명서 PDF로 보완 필요)",
+      "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "shinhan-202007270001",
+      "status": "open",
+      "reason": "shinhan-201803300001 혜택표 없음 · shinhan-202101270001/0002 국민행복 국가바우처 전용",
       "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
       "ref": ""
     },

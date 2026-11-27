@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-27T11:27:12+09:00",
+ "updatedAt": "2026-11-27T11:32:56+09:00",
  "lock": null,
  "runs": [
   {
@@ -870,6 +870,19 @@
     "shinhan-202311100002",
     "shinhan-202410180001"
    ]
+  },
+  {
+   "at": "2026-11-27T11:32:56+09:00",
+   "kind": "card-terms",
+   "pr": 225,
+   "summary": "42차: 신한카드 상품설명서 5종·혜택 16줄",
+   "queueKeys": [
+    "shinhan-202007270001",
+    "shinhan-201507270002",
+    "shinhan-202104070001",
+    "shinhan-199902110078",
+    "shinhan-202511280001"
+   ]
   }
  ],
  "skipped": [
@@ -1141,6 +1154,13 @@
    "target": "shinhan-199902110001",
    "status": "open",
    "reason": "shinhan-201803300001 PREMIER GOLD EDITION: 상세 페이지에 OVERVIEW·카드디자인만 있고 혜택 표 없음",
+   "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "shinhan-202007270001",
+   "status": "open",
+   "reason": "shinhan-201803300001 혜택표 없음 · shinhan-202101270001/0002 국민행복 국가바우처 전용",
    "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
   }
  ]
