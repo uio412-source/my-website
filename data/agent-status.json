@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T12:05:03+09:00",
+  "generatedAt": "2026-11-27T14:03:17+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -35,7 +35,7 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-27T10:28:00+09:00",
+      "updatedAt": "2026-11-27T14:40:00+09:00",
       "lock": null,
       "lastMergedPR": {
         "number": 205,
@@ -44,6 +44,13 @@
         "mergedAtKST": "2026-11-27 10:35"
       },
       "runs": [
+        {
+          "at": "2026-11-27T14:40:00+09:00",
+          "kind": "code",
+          "pr": 237,
+          "summary": "Mr. Cards 카드 상세에 상품설명서 정리본(card-terms) 반영 — 592종 중 577종 연결(이름·신용/체크 같을 때만), 전월실적 '–' 333장 채움, 혜택 표 469장을 상품설명서 표로(일부만 옮긴 108종은 기존 표). 안 붙인 15종(신한 화물복지 등 신용/체크 다름 8, 다른 카드 7)과 전월실적 0 오류(롯데 LOCA LIKIT)는 다시 수집 후보",
+          "queueKeys": []
+        },
         {
           "at": "2026-11-27T10:28:00+09:00",
           "kind": "code",
@@ -319,10 +326,10 @@
       "updatedAt": "2026-11-27T12:04:59+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 235,
-        "title": "data: 수집 2026-11-27 47차 (롯데카드 상품설명서 10종)",
-        "mergedAt": "2026-11-27T03:04:43Z",
-        "mergedAtKST": "2026-11-27 12:04"
+        "number": 236,
+        "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #235 반영)",
+        "mergedAt": "2026-11-27T03:05:49Z",
+        "mergedAtKST": "2026-11-27 12:05"
       },
       "runs": [
         {
@@ -1300,8 +1307,33 @@
     }
   },
   "locks": [],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 237,
+      "title": "Mr. Cards 카드 상세: 상품설명서 정리본 반영 (전월실적 333장·혜택 표 469장)",
+      "agent": "Claude",
+      "branch": "ai/claude/cards-terms-detail",
+      "createdAtKST": "2026-11-27 14:02",
+      "area": "12파일 · paymorevent/ 7 · docs/ 2 · 루트 2 외 1곳",
+      "url": "https://github.com/uio412-source/my-website/pull/237",
+      "draft": false
+    }
+  ],
   "recentPRs": [
+    {
+      "number": 236,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #235 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle235",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T03:05:49Z",
+      "mergedAtKST": "2026-11-27 12:05",
+      "createdAt": "2026-11-27T03:05:08Z",
+      "createdAtKST": "2026-11-27 12:05",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/236"
+    },
     {
       "number": 235,
       "title": "data: 수집 2026-11-27 47차 (롯데카드 상품설명서 10종)",
@@ -1833,34 +1865,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/198"
-    },
-    {
-      "number": 197,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #196 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-pickle196",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T01:04:37Z",
-      "mergedAtKST": "2026-11-27 10:04",
-      "createdAt": "2026-11-27T01:03:56Z",
-      "createdAtKST": "2026-11-27 10:03",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/197"
-    },
-    {
-      "number": 196,
-      "title": "data: 수집 2026-11-27 28차 (신한카드 상품설명서 10종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle28",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T01:03:30Z",
-      "mergedAtKST": "2026-11-27 10:03",
-      "createdAt": "2026-11-27T00:59:27Z",
-      "createdAtKST": "2026-11-27 09:59",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/196"
     }
   ],
   "queue": {

@@ -1,9 +1,16 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-27T10:28:00+09:00",
+  "updatedAt": "2026-11-27T14:40:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-27T14:40:00+09:00",
+      "kind": "code",
+      "pr": 237,
+      "summary": "Mr. Cards 카드 상세에 상품설명서 정리본(card-terms) 반영 — 592종 중 577종 연결(이름·신용/체크 같을 때만), 전월실적 '–' 333장 채움, 혜택 표 469장을 상품설명서 표로(일부만 옮긴 108종은 기존 표). 안 붙인 15종(신한 화물복지 등 신용/체크 다름 8, 다른 카드 7)과 전월실적 0 오류(롯데 LOCA LIKIT)는 다시 수집 후보",
+      "queueKeys": []
+    },
     {
       "at": "2026-11-27T10:28:00+09:00",
       "kind": "code",

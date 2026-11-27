@@ -4,3 +4,7 @@ node_modules/
 
 # Mr. Pay 가맹점 DB (배포 때 tools/pay/build.py가 만듦, 커밋 안 함)
 pay/data/onnuri/
+
+# 배포 때 tools/data/inbox.py merge가 만드는 정리본(커밋 안 함)
+paymorevent/data/card-terms.json
+paymorevent/data/brand-services.json
