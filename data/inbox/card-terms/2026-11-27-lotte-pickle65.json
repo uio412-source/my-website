@@ -1,0 +1,389 @@
+{
+ "type": "card-terms",
+ "issuer": "롯데카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15590-A15590",
+   "name": "디지로카 Auto",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15590-A15590",
+   "termsUrl": null,
+   "docDate": "2026-07-13",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": null,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "주유 캐시백",
+     "place": "주유",
+     "value": "리터당150원",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "최대 리터당 150원"
+     ]
+    },
+    {
+     "label": "무이자할부",
+     "place": "국내 가맹점",
+     "value": "무이자",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "2~3개월"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15614-A15614",
+   "name": "디지로카 Edu",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15614-A15614",
+   "termsUrl": null,
+   "docDate": "2026-07-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": null,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "교육 캐시백",
+     "place": "학원, 유치원",
+     "value": "7%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "최대 7%"
+     ]
+    },
+    {
+     "label": "무이자할부",
+     "place": "국내 가맹점",
+     "value": "무이자",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "2~3개월"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15608-A15608",
+   "name": "디지로카 Golf",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15608-A15608",
+   "termsUrl": null,
+   "docDate": "2026-07-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": null,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "골프 캐시백",
+     "place": "골프장, 골프연습장",
+     "value": "7%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "최대 7%"
+     ]
+    },
+    {
+     "label": "무이자할부",
+     "place": "국내 가맹점",
+     "value": "무이자",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "2~3개월"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15596-A15596",
+   "name": "디지로카 Pet",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15596-A15596",
+   "termsUrl": null,
+   "docDate": "2026-07-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": null,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "반려동물 캐시백",
+     "place": "반려동물 센터, 동물병원",
+     "value": "7%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "최대 7%"
+     ]
+    },
+    {
+     "label": "무이자할부",
+     "place": "국내 가맹점",
+     "value": "무이자",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "2~3개월"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15602-A15602",
+   "name": "디지로카 Wellness",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15602-A15602",
+   "termsUrl": null,
+   "docDate": "2026-07-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": null,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "웰니스 캐시백",
+     "place": "피부과, 성형외과, 스포츠센터, 미용실",
+     "value": "7%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "최대 7%"
+     ]
+    },
+    {
+     "label": "무이자할부",
+     "place": "국내 가맹점",
+     "value": "무이자",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "2~3개월"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15497-A15497",
+   "name": "라이나생명 보험엔로카",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15497-A15497",
+   "termsUrl": null,
+   "docDate": "2026-08-31",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 700000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "보험료 할인",
+     "place": "라이나생명 보험료",
+     "value": "25,000원",
+     "valueType": "할인",
+     "minimumSpend": 700000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "최대 25,000원, 전월 이용실적 70만원·150만원 구간별 할인 한도"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15630-A15630",
+   "name": "렉스몬드 X DIGILOCA",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15630-A15630",
+   "termsUrl": null,
+   "docDate": "2026-04-24",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": null,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "국내외 할인",
+     "place": "국내외 가맹점",
+     "value": "1.2%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "0.5%~1.2% 할인"
+     ]
+    },
+    {
+     "label": "렉스몬드",
+     "place": "렉스몬드",
+     "value": "60,000원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "6만원 할인 Voucher"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13734-A13734",
+   "name": "롯데백화점 AVENUEL BLACK 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13734-A13734",
+   "termsUrl": null,
+   "docDate": "2026-10-21",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 50000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": null,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "국내외 적립",
+     "place": "국내외 가맹점",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "발렛파킹",
+     "place": "공항 및 특급호텔 발렛파킹",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "공항 라운지",
+     "place": "Priority Pass 카드 제공",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  }
+ ]
+}
