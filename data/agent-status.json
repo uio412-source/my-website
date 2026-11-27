@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T10:49:41+09:00",
+  "generatedAt": "2026-11-27T10:56:44+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -316,13 +316,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T10:49:40+09:00",
+      "updatedAt": "2026-11-27T10:56:42+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 211,
-        "title": "data: 수집 2026-11-27 35차 (신한카드 상품설명서 9종)",
-        "mergedAt": "2026-11-27T01:49:22Z",
-        "mergedAtKST": "2026-11-27 10:49"
+        "number": 213,
+        "title": "data: 수집 2026-11-27 36차 (신한카드 상품설명서 11종)",
+        "mergedAt": "2026-11-27T01:56:27Z",
+        "mergedAtKST": "2026-11-27 10:56"
       },
       "runs": [
         {
@@ -1082,25 +1082,61 @@
             "shinhan-202112220002",
             "shinhan-202304130004"
           ]
+        },
+        {
+          "at": "2026-11-27T10:56:42+09:00",
+          "kind": "card-terms",
+          "pr": 213,
+          "summary": "36차: 신한카드 상품설명서 11종·혜택 35줄",
+          "queueKeys": [
+            "shinhan-202304130005",
+            "shinhan-202402020002",
+            "shinhan-202408300001",
+            "shinhan-202411040001",
+            "shinhan-202407110001",
+            "shinhan-201301300001",
+            "shinhan-201405080001",
+            "shinhan-202409110004",
+            "shinhan-202409110003",
+            "shinhan-202406130001",
+            "shinhan-202401190001"
+          ]
         }
       ],
       "openIssues": 34
     }
   },
   "locks": [],
-  "openPRs": [
-    {
-      "number": 173,
-      "title": "fix(hotels): 아코르 아태 세일 예약 마감 정정",
-      "agent": "ChatGPT",
-      "branch": "ai/chatgpt/fix-accor-meapac-booking-date",
-      "createdAtKST": "2026-11-27 08:46",
-      "area": "1파일 · hotels/ 1",
-      "url": "https://github.com/uio412-source/my-website/pull/173",
-      "draft": false
-    }
-  ],
+  "openPRs": [],
   "recentPRs": [
+    {
+      "number": 213,
+      "title": "data: 수집 2026-11-27 36차 (신한카드 상품설명서 11종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle36",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T01:56:27Z",
+      "mergedAtKST": "2026-11-27 10:56",
+      "createdAt": "2026-11-27T01:52:24Z",
+      "createdAtKST": "2026-11-27 10:52",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/213"
+    },
+    {
+      "number": 212,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #211 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle211",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T01:50:27Z",
+      "mergedAtKST": "2026-11-27 10:50",
+      "createdAt": "2026-11-27T01:49:47Z",
+      "createdAtKST": "2026-11-27 10:49",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/212"
+    },
     {
       "number": 211,
       "title": "data: 수집 2026-11-27 35차 (신한카드 상품설명서 9종)",
@@ -1632,20 +1668,6 @@
       "area": "5파일 · data/ 3 · data/inbox/card-terms 1 · docs/ 1",
       "files": 5,
       "url": "https://github.com/uio412-source/my-website/pull/174"
-    },
-    {
-      "number": 172,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #171 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-pickle171",
-      "state": "MERGED",
-      "mergedAt": "2026-11-26T23:13:08Z",
-      "mergedAtKST": "2026-11-27 08:13",
-      "createdAt": "2026-11-26T23:12:27Z",
-      "createdAtKST": "2026-11-27 08:12",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/172"
     }
   ],
   "queue": {
@@ -1656,8 +1678,8 @@
     },
     "counts": {
       "cards": {
-        "done": 475,
-        "todo": 972,
+        "done": 486,
+        "todo": 961,
         "total": 1447
       },
       "brandPrograms": {

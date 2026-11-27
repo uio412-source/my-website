@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 475,
-   "todo": 972,
+   "done": 486,
+   "todo": 961,
    "total": 1447
   },
   "brandPrograms": {
@@ -10565,7 +10565,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202309260001",
@@ -10587,7 +10587,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202408300001",
@@ -10598,7 +10598,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202411040001",
@@ -10609,7 +10609,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202407110001",
@@ -10620,7 +10620,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01204_visa_platinum_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201301300001",
@@ -10631,7 +10631,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201405080001",
@@ -10642,7 +10642,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202606010001",
@@ -10664,7 +10664,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202409110003",
@@ -10675,7 +10675,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202406130001",
@@ -10686,7 +10686,7 @@
    "termsUrl": "https://www.shinhancard.com/pconts/download/card/PC_26_01197_master_platinum_basic.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202401190001",
@@ -10697,7 +10697,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202504290002",
