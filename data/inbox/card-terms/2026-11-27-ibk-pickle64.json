@@ -1,0 +1,212 @@
+{
+ "type": "card-terms",
+ "issuer": "IBK기업은행",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "ibk-756655",
+   "name": "이지캐시백 카드(체크)",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756655&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-07-25",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본 캐시백",
+     "place": "국내외 전 가맹점 이용금액",
+     "value": "0.2%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 이용금액 30만원 이상, 캐시백 한도 제한 없음"
+     ]
+    },
+    {
+     "label": "타임캐시백",
+     "place": "국내외 전 가맹점 이용금액",
+     "value": "0.6%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 이용금액 30만원 이상"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-927235",
+   "name": "일상의 기쁨(체크)",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=927235&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-05-23",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "영화",
+     "place": "CGV, 롯데시네마, 메가박스",
+     "value": "4,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "현장 및 온라인 예매 시 할인"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-755892",
+   "name": "참! 좋은 kt wiz카드(체크)",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=755892&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-02-28",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 3000
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "kt wiz 입장권",
+     "place": "수원 케이티 위즈파크 입장권",
+     "value": "3,000원",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "카드당 1일 1회, 월 횟수 제한 없음",
+     "conditions": [
+      "전월 실적과 관계없이 당일 최초 승인 건"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-033006",
+   "name": "참! 좋은 글로벌체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=033006&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-07-25",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 3000
+    }
+   ],
+   "brands": [
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "해외 캐시백",
+     "place": "해외 가맹점 이용금액",
+     "value": "1.5%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "1회 승인금액 USD 10 이상 시 캐시백"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-756309",
+   "name": "참! 좋은 다이소카드(체크)",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CheckCardMain.do?gdsno=756309&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-08-12",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "다이소",
+     "place": "다이소 매장(온라인몰 제외)",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 할인한도 있음",
+     "conditions": [
+      "청구할인"
+     ]
+    }
+   ]
+  }
+ ]
+}
