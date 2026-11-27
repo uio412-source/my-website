@@ -1,0 +1,741 @@
+{
+ "type": "card-terms",
+ "issuer": "신한카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "shinhan-201702060001",
+   "queueKey": "shinhan-201702060001",
+   "name": "S-OIL 2UP 화물운전자복지 신한카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188469_2207.html",
+   "termsUrl": null,
+   "docDate": "2021-06-24",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 0
+    },
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Local",
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "유가보조금 지원",
+     "place": "전국 주유소",
+     "value": "유가보조금 자동 지급",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "화물운송사업자 전용",
+      "국토교통부 화물운전자 유가보조금 사업"
+     ]
+    },
+    {
+     "label": "주유 할인",
+     "place": "S-OIL 화물우대주유소",
+     "value": "리터당 최대 100원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "연동형: 전월 이용금액에 따라 최대 100원/ℓ",
+      "고정형: 전월 조건 없이 55원/ℓ"
+     ]
+    },
+    {
+     "label": "타이어 적립",
+     "place": "금호타이어 KTS대리점",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "휴게소 적립",
+     "place": "대보그룹 운영 고속도로 휴게소(주유소 1.5%, 휴게소 0.1%)",
+     "value": "0.1~1.5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202004090003",
+   "queueKey": "shinhan-202004090003",
+   "name": "SKT T라이트 신한카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1196330_2207.html",
+   "termsUrl": null,
+   "docDate": "2020-04-20",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 22000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 25000
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "SKT 라이트할부",
+     "place": "SKT 매장 통신기기 24개월 할부",
+     "value": "연 5.9%",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 2회, 연 5회",
+     "conditions": [
+      "원리금 균등 상환·확정 이자"
+     ]
+    },
+    {
+     "label": "통신요금 할인",
+     "place": "SKT 통신요금(휴대폰·인터넷·TV·집전화) 통합 청구",
+     "value": "5,000~15,000원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "라이트할부 이용 회원: 30만~70만원 1만원, 70만원 이상 1만5천원",
+      "라이트할부 미이용 회원: 월 최대 5천원"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202105030001",
+   "queueKey": "shinhan-202105030001",
+   "name": "Z:IN 인테리어 신한카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1202573_2207.html",
+   "termsUrl": null,
+   "docDate": "2021-04-22",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 22000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 25000
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "장기할부",
+     "place": "Z:IN 가맹 대리점(오프라인) 할부",
+     "value": "연 4.9~6.5%",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "12·24개월 연 4.9%, 36·48·60개월 연 6.5%",
+      "온라인 거래 불가"
+     ]
+    },
+    {
+     "label": "할부 캐시백",
+     "place": "카드 결제계좌",
+     "value": "7,000~15,000원",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": 15000,
+     "capScope": "월",
+     "conditions": [
+      "12·24개월: 전월 50만~70만원 7천원, 70만원 이상 1만원",
+      "36·48·60개월: 전월 70만~100만원 1만3천원, 100만원 이상 1만5천원",
+      "두 할부 모두 이용 시 큰 금액 하나만 적용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202001160004",
+   "queueKey": "shinhan-202001160004",
+   "name": "교직원복지 신한카드 LOVE",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1192499_2207.html",
+   "termsUrl": null,
+   "docDate": "2024-09-11",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 10000
+    },
+    {
+     "brand": "Visa 플래티늄",
+     "amount": 25000
+    },
+    {
+     "brand": "URS",
+     "amount": 8000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "Visa 플래티늄",
+    "URS"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "LG계열 할인",
+     "place": "LG전자 하이프라자·전문점 5%(일 1회·월 2회, 최대 5천원), 뷰티플렉스 10%(최대 1만원)",
+     "value": "5~10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "오프라인 매장만",
+      "뷰티플렉스는 멤버십 가입 시 포인트 10% 적립"
+     ]
+    },
+    {
+     "label": "쇼핑 할인",
+     "place": "현대·롯데·신세계·갤러리아, 이마트·롯데마트·홈플러스, GS홈쇼핑",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "통합할인한도",
+     "conditions": [
+      "2~3개월 무이자 할부 병행"
+     ]
+    },
+    {
+     "label": "주유 할인",
+     "place": "GS칼텍스 주유소",
+     "value": "리터당 60원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "요식·커피 할인",
+     "place": "패밀리레스토랑 20~30%, 스타벅스 20%",
+     "value": "20~30%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "영화 할인",
+     "place": "CGV·메가박스",
+     "value": "7,000원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "테마파크 할인",
+     "place": "에버랜드·캐리비안베이·롯데월드·서울랜드",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202002130001",
+   "queueKey": "shinhan-202002130001",
+   "name": "국민내일배움 신한카드 Simple",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1195348_2207.html",
+   "termsUrl": null,
+   "docDate": "2023-03-24",
+   "annualFee": [
+    {
+     "brand": "URS",
+     "amount": 5000
+    }
+   ],
+   "brands": [
+    "URS"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "잔돈 할인(Coin-Save)",
+     "place": "편의점·할인점·슈퍼마켓·병원·약국·주요 커피·베이커리",
+     "value": "1,000원 미만 잔돈",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 10회",
+     "conditions": [
+      "건당 2만원 이상 결제 시",
+      "캐시백보다 우선 적용"
+     ]
+    },
+    {
+     "label": "캐시백",
+     "place": "전 가맹점",
+     "value": "0.5%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "이동통신요금 자동이체 추가 0.5%"
+     ]
+    },
+    {
+     "label": "무이자 할부",
+     "place": "전 가맹점",
+     "value": "2~3개월 무이자",
+     "valueType": "면제",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "5만원 이상 결제 시"
+     ]
+    },
+    {
+     "label": "영화 할인",
+     "place": "CGV·메가박스 온라인 예매",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "테마파크 할인",
+     "place": "서울랜드",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201308020001",
+   "queueKey": "shinhan-201308020001",
+   "name": "국세청 신한카드 Lady",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188403_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-08-07",
+   "annualFee": [
+    {
+     "brand": "URS",
+     "amount": 7000
+    }
+   ],
+   "brands": [
+    "URS"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "쇼핑 할인",
+     "place": "롯데·현대·신세계 백화점, 롯데마트(온라인 제외)",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": 5000,
+     "capScope": "건",
+     "limits": "제휴사 통합 월 2회"
+    },
+    {
+     "label": "오아시스마켓 할인",
+     "place": "오아시스마켓 온라인몰",
+     "value": "3%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 1회"
+    },
+    {
+     "label": "주유 적립",
+     "place": "S-OIL 주유소",
+     "value": "리터당 60포인트",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "마이신한포인트 적립",
+      "LPG 제외"
+     ]
+    },
+    {
+     "label": "식음료 할인",
+     "place": "빕스·투썸플레이스 20%, 아웃백·서가앤쿡 20%, 롯데호텔 식음료 10%·객실 30%",
+     "value": "10~30%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "생활 할인",
+     "place": "CGV·메가박스, 이동통신요금 2%",
+     "value": "2%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "테마파크 할인",
+     "place": "롯데월드·서울랜드·에버랜드·캐리비안베이",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202406240001",
+   "queueKey": "shinhan-202406240001",
+   "name": "네스프레소 신한카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1228268_2207.html",
+   "termsUrl": null,
+   "docDate": "2026-01-12",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 15000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 18000
+    }
+   ],
+   "brands": [
+    "Local",
+    "Mastercard"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "네스프레소 할인",
+     "place": "네스프레소 부티크 매장·Nespresso.com",
+     "value": "5~15%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 1회",
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 7000
+      },
+      {
+       "spend": 800000,
+       "cap": 15000
+      },
+      {
+       "spend": 1200000,
+       "cap": 20000
+      }
+     ],
+     "conditions": [
+      "할인 전 이용금액 5만원 이상",
+      "전월 생활서비스 10만원 이상 이용 시 5%p 추가(최대 20%)"
+     ]
+    },
+    {
+     "label": "생활서비스 할인",
+     "place": "오픈마켓·홈쇼핑·백화점·편의점·잡화·배달앱·온라인 서점",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": "생활서비스 통합할인한도",
+     "conditions": [
+      "백화점은 네스프레소 할인 우선 적용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202006100002",
+   "queueKey": "shinhan-202006100002",
+   "name": "네이버페이 라인프렌즈 신한카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1196945_2207.html",
+   "termsUrl": null,
+   "docDate": "2020-05-22",
+   "annualFee": [
+    {
+     "brand": "Local",
+     "amount": 7000
+    },
+    {
+     "brand": "Visa",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "Local",
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "네이버 적립",
+     "place": "네이버 쇼핑·디지털콘텐츠·네이버페이 온라인 가맹점",
+     "value": "2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 실적조건·적립한도 없음",
+      "URL에 NAVER.COM이 포함된 가맹점만"
+     ]
+    },
+    {
+     "label": "일반 적립",
+     "place": "네이버 외 가맹점",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201802280001",
+   "queueKey": "shinhan-201802280001",
+   "name": "노란우산 신한카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188471_2207.html",
+   "termsUrl": null,
+   "docDate": "2020-02-24",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 15000
+    },
+    {
+     "brand": "UnionPay",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "UnionPay"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "사업경비 적립",
+     "place": "할인점·전자상거래·이동통신 등 사업성 경비 가맹점",
+     "value": "1.0~5.0%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": 50000,
+     "capScope": "월",
+     "conditions": [
+      "전월 50만원 미만 1%, 50만~100만원 2%, 100만~150만원 3.5%, 150만원 이상 5%",
+      "사업경비+일반 적립 합산 월 5만 포인트 한도"
+     ]
+    },
+    {
+     "label": "일반 적립",
+     "place": "사업경비 제외 모든 가맹점",
+     "value": "0.15%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": 5000,
+     "capScope": "월"
+    },
+    {
+     "label": "가맹점주 보너스",
+     "place": "가맹점대금 입금계좌를 신한은행으로 지정",
+     "value": "적립 포인트 10%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "월 적립(A+B)의 10% 추가, 총 한도 5만5천 포인트"
+     ]
+    },
+    {
+     "label": "생활 할인",
+     "place": "병원·약국 5%, 대중교통 5%, 전 주유소 리터당 50원",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "주유는 LPG 제외"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201308020002",
+   "queueKey": "shinhan-201308020002",
+   "name": "국세청 신한카드 GS칼텍스 Shine",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188401_2207.html",
+   "termsUrl": null,
+   "docDate": "2025-08-28",
+   "annualFee": [
+    {
+     "brand": "URS",
+     "amount": 7000
+    }
+   ],
+   "brands": [
+    "URS"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "주유 할인",
+     "place": "GS칼텍스 주유소(LPG 제외)",
+     "value": "리터당 60~100원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 20만~30만원 60원, 30만~50만원 70원, 50만~70만원 80원, 70만~100만원 90원, 100만원 이상 100원",
+      "1회 최대 15만원, 월 최대 30만원까지 할인"
+     ]
+    },
+    {
+     "label": "대중교통 할인",
+     "place": "후불교통카드 이용 대중교통",
+     "value": "3~7%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "테마파크 할인",
+     "place": "롯데월드·서울랜드·에버랜드·캐리비안베이 입장권·자유이용권",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "영화·뷰티·스포츠 할인",
+     "place": "CGV·메가박스, 뷰티, 프로야구·프로농구",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "추가 할인",
+     "place": "학원비·교육비 5~10%, 전국 병원·약국 5%, 3대 백화점·3대 마트·점심식사 5%",
+     "value": "5~10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  }
+ ]
+}
