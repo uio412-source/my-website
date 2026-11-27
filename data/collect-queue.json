@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 760,
-   "todo": 687,
+   "done": 767,
+   "todo": 680,
    "total": 1447
   },
   "brandPrograms": {
@@ -1094,7 +1094,7 @@
    "termsUrl": null,
    "lastVerified": "2026-11-25",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90010058",
@@ -2260,7 +2260,7 @@
    "termsUrl": null,
    "lastVerified": "2026-11-25",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "mg-15486",
@@ -2271,7 +2271,7 @@
    "termsUrl": null,
    "lastVerified": "2026-11-25",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "mg-15066",
@@ -2282,7 +2282,7 @@
    "termsUrl": null,
    "lastVerified": "2026-11-25",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "mg-15822",
@@ -11621,7 +11621,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "internet-8",
@@ -11643,7 +11643,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "internet-11",
@@ -11665,7 +11665,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "internet-5",

@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 03:04 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 05:04 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,7 @@ _자동 생성 2026-11-28 03:04 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#276](https://github.com/uio412-source/my-website/pull/276) | Pickle | docs: 공용 현황판 갱신 (2026-11-28 Pickle · 현대카드 안내문 경로 기록) | 2026-11-28 03:04 | 3파일 · data/ 2 · docs/ 1 | 머지 |
 | [#275](https://github.com/uio412-source/my-website/pull/275) | Pickle | docs: 공용 현황판 갱신 (2026-11-28 Pickle 카드명 정정 반영) | 2026-11-28 02:55 | 3파일 · data/ 2 · docs/ 1 | 머지 |
 | [#274](https://github.com/uio412-source/my-website/pull/274) | Pickle | data: 수집 2026-11-28 3차 (SC제일은행 ZERO Edition3 카드명 정정) | 2026-11-28 02:54 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#273](https://github.com/uio412-source/my-website/pull/273) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-28 Pickle 1차 반영) | 2026-11-28 02:50 | 4파일 · data/ 3 · docs/ 1 | 머지 |
@@ -59,7 +60,6 @@ _자동 생성 2026-11-28 03:04 KST · `python tools/data/agent_sync.py` · 기�
 | [#254](https://github.com/uio412-source/my-website/pull/254) | Pickle | data: 수집 2026-11-27 61차 (IBK기업은행 5종) | 2026-11-27 23:26 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#253](https://github.com/uio412-source/my-website/pull/253) | Pickle | data: 수집 2026-11-27 60차 (IBK기업은행 6종) | 2026-11-27 23:22 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#252](https://github.com/uio412-source/my-website/pull/252) | Pickle | data: 수집 2026-11-27 59차 (IBK기업은행 7종) | 2026-11-27 23:18 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#251](https://github.com/uio412-source/my-website/pull/251) | Pickle | data: 수집 2026-11-27 58차 (현대카드 the Red·제휴 9종) | 2026-11-27 23:12 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -78,7 +78,7 @@ _열린 PR이 없습니다._
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 687 / 1447종 · **브랜드 프로그램** todo 48 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **남은 카드** 680 / 1447종 · **브랜드 프로그램** todo 48 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
 - **최근 수집일** — card-terms 2026-11-28 · brand-services 2026-11-28 · card-events 2026-11-27 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
@@ -86,15 +86,36 @@ _열린 PR이 없습니다._
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
-| Claude | `data/agent-notes/claude.json` | #239 data: 수집 2026-11-27 4차 (Claude · … | 2026-11-27 22:26 | 14건 |
-| Pickle | `data/agent-notes/pickle.json` | #275 docs: 공용 현황판 갱신 (2026-11-28 Pickl… | 2026-11-28 02:55 | 56건 |
+| Claude | `data/agent-notes/claude.json` | #239 data: 수집 2026-11-27 4차 (Claude · … | 2026-11-27 22:26 | 22건 |
+| Pickle | `data/agent-notes/pickle.json` | #276 docs: 공용 현황판 갱신 (2026-11-28 Pickl… | 2026-11-28 03:04 | 56건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 63건
+### 다시 볼 것 (open) — 70건
 
+- **2026-11-28 · Claude · MG새마을금고 체크카드 9종(mg-104566·100754·100133·103827·104064·101353·105023·101488·102341)**
+  - 사유: mgcheck.kfcc.co.kr·www.kfcc.co.kr 모두 WebFetch robots.txt 읽기 실패(ROBOTS_UNREACHABLE)
+  - 재시도: 브라우저로 mgcheck.kfcc.co.kr 카드 안내·설명서자료실(www.kfcc.co.kr/customer/cus0703_01.do) 확인
+- **2026-11-28 · Claude · hana-8554 #tag1카드 Navy (남은 하나 12종: 8552·10120·2572·8321·9912·9525·11747·4985·5230·4987·9608·5545도 같을 가능성 큼)**
+  - 사유: 여신금융협회 심의필 2018-04-16 + 준법심의 2026-06-23 — 11-27 기록과 같은 기준일 문제(HJ 확인 대기)
+  - 재시도: HJ가 준법심의 날짜를 기준일로 인정하면 검색 결과 주소 m.hanacard.co.kr/MKCDCMN1000M.web?CD_PD_SEQ=… 에서 옮기기
+- **2026-11-28 · Claude · internet-8 케이뱅크 ONE 체크카드(K-패스)**
+  - 사유: 상품안내에 '별도 제공되는 부가서비스는 없습니다' — 혜택이 시즌 캐시백 이벤트뿐이라 상품설명서 혜택 표가 없음. 상품설명서 링크는 #none
+  - 재시도: 시즌 혜택은 card-events로, 상품설명서 PDF는 브라우저로 확인
+- **2026-11-28 · Claude · internet-9 케이뱅크 플러스 체크카드 '생활 필수 영역 3% 특별 캐시백(최대 3만원)'**
+  - 사유: 페이지에 기간·월 한도·실적 조건이 안 적혀 있어 상시 혜택인지 확정 못 함 — 0.3%·ATM만 옮김
+  - 재시도: 플러스 체크카드 상품설명서(#none 링크, 브라우저로 받기)에서 3% 조건 확인 후 다시 수집
+- **2026-11-28 · Claude · mg-15822 MG+ 트래블로그 하나카드**
+  - 사유: 하나카드 공식 페이지가 검색에 안 나옴(뉴스·비교 사이트뿐). MGINTROM 18096·18338·18339·18590·18682는 Primo·BLACK·Blue·S·W
+  - 재시도: 하나카드 MGINTROM.web?CD_PD_SEQ=… 중 트래블로그 번호를 브라우저로 찾기
+- **2026-11-28 · Claude · 신협 cu-* 체크카드 12종(어부바·K-패스·CUbig 등)**
+  - 사유: cu.co.kr 상세가 http↔https 302를 계속 돌아 WebFetch로 본문을 못 받음(2회 실패), 안내장 fileDownload 링크도 못 얻음
+  - 재시도: 브라우저가 있는 에이전트가 상세의 안내장(fileDownload.do?fileKey=…) PDF 받기
+- **2026-11-28 · Claude · 토스뱅크 internet-3·4·5·6 · 카카오뱅크 internet-0·1·2 · 우체국 post-* 12종 · 경남은행 kn-***
+  - 사유: 토스뱅크는 혜택이 접힌 영역이라 HTML에 본문 없음, kakaobank.com·www.knbank.co.kr은 robots.txt 읽기 실패, 우체국 금융상품몰 상세는 JS 껍데기만(상품명도 없음)
+  - 재시도: 브라우저가 있는 에이전트가 맡기
 - **2026-11-28 · Pickle · KB국민카드 남은 50종 상품설명서**
   - 사유: 후보 12종 PDF 확인 결과 6종은 이미지 PDF(텍스트 2~1,043자), 나머지는 심의필 2020~2024년판뿐
   - 재시도: 심의필 2025~2026년판이 올라오면 img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf 교체
@@ -286,8 +307,11 @@ _열린 PR이 없습니다._
   - 사유: ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)
   - 재시도: check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기
 
-### 다른 경로로 처리 (workaround) — 7건
+### 다른 경로로 처리 (workaround) — 8건
 
+- **2026-11-28 · Claude · Claude 예약 실행 WebFetch — 대기열·카드 DB에 적힌 주소 직접 열기**
+  - 사유: 레포 파일에서 읽은 주소는 출처 확인 권한 요청이 떠서 무인 실행에선 '시간 초과'로 실패(하나 13건, 사이트에 닿지도 않음)
+  - 대신 이렇게: WebSearch(allowed_domains=카드사 도메인)로 같은 카드 페이지를 찾은 뒤 검색 결과 주소로 열기 — 하나는 MKCDCMN1000M·MGINTROM·leaflet PDF 주소가 검색에 나옴
 - **2026-11-28 · Pickle · NH농협카드 VISA Platinum·VISA Signature·Mastercard Platinum 브랜드서비스**
   - 사유: 안내문(VISA_Platinum_251001.pdf·VISA_Signature_251001.pdf·Mastercard_Platinum_251001.pdf)은 확보했으나 '국내 호텔 발레파킹' 대상 호텔 목록이 안내문에 없어 hotel_valet 필수 항목을 채울 수 없음
   - 대신 이렇게: 카드 상세·상품설명서에서 대상 호텔 목록을 확인한 뒤 수집
