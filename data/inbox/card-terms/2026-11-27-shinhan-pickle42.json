@@ -1,0 +1,288 @@
+{
+ "type": "card-terms",
+ "issuer": "신한카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "shinhan-202007270001",
+   "queueKey": "shinhan-202007270001",
+   "name": "신한카드 치과위생사협회 빅플러스 GS칼텍스",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1197429_2207.html",
+   "termsUrl": null,
+   "docDate": "2017-04-20",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 7000
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "주유 적립",
+     "place": "GS칼텍스 주유소",
+     "value": "리터당 80포인트",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "GS&Point",
+     "place": "GS칼텍스",
+     "value": "보너스 포인트 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "테마파크 할인",
+     "place": "서울랜드·롯데월드",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "영화 할인",
+     "place": "CGV·메가박스 온라인 예매",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-201507270002",
+   "queueKey": "shinhan-201507270002",
+   "name": "S.Sing 씽화물복지 신한카드 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1188367_2206.html",
+   "termsUrl": null,
+   "docDate": "2021-07-07",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "유가보조금 지원",
+     "place": "전국 주유소",
+     "value": "자동 지급",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "화물자동차 유가보조금"
+     ]
+    },
+    {
+     "label": "주유 할인",
+     "place": "HD현대오일뱅크·GS칼텍스 화물 특화주유소",
+     "value": "리터당 최대 70원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202104070001",
+   "queueKey": "shinhan-202104070001",
+   "name": "개인택시운송사업자 신한카드 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1202025_2206.html",
+   "termsUrl": null,
+   "docDate": "2025-07-23",
+   "annualFee": [
+    {
+     "brand": "Visa Silver",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa Silver"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본서비스",
+     "place": "유류 구매",
+     "value": "유가보조금·유류세 면세",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "제휴서비스",
+     "place": "SK충전소",
+     "value": "OK캐쉬백 1%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "추가 적립",
+     "place": "SK충전소 외 주유소·일반가맹점",
+     "value": "0.3~0.5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "마이신한포인트"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-199902110078",
+   "queueKey": "shinhan-199902110078",
+   "name": "공무원연금복지 신한카드 S-Choice (선택형) 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1195594_2206.html",
+   "termsUrl": null,
+   "docDate": "2020-04-10",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "선택형 할인(교통)",
+     "place": "버스·지하철·택시",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "선택형 할인(커피)",
+     "place": "모든 커피 전문점",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "선택형 할인(쇼핑)",
+     "place": "4대 백화점, 3대 할인점",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": "shinhan-202511280001",
+   "queueKey": "shinhan-202511280001",
+   "name": "신한카드 나라사랑카드 체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/check/1236922_2206.html",
+   "termsUrl": null,
+   "docDate": "2026-09-28",
+   "annualFee": [
+    {
+     "brand": "Visa 플래티늄",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "Visa 플래티늄"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "군마트 캐시백",
+     "place": "군마트(P.X.)",
+     "value": "최대 50%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "군 시설 캐시백",
+     "place": "군 체력단련장·군 휴양시설",
+     "value": "20%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "경조사 지원",
+     "place": "현역병 복무 중",
+     "value": "지원",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "대중교통 캐시백",
+     "place": "시내버스·지하철 20%, 광역교통",
+     "value": "20%",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  }
+ ]
+}
