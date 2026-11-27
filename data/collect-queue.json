@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 456,
-   "todo": 991,
+   "done": 466,
+   "todo": 981,
    "total": 1447
   },
   "brandPrograms": {
@@ -10257,7 +10257,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202603110003",
@@ -10279,7 +10279,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201802220002",
@@ -10290,7 +10290,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202608270001",
@@ -10323,7 +10323,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-202201070002",
@@ -10334,7 +10334,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201804090002",
@@ -10345,7 +10345,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-199902110017",
@@ -10356,7 +10356,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201811090001",
@@ -10367,7 +10367,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201306050002",
@@ -10378,7 +10378,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201904080001",
@@ -10389,7 +10389,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201808230001",
