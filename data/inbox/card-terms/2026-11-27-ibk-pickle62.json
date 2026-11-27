@@ -1,0 +1,204 @@
+{
+ "type": "card-terms",
+ "issuer": "IBK기업은행",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "ibk-755847",
+   "name": "Olleh Super DC카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=755847&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2026-03-13",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "kt 통신요금",
+     "place": "kt 통신요금 자동이체",
+     "value": "15,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 1회",
+     "conditions": [
+      "최대 1만 5천원 청구할인, 전월 이용금액 구간별 차등"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-757777",
+   "name": "데일리위드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=757777&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-08-08",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본캐시백",
+     "place": "6대 생활영역 이용금액",
+     "value": "1%",
+     "valueType": "캐시백",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "캐시백 한도 제한없음",
+      "주유 이용금액은 월 50만원까지 인정"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-756176",
+   "name": "용인시민카드(신용)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=756176&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-03-06",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 5000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "놀이공원",
+     "place": "에버랜드, 캐리비안베이, 한국민속촌",
+     "value": "60%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "통합 월 2회(150만원 이상)",
+     "conditions": [
+      "50~60% 할인, 용인시 주요 놀이공원"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-927222",
+   "name": "일상의 기쁨(신용)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=927222&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-08-21",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 12000
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "주유",
+     "place": "전 주유소(LPG 포함)",
+     "value": "리터당60원",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "통합 1일 1회, 월 2회",
+     "conditions": [
+      "회당 주유금액 10만원 한도",
+      "SK에너지 고시 휘발유가 환산"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "ibk-755889",
+   "name": "참! 좋은 kt wiz카드(신용)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.bccard.com/app/card/CreditCardMain.do?gdsno=755889&mbkNo=003",
+   "termsUrl": null,
+   "docDate": "2025-03-05",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 5000
+    }
+   ],
+   "brands": [
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "kt wiz 입장권",
+     "place": "수원 케이티 위즈파크 입장권",
+     "value": "3,000원",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "카드당 1일 1회 1매, 월 횟수 제한 없음",
+     "conditions": [
+      "전월 실적과 관계없이 할인"
+     ]
+    }
+   ]
+  }
+ ]
+}
