@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T10:30:27+09:00",
+  "generatedAt": "2026-11-27T10:31:56+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -316,13 +316,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T10:23:51+09:00",
+      "updatedAt": "2026-11-27T10:30:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 204,
-        "title": "data: 수집 2026-11-27 32차 (신한카드 상품설명서 10종)",
-        "mergedAt": "2026-11-27T01:29:35Z",
-        "mergedAtKST": "2026-11-27 10:29"
+        "number": 206,
+        "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #204 반영)",
+        "mergedAt": "2026-11-27T01:30:49Z",
+        "mergedAtKST": "2026-11-27 10:30"
       },
       "runs": [
         {
@@ -1011,6 +1011,24 @@
             "shinhan-202102220003",
             "shinhan-202307050001"
           ]
+        },
+        {
+          "at": "2026-11-27T10:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 204,
+          "summary": "32차: 신한카드 상품설명서 10종·혜택 33줄",
+          "queueKeys": [
+            "shinhan-202102250002",
+            "shinhan-201510270001",
+            "shinhan-202003310001",
+            "shinhan-202010130001",
+            "shinhan-202107290001",
+            "shinhan-202402160001",
+            "shinhan-202103120002",
+            "shinhan-202103120001",
+            "shinhan-202109170001",
+            "shinhan-202205170001"
+          ]
         }
       ],
       "openIssues": 33
@@ -1018,16 +1036,6 @@
   },
   "locks": [],
   "openPRs": [
-    {
-      "number": 206,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #204 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-pickle204",
-      "createdAtKST": "2026-11-27 10:30",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "url": "https://github.com/uio412-source/my-website/pull/206",
-      "draft": false
-    },
     {
       "number": 205,
       "title": "pay: 매일 확인 2026-11-27 — 아브뉴프랑 판교 20% 배너, 교촌치킨·아트앤하트 추가",
@@ -1050,6 +1058,20 @@
     }
   ],
   "recentPRs": [
+    {
+      "number": 206,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #204 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle204",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T01:30:49Z",
+      "mergedAtKST": "2026-11-27 10:30",
+      "createdAt": "2026-11-27T01:30:08Z",
+      "createdAtKST": "2026-11-27 10:30",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/206"
+    },
     {
       "number": 204,
       "title": "data: 수집 2026-11-27 32차 (신한카드 상품설명서 10종)",
@@ -1577,8 +1599,8 @@
     },
     "counts": {
       "cards": {
-        "done": 436,
-        "todo": 1011,
+        "done": 446,
+        "todo": 1001,
         "total": 1447
       },
       "brandPrograms": {
