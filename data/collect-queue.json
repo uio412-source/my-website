@@ -1,5 +1,5 @@
 {
- "built": "2026-11-27",
+ "built": "2026-11-28",
  "how": "status가 todo인 것부터 위에서 아래로. 시작 전에 이 파일·data/inbox/·열린 PR(gh pr list --state open)을 함께 보고 겹치지 않는 항목만 고릅니다(docs/data-update.md 9장 조율 규칙). 수집 파일에 queueKey로 key를 적으면 다음에 done이 됩니다(이 파일은 python tools/data/queue.py로 다시 만듦).",
  "lastCollected": {
   "card-terms": "2026-11-27",
@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 639,
-   "todo": 808,
+   "done": 753,
+   "todo": 694,
    "total": 1447
   },
   "brandPrograms": {
@@ -78,7 +78,7 @@
    "type": "card-events",
    "name": "롯데카드",
    "url": "https://www.lottecard.co.kr/app/LPBNFDA_V100.lc",
-   "lastCollected": "2026-11-24"
+   "lastCollected": "2026-11-27"
   },
   {
    "key": "card-events:NH농협카드",
@@ -1050,7 +1050,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-103038",
@@ -1061,7 +1061,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-225018",
@@ -1072,7 +1072,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-225021",
@@ -1809,7 +1809,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03218",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-trsce6",
@@ -1820,7 +1820,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03301",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-trscste2",
@@ -1831,7 +1831,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03299",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-tge4",
@@ -1974,7 +1974,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-104561",
@@ -1985,7 +1985,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-033103",
@@ -1996,7 +1996,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-034721",
@@ -2007,7 +2007,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-102475",
@@ -2018,7 +2018,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-103401",
@@ -2029,7 +2029,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-103118",
@@ -2051,7 +2051,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-103214",
@@ -2062,7 +2062,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-929505",
@@ -2128,7 +2128,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-756545",
@@ -2161,7 +2161,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-756176",
@@ -2172,7 +2172,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-927248",
@@ -2194,7 +2194,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-755889",
@@ -2205,7 +2205,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-756299",
@@ -2216,7 +2216,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-756532",
@@ -2238,7 +2238,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-737263",
@@ -4064,7 +4064,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15614-A15614",
@@ -4075,7 +4075,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15608-A15608",
@@ -4086,7 +4086,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15584-A15584",
@@ -4141,7 +4141,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15602-A15602",
@@ -4152,7 +4152,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15497-A15497",
@@ -4163,7 +4163,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15630-A15630",
@@ -4174,7 +4174,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13473-A13473",
@@ -4251,7 +4251,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13738-A13738",
@@ -4262,7 +4262,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13742-A13742",
@@ -4273,7 +4273,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13765-A13765",
@@ -4284,7 +4284,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15815-A15815",
@@ -4295,7 +4295,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P11714-A11714",
@@ -4339,7 +4339,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13248-A13248",
@@ -4449,7 +4449,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P12444-A12444",
@@ -4504,7 +4504,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13984-A13984",
@@ -4548,7 +4548,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P11280-A11280",
@@ -4570,7 +4570,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P14426-A14426",
@@ -4581,7 +4581,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P14251-A14251",
@@ -7529,7 +7529,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-103947",
@@ -7551,7 +7551,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-103814",
@@ -7562,7 +7562,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-104084",
@@ -7573,7 +7573,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-104050",
@@ -7584,7 +7584,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-038357",
@@ -7628,7 +7628,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-103828",
@@ -7650,7 +7650,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-101642",
@@ -7661,7 +7661,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-756189",
@@ -7672,7 +7672,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-756655",
@@ -7683,7 +7683,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-927235",
@@ -7694,7 +7694,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-755892",
@@ -7705,7 +7705,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-033006",
@@ -7716,7 +7716,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-756309",
@@ -7727,7 +7727,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "ibk-756066",
@@ -7749,7 +7749,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04444",
@@ -12270,7 +12270,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03477",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-nxtrhc",
@@ -12281,7 +12281,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03481",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-bdfrhc",
@@ -12292,7 +12292,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03473",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-crmhc",
@@ -12303,7 +12303,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03475",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-schc",
@@ -12325,7 +12325,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03433",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-hcd",
@@ -12336,7 +12336,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03354",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-ald",
@@ -12347,7 +12347,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03464",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-hch",
@@ -12358,7 +12358,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03356",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-hco",
@@ -12369,7 +12369,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03352",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-alp",
@@ -12380,7 +12380,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03435",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-alr",
@@ -12391,7 +12391,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03437",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-hcs",
@@ -12402,7 +12402,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03350",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-als",
@@ -12413,7 +12413,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03466",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-hct",
@@ -12424,7 +12424,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03358",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-alt",
@@ -12435,7 +12435,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03468",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-gephc",
@@ -12446,7 +12446,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03370",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-olvye2",
@@ -12457,7 +12457,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03424",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-emte3m",
@@ -12468,7 +12468,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03293",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-emte3s",
@@ -12479,7 +12479,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03294",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-chhhc",
@@ -12490,7 +12490,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03418",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-smekkob",
@@ -12501,7 +12501,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03205",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-smecn",
@@ -12512,7 +12512,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03343",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-smekbnk",
@@ -12523,7 +12523,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03470",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-zkoe2",
@@ -12534,7 +12534,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03448",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-zkfe2",
@@ -12545,7 +12545,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03444",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-zkwe2",
@@ -12556,7 +12556,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03446",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-cwyhc",
@@ -12567,7 +12567,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03412",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-cckhc",
@@ -12578,7 +12578,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03416",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-slmb",
@@ -12589,7 +12589,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03367",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-slhc",
@@ -12600,7 +12600,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03040",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-btcp",
@@ -12611,7 +12611,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03316",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-btst",
@@ -12622,7 +12622,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03318",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-btvv",
@@ -12633,7 +12633,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03320",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-btmce",
@@ -12644,7 +12644,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03322",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-xcut",
@@ -12655,7 +12655,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03333",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-xsav",
@@ -12666,7 +12666,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03332",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mzrup",
@@ -12677,7 +12677,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03431",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-me4",
@@ -12732,7 +12732,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03227",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mmbfb",
@@ -12743,7 +12743,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03221",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mmbrt",
@@ -12754,7 +12754,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03224",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-xmbes",
@@ -12765,7 +12765,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03237",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-xmbfb",
@@ -12776,7 +12776,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03231",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-xmbrt",
@@ -12787,7 +12787,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03234",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mbmzro",
@@ -12798,7 +12798,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03241",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mbmzrup",
@@ -12809,7 +12809,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03454",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-xpe4",
@@ -12831,7 +12831,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03360",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-zfe2",
@@ -12864,7 +12864,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03171",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mzroe3",
@@ -12886,7 +12886,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03479",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mhmfi",
@@ -12897,7 +12897,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03362",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09139",
@@ -13018,7 +13018,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03282",
    "lastVerified": "2026-10-05",
    "priority": 55,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-trste2",
@@ -13029,7 +13029,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03278",
    "lastVerified": "2026-10-05",
    "priority": 55,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-kale2t2",
@@ -13062,7 +13062,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03212",
    "lastVerified": "2026-10-05",
    "priority": 55,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "bc-102095",
@@ -13095,7 +13095,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09322",
@@ -14591,7 +14591,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03071",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-xcsc",
@@ -14602,7 +14602,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03072",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-yshc",
@@ -15262,7 +15262,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03442",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-nxnx",
@@ -15295,7 +15295,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03426",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-cstce2",
@@ -15306,7 +15306,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03167",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-hdshe2",
@@ -15317,7 +15317,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03368",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-02212",
@@ -15636,7 +15636,7 @@
    "termsUrl": "https://image.lottecard.co.kr/webapp/file/AMERICANEXPRESS_PLATINUM_03_260514.pdf",
    "lastVerified": "2026-10-05",
    "priority": 15,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "samsung-aap1802",

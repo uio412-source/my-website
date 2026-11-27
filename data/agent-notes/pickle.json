@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-27T22:40:39+09:00",
+ "updatedAt": "2026-11-28T00:32:31+09:00",
  "lock": null,
  "runs": [
   {
@@ -1030,6 +1030,195 @@
     "hyundai-mskte3",
     "hyundai-mimb"
    ]
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 244,
+   "summary": "현대카드 상품설명서 6종(렌탈·알파벳)",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 245,
+   "summary": "현대카드 알파벳카드 8종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 246,
+   "summary": "현대카드 제휴 6종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 247,
+   "summary": "현대카드 BUSINESS·케이뱅크Z·렌탈 9종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 248,
+   "summary": "현대카드 Boutique·X 8종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 249,
+   "summary": "현대카드 ZERO·MY BUSINESS 9종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 250,
+   "summary": "현대카드 GOLD·SC the Red 등 7종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 251,
+   "summary": "현대카드 the Red·제휴 9종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 252,
+   "summary": "IBK기업은행 7종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 253,
+   "summary": "IBK기업은행 6종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 254,
+   "summary": "IBK기업은행 5종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 255,
+   "summary": "IBK기업은행 제휴·지역 5종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 256,
+   "summary": "IBK기업은행 제휴·지역 7종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 257,
+   "summary": "IBK기업은행 체크 5종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 258,
+   "summary": "롯데카드 디지로카·제휴 8종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 259,
+   "summary": "롯데카드 AVENUEL·제휴 8종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-terms",
+   "pr": 261,
+   "summary": "롯데카드 4종(트래블월렛·하나은행·한샘·LOCA Biz+)",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-events",
+   "pr": 260,
+   "summary": "하나카드 이벤트 14건",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-events",
+   "pr": 262,
+   "summary": "롯데카드 이벤트 10건",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-events",
+   "pr": 263,
+   "summary": "NH농협카드 이벤트 9건",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-events",
+   "pr": 264,
+   "summary": "KB국민카드 이벤트 20건(1~2페이지)",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-events",
+   "pr": 265,
+   "summary": "KB국민카드 이벤트 21건(3~4페이지)",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-events",
+   "pr": 266,
+   "summary": "KB국민카드 이벤트 20건(5~6페이지)",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-events",
+   "pr": 267,
+   "summary": "KB국민카드 이벤트 22건(7~8페이지)",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-events",
+   "pr": 268,
+   "summary": "KB국민카드 이벤트 10건(9페이지)",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-events",
+   "pr": 269,
+   "summary": "KB국민카드 이벤트 11건(10페이지)",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T00:32:31+09:00",
+   "kind": "card-events",
+   "pr": 270,
+   "summary": "현대카드 이벤트 22건",
+   "queueKeys": []
   }
  ],
  "skipped": [
@@ -1323,6 +1512,76 @@
    "status": "open",
    "reason": "혜택 1줄뿐",
    "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "lotte 나머지 65종 상세 혜택 탭",
+   "status": "open",
+   "reason": "혜택 표가 탭 클릭 뒤 스크립트로 그려져 정적 HTML에 없음(요약 문구만 노출)",
+   "retry": "브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "우리카드 97종·하나카드 81종 상세",
+   "status": "open",
+   "reason": "카드 상세가 JS로 그려져 상품설명서 표를 정적으로 받을 수 없음",
+   "retry": "브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "삼성카드 140종",
+   "status": "open",
+   "reason": "카드 상세 SPA·딥링크가 홈으로 리다이렉트, static11 PDF 파일명 추측 모두 404",
+   "retry": "브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "KB 남은 상품설명서",
+   "status": "open",
+   "reason": "심의필이 2024년 이전인 판본뿐이라 '올해·작년 문서' 규칙 밖",
+   "retry": "브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "BC카드 4종",
+   "status": "open",
+   "reason": "KaPick·그린카드 상세에 혜택 표 없음, 후불하이패스 2종은 2023년 심의필",
+   "retry": "브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "신한카드 3종",
+   "status": "open",
+   "reason": "PREMIER GOLD는 혜택 표 없음, 국민행복 2종은 국가바우처 전용",
+   "retry": "브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "브랜드서비스 안내서(하나 leaflet·롯데 select_service)",
+   "status": "open",
+   "reason": "디렉터리 목록이 없고 등급별 파일명·날짜를 알 수 없어 404(2026-02-09·260514 판본 확인)",
+   "retry": "브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "카드사 이벤트(삼성·현대 모바일·BC 페이북·신한)",
+   "status": "open",
+   "reason": "목록이 ajax/앱 전용으로 정적 수집 불가(브라우저 렌더로 하나·롯데·NH·KB·현대만 확보)",
+   "retry": "브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "호텔 이벤트(Marriott·Hilton·IHG·Accor)",
+   "status": "open",
+   "reason": "공식 프로모션 페이지가 여행지 소개만 노출하고 날짜·조건이 없거나 403",
+   "retry": "브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "현대카드 AMEX 3종(ampte2·amgle2·amgre2) card-terms",
+   "status": "open",
+   "reason": "혜택이 브랜드 서비스(라운지·발레파킹·리무진)뿐이고 연회비 표를 확정하지 못해 card-terms 대신 brand-services로 남김",
+   "retry": "브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인"
   }
  ]
 }

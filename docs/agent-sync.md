@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-27 22:40 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 00:32 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,31 +35,31 @@ _자동 생성 2026-11-27 22:40 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
-| [#242](https://github.com/uio412-source/my-website/pull/242) | Pickle | data: 수집 2026-11-27 50차 (현대카드 상품설명서 9종) | 2026-11-27 22:40 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#241](https://github.com/uio412-source/my-website/pull/241) | Pickle | data: 수집 2026-11-27 49차 (현대카드 상품설명서 8종) | 2026-11-27 22:36 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#240](https://github.com/uio412-source/my-website/pull/240) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #238 반영) | 2026-11-27 22:27 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#238](https://github.com/uio412-source/my-website/pull/238) | Pickle | data: 수집 2026-11-27 48차 (롯데카드 상품설명서 5종) | 2026-11-27 22:26 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#239](https://github.com/uio412-source/my-website/pull/239) | Claude | data: 수집 2026-11-27 4차 (Claude · 하나카드 상품설명서 26종) | 2026-11-27 22:26 | 5파일 · data/ 3 · data/inbox/card-terms 1 · docs/… | 머지 |
-| [#237](https://github.com/uio412-source/my-website/pull/237) | Claude | Mr. Cards 카드 상세: 상품설명서 정리본 반영 (전월실적 333장·혜택 표 469장) | 2026-11-27 14:04 | 15파일 · paymorevent/ 7 · docs/ 3 · data/ 2 외 2곳 | 머지 |
-| [#236](https://github.com/uio412-source/my-website/pull/236) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #235 반영) | 2026-11-27 12:05 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#235](https://github.com/uio412-source/my-website/pull/235) | Pickle | data: 수집 2026-11-27 47차 (롯데카드 상품설명서 10종) | 2026-11-27 12:04 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#234](https://github.com/uio412-source/my-website/pull/234) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #233 반영) | 2026-11-27 11:59 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#233](https://github.com/uio412-source/my-website/pull/233) | Pickle | data: 수집 2026-11-27 46차 (롯데카드 상품설명서 10종) | 2026-11-27 11:58 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#232](https://github.com/uio412-source/my-website/pull/232) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #231 반영) | 2026-11-27 11:53 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#231](https://github.com/uio412-source/my-website/pull/231) | Pickle | data: 수집 2026-11-27 45차 (롯데카드 상품설명서 10종) | 2026-11-27 11:52 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#230](https://github.com/uio412-source/my-website/pull/230) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #229 반영) | 2026-11-27 11:47 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#229](https://github.com/uio412-source/my-website/pull/229) | Pickle | data: 수집 2026-11-27 44차 (롯데카드 상품설명서 10종) | 2026-11-27 11:46 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#228](https://github.com/uio412-source/my-website/pull/228) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #227 반영) | 2026-11-27 11:41 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#227](https://github.com/uio412-source/my-website/pull/227) | Pickle | data: 수집 2026-11-27 43차 (롯데카드 상품설명서 10종) | 2026-11-27 11:40 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#226](https://github.com/uio412-source/my-website/pull/226) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #225 반영) | 2026-11-27 11:33 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#225](https://github.com/uio412-source/my-website/pull/225) | Pickle | data: 수집 2026-11-27 42차 (신한카드 상품설명서 5종) | 2026-11-27 11:32 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#224](https://github.com/uio412-source/my-website/pull/224) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #223 반영) | 2026-11-27 11:28 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#223](https://github.com/uio412-source/my-website/pull/223) | Pickle | data: 수집 2026-11-27 41차 (신한카드 상품설명서 10종) | 2026-11-27 11:26 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#222](https://github.com/uio412-source/my-website/pull/222) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #221 반영) | 2026-11-27 11:22 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#221](https://github.com/uio412-source/my-website/pull/221) | Pickle | data: 수집 2026-11-27 40차 (신한카드 상품설명서 10종) | 2026-11-27 11:21 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#220](https://github.com/uio412-source/my-website/pull/220) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #219 반영) | 2026-11-27 11:16 | 4파일 · data/ 3 · docs/ 1 | 머지 |
-| [#219](https://github.com/uio412-source/my-website/pull/219) | Pickle | data: 수집 2026-11-27 39차 (신한카드 상품설명서 10종) | 2026-11-27 11:15 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#218](https://github.com/uio412-source/my-website/pull/218) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #217 반영) | 2026-11-27 11:10 | 4파일 · data/ 3 · docs/ 1 | 머지 |
+| [#270](https://github.com/uio412-source/my-website/pull/270) | Pickle | data: 수집 2026-11-27 77차 (현대카드 이벤트 22건) | 2026-11-28 00:32 | 1파일 · data/inbox/card-events 1 | 머지 |
+| [#269](https://github.com/uio412-source/my-website/pull/269) | Pickle | data: 수집 2026-11-27 76차 (KB국민카드 이벤트 11건) | 2026-11-28 00:27 | 1파일 · data/inbox/card-events 1 | 머지 |
+| [#268](https://github.com/uio412-source/my-website/pull/268) | Pickle | data: 수집 2026-11-27 75차 (KB국민카드 이벤트 10건) | 2026-11-28 00:24 | 1파일 · data/inbox/card-events 1 | 머지 |
+| [#267](https://github.com/uio412-source/my-website/pull/267) | Pickle | data: 수집 2026-11-27 74차 (KB국민카드 이벤트 22건) | 2026-11-28 00:20 | 1파일 · data/inbox/card-events 1 | 머지 |
+| [#266](https://github.com/uio412-source/my-website/pull/266) | Pickle | data: 수집 2026-11-27 73차 (KB국민카드 이벤트 20건) | 2026-11-28 00:16 | 1파일 · data/inbox/card-events 1 | 머지 |
+| [#265](https://github.com/uio412-source/my-website/pull/265) | Pickle | data: 수집 2026-11-27 72차 (KB국민카드 이벤트 21건) | 2026-11-28 00:12 | 1파일 · data/inbox/card-events 1 | 머지 |
+| [#264](https://github.com/uio412-source/my-website/pull/264) | Pickle | data: 수집 2026-11-27 71차 (KB국민카드 이벤트 20건) | 2026-11-28 00:07 | 1파일 · data/inbox/card-events 1 | 머지 |
+| [#263](https://github.com/uio412-source/my-website/pull/263) | Pickle | data: 수집 2026-11-27 70차 (NH농협카드 이벤트 9건) | 2026-11-28 00:02 | 1파일 · data/inbox/card-events 1 | 머지 |
+| [#262](https://github.com/uio412-source/my-website/pull/262) | Pickle | data: 수집 2026-11-27 69차 (롯데카드 이벤트 10건) | 2026-11-27 23:58 | 1파일 · data/inbox/card-events 1 | 머지 |
+| [#261](https://github.com/uio412-source/my-website/pull/261) | Pickle | data: 수집 2026-11-27 68차 (롯데카드 4종) | 2026-11-27 23:54 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#260](https://github.com/uio412-source/my-website/pull/260) | Pickle | data: 수집 2026-11-27 67차 (하나카드 이벤트 14건) | 2026-11-27 23:50 | 1파일 · data/inbox/card-events 1 | 머지 |
+| [#259](https://github.com/uio412-source/my-website/pull/259) | Pickle | data: 수집 2026-11-27 66차 (롯데카드 AVENUEL·제휴 8종) | 2026-11-27 23:45 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#258](https://github.com/uio412-source/my-website/pull/258) | Pickle | data: 수집 2026-11-27 65차 (롯데카드 디지로카·제휴 8종) | 2026-11-27 23:42 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#257](https://github.com/uio412-source/my-website/pull/257) | Pickle | data: 수집 2026-11-27 64차 (IBK기업은행 체크 5종) | 2026-11-27 23:38 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#256](https://github.com/uio412-source/my-website/pull/256) | Pickle | data: 수집 2026-11-27 63차 (IBK기업은행 제휴·지역 7종) | 2026-11-27 23:33 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#255](https://github.com/uio412-source/my-website/pull/255) | Pickle | data: 수집 2026-11-27 62차 (IBK기업은행 제휴·지역 5종) | 2026-11-27 23:30 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#254](https://github.com/uio412-source/my-website/pull/254) | Pickle | data: 수집 2026-11-27 61차 (IBK기업은행 5종) | 2026-11-27 23:26 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#253](https://github.com/uio412-source/my-website/pull/253) | Pickle | data: 수집 2026-11-27 60차 (IBK기업은행 6종) | 2026-11-27 23:22 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#252](https://github.com/uio412-source/my-website/pull/252) | Pickle | data: 수집 2026-11-27 59차 (IBK기업은행 7종) | 2026-11-27 23:18 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#251](https://github.com/uio412-source/my-website/pull/251) | Pickle | data: 수집 2026-11-27 58차 (현대카드 the Red·제휴 9종) | 2026-11-27 23:12 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#250](https://github.com/uio412-source/my-website/pull/250) | Pickle | data: 수집 2026-11-27 57차 (현대카드 GOLD·SC the Red 등 7종) | 2026-11-27 23:08 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#249](https://github.com/uio412-source/my-website/pull/249) | Pickle | data: 수집 2026-11-27 56차 (현대카드 ZERO·MY BUSINESS 9종) | 2026-11-27 23:04 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#248](https://github.com/uio412-source/my-website/pull/248) | Pickle | data: 수집 2026-11-27 55차 (현대카드 Boutique·X 8종) | 2026-11-27 22:59 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#247](https://github.com/uio412-source/my-website/pull/247) | Pickle | data: 수집 2026-11-27 54차 (현대카드 BUSINESS·케이뱅크Z·렌탈 9종) | 2026-11-27 22:56 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#246](https://github.com/uio412-source/my-website/pull/246) | Pickle | data: 수집 2026-11-27 53차 (현대카드 제휴 6종) | 2026-11-27 22:52 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -73,12 +73,12 @@ _지금 잠근 영역이 없습니다._
 
 _열린 PR이 없습니다._
 
-### 수집 대기열 (`data/collect-queue.json`, built 2026-11-27)
+### 수집 대기열 (`data/collect-queue.json`, built 2026-11-28)
 
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 808 / 1447종 · **브랜드 프로그램** todo 50 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
+- **남은 카드** 694 / 1447종 · **브랜드 프로그램** todo 50 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
 - **최근 수집일** — card-terms 2026-11-27 · brand-services 2026-11-27 · card-events 2026-11-27 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
@@ -87,17 +87,23 @@ _열린 PR이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
 | Claude | `data/agent-notes/claude.json` | #239 data: 수집 2026-11-27 4차 (Claude · … | 2026-11-27 22:26 | 14건 |
-| Pickle | `data/agent-notes/pickle.json` | #242 data: 수집 2026-11-27 50차 (현대카드 상품설… | 2026-11-27 22:40 | 37건 |
+| Pickle | `data/agent-notes/pickle.json` | #270 data: 수집 2026-11-27 77차 (현대카드 이벤트… | 2026-11-28 00:32 | 47건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 46건
+### 다시 볼 것 (open) — 56건
 
+- **2026-11-27 · Pickle · BC카드 4종**
+  - 사유: KaPick·그린카드 상세에 혜택 표 없음, 후불하이패스 2종은 2023년 심의필
+  - 재시도: 브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인
 - **2026-11-27 · Pickle · KB 나머지 상품설명서(kb-04285 스카이패스 티타늄·kb-09138 HERITAGE Classic·kb-09152 가온플래티늄·kb-09113/09114 KB Pay 챌린지·kb-09115/09116 AMEX Blue/Rose Gold)**
   - 사유: 마일리지·스탬프 표가 이미지이거나 여러 장에 걸쳐 있어 이번 회차에 확정하지 못함
   - 재시도: 표 페이지만 고해상도로 렌더해 값 확인 후 수집
+- **2026-11-27 · Pickle · KB 남은 상품설명서**
+  - 사유: 심의필이 2024년 이전인 판본뿐이라 '올해·작년 문서' 규칙 밖
+  - 재시도: 브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인
 - **2026-11-27 · Pickle · KB 상품설명서 3종(kb-09250 The Easy·kb-09561 WE:SH Travel·kb-09570 WE:SH Daily)**
   - 사유: 카드사가 지금 올려 둔 최신 판본이 2020-10-08·2024-09-23·2024-07-01 심의필이라 '올해·작년 문서' 규칙 밖
   - 재시도: 2025~2026년판이 올라오면 대기열 termsUrl(img2.kbcard.com/obj/card/download/<gdsno>__prdctOpmn_<날짜>.pdf)에서 교체
@@ -125,6 +131,9 @@ _열린 PR이 없습니다._
 - **2026-11-27 · Pickle · kb-09821 마라톤카드 · kb-04131(요청 302 SCDSA002)**
   - 사유: 마라톤카드는 연회비 표가 이미지로만 있어 금액 확인 불가, kb-04131은 PDF가 아닌 안내 페이지 응답
   - 재시도: 마라톤카드는 홈페이지 카드 상세의 연회비 표(텍스트)로 확인, kb-04131은 카드 상세에서 상품설명서 링크 재확인
+- **2026-11-27 · Pickle · lotte 나머지 65종 상세 혜택 탭**
+  - 사유: 혜택 표가 탭 클릭 뒤 스크립트로 그려져 정적 HTML에 없음(요약 문구만 노출)
+  - 재시도: 브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인
 - **2026-11-27 · Pickle · lotte-P15584-A15584**
   - 사유: 준법심의 2024년 이전
   - 재시도: 다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인
@@ -158,12 +167,33 @@ _열린 PR이 없습니다._
 - **2026-11-27 · Pickle · shinhan-202007270001**
   - 사유: shinhan-201803300001 혜택표 없음 · shinhan-202101270001/0002 국민행복 국가바우처 전용
   - 재시도: 다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인
+- **2026-11-27 · Pickle · 브랜드서비스 안내서(하나 leaflet·롯데 select_service)**
+  - 사유: 디렉터리 목록이 없고 등급별 파일명·날짜를 알 수 없어 404(2026-02-09·260514 판본 확인)
+  - 재시도: 브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인
+- **2026-11-27 · Pickle · 삼성카드 140종**
+  - 사유: 카드 상세 SPA·딥링크가 홈으로 리다이렉트, static11 PDF 파일명 추측 모두 404
+  - 재시도: 브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인
+- **2026-11-27 · Pickle · 신한카드 3종**
+  - 사유: PREMIER GOLD는 혜택 표 없음, 국민행복 2종은 국가바우처 전용
+  - 재시도: 브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인
+- **2026-11-27 · Pickle · 우리카드 97종·하나카드 81종 상세**
+  - 사유: 카드 상세가 JS로 그려져 상품설명서 표를 정적으로 받을 수 없음
+  - 재시도: 브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인
 - **2026-11-27 · Pickle · 우리카드(95)·하나카드(111)·현대카드(100) 대기열 termsUrl**
   - 사유: 대기열이 가리키는 주소가 상품설명서가 아님 — 우리는 카드Clause HTML, 하나는 표준약관 PDF(credit_card_260512.pdf 45쪽), 현대는 브랜드 선택서비스 안내서
   - 재시도: 카드 상세(pc.wooricard.com·hanacard·hyundaicard)를 브라우저로 렌더해 '상품설명서' PDF 링크를 카드별로 다시 찾아 queue.py 입력 갱신
+- **2026-11-27 · Pickle · 카드사 이벤트(삼성·현대 모바일·BC 페이북·신한)**
+  - 사유: 목록이 ajax/앱 전용으로 정적 수집 불가(브라우저 렌더로 하나·롯데·NH·KB·현대만 확보)
+  - 재시도: 브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인
 - **2026-11-27 · Pickle · 하나카드 선택서비스 5개 등급(hana-visa-platinum·mastercard-world-elite·amex-gold·amex-platinum-elite·amex-the-platinum)**
   - 사유: 카드 상세 7장(hana-9894·13913·17503·17766·17768·17811·10764)을 확인했으나 해당 등급 leaflet PDF가 없음(VP/ME/AG 계열 404). 2021년판 02768_20210208.pdf만 노출
   - 재시도: m.hanacard.co.kr/MKCDCM1000M.web?CD_PD_SEQ=… 페이지에 leaflet/[코드]/…pdf 링크가 있는 카드를 찾아 수집(현재 확인된 코드: MW·MP·MT·VS·VI·AP·UD)
+- **2026-11-27 · Pickle · 현대카드 AMEX 3종(ampte2·amgle2·amgre2) card-terms**
+  - 사유: 혜택이 브랜드 서비스(라운지·발레파킹·리무진)뿐이고 연회비 표를 확정하지 못해 card-terms 대신 brand-services로 남김
+  - 재시도: 브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인
+- **2026-11-27 · Pickle · 호텔 이벤트(Marriott·Hilton·IHG·Accor)**
+  - 사유: 공식 프로모션 페이지가 여행지 소개만 노출하고 날짜·조건이 없거나 403
+  - 재시도: 브라우저로 상세·탭을 렌더하거나 공식 PDF 목록 페이지에서 직접 링크 확인
 - **2026-11-26 · Pickle · BC 인피니트 브랜드서비스 2026년판**
   - 사유: 공개된 BC INFINITE SERVICE GUIDE가 2025년판(2025-C1a-08892, 유효 2025-12-31)뿐이라 그대로 담고 validThrough 2025-12-31 표기
   - 재시도: vip.bccard.com의 2026년판 가이드 확인 후 같은 id(bc-visa-infinite)로 교체
