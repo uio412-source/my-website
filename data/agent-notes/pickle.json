@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-28T02:55:00+09:00",
+ "updatedAt": "2026-11-28T03:05:00+09:00",
  "lock": null,
  "runs": [
   {
@@ -1688,6 +1688,13 @@
    "status": "open",
    "reason": "image.lottecard.co.kr/webapp/file/<BRAND>_<등급>_<NN>_select_service_260514.pdf 이름 규칙으로 216건을 확인했으나 VISA_SIGNATURE_02만 존재",
    "retry": "해당 등급 롯데카드 상세 페이지에서 select_service PDF 링크 확인(카드 상세에 링크가 있는 카드만 노출)"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "현대카드 상품 가이드북·브랜드 안내서 일괄 확보 경로(다음 회차용)",
+   "status": "workaround",
+   "reason": "현대카드 상세 페이지는 스크립트로 그려지지만 안내문 PDF는 https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=<5자리 코드> 로 바로 받을 수 있음. 코드 03000~03200 조회에서 PDF 146건(중복 제거 69종) 확인 — 03182 코스트코 리워드 비즈니스 Edition2 가이드북, 03183 후불하이패스 가이드북, 03184 AMEX PLATINUM ELITE 안내서, 03185 AMEX Gold 안내서, 03186 The Platinum 안내서",
+   "retry": "코드별 표지 제목을 읽어 카드 DB와 대조해 가이드북인 것을 card-terms로 회차당 6~8종 수집"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T02:54:57+09:00",
+  "generatedAt": "2026-11-28T03:04:06+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -357,13 +357,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-28T02:55:00+09:00",
+      "updatedAt": "2026-11-28T03:05:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 274,
-        "title": "data: 수집 2026-11-28 3차 (SC제일은행 ZERO Edition3 카드명 정정)",
-        "mergedAt": "2026-11-27T17:54:36Z",
-        "mergedAtKST": "2026-11-28 02:54"
+        "number": 275,
+        "title": "docs: 공용 현황판 갱신 (2026-11-28 Pickle 카드명 정정 반영)",
+        "mergedAt": "2026-11-27T17:55:56Z",
+        "mergedAtKST": "2026-11-28 02:55"
       },
       "runs": [
         {
@@ -1633,12 +1633,26 @@
           ]
         }
       ],
-      "openIssues": 55
+      "openIssues": 56
     }
   },
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 275,
+      "title": "docs: 공용 현황판 갱신 (2026-11-28 Pickle 카드명 정정 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/sync-2026-11-28b",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T17:55:56Z",
+      "mergedAtKST": "2026-11-28 02:55",
+      "createdAt": "2026-11-27T17:55:05Z",
+      "createdAtKST": "2026-11-28 02:55",
+      "area": "3파일 · data/ 2 · docs/ 1",
+      "files": 3,
+      "url": "https://github.com/uio412-source/my-website/pull/275"
+    },
     {
       "number": 274,
       "title": "data: 수집 2026-11-28 3차 (SC제일은행 ZERO Edition3 카드명 정정)",
@@ -2184,20 +2198,6 @@
       "area": "4파일 · data/ 3 · docs/ 1",
       "files": 4,
       "url": "https://github.com/uio412-source/my-website/pull/236"
-    },
-    {
-      "number": 235,
-      "title": "data: 수집 2026-11-27 47차 (롯데카드 상품설명서 10종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle47",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T03:04:43Z",
-      "mergedAtKST": "2026-11-27 12:04",
-      "createdAt": "2026-11-27T03:00:40Z",
-      "createdAtKST": "2026-11-27 12:00",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/235"
     }
   ],
   "queue": {
@@ -2807,6 +2807,15 @@
       "status": "workaround",
       "reason": "안내문(VISA_Platinum_251001.pdf·VISA_Signature_251001.pdf·Mastercard_Platinum_251001.pdf)은 확보했으나 '국내 호텔 발레파킹' 대상 호텔 목록이 안내문에 없어 hotel_valet 필수 항목을 채울 수 없음",
       "retry": "카드 상세·상품설명서에서 대상 호텔 목록을 확인한 뒤 수집",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "현대카드 상품 가이드북·브랜드 안내서 일괄 확보 경로(다음 회차용)",
+      "status": "workaround",
+      "reason": "현대카드 상세 페이지는 스크립트로 그려지지만 안내문 PDF는 https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=<5자리 코드> 로 바로 받을 수 있음. 코드 03000~03200 조회에서 PDF 146건(중복 제거 69종) 확인 — 03182 코스트코 리워드 비즈니스 Edition2 가이드북, 03183 후불하이패스 가이드북, 03184 AMEX PLATINUM ELITE 안내서, 03185 AMEX Gold 안내서, 03186 The Platinum 안내서",
+      "retry": "코드별 표지 제목을 읽어 카드 DB와 대조해 가이드북인 것을 card-terms로 회차당 6~8종 수집",
       "ref": ""
     },
     {

@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 02:54 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 03:04 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,7 @@ _자동 생성 2026-11-28 02:54 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#275](https://github.com/uio412-source/my-website/pull/275) | Pickle | docs: 공용 현황판 갱신 (2026-11-28 Pickle 카드명 정정 반영) | 2026-11-28 02:55 | 3파일 · data/ 2 · docs/ 1 | 머지 |
 | [#274](https://github.com/uio412-source/my-website/pull/274) | Pickle | data: 수집 2026-11-28 3차 (SC제일은행 ZERO Edition3 카드명 정정) | 2026-11-28 02:54 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#273](https://github.com/uio412-source/my-website/pull/273) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-28 Pickle 1차 반영) | 2026-11-28 02:50 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#272](https://github.com/uio412-source/my-website/pull/272) | Pickle | data: 수집 2026-11-28 1차 (하나 AMEX PLATINUM ELITE·롯데 Visa Sign… | 2026-11-28 02:47 | 4파일 · data/inbox/brand-services 2 · data/inbox/… | 머지 |
@@ -59,7 +60,6 @@ _자동 생성 2026-11-28 02:54 KST · `python tools/data/agent_sync.py` · 기�
 | [#253](https://github.com/uio412-source/my-website/pull/253) | Pickle | data: 수집 2026-11-27 60차 (IBK기업은행 6종) | 2026-11-27 23:22 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#252](https://github.com/uio412-source/my-website/pull/252) | Pickle | data: 수집 2026-11-27 59차 (IBK기업은행 7종) | 2026-11-27 23:18 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#251](https://github.com/uio412-source/my-website/pull/251) | Pickle | data: 수집 2026-11-27 58차 (현대카드 the Red·제휴 9종) | 2026-11-27 23:12 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#250](https://github.com/uio412-source/my-website/pull/250) | Pickle | data: 수집 2026-11-27 57차 (현대카드 GOLD·SC the Red 등 7종) | 2026-11-27 23:08 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -87,7 +87,7 @@ _열린 PR이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
 | Claude | `data/agent-notes/claude.json` | #239 data: 수집 2026-11-27 4차 (Claude · … | 2026-11-27 22:26 | 14건 |
-| Pickle | `data/agent-notes/pickle.json` | #274 data: 수집 2026-11-28 3차 (SC제일은행 ZE… | 2026-11-28 02:54 | 55건 |
+| Pickle | `data/agent-notes/pickle.json` | #275 docs: 공용 현황판 갱신 (2026-11-28 Pickl… | 2026-11-28 02:55 | 56건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
@@ -286,11 +286,14 @@ _열린 PR이 없습니다._
   - 사유: ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)
   - 재시도: check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기
 
-### 다른 경로로 처리 (workaround) — 6건
+### 다른 경로로 처리 (workaround) — 7건
 
 - **2026-11-28 · Pickle · NH농협카드 VISA Platinum·VISA Signature·Mastercard Platinum 브랜드서비스**
   - 사유: 안내문(VISA_Platinum_251001.pdf·VISA_Signature_251001.pdf·Mastercard_Platinum_251001.pdf)은 확보했으나 '국내 호텔 발레파킹' 대상 호텔 목록이 안내문에 없어 hotel_valet 필수 항목을 채울 수 없음
   - 대신 이렇게: 카드 상세·상품설명서에서 대상 호텔 목록을 확인한 뒤 수집
+- **2026-11-28 · Pickle · 현대카드 상품 가이드북·브랜드 안내서 일괄 확보 경로(다음 회차용)**
+  - 사유: 현대카드 상세 페이지는 스크립트로 그려지지만 안내문 PDF는 https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=<5자리 코드> 로 바로 받을 수 있음. 코드 03000~03200 조회에서 PDF 146건(중복 제거 69종) 확인 — 03182 코스트코 리워드 비즈니스 Edition2 가이드북, 03183 후불하이패스 가이드북, 03184 AMEX PLATINUM ELITE 안내서, 03185 AMEX Gold 안내서, 03186 The Platinum 안내서
+  - 대신 이렇게: 코드별 표지 제목을 읽어 카드 DB와 대조해 가이드북인 것을 card-terms로 회차당 6~8종 수집
 - **2026-11-27 · Pickle · 삼성카드 aap1910·신한카드 PC_26_01197 (Mastercard 프리미엄 서비스 안내)**
   - 사유: 발레·라운지 항목이 없고 국내 특급호텔 객실·F&B 할인 목록(각 44·43곳) 위주라 brand-services 양식으로 담지 않음
   - 대신 이렇게: hotel_benefit 카테고리로 호텔 목록을 담는 방식을 정한 뒤 다음 회차에 수집
