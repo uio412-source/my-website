@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-27T22:27:00+09:00",
+ "updatedAt": "2026-11-27T22:40:39+09:00",
  "lock": null,
  "runs": [
   {
@@ -986,6 +986,50 @@
     "lotte-P15787-A15787",
     "lotte-P13473-A13473"
    ]
+  },
+  {
+   "at": "2026-11-27T22:40:39+09:00",
+   "kind": "card-terms",
+   "pr": 48,
+   "summary": "롯데카드 상품설명서 5종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-27T22:40:39+09:00",
+   "kind": "card-terms",
+   "pr": 49,
+   "summary": "현대카드 상품설명서 8종",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-27T22:40:39+09:00",
+   "kind": "card-terms",
+   "pr": 50,
+   "summary": "현대카드 상품설명서 9종",
+   "queueKeys": [
+    "lotte-P15862-A15862",
+    "lotte-P11881-A11881",
+    "lotte-P15841-A15841",
+    "lotte-P15787-A15787",
+    "lotte-P13473-A13473",
+    "hyundai-tge4",
+    "hyundai-tpie3",
+    "hyundai-hge2",
+    "hyundai-hge2p",
+    "hyundai-mxbe2",
+    "hyundai-smekkobp",
+    "hyundai-spm",
+    "hyundai-spmmb",
+    "hyundai-mbto",
+    "hyundai-mdbi",
+    "hyundai-mlgte3",
+    "hyundai-mzrosce3",
+    "hyundai-msce4",
+    "hyundai-mzrscmbe3",
+    "hyundai-lttdshc",
+    "hyundai-mskte3",
+    "hyundai-mimb"
+   ]
   }
  ],
  "skipped": [
@@ -1264,6 +1308,20 @@
    "target": "shinhan-202007270001",
    "status": "open",
    "reason": "shinhan-201803300001 혜택표 없음 · shinhan-202101270001/0002 국민행복 국가바우처 전용",
+   "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "lotte-P15584-A15584",
+   "status": "open",
+   "reason": "준법심의 2024년 이전",
+   "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
+  },
+  {
+   "at": "2026-11-27",
+   "target": "hyundai-lgehc",
+   "status": "open",
+   "reason": "혜택 1줄뿐",
    "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인"
   }
  ]

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T22:27:04+09:00",
+  "generatedAt": "2026-11-27T22:40:42+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -357,13 +357,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-27T22:27:00+09:00",
+      "updatedAt": "2026-11-27T22:40:39+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 238,
-        "title": "data: 수집 2026-11-27 48차 (롯데카드 상품설명서 5종)",
-        "mergedAt": "2026-11-27T13:26:42Z",
-        "mergedAtKST": "2026-11-27 22:26"
+        "number": 242,
+        "title": "data: 수집 2026-11-27 50차 (현대카드 상품설명서 9종)",
+        "mergedAt": "2026-11-27T13:40:19Z",
+        "mergedAtKST": "2026-11-27 22:40"
       },
       "runs": [
         {
@@ -1348,14 +1348,100 @@
             "lotte-P15787-A15787",
             "lotte-P13473-A13473"
           ]
+        },
+        {
+          "at": "2026-11-27T22:40:39+09:00",
+          "kind": "card-terms",
+          "pr": 48,
+          "summary": "롯데카드 상품설명서 5종",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-27T22:40:39+09:00",
+          "kind": "card-terms",
+          "pr": 49,
+          "summary": "현대카드 상품설명서 8종",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-27T22:40:39+09:00",
+          "kind": "card-terms",
+          "pr": 50,
+          "summary": "현대카드 상품설명서 9종",
+          "queueKeys": [
+            "lotte-P15862-A15862",
+            "lotte-P11881-A11881",
+            "lotte-P15841-A15841",
+            "lotte-P15787-A15787",
+            "lotte-P13473-A13473",
+            "hyundai-tge4",
+            "hyundai-tpie3",
+            "hyundai-hge2",
+            "hyundai-hge2p",
+            "hyundai-mxbe2",
+            "hyundai-smekkobp",
+            "hyundai-spm",
+            "hyundai-spmmb",
+            "hyundai-mbto",
+            "hyundai-mdbi",
+            "hyundai-mlgte3",
+            "hyundai-mzrosce3",
+            "hyundai-msce4",
+            "hyundai-mzrscmbe3",
+            "hyundai-lttdshc",
+            "hyundai-mskte3",
+            "hyundai-mimb"
+          ]
         }
       ],
-      "openIssues": 35
+      "openIssues": 37
     }
   },
   "locks": [],
   "openPRs": [],
   "recentPRs": [
+    {
+      "number": 242,
+      "title": "data: 수집 2026-11-27 50차 (현대카드 상품설명서 9종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle50",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T13:40:19Z",
+      "mergedAtKST": "2026-11-27 22:40",
+      "createdAt": "2026-11-27T13:37:21Z",
+      "createdAtKST": "2026-11-27 22:37",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/242"
+    },
+    {
+      "number": 241,
+      "title": "data: 수집 2026-11-27 49차 (현대카드 상품설명서 8종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-27-pickle49",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T13:36:23Z",
+      "mergedAtKST": "2026-11-27 22:36",
+      "createdAt": "2026-11-27T13:32:19Z",
+      "createdAtKST": "2026-11-27 22:32",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/241"
+    },
+    {
+      "number": 240,
+      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #238 반영)",
+      "agent": "Pickle",
+      "branch": "ai/pickle/queue-sync-2026-11-27-pickle238",
+      "state": "MERGED",
+      "mergedAt": "2026-11-27T13:27:51Z",
+      "mergedAtKST": "2026-11-27 22:27",
+      "createdAt": "2026-11-27T13:27:09Z",
+      "createdAtKST": "2026-11-27 22:27",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/240"
+    },
     {
       "number": 238,
       "title": "data: 수집 2026-11-27 48차 (롯데카드 상품설명서 5종)",
@@ -1873,48 +1959,6 @@
       "area": "4파일 · data/ 3 · docs/ 1",
       "files": 4,
       "url": "https://github.com/uio412-source/my-website/pull/203"
-    },
-    {
-      "number": 202,
-      "title": "data: 수집 2026-11-27 31차 (신한카드 상품설명서 10종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle31",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T01:23:22Z",
-      "mergedAtKST": "2026-11-27 10:23",
-      "createdAt": "2026-11-27T01:19:19Z",
-      "createdAtKST": "2026-11-27 10:19",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/202"
-    },
-    {
-      "number": 201,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #200 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-pickle200",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T01:17:54Z",
-      "mergedAtKST": "2026-11-27 10:17",
-      "createdAt": "2026-11-27T01:17:14Z",
-      "createdAtKST": "2026-11-27 10:17",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/201"
-    },
-    {
-      "number": 200,
-      "title": "data: 수집 2026-11-27 30차 (신한카드 상품설명서 10종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle30",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T01:16:36Z",
-      "mergedAtKST": "2026-11-27 10:16",
-      "createdAt": "2026-11-27T01:12:33Z",
-      "createdAtKST": "2026-11-27 10:12",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/200"
     }
   ],
   "queue": {
@@ -1925,8 +1969,8 @@
     },
     "counts": {
       "cards": {
-        "done": 622,
-        "todo": 825,
+        "done": 639,
+        "todo": 808,
         "total": 1447
       },
       "brandPrograms": {
@@ -2007,6 +2051,15 @@
     {
       "date": "2026-11-27",
       "agent": "Pickle",
+      "target": "hyundai-lgehc",
+      "status": "open",
+      "reason": "혜택 1줄뿐",
+      "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
       "target": "kb-01664 노리 체크 · kb-07998 노리2 학생증 · kb-02066 국민행복체크",
       "status": "open",
       "reason": "이미지 PDF를 렌더해 봐도 혜택 표 판독이 어려움(kb-02066은 혜택 표 자체가 없음)",
@@ -2029,6 +2082,15 @@
       "status": "open",
       "reason": "마라톤카드는 연회비 표가 이미지로만 있어 금액 확인 불가, kb-04131은 PDF가 아닌 안내 페이지 응답",
       "retry": "마라톤카드는 홈페이지 카드 상세의 연회비 표(텍스트)로 확인, kb-04131은 카드 상세에서 상품설명서 링크 재확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-27",
+      "agent": "Pickle",
+      "target": "lotte-P15584-A15584",
+      "status": "open",
+      "reason": "준법심의 2024년 이전",
+      "retry": "다음 회차에 다른 경로(상품설명서 PDF·상세 표)로 확인",
       "ref": ""
     },
     {
