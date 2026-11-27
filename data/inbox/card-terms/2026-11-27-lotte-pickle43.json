@@ -1,0 +1,735 @@
+{
+ "type": "card-terms",
+ "issuer": "롯데카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "lotte-P10351-A10351",
+   "name": "다이아몬드 위버스카이 SKYPASS 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P10351-A10351",
+   "termsUrl": null,
+   "docDate": "2026-05-07",
+   "annualFee": [
+    {
+     "brand": "UnionPay 다이아몬드",
+     "amount": 200000
+    }
+   ],
+   "brands": [
+    "UnionPay 다이아몬드"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "스페셜기프트",
+     "place": "롯데호텔·롯데면세점 상품권·명품 바우처·골프용품 중 택1",
+     "value": "10만원 상당",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 1회",
+     "conditions": [
+      "발급 후 12개월 내 10만원 실적·연회비 정상 입금 시"
+     ]
+    },
+    {
+     "label": "AIR마일 적립",
+     "place": "국내·외 이용금액",
+     "value": "1,000원당 1마일",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "대한항공 스카이패스 1:1 전환(5천 마일 이후 1천 단위)",
+      "무이자할부·아파트관리비·세금 제외"
+     ]
+    },
+    {
+     "label": "국내선 동반자 항공권",
+     "place": "대한항공 국내선 일반석",
+     "value": "동반자 왕복 무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 1회",
+     "conditions": [
+      "스페셜기프트와 택1",
+      "롯데카드 여행서비스팀 예약·발권 건"
+     ]
+    },
+    {
+     "label": "공항 라운지",
+     "place": "인천공항 제1여객터미널(스카이허브·마티나)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 100000,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 3회"
+    },
+    {
+     "label": "Concierge",
+     "place": "인천공항·KTX VIP 의전, 건강검진 예약·상담",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 100000,
+     "cap": null,
+     "capScope": "연",
+     "limits": "통합 연 1회"
+    },
+    {
+     "label": "해외 호텔",
+     "place": "해외특급호텔",
+     "value": "2박 결제 시 1박 무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 1회",
+     "conditions": [
+      "1박당 10만원 상당"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P02914-A02914",
+   "name": "플래티넘 위버스카이 SKYPASS 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P02914-A02914",
+   "termsUrl": null,
+   "docDate": "2026-05-07",
+   "annualFee": [
+    {
+     "brand": "AMEX 플래티넘 엘리트",
+     "amount": 195000
+    },
+    {
+     "brand": "AMEX 플래티넘 엘리트",
+     "amount": 200000
+    }
+   ],
+   "brands": [
+    "AMEX 플래티넘 엘리트",
+    "AMEX 플래티넘 엘리트"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "스페셜기프트",
+     "place": "롯데호텔·롯데면세점 상품권·명품 바우처·골프용품 중 택1",
+     "value": "10만원 상당",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 1회"
+    },
+    {
+     "label": "AIR마일 적립",
+     "place": "국내·외 이용금액",
+     "value": "1,000원당 1마일",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "스카이패스 1:1 전환"
+     ]
+    },
+    {
+     "label": "국내선 동반자 항공권",
+     "place": "대한항공 국내선 일반석",
+     "value": "동반자 왕복 무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 1회"
+    },
+    {
+     "label": "공항 라운지",
+     "place": "인천공항 제1여객터미널(스카이허브·마티나)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 100000,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 3회"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P14724-A14724",
+   "name": "디지로카 Monaco",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14724-A14724",
+   "termsUrl": null,
+   "docDate": "2026-05-07",
+   "annualFee": [
+    {
+     "brand": "MASTER 플래티넘",
+     "amount": 125000
+    }
+   ],
+   "brands": [
+    "MASTER 플래티넘"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "모든 가맹점 할인",
+     "place": "국내 모든 가맹점 1%, 해외 모든 이용금액 1%",
+     "value": "1%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "실적 조건·한도 없이 제공"
+     ]
+    },
+    {
+     "label": "온라인 쇼핑 할인",
+     "place": "쿠팡·네이버페이·11번가·G마켓·옥션·SSG.COM 2%, 멤버십 이용 시 추가 3%",
+     "value": "최대 5%",
+     "valueType": "할인",
+     "minimumSpend": 1000000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "지난달 100만원 이상(본인+가족 합산)",
+      "통합 월 이용금액 200만원까지",
+      "멤버십 구독료 자체는 할인 제외"
+     ]
+    },
+    {
+     "label": "배달앱 할인",
+     "place": "배달앱",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "이동통신 할인",
+     "place": "이동통신요금",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "스트리밍 할인",
+     "place": "스트리밍 서비스",
+     "value": "할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "Special Gift",
+     "place": "스페셜기프트",
+     "value": "제공",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P00201-A00201",
+   "name": "롯데 플래티넘 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P00201-A00201",
+   "termsUrl": null,
+   "docDate": "2026-05-07",
+   "annualFee": [
+    {
+     "brand": "VISA 플래티넘",
+     "amount": 100000
+    }
+   ],
+   "brands": [
+    "VISA 플래티넘"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "L.POINT 적립",
+     "place": "국내·해외 가맹점",
+     "value": "0.2%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "무이자할부·세금·관리비 등 제외"
+     ]
+    },
+    {
+     "label": "국내선 동반자 항공권",
+     "place": "국내선 왕복(대한항공·아시아나 일반석)",
+     "value": "동반 1인 왕복 무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 1회",
+     "conditions": [
+      "본인과 동일 일정, 롯데카드 여행센터 예약"
+     ]
+    },
+    {
+     "label": "공항 라운지",
+     "place": "스카이허브·마티나(인천공항 제1여객터미널)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 3회",
+     "conditions": [
+      "본인·가족카드 횟수 합산"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15651-A15651",
+   "name": "롯데멤버스 카드 프리미엄",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15651-A15651",
+   "termsUrl": null,
+   "docDate": "2026-05-07",
+   "annualFee": [
+    {
+     "brand": "MASTER 플래티넘",
+     "amount": 150000
+    }
+   ],
+   "brands": [
+    "MASTER 플래티넘"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "기본 적립",
+     "place": "국내·외 가맹점",
+     "value": "0.7%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "지난달 50만원 이상(본인+가족 합산)",
+      "적립한도 없음"
+     ]
+    },
+    {
+     "label": "특별 적립",
+     "place": "롯데멤버스 브랜드(백화점·마트·슈퍼·세븐일레븐·하이마트·롯데온·홈쇼핑·면세점·호텔·월드·시네마 등)",
+     "value": "1~5%",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": 100000,
+     "capScope": "월",
+     "conditions": [
+      "이번 달 이용 브랜드 1~2개 1%, 3~4개 3%, 5개 이상 5%",
+      "월 10만 포인트 한도(가족카드 포함)"
+     ]
+    },
+    {
+     "label": "미리적립",
+     "place": "선지급 포인트 서비스",
+     "value": "최대 50만 포인트",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P13512-A13512",
+   "name": "롯데백화점 Flex 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P13512-A13512",
+   "termsUrl": null,
+   "docDate": "2026-05-07",
+   "annualFee": [
+    {
+     "brand": "MASTER 월드",
+     "amount": 100000
+    }
+   ],
+   "brands": [
+    "MASTER 월드"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "L.POINT 적립",
+     "place": "국내·외 가맹점",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "지난달 50만원 이상(본인+가족 합산)",
+      "적립한도 없음"
+     ]
+    },
+    {
+     "label": "스트리밍 할인",
+     "place": "스트리밍 서비스",
+     "value": "30%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "커피 할인",
+     "place": "커피",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "면세점 할인",
+     "place": "롯데면세점",
+     "value": "5~15%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "현장할인"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P14735-A14735",
+   "name": "힐튼 아너스 아멕스 프리미엄",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P14735-A14735",
+   "termsUrl": null,
+   "docDate": "2026-05-08",
+   "annualFee": [
+    {
+     "brand": "AMEX 플래티넘 엘리트",
+     "amount": 500000
+    }
+   ],
+   "brands": [
+    "AMEX 플래티넘 엘리트"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "힐튼 아너스 포인트",
+     "place": "국내 모든 가맹점 1,500원당 2P, 면세점·항공 6P, 해외 8P",
+     "value": "1,500원당 2~8P",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "힐튼 호텔 결제 시 8P",
+      "L.POINT와 상호 전환 불가"
+     ]
+    },
+    {
+     "label": "힐튼 주말 숙박권",
+     "place": "전세계 힐튼 호텔 주말",
+     "value": "숙박권 2매",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "힐튼 멤버십",
+     "place": "힐튼 아너스",
+     "value": "골드 등급+다이아몬드 업그레이드",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "공항 라운지",
+     "place": "국내·외 공항 라운지",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 4회",
+     "conditions": [
+      "1인"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P02117-A02117",
+   "name": "B롯데카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P02117-A02117",
+   "termsUrl": null,
+   "docDate": "2025-07-31",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 5000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "SK브로드밴드 할인",
+     "place": "SK브로드밴드 통신료 자동이체",
+     "value": "최대 2만원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 10000
+      },
+      {
+       "spend": 1000000,
+       "cap": 20000
+      }
+     ],
+     "conditions": [
+      "통신요금이 할인액보다 적으면 통신요금만큼 할인"
+     ]
+    },
+    {
+     "label": "롯데월드 할인",
+     "place": "롯데월드",
+     "value": "본인 종합이용권 50%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null,
+     "limits": "월 1회, 연 6회"
+    },
+    {
+     "label": "롯데시네마 할인",
+     "place": "롯데시네마",
+     "value": "1,500원",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null,
+     "limits": "일 1회, 월 5회, 연 12회",
+     "conditions": [
+      "현장구매만"
+     ]
+    },
+    {
+     "label": "외식 할인",
+     "place": "생어거스틴 10%(월 2만원), 롯데리아·엔제리너스·나뚜루 1,000원당 50원, 파리바게뜨·배스킨라빈스(해피포인트) 10%",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P00276-B01417",
+   "name": "DC Sweet 롯데카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P00276-B01417",
+   "termsUrl": null,
+   "docDate": "2021-09-30",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 5000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "Sweet 할인",
+     "place": "롯데리아·엔제리너스·TGIF·크리스피크림도넛·나뚜루·보네스뻬",
+     "value": "10~30%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "전월 20만원 이상 10%, 40만원 이상 20%, 60만원 이상 30%",
+      "1만원 이상 결제 건",
+      "건당 최대 1.5만원·연 최대 12만원"
+     ]
+    },
+    {
+     "label": "L.POINT 더블적립",
+     "place": "Sweet 할인 가맹점·L.POINT 제휴사",
+     "value": "더블 적립",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null
+    },
+    {
+     "label": "롯데시네마 할인",
+     "place": "롯데시네마",
+     "value": "1,500원",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": null,
+     "limits": "일 1회, 월 5회, 연 12회"
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "lotte-P15672-A15672",
+   "name": "DIGILOCA SKYPASS",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P15672-A15672",
+   "termsUrl": null,
+   "docDate": "2026-08-18",
+   "annualFee": [
+    {
+     "brand": "AMEX",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "AMEX"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월(승인일 기준 1일~말일) 국내·외 일시불·할부 합산 이용금액",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "국내 마일리지",
+     "place": "국내 이용금액",
+     "value": "1,000원당 1마일",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "스카이패스 마일리지"
+     ]
+    },
+    {
+     "label": "해외 마일리지",
+     "place": "해외 이용금액(AMEX)",
+     "value": "1,000원당 2마일",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "conditions": [
+      "월 한도 없음"
+     ]
+    },
+    {
+     "label": "해외 마일리지(MASTER)",
+     "place": "해외 이용금액(MASTER)",
+     "value": "1,000원당 2마일",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": 2000,
+     "capScope": "월"
+    }
+   ]
+  }
+ ]
+}
