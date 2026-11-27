@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 541,
-   "todo": 906,
+   "done": 551,
+   "todo": 896,
    "total": 1447
   },
   "brandPrograms": {
@@ -1204,7 +1204,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P02914-A02914",
@@ -1215,7 +1215,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "samsung-aap1692",
@@ -1369,7 +1369,7 @@
    "termsUrl": "https://image.lottecard.co.kr/webapp/file/VISA_PLATINUM_04_260514.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P00201-A00201",
@@ -1380,7 +1380,7 @@
    "termsUrl": "https://image.lottecard.co.kr/webapp/file/VISA_PLATINUM_01_260514.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15651-A15651",
@@ -1391,7 +1391,7 @@
    "termsUrl": "https://image.lottecard.co.kr/UploadFiles/cardProvisionPath/2024-B00005_20260519_10004.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13512-A13512",
@@ -1402,7 +1402,7 @@
    "termsUrl": "https://image.lottecard.co.kr/webapp/mobile/images/card/detail/4_29.Master_WORLD_04_260514OL.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P14735-A14735",
@@ -1413,7 +1413,7 @@
    "termsUrl": "https://image.lottecard.co.kr/webapp/mobile/images/card/detail/AMERICAN_EXPRESS_PLATINUM_ELITE_04_select_service_2026.pdf",
    "lastVerified": "2026-10-05",
    "priority": 75,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "samsung-aap1910",
@@ -3558,7 +3558,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P00276-B01417",
@@ -3569,7 +3569,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15672-A15672",
@@ -3580,7 +3580,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P13212-A13212",
