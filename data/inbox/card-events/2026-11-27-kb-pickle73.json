@@ -1,0 +1,329 @@
+{
+ "type": "card-events",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-27",
+ "collector": "Pickle",
+ "listUrls": [
+  "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001"
+ ],
+ "events": [
+  {
+   "id": "kb-202610-ranking-check",
+   "kind": "card",
+   "title": "나는 몇 등일까? 응모하고 확인하세요",
+   "summary": "응모 후 순위 확인 이벤트",
+   "category": "응모형",
+   "startsAt": "2026-10-20",
+   "endsAt": "2026-11-30",
+   "entryRequired": true,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202610-master-agoda-20",
+   "kind": "card",
+   "title": "마스터 X 아고다 최대 20% 할인",
+   "summary": "아고다 최대 20% 할인",
+   "category": "해외/여행",
+   "startsAt": "2026-10-20",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202611-tmap-8man",
+   "kind": "card",
+   "title": "TMAP 최대 50%할인 최대 8만원 캐시백 혜택!",
+   "summary": "TMAP 최대 8만원 캐시백",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202611-kbpay-coffee",
+   "kind": "card",
+   "title": "KB Pay 첫 만남 기념 커피 쿠폰 받기",
+   "summary": "KB Pay 커피 쿠폰",
+   "category": "응모형",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": true,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202611-hatsalon-fee-cashback",
+   "kind": "card",
+   "title": "KB국민 햇살론카드 연회비 캐시백",
+   "summary": "햇살론카드 연회비 캐시백",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [
+    "KB국민 햇살론카드"
+   ],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202610-hotels-15",
+   "kind": "card",
+   "title": "호텔스닷컴 최대 15%할인",
+   "summary": "호텔스닷컴 최대 15% 할인",
+   "category": "해외/여행",
+   "startsAt": "2026-10-16",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202611-check-kpass-3man",
+   "kind": "card",
+   "title": "체크카드 신규하면 3만원 교통비는 K-패스",
+   "summary": "K-패스 체크 신규 3만원",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [
+    "K-패스 체크카드"
+   ],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202611-laftel-check",
+   "kind": "card",
+   "title": "라프텔 X KB국민 체크 신규발급하면 라프텔 이용권",
+   "summary": "라프텔 이용권 증정",
+   "category": "기타",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [
+    "KB국민 체크카드"
+   ],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202611-doosan-cashback",
+   "kind": "card",
+   "title": "받자! 최!강!두!산! 두산베어스 KB카드",
+   "summary": "두산베어스 KB카드 캐시백",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [
+    "두산베어스 KB카드"
+   ],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202611-youth-club-3man",
+   "kind": "card",
+   "title": "체크 신규하면 3만원 만18세~29세 유스클럽",
+   "summary": "유스클럽 체크 신규 3만원",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [
+    "KB국민 체크카드"
+   ],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202610-unionpay-jp-10",
+   "kind": "card",
+   "title": "일본은 KB유니온페이 10%+추가할인!",
+   "summary": "일본 유니온페이 10%+추가할인",
+   "category": "해외/여행",
+   "startsAt": "2026-10-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202611-coupang-wow-75",
+   "kind": "card",
+   "title": "새로워진 쿠팡 와우카드 월 최대 7만 5천원 혜택",
+   "summary": "쿠팡 와우카드 월 최대 7만 5천원 혜택",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2027-04-30",
+   "entryRequired": false,
+   "cards": [
+    "쿠팡 와우카드"
+   ],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202611-skypass-titanium-miles",
+   "kind": "card",
+   "title": "스카이패스 티타늄 카드 최대 5천 마일리지 적립",
+   "summary": "최대 5천 마일리지 적립",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [
+    "스카이패스 티타늄 카드"
+   ],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202611-everland-14man",
+   "kind": "card",
+   "title": "에버랜드카드로 누리는 최대 14만원 캐시백!",
+   "summary": "에버랜드카드 최대 14만원 캐시백",
+   "category": "포인트/캐시백",
+   "startsAt": "2026-11-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [
+    "에버랜드카드"
+   ],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202610-coupang-interest-free",
+   "kind": "card",
+   "title": "쿠팡와우카드 소액 무이자 할부 행사",
+   "summary": "소액 무이자 할부",
+   "category": "기타",
+   "startsAt": "2026-10-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [
+    "쿠팡 와우카드"
+   ],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202610-asan-spavis",
+   "kind": "card",
+   "title": "워터파크 & 온천 아산스파비스 특가 할인",
+   "summary": "아산스파비스 특가 할인",
+   "category": "기타",
+   "startsAt": "2026-10-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202610-jp-department-10",
+   "kind": "card",
+   "title": "일본 백화점 최대 10% 페이백",
+   "summary": "일본 백화점 결제 최대 10% 페이백",
+   "category": "해외/여행",
+   "startsAt": "2026-10-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": true,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202610-seoulland-1plus1",
+   "kind": "card",
+   "title": "서울랜드 1 + 1 전회원 더블할인!",
+   "summary": "서울랜드 1+1 더블할인",
+   "category": "기타",
+   "startsAt": "2026-10-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202609-jp-dining-4man",
+   "kind": "card",
+   "title": "일본 다이닝 혜택 마스터 최대 4만원",
+   "summary": "일본 다이닝 최대 4만원",
+   "category": "해외/여행",
+   "startsAt": "2026-09-29",
+   "endsAt": "2026-11-30",
+   "entryRequired": true,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202609-kumho-resort",
+   "kind": "card",
+   "title": "KB국민카드 고객이라면 금호리조트 특별 할인",
+   "summary": "금호리조트 특별 할인",
+   "category": "기타",
+   "startsAt": "2026-09-28",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  }
+ ]
+}
