@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-27T09:44:56+09:00",
+ "updatedAt": "2026-11-27T09:51:05+09:00",
  "lock": null,
  "runs": [
   {
@@ -581,6 +581,24 @@
     "shinhan-202308140001",
     "shinhan-202304040002",
     "shinhan-202006220001"
+   ]
+  },
+  {
+   "at": "2026-11-27T09:51:05+09:00",
+   "kind": "card-terms",
+   "pr": 192,
+   "summary": "26차: 신한카드 상품설명서 10종·혜택 27줄",
+   "queueKeys": [
+    "shinhan-202103160001",
+    "shinhan-201612150001",
+    "shinhan-202109080002",
+    "shinhan-202004090002",
+    "shinhan-202104140001",
+    "shinhan-202004020001",
+    "shinhan-202004090001",
+    "shinhan-202408120001",
+    "shinhan-202106040001",
+    "shinhan-201305060004"
    ]
   }
  ],
