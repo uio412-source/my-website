@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T10:23:27+09:00",
+  "generatedAt": "2026-11-28T10:44:21+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -43,10 +43,10 @@
       "updatedAt": "2026-11-28T10:50:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 279,
-        "title": "Mr. Stocks 배당: 프로필 User1·User2·User3 + 평단·수량·현재가·수익률",
-        "mergedAt": "2026-11-28T01:19:08Z",
-        "mergedAtKST": "2026-11-28 10:19"
+        "number": 280,
+        "title": "pay: 매일 확인 2026-11-28 — 토스 페이스페이 브랜드 3곳(자담치킨·감성커피·진교동찜닭)",
+        "mergedAt": "2026-11-28T01:27:21Z",
+        "mergedAtKST": "2026-11-28 10:27"
       },
       "runs": [
         {
@@ -369,7 +369,7 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-28T03:05:00+09:00",
+      "updatedAt": "2026-11-28T10:40:00+09:00",
       "lock": null,
       "lastMergedPR": {
         "number": 276,
@@ -378,6 +378,29 @@
         "mergedAtKST": "2026-11-28 03:04"
       },
       "runs": [
+        {
+          "at": "2026-11-28T10:40:00+09:00",
+          "kind": "audit",
+          "pr": 281,
+          "summary": "Mr. Cards 피킹률 전수조사·누락 보완(코드·규칙 PR) — 실적 조건 영역≠혜택 영역 계산 추가(minimumSpendArea), 클래시 트래블 5.25→3.23%·휴가중 3.0/4.0→1.75/2.25%·트래블월렛 3.4→2.2% 수정, IBK포인트3.8 원본 DB 동기화(4.7%), 상품설명서 정리본에서 기계 변환한 요율 모델 66장 신규(피킹률 121→187장). 검수 도구 tools/data/picking_audit.py·terms_to_rules.py, 규칙 AGENTS.md·docs/data-update.md 14장, 결과 docs/picking-audit.md",
+          "queueKeys": [],
+          "picking": {
+            "cards": 1552,
+            "withPicking": 187,
+            "fixed": [
+              "nh-90010544",
+              "nh-90010184",
+              "woori-102722",
+              "ibk-103991"
+            ],
+            "added": 66,
+            "A1": 6,
+            "A2": 0,
+            "A3": 8,
+            "A4": 51,
+            "B1": 613
+          }
+        },
         {
           "at": "2026-11-27T08:20:00+09:00",
           "kind": "collect",
@@ -1645,19 +1668,19 @@
           ]
         }
       ],
-      "openIssues": 56
+      "openIssues": 58
     }
   },
   "locks": [],
   "openPRs": [
     {
-      "number": 280,
-      "title": "pay: 매일 확인 2026-11-28 — 토스 페이스페이 브랜드 3곳(자담치킨·감성커피·진교동찜닭)",
-      "agent": "Claude",
-      "branch": "ai/claude/pay-daily-2026-11-28",
-      "createdAtKST": "2026-11-28 10:23",
-      "area": "4파일 · pay/ 2 · data/ 1 · docs/ 1",
-      "url": "https://github.com/uio412-source/my-website/pull/280",
+      "number": 281,
+      "title": "fix(paymorevent): 피킹률 전수조사 — 실적 영역≠혜택 영역 계산 수정·누락 요율 모델 66장·에이전트 검수 규칙",
+      "agent": "Pickle",
+      "branch": "ai/pickle/fix-picking-and-audit-rules",
+      "createdAtKST": "2026-11-28 10:35",
+      "area": "16파일 · paymorevent/ 8 · docs/ 3 · data/ 2 외 2곳",
+      "url": "https://github.com/uio412-source/my-website/pull/281",
       "draft": false
     },
     {
@@ -1672,6 +1695,20 @@
     }
   ],
   "recentPRs": [
+    {
+      "number": 280,
+      "title": "pay: 매일 확인 2026-11-28 — 토스 페이스페이 브랜드 3곳(자담치킨·감성커피·진교동찜닭)",
+      "agent": "Claude",
+      "branch": "ai/claude/pay-daily-2026-11-28",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T01:27:21Z",
+      "mergedAtKST": "2026-11-28 10:27",
+      "createdAt": "2026-11-28T01:23:02Z",
+      "createdAtKST": "2026-11-28 10:23",
+      "area": "6파일 · data/ 2 · docs/ 2 · pay/ 2",
+      "files": 6,
+      "url": "https://github.com/uio412-source/my-website/pull/280"
+    },
     {
       "number": 279,
       "title": "Mr. Stocks 배당: 프로필 User1·User2·User3 + 평단·수량·현재가·수익률",
@@ -2189,20 +2226,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/242"
-    },
-    {
-      "number": 241,
-      "title": "data: 수집 2026-11-27 49차 (현대카드 상품설명서 8종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle49",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T13:36:23Z",
-      "mergedAtKST": "2026-11-27 22:36",
-      "createdAt": "2026-11-27T13:32:19Z",
-      "createdAtKST": "2026-11-27 22:32",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/241"
     }
   ],
   "queue": {
@@ -2272,6 +2295,15 @@
       "status": "open",
       "reason": "카드 상세 딥링크가 홈으로 리다이렉트되고 브라우저로도 상세 진입 불가, static11 PDF 파일명 추측 404 (2026-11-28 브라우저 재확인)",
       "retry": "상품공시실 목록에서 카드별 PDF 링크를 직접 확인하거나 다른 에이전트가 확보한 링크 사용",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "상품설명서 정리본은 있는데 피킹률이 비는 카드 613장(B1) · 요율 모델이 미완성이라 피킹률이 비는 카드 51장(A4)",
+      "status": "open",
+      "reason": "통합 한도(shared)·건당/횟수 제한·혼합 표기(최대 N원, 0.x~y%) 카드는 자동 변환이 부풀려질 수 있어 건너뜀. A4 카드는 기존 요율 모델 일부만 있어 손 검수 필요",
+      "retry": "카드별로 상품설명서 원문 표를 보고 verified-card-rules.json.gz(요율·혜택·계획)나 picking-review.json(plans·groups)에 근거와 함께 추가 → python3 tools/data/picking_audit.py --card <id>로 확인",
       "ref": ""
     },
     {
@@ -2812,6 +2844,15 @@
       "status": "workaround",
       "reason": "안내문(VISA_Platinum_251001.pdf·VISA_Signature_251001.pdf·Mastercard_Platinum_251001.pdf)은 확보했으나 '국내 호텔 발레파킹' 대상 호텔 목록이 안내문에 없어 hotel_valet 필수 항목을 채울 수 없음",
       "retry": "카드 상세·상품설명서에서 대상 호텔 목록을 확인한 뒤 수집",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "피킹률 5% 초과 8건(A3: kb-04409 11%·kb-04260 6.67%·shinhan-202102250002 6.0%·hyundai-smecn 6.6%·woori-102488 5.3%·nh-90010505 5.33%·nh-90010515 6.17%·nh-90010051 6.0%)",
+      "status": "workaround",
+      "reason": "한도(월 캡)·추가 적립 한도가 있는 영역 요율이라 계산값은 맞지만, 5% 초과는 근거를 남겨야 함",
+      "retry": "각 카드 note·calculationValidation.evidence에 한도 근거를 적고, 한도 없는 요율이 생기면 계산에서 뺄 것",
       "ref": ""
     },
     {

@@ -307,6 +307,7 @@
 - **전월실적**·**실적 제외**·**혜택 제외**는 정리본 값을 씁니다. 단, 카드 `minimumSpend`가 `0`인데 카드 DB 혜택에 실적 조건이 있으면 0은 버립니다 — '공통 기준 참조'처럼 실적이 다른 곳에 적혀 있으면 그 금액을 찾아 적으세요(모르면 `null`).
 - **혜택 표**는 정리본이 카드 DB 혜택을 60% 넘게 담고 있거나 두 배 넘게 자세할 때만 정리본으로 바꿉니다. 상품설명서 혜택 표를 **빠짐없이** 옮겨야 화면에 쓰입니다(일부만 옮기면 기존 표 유지).
 - 칸에는 `limits`와 30자 이하 조건 2개까지, 나머지 조건은 원문의 '혜택 조건'에 접어 둡니다. `shared`가 같은 줄은 한도 칸을 세로로 합칩니다.
+- 이 정리본에서 **피킹률 요율 모델**을 기계 변환하는 기준·검수 방법은 14장에 있습니다(`tools/data/terms_to_rules.py`·`picking_audit.py`). 정리본을 고치면 다음 배포에서 변환 결과도 `terms-rules.json.gz`로 다시 만들 수 있습니다.
 
 ## 8. 신상품·단종 알림 `card-products` (검토 대기열)
 
@@ -344,6 +345,7 @@
 2. **받은편지함** `data/inbox/**` — 파일 이름과 그 안의 `queueKey`·`cardId`·`id`를 모두 봅니다. 대기열이 낡았을 수 있으므로(자동 갱신이 아직 안 돌았거나 실패) 대기열에 `todo`로 남아 있어도 inbox에 key가 있으면 이미 한 항목입니다.
 3. **열린 PR** — `gh pr list --state open --json number,title,headRefName,files`로 다른 에이전트가 지금 올려 둔 PR이 건드리는 파일 이름과 key를 봅니다. 그 PR이 다루는 항목은 이번에 빼고, 머지된 뒤 다음 실행에서 이어 갑니다.
 4. **공용 현황판** `docs/agent-sync.md` · `data/agent-status.json` — 3장(잠금·열린 PR·다음 시작점)과 4장(실패·보류 로그)을 봅니다. 내가 하려는 항목이 4장에 `open`으로 있으면 같은 방법을 다시 시도하지 말고 거기 적힌 재시도 방법부터 씁니다.
+5. **피킹률 검수** — 카드 혜택·요율을 넣거나 고치는 작업이면 `python3 tools/data/picking_audit.py`로 전수 검사하고 A1~A5·B1·B2를 확인합니다(14장 '피킹률·혜택 데이터 검수').
 
 - 고르지 않고 건너뛴 항목은 PR 본문 '건너뜀'·'다음 시작점'에 대기열 key로 적습니다. 같은 곳에서 같은 실패(로그인 필요·스크립트로만 그려짐 등)를 다음 에이전트가 반복하지 않습니다.
 - 수집한 항목은 `card-terms`의 `cardId`·`queueKey`, `brand-services`의 `queueKey`에 **대기열 key 그대로** 적습니다. 빠뜨리면 수집했는데도 대기열에 `todo`로 남아 다음 실행에서 또 모읍니다(검사 로그에 `안내:` 줄로 나옵니다).
@@ -499,3 +501,58 @@ cards: kb-09246 부터 · brandPrograms: lotte-visa-platinum 부터
 - 추측·계산으로 채운 값, 작년보다 오래된 안내문
 - 개인 맞춤 혜택(로그인해야 보이는 쿠폰), 개인정보
 - 양식에 없는 항목 추가 (검사에서 실패합니다)
+
+## 14. 피킹률·혜택 데이터 검수 (모든 에이전트)
+
+카드 상세의 **최고 피킹률**은 `paymorevent/lib/catalog-model.ts`의 `pickingOptions()`가 계산합니다. 화면은 카드 DB 원본이 아니라 아래 순서로 덮은 값을 씁니다(뒤에 있는 것이 이깁니다).
+
+| 순서 | 파일 | 무엇 | 누가 쓰나 |
+|---|---|---|---|
+| 1 | `paymorevent/data/catalog-snapshot.json` | 카드 DB 원본(목록), `cards.json.gz`는 상세 원본 | 수집·생성 |
+| 2 | `paymorevent/data/verified-card-rules.json.gz` | 손으로 검수한 카드 수정(혜택·요율·계획) | 사람·에이전트(근거 필수) |
+| 3 | `paymorevent/data/terms-rules.json.gz` | 상품설명서 정리본에서 **기계 변환**한 요율 모델(요율이 없는 카드에만) | `python3 tools/data/terms_to_rules.py` |
+| 4 | `paymorevent/data/picking-review.json` | 손 검수한 피킹률 보정(한도·통합 한도·실적 제외·요율 값) | 사람·에이전트 |
+
+### 반드시 지키는 여섯 가지
+
+1. **실적 조건 영역 ≠ 혜택 영역**: "국내 전월실적 100만원 초과 시 해외 4%"처럼 조건이 다른 영역에 걸려 있으면 그 요율에 `minimumSpendArea: '국내'`와 `minimumSpendAreaRewardUnits`(국내 실적에 붙는 기본 적립률, 예 1.2)를 적습니다. 그러면 계산은 **국내 실적 + 같은 금액을 혜택 영역에** 쓴 경우가 되고, 국내 실적에 붙는 기본 적립도 더합니다. 조건 금액을 혜택 영역에 그대로 쓴 것으로 계산하면 없는 피킹률이 나옵니다.
+2. **수수료 면제(`feeWaiver`)는 적립률에 섞지 않기**: `rewardUnits`는 안내문의 적립·할인률만, 면제는 `feeWaiver`(rate·minimumSpend·공식 원문 URL·note·verified)로. 면제는 `verified`이고 `feeWaiver.minimumSpend <= 요율 minimumSpend`일 때만 더해집니다.
+3. **`rewardRates` 일부 + `rewardModelComplete` 없이 두지 않기**: 한도가 걸린 요율이 있는데 완성 표시가 없으면 피킹률이 비거나 낮은 기본률만 나옵니다. 다 채웠으면 `true`, 아직이면 `rewardCoveragePending: true` + `rewardCoverageNote`.
+4. **통합 한도를 영역별로 더하지 않기**: `shared`가 있는 카드(예: 생활 통합 월 1만원)는 `picking-review.json`의 `plans`로 배분합니다. `terms_to_rules.py`는 통합 한도·건당/횟수 제한 카드를 자동 변환에서 뺍니다.
+5. **5% 초과는 근거와 함께**: 한도 없는 5% 초과, 캡을 다 채우는 비현실적 가정 금지. 5%를 넘으면 한도·구간·실적 조건을 `note`/`calculationValidation.evidence`에 적습니다.
+6. **바꾼 뒤 전수 검사**: `python3 tools/data/picking_audit.py` → 새 A1·A2·A3가 없어야 합니다. 요약은 `docs/picking-audit.md`에 남깁니다.
+
+### 검사 명령
+
+```
+python3 tools/data/inbox.py merge              # card-terms.json 만들기(배포와 같은 동작)
+python3 tools/data/picking_audit.py            # 전수 검사 · 문제 목록
+python3 tools/data/picking_audit.py --card nh-90010544   # 카드 하나 계산 과정
+python3 tools/data/picking_audit.py --md docs/picking-audit.md   # 요약 저장
+python3 tools/data/terms_to_rules.py --dry-run # 기계 변환 몇 장·어떤 값인지 미리보기(저장 안 함)
+python3 tools/data/terms_to_rules.py           # terms-rules.json.gz 갱신
+```
+
+### 검수 항목 (A는 오류·오해, B는 누락)
+
+| 코드 | 무엇을 보나 | 어떻게 처리하나 |
+|---|---|---|
+| A1 | 수수료 면제가 적립률에 더해져 부풀려 보이는 카드 | 면제가 실제 혜택이면 `feeWaiver`로 두고 가정 줄에 근거, 아니면 빼기 |
+| A2 | 실적 조건 영역과 혜택 영역이 다른데 표시가 없는 카드 | `minimumSpendArea`+`minimumSpendAreaRewardUnits` 추가 |
+| A3 | 피킹률 5% 초과 | 한도·구간 근거 확인, 없으면 계산에서 빼기 |
+| A4 | 요율은 있는데 모델 완성 표시가 없어 피킹률이 비는 카드 | 요율 모델 채우기(`terms_to_rules.py` 또는 손 검수) |
+| A5 | 혜택 표와 요율 모델의 실적 조건이 다른 카드 | 대개 혜택별 조건 차이(정상). 아니면 요율 `minimumSpend` 수정 |
+| B1 | 상품설명서 정리본은 있는데 피킹률이 비는 카드 | `terms_to_rules.py`로 변환되면 반영, 안 되면 수동 검수 |
+| B2 | 정리본 혜택 표가 카드 DB보다 자세한 카드 | 카드 상세는 정리본 표가 쓰이므로 참고만 |
+
+### 새 카드 요율 모델을 넣는 길
+
+- **정리본이 단순한 카드**(금전 혜택이 모두 `12%` 같은 단일 비율, 통합 한도·건당 제한 없음): `terms_to_rules.py`가 자동으로 넣습니다. 손대지 마세요.
+- **통합 한도·건당 제한·혼합 표기(`최대 2만원`, `0.5~1.0%`, `리터당`)가 있는 카드**: 자동 변환이 건너뜁니다. 상품설명서 원문을 읽고 `verified-card-rules.json.gz`(요율·혜택·계획)나 `picking-review.json`(`plans`·`rules`)에 근거와 함께 적습니다.
+- **실적 조건이 다른 영역인 카드**: `minimumSpendArea`·`minimumSpendAreaRewardUnits`를 반드시 채웁니다.
+
+### 기록
+
+- 검수 결과는 `data/agent-notes/<내 파일>.json`의 `runs`에 `kind: 'audit'`, 검사한 카드 수·새 문제 수·고친 카드 id로 남기고 `python tools/data/agent_sync.py`로 현황판을 갱신합니다.
+- 다른 에이전트가 올린 PR을 검수했으면 그 PR 번호와 결론(통과/지적 사항)을 같이 적습니다. 지적한 카드는 같은 PR에서 고치지 말고, 그 에이전트(또는 다음 수집)가 고치게 남깁니다.
+- 고치지 못한 카드는 `skipped`에 `target`(카드 id)·`reason`·`retry`를 적습니다. 다음 에이전트가 같은 카드를 다시 파지 않게 하려는 것입니다.
