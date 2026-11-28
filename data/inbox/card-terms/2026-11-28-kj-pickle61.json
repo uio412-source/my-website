@@ -1,0 +1,127 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20180228002",
+   "name": "광주·전남愛사랑플래티늄카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20180228002",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20180228002",
+   "docDate": "2019-01-07",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 118000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 120000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액",
+   "grace": "카드 최초 발급 후 사용등록일부터 다음 달 말일까지 전월 이용실적이 없어도 30만원 이상 구간 서비스 제공",
+   "spendExclusions": [
+    "포인트 적립서비스를 받은 이용건(해당 매출 전체)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "(부분)무이자할부 이용금액",
+    "국세·지방세",
+    "공과금",
+    "대학(대학원) 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "단기카드대출·장기카드대출",
+    "(부분)무이자할부 이용금액",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "취소 금액"
+   ],
+   "benefits": [
+    {
+     "group": "기부",
+     "label": "고향사랑 기부",
+     "place": "광주광역시·목포·나주·순천·광양·여수 등 광주/전남 23개 시군 사회복지공동모금회",
+     "value": "0.5%",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "카드 이용금액의 0.5%가 고객이 선택한 지역 사회복지공동모금회에 고객 명의로 기부",
+      "기부금 영수증은 사회복지공동모금회에서 신청"
+     ]
+    },
+    {
+     "group": "골프",
+     "label": "골프장",
+     "place": "전국 모든 골프장",
+     "value": "10만원당 5,000포인트",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 1회, 건당 10만원 이상",
+     "conditions": [
+      "건당 10만~20만원 5,000원, 20만원 이상 10,000원 적립"
+     ]
+    },
+    {
+     "group": "외식",
+     "label": "패밀리레스토랑",
+     "place": "아웃백·TGIF·VIPS",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 1회, 3만원 이상 승인건"
+    },
+    {
+     "group": "커피",
+     "label": "커피전문점",
+     "place": "스타벅스·카페베네·엔제리너스·드롭탑·파스쿠찌",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 4회, 1만원 이상 승인건"
+    },
+    {
+     "group": "온라인",
+     "label": "온라인 쇼핑·예매",
+     "place": "쿠팡·위메프·G마켓·11번가·옥션·티켓링크·인터파크",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 2회, 3만원 이상 승인건"
+    },
+    {
+     "group": "교통",
+     "label": "교통",
+     "place": "대중교통(버스·지하철)·고속버스·기차·택시",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월"
+    }
+   ]
+  }
+ ]
+}
