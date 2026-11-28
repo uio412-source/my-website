@@ -1,0 +1,511 @@
+{
+ "type": "brand-services",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "programs": [
+  {
+   "id": "hyundai-american-express-the-platinum",
+   "queueKey": "hyundai-american-express-platinum",
+   "brand": "American Express",
+   "tier": "The Platinum",
+   "provider": "issuer_selection",
+   "docTitle": "American Express The Platinum Card® 전용 서비스 (선택제공서비스)",
+   "url": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03186",
+   "docDate": "2026-10-15",
+   "validThrough": "2026-12-31",
+   "cards": [
+    "American Express The Platinum Card® Edition2"
+   ],
+   "services": [
+    {
+     "category": "airport_lounge",
+     "title": "공항 라운지 서비스",
+     "minimumSpend": 500000,
+     "dailyLimit": 1,
+     "annualLimit": 10,
+     "holderOnly": true,
+     "coverage": "THE LOUNGE 앱 등록 라운지(전 세계)",
+     "grace": "신규 발급 시 발급월 포함 3개월간 이용 금액 관계없이 제공",
+     "conditions": [
+      "THE LOUNGE 앱에 카드 등록 후 이용권 발급",
+      "동반자 입장료 별도"
+     ]
+    },
+    {
+     "category": "airport_valet",
+     "title": "공항 발레파킹 서비스",
+     "minimumSpend": 500000,
+     "monthlyLimit": 5,
+     "quotaScope": "hotel_airport",
+     "sharedWith": "호텔 발레파킹과 월 5회 통합(본인·가족 합산)",
+     "conditions": [
+      "인천국제공항 제1·2여객터미널, 김포국제공항(국내선), 청주국제공항",
+      "주차 비용 별도 정산",
+      "인천 T1·T2는 사전 예약 시 이용 가능"
+     ]
+    },
+    {
+     "category": "hotel_valet",
+     "title": "호텔 발레파킹 서비스",
+     "minimumSpend": 500000,
+     "monthlyLimit": 5,
+     "quotaScope": "hotel_airport",
+     "sharedWith": "공항 발레파킹과 월 5회 통합(본인·가족 합산)",
+     "freeHours": 3,
+     "holderOnly": true,
+     "useRequired": true,
+     "hotels": [
+      {
+       "name": "JW 메리어트 동대문 스퀘어 서울",
+       "city": "서울"
+      },
+      {
+       "name": "JW 메리어트 호텔 서울(강남)",
+       "city": "서울"
+      },
+      {
+       "name": "그랜드 워커힐 서울",
+       "city": "서울"
+      },
+      {
+       "name": "그랜드 인터컨티넨탈 서울 파르나스",
+       "city": "서울"
+      },
+      {
+       "name": "그랜드 하얏트 서울",
+       "city": "서울"
+      },
+      {
+       "name": "노보텔 앰배서더 서울 강남",
+       "city": "서울"
+      },
+      {
+       "name": "노보텔 앰배서더 서울 동대문",
+       "city": "서울"
+      },
+      {
+       "name": "페어몬트 앰배서더 서울",
+       "city": "서울"
+      },
+      {
+       "name": "호텔 나루 서울 엠갤러리",
+       "city": "서울"
+      },
+      {
+       "name": "르메르디앙 서울 명동",
+       "city": "서울"
+      },
+      {
+       "name": "메리어트 이그제큐티브 아파트먼트 서울",
+       "city": "서울"
+      },
+      {
+       "name": "메이필드 호텔",
+       "city": "서울"
+      },
+      {
+       "name": "몬드리안 서울 이태원",
+       "city": "서울"
+      },
+      {
+       "name": "반얀트리 클럽 앤 스파 서울",
+       "city": "서울"
+      },
+      {
+       "name": "비스타 워커힐 서울",
+       "city": "서울"
+      },
+      {
+       "name": "서울 가든 호텔",
+       "city": "서울"
+      },
+      {
+       "name": "서울드래곤시티",
+       "city": "서울"
+      },
+      {
+       "name": "서울 신라 호텔",
+       "city": "서울"
+      },
+      {
+       "name": "아셈타워",
+       "city": "서울"
+      },
+      {
+       "name": "안다즈 서울 강남",
+       "city": "서울"
+      },
+      {
+       "name": "앰배서더 서울 풀만 호텔",
+       "city": "서울"
+      },
+      {
+       "name": "오크우드 프리미어 코엑스 센터",
+       "city": "서울"
+      },
+      {
+       "name": "코트야드 메리어트 서울 타임스퀘어",
+       "city": "서울"
+      },
+      {
+       "name": "콘래드 서울 호텔",
+       "city": "서울"
+      },
+      {
+       "name": "파크 하얏트 서울",
+       "city": "서울"
+      },
+      {
+       "name": "포시즌스 호텔 서울",
+       "city": "서울"
+      },
+      {
+       "name": "힐튼 가든 인 서울 강남",
+       "city": "서울"
+      },
+      {
+       "name": "소피텔 앰배서더 서울 호텔 & 서비스드 레지던스",
+       "city": "서울"
+      },
+      {
+       "name": "그랜드 하얏트 인천",
+       "city": "인천"
+      },
+      {
+       "name": "소노캄 고양",
+       "city": "경기"
+      },
+      {
+       "name": "메리어트 대구",
+       "city": "대구"
+      },
+      {
+       "name": "호텔인터불고 대구",
+       "city": "대구"
+      },
+      {
+       "name": "호텔오노마",
+       "city": "대전"
+      },
+      {
+       "name": "힐튼호텔 경주",
+       "city": "경주"
+      },
+      {
+       "name": "그랜드 조선 부산",
+       "city": "부산"
+      },
+      {
+       "name": "웨스틴 조선 부산",
+       "city": "부산"
+      },
+      {
+       "name": "파크하얏트 부산",
+       "city": "부산"
+      },
+      {
+       "name": "소노캄 여수",
+       "city": "여수"
+      },
+      {
+       "name": "그랜드 조선 제주",
+       "city": "제주"
+      }
+     ],
+     "conditions": [
+      "객실 및 식음료업장(연회장 제외) 이용 시 본인 회원 차량에 한해 제공",
+      "영수증 요청 시 제시, 미소지 시 발레파킹·주차 비용 청구",
+      "무료 주차 1일 3시간 초과 시 주차 비용 별도"
+     ]
+    },
+    {
+     "category": "airport_limousine",
+     "title": "공항 리무진·공항철도 서비스",
+     "minimumSpend": 500000,
+     "dailyLimit": 1,
+     "annualLimit": 12,
+     "holderOnly": true,
+     "coverage": "인천국제공항 리무진·K리무진 6701·6702·6703·6705, AREX 직통열차",
+     "conditions": [
+      "대상 카드로 50만원 이상 항공권 결제 후 e티켓과 실물 카드 제시",
+      "탑승일 직전 1주일 이내 구매 항공권만"
+     ]
+    },
+    {
+     "category": "dining",
+     "title": "Be My Guest",
+     "minimumSpend": 500000,
+     "monthlyLimit": 1,
+     "annualLimit": 3,
+     "holderOnly": true,
+     "coverage": "호텔 레스토랑 6만원 이상 결제 시 3만원, 패밀리 레스토랑 6만원 이상 3만원, 호텔 델리 4만원 이상 2만원 할인",
+     "conditions": [
+      "실물 카드 제시 후 할인 요청 시",
+      "분할 결제·현금 교환 불가"
+     ]
+    },
+    {
+     "category": "travel_booking",
+     "title": "Fine Hotels + Resorts",
+     "minimumSpend": 0,
+     "coverage": "전 세계 1,100개 이상 FHR 호텔, 600개 이상 The Hotel Collection 호텔",
+     "conditions": [
+      "전담 상담센터(1660-3436) 예약만",
+      "실물 카드로 결제",
+      "FHR: 조식 2인·객실 업그레이드·100달러 크레딧·레이트 체크아웃 / Hotel Collection: 2박 이상 예약 시 업그레이드·100달러 크레딧"
+     ]
+    },
+    {
+     "category": "other",
+     "title": "호텔 멤버십 업그레이드",
+     "minimumSpend": 0,
+     "coverage": "Hilton Gold·Marriott Gold Elite·Radisson Premium·Tablet Plus",
+     "conditions": [
+      "현대카드 앱 > 혜택 안내 > 보유 포인트 > 멤버십 리워즈에서 신청",
+      "신청 3~7일 후 등급 적용"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hyundai-american-express-gold",
+   "brand": "American Express",
+   "tier": "Gold",
+   "provider": "issuer_selection",
+   "docTitle": "American Express® Gold Card Edition2 전용 서비스 (선택제공서비스)",
+   "url": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03185",
+   "docDate": "2026-10-15",
+   "validThrough": "2026-12-31",
+   "cards": [
+    "American Express® Gold Card Edition2"
+   ],
+   "services": [
+    {
+     "category": "airport_lounge",
+     "title": "공항 라운지 서비스",
+     "minimumSpend": 500000,
+     "dailyLimit": 1,
+     "annualLimit": 10,
+     "holderOnly": true,
+     "coverage": "THE LOUNGE 앱 등록 라운지(전 세계)",
+     "grace": "신규 발급 시 발급월 포함 3개월간 이용 금액 관계없이 제공",
+     "conditions": [
+      "THE LOUNGE 앱에 카드 등록 후 이용권 발급",
+      "동반자 입장료 별도"
+     ]
+    },
+    {
+     "category": "airport_valet",
+     "title": "공항 발레파킹 서비스",
+     "minimumSpend": 500000,
+     "monthlyLimit": 5,
+     "quotaScope": "hotel_airport",
+     "sharedWith": "호텔 발레파킹과 월 5회 통합(본인·가족 합산)",
+     "conditions": [
+      "인천국제공항 제1·2여객터미널, 김포국제공항(국내선), 청주국제공항",
+      "주차 비용 별도 정산"
+     ]
+    },
+    {
+     "category": "hotel_valet",
+     "title": "호텔 발레파킹 서비스",
+     "minimumSpend": 500000,
+     "monthlyLimit": 5,
+     "quotaScope": "hotel_airport",
+     "sharedWith": "공항 발레파킹과 월 5회 통합(본인·가족 합산)",
+     "freeHours": 3,
+     "holderOnly": true,
+     "useRequired": true,
+     "hotels": [
+      {
+       "name": "JW 메리어트 동대문 스퀘어 서울",
+       "city": "서울"
+      },
+      {
+       "name": "JW 메리어트 호텔 서울(강남)",
+       "city": "서울"
+      },
+      {
+       "name": "그랜드 워커힐 서울",
+       "city": "서울"
+      },
+      {
+       "name": "그랜드 하얏트 서울",
+       "city": "서울"
+      },
+      {
+       "name": "노보텔 앰배서더 서울 강남",
+       "city": "서울"
+      },
+      {
+       "name": "노보텔 앰배서더 서울 동대문",
+       "city": "서울"
+      },
+      {
+       "name": "페어몬트 앰배서더 서울",
+       "city": "서울"
+      },
+      {
+       "name": "호텔 나루 서울 엠갤러리",
+       "city": "서울"
+      },
+      {
+       "name": "르메르디앙 서울 명동",
+       "city": "서울"
+      },
+      {
+       "name": "메리어트 이그제큐티브 아파트먼트 서울",
+       "city": "서울"
+      },
+      {
+       "name": "메이필드 호텔",
+       "city": "서울"
+      },
+      {
+       "name": "몬드리안 서울 이태원",
+       "city": "서울"
+      },
+      {
+       "name": "반얀트리 클럽 앤 스파 서울",
+       "city": "서울"
+      },
+      {
+       "name": "비스타 워커힐 서울",
+       "city": "서울"
+      },
+      {
+       "name": "서울 가든 호텔",
+       "city": "서울"
+      },
+      {
+       "name": "서울드래곤시티",
+       "city": "서울"
+      },
+      {
+       "name": "서울 신라 호텔",
+       "city": "서울"
+      },
+      {
+       "name": "아셈타워",
+       "city": "서울"
+      },
+      {
+       "name": "안다즈 서울 강남",
+       "city": "서울"
+      },
+      {
+       "name": "앰배서더 서울 풀만 호텔",
+       "city": "서울"
+      },
+      {
+       "name": "코트야드 메리어트 서울 타임스퀘어",
+       "city": "서울"
+      },
+      {
+       "name": "콘래드 서울 호텔",
+       "city": "서울"
+      },
+      {
+       "name": "파크 하얏트 서울",
+       "city": "서울"
+      },
+      {
+       "name": "포시즌스 호텔 서울",
+       "city": "서울"
+      },
+      {
+       "name": "힐튼 가든 인 서울 강남",
+       "city": "서울"
+      },
+      {
+       "name": "소피텔 앰배서더 서울 호텔 & 서비스드 레지던스",
+       "city": "서울"
+      },
+      {
+       "name": "그랜드 하얏트 인천",
+       "city": "인천"
+      },
+      {
+       "name": "소노캄 고양",
+       "city": "경기"
+      },
+      {
+       "name": "메리어트 대구",
+       "city": "대구"
+      },
+      {
+       "name": "호텔 인터불고 대구",
+       "city": "대구"
+      },
+      {
+       "name": "호텔 오노마",
+       "city": "대전"
+      },
+      {
+       "name": "힐튼호텔 경주",
+       "city": "경주"
+      },
+      {
+       "name": "그랜드 조선 부산",
+       "city": "부산"
+      },
+      {
+       "name": "파크하얏트 부산",
+       "city": "부산"
+      },
+      {
+       "name": "소노캄 여수",
+       "city": "여수"
+      },
+      {
+       "name": "그랜드 조선 제주",
+       "city": "제주"
+      }
+     ],
+     "conditions": [
+      "객실 및 식음료업장(연회장 제외) 이용 시 본인 회원 차량에 한해 제공",
+      "영수증 요청 시 제시, 미소지 시 발레파킹·주차 비용 청구",
+      "무료 주차 1일 3시간 초과 시 주차 비용 별도"
+     ]
+    },
+    {
+     "category": "airport_limousine",
+     "title": "공항 리무진·공항철도 서비스",
+     "minimumSpend": 500000,
+     "dailyLimit": 1,
+     "annualLimit": 12,
+     "holderOnly": true,
+     "coverage": "인천국제공항 리무진·K리무진 6701·6702·6703·6705, AREX 직통열차",
+     "conditions": [
+      "대상 카드로 50만원 이상 항공권 결제 후 e티켓과 실물 카드 제시"
+     ]
+    },
+    {
+     "category": "dining",
+     "title": "Be My Guest",
+     "minimumSpend": 500000,
+     "monthlyLimit": 1,
+     "annualLimit": 3,
+     "holderOnly": true,
+     "coverage": "호텔 레스토랑 6만원 이상 결제 시 3만원, 패밀리 레스토랑 6만원 이상 3만원, 호텔 델리 4만원 이상 2만원 할인",
+     "conditions": [
+      "실물 카드 제시 후 할인 요청 시",
+      "분할 결제·현금 교환 불가"
+     ]
+    },
+    {
+     "category": "travel_booking",
+     "title": "The Hotel Collection",
+     "minimumSpend": 0,
+     "coverage": "전 세계 30여 개국 600개 이상 호텔·리조트",
+     "conditions": [
+      "전담 상담센터(1660-3436) 예약",
+      "연속 2박 이상 예약 시 객실 업그레이드·100달러 크레딧",
+      "본인·가족 회원 모두 이용 가능"
+     ]
+    }
+   ]
+  }
+ ]
+}
