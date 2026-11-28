@@ -340,3 +340,10 @@ section { padding: 64px 0; }
 @media (prefers-reduced-motion: reduce) {
   .qroll-item, .qroll-item.on { transition: none; transform: none; }
 }
+
+/* 공사중 안내(ai-trading.html) */
+.wip { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center;
+  padding: 48px 16px; border: 1px dashed var(--color-border); border-radius: 16px; background: var(--color-bg-alt); color: var(--color-muted); }
+.wip svg { width: 44px; height: 44px; color: var(--color-primary); }
+.wip b { font-size: 1.1rem; color: var(--color-text); }
+.wip p { margin: 0; font-size: .9rem; }

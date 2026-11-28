@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 775,
-   "todo": 688,
+   "done": 781,
+   "todo": 682,
    "total": 1463
   },
   "brandPrograms": {
@@ -12182,7 +12182,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03410",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mzrosce3",
@@ -12248,7 +12248,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03414",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mimb",
@@ -15383,7 +15383,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03133",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-sge2",
@@ -15394,7 +15394,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03060",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-nve3",
@@ -15416,7 +15416,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03378",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-kale2t1",
@@ -16846,7 +16846,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03401",
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-02066",
