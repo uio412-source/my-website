@@ -202,10 +202,10 @@ export function judge(ev: IssuanceEvent, profile: IssuerProfile | undefined, now
     return {status: 'unknown', label: '조건 미확인', reasons: []};
   }
 
-  // ⑤ 대상 카드만 이력 없으면 되는 이벤트: 다른 카드 보유·결제 이력이 있으면 '대상 카드 미사용 시 가능'
+  // ⑤ 대상 카드만 이력 없으면 되는 이벤트: 대상 카드 사용 여부를 확인
   if (ev.allowExistingHolder === 'target_card_only') {
     const hasHistory = p.holding === 'holding' || (!p.noPayment && !!p.lastPayment);
-    if (hasHistory && !p.targetCardUnused) {
+    if (!p.targetCardUnused && (hasHistory || isProfileEmpty(p))) {
       return {status: 'target', label: '대상 카드 미사용 시 가능', reasons: ['대상 카드 이력만 확인']};
     }
   }
