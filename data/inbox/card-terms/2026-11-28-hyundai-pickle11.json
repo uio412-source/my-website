@@ -1,0 +1,279 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "hyundai-me4",
+   "queueKey": "hyundai-me4",
+   "name": "현대카드M",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ME4",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03160",
+   "docDate": "2026-03-01",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 30000},
+    {"brand": "Visa", "amount": 30000},
+    {"brand": "American Express", "amount": 30000}
+   ],
+   "brands": ["국내전용", "Visa", "American Express"],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 현대카드M(본인+가족 카드) 일시불·할부 이용 금액",
+   "grace": "신규 발급 시 발급월 다음 달 이용 건까지 전월 이용 금액 미만도 혜택 제공",
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "공과금(국세·관세·지방세·상하수도 요금·과태료 등)",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "현대카드M 외 다른 카드 이용 금액"
+   ],
+   "benefitExclusions": [
+    "전기 요금·도시가스 요금·아파트 관리비·자동납부서비스 이용 수수료",
+    "사립유치원 교육비·초중고 학교 납입금·대학·대학원 등록금",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "건강보험·국민연금·고용보험·산재보험료",
+    "고속도로 통행 요금·후불하이패스·고속버스 결제",
+    "현대카드 할인 서비스·무이자 할부 이용 금액",
+    "추가 혜택 대상점 이용 시 기본 혜택은 중복 적립 없음"
+   ],
+   "benefits": [
+    {
+     "group": "기본 혜택",
+     "label": "국내외 가맹점",
+     "place": "국내외 모든 가맹점(현대카드 가맹점 등록 기준)",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "1회·연간 한도 없음",
+     "conditions": ["M포인트 적립", "매출 건별 소수점 이하 반올림"]
+    },
+    {
+     "group": "추가 혜택",
+     "label": "온라인 쇼핑·음식점·해외",
+     "place": "네이버쇼핑·쿠팡·G마켓·옥션·11번가·SSG.COM·컬리, 일반음식점, 해외 온·오프라인 가맹점",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 10000,
+     "capScope": "월",
+     "shared": "대상점 통합 월 1만 M포인트",
+     "limits": "대상점 통합 월 1만 M포인트",
+     "conditions": [
+      "전월 이용 금액 100만원 이상 시",
+      "한도 초과분은 기본 혜택 적립률 적용",
+      "쿠팡이츠 결제·연결 사이트 결제는 적립 제외",
+      "네이버쇼핑은 naver.com 도메인 가맹점만"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-mpe4",
+   "queueKey": "hyundai-mpe4",
+   "name": "현대카드MM",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=MPE4",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03161",
+   "docDate": "2026-03-01",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 70000},
+    {"brand": "Visa", "amount": 70000},
+    {"brand": "American Express", "amount": 70000}
+   ],
+   "brands": ["국내전용", "Visa", "American Express"],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 현대카드MM(본인+가족 카드) 일시불·할부 이용 금액",
+   "grace": "신규 발급 시 발급월 다음 달 이용 건까지 전월 이용 금액 미만도 혜택 제공",
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "공과금(국세·관세·지방세·상하수도 요금·과태료 등)",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "현대카드MM 외 다른 카드 이용 금액"
+   ],
+   "benefitExclusions": [
+    "전기 요금·도시가스 요금·아파트 관리비·자동납부서비스 이용 수수료",
+    "사립유치원 교육비·초중고 학교 납입금·대학·대학원 등록금",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "건강보험·국민연금·고용보험·산재보험료",
+    "고속도로 통행 요금·후불하이패스·고속버스 결제",
+    "현대카드 할인 서비스·무이자 할부 이용 금액",
+    "추가 혜택 대상점 이용 시 기본 혜택은 중복 적립 없음"
+   ],
+   "benefits": [
+    {
+     "group": "기본 혜택",
+     "label": "국내외 가맹점",
+     "place": "국내외 모든 가맹점(현대카드 가맹점 등록 기준)",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "1회·연간 한도 없음",
+     "conditions": ["M포인트 적립", "매출 건별 소수점 이하 반올림"]
+    },
+    {
+     "group": "추가 혜택",
+     "label": "온라인 쇼핑·음식점·해외",
+     "place": "네이버쇼핑·쿠팡·G마켓·옥션·11번가·SSG.COM·컬리, 일반음식점, 해외 온·오프라인 가맹점",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "대상점 통합 월 2만 M포인트",
+     "limits": "대상점 통합 월 2만 M포인트",
+     "conditions": [
+      "전월 이용 금액 100만원 이상 시",
+      "한도 초과분은 기본 혜택 적립률 적용",
+      "쿠팡이츠 결제·연결 사이트 결제는 적립 제외",
+      "네이버쇼핑은 naver.com 도메인 가맹점만"
+     ]
+    },
+    {
+     "group": "우대 서비스",
+     "label": "공항 라운지",
+     "place": "인천국제공항 스카이 허브 라운지·마티나 라운지",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "일 1회 · 연 2회",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 시",
+      "THE LOUNGE 앱에서 이용권 발급 후 입장",
+      "본인·가족 카드 통합 연 2회, 동반 2인까지(동반자 입장료 별도)"
+     ]
+    },
+    {
+     "group": "우대 서비스",
+     "label": "공항 발레파킹",
+     "place": "인천국제공항 제1·2여객터미널",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "일 1회 · 연 2회",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 시",
+      "주차 비용은 별도 정산",
+      "본인·가족 카드 통합 연 2회"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-xpe4",
+   "queueKey": "hyundai-xpe4",
+   "name": "현대카드X",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=XPE4",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03164",
+   "docDate": "2026-03-01",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 50000},
+    {"brand": "Visa", "amount": 50000},
+    {"brand": "American Express", "amount": 50000}
+   ],
+   "brands": ["국내전용", "Visa", "American Express"],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 현대카드X(본인+가족 카드) 일시불·할부 이용 금액 / 연간 이용 금액은 최초 발급 확정월 포함 12개월",
+   "grace": "신규 발급 시 발급월 다음 달 이용 건까지 전월 이용 금액 50만원 미만도 혜택 제공",
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "공과금(국세·관세·지방세·상하수도 요금·과태료 등)",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "현대카드X 외 다른 카드 이용 금액"
+   ],
+   "benefitExclusions": [
+    "전기 요금·도시가스 요금·아파트 관리비·자동납부서비스 이용 수수료",
+    "초중고 학교 납입금·사립유치원 교육비·대학·대학원 등록금",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "건강보험·국민연금·고용보험·산재보험료",
+    "고속도로 통행 요금·후불하이패스·고속버스 결제",
+    "현대카드 할인 서비스·무이자 할부 이용 금액"
+   ],
+   "benefits": [
+    {
+     "group": "기본 혜택",
+     "label": "국내외 가맹점",
+     "place": "국내외 모든 가맹점(현대카드 가맹점 등록 기준)",
+     "value": "1%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "1회·연간 한도 없음",
+     "conditions": ["청구 할인"]
+    },
+    {
+     "group": "추가 혜택",
+     "label": "연간 캐시백",
+     "place": "국내외 가맹점 연간 누적 이용 금액",
+     "value": "500만원당 2만원",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": 100000,
+     "capScope": "연",
+     "limits": "연간 최대 10만원",
+     "conditions": [
+      "카드 최초 발급 확정월 포함 12개월 단위",
+      "연간 누적 2,500만원까지 500만원당 2만원",
+      "충족한 달마다 다음 달 15일 이후 결제 계좌 입금"
+     ]
+    },
+    {
+     "group": "우대 서비스",
+     "label": "공항 라운지",
+     "place": "인천국제공항 스카이 허브 라운지·마티나 라운지",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "일 1회 · 연 2회",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 시",
+      "THE LOUNGE 앱에서 이용권 발급 후 입장",
+      "본인·가족 카드 통합 연 2회, 동반 2인까지(동반자 입장료 별도)"
+     ]
+    },
+    {
+     "group": "우대 서비스",
+     "label": "공항 발레파킹",
+     "place": "인천국제공항 제1·2여객터미널",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "일 1회 · 연 2회",
+     "conditions": [
+      "전월 이용 금액 50만원 이상 시",
+      "주차 비용은 별도 정산",
+      "본인·가족 카드 통합 연 2회"
+     ]
+    }
+   ]
+  }
+ ]
+}
