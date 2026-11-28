@@ -1,0 +1,140 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20240710002",
+   "name": "에듀플러스카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20240710002",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20240710002",
+   "docDate": "2024-07-02",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 4100
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 4200
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 신규 후 수령일부터 다음 월 말일까지 실적 미달이어도 통합 캐시백 한도 1만 5천원 제공",
+   "spendExclusions": [
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "유아원·유치원·유학원·대학등록금·취업전문학원·연수원·평생교육시설",
+    "백화점·할인점 입점 서점",
+    "인앱결제(OTT)"
+   ],
+   "benefits": [
+    {
+     "group": "학원",
+     "label": "학원",
+     "place": "보습·입시전문·외국어·컴퓨터·예체능계 학원, 독서실, 초·중·고 교육기관",
+     "value": "20%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "1일 1회, 건당 10만원 이상",
+     "shared": "통합한도"
+    },
+    {
+     "group": "학습지",
+     "label": "학습지 12대 브랜드",
+     "place": "대교(눈높이)·재능교육(스스로)·교원(빨간펜·구몬)·웅진씽크빅·NE능률·기탄·천재교육(밀크T)·아이스크림에듀(홈런)·단비교육(윙크학습)·아이템플에듀·장원교육",
+     "value": "20%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "1일 1회, 건당 10만원 이상",
+     "shared": "통합한도"
+    },
+    {
+     "group": "서점",
+     "label": "서점·전자책",
+     "place": "교보문고·영풍문고·북스리브로·아크앤북·종로서적, 알라딘·예스24·리디북스·밀리의서재",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 4회, 건당 1만원 이상",
+     "shared": "통합한도"
+    },
+    {
+     "group": "온라인교육",
+     "label": "인터넷 강의",
+     "place": "메가스터디교육(엘리하이·엠베스트·메가스터디), 이투스(월간구독권 포함), EBS Book Story",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 3회",
+     "shared": "통합한도"
+    },
+    {
+     "group": "생활영역",
+     "label": "커피",
+     "place": "공차·달콤커피·더벤티·메가커피·빽다방·스타벅스·엔제리너스·이디야·카페베네·커피빈·컴포즈커피·탐앤탐스·투썸플레이스·파스쿠찌·폴바셋·할리스 등 20개 브랜드",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 건당 1만원 이상",
+     "shared": "통합한도"
+    },
+    {
+     "group": "생활영역",
+     "label": "영화",
+     "place": "CGV·메가박스·롯데시네마",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 건당 1만원 이상",
+     "shared": "통합한도"
+    },
+    {
+     "group": "생활영역",
+     "label": "OTT",
+     "place": "넷플릭스·디즈니플러스·쿠팡플레이·티빙·웨이브·왓챠·유튜브 프리미엄",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회",
+     "conditions": [
+      "PC 버전 결제 건만(인앱결제 제외)"
+     ]
+    }
+   ]
+  }
+ ]
+}
