@@ -1,0 +1,36 @@
+{
+  "type": "card-terms",
+  "issuer": "광주은행",
+  "collectedAt": "2026-11-28",
+  "collector": "Pickle",
+  "cards": [
+    {
+      "cardId": null,
+      "queueKey": "kj-CDR20250922003",
+      "name": "대한항공SKYPASS카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20250922003",
+      "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20250922003",
+      "docDate": "2025-09-08",
+      "annualFee": [
+        {"brand": "국내전용", "amount": 39000},
+        {"brand": "Mastercard", "amount": 40000}
+      ],
+      "brands": ["국내전용", "Mastercard"],
+      "minimumSpend": 0,
+      "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접소월 실적에서 차감)",
+      "spendExclusions": ["무이자할부", "단기카드대출(현금서비스)", "장기카드대출(카드론)", "제세공과금·국세·지방세·관세·과태료", "건강보험·국민연금·고용보험·장애인 고용부담금", "아파트 관리비", "대학교(대학원) 등록금", "이자", "기프트·선불카드 구매·충전", "상품권 구매", "거래 취소 건", "연회비", "제수수료", "해외 ATM 인출·현금서비스"],
+      "benefitExclusions": ["무이자할부", "상품권·선불카드 구입·충전", "거래 취소 건", "아웃백 입점 매장"],
+      "benefits": [
+        {"group": "적립", "label": "국내 가맹점", "place": "국내 모든 가맹점", "value": "1,500원당 1마일", "valueType": "적립", "minimumSpend": 0, "cap": null, "capScope": "월", "limits": "월 3천 마일, 연간 3만 6천 마일"},
+        {"group": "적립", "label": "해외 가맹점", "place": "해외 모든 가맹점", "value": "1,500원당 2마일", "valueType": "적립", "minimumSpend": 0, "cap": null, "capScope": "월", "limits": "월 3천 마일, 연간 3만 6천 마일"},
+        {"group": "보너스", "label": "연간 보너스", "place": "전 가맹점 이용실적 기준", "value": "1,000마일", "valueType": "적립", "minimumSpend": 0, "cap": null, "capScope": "연", "limits": "연 1회", "conditions": ["발급 첫해 누적 500만원 이상, 2차년도부터 전년도 이용금액 1,000만원 이상", "본인회원 한정(가족회원 제외)"]},
+        {"group": "해외", "label": "환율·해외ATM", "place": "광주은행 영업점 환전(USD·JPY·EUR), Mastercard 해외 ATM", "value": "환율 50% 우대·인출수수료 면제", "valueType": "면제", "minimumSpend": 0, "cap": null, "capScope": "월", "limits": "해외 ATM 건당 최대 $3", "conditions": ["국제브랜드수수료 1%·지역 이용수수료 $1는 정상 부과"]},
+        {"group": "포인트 전환", "label": "대한항공 마일리지", "place": "광주은행 K포인트 전환", "value": "20포인트당 1마일", "valueType": "제공", "minimumSpend": 0, "cap": null, "capScope": "연", "limits": "연간 1만 마일 초과 불가, 3만 포인트 이상 보유 시 100마일 단위", "conditions": ["전환 후 취소 불가"]},
+        {"group": "레저", "label": "놀이공원·레저", "place": "중흥골드스파 워터락, 금호리조트 화순아쿠아나, 광주패밀리랜드, 디오션 워터파크, 보성다비치콘도 해수온천", "value": "최대 50%", "valueType": "할인", "minimumSpend": 0, "cap": null, "capScope": "연", "conditions": ["중흥골드스파는 전월 20만원 이상 시 본인 35%·동반 3인 20%", "나머지 시설은 실적 조건 없이 본인·동반 1인 30~50%"]},
+        {"group": "외식", "label": "패밀리레스토랑", "place": "아웃백스테이크하우스(전국, 입점매장 제외)·빕스(광주)·베네치아(광주지산점)", "value": "20%", "valueType": "할인", "minimumSpend": 200000, "cap": 40000, "capScope": "월", "limits": "1일 1회·통합 월 4회", "conditions": ["현장할인"]}
+      ]
+    }
+  ]
+}
