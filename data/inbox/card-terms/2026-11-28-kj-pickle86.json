@@ -1,0 +1,76 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20171202013",
+   "name": "카카오페이 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20171202013",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20171202013",
+   "docDate": "2023-03-09",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월 1일~말일 국내 가맹점 이용실적(할인 적용 거래건 제외)",
+   "grace": "카드 수령일부터 다음 월 말일까지 실적 미달이어도 통합 할인한도 5천원 제공",
+   "spendExclusions": [
+    "할인서비스 적용 거래건",
+    "제세공과금",
+    "상품권",
+    "대학 등록금",
+    "후불교통 이용금액"
+   ],
+   "benefitExclusions": [
+    "상품권 구매금액"
+   ],
+   "benefits": [
+    {
+     "group": "카카오페이",
+     "label": "카카오페이 가맹점",
+     "place": "카카오페이 가맹점(모바일·PC·현장결제)",
+     "value": "15%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "통합 월 2회"
+    },
+    {
+     "group": "온라인쇼핑",
+     "label": "온라인쇼핑몰",
+     "place": "G마켓·옥션·11번가·쿠팡·위메프·티켓몬스터",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "통합 월 2회"
+    },
+    {
+     "group": "오프라인쇼핑",
+     "label": "편의점·생활매장",
+     "place": "편의점(CU·GS25·세븐일레븐·바이더웨이·미니스톱), 올리브영·시코르·다이소",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "통합 월 2회, 현장 결제"
+    }
+   ]
+  }
+ ]
+}
