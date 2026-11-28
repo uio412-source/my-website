@@ -163,7 +163,7 @@ function Row({e, v}: {e: IssuanceEvent; v: ReturnType<typeof judge>}) {
   const [openRule, setOpenRule] = useState(false);
   const rule = ruleLine(e);
   return <div className={'is-tr is-state-' + v.status + (openRule ? ' is-open' : '')} role="row">
-    <span className="is-c-issuer" role="cell"><IssuerTile issuer={e.issuer} size="xs"/><b>{e.issuer}</b></span>
+    <span className="is-c-issuer" role="cell">{e.issuer ? <IssuerTile issuer={e.issuer} size="xs"/> : null}<b>{e.issuer || '카드사 미확인'}</b></span>
     <span className="is-c-source" role="cell" data-label="출처"><i className="is-src" data-src={e.sourceId}>{e.source}</i></span>
     <span className="is-c-name" role="cell" data-label="카드·이벤트">
       <a href={e.url} target="_blank" rel="noopener noreferrer">{e.cardName || e.title}</a>

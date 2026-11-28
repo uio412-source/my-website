@@ -57,7 +57,7 @@ ISSUER_WORDS = [
     ("KB국민", "KB국민카드"), ("국민", "KB국민카드"), ("신한", "신한카드"), ("삼성", "삼성카드"),
     ("현대", "현대카드"), ("롯데", "롯데카드"), ("우리", "우리카드"), ("하나", "하나카드"),
     ("농협", "NH농협카드"), ("NH", "NH농협카드"), ("비씨", "BC카드"), ("BC", "BC카드"),
-    ("기업은행", "IBK기업은행"), ("IBK", "IBK기업은행"),
+    ("기업은행", "IBK기업은행"), ("IBK", "IBK기업은행"), ("기업", "IBK기업은행"),
 ]
 
 
@@ -487,7 +487,8 @@ def fetch_ppomppu(limit: int | None, file: str | None) -> list[dict]:
         title = flat(r.get("title") or "")
         if len(title) < 5:
             continue
-        issuer = next((name for word, name in ISSUER_WORDS if word in title), "")
+        compact = re.sub(r"\s+", "", title)
+        issuer = next((name for word, name in ISSUER_WORDS if word in compact), "")
         url = r.get("url") or SOURCES["ppomppu"]["url"]
         key = (issuer, title[:40])
         if key in seen:
