@@ -1,0 +1,68 @@
+{
+ "type": "brand-services",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "programs": [
+  {
+   "id": "hyundai-mastercard-platinum",
+   "queueKey": "hyundai-mastercard-platinum",
+   "brand": "Mastercard",
+   "tier": "Platinum",
+   "provider": "issuer_selection",
+   "docTitle": "Mastercard 플래티넘서비스 안내(대한항공카드 120)",
+   "url": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03210",
+   "docDate": "2026-04-08",
+   "validThrough": "2026-12-31",
+   "cards": [
+    "대한항공카드 120"
+   ],
+   "services": [
+    {
+     "category": "airport_lounge",
+     "title": "국내 공항 라운지 서비스",
+     "minimumSpend": 500000,
+     "annualLimit": 2,
+     "guestCount": 2,
+     "coverage": "스카이 허브 라운지(인천국제공항 제1여객터미널 동편·서편·탑승동), 마티나 라운지(인천국제공항 제2여객터미널 중앙)",
+     "holderOnly": true,
+     "conditions": [
+      "라운지 입장 시 당일 출발 항공권과 대상 카드 제시",
+      "동반 2인까지 이용 가능하며 동반 1인당 추가 요금 부과",
+      "최초 신규 발급 시 카드 수령 등록월 다음 달까지는 전월 50만원 미만도 제공"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hyundai-mastercard-premium",
+   "queueKey": "hyundai-mastercard-premium",
+   "brand": "Mastercard",
+   "tier": "Premium",
+   "provider": "issuer_selection",
+   "docTitle": "Mastercard 프리미엄서비스 안내(대한항공카드 300)",
+   "url": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03211",
+   "docDate": "2026-04-08",
+   "validThrough": "2026-12-31",
+   "cards": [
+    "대한항공카드 300"
+   ],
+   "services": [
+    {
+     "category": "airport_lounge",
+     "title": "국내 공항 라운지 서비스",
+     "minimumSpend": 500000,
+     "annualLimit": 10,
+     "guestCount": 2,
+     "coverage": "스카이 허브 라운지(인천국제공항 제1여객터미널 동편·서편·탑승동, 김포공항, 김해공항), 마티나 라운지(인천국제공항 제2여객터미널 중앙)",
+     "holderOnly": true,
+     "conditions": [
+      "라운지 입장 시 당일 출발 항공권과 대상 카드 제시",
+      "동반 2인까지 이용 가능하며 동반 1인당 추가 요금 부과",
+      "해외 공항 라운지는 현대카드가 제공하는 별도 서비스로 이용"
+     ]
+    }
+   ]
+  }
+ ]
+}
