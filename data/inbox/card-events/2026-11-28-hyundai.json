@@ -1,0 +1,79 @@
+{
+  "type": "card-events",
+  "issuer": "현대카드",
+  "collector": "ChatGPT",
+  "collectedAt": "2026-11-28",
+  "listUrls": [
+    "https://www.hyundaicard.com/cpb/ev/CPBEV0101_01.hc"
+  ],
+  "events": [
+    {
+      "id": "hyundai-202610-mitsui-lalaport-voucher",
+      "kind": "card",
+      "title": "미쓰이 아울렛 파크 · 라라포트 500엔 쇼핑바우처+할인 쿠폰북 제공",
+      "summary": "500엔 쇼핑 바우처 2장과 최대 10% 할인 쿠폰북",
+      "category": "해외/여행",
+      "startsAt": "2026-10-28",
+      "endsAt": "2027-02-28",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "해외겸용 현대카드 본인 회원인 외국인 관광객 대상, 법인·가족·체크 제외",
+        "대상점 관광안내센터에서 카드와 행사 QR을 제시해 실물권 수령 후 해당 카드로 결제",
+        "누적 5,000엔당 500엔권 1매 사용, 본인 기준 혜택 일 1회. 여권 확인 가능",
+        "지정 미쓰이 아울렛·라라포트 및 다이버시티 도쿄 플라자·코레도 무로마치·라조나 가와사키만",
+        "쿠폰북은 매장별 조건 적용, 실물권 유효기간은 교환 시 확인"
+      ],
+      "url": "https://www.hyundaicard.com/cpb/ev/CPBEV0101_06.hc?bnftWebEvntCd=I01042&searchWord=",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "hyundai-202611-energyplus-80man",
+      "kind": "card",
+      "title": "에너지플러스 현대카드 최대 80만원 캐시백",
+      "summary": "국내·주유 조건 최대 10만원, 적격 Visa 해외 이용 최대 70만원 추가",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "에너지플러스 현대카드"
+      ],
+      "conditions": [
+        "2026년 5~10월 현대카드 전체 결제 이력이 없는 기소지 회원, 지급일까지 마케팅 수신동의 유지",
+        "2026년 11~12월 누적 20만원 이상, GS칼텍스 에너지플러스 앱 바로주유 10만원 이상 포함",
+        "전체가 아닌 대상 카드만 무실적이면 기본 1만5천원만 해당, Visa 해외 추가 제외",
+        "기본 최대 혜택 충족한 Visa로 해외 50/300/500/700만원 이상 이용 시 각 3/30/50/70만원",
+        "2027년 1월 말 지급 예정. 지급 전 해지·정지 및 다른 이용유도 혜택 수령 이력 등은 상세 참조"
+      ],
+      "url": "https://www.hyundaicard.com/cpb/ev/CPBEV0101_06.hc?bnftWebEvntCd=CNE507&searchWord=",
+      "cashbackAmount": 800000,
+      "channel": "카드사 공식",
+      "cashbackIsMaximum": true
+    },
+    {
+      "id": "hyundai-202611-x-cut-x-save-annual-fee",
+      "kind": "cashback",
+      "title": "현대카드 X Cut, X Save 신규 회원 연회비 캐시백 이벤트",
+      "summary": "온라인 신규 발급 첫해 연회비 캐시백",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "entryRequired": false,
+      "cards": [
+        "현대카드 X Cut",
+        "현대카드 X Save"
+      ],
+      "conditions": [
+        "11월 중 현대카드 공식 홈페이지·앱에서 첫 발급 또는 탈회 후 1년을 초과해 재가입 신청",
+        "마케팅 수신동의 필요, 지급 시 정상 카드 유지",
+        "2025년 12월~2026년 11월 탈회 또는 본인·가족 카드 해지 이력 및 추가·교체·가족 발급 제외",
+        "1인 1회, 타 연회비·발급·이용 유도 행사와 중복 불가. 발급 다음 달 기준 3개월 이내 입금"
+      ],
+      "url": "https://www.hyundaicard.com/cpb/ev/CPBEV0101_06.hc?bnftWebEvntCd=5CB769&searchWord=",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ]
+}
