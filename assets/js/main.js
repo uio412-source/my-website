@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     '<button type="button" class="site-switch-btn" aria-label="다른 사이트로 이동" aria-expanded="false" aria-haspopup="true">' +
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>' +
     '<div class="site-switch-menu" hidden>' +
-    `<a href="${siteRoot}ungjup.html"${subSite ? "" : ' aria-current="true"'}><b>Mr. <span>Stocks</span></b><small>줍줍 차트 · 관심종목 · 배당</small></a>` +
+    `<a href="${siteRoot}ungjup.html"${subSite ? "" : ' aria-current="true"'}><b>Mr. <span>Stocks</span></b><small>마켓뷰 · 관심종목 &amp; 뉴스 · 분배금 · AI</small></a>` +
     `<a href="${siteRoot}paymorevent/"><b>Mr. <span>Cards</span></b><small>카드상품 · 이벤트 · 내 혜택</small></a>` +
     `<a href="${siteRoot}hotels/"${subSite === "hotels" ? ' aria-current="true"' : ""}><b>Mr. <span>Hotels</span></b><small>호텔 지도 · 등급표 · 이벤트 · 발레파킹</small></a>` +
     `<a href="${siteRoot}travel/"${subSite === "travel" ? ' aria-current="true"' : ""}><b>Mr. <span>Travel</span></b><small>해외여행 혜택 · 여행지 · 여행준비</small></a>` +

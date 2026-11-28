@@ -30,7 +30,7 @@ function useNav({current, onNav}: NavProps) {
 
 // Mr. 사이트 전환 (Stocks·Hotels·Travel·Pay는 assets/js/main.js에서 같은 메뉴를 만듦)
 const SITES = [
-  {id: 'stocks', name: 'Stocks', desc: '줍줍 차트 · 관심종목 · 배당', href: () => sitePath('../ungjup.html')},
+  {id: 'stocks', name: 'Stocks', desc: '마켓뷰 · 관심종목 & 뉴스 · 분배금 · AI', href: () => sitePath('../ungjup.html')},
   {id: 'cards', name: 'Cards', desc: '카드상품 · 이벤트 · 내 혜택', href: () => sitePath()},
   {id: 'hotels', name: 'Hotels', desc: '호텔 지도 · 등급표 · 이벤트 · 발레파킹', href: () => sitePath('../hotels/')},
   {id: 'travel', name: 'Travel', desc: '해외여행 혜택 · 여행지 · 여행준비', href: () => sitePath('../travel/')},
