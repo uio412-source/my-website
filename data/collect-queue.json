@@ -71,7 +71,7 @@
    "type": "card-events",
    "name": "하나카드",
    "url": "https://m.hanacard.co.kr/MPAEVT100M.web",
-   "lastCollected": "2026-11-27"
+   "lastCollected": "2026-11-28"
   },
   {
    "key": "card-events:롯데카드",
@@ -85,7 +85,7 @@
    "type": "card-events",
    "name": "NH농협카드",
    "url": "https://card.nonghyup.com/servlet/IpCb0005M.act",
-   "lastCollected": "2026-11-27"
+   "lastCollected": "2026-11-28"
   },
   {
    "key": "card-events:BC카드",
