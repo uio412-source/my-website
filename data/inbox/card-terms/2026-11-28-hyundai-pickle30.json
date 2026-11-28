@@ -1,0 +1,75 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "hyundai-schc",
+   "queueKey": "hyundai-schc",
+   "name": "쏘카카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=SCHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02845",
+   "docDate": "2026-03-01",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 10000},
+    {"brand": "Visa", "amount": 10000}
+   ],
+   "brands": ["국내전용", "Visa"],
+   "minimumSpend": 300000,
+   "spendBasis": "당월 이용금액(결제일자에 청구된 일시불·할부) 30만원 이상",
+   "grace": "신규 발급 시 발급일 포함 2회차 결제일자 이용 건까지 당월 30만원 미만도 혜택 제공",
+   "spendExclusions": [
+    "장기카드대출(카드론)·단기카드대출(현금서비스)",
+    "연회비·제수수료·이자",
+    "쏘카카드 외 다른 카드 이용 금액"
+   ],
+   "benefitExclusions": [
+    "쏘카 앱 내 수리비·범칙금 결제",
+    "특별 가맹점 외식은 한식·중식·일식·서양식·뷔페·패스트푸드·주점만",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "쏘카카드 기본/추가 적립이 적용된 결제 건은 당월 이용금액 산정에서 제외(기본 적립은 포함)"
+   ],
+   "benefits": [
+    {
+     "group": "크레딧 적립",
+     "label": "쏘카 앱",
+     "place": "쏘카 앱 내 모든 서비스 결제(수리비·범칙금 제외)",
+     "value": "3%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 300000,
+     "capScope": "월",
+     "limits": "추가 적립은 월 이용금액 30만원까지",
+     "conditions": ["기본 1% + 추가 2%", "추가 적립 한도 초과분은 기본 1% 적용", "크레딧은 쏘카 앱에서 현금처럼 사용"]
+    },
+    {
+     "group": "크레딧 적립",
+     "label": "특별 가맹점",
+     "place": "외식, 커피(스타벅스·폴바셋·이디야), 영화(CGV·메가박스·롯데시네마), 호텔(특1급·2급), 프리미엄아울렛(신세계·현대·롯데), 대중교통(버스·지하철·택시)",
+     "value": "3%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 300000,
+     "capScope": "월",
+     "limits": "대상 업종 합산 월 이용금액 30만원까지",
+     "conditions": ["기본 1% + 추가 2%", "외식은 한식·중식·일식·서양식·뷔페·패스트푸드·주점에 한함"]
+    },
+    {
+     "group": "크레딧 적립",
+     "label": "일반 가맹점",
+     "place": "그 외 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "제한 없음",
+     "conditions": ["기본 적립만", "적립 크레딧 유효기간은 최초 적립월부터 12개월"]
+    }
+   ]
+  }
+ ]
+}
