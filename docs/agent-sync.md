@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 11:47 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 12:00 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,12 @@ _자동 생성 2026-11-28 11:47 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#294](https://github.com/uio412-source/my-website/pull/294) | Pickle | data: 수집 2026-11-28 (Pickle14 · NOL·LG전자·SK인텔릭스 현대카드) | 2026-11-28 12:00 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#295](https://github.com/uio412-source/my-website/pull/295) | Claude | Mr. Stocks: 메뉴 이름 변경 + AI 트레이딩(공사중) 추가 | 2026-11-28 11:59 | 9파일 · 루트 5 · assets/ 2 · docs/ 1 외 1곳 | 머지 |
+| [#292](https://github.com/uio412-source/my-website/pull/292) | Pickle | data: 수집 2026-11-28 (Pickle13 · SSG.COM·넥슨·국민행복 현대카드 3종) | 2026-11-28 11:54 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#293](https://github.com/uio412-source/my-website/pull/293) | Pickle | data(events): 롯데×마스터 11만P 이벤트 id 정리 | 2026-11-28 11:52 | 1파일 · paymorevent/ 1 | 머지 |
+| [#290](https://github.com/uio412-source/my-website/pull/290) | Pickle | data: 수집 2026-11-28 (Pickle12 · 현대카드 Z family·Z play·ZERO E… | 2026-11-28 11:49 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#291](https://github.com/uio412-source/my-website/pull/291) | Claude | Mr. Cards: 선불카드 11종 추가 + 카드 종류 '선불' | 2026-11-28 11:49 | 21파일 · paymorevent/ 10 · data/ 3 · docs/ 3 외 4곳 | 머지 |
 | [#287](https://github.com/uio412-source/my-website/pull/287) | Pickle | data: 수집 2026-11-28 (Pickle11 · 현대카드 M·MM·X 상품설명서 3종) | 2026-11-28 11:44 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#288](https://github.com/uio412-source/my-website/pull/288) | ChatGPT | feat(cards): 상세 공유·발급 브랜드 UI 정리 | 2026-11-28 11:44 | 12파일 · paymorevent/ 11 · 루트 1 | 머지 |
 | [#289](https://github.com/uio412-source/my-website/pull/289) | ChatGPT | feat(cards): 공식 신규 발급 중단일 수집 및 검수 데이터 연결 | 2026-11-28 11:43 | 9파일 · paymorevent/ 6 · tools/data 2 · docs/ 1 | 머지 |
@@ -54,12 +60,6 @@ _자동 생성 2026-11-28 11:47 KST · `python tools/data/agent_sync.py` · 기�
 | [#271](https://github.com/uio412-source/my-website/pull/271) | Pickle | docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 51~77차 반영) | 2026-11-28 00:34 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#270](https://github.com/uio412-source/my-website/pull/270) | Pickle | data: 수집 2026-11-27 77차 (현대카드 이벤트 22건) | 2026-11-28 00:32 | 1파일 · data/inbox/card-events 1 | 머지 |
 | [#269](https://github.com/uio412-source/my-website/pull/269) | Pickle | data: 수집 2026-11-27 76차 (KB국민카드 이벤트 11건) | 2026-11-28 00:27 | 1파일 · data/inbox/card-events 1 | 머지 |
-| [#268](https://github.com/uio412-source/my-website/pull/268) | Pickle | data: 수집 2026-11-27 75차 (KB국민카드 이벤트 10건) | 2026-11-28 00:24 | 1파일 · data/inbox/card-events 1 | 머지 |
-| [#267](https://github.com/uio412-source/my-website/pull/267) | Pickle | data: 수집 2026-11-27 74차 (KB국민카드 이벤트 22건) | 2026-11-28 00:20 | 1파일 · data/inbox/card-events 1 | 머지 |
-| [#266](https://github.com/uio412-source/my-website/pull/266) | Pickle | data: 수집 2026-11-27 73차 (KB국민카드 이벤트 20건) | 2026-11-28 00:16 | 1파일 · data/inbox/card-events 1 | 머지 |
-| [#265](https://github.com/uio412-source/my-website/pull/265) | Pickle | data: 수집 2026-11-27 72차 (KB국민카드 이벤트 21건) | 2026-11-28 00:12 | 1파일 · data/inbox/card-events 1 | 머지 |
-| [#264](https://github.com/uio412-source/my-website/pull/264) | Pickle | data: 수집 2026-11-27 71차 (KB국민카드 이벤트 20건) | 2026-11-28 00:07 | 1파일 · data/inbox/card-events 1 | 머지 |
-| [#263](https://github.com/uio412-source/my-website/pull/263) | Pickle | data: 수집 2026-11-27 70차 (NH농협카드 이벤트 9건) | 2026-11-28 00:02 | 1파일 · data/inbox/card-events 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -73,7 +73,6 @@ _지금 잠근 영역이 없습니다._
 
 | PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
 |---|---|---|---|---|---|
-| [#290](https://github.com/uio412-source/my-website/pull/290) | Pickle | `ai/chatgpt/data-2026-11-28-pickle…` | 2026-11-28 11:45 | 1파일 · data/inbox/card-terms 1 | data: 수집 2026-11-28 (Pickle12 · 현대카드 Z family·Z p… |
 | [#286](https://github.com/uio412-source/my-website/pull/286) | ChatGPT | `ai/chatgpt/fix-terms-reward-conve…` | 2026-11-28 11:39 | 4파일 · tools/data 3 · paymorevent/ 1 | fix(cards): 피킹률 자동 변환의 조건 누락과 오래된 요율 재사용 방지 |
 | [#277](https://github.com/uio412-source/my-website/pull/277) (초안) | Claude | `ai/claude/data-2026-11-28` | 2026-11-28 05:05 | 6파일 · data/ 3 · data/inbox/card-terms 2… | data: 수집 2026-11-28 (Claude · 상품설명서 7종) |
 
@@ -90,8 +89,8 @@ _지금 잠근 영역이 없습니다._
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #288 feat(cards): 상세 공유·발급 브랜드 UI 정리 | 2026-11-28 11:44 | 0건 |
-| Claude | `data/agent-notes/claude.json` | #280 pay: 매일 확인 2026-11-28 — 토스 페이스페이 … | 2026-11-28 10:27 | 15건 |
-| Pickle | `data/agent-notes/pickle.json` | #287 data: 수집 2026-11-28 (Pickle11 · 현… | 2026-11-28 11:44 | 63건 |
+| Claude | `data/agent-notes/claude.json` | #295 Mr. Stocks: 메뉴 이름 변경 + AI 트레이딩(공사… | 2026-11-28 11:59 | 15건 |
+| Pickle | `data/agent-notes/pickle.json` | #294 data: 수집 2026-11-28 (Pickle14 · N… | 2026-11-28 12:00 | 63건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
