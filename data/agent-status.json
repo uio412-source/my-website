@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T18:11:11+09:00",
+  "generatedAt": "2026-11-28T22:19:23+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -9,7 +9,12 @@
       "role": "ChatGPT 예약 작업·Dot — 데이터 수집(data/inbox) 담당. 브랜치 ai/chatgpt/data-*, 파일 YYYY-MM-DD-<출처>.json(접미사 없음).",
       "updatedAt": "2026-11-25T19:40:00+09:00",
       "lock": null,
-      "lastMergedPR": null,
+      "lastMergedPR": {
+        "number": 388,
+        "title": "data: 수집 2026-11-28 (IBK기업은행 카드 이벤트 4건)",
+        "mergedAt": "2026-11-28T12:34:48Z",
+        "mergedAtKST": "2026-11-28 21:34"
+      },
       "runs": [
         {
           "at": "2026-11-25T15:09:00+09:00",
@@ -35,10 +40,38 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-28T17:30:00+09:00",
+      "updatedAt": "2026-11-28T22:40:00+09:00",
       "lock": null,
-      "lastMergedPR": null,
+      "lastMergedPR": {
+        "number": 389,
+        "title": "data: 현대카드 BUSINESS 상품설명서 — 케이뱅크·카카오뱅크 3종 다시 정리",
+        "mergedAt": "2026-11-28T13:18:10Z",
+        "mergedAtKST": "2026-11-28 22:18"
+      },
       "runs": [
+        {
+          "at": "2026-11-28T22:40:00+09:00",
+          "kind": "collect",
+          "pr": 389,
+          "summary": "card-terms 현대카드 BUSINESS 3종 다시 정리(HJ 요청: 케이뱅크·카카오뱅크 먼저) — 케이뱅크 BUSINESS(케이뱅크 상품 페이지, 여신협회 심의필 2026-07-07), 카카오뱅크 BUSINESS(가이드북 2026.01), 카카오뱅크 BUSINESS PRIME(가이드북 2026.03). 사업성 경비를 실제 대상점(온라인쇼핑·해외·전기/도시가스·4대보험 / 온라인쇼핑·멤버십·디지털 콘텐츠)으로 줄마다 나누고 통합 월 한도(3만·4만 M포인트)·여행/골프/호텔·바우처·라운지·발레·대출 우대를 채움. hyundaicard.com·kakaobank.com은 WebFetch가 robots로 막혀 공식 가이드북·카카오뱅크 페이지의 검색 색인 본문으로 옮김",
+          "queueKeys": [
+            "hyundai-smekbnk",
+            "hyundai-smekkob",
+            "hyundai-smekkobp"
+          ],
+          "picking": {
+            "checked": 1579,
+            "newIssues": 0,
+            "note": "picking_audit A1·A2·A3 수 그대로(요율 모델 안 건드림), label-audit 새 카드 문제 0"
+          }
+        },
+        {
+          "at": "2026-11-28T22:40:00+09:00",
+          "kind": "audit",
+          "pr": 389,
+          "summary": "Pickle 현대카드 card-terms(2026-11-27-hyundai-pickle49·54) 검수 — 카카오뱅크·케이뱅크 BUSINESS 3종이 '사업성 경비 영역'처럼 실제 가맹점 없는 줄(표시 규칙 1 위반)·월 한도 없음. 정리본이 혜택 표를 대신해(table=true) 카드 DB의 한도 정보까지 화면에서 사라지고 있었음. 같은 key로 2026-11-28-hyundai-claude.json을 올려 덮어씀(파일 순서상 뒤). 나머지 MY BUSINESS·캐시노트·ZERO 계열도 같은 문제라 이어서 정리",
+          "conclusion": "지적"
+        },
         {
           "at": "2026-11-28T17:30:00+09:00",
           "kind": "collect",
@@ -2546,6 +2579,34 @@
   "openPRs": [],
   "recentPRs": [
     {
+      "number": 389,
+      "title": "data: 현대카드 BUSINESS 상품설명서 — 케이뱅크·카카오뱅크 3종 다시 정리",
+      "agent": "Claude",
+      "branch": "ai/claude/hyundai-business-terms",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T13:18:10Z",
+      "mergedAtKST": "2026-11-28 22:18",
+      "createdAt": "2026-11-28T13:16:49Z",
+      "createdAtKST": "2026-11-28 22:16",
+      "area": "4파일 · data/ 2 · data/inbox/card-terms 1 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/389"
+    },
+    {
+      "number": 388,
+      "title": "data: 수집 2026-11-28 (IBK기업은행 카드 이벤트 4건)",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/data-2026-11-28-ibk-events",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T12:34:48Z",
+      "mergedAtKST": "2026-11-28 21:34",
+      "createdAt": "2026-11-28T12:24:35Z",
+      "createdAtKST": "2026-11-28 21:24",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/388"
+    },
+    {
       "number": 387,
       "title": "docs: 50배치 2차 수집 마무리 — 대기열·Pickle 기록·현황판 동기화",
       "agent": "Pickle",
@@ -3076,34 +3137,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/350"
-    },
-    {
-      "number": 349,
-      "title": "data: 수집 2026-11-28 (Pickle57 · KB HERITAGE Smart 대한항공 마일리지형 상품설명서)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle57",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T08:22:58Z",
-      "mergedAtKST": "2026-11-28 17:22",
-      "createdAt": "2026-11-28T08:22:36Z",
-      "createdAtKST": "2026-11-28 17:22",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/349"
-    },
-    {
-      "number": 348,
-      "title": "data: 수집 2026-11-28 (Pickle56 · KB HERITAGE Classic 할인형 상품설명서)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle56",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T08:22:02Z",
-      "mergedAtKST": "2026-11-28 17:22",
-      "createdAt": "2026-11-28T08:21:41Z",
-      "createdAtKST": "2026-11-28 17:21",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/348"
     }
   ],
   "queue": {
