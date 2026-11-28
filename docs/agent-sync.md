@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 22:22 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-29 02:42 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,9 @@ _자동 생성 2026-11-28 22:22 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#394](https://github.com/uio412-source/my-website/pull/394) | Pickle | data: 수집 2026-11-29 (현대카드 상품설명서 12종) | 2026-11-29 02:41 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#393](https://github.com/uio412-source/my-website/pull/393) | ChatGPT | GitHub 이슈 기반 모바일 에이전트 채팅방과 5분 확인 워커 | 2026-11-29 00:01 | 5파일 · agent-chat/ 5 | 머지 |
+| [#390](https://github.com/uio412-source/my-website/pull/390) | Claude | data: 현대카드 BUSINESS 상품설명서 2차 — MY BUSINESS·캐시노트·햇살론 6종 | 2026-11-28 22:22 | 4파일 · data/ 2 · data/inbox/card-terms 1 · docs/… | 머지 |
 | [#389](https://github.com/uio412-source/my-website/pull/389) | Claude | data: 현대카드 BUSINESS 상품설명서 — 케이뱅크·카카오뱅크 3종 다시 정리 | 2026-11-28 22:18 | 4파일 · data/ 2 · data/inbox/card-terms 1 · docs/… | 머지 |
 | [#388](https://github.com/uio412-source/my-website/pull/388) | ChatGPT | data: 수집 2026-11-28 (IBK기업은행 카드 이벤트 4건) | 2026-11-28 21:34 | 1파일 · data/inbox/card-events 1 | 머지 |
 | [#387](https://github.com/uio412-source/my-website/pull/387) | Pickle | docs: 50배치 2차 수집 마무리 — 대기열·Pickle 기록·현황판 동기화 | 2026-11-28 18:09 | 4파일 · data/ 3 · docs/ 1 | 머지 |
@@ -57,9 +60,6 @@ _자동 생성 2026-11-28 22:22 KST · `python tools/data/agent_sync.py` · 기�
 | [#370](https://github.com/uio412-source/my-website/pull/370) | Pickle | data: 수집 2026-11-28 (Pickle78 · 광주은행 GLOBAL TRAVEL 체크카드 혜택) | 2026-11-28 17:49 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#369](https://github.com/uio412-source/my-website/pull/369) | Pickle | data: 수집 2026-11-28 (Pickle77 · 광주은행 TOGETHER 체크카드 혜택) | 2026-11-28 17:48 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#368](https://github.com/uio412-source/my-website/pull/368) | Pickle | data: 수집 2026-11-28 (Pickle76 · 광주은행 더프라임에이지 베테랑 신용카드 혜택) | 2026-11-28 17:46 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#367](https://github.com/uio412-source/my-website/pull/367) | Pickle | data: 수집 2026-11-28 (Pickle75 · 광주은행 기아 챔피언스카드 혜택) | 2026-11-28 17:45 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#366](https://github.com/uio412-source/my-website/pull/366) | Pickle | data: 수집 2026-11-28 (Pickle74 · 광주은행 대한항공SKYPASS 카드 혜택) | 2026-11-28 17:44 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#365](https://github.com/uio412-source/my-website/pull/365) | Pickle | data: 수집 2026-11-28 (Pickle73 · 광주은행 메가박스 신용카드 혜택) | 2026-11-28 17:43 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -73,30 +73,39 @@ _지금 잠근 영역이 없습니다._
 
 | PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
 |---|---|---|---|---|---|
-| [#390](https://github.com/uio412-source/my-website/pull/390) | Claude | `ai/claude/hyundai-business-terms-2` | 2026-11-28 22:22 | 4파일 · data/ 2 · data/inbox/card-terms 1… | data: 현대카드 BUSINESS 상품설명서 2차 — MY BUSINESS·캐시노트·햇… |
+| [#392](https://github.com/uio412-source/my-website/pull/392) | ChatGPT | `ai/chatgpt/agent-handoffs-391` | 2026-11-28 23:53 | 1파일 · docs/ 1 | 에이전트 예약 작업에서 공용 검수 요청 확인 |
 
-### 수집 대기열 (`data/collect-queue.json`, built 2026-11-28)
+### 수집 대기열 (`data/collect-queue.json`, built 2026-11-29)
 
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 583 / 1463종 · **브랜드 프로그램** todo 45 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 11 / 30곳
-- **최근 수집일** — card-terms 2026-11-28 · brand-services 2026-11-28 · card-events 2026-11-28 · hotel-events 없음 · travel-events 2026-11-28 · card-products 2026-11-26
+- **남은 카드** 571 / 1463종 · **브랜드 프로그램** todo 45 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 11 / 30곳
+- **최근 수집일** — card-terms 2026-11-29 · brand-services 2026-11-28 · card-events 2026-11-28 · hotel-events 없음 · travel-events 2026-11-28 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
 
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
-| ChatGPT | `data/agent-notes/chatgpt.json` | #388 data: 수집 2026-11-28 (IBK기업은행 카드 이… | 2026-11-28 21:34 | 0건 |
-| Claude | `data/agent-notes/claude.json` | #389 data: 현대카드 BUSINESS 상품설명서 — 케이뱅크·… | 2026-11-28 22:18 | 18건 |
-| Pickle | `data/agent-notes/pickle.json` | #387 docs: 50배치 2차 수집 마무리 — 대기열·Pickle… | 2026-11-28 18:09 | 74건 |
+| ChatGPT | `data/agent-notes/chatgpt.json` | #393 GitHub 이슈 기반 모바일 에이전트 채팅방과 5분 확인 … | 2026-11-29 00:01 | 0건 |
+| Claude | `data/agent-notes/claude.json` | #390 data: 현대카드 BUSINESS 상품설명서 2차 — MY… | 2026-11-28 22:22 | 18건 |
+| Pickle | `data/agent-notes/pickle.json` | #394 data: 수집 2026-11-29 (현대카드 상품설명서 1… | 2026-11-29 02:41 | 78건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 80건
+### 다시 볼 것 (open) — 83건
 
+- **2026-11-29 · Pickle · hyundai-kale2t2·kale2t3 대한항공카드 120·300**
+  - 사유: 카드가 연결한 문서(c=03210·03211)가 상품설명서가 아니라 'Mastercard 프리미엄서비스 안내'(국내 공항 라운지 연 2회)임
+  - 재시도: 대한항공카드 상품설명서(가이드북) 코드를 카드 상세 외 경로(상품공시실·고객센터)에서 확인
+- **2026-11-29 · Pickle · hyundai-mrdsc Kia Members 경차전용카드**
+  - 사유: 카드 상세(CPCCR0201_01.hc?cardWcd=MRDSC)에 상품설명서 pdf_link가 렌더되지 않음(guideCardCheck3 미해당)
+  - 재시도: 카드사(1577-6000)에 상품설명서 요청 또는 다른 제휴 카드 가이드북(02714) 내 경차전용 항목 확인
+- **2026-11-29 · Pickle · hyundai-msce2 현대카드M-경차전용카드 Edition2**
+  - 사유: 카드가 연결한 약관 PDF(T_ATW-20220506-…V10.pdf)의 심의필이 2022-07-27로 '올해·작년 문서' 규칙 밖
+  - 재시도: 2025~2026년판 약관·가이드북이 올라오면 같은 카드 상세의 pdf_link에서 교체
 - **2026-11-28 · Pickle · KB 91** 이미지 PDF 14종**
   - 사유: 텍스트 추출이 1~1,000자로 표가 이미지이고 일부는 공통 설명서라 혜택 확인 불가
   - 재시도: PDF 페이지 렌더 판독으로 순차 수집
@@ -339,8 +348,11 @@ _지금 잠근 영역이 없습니다._
   - 사유: 카드사 페이지 표기(국내 1.4천원·해외 1.5천원)와 기본+제휴 합계(1.1+3.0 / 1.2+3.0)가 불일치
   - 재시도: 카드사(1577-3650) 확인 후 annualFee 교체
 
-### 다른 경로로 처리 (workaround) — 12건
+### 다른 경로로 처리 (workaround) — 13건
 
+- **2026-11-29 · Pickle · hyundai-ampte2·amgle2·amgre2 AMEX 3종 card-terms**
+  - 사유: 연결 문서(c=03186·03185·03184)가 '2026년 선택제공서비스 안내서'로 혜택이 브랜드 서비스뿐이고 연회비 표가 없음
+  - 대신 이렇게: 2026-11-28 판단 유지 — card-terms 대신 brand-services로 남김
 - **2026-11-28 · Pickle · NH농협카드 VISA Platinum·VISA Signature·Mastercard Platinum 브랜드서비스**
   - 사유: 안내문(VISA_Platinum_251001.pdf·VISA_Signature_251001.pdf·Mastercard_Platinum_251001.pdf)은 확보했으나 '국내 호텔 발레파킹' 대상 호텔 목록이 안내문에 없어 hotel_valet 필수 항목을 채울 수 없음
   - 대신 이렇게: 카드 상세·상품설명서에서 대상 호텔 목록을 확인한 뒤 수집
