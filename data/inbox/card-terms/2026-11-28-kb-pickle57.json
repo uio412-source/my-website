@@ -1,0 +1,129 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09126",
+   "queueKey": "kb-09126",
+   "name": "HERITAGE Smart[대한항공 마일리지형]",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09126&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09126__prdctOpmn_20231101.pdf",
+   "docDate": "2023-01-03",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 200000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 200000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월 1일~말일(승인시점 기준) HERITAGE Smart[대한항공 마일리지형] 일시불·할부 승인 금액",
+   "spendExclusions": [
+    "무이자할부 이용금액",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "상품권·선불카드 구입·충전",
+    "아파트 관리비",
+    "유치원·초·중·고 납입금",
+    "정부지원금",
+    "대학(원) 등록금",
+    "국세·지방세",
+    "공과금",
+    "4대 사회보험료",
+    "각종 수수료·이자·연체료·연회비",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액",
+    "상품권·선불카드 구입·충전",
+    "취소 금액"
+   ],
+   "benefits": [
+    {
+     "group": "쿠폰",
+     "label": "쿠폰 3택1",
+     "place": "특급호텔 15만원 할인 / 항공권 할인 쿠폰 / 공연·전시 할인 쿠폰",
+     "value": "연 1회 택1",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "연",
+     "conditions": [
+      "발급 첫해는 연회비 납부 및 50만원 이상 이용 시, 다음해부터는 전년도 이용금액 600만원 이상 시",
+      "본인회원 한정, 가족회원 미제공"
+     ]
+    },
+    {
+     "group": "적립",
+     "label": "국내 가맹점",
+     "place": "국내 모든 가맹점",
+     "value": "1천원당 1마일",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "전월 실적 조건·적립 한도 없음"
+    },
+    {
+     "group": "적립",
+     "label": "해외 가맹점",
+     "place": "해외 모든 가맹점",
+     "value": "1천원당 2마일",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "전월 실적 조건·적립 한도 없음"
+    },
+    {
+     "group": "적립",
+     "label": "KB Pay",
+     "place": "KB Pay 결제",
+     "value": "2천원당 1마일",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 2천마일리지",
+     "conditions": [
+      "국내 가맹점 1천원당 1마일과 중복 적립"
+     ]
+    },
+    {
+     "group": "금융",
+     "label": "은행 수수료 면제",
+     "place": "KB국민은행·타 은행 송금수수료(인터넷·모바일·폰뱅킹·창구·자동화기기), 입출금 통지 SMS, 증명서 발급·사고신고 수수료",
+     "value": "면제",
+     "valueType": "면제",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월"
+    },
+    {
+     "group": "금융",
+     "label": "외환",
+     "place": "KB국민은행 창구 환전·해외송금",
+     "value": "환전 1% 감면·해외송금 수수료 면제",
+     "valueType": "면제",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "전신환 수수료·웨스턴 유니온 송금 수수료 제외"
+     ]
+    }
+   ]
+  }
+ ]
+}

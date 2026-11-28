@@ -1,0 +1,171 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-01664",
+   "queueKey": "kb-01664",
+   "name": "노리 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=01664&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/01664__prdctOpmn_20260818.pdf",
+   "docDate": "2010-12-23",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    },
+    {
+     "brand": "Visa",
+     "amount": 0
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 0
+    },
+    {
+     "brand": "UnionPay",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Visa",
+    "Mastercard",
+    "UnionPay"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 KB국민 노리 체크카드 이용금액(실제 이용일이 아닌 이메일 이용내역서상 기재된 이용일 기준)",
+   "spendExclusions": [
+    "후불교통요금",
+    "무승인 전표",
+    "상품권·선불카드 구입·충전",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "상품권 구매 및 매점 이용금액",
+    "백화점·대형마트 등 입점 일부 매장",
+    "유료도로 통행료",
+    "간편결제·앱 결제(CGV)"
+   ],
+   "benefits": [
+    {
+     "group": "대중교통",
+     "label": "후불교통",
+     "place": "시내버스·지하철",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "교통 이용금액 월 2만원까지, 최대 할인액 2천원"
+    },
+    {
+     "group": "대중교통",
+     "label": "고속·시외버스",
+     "place": "고속버스·시외버스",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "교통 이용금액 월 2만원까지, 최대 할인액 2천원"
+    },
+    {
+     "group": "통신",
+     "label": "이동통신요금",
+     "place": "SKT·KT·LG U+ 이동통신요금 자동납부",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "건당 5만원 이상 시 2,500원 정액할인(월 1회)"
+    },
+    {
+     "group": "영화",
+     "label": "CGV",
+     "place": "CGV(인터넷 예매 시 영화관 직영 홈페이지·스마트폰 애플리케이션)",
+     "value": "35%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 7000,
+     "capScope": "월",
+     "limits": "건당 1만원 이상, 건당 최대 2만원 이용금액까지"
+    },
+    {
+     "group": "커피",
+     "label": "스타벅스",
+     "place": "스타벅스",
+     "value": "20%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 4000,
+     "capScope": "월",
+     "limits": "건당 1만원 이상, 건당 최대 2만원 이용금액까지"
+    },
+    {
+     "group": "놀이공원",
+     "label": "놀이공원",
+     "place": "에버랜드·롯데월드 현장예매",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 25000,
+     "capScope": "월",
+     "limits": "건당 3만원 이상, 건당 최대 5만원 이용금액까지"
+    },
+    {
+     "group": "외식",
+     "label": "패밀리레스토랑",
+     "place": "아웃백·VIPS",
+     "value": "20%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "건당 3만원 이상"
+    },
+    {
+     "group": "도서",
+     "label": "교보문고",
+     "place": "교보문고(인터넷 교보문고 포함)",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 2500,
+     "capScope": "월",
+     "limits": "건당 2만원 이상"
+    },
+    {
+     "group": "편의점",
+     "label": "GS25",
+     "place": "GS25",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 1000,
+     "capScope": "월",
+     "limits": "건당 1만원 이상"
+    },
+    {
+     "group": "금융",
+     "label": "수수료 면제",
+     "place": "인터넷·모바일·폰뱅킹 타행이체, KB국민은행 자동화기기 이용수수료",
+     "value": "면제",
+     "valueType": "면제",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "KB국민은행 계좌에서 이체·입출금하는 경우",
+      "연체·거래정지 시 면제 불가"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20171202002",
+   "name": "1st플래티늄카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20171202002",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20171202002",
+   "docDate": "2018-12-24",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 28000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 최초 발급 후 사용등록 월 포함 익월 말까지 전월실적과 관계없이 혜택 제공",
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "각종 수수료·이자",
+    "무이자할부 이용금액",
+    "기프트카드 구입·충전",
+    "각종 상품권 구입",
+    "대학·대학원 등록금",
+    "각종 공과금·지방세·국세",
+    "대중교통 이용금액",
+    "골프장·영화관 서비스 혜택을 받은 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용건",
+    "영화 예매 대행사이트 이용"
+   ],
+   "benefits": [
+    {
+     "group": "기본",
+     "label": "전 가맹점",
+     "place": "모든 가맹점",
+     "value": "0.7%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "전월실적 무관",
+     "conditions": [
+      "포인트적립형·캐시백형 중 선택(횟수 제한 없이 변경 가능)"
+     ]
+    },
+    {
+     "group": "기본",
+     "label": "10만원 이상 결제",
+     "place": "모든 가맹점 건당 10만원 이상 이용",
+     "value": "추가 0.5%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "합산 최대 1.2%"
+    },
+    {
+     "group": "골프",
+     "label": "골프장",
+     "place": "전국 모든 골프장",
+     "value": "10만원당 5,000원",
+     "valueType": "캐시백",
+     "minimumSpend": 100000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 1회",
+     "conditions": [
+      "건당 10만원 미만 결제 시 제공되지 않음"
+     ]
+    },
+    {
+     "group": "영화",
+     "label": "영화관",
+     "place": "전국 모든 영화관(영화 예매·스낵바 포함)",
+     "value": "3,000원",
+     "valueType": "캐시백",
+     "minimumSpend": 100000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "일 1회·월 2회·연 8회 이내",
+     "conditions": [
+      "건당 8천원 이상 이용 시",
+      "예매 대행사이트 이용 시 제외"
+     ]
+    }
+   ]
+  }
+ ]
+}

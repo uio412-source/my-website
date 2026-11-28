@@ -1,0 +1,140 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20230623001",
+   "name": "K-패스그린카드v2",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20230623001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20230623001",
+   "docDate": "2024-05-21",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 12000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 정상 승인금액 기준(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "spendExclusions": [
+    "무이자할부",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "각 브랜드 상품권·선불카드 구입·충전",
+    "백화점·할인점(아울렛 포함) 입점 매장(커피)",
+    "예매 대행 사이트(영화)"
+   ],
+   "benefits": [
+    {
+     "group": "온라인",
+     "label": "온라인 업종",
+     "place": "온라인 업종",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 2회, 월 적립한도 3,000점"
+    },
+    {
+     "group": "통신",
+     "label": "통신요금 자동납부",
+     "place": "SKT·KT·LG U+ 통신요금 자동이체",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 1회"
+    },
+    {
+     "group": "대중교통",
+     "label": "버스·지하철",
+     "place": "버스·지하철",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월"
+    },
+    {
+     "group": "교통",
+     "label": "KTX·고속버스",
+     "place": "KTX·고속버스",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "통합 1일 1회·통합 월 2회"
+    },
+    {
+     "group": "커피",
+     "label": "커피",
+     "place": "스타벅스·엔젤리너스·이디야·투썸플레이스·메가커피",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "통합 1일 1회·통합 월 2회",
+     "conditions": [
+      "스타벅스 사이렌오더 제외 오프라인 결제건"
+     ]
+    },
+    {
+     "group": "영화",
+     "label": "영화",
+     "place": "CGV·롯데시네마·메가박스",
+     "value": "2,000점",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "통합 월 1회, 1만원 이상 결제 시",
+     "conditions": [
+      "현장 구입 또는 홈페이지·앱 예매(예매 대행 사이트 제외)"
+     ]
+    },
+    {
+     "group": "기본",
+     "label": "국내 전 가맹점",
+     "place": "국내 모든 가맹점",
+     "value": "0.3%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "온라인·통신·대중교통·KTX·커피·영화 적립 매출건과 중복 미제공"
+     ]
+    }
+   ]
+  }
+ ]
+}
