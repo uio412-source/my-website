@@ -602,9 +602,9 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .is-p-sum { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .72rem; color: var(--mc-muted); }
 .is-p-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--mc-border); flex-shrink: 0; }
 .is-p-dot.on { background: var(--mc-green); }
-.is-p-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px 10px; padding: 4px 10px 12px; align-items: end; }
+.is-p-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px 10px; padding: 4px 10px 12px; align-items: end; }
 .is-f { display: flex; flex-direction: column; gap: 3px; font-size: .7rem; font-weight: 700; color: var(--mc-muted); }
-.is-f input[type="date"] { padding: 6px 9px; border-radius: 9px; border: 1px solid var(--mc-border); background: var(--mc-bg); color: var(--mc-text); font-size: .8rem; }
+.is-f input[type="date"] { width: 100%; min-width: 150px; padding: 6px 9px; border-radius: 9px; border: 1px solid var(--mc-border); background: var(--mc-bg); color: var(--mc-text); font-size: .8rem; }
 .is-f input[type="date"]:disabled { opacity: .45; }
 .is-chip { padding: 6px 10px; border-radius: 9px; border: 1px dashed var(--mc-border); background: var(--mc-bg); color: var(--mc-muted); font-size: .74rem; font-weight: 700; cursor: pointer; }
 .is-chip[aria-pressed="true"] { border-style: solid; border-color: var(--mc-primary); color: var(--mc-on-primary); background: var(--mc-primary); }
