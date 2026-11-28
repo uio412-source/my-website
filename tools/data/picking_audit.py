@@ -101,15 +101,16 @@ def load(name: str):
 # --- 빌드 때 덮어쓰는 손 검수 규칙 (scripts/verified-card-rules.mjs · picking-review.mjs) ---
 # 화면은 catalog-snapshot.json 원본이 아니라 verified-card-rules.json.gz → terms-rules → picking-review 를
 # 차례로 덮은 값을 보여 줍니다. 전수 검사도 같은 순서로 만든 카드로 해야 화면과 같은 답이 나옵니다.
-def apply_verified_rules(cards: list[dict]) -> list[dict]:
+def apply_verified_rules(cards: list[dict], *, include_generated: bool = True) -> list[dict]:
     patches = load("verified-card-rules.json.gz").get("patches", {})
     out = [{**card, **patches[card["id"]]} if card["id"] in patches else card for card in cards]
-    try:
-        terms = load("terms-rules.json.gz").get("patches", {})
-    except FileNotFoundError:
-        terms = {}
-    out = [{**card, **terms[card["id"]]} if card["id"] in terms and not card.get("rewardRates") else card
-           for card in out]
+    if include_generated:
+        try:
+            terms = load("terms-rules.json.gz").get("patches", {})
+        except FileNotFoundError:
+            terms = {}
+        out = [{**card, **terms[card["id"]]} if card["id"] in terms and not card.get("rewardRates") else card
+               for card in out]
     review = load("picking-review.json")
     by_id = {card["id"]: i for i, card in enumerate(out)}
     for cid in review.get("benefitSpendExcluded", {}).get("cards", []):
