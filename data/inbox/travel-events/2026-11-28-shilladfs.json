@@ -1,0 +1,26 @@
+{
+  "type": "travel-events",
+  "vendorType": "dutyfree",
+  "vendor": "신라면세점",
+  "listUrls": [
+    "https://www.shilladfs.com/estore/kr/ko/event/eventView?eventId=B83830"
+  ],
+  "events": [
+    {
+      "id": "shilladfs-202611-incheon-fall-sale",
+      "title": "인천공항점 'FALL짝 세일'",
+      "summary": "단풍 레이스 리워드와 1인 출국객 구매 사은품",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "conditions": [
+        "블랙 단풍 레이스는 11월 20~30일 신라면세점 회원 1인 1회. 할인·쿠폰 차감 후 최종 결제액 기준",
+        "1인 출국객은 할인·쿠폰 차감 후 $50 이상 구매 내역을 동행인 없이 제시하면 사은품 1개",
+        "사은품 수령처는 T1 27GATE·T2 253GATE 패션 복합매장 내 안내데스크. 재고 소진 시 종료",
+        "일부 브랜드와 30% 이상 할인 상품은 제외. 구매 취소 시 지급 혜택 회수"
+      ],
+      "url": "https://www.shilladfs.com/estore/kr/ko/event/eventView?eventId=B83830"
+    }
+  ],
+  "collectedAt": "2026-11-28",
+  "collector": "ChatGPT"
+}

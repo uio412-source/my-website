@@ -1,0 +1,33 @@
+{
+  "type": "card-events",
+  "issuer": "우리카드",
+  "listUrls": [
+    "https://pc.wooricard.com/dcpc/yh1/bnf/bnf01/H1BNF201S00.do",
+    "https://pc.wooricard.com/dcpc/totSearch.do?gubn=01&mGubn=W&searchTerm=%ED%95%B4%EC%99%B8+%EC%82%AC%EC%9A%A9"
+  ],
+  "events": [
+    {
+      "id": "woori-202611-visa-klook-20",
+      "kind": "card",
+      "title": "우리-Visa카드 클룩 20% 즉시할인",
+      "summary": "$100 이상 해외결제 시 20% 즉시할인 · 건당 최대 $30",
+      "category": "해외/여행",
+      "startsAt": "2026-11-16",
+      "endsAt": "2027-01-31",
+      "entryRequired": false,
+      "cards": [],
+      "conditions": [
+        "쿠폰 다운로드는 2027-01-31까지, 예약·사용은 2027-02-28까지",
+        "우리 Visa 개인 신용·체크카드 대상. 법인·선불·기프트카드 제외",
+        "클룩 홈페이지·앱에서 통화를 USD로 변경하고, 결제 전 할인쿠폰에서 대상 카드를 선택",
+        "클룩 ID당 2회. 취소 후 재결제 및 결제 후 소급 할인 불가",
+        "한정 예산 소진 시 조기 종료"
+      ],
+      "url": "https://pc.wooricard.com/dcpc/totSearch.do?gubn=01&mGubn=W&searchTerm=%ED%95%B4%EC%99%B8+%EC%82%AC%EC%9A%A9",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ],
+  "collectedAt": "2026-11-28",
+  "collector": "ChatGPT"
+}
