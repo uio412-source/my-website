@@ -1,0 +1,238 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20240710001",
+   "name": "오일모아카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20240710001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20240710001",
+   "docDate": "2024-07-04",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 4100
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 4200
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 신규 후 수령일부터 다음 달 말일까지 실적 미달이어도 통합 캐시백 한도 1만원 제공",
+   "spendExclusions": [
+    "모든 주유소 주유 및 LPG 이용금액",
+    "무이자할부",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "인앱 결제(OTT)",
+    "간편결제 명의로 승인된 결제"
+   ],
+   "benefits": [
+    {
+     "group": "주유",
+     "label": "주유 6대 브랜드",
+     "place": "SK·GS칼텍스·S-OIL·현대오일뱅크·알뜰주유소·E1 주유소(LPG 충전소 포함)",
+     "value": "리터당 80~120원",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 50000,
+     "capScope": "월",
+     "limits": "1일 1회·월 4회, 1회 이용금액 10만원까지",
+     "conditions": [
+      "30~70만 80원·70~100만 100원·100만 이상 120원",
+      "통합 캐시백 한도 내에서 지급"
+     ]
+    },
+    {
+     "group": "자동차정비",
+     "label": "자동차정비",
+     "place": "현대 블루핸즈·기아 오토큐(광주·전남), 스피드메이트·오토오아시스·티스테이션(전국)",
+     "value": "건당 5,000원",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 건당 10만원 이상"
+    },
+    {
+     "group": "생활영역",
+     "label": "커피",
+     "place": "스타벅스·메가커피·빽다방·컴포즈커피·투썸플레이스·이디야커피·폴바셋·할리스커피 등 20개 브랜드",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 건당 1만원 이상"
+    },
+    {
+     "group": "생활영역",
+     "label": "영화",
+     "place": "CGV·메가박스·롯데시네마(온라인예매·현장구매)",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 건당 1만원 이상"
+    },
+    {
+     "group": "생활영역",
+     "label": "OTT",
+     "place": "넷플릭스·디즈니플러스·쿠팡플레이·티빙·웨이브·왓챠·유튜브 프리미엄",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회",
+     "conditions": [
+      "PC 버전에서 결제한 건만 적용(인앱 결제 제외)"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20220817001",
+   "name": "S-OIL 주유카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20220817001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20220817001",
+   "docDate": "2022-09-27",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 12000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 승인일 기준 정상 매입 금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 신규 후 수령일부터 다음 달 말일까지 실적 미달이어도 통합 캐시백 한도 1만원 제공",
+   "spendExclusions": [
+    "전 주유 업종 이용금액 전체",
+    "무이자할부",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "각 브랜드 상품권·선불카드 구입·충전",
+    "간편결제 명의로 승인된 결제"
+   ],
+   "benefits": [
+    {
+     "group": "주유",
+     "label": "S-OIL 주유",
+     "place": "S-OIL 주유소",
+     "value": "리터당 80~120원",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 30000,
+     "capScope": "월",
+     "limits": "1일 1회·월 3회, 1회 주유금액 10만원 한도",
+     "conditions": [
+      "30만원 80원·70만원 100원·100만원 120원",
+      "휘발유·등유·경유·LPG는 정유사 고시 휘발유가로 환산"
+     ]
+    },
+    {
+     "group": "마트",
+     "label": "대형마트",
+     "place": "이마트·홈플러스·롯데마트",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회, 월 2회, 월 최대 1만원"
+    },
+    {
+     "group": "백화점",
+     "label": "백화점 업종",
+     "place": "백화점 업종",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회, 월 2회, 월 최대 1만원"
+    },
+    {
+     "group": "온라인쇼핑",
+     "label": "온라인쇼핑",
+     "place": "쿠팡·위메프·G마켓·11번가·옥션",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회, 월 2회, 월 최대 1만원"
+    },
+    {
+     "group": "편의점",
+     "label": "편의점",
+     "place": "CU·GS25·세븐일레븐·미니스톱",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회, 월 2회, 월 최대 1만원"
+    },
+    {
+     "group": "커피",
+     "label": "커피",
+     "place": "스타벅스(사이렌오더 포함)·카페베네·엔젤리너스·드롭탑·파스쿠찌",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회, 월 2회, 월 최대 1만원"
+    }
+   ]
+  }
+ ]
+}
