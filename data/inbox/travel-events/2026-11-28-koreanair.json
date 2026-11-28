@@ -1,0 +1,26 @@
+{
+  "type": "travel-events",
+  "vendorType": "airline",
+  "vendor": "대한항공",
+  "listUrls": [
+    "https://www.koreanair.com/contents/promotion/list/2026/cashandmiles3"
+  ],
+  "events": [
+    {
+      "id": "koreanair-202611-cashandmiles-payback",
+      "title": "캐시앤마일즈 페이백 이벤트",
+      "summary": "항공권 1매당 300·1,000·2,000마일 페이백",
+      "startsAt": "2026-11-01",
+      "endsAt": "2026-11-30",
+      "conditions": [
+        "대한항공 홈페이지·앱에서 캐시앤마일즈 항공권 신규 구매와 첫 구간 탑승을 모두 11월 30일까지 완료",
+        "국내선 1,500마일 이상 공제 시 300마일, 일본·중국·동북아 5,000마일 이상 공제 시 1,000마일",
+        "미주·유럽·중동·대양주·동남아 10,000마일 이상 공제 시 2,000마일",
+        "12월 10일 마일리지 사용 회원에게 지급. 좌석을 점유하지 않는 유아 항공권 제외"
+      ],
+      "url": "https://www.koreanair.com/contents/promotion/list/2026/cashandmiles3"
+    }
+  ],
+  "collectedAt": "2026-11-28",
+  "collector": "ChatGPT"
+}

@@ -1,0 +1,53 @@
+{
+  "type": "card-events",
+  "issuer": "롯데카드",
+  "listUrls": [
+    "https://www.lottecard.co.kr/app/LPBNFDA_V100.lc"
+  ],
+  "events": [
+    {
+      "id": "lotte-202611-claude-2man",
+      "kind": "card",
+      "title": "마스터카드로 클로드 결제하고 최대 2만 네이버페이 포인트 받자!",
+      "summary": "클로드 구독료 외화결제 2만·4만원 이상 시 1만·2만 네이버페이 포인트",
+      "category": "포인트/캐시백",
+      "startsAt": "2026-11-06",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "롯데 Mastercard 개인 신용 회원 대상. 응모 필수, 가족 이용 합산, 본인 기준 1회",
+        "12월 31일까지 응모. 응모 시점과 무관하게 행사 기간 적격 해외 외화 승인을 합산",
+        "클로드 직접 결제만 해당. 원화·인앱·간편결제·국내 PG·결합상품·취소 거래 제외",
+        "최고 구간 1개만 지급. 지급 시 이용 가능한 Mastercard 보유",
+        "2027-01-31 이내 등록 휴대폰으로 문자 발송. 발송일 포함 60일 이내 포인트 쿠폰 등록"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11391",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    },
+    {
+      "id": "lotte-202611-overseas-11man",
+      "kind": "card",
+      "title": "해외 결제 시 최대 11만 네이버페이 포인트드려요!",
+      "summary": "해외 외화결제 20만·40만·80만원 이상 시 3만·5만·11만 네이버페이 포인트",
+      "category": "해외/여행",
+      "startsAt": "2026-11-06",
+      "endsAt": "2026-12-31",
+      "entryRequired": true,
+      "cards": [],
+      "conditions": [
+        "롯데 Mastercard 개인 신용 회원 대상. 응모 필수, 가족 이용 합산, 본인 기준 1회",
+        "12월 31일까지 응모. 응모 시점과 무관하게 행사 기간 적격 해외 온·오프라인 외화 승인을 합산",
+        "원화·국내 PG·국내로 분류된 간편결제·현금서비스·ATM·가상화폐·사행성 거래 제외",
+        "수수료·연체료·전표 미접수·취소 제외. 최고 구간 1개만 지급하며 지급 시 카드 유지",
+        "2027-01-31 이내 등록 휴대폰으로 문자 발송. 발송일 포함 60일 이내 포인트 쿠폰 등록"
+      ],
+      "url": "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?evnBultSeq=11390",
+      "cashbackAmount": null,
+      "channel": "카드사 공식"
+    }
+  ],
+  "collectedAt": "2026-11-28",
+  "collector": "ChatGPT"
+}
