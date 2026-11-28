@@ -6,7 +6,7 @@
 
   // 새로고침 버튼(main.js)을 누른 뒤에는 캐시를 건너뛰고 받음
   const getData = (file) => window.MS.getJSON(DATA + file + "?schema=2");
-  const state = { assets: [], cache: {}, cur: null, range: 3, log: false, view: null, crashBase: "trough" };
+  const state = { assets: [], cache: {}, cur: null, range: 3, log: false, view: null };
 
   const ZONE_LABEL = ["평상시", "관심 (옅은 음영)", "줍줍 구간 (진한 음영)"];
   const ZONE_SHORT = ["평상시", "관심", "줍줍"];
@@ -168,7 +168,7 @@
   }
 
   // 3) 주요 하락장: 세로 = 고점→저점 낙폭, 가로 = 이후 1·3·6·12개월 수익률
-  // [이름, 사건일, 고점을 찾기 시작하는 날, 저점을 찾는 마지막 날] — 계산은 선택한 자산의 종가로 함
+  // [이름, 사건일, 하락장 시작일, 하락장 종료일] — 두 경계일을 포함해 최저 종가를 찾음
   const CRASHES = [
     ["아시아 외환위기", "1997-10-27", "1997-10-01", "1998-01-31"],
     ["러시아 디폴트·LTCM", "1998-08-17", "1998-07-01", "1998-10-31"],
@@ -198,22 +198,27 @@
 
   function crashStats(R) {
     const D = R.d, C = R.c, n = D.length;
+    const validClose = (i) => Number.isFinite(C[i]) && C[i] > 0;
     const fwd = (i) => HORIZONS.map((m) => {
       const j = lowerBound(D, addMonths(D[i], m));
-      return j < n && C[j] != null && C[i] ? C[j] / C[i] - 1 : null;
+      return j < n && validClose(j) ? C[j] / C[i] - 1 : null;
     });
     const list = [];
     let skipped = 0;
-    CRASHES.forEach(([name, d, from, to]) => {
-      const base = lowerBound(D, d) - 1; // 사건 직전 거래일
-      if (D[0] > from || base < 0 || D[n - 1] < d) { skipped++; return; }
-      const end = upperBound(D, to);
-      let t = -1, p = -1;
-      for (let i = base; i < end; i++) if (C[i] != null && (t < 0 || C[i] < C[t])) t = i;
-      for (let i = lowerBound(D, from); i <= t; i++) if (C[i] != null && (p < 0 || C[i] > C[p])) p = i;
-      if (t < 0 || p < 0) { skipped++; return; }
-      list.push({ name, d, peak: D[p], trough: D[t], dd: C[t] / C[p] - 1, trough_f: fwd(t), event_f: fwd(base) });
-    });
+    for (const [name, d, from, to] of CRASHES) {
+      if (!n || D[0] > from || D[n - 1] < to) { skipped++; continue; }
+      const start = lowerBound(D, from), end = upperBound(D, to);
+      let t = -1;
+      for (let i = start; i < end; i++) {
+        if (validClose(i) && (t < 0 || C[i] < C[t])) t = i;
+      }
+      if (t < 0) { skipped++; continue; }
+      let p = t;
+      for (let i = start; i < t; i++) {
+        if (validClose(i) && C[i] > C[p]) p = i;
+      }
+      list.push({ name, d, peak: D[p], trough: D[t], dd: C[t] / C[p] - 1, trough_f: fwd(t) });
+    }
     return { list, skipped };
   }
 
@@ -240,8 +245,6 @@
     const { meta } = pack;
     const box = $("crash");
     const st = pack.crash || (pack.crash = crashStats(pack.rows));
-    const fromEvent = state.crashBase === "event";
-    const key = fromEvent ? "event_f" : "trough_f";
     const curD = meta.last.dd52 != null ? Math.abs(meta.last.dd52) : null;
     $("crash-asset").textContent = meta.name;
 
@@ -289,20 +292,20 @@
           ${HORIZONS.map(() => `<div class="cell q">?</div>`).join("")}</div>`;
       }
       const near = curD != null && Math.abs(it.x - curD) <= 0.05;
-      const f = it[key];
+      const spanNote = it.peak === it.trough ? "" : ` (고점부터 ${span(it.peak, it.trough)})`;
       return `<div class="crash-row ${depthBand(it.x)}${near ? " near" : ""}" title="${it.name} · 사건 ${it.d} · 고점 ${it.peak} → 저점 ${it.trough}">
         <div class="ev"><div class="ev-n">${it.name}${near ? '<span class="crash-tag">비슷</span>' : ""}</div>
-          <div class="ev-s"><b>−${(it.x * 100).toFixed(1)}%</b><span class="slim"> · ’${it.d.slice(2, 4)}</span><span class="wide"> · ${ymd(it.d)} · 저점 ${ymd(it.trough)} (고점부터 ${span(it.peak, it.trough)})</span></div></div>
-        ${f.map((v) => `<div class="cell${v == null ? " na" : ""}" style="background:${retBg(v)}">${fmtRet(v)}</div>`).join("")}</div>`;
+          <div class="ev-s"><b>${pct(it.dd)}</b><span class="slim"> · ${ymd(it.trough)}</span><span class="wide"> · 저점 ${ymd(it.trough)}${spanNote}</span></div></div>
+        ${it.trough_f.map((v) => `<div class="cell${v == null ? " na" : ""}" style="background:${retBg(v)}">${fmtRet(v)}</div>`).join("")}</div>`;
     }).join("");
 
     // 아래 요약: 중앙값 · 오른 확률
-    const cols = HORIZONS.map((_, h) => st.list.map((e) => e[key][h]).filter((v) => v != null).sort((a, b) => a - b));
+    const cols = HORIZONS.map((_, h) => st.list.map((e) => e.trough_f[h]).filter((v) => v != null).sort((a, b) => a - b));
     const med = (a) => (a.length ? (a.length % 2 ? a[a.length >> 1] : (a[a.length / 2 - 1] + a[a.length / 2]) / 2) : null);
     const upRate = (a) => (a.length ? a.filter((v) => v > 0).length / a.length : null);
 
     box.innerHTML = `
-      <div class="crash-cap"><span>낙폭 %</span><span>${fromEvent ? "사건 직전 종가" : "저점"}에서 샀다면 · 수익률 %</span></div>
+      <div class="crash-cap"><span>낙폭 %</span><span>기간 내 최저 종가 기준 수익률 %</span></div>
       <div class="crash-hd"><span>사건 <small>(낙폭 작은 순)</small></span>${HORIZONS.map((m) => `<span>${m}개월</span>`).join("")}</div>
       <div class="crash-body">
         <svg class="crash-axis" width="${RW}" height="${H}" viewBox="0 0 ${RW} ${H}" aria-hidden="true">${svg}</svg>
@@ -314,20 +317,12 @@
       </div>`;
 
     const notes = [
-      "낙폭은 사건 전후 고점 → 저점(종가 기준), 지금은 52주 고점 대비입니다.",
-      fromEvent ? "사건 직전 거래일 종가에 샀을 때의 수익률이에요." : "저점은 지나고 나서야 알 수 있으니 '최선의 경우'로 보세요.",
+      "각 하락장 기간의 최저 종가부터 1·3·6·12개월 후 첫 거래일 종가까지의 수익률입니다.",
+      "낙폭은 기간 내 저점까지의 고점 대비이며, 지금은 52주 고점 대비입니다.",
     ];
-    if (st.skipped) notes.push(`${meta.name} 데이터는 ${ymd(pack.rows.d[0])}부터라 그 전 사건 ${st.skipped}개는 빠졌어요.`);
+    if (st.skipped) notes.push(`전체 기간의 데이터가 부족한 사건 ${st.skipped}개는 제외했습니다.`);
     $("crash-note").textContent = notes.join(" ");
   }
-
-  $("crash-base").addEventListener("click", (e) => {
-    const b = e.target.closest("button");
-    if (!b) return;
-    $("crash-base").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
-    state.crashBase = b.dataset.base;
-    renderCrash();
-  });
 
   // ---------- 컨트롤 ----------
   function seg(id, key, parse) {
