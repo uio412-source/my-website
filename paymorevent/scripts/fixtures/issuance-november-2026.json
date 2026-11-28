@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ajd-408",
+    "source": "아정당",
+    "sourceId": "ajd",
+    "issuer": "롯데카드",
+    "cardName": "LOCA LIKIT 2.0, LOCA 365, 디지로카 Lasvegas",
+    "title": "롯데카드 LOCA LIKIT 2.0 외 3종",
+    "startsAt": "2026-11-01",
+    "endsAt": "2026-11-30",
+    "url": "https://www.ajd.co.kr/card/event/detail/408",
+    "noPaymentMonths": 6,
+    "noRewardMonths": 6,
+    "allowExistingHolder": "target_card_only",
+    "eligibilityRuleText": "행사 시작일 직전 6개월 동안 롯데 개인 신용카드 결제이력(가족카드 결제건, 후불교통카드, 하이패스, 보험료, 아파트관리비, 체크플러스 카드의 신용승인 등)이 있는 회원은 혜택 지급 대상에서 제외됩니다."
+  },
+  {
+    "id": "ajd-389",
+    "source": "아정당",
+    "sourceId": "ajd",
+    "issuer": "현대카드",
+    "cardName": "에너지플러스 현대카드",
+    "title": "에너지플러스 현대카드",
+    "startsAt": "2026-11-01",
+    "endsAt": "2026-11-30",
+    "url": "https://www.ajd.co.kr/card/event/detail/389",
+    "noPaymentMonths": null,
+    "noRewardMonths": 12,
+    "allowExistingHolder": "target_card_only",
+    "eligibilityRuleText": "모든 현대카드 결제 이력 없는 회원"
+  },
+  {
+    "id": "ajd-394",
+    "source": "아정당",
+    "sourceId": "ajd",
+    "issuer": "우리카드",
+    "cardName": "아정당 우리카드",
+    "title": "월 최대 할인한도 2만 5천 + 프로모션 1천",
+    "startsAt": "2026-11-01",
+    "endsAt": "2026-11-30",
+    "url": "https://www.ajd.co.kr/card/event/detail/394",
+    "noPaymentMonths": null,
+    "noRewardMonths": null,
+    "allowExistingHolder": "target_card_only",
+    "eligibilityRuleText": "이벤트 시작일 직전 6개월간 (2026.05.01 ~ 2026.10.31) 우리카드 신용카드 결제이력이 없는 회원"
+  },
+  {
+    "id": "naver-20261027002805865293",
+    "source": "네이버페이",
+    "sourceId": "naver",
+    "issuer": "BC카드",
+    "cardName": "일상의 기쁨카드",
+    "title": "일상의 기쁨카드 최대 12.5만원",
+    "startsAt": "2026-11-01",
+    "endsAt": "2026-11-30",
+    "url": "https://card.pay.naver.com/home/promotion?cardCompanyId=CCBC&promotionId=20261027002805865293",
+    "noPaymentMonths": 6,
+    "noRewardMonths": 6,
+    "allowExistingHolder": "target_card_only",
+    "eligibilityRuleText": "[이벤트 지급제외 대상] * 이벤트 기간 내 응모를 완료하지 않은 고객(응모는 취소 및 변경 불가) * 혜택 지급이전에 행사대상카드를 해지/다른카드로 교체/ 이용정지/ 분실/ 연체/ 카드폐기/ 반송 등의 사유로 정상적으로 보유하지 않은 회원 * 이벤트 시작일 기준, 직전 2년내(24년 10월 이벤트 ~ 26년 10월 이벤트) IBK의 다른 이용유도이벤트 혜"
+  }
+]

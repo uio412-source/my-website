@@ -1,7 +1,7 @@
 // 발급 이벤트 참여 판정 — 카드사별 내 상태(마지막 결제일·보유/탈회·이벤트 수령 이력)와
 // 이벤트 조건(무실적 N개월 · 탈회 제한 · 이벤트 수령 제한 · 기존 보유자 가능 여부)을 견줍니다.
-// 계산은 브라우저에서만 하고, 입력값은 localStorage(`mrcards.issuance`)에 둡니다.
-import {today} from './mc-text';
+// 계산은 브라우저에서만 하고 카드사별 입력만 localStorage에 보관합니다.
+import {REVIEWED_CAMPAIGNS, type Lookback, type ReviewedRules} from './issuance-review.ts';
 
 export type HolderRule = true | false | 'target_card_only' | null;
 
@@ -50,17 +50,19 @@ export type IssuerProfile = {
   holding: HoldingStatus | null;
   /** 탈회일 (holding === 'canceled'일 때) */
   canceledAt: string | null;
+  noCancellation: boolean;
   /** 직전 발급/응모형 이벤트 혜택을 받은 날 */
   lastReward: string | null;
   /** 이벤트 혜택 수령 이력이 아예 없음 */
   noReward: boolean;
-  /** 대상 카드만 이력 없으면 되는 이벤트에서 '대상 카드는 쓴 적 없음' 체크 */
-  targetCardUnused: boolean;
+  /** 별도 범위: 개인 신용카드의 최근 결제일만 저장 (기존 전체 카드 입력을 재해석하지 않음). */
+  lastCreditPayment: string | null;
+  noCreditPayment: boolean;
 };
 
 export const EMPTY_PROFILE: IssuerProfile = {
-  lastPayment: null, noPayment: false, holding: null, canceledAt: null,
-  lastReward: null, noReward: false, targetCardUnused: false,
+  lastPayment: null, noPayment: false, holding: null, canceledAt: null, noCancellation: false,
+  lastReward: null, noReward: false, lastCreditPayment: null, noCreditPayment: false,
 };
 
 /** 입력 패널에 세우는 카드사 (BC바로는 BC카드로 묶음) */
@@ -71,10 +73,10 @@ export const PROFILES_KEY = 'mrcards.issuance.profiles';
 /** 카드사 표기 통일 (BC바로카드·농협카드·국민카드 …) */
 export function issuerKey(issuer: string): string {
   const s = (issuer || '').replace(/\s+/g, '');
+  if (/IBK|기업은행/.test(s)) return 'IBK기업은행';
   if (/^BC|비씨|바로/.test(s)) return 'BC카드';
   if (/NH|농협/.test(s)) return 'NH농협카드';
   if (/KB|국민/.test(s)) return 'KB국민카드';
-  if (/IBK|기업은행/.test(s)) return 'IBK기업은행';
   for (const name of PROFILE_ISSUERS) if (s.startsWith(name.replace('카드', ''))) return name;
   return s;
 }
@@ -85,7 +87,15 @@ export function loadProfiles(): Record<string, IssuerProfile> {
     if (!raw) return {};
     const parsed = JSON.parse(raw) as Record<string, IssuerProfile>;
     const out: Record<string, IssuerProfile> = {};
-    for (const [k, v] of Object.entries(parsed)) out[k] = {...EMPTY_PROFILE, ...v};
+    for (const [k, v] of Object.entries(parsed)) {
+      // Do not migrate the old issuer-wide targetCardUnused checkbox.
+      if (!v || typeof v !== 'object') continue;
+      const p = {...EMPTY_PROFILE};
+      for (const field of Object.keys(p) as (keyof IssuerProfile)[]) {
+        if (Object.hasOwn(v, field)) Object.assign(p, {[field]: v[field]});
+      }
+      out[k] = p;
+    }
     return out;
   } catch {
     return {};
@@ -97,10 +107,17 @@ export function saveProfiles(profiles: Record<string, IssuerProfile>) {
 }
 
 export const isProfileEmpty = (p: IssuerProfile) =>
-  !p.lastPayment && !p.noPayment && !p.holding && !p.lastReward && !p.noReward && !p.targetCardUnused;
+  !p.lastPayment && !p.noPayment && !p.holding && !p.canceledAt && !p.noCancellation && !p.lastReward && !p.noReward && !p.lastCreditPayment && !p.noCreditPayment;
 
 // ---------- 날짜 ----------
 const DAY = 864e5;
+const today = () => new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
+const isoDate = (s: string | null): s is string => {
+  if (!s || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  const value = new Date(s + 'T00:00:00Z');
+  return Number.isFinite(+value) && value.toISOString().slice(0, 10) === s;
+};
+const previousDay = (iso: string) => new Date(Date.parse(iso + 'T00:00:00Z') - DAY).toISOString().slice(0, 10);
 export function addMonths(iso: string, months: number): string {
   const [y, m, d] = iso.split('-').map(Number);
   const target = new Date(Date.UTC(y, m - 1 + months, d));
@@ -127,102 +144,130 @@ export type Verdict = {
   missing?: string[];
 };
 
-const M = (n: number) => `${n}개월`;
+export function rulesFor(ev: IssuanceEvent): ReviewedRules | undefined {
+  if (!Object.hasOwn(REVIEWED_CAMPAIGNS, ev.id)) return;
+  const rule = REVIEWED_CAMPAIGNS[ev.id];
+  if (rule.startsAt === ev.startsAt && rule.endsAt === ev.endsAt &&
+      rule.url === ev.url && rule.excerpt === ev.eligibilityRuleText) return rule;
+}
 
-/**
- * 이벤트 하나와 내 카드사 상태를 견줘 참여 가능 여부를 냅니다.
- * - 결제 이력·탈회·이벤트 수령은 'N개월 지나야 풀리는' 조건이라 가장 늦은 날을 가능 예정일로 냅니다.
- * - 기존 카드 보유 불가(false)·이벤트 종료는 기다려도 안 풀리는 조건입니다.
- */
-export function judge(ev: IssuanceEvent, profile: IssuerProfile | undefined, now = today()): Verdict {
+export const profileIssuerFor = (ev: IssuanceEvent) => rulesFor(ev)?.issuer ?? issuerKey(ev.issuer);
+
+export function targetKey(ev: IssuanceEvent, rules = rulesFor(ev)) {
+  return rules?.coverage === 'complete' && rules.targetUnused?.product.trim()
+    ? JSON.stringify([ev.id, ev.url, ev.startsAt, ev.endsAt, rules.issuer, rules.targetUnused.product])
+    : null;
+}
+
+function fixedRange(window: Lookback, startsAt: string | null) {
+  if (window.kind === 'fixed' && isoDate(window.from) && isoDate(window.through) && window.from <= window.through) return window;
+  if (window.kind === 'before-start' && isoDate(startsAt) && validMonths(window.months)) {
+    return {from: addMonths(startsAt, -window.months), through: previousDay(startsAt)};
+  }
+  return null;
+}
+const validMonths = (n: number) => Number.isInteger(n) && n >= 1 && n <= 36;
+
+export function judge(ev: IssuanceEvent, profile: IssuerProfile | undefined, now = today(), confirmedTarget?: string): Verdict {
+  return judgeReviewed(ev, rulesFor(ev), profile, now, confirmedTarget);
+}
+
+// Only reviewed conditions can determine a verdict, not the scraper's regex hints.
+// An explicitly disqualifying fact can block even a partially reviewed campaign.
+export function judgeReviewed(
+  ev: IssuanceEvent, rules: ReviewedRules | undefined, profile: IssuerProfile | undefined, now: string, confirmedTarget?: string,
+): Verdict {
   const p = profile ?? EMPTY_PROFILE;
-  const reasons: string[] = [];
+  const unknown = (label: string, reasons: string[] = [], missing?: string[]): Verdict => ({status: 'unknown', label, reasons, missing});
+  const block = (label: string, reasons: string[]): Verdict => ({status: 'blocked', label, reasons});
+  if (isoDate(ev.endsAt) && ev.endsAt < now) return block('종료', ['이벤트 종료']);
+  if (isoDate(ev.startsAt) && ev.startsAt > now) return unknown('시작 전', [`${shortDate(ev.startsAt)} 시작`]);
+  if (!rules || !isoDate(ev.startsAt) || !isoDate(ev.endsAt) || ev.startsAt > ev.endsAt) {
+    return unknown('조건 확인 필요', ['이벤트 원문 확인']);
+  }
+
   const missing: string[] = [];
+  const unresolved: string[] = [];
+  const denied: string[] = [];
   const waits: {from: string; why: string}[] = [];
-  let hardBlock = false;
-
-  if (ev.endsAt && ev.endsAt < now) return {status: 'blocked', label: '종료', reasons: ['이벤트 종료']};
-
-  // ① 무실적(직전 N개월 결제 이력 없음)
-  if (ev.noPaymentMonths) {
-    if (!p.lastPayment && !p.noPayment) missing.push('마지막 결제일');
-    else if (!p.noPayment && p.lastPayment) {
-      const from = addMonths(p.lastPayment, ev.noPaymentMonths);
-      if (from > now) waits.push({from, why: `최근 ${M(ev.noPaymentMonths)} 결제이력`});
+  const history = (window: Lookback, last: string | null, absent: boolean, input: string, scope: string) => {
+    const range = fixedRange(window, ev.startsAt);
+    if (!range && window.kind !== 'all' && (window.kind !== 'rolling' || !validMonths(window.months))) {
+      unresolved.push(`${scope} 기간 확인`);
+      return;
     }
+    if (absent && !last) return;
+    if (!isoDate(last) || last > now || absent) { missing.push(input); return; }
+    if (range) {
+      if (range.from <= last && last <= range.through) denied.push(`${shortDate(range.from)}~${shortDate(range.through)} ${scope} 이력`);
+      // A later transaction never proves an earlier closed window was clear.
+      else if (last > range.through) unresolved.push(`지정 기간 전체 ${scope} 이력 확인`);
+    } else if (window.kind === 'all') {
+      denied.push(`${scope} 이력 있음`);
+    } else if (window.kind === 'rolling') {
+      const from = addMonths(last, window.months);
+      if (from > now) waits.push({from, why: `최근 ${window.months}개월 ${scope} 이력`});
+    }
+  };
+
+  if (rules.payment?.scope === 'personal-credit') {
+    history(rules.payment.window, p.lastCreditPayment, p.noCreditPayment || (p.noPayment && !p.lastPayment),
+      '개인 신용카드 마지막 결제일 또는 이력 없음', '개인 신용카드 결제');
+  } else if (rules.payment?.scope === 'issuer-all') {
+    history(rules.payment.window, p.lastPayment, p.noPayment, '카드사 전체 마지막 결제일 또는 이력 없음', `${rules.issuer} 전체 카드 결제`);
   }
 
-  // ② 기존 카드 보유 불가 (신규 발급만)
-  if (ev.allowExistingHolder === false) {
+  if (rules.holder === 'no-current-holder') {
     if (!p.holding) missing.push('카드 보유 상태');
-    else if (p.holding === 'holding') {
-      reasons.push('기존 카드 보유 불가');
-      hardBlock = true;
-    }
+    else if (p.holding === 'holding') denied.push('기존 카드 보유 불가');
   }
-
-  // ③ 탈회 제한
-  if (ev.excludeCanceledMonths) {
-    if (p.holding === 'canceled') {
-      if (!p.canceledAt) missing.push('탈회일');
-      else {
-        const from = addMonths(p.canceledAt, ev.excludeCanceledMonths);
-        if (from > now) waits.push({from, why: `탈회 ${M(ev.excludeCanceledMonths)} 이내`});
-      }
-    } else if (!p.holding) missing.push('카드 보유 상태');
+  if (rules.cancellation) {
+    // Being a holder or a non-holder does not by itself prove no cancellation.
+    history(rules.cancellation, p.canceledAt, p.noCancellation && p.holding !== 'canceled', '최근 탈회일 또는 이력 없음', '탈회');
   }
+  if (rules.reward) history(rules.reward, p.lastReward, p.noReward, '최근 이벤트 수령일 또는 이력 없음', '이벤트 수령');
 
-  // ④ 이벤트 혜택 수령 제한
-  if (ev.noRewardMonths) {
-    if (!p.lastReward && !p.noReward) missing.push('최근 이벤트 수령일');
-    else if (!p.noReward && p.lastReward) {
-      const from = addMonths(p.lastReward, ev.noRewardMonths);
-      if (from > now) waits.push({from, why: `${M(ev.noRewardMonths)} 내 이벤트 수령`});
-    }
+  if (denied.length) return block('조건 미충족', denied);
+  if (rules.coverage !== 'complete' || unresolved.length) {
+    return unknown('조건 확인 필요', [...unresolved, rules.note ?? '이벤트 원문 추가 확인'], missing);
   }
-
-  if (hardBlock) return {status: 'blocked', label: '조건 미충족', reasons};
+  if (!rules.payment && !rules.holder && !rules.cancellation && !rules.reward && !rules.targetUnused) {
+    return unknown('조건 확인 필요', ['검수된 판정 조건 없음']);
+  }
+  if (rules.targetUnused && !targetKey(ev, rules)) return unknown('조건 확인 필요', ['정확한 대상 상품 확인']);
+  if (missing.length) return unknown('정보 미입력', [], missing);
 
   if (waits.length) {
-    const latest = waits.reduce((a, b) => (a.from >= b.from ? a : b));
-    if (ev.endsAt && latest.from > ev.endsAt) {
-      return {status: 'blocked', label: '조건 미충족', reasons: [`${waits.map(w => w.why).join(', ')} · 이벤트 종료 전 불가`]};
-    }
-    const days = Math.max(0, daysUntil(latest.from, now));
-    return {
-      status: 'wait', label: `${days}일 뒤 가능`, from: latest.from, days,
-      reasons: waits.map(w => w.why),
-    };
+    const latest = waits.reduce((a, b) => a.from >= b.from ? a : b);
+    if (latest.from > ev.endsAt) return block('조건 미충족', [`${waits.map(w => w.why).join(', ')} · 이벤트 종료 전 불가`]);
+    const key = targetKey(ev, rules);
+    if (key && key !== confirmedTarget) return unknown('조건 확인 필요', ['대상 카드도 별도 확인']);
+    const days = daysUntil(latest.from, now);
+    return {status: 'wait', label: `${days}일 뒤 가능`, from: latest.from, days, reasons: waits.map(w => w.why)};
   }
 
-  if (missing.length) return {status: 'unknown', label: '정보 미입력', reasons: [], missing};
-
-  // 조건을 원문에서 읽지 못한 이벤트는 함부로 '가능'이라 하지 않음
-  if (!ev.noPaymentMonths && !ev.noRewardMonths && !ev.excludeCanceledMonths && ev.allowExistingHolder === null) {
-    return {status: 'unknown', label: '조건 미확인', reasons: []};
+  const key = targetKey(ev, rules);
+  if (key && key !== confirmedTarget) {
+    return {status: 'target', label: '대상 카드 확인 필요', reasons: [`${rules.targetUnused?.product} 미사용 확인`]};
   }
-
-  // ⑤ 대상 카드만 이력 없으면 되는 이벤트: 대상 카드 사용 여부를 확인
-  if (ev.allowExistingHolder === 'target_card_only') {
-    const hasHistory = p.holding === 'holding' || (!p.noPayment && !!p.lastPayment);
-    if (!p.targetCardUnused && (hasHistory || isProfileEmpty(p))) {
-      return {status: 'target', label: '대상 카드 미사용 시 가능', reasons: ['대상 카드 이력만 확인']};
-    }
-  }
-
   return {status: 'ok', label: '참여 가능', reasons: []};
 }
 
 export const VERDICT_ORDER: Record<VerdictStatus, number> = {ok: 0, target: 1, wait: 2, unknown: 3, blocked: 4};
 
-/** 표에 보여 줄 무실적·제한 조건 한 줄 */
 export function ruleLine(ev: IssuanceEvent): string | null {
+  const rules = rulesFor(ev);
+  if (!rules) return null;
   const parts: string[] = [];
-  if (ev.noPaymentMonths) parts.push(`직전 ${ev.noPaymentMonths}개월 무실적`);
-  if (ev.noRewardMonths) parts.push(`${ev.noRewardMonths}개월 내 이벤트 수령 불가`);
-  if (ev.excludeCanceledMonths) parts.push(`탈회 ${ev.excludeCanceledMonths}개월 이내 불가`);
-  if (ev.allowExistingHolder === false) parts.push('신규 발급만');
-  if (ev.allowExistingHolder === 'target_card_only') parts.push('대상 카드만 확인');
-  if (!parts.length) return ev.eligibilitySummary;
-  return parts.join(' · ');
+  if (rules.payment) {
+    const scope = rules.payment.scope === 'personal-credit' ? `${rules.issuer} 개인 신용카드` : `${rules.issuer} 전체 카드`;
+    const window = rules.payment.window;
+    const range = fixedRange(window, ev.startsAt);
+    parts.push(range ? `${midDate(range.from)}~${midDate(range.through)} ${scope} 결제 이력 없음`
+      : window.kind === 'rolling' ? `최근 ${window.months}개월 ${scope} 결제 이력 없음` : `${scope} 결제 이력 없음`);
+  }
+  if (rules.holder === 'no-current-holder') parts.push('기존 보유자 제외');
+  if (rules.targetUnused) parts.push(`${rules.targetUnused.product} 미사용 확인`);
+  if (rules.note) parts.push(rules.note);
+  return parts.join(' · ') || null;
 }
