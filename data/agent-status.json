@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T10:47:24+09:00",
+  "generatedAt": "2026-11-28T10:48:32+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -54,6 +54,13 @@
           "kind": "code",
           "pr": 280,
           "summary": "Mr. Pay 매일 확인 — 배너 변동 없음(checked만), brands.json에 토스 페이스페이 '페페데이'(11/26~27) 참여 브랜드 자담치킨·감성커피·진교동찜닭(일부) 추가. 온누리 10% 특별할인(11/2~6)·K-베이커리 페스티벌(11/18~20)은 끝나서 안 넣음, 남대문 'A약국' 기사는 익명이라 제외",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T10:48:00+09:00",
+          "kind": "audit",
+          "pr": 277,
+          "summary": "#277 수집분 피킹률 검수(14장) — picking_audit.py 전수 1,552장: 이번 7종(mg-15273·15272·15486·15066, internet-10·7·9)은 A1~A5 새 문제 0건. MG 4종·KT멤버십은 B1(요율 모델 없음, 통합 한도·구간이라 자동 변환 대상 아님), internet-7·9는 0.3% 피킹률 계산됨. 고친 카드 없음",
           "queueKeys": []
         },
         {
