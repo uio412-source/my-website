@@ -3,7 +3,7 @@
 > `python3 tools/data/picking_audit.py --md docs/picking-audit.md`가 만든 검사 결과입니다. 손으로 고치지 말고 다시 생성하세요.
 > 화면과 같은 순서(`catalog-snapshot.json` → `verified-card-rules.json.gz` → `terms-rules.json.gz` → `picking-review.json`)로 계산하고, `pickingOptions()`(lib/catalog-model.ts)를 그대로 옮겨 쓴 사본입니다.
 
-- 검사일 2026-11-28 10:34 · 카드 1,552장 · 요율 모델 있음 341장 · 피킹률 계산됨 187장 · 상품설명서 정리본 760장 · 요율 확인 대기(rewardCoveragePending) 660장
+- 검사일 2026-11-28 11:16 · 카드 1,552장 · 요율 모델 있음 341장 · 피킹률 계산됨 187장 · 상품설명서 정리본 763장 · 요율 확인 대기(rewardCoveragePending) 660장
 
 ## A1 수수료 면제를 요율에 더한 카드(가정과 원문 확인) — 6건
 
@@ -92,7 +92,7 @@
 - 현대카드MY BUSINESS X F&B (`hyundai-xmbfb`) {"benefitMinSpend": 500000, "rateMinSpend": 1000000, "rates": 1}
 - 현대카드MY BUSINESS X Retail (`hyundai-xmbrt`) {"benefitMinSpend": 500000, "rateMinSpend": 1000000, "rates": 1}
 
-## B1 상품설명서 정리본은 있는데 피킹률이 비는 카드 — 613건
+## B1 상품설명서 정리본은 있는데 피킹률이 비는 카드 — 614건
 
 - BC 바로 ZONE 카드 (`bc-104520`) {"issuer": "BC 바로카드", "termBenefits": 10, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
 - BC 바로 에어마스터 (`bc-104452`) {"issuer": "BC 바로카드", "termBenefits": 3, "minimumSpend": 500000, "rates": 0, "pending": false, "benefits": 2}
@@ -154,9 +154,9 @@
 - KB국민 펫코노미 카드 (`kb-04404`) {"issuer": "KB국민카드", "termBenefits": 4, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
 - KB라이프 딱좋은 요즘 건강 KB카드 (`kb-09579`) {"issuer": "KB국민카드", "termBenefits": 2, "minimumSpend": 400000, "rates": 0, "pending": false, "benefits": 2}
 - KT 할부 Plus KB국민카드 (`kb-01507`) {"issuer": "KB국민카드", "termBenefits": 2, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
-- … 외 553건 (--detail 로 전체 표)
+- … 외 554건 (--detail 로 전체 표)
 
-## B2 정리본 혜택 표가 카드 DB보다 자세한 카드 — 339건
+## B2 정리본 혜택 표가 카드 DB보다 자세한 카드 — 341건
 
 - BC 바로 On＆Off 카드 (`bc-102040`) {"cardBenefits": 2, "termBenefits": 5}
 - BC 바로 ZONE 카드 (`bc-104520`) {"cardBenefits": 2, "termBenefits": 10}
@@ -218,4 +218,27 @@
 - NH 모두의카드(신용) (`nh-90010471`) {"cardBenefits": 3, "termBenefits": 10}
 - NH 모두의카드(체크) (`nh-90010470`) {"cardBenefits": 2, "termBenefits": 6}
 - NH1961체크카드 (`nh-90010117`) {"cardBenefits": 2, "termBenefits": 5}
-- … 외 279건 (--detail 로 전체 표)
+- … 외 281건 (--detail 로 전체 표)
+
+## C1 혜택 줄이 추상 문구만 있는 카드(대상 업종·가맹점 없음) — 1건
+
+- 삼성카드 taptap O (`samsung-aap1483`) {"title": "옵션패키지 상세보기", "detail": "옵션패키지 상세보기"}
+
+## C2 혜택은 인정인데 전월실적이 ?로 남은 칸 — 16건
+
+- BC 바로 에어맥스 (`bc-104453`) {"items": ["관리비"], "minimumSpend": null, "무실적": false}
+- 부자되세요 아파트카드(비씨) (`nh-90000371`) {"items": ["관리비"], "minimumSpend": null, "무실적": false}
+- 그린카드(전국) (`im-310253`) {"items": ["상품권 가능", "관리비"], "minimumSpend": null, "무실적": true}
+- THE 1 (스카이패스) (`samsung-aap1450`) {"items": ["상품권 가능", "관리비"], "minimumSpend": 0, "무실적": true}
+- THE 1 SFC (스카이패스) (`samsung-aap1451`) {"items": ["상품권 가능", "관리비"], "minimumSpend": 0, "무실적": true}
+- 삼성 BIZ iD BENEFIT 카드 (`samsung-aap1758`) {"items": ["관리비"], "minimumSpend": 0, "무실적": false}
+- 삼성 SFC iD ALL 카드 (`samsung-aap1728`) {"items": ["관리비"], "minimumSpend": 0, "무실적": false}
+- 삼성 SFC iD ALL 카드 (포인트) (`samsung-aap1730`) {"items": ["관리비"], "minimumSpend": 0, "무실적": false}
+- 삼성 iD ALL 카드 (`samsung-aap1727`) {"items": ["관리비"], "minimumSpend": 0, "무실적": false}
+- 삼성 iD ALL 카드 (포인트) (`samsung-aap1729`) {"items": ["관리비"], "minimumSpend": 0, "무실적": false}
+- 삼성카드 SFC 스페셜마일리지 (스카이패스) (`samsung-aap1485`) {"items": ["상품권 가능", "관리비"], "minimumSpend": 0, "무실적": true}
+- 삼성카드 스페셜마일리지 (스카이패스) (`samsung-aap1484`) {"items": ["상품권 가능", "관리비"], "minimumSpend": 0, "무실적": true}
+- 신한카드 The CLASSIC+ (`shinhan-201507300001`) {"items": ["관리비", "국세"], "minimumSpend": null, "무실적": true}
+- the OPUS blue (`woori-500049`) {"items": ["상품권 가능", "국세", "지방세"], "minimumSpend": 0, "무실적": false}
+- 하나 더 넥스트 멤버스 (`hana-18370`) {"items": ["관리비"], "minimumSpend": 500000, "무실적": false}
+- 하나멤버스 1Q(원큐) 카드 Business (`hana-5230`) {"items": ["관리비"], "minimumSpend": 300000, "무실적": false}

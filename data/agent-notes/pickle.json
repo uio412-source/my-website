@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-28T10:40:00+09:00",
+ "updatedAt": "2026-11-28T11:35:00+09:00",
  "lock": null,
  "runs": [
   {
@@ -1292,6 +1292,16 @@
    "queueKeys": [
     "sc-6266"
    ]
+  },
+  {
+   "at": "2026-11-28T11:35:00+09:00",
+   "kind": "data-fix",
+   "pr": null,
+   "summary": "삼성 앤마일리지(aap1452)·SFC(aap1453) 상세 혜택 표 정리: shortLabel의 ~원당 라벨 깨짐 수정(전 카드 '당 …' 라벨 11→0), 카드 DB·verified-card-rules·cards.json.gz·home-cards.json을 공식 원문(기본 1,000원당 1마일·특별 1,000원당 2마일 통합 월 2,000마일·아멕스 PLATINUM 라운지/발렛/커피)으로 보정, card-terms 정리본 2장 추가, 무실적 카드 실적 칸 ? → ✓(spendFreeCard), 검수 label-audit.mjs·picking_audit C1·C2 추가",
+   "queueKeys": [
+    "samsung-aap1452",
+    "samsung-aap1453"
+   ]
   }
  ],
  "skipped": [
@@ -1732,6 +1742,13 @@
    "status": "workaround",
    "reason": "현대카드 상세 페이지는 스크립트로 그려지지만 안내문 PDF는 https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=<5자리 코드> 로 바로 받을 수 있음. 코드 03000~03200 조회에서 PDF 146건(중복 제거 69종) 확인 — 03182 코스트코 리워드 비즈니스 Edition2 가이드북, 03183 후불하이패스 가이드북, 03184 AMEX PLATINUM ELITE 안내서, 03185 AMEX Gold 안내서, 03186 The Platinum 안내서",
    "retry": "코드별 표지 제목을 읽어 카드 DB와 대조해 가이드북인 것을 card-terms로 회차당 6~8종 수집"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "samsung-aap1483 (삼성카드 taptap O)",
+   "status": "open",
+   "reason": "카드 DB 혜택 '옵션패키지 상세보기'가 원문 요약 문구뿐(대상 업종·가맹점 없음) — picking_audit C1에 남음",
+   "retry": "삼성카드 taptap O 상세의 옵션패키지 서비스 안내(static11 svc)를 읽어 옵션별 업종·한도를 적기"
   }
  ]
 }

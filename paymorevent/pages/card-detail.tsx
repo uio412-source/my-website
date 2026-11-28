@@ -9,7 +9,7 @@ import {MineToggle} from '@/components/mine';
 import {benefitAt, firstSpend, monthlyMax, similarCards, spendShort} from '@/lib/card-value';
 import {rememberCard} from '@/lib/my-cards';
 import {activeOffer, cardFamilyKey, dedupeOffers, eventPath, formatPicking, linkedOffers, pickingExcluded, pickingOptions, rewardValue} from '@/lib/catalog-model';
-import {PAYMENT_CHECKS, paymentCheck, type PaymentCheck} from '@/lib/card-themes';
+import {PAYMENT_CHECKS, paymentCheck, spendFreeCard, type PaymentCheck} from '@/lib/card-themes';
 import {annualFeeRows, cardPath, networkBrands} from '@/lib/card-presentation';
 import {customerLines, uniqueLines} from '@/lib/customer-copy';
 import {pendingValet, valetHotelResults, valetMapPath, valetQuota, valetRules} from '@/lib/hotel-valet';
@@ -262,7 +262,7 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
         <thead><tr><th scope="col">결제</th><th scope="col">전월실적</th><th scope="col">혜택</th></tr></thead>
         <tbody>{checks.map(({key, label, check}) => <PayTr key={key} label={label} check={check}/>)}</tbody>
       </table>
-      <p className="cd-foot">✓ 인정 · ✕ 제외 · ? 원문 미확인</p>
+      <p className="cd-foot">✓ 인정 · ✕ 제외 · ? 원문 미확인{spendFreeCard(card) && <> · 실적 조건이 없는 카드는 전월실적 칸을 ✓로 표시해요</>}</p>
     </section>}
 
     {offers.length > 0 && <section className="cd-sec">

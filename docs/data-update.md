@@ -304,6 +304,8 @@
 
 **화면에 쓰이는 조건** (배포 때 `paymorevent/scripts/card-terms.mjs`가 카드 상세에 붙임, 로그에 붙인 수·안 붙인 카드가 나옴)
 - `name`·`cardType`이 카드 DB(`cardId`) 카드와 같아야 붙습니다(카드사명·괄호·'카드'는 빼고 비교). 다른 카드를 적었으면 통째로 안 씁니다.
+- **혜택 줄에는 실제 업종·가맹점을 적습니다(2026-11-28 규칙).** `label`은 구분 칸(커피·국내형 백화점·공항 라운지), `place`는 적용처(가맹점·업종 이름). "선택 옵션 대상 업종"·"… 자세히보기"·"대상 업종"처럼 **읽어서 무엇을 받는지 알 수 없는 줄은 넣지 마세요.** 선택형 카드는 옵션별로 줄을 나누고(예: 앤마일리지 해외형 1줄 + 국내형 백화점·주유·커피·편의점·택시 5줄), 통합 한도는 `shared`에 같은 이름으로 적어 한 칸으로 합칩니다. 서비스(라운지·발렛·커피)는 `value` "무료", `limits`에 "전월 30만원 이상 · 월 1회"처럼 조건을 적습니다.
+- **`minimumSpend`는 카드 전체의 전월실적입니다.** 일부 서비스만 조건이 있으면(예: 공항 라운지 전월 30만원) `0`으로 두고 그 줄의 `limits`·`conditions`에 적으세요. 카드 전체가 무실적이면 `0` — 그래야 화면의 '결제별 인정'이 `?` 대신 ✓(실적을 따지지 않음)로 나옵니다.
 - **전월실적**·**실적 제외**·**혜택 제외**는 정리본 값을 씁니다. 단, 카드 `minimumSpend`가 `0`인데 카드 DB 혜택에 실적 조건이 있으면 0은 버립니다 — '공통 기준 참조'처럼 실적이 다른 곳에 적혀 있으면 그 금액을 찾아 적으세요(모르면 `null`).
 - **혜택 표**는 정리본이 카드 DB 혜택을 60% 넘게 담고 있거나 두 배 넘게 자세할 때만 정리본으로 바꿉니다. 상품설명서 혜택 표를 **빠짐없이** 옮겨야 화면에 쓰입니다(일부만 옮기면 기존 표 유지).
 - 칸에는 `limits`와 30자 이하 조건 2개까지, 나머지 조건은 원문의 '혜택 조건'에 접어 둡니다. `shared`가 같은 줄은 한도 칸을 세로로 합칩니다.
@@ -526,14 +528,16 @@ cards: kb-09246 부터 · brandPrograms: lotte-visa-platinum 부터
 
 ```
 python3 tools/data/inbox.py merge              # card-terms.json 만들기(배포와 같은 동작)
-python3 tools/data/picking_audit.py            # 전수 검사 · 문제 목록
+python3 tools/data/picking_audit.py            # 전수 검사 · 문제 목록 (A·B·C)
 python3 tools/data/picking_audit.py --card nh-90010544   # 카드 하나 계산 과정
 python3 tools/data/picking_audit.py --md docs/picking-audit.md   # 요약 저장
 python3 tools/data/terms_to_rules.py --dry-run # 기계 변환 몇 장·어떤 값인지 미리보기(저장 안 함)
 python3 tools/data/terms_to_rules.py           # terms-rules.json.gz 갱신
+cd paymorevent && node scripts/label-audit.mjs # 화면 라벨·적용처·추상 문구·`?` 남은 카드 (실제 benefitRow)
+node scripts/label-audit.mjs --card samsung-aap1452 --all    # 카드 하나 · 문제 줄 전부
 ```
 
-### 검수 항목 (A는 오류·오해, B는 누락)
+### 검수 항목 (A는 오류·오해, B는 누락, C는 화면 표시·결제 판정)
 
 | 코드 | 무엇을 보나 | 어떻게 처리하나 |
 |---|---|---|
@@ -544,6 +548,8 @@ python3 tools/data/terms_to_rules.py           # terms-rules.json.gz 갱신
 | A5 | 혜택 표와 요율 모델의 실적 조건이 다른 카드 | 대개 혜택별 조건 차이(정상). 아니면 요율 `minimumSpend` 수정 |
 | B1 | 상품설명서 정리본은 있는데 피킹률이 비는 카드 | `terms_to_rules.py`로 변환되면 반영, 안 되면 수동 검수 |
 | B2 | 정리본 혜택 표가 카드 DB보다 자세한 카드 | 카드 상세는 정리본 표가 쓰이므로 참고만 |
+| C1 | 혜택 줄이 추상 문구만 있는 카드("선택 옵션 대상 업종"·"옵션패키지 상세보기" 등, 업종·가맹점 없음) | 원문 서비스 안내를 읽어 대상 업종·가맹점·한도를 채우고, 못 채우면 줄을 빼기 |
+| C2 | 혜택은 인정(`benefit: allowed`)인데 전월실적이 `?`(`spend: unknown`)로 남은 칸 | 무실적 카드면 `minimumSpend: 0`을 원문으로 확인(→ `spendFreeCard()`가 ✓로 채움), 실적 조건이 있으면 상품설명서의 실적 제외 목록을 읽어 `spend`를 정하기. 못 읽었으면 `note`에 남기기 |
 
 ### 새 카드 요율 모델을 넣는 길
 

@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 767,
-   "todo": 680,
+   "done": 769,
+   "todo": 678,
    "total": 1447
   },
   "brandPrograms": {
@@ -10015,7 +10015,7 @@
    "termsUrl": "https://static11.samsungcard.com/wcms/personal/files/2604_AMEX_P_003.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "samsung-aap1453",
@@ -10026,7 +10026,7 @@
    "termsUrl": "https://static11.samsungcard.com/wcms/personal/files/2604_AMEX_P_003.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "samsung-aap1485",

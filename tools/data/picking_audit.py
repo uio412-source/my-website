@@ -20,6 +20,12 @@ Node 없이 돌릴 수 있게 두었으니, 배포 전 검수나 에이전트 �
   B. 누락된 혜택·피킹률
      B1 상품설명서 정리본(card-terms.json)은 있는데 카드 DB 요율 모델이 없는 카드
      B2 카드 DB 혜택 표와 정리본 혜택 표의 줄 수가 크게 다른 카드(정리본이 더 자세함)
+  C. 화면 표시·결제 판정 (2026-11-28 추가)
+     C1 혜택 줄이 추상 문구만 있는 카드('선택 옵션 대상 업종', '… 자세히보기' 등 — 대상 업종·가맹점이 없음)
+     C2 혜택은 인정인데 전월실적이 '?'(unknown)로 남은 칸 — 무실적 카드면 판정 규칙이 안 먹은 것
+
+혜택 표 라벨이 "당 스카이패스"처럼 깨지는지는 실제 화면 코드로만 알 수 있어
+`node paymorevent/scripts/label-audit.mjs`가 따로 검사합니다(라벨 깨짐·적용처 문장·추상 문구·`?` 남은 카드).
 
 주의: 이 스크립트는 화면 계산의 사본입니다. `catalog-model.ts`를 고치면 여기도 같이 고치세요
 (같은 날 배포되는 `docs/picking-audit.md`가 서로 다른 답을 내면 안 됩니다).
@@ -56,6 +62,33 @@ OTHER_AREA_SPEND = re.compile(
     r"국내\s*(?:전월\s*)?실적|전월실적\s*조건|실적\s*조건|국내\s*이용\s*실적|국내\s*가맹점"
 )
 FOREIGN_AREA = re.compile(r"해외|외화|해외겸용|해외\s*이용")
+
+# C1 혜택 줄이 추상 문구만 있는 경우 (대상 업종·가맹점이 없어 화면에서 뜻이 없음)
+ABSTRACT_ONLY = re.compile(r"^(?:선택\s*)?(?:옵션\s*)?(?:대상\s*)?(?:업종|가맹점)(?:\s*(?:및|·|/)\s*(?:업종|가맹점))?\s*(?:안내|제공)?$")
+SEE_MORE = re.compile(r"(?:자세히|상세)\s*보기$")
+
+
+def abstract_only(text: str) -> bool:
+    """'선택 옵션 대상 업종'처럼 업종·가맹점 없이 '자세히보기'만 붙은 줄인지"""
+    raw = (text or "").strip()
+    if not raw:
+        return False  # 빈 칸은 상세 화면이 '원문 참고'로 비워 둠
+    t = SEE_MORE.sub("", raw).strip()
+    if not t:
+        return True
+    if ABSTRACT_ONLY.match(t):
+        return True
+    return bool(SEE_MORE.search(raw)) and len(t) <= 25 and not re.search(r"[,·/]", t)
+# C2 결제 판정에서 '전월실적' 칸이 ?로 남는 결제 항목(화면 PAYMENT_CHECKS의 저장 판정 4개)
+ELIGIBILITY_KEYS = ("상품권 가능", "관리비", "국세", "지방세")
+
+def spends_positive(card: dict) -> bool:
+    """카드·혜택·요율·배분 어디에도 양수 전월실적이 있는지 (없으면 무실적 카드)"""
+    values = [card.get("minimumSpend")]
+    values += [b.get("minimumSpend") for b in card.get("benefits") or []]
+    values += [r.get("minimumSpend") for r in card.get("rewardRates") or []]
+    values += [p.get("minimumSpend") for p in card.get("spendingPlans") or []]
+    return any(isinstance(v, (int, float)) and v > 0 for v in values)
 
 
 def load(name: str):
@@ -381,7 +414,7 @@ def best(options):
 # --- 검수 -------------------------------------------------------------------------
 def audit(cards: list[dict], terms: dict, detail: bool):
     term_by_id = {c.get("cardId"): c for c in terms.get("cards", [])}
-    findings = {k: [] for k in ("A1", "A2", "A3", "A4", "A5", "B1", "B2")}
+    findings = {k: [] for k in ("A1", "A2", "A3", "A4", "A5", "B1", "B2", "C1", "C2")}
     stats = {"cards": len(cards), "withPicking": 0, "withRates": 0, "withTerms": 0, "pending": 0}
 
     for card in cards:
@@ -472,6 +505,24 @@ def audit(cards: list[dict], terms: dict, detail: bool):
             if tb and len(benefits) and tb > len(benefits) * 1.5:
                 findings["B2"].append({"id": cid, "name": card["name"], "cardBenefits": len(benefits),
                                        "termBenefits": tb})
+
+        # C1 혜택 줄이 추상 문구만 있음 (제목 또는 첫 줄이 '선택 옵션 대상 업종'·'… 자세히보기')
+        for b in benefits:
+            title = (b.get("title") or "").strip()
+            first = re.split(r"\s*/\s*|\n", (b.get("detail") or "").strip())[0].strip()
+            if abstract_only(title) or abstract_only(first):
+                findings["C1"].append({"id": cid, "name": card["name"], "title": title or first,
+                                       "detail": (b.get("detail") or "")[:60]})
+                break
+
+        # C2 혜택 인정인데 전월실적이 ? — 무실적 카드인데 규칙이 못 채운 경우는 오류로 본다
+        pe = card.get("paymentEligibility") or {}
+        unknown = [k for k in ELIGIBILITY_KEYS
+                   if (pe.get(k) or {}).get("benefit") == "allowed" and (pe.get(k) or {}).get("spend") == "unknown"]
+        if unknown:
+            findings["C2"].append({"id": cid, "name": card["name"], "items": unknown,
+                                   "minimumSpend": card.get("minimumSpend"),
+                                   "무실적": not spends_positive(card)})
     return findings, stats
 
 
@@ -494,6 +545,8 @@ def summarize(findings, stats, detail: bool) -> str:
         "A5": "A5 (참고) 혜택별 실적이 달라 요율 모델이 일부 영역만 덮는 카드",
         "B1": "B1 상품설명서 정리본은 있는데 피킹률이 비는 카드",
         "B2": "B2 정리본 혜택 표가 카드 DB보다 자세한 카드",
+        "C1": "C1 혜택 줄이 추상 문구만 있는 카드(대상 업종·가맹점 없음)",
+        "C2": "C2 혜택은 인정인데 전월실적이 ?로 남은 칸",
     }
     for key in titles:
         items = findings[key]
