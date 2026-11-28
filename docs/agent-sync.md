@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 18:06 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 22:16 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-28 18:06 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#388](https://github.com/uio412-source/my-website/pull/388) | ChatGPT | data: 수집 2026-11-28 (IBK기업은행 카드 이벤트 4건) | 2026-11-28 21:34 | 1파일 · data/inbox/card-events 1 | 머지 |
+| [#387](https://github.com/uio412-source/my-website/pull/387) | Pickle | docs: 50배치 2차 수집 마무리 — 대기열·Pickle 기록·현황판 동기화 | 2026-11-28 18:09 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#386](https://github.com/uio412-source/my-website/pull/386) | Pickle | data: 수집 2026-11-28 (Pickle94 · KB SK내트럭 유가보조금카드 상품설명서) | 2026-11-28 18:05 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#385](https://github.com/uio412-source/my-website/pull/385) | Pickle | data: 수집 2026-11-28 (Pickle93 · 광주은행 멍이냥이카드 혜택) | 2026-11-28 18:04 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#384](https://github.com/uio412-source/my-website/pull/384) | Pickle | data: 수집 2026-11-28 (Pickle92 · 광주은행 삼성AI구독 장기할부 카드 혜택) | 2026-11-28 18:03 | 1파일 · data/inbox/card-terms 1 | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-28 18:06 KST · `python tools/data/agent_sync.py` · 기�
 | [#366](https://github.com/uio412-source/my-website/pull/366) | Pickle | data: 수집 2026-11-28 (Pickle74 · 광주은행 대한항공SKYPASS 카드 혜택) | 2026-11-28 17:44 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#365](https://github.com/uio412-source/my-website/pull/365) | Pickle | data: 수집 2026-11-28 (Pickle73 · 광주은행 메가박스 신용카드 혜택) | 2026-11-28 17:43 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#364](https://github.com/uio412-source/my-website/pull/364) | Pickle | data: 수집 2026-11-28 (Pickle72 · 광주은행 롯데하이마트 하트러브카드 혜택) | 2026-11-28 17:42 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#363](https://github.com/uio412-source/my-website/pull/363) | Pickle | data: 수집 2026-11-28 (Pickle71 · 광주은행 SK인텔릭스+ 카드 혜택) | 2026-11-28 17:41 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#362](https://github.com/uio412-source/my-website/pull/362) | Pickle | data: 수집 2026-11-28 (Pickle70 · 광주은행 오일모아카드 + S-OIL 카드 구간 정… | 2026-11-28 17:40 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -85,9 +85,9 @@ _열린 PR이 없습니다._
 
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
-| ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
+| ChatGPT | `data/agent-notes/chatgpt.json` | #388 data: 수집 2026-11-28 (IBK기업은행 카드 이… | 2026-11-28 21:34 | 0건 |
 | Claude | `data/agent-notes/claude.json` | - | - | 16건 |
-| Pickle | `data/agent-notes/pickle.json` | #386 data: 수집 2026-11-28 (Pickle94 · K… | 2026-11-28 18:05 | 74건 |
+| Pickle | `data/agent-notes/pickle.json` | #387 docs: 50배치 2차 수집 마무리 — 대기열·Pickle… | 2026-11-28 18:09 | 74건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 

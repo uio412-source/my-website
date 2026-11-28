@@ -1,0 +1,478 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Claude",
+ "cards": [
+  {
+   "cardId": "hyundai-smekbnk",
+   "queueKey": "hyundai-smekbnk",
+   "name": "케이뱅크 BUSINESS 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=SMEKBNK",
+   "termsUrl": "https://www.kbanknow.com/web/product/card/credit-card-details/03470shot",
+   "docDate": "2026-07-07",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 30000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 일시불·할부(본인·가족 카드)",
+   "grace": null,
+   "spendExclusions": [
+    "다른 카드 이용금액",
+    "승인 취소·부분 취소·환불 금액",
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "상품권 등 현금성 유가증권·선불카드 구매·충전",
+    "국제브랜드·해외 이용 수수료"
+   ],
+   "benefitExclusions": [
+    "PG·간편결제 가맹점명으로 승인된 결제(온라인쇼핑)",
+    "연결된 다른 사이트·앱 결제(온라인쇼핑)",
+    "쿠팡이츠",
+    "통신요금 합산 청구·앱스토어 인앱 결제(디지털 콘텐츠)"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "국내외 기본 적립",
+     "place": "국내외 모든 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "한도 없음",
+     "conditions": [
+      "추가 적립 한도 초과분도 1%"
+     ]
+    },
+    {
+     "group": null,
+     "label": "온라인쇼핑",
+     "place": "네이버플러스 스토어·쿠팡·컬리·G마켓·옥션·11번가·SSG.COM·롯데온·톡딜·식봄",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 40000,
+     "capScope": "월",
+     "shared": "온라인쇼핑·멤버십·디지털 콘텐츠 통합 월 4만 M포인트",
+     "limits": null,
+     "conditions": [
+      "케이뱅크 사장님통장 결제계좌 유지 시",
+      "공식 홈페이지·앱 결제",
+      "네이버는 naver.com 가맹점만"
+     ]
+    },
+    {
+     "group": null,
+     "label": "멤버십",
+     "place": "네이버플러스 멤버십·쿠팡 로켓와우·컬리멤버스",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 40000,
+     "capScope": "월",
+     "shared": "온라인쇼핑·멤버십·디지털 콘텐츠 통합 월 4만 M포인트",
+     "limits": null,
+     "conditions": [
+      "케이뱅크 사장님통장 결제계좌 유지 시"
+     ]
+    },
+    {
+     "group": null,
+     "label": "디지털 콘텐츠",
+     "place": "유튜브 프리미엄·넷플릭스·티빙",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 40000,
+     "capScope": "월",
+     "shared": "온라인쇼핑·멤버십·디지털 콘텐츠 통합 월 4만 M포인트",
+     "limits": null,
+     "conditions": [
+      "케이뱅크 사장님통장 결제계좌 유지 시"
+     ]
+    },
+    {
+     "group": null,
+     "label": "사장님 신용대출 금리",
+     "place": "케이뱅크 사장님 신용대출",
+     "value": "연 0.2%p 우대",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "카드 이용 중 고객",
+     "conditions": []
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-smekkob",
+   "queueKey": "hyundai-smekkob",
+   "name": "카카오뱅크 BUSINESS 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=SMEKKOB",
+   "termsUrl": "https://www.hyundaicard.com/upload/card/T_A3W-20260126-1719-59_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_MB%20%EC%B9%B4%EC%B9%B4%EC%98%A4%EB%B1%85%ED%81%AC_V2.pdf",
+   "docDate": "2026-01-26",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 30000
+    },
+    {
+     "brand": "American Express",
+     "amount": 30000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "American Express",
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 일시불·할부(본인·가족 카드)",
+   "grace": "카드 수령 등록월 다음 달 이용분까지 전월 50만원 미만도 제공",
+   "spendExclusions": [
+    "사업성 경비(추가 혜택) 대상점 이용금액",
+    "다른 카드 이용금액",
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료",
+    "공과금(국세·관세·지방세·상하수도·벌과금·과태료 등)"
+   ],
+   "benefitExclusions": [
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료",
+    "공과금(전기·도시가스 요금은 적립)"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "국내외 기본 적립",
+     "place": "국내외 모든 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "한도 없음",
+     "conditions": [
+      "추가 혜택과 중복 없음"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "온라인쇼핑",
+     "place": "네이버쇼핑·쿠팡·G마켓·옥션·SSG.COM",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": [
+      "공식 홈페이지·앱 결제",
+      "네이버는 naver.com 가맹점만",
+      "쿠팡이츠 제외"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "해외",
+     "place": "해외 온·오프라인 가맹점",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": [
+      "국제브랜드·해외서비스 수수료 제외"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "전기·도시가스",
+     "place": "전기요금·도시가스요금",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": [
+      "공과금이어도 적립"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "4대 보험",
+     "place": "건강보험·국민연금·고용보험·산재보험",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "개인사업자 신용대출 금리",
+     "place": "카카오뱅크 개인사업자 신용대출(카드 등록 후 신규 실행)",
+     "value": "연 0.2% 우대",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": null,
+     "conditions": []
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-smekkobp",
+   "queueKey": "hyundai-smekkobp",
+   "name": "카카오뱅크 BUSINESS 현대카드 PRIME",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=SMEKKOBP",
+   "termsUrl": "https://www.hyundaicard.com/upload/card/T_A3W-20260319-1715-01_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_MB_%EC%B9%B4%EC%B9%B4%EC%98%A4%EB%B1%85%ED%81%AC_%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84_V2_%EA%B3%B5%EC%8B%9C%EC%8B%A4%EC%9A%A9.pdf",
+   "docDate": "2026-03-19",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 150000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 150000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 일시불·할부(본인·가족 카드)",
+   "grace": "카드 수령 등록월 다음 달 이용분까지 전월 50만원 미만도 제공",
+   "spendExclusions": [
+    "사업성 경비·여행·골프·호텔(추가 혜택) 대상점 이용금액",
+    "다른 카드 이용금액",
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료"
+   ],
+   "benefitExclusions": [
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료",
+    "공과금(전기·도시가스 요금은 적립)"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "국내외 기본 적립",
+     "place": "국내외 모든 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "한도 없음",
+     "conditions": [
+      "추가 혜택과 중복 없음"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "온라인쇼핑",
+     "place": "네이버쇼핑·쿠팡·G마켓·옥션·SSG.COM",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": [
+      "공식 홈페이지·앱 결제",
+      "네이버는 naver.com 가맹점만",
+      "쿠팡이츠 제외"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "해외",
+     "place": "해외 온·오프라인 가맹점",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": [
+      "국제브랜드·해외서비스 수수료 제외"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "전기·도시가스",
+     "place": "전기요금·도시가스요금",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": [
+      "공과금이어도 적립"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "4대 보험",
+     "place": "건강보험·국민연금·고용보험·산재보험",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "여행·골프·호텔",
+     "label": "여행",
+     "place": "국내 항공사·여행사·면세점 업종",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "여행·골프·호텔 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "여행·골프·호텔",
+     "label": "골프",
+     "place": "국내 골프장·골프연습장 업종",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "여행·골프·호텔 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "여행·골프·호텔",
+     "label": "호텔",
+     "place": "국내 특급호텔 업종",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "여행·골프·호텔 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "연간 바우처",
+     "place": "롯데·신세계백화점 · 반얀트리 서울·그랜드 워커힐 서울 등 특급호텔 · 더현대트래블(항공·호텔)",
+     "value": "10만원",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "연 1회",
+     "conditions": [
+      "연간 이용 실적에 따라 제공(13개월 차)",
+      "본인 카드"
+     ]
+    },
+    {
+     "group": null,
+     "label": "공항 라운지",
+     "place": "THE LOUNGE 전 세계 1,000여 개 공항 라운지",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "연 5회",
+     "conditions": [
+      "본인만"
+     ]
+    },
+    {
+     "group": null,
+     "label": "발레파킹",
+     "place": "인천공항 T1·T2 공식 주차대행 · 그랜드 워커힐 서울·더 플라자·비스타 워커힐 서울·파크 하얏트 부산",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "공항·호텔 통합 월 5회",
+     "conditions": [
+      "본인만",
+      "주차요금 별도"
+     ]
+    },
+    {
+     "group": null,
+     "label": "개인사업자 신용대출 금리",
+     "place": "카카오뱅크 개인사업자 신용대출(카드 등록 후 신규 실행)",
+     "value": "연 0.2% 우대",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": null,
+     "conditions": []
+    }
+   ]
+  }
+ ]
+}
