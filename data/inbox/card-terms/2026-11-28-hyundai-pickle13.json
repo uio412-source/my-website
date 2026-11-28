@@ -1,0 +1,331 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "hyundai-sge2",
+   "queueKey": "hyundai-sge2",
+   "name": "SSG.COM카드 Edition2",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=SGE2",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03060",
+   "docDate": "2026-03-01",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 10000},
+    {"brand": "Visa", "amount": 10000}
+   ],
+   "brands": ["국내전용", "Visa"],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 SSG.COM카드 Edition2(본인+하이패스카드) 일시불·할부 이용 금액",
+   "grace": "최초 신규 발급 시 발급월 기준 다음 달 이용 건까지 전월 30만원 미만도 혜택 제공",
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비·제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "공과금(국세·관세·지방세·상하수도 요금·과태료 등)",
+    "전기 요금·도시가스 요금·아파트 관리비·자동납부서비스 이용 수수료",
+    "초중고 학교납입금·대학·대학원 등록금",
+    "상품권 등 현금성 유가증권 구매·선불카드 충전",
+    "건강보험·국민연금·고용보험·산재보험료",
+    "고속도로 통행 요금·고속버스 결제",
+    "SSG.COM카드 Edition2 외 다른 카드 이용 금액"
+   ],
+   "benefitExclusions": [
+    "장기카드대출·단기카드대출·연회비·제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "공과금·전기·도시가스·아파트 관리비",
+    "상품권 등 현금성 유가증권 구매·선불카드 충전",
+    "현대카드 할인 서비스·무이자 할부 이용 금액"
+   ],
+   "benefits": [
+    {
+     "group": "SSG MONEY 적립",
+     "label": "SSG.COM",
+     "place": "SSG.COM",
+     "value": "7%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 1만 SSG MONEY(초과 시 미적립)",
+     "conditions": ["전월 이용 금액 30만원 이상 시"]
+    },
+    {
+     "group": "SSG MONEY 적립",
+     "label": "그 외 가맹점",
+     "place": "이마트·신세계백화점·스타벅스 등 SSGPAY 온·오프라인 가맹점 포함 그 외 전 가맹점",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "한도 없음",
+     "conditions": ["전월 이용 금액 30만원 이상 시"]
+    },
+    {
+     "group": "멤버십 혜택",
+     "label": "SSG MONEY 제공",
+     "place": "SSG.COM(신세계 유니버스 클럽·신세계 유니버스 쓱배송 클럽·SSG 7클럽 가입 회원)",
+     "value": "3,900원",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3900,
+     "capScope": "월",
+     "limits": "월 1회",
+     "conditions": [
+      "SSG.COM카드 Edition2를 SSGPAY 결제 수단에 등록·유지",
+      "가입한 날과 같은 날짜에 매달 지급, 해당 일자가 없으면 말일 지급",
+      "최초 신규 발급 시 최대 2회까지 전월 30만원 미만도 제공"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-nxnx",
+   "queueKey": "hyundai-nxnx",
+   "name": "넥슨 현대카드 Edition2",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=NXNX",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03378",
+   "docDate": "2026-03-01",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 20000},
+    {"brand": "Mastercard", "amount": 20000},
+    {"brand": "American Express", "amount": 20000}
+   ],
+   "brands": ["국내전용", "Mastercard", "American Express"],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 넥슨 현대카드 Edition2(본인+가족 카드) 일시불·할부 이용 금액",
+   "grace": "최초 신규 발급 시 카드 수령 등록월 기준 다음 달 이용 건까지 전월 30만원 미만도 혜택 제공",
+   "spendExclusions": [
+    "기본 혜택(PC방·온라인몰·배달 앱·편의점)이 적용된 결제 건의 전체 이용 금액",
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비·제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "공과금(국세·관세·지방세·상하수도 요금·과태료 등)",
+    "전기 요금·TV 수신료·도시가스 요금·아파트 관리비·자동납부 서비스 이용 수수료",
+    "사립유치원 교육비·초중고 학교 납입금·대학·대학원 등록금",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "건강보험·국민연금·고용보험·산재보험료",
+    "고속도로 통행 요금·후불하이패스·고속버스 결제",
+    "무이자 할부 이용 금액"
+   ],
+   "benefitExclusions": [
+    "넥슨 게임 외 결제 건(넥슨 쇼핑·넥슨 에센셜·넥슨 관련 오프라인 행사 및 장소)",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "현대카드 할인·무이자 할부 서비스 적용 결제 건의 전체 이용 금액",
+    "콘솔 게임·스팀·에픽게임즈 등 넥슨 외 게임 플랫폼",
+    "배달원·가맹점 직접 결제, 편의점 앱 결제",
+    "해외 가맹점(기본 혜택은 국내 가맹점만)"
+   ],
+   "benefits": [
+    {
+     "group": "마비노기 모바일팩",
+     "label": "넥슨 게임",
+     "place": "넥슨이 서비스하는 PC·모바일 게임",
+     "value": "100원당 1 M캐시",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "월 2천 넥슨 현대카드 M캐시",
+     "conditions": ["본인 인증된 본인 계정 이용 건만", "적립 한도 초과 시 미적립"]
+    },
+    {
+     "group": "마비노기 모바일팩",
+     "label": "PC방·온라인몰·배달·편의점",
+     "place": "PC방 업종, 네이버플러스 스토어·쿠팡·G마켓·옥션·SSG.COM, 배달의민족·쿠팡이츠·요기요, GS25·CU·세븐일레븐·이마트24",
+     "value": "100원당 1 M캐시",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 200,
+     "capScope": "월",
+     "shared": "대상점별 월 2백",
+     "limits": "대상점별 월 2백 넥슨 현대카드 M캐시",
+     "conditions": ["대상점 공식 홈페이지·앱 결제만", "편의점은 현장 결제만", "간편결제명으로 승인되면 적립 제외"]
+    },
+    {
+     "group": "넥슨팩",
+     "label": "넥슨 게임",
+     "place": "넥슨이 서비스하는 PC·모바일 게임",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "월 2만 넥슨 현대카드 포인트2",
+     "conditions": ["본인 인증된 본인 계정 이용 건만", "적립 한도 초과 시 미적립"]
+    },
+    {
+     "group": "넥슨팩",
+     "label": "PC방·온라인몰·배달·편의점",
+     "place": "PC방 업종, 네이버플러스 스토어·쿠팡·G마켓·옥션·SSG.COM, 배달의민족·쿠팡이츠·요기요, GS25·CU·세븐일레븐·이마트24",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 2000,
+     "capScope": "월",
+     "shared": "대상점별 월 2천",
+     "limits": "대상점별 월 2천 넥슨 현대카드 포인트2",
+     "conditions": ["대상점 공식 홈페이지·앱 결제만", "편의점은 현장 결제만", "간편결제명으로 승인되면 적립 제외"]
+    },
+    {
+     "group": "우대 서비스",
+     "label": "마비노기 추가 적립",
+     "place": "마비노기 모바일 게임",
+     "value": "500 M캐시",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 500,
+     "capScope": "월",
+     "limits": "월 500 넥슨 현대카드 M캐시",
+     "conditions": ["마비노기 모바일팩 이용 회원", "마비노기 모바일 게임 이용 금액 20만원 이상 시"]
+    },
+    {
+     "group": "우대 서비스",
+     "label": "메탈 플레이트",
+     "place": "국내외겸용(Mastercard) 카드 신청 시",
+     "value": "제공",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "발급 수수료 7만원 별도",
+     "conditions": ["본인 회원 신청 시", "제작에 평균 3주 내외 소요", "일부 ATM 이용 불가"]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-phhc",
+   "queueKey": "hyundai-phhc",
+   "name": "국민행복 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=PHHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03401",
+   "docDate": "2026-03-01",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 0},
+    {"brand": "Visa", "amount": 0}
+   ],
+   "brands": ["국내전용", "Visa"],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 국민행복 현대카드 일시불·할부 이용 금액",
+   "grace": "신규 발급 시 카드 수령 등록월 기준 다음 달 이용 건까지 전월 30만원 미만도 혜택 제공",
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비·제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "국가바우처 사용 금액"
+   ],
+   "benefitExclusions": [
+    "국가바우처 사용 금액(본인 부담금에 한해 적용)",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "해외 가맹점(추가 혜택은 국내 가맹점만)",
+    "통신 요금의 비정기 결제·알뜰폰·선불폰·결합상품",
+    "렌탈(coway·LG전자) 비정기 결제",
+    "학원의 온라인 결제",
+    "PG·간편결제명으로 승인된 결제"
+   ],
+   "benefits": [
+    {
+     "group": "기본 혜택",
+     "label": "국내외 가맹점",
+     "place": "국내외 모든 가맹점(현대카드 가맹점 등록 기준)",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "1회·연간 적립 한도 없음",
+     "conditions": ["M포인트 적립", "추가 혜택 한도 초과 시 기본 혜택 미적용"]
+    },
+    {
+     "group": "추가 혜택",
+     "label": "의료",
+     "place": "병원·약국(산후조리원 제외)",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "영역별 월 3천 · 통합 월 1만",
+     "limits": "영역별 월 3천, 통합 월 1만 M포인트",
+     "conditions": ["적립 한도 초과 시 추가·기본 혜택 미적용"]
+    },
+    {
+     "group": "추가 혜택",
+     "label": "온라인몰",
+     "place": "네이버플러스 스토어·쿠팡·G마켓·옥션·11번가·SSG.COM",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "영역별 월 3천 · 통합 월 1만",
+     "limits": "영역별 월 3천, 통합 월 1만 M포인트",
+     "conditions": ["공식 홈페이지·앱 결제만", "쿠팡이츠 결제 제외", "네이버플러스 스토어는 naver.com 도메인 가맹점만"]
+    },
+    {
+     "group": "추가 혜택",
+     "label": "교육",
+     "place": "어린이집·유치원, 학원(학습지 제외)",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "영역별 월 3천 · 통합 월 1만",
+     "limits": "영역별 월 3천, 통합 월 1만 M포인트",
+     "conditions": ["학원은 오프라인 방문 결제만"]
+    },
+    {
+     "group": "추가 혜택",
+     "label": "통신 요금",
+     "place": "SKT·KT·LG U+ 통신 요금",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "영역별 월 3천 · 통합 월 1만",
+     "limits": "영역별 월 3천, 통합 월 1만 M포인트",
+     "conditions": ["정기 결제만", "알뜰폰·선불폰·결합상품 제외"]
+    },
+    {
+     "group": "추가 혜택",
+     "label": "렌탈 요금",
+     "place": "coway·LG전자 렌탈 요금",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "영역별 월 3천 · 통합 월 1만",
+     "limits": "영역별 월 3천, 통합 월 1만 M포인트",
+     "conditions": ["정기 결제만"]
+    },
+    {
+     "group": "추가 혜택",
+     "label": "코스트코",
+     "place": "코스트코 온·오프라인",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "shared": "영역별 월 3천 · 통합 월 1만",
+     "limits": "영역별 월 3천, 통합 월 1만 M포인트",
+     "conditions": ["코스트코 매장·온라인 결제"]
+    }
+   ]
+  }
+ ]
+}
