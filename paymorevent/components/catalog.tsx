@@ -26,7 +26,7 @@ import sources from '@/data/personal-benefit-sources.json';
 type Tab = 'cards' | 'cashback' | 'events' | 'mine';
 const SECTIONS: Record<Tab, {title: string; sub: string}> = {
   cards: {title: '카드상품 검색', sub: ''},
-  cashback: {title: '발급이벤트', sub: '신규 발급 캐시백'},
+  cashback: {title: '발급이벤트', sub: '네이버페이 · 카카오페이 · 아정당 · 뽐뿌 발급 지원금'},
   events: {title: '카드사 이벤트', sub: '진행 중인 이벤트'},
   mine: {title: '내 카드 이벤트 모아보기', sub: ''},
 };
