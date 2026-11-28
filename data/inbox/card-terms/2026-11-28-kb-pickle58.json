@@ -1,0 +1,308 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09115",
+   "queueKey": "kb-09115",
+   "name": "American Express Blue Card",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09115&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09115__prdctOpmn_20240405.pdf",
+   "docDate": "2023-11-29",
+   "annualFee": [
+    {
+     "brand": "American Express",
+     "amount": 19000
+    }
+   ],
+   "brands": [
+    "American Express"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) American Express Blue KB Kookmin Card 일시불·할부 승인 금액(가족카드 포함, 해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 전월 30만원 미만이어도 1구간 할인 제공",
+   "spendExclusions": [
+    "American Express Blue로 할인받은 이용건(해당 금액 전체)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "상품권·선불카드 구입·충전",
+    "아파트 관리비",
+    "유치원·초·중·고 납입금 전체",
+    "정부지원금",
+    "대학(원) 등록금",
+    "국세·지방세",
+    "각종 공과금(전기·수도)",
+    "4대 사회보험료",
+    "각종 수수료·이자·연체료·연회비",
+    "무승인 전표",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액",
+    "상품권·선불카드 구입·충전",
+    "백화점·대형마트 등 일부 입점 매장",
+    "아웃백 딜리버리"
+   ],
+   "benefits": [
+    {
+     "group": "온라인쇼핑",
+     "label": "KB Pay 쇼핑",
+     "place": "G마켓·11번가·SSG.COM(KB Pay 결제)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 10000
+      },
+      {
+       "spend": 700000,
+       "cap": 15000
+      },
+      {
+       "spend": 1200000,
+       "cap": 20000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "상품권·여행·항공권·티켓·도서·별도 팝업 사이트 제외"
+     ]
+    },
+    {
+     "group": "주유",
+     "label": "주유",
+     "place": "SK에너지·GS칼텍스",
+     "value": "리터당 100원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "conditions": [
+      "LPG·경유·등유는 휘발유 가격으로 환산해 할인율 적용"
+     ]
+    },
+    {
+     "group": "편의점",
+     "label": "편의점",
+     "place": "GS25·CU",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "conditions": [
+      "오프라인 매장 일반결제건에 한함",
+      "백화점·대형마트 등 일부 입점 매장 제외"
+     ]
+    },
+    {
+     "group": "통신·구독",
+     "label": "이동통신·OTT",
+     "place": "SKT·KT·LG U+·Liiv M 자동납부, 넷플릭스·유튜브 프리미엄·Wavve·티빙·디즈니+ 정기결제",
+     "value": "이동통신 10%·OTT 30%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "conditions": [
+      "인터넷·IPTV 등 결합상품 제외",
+      "OTT는 공식 홈페이지 정기결제만, 간편결제·인앱 결제 제외"
+     ]
+    },
+    {
+     "group": "외식",
+     "label": "패밀리레스토랑",
+     "place": "아웃백스테이크하우스",
+     "value": "30%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 30000,
+     "capScope": "월",
+     "limits": "연 6만원",
+     "conditions": [
+      "백화점·대형마트 등 일부 입점 매장 및 아웃백 딜리버리 제외"
+     ]
+    },
+    {
+     "group": "해외",
+     "label": "해외 가맹점",
+     "place": "해외 모든 가맹점",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월"
+    },
+    {
+     "group": "놀이공원",
+     "label": "놀이공원 현장할인",
+     "place": "롯데월드 어드벤처·에버랜드·캐리비안베이",
+     "value": "50%·30%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "연",
+     "limits": "롯데월드 연5매·에버랜드 연10매",
+     "conditions": [
+      "놀이공원 현장 결제 시 실물카드 소지 필수",
+      "롯데월드 어드벤처 50%(회원별 1일 1매·월 2매), 에버랜드 50%(카드별 1일 1매), 캐리비안베이 30%"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09106",
+   "queueKey": "kb-09106",
+   "name": "Biz Prime 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09106&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09106__prdctOpmn_20260625.pdf",
+   "docDate": "2025-05-29",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 120000
+    },
+    {
+     "brand": "American Express",
+     "amount": 120000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "American Express"
+   ],
+   "minimumSpend": 1000000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) KB Biz Prime 카드 일시불·할부 승인 금액",
+   "spendExclusions": [
+    "(부분)무이자할부 이용금액",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "상품권·선불카드 구입·충전",
+    "아파트 관리비",
+    "유치원·초·중·고 납입금 전체",
+    "정부지원금",
+    "대학(원) 등록금",
+    "국세·지방세",
+    "공과금(전기·수도)",
+    "4대 사회보험료",
+    "각종 수수료·이자·연체료·연회비",
+    "신차구매 청구(환급) 할인 전표",
+    "무승인 전표",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "상품권·선불카드 구입·충전",
+    "무이자할부 이용금액",
+    "취소 금액"
+   ],
+   "benefits": [
+    {
+     "group": "기본적립",
+     "label": "Life",
+     "place": "국내 가맹점(Life 영역)",
+     "value": "0.4~1%",
+     "valueType": "적립",
+     "minimumSpend": 2000000,
+     "tiers": [
+      {
+       "spend": 2000000,
+       "cap": 200000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "200만원 0.4%(월 20만점), 300만원 1%(월 30만점)"
+    },
+    {
+     "group": "영역적립",
+     "label": "일상생활",
+     "place": "국내 가맹점",
+     "value": "0.2~0.5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "tiers": [
+      {
+       "spend": 1000000,
+       "cap": 200000
+      },
+      {
+       "spend": 2000000,
+       "cap": 300000
+      },
+      {
+       "spend": 3000000,
+       "cap": 300000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "100만원 0.2%·200만원 0.3%·300만원 0.5%"
+    },
+    {
+     "group": "영역적립",
+     "label": "4대보험",
+     "place": "4대 사회보험료(건강·연금·고용·산재)",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "tiers": [
+      {
+       "spend": 1000000,
+       "cap": 10000
+      },
+      {
+       "spend": 2000000,
+       "cap": 20000
+      },
+      {
+       "spend": 3000000,
+       "cap": 30000
+      }
+     ],
+     "cap": null,
+     "capScope": "월"
+    },
+    {
+     "group": "영역적립",
+     "label": "제약·의료기기",
+     "place": "제약회사·의료도매·의료기기·건강식품점 업종",
+     "value": "0.4~1%",
+     "valueType": "적립",
+     "minimumSpend": 2000000,
+     "tiers": [
+      {
+       "spend": 2000000,
+       "cap": 400000
+      },
+      {
+       "spend": 3000000,
+       "cap": 600000
+      }
+     ],
+     "cap": null,
+     "capScope": "월"
+    },
+    {
+     "group": "해외적립",
+     "label": "해외 가맹점",
+     "place": "해외 모든 가맹점",
+     "value": "1.4%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "①~④ 월 통합 적립한도 20만·40만·60만점 내"
+    }
+   ]
+  }
+ ]
+}
