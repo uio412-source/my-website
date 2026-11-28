@@ -1,6 +1,7 @@
 import {existsSync, readFileSync} from 'node:fs';
 import {gunzipSync} from 'node:zlib';
 import {applyPickingReview, readPickingReview} from './picking-review.mjs';
+import {applyReviewedIssuance} from './issuance-status.mjs';
 
 // Build the list and detail pages from the same reviewed product records.
 export function readVerifiedCardRules() {
@@ -45,5 +46,5 @@ export function applyVerifiedCardRules(cards, {patches}, {summary = false} = {},
   // 기계 변환한 요율 모델은 손 검수 패치 뒤에, 아직 요율이 없는 카드에만.
   const withTerms = applyTermsRules(result, termsRules);
   // Hand-checked picking-rate corrections (data/picking-review.json) go on top.
-  return applyPickingReview(withTerms, readPickingReview());
+  return applyReviewedIssuance(applyPickingReview(withTerms, readPickingReview()));
 }

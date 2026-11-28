@@ -1,4 +1,5 @@
 import {existsSync, readFileSync} from 'node:fs';
+import {koreaDay, stoppedIssuance} from './issuance-status.mjs';
 
 // 상품설명서 정리본(data/inbox/card-terms, docs/data-update.md 7장)을 카드 상세(card-data/<id>.json)에 붙입니다.
 // data/card-terms.json은 배포 때 tools/data/inbox.py merge가 만듭니다(커밋 안 함). 없으면 아무것도 안 붙입니다.
@@ -58,15 +59,24 @@ export function coverage(terms, card) {
 const positiveSpend = card => [card.minimumSpend, ...(card.benefits ?? []).map(b => b.minimumSpend), ...(card.rewardRates ?? []).filter(r => r.verified).map(r => r.minimumSpend)]
   .some(v => typeof v === 'number' && v > 0);
 
-const KEEP = ['name', 'docDate', 'collectedAt', 'url', 'termsUrl', 'status', 'spendBasis', 'grace', 'spendExclusions', 'benefitExclusions', 'benefits'];
+const KEEP = ['name', 'docDate', 'collectedAt', 'url', 'termsUrl', 'spendBasis', 'grace', 'spendExclusions', 'benefitExclusions', 'benefits'];
 
 /** 카드 상세에 붙일 정리본(없거나 맞지 않으면 null) */
-export function termsFor(card, terms) {
+export function termsFor(card, terms, today = koreaDay()) {
   if (!terms || !sameCard(terms, card) || !Array.isArray(terms.benefits) || !terms.benefits.length) return null;
   const cover = coverage(terms, card);
   const table = cover.rate >= COVER || terms.benefits.length >= 2 * cover.considered;
   const spend = terms.minimumSpend > 0 ? terms.minimumSpend : terms.minimumSpend === 0 && !positiveSpend(card) ? 0 : null;
   const out = Object.fromEntries(KEEP.filter(k => terms[k] !== undefined).map(k => [k, terms[k]]));
+  // The loose name check above is useful for benefit labels but not for an
+  // issuance-end notice: require exact ID and name incl. any variant suffix.
+  const tightName = value => flat(value).replace(PREFIX, '').replace(/[^0-9a-z가-힣]/g, '');
+  const a = tightName(terms.name), b = tightName(card.name);
+  const issuance = terms.cardId === card.id && a && a === b
+    && terms.issuer === card.issuer
+    && stoppedIssuance(terms, today);
+  if (issuance) Object.assign(out, {status: 'discontinued', ...issuance});
+  else if (terms.status === 'active') out.status = 'active';
   return {...out, minimumSpend: spend, table, cover: Math.round(cover.rate * 100) / 100};
 }
 

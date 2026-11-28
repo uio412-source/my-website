@@ -1,0 +1,10 @@
+{
+  "shinhan-200506010001": {
+    "name": "신한카드 아름다운",
+    "cardType": "credit",
+    "issuer": "신한카드",
+    "status": "discontinued",
+    "discontinuedAt": "2026-06-25",
+    "discontinuationSourceUrl": "https://www.shinhancard.com/pconts/html/helpdesk/dataRoom/MOBFM164N/2013455_1119.html"
+  }
+}

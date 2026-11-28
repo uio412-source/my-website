@@ -15,7 +15,7 @@ const LIST_FIELDS = [
   // Identity, card families (cardFamilyKey, groupCards) and offerApplies
   'id', 'issuer', 'issuerGroup', 'name', 'type', 'familyId', 'familyName', 'searchAliases',
   // Filters
-  'brands', 'annualFeeMin', 'minimumSpend', 'issuanceStatus', 'termsUrl',
+  'brands', 'annualFeeMin', 'minimumSpend', 'issuanceStatus', 'discontinuedAt', 'discontinuationSourceUrl', 'termsUrl',
   // Benefit chips and hashtags (browseThemes, featureTags, cardThemes, benefitKinds)
   'tags', 'themeTags', 'benefitKinds', 'networkServices',
   // Picking rate (pickingOptions)
