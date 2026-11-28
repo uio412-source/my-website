@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-29T02:50:00+09:00",
+ "updatedAt": "2026-11-29T02:52:00+09:00",
  "lock": null,
  "runs": [
   {
@@ -2088,7 +2088,7 @@
   {
    "at": "2026-11-29T02:45:00+09:00",
    "kind": "card-terms",
-   "summary": "현대카드 상품설명서 12종 · 혜택 78줄 (공식 PDF 심의필 날짜 기준)",
+   "summary": "현대카드 상품설명서 14종(1차 12종 #394 + 2차 2종 #396) · 혜택 87줄 (공식 PDF 심의필 날짜 기준)",
    "pr": 394,
    "queueKeys": [
     "hyundai-tpe4",
@@ -2102,7 +2102,9 @@
     "hyundai-mcje2",
     "hyundai-nexon-unlimited",
     "hyundai-mlsb",
-    "hyundai-cmsc"
+    "hyundai-cmsc",
+    "hyundai-mrdev",
+    "hyundai-lsbsoilx"
    ]
   },
   {
@@ -2111,6 +2113,16 @@
    "summary": "피킹률 전수 검사: A1 6건·A2 0건·A3 8건 모두 기존 카드, 이번 수집분에서 새 A1/A2/A3 없음. terms_to_rules --dry-run 요율 모델 추가 0장",
    "pr": 394,
    "queueKeys": []
+  },
+  {
+   "at": "2026-11-29T02:49:00+09:00",
+   "kind": "card-terms",
+   "summary": "현대카드 2차: Kia Members 전기차 신용카드 · 현대카드X-화물차유가보조금카드(S-OIL)",
+   "pr": 396,
+   "queueKeys": [
+    "hyundai-mrdev",
+    "hyundai-lsbsoilx"
+   ]
   }
  ],
  "skipped": [

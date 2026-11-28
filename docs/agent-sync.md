@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-29 02:42 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-29 02:50 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-29 02:42 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#396](https://github.com/uio412-source/my-website/pull/396) | Pickle | data: 수집 2026-11-29 (현대카드 상품설명서 2종 추가) | 2026-11-29 02:49 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#395](https://github.com/uio412-source/my-website/pull/395) | Pickle | docs: 수집 2026-11-29 반영 — 대기열·Pickle 기록·현황판 동기화 | 2026-11-29 02:43 | 4파일 · data/ 3 · docs/ 1 | 머지 |
 | [#394](https://github.com/uio412-source/my-website/pull/394) | Pickle | data: 수집 2026-11-29 (현대카드 상품설명서 12종) | 2026-11-29 02:41 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#393](https://github.com/uio412-source/my-website/pull/393) | ChatGPT | GitHub 이슈 기반 모바일 에이전트 채팅방과 5분 확인 워커 | 2026-11-29 00:01 | 5파일 · agent-chat/ 5 | 머지 |
 | [#390](https://github.com/uio412-source/my-website/pull/390) | Claude | data: 현대카드 BUSINESS 상품설명서 2차 — MY BUSINESS·캐시노트·햇살론 6종 | 2026-11-28 22:22 | 4파일 · data/ 2 · data/inbox/card-terms 1 · docs/… | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-29 02:42 KST · `python tools/data/agent_sync.py` · 기�
 | [#372](https://github.com/uio412-source/my-website/pull/372) | Pickle | data: 수집 2026-11-28 (Pickle80 · 광주은행 다자녀행복카드 혜택) | 2026-11-28 17:50 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#371](https://github.com/uio412-source/my-website/pull/371) | Pickle | data: 수집 2026-11-28 (Pickle79 · 광주은행 목포사랑체크카드 혜택) | 2026-11-28 17:49 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#370](https://github.com/uio412-source/my-website/pull/370) | Pickle | data: 수집 2026-11-28 (Pickle78 · 광주은행 GLOBAL TRAVEL 체크카드 혜택) | 2026-11-28 17:49 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#369](https://github.com/uio412-source/my-website/pull/369) | Pickle | data: 수집 2026-11-28 (Pickle77 · 광주은행 TOGETHER 체크카드 혜택) | 2026-11-28 17:48 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#368](https://github.com/uio412-source/my-website/pull/368) | Pickle | data: 수집 2026-11-28 (Pickle76 · 광주은행 더프라임에이지 베테랑 신용카드 혜택) | 2026-11-28 17:46 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -80,7 +80,7 @@ _지금 잠근 영역이 없습니다._
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 571 / 1463종 · **브랜드 프로그램** todo 45 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 11 / 30곳
+- **남은 카드** 569 / 1463종 · **브랜드 프로그램** todo 45 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 11 / 30곳
 - **최근 수집일** — card-terms 2026-11-29 · brand-services 2026-11-28 · card-events 2026-11-28 · hotel-events 없음 · travel-events 2026-11-28 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
@@ -89,7 +89,7 @@ _지금 잠근 영역이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #393 GitHub 이슈 기반 모바일 에이전트 채팅방과 5분 확인 … | 2026-11-29 00:01 | 0건 |
 | Claude | `data/agent-notes/claude.json` | #390 data: 현대카드 BUSINESS 상품설명서 2차 — MY… | 2026-11-28 22:22 | 18건 |
-| Pickle | `data/agent-notes/pickle.json` | #394 data: 수집 2026-11-29 (현대카드 상품설명서 1… | 2026-11-29 02:41 | 78건 |
+| Pickle | `data/agent-notes/pickle.json` | #396 data: 수집 2026-11-29 (현대카드 상품설명서 2… | 2026-11-29 02:49 | 78건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
