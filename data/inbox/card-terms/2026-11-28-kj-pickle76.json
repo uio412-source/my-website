@@ -1,0 +1,38 @@
+{
+  "type": "card-terms",
+  "issuer": "광주은행",
+  "collectedAt": "2026-11-28",
+  "collector": "Pickle",
+  "cards": [
+    {
+      "cardId": null,
+      "queueKey": "kj-CDR20210429002",
+      "name": "더프라임에이지 베테랑 신용카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20210429002",
+      "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20210429002",
+      "docDate": "2024-06-04",
+      "annualFee": [
+        {"brand": "국내전용", "amount": 10000},
+        {"brand": "Mastercard", "amount": 12000}
+      ],
+      "brands": ["국내전용", "Mastercard"],
+      "minimumSpend": 200000,
+      "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+      "grace": "카드 신규 후 수령일부터 다음 달 말일까지 실적 미달이어도 통합 캐시백 한도 1만원 제공",
+      "spendExclusions": ["무이자할부", "단기카드대출(현금서비스)", "장기카드대출(카드론)", "제세공과금·국세·지방세·관세·과태료", "건강보험·국민연금·고용보험·장애인 고용부담금", "아파트 관리비", "대학교(대학원) 등록금", "이자", "기프트·선불카드 구매·충전", "상품권 구매", "거래 취소 건", "연회비", "제수수료"],
+      "benefitExclusions": ["상품권·선불카드 구입·충전", "거래 취소 건"],
+      "benefits": [
+        {"group": "특별 캐시백 10%", "label": "병원·의원", "place": "병원·의원·요양병원 업종(BC카드 가맹점 등록 기준)", "value": "10%", "valueType": "캐시백", "minimumSpend": 200000, "cap": 3000, "capScope": "월", "limits": "월 2회, 건당 3천원까지"},
+        {"group": "특별 캐시백 10%", "label": "약국", "place": "약국 업종(BC카드 가맹점 등록 기준)", "value": "10%", "valueType": "캐시백", "minimumSpend": 200000, "cap": 5000, "capScope": "월", "limits": "월 2회, 건당 5천원까지"},
+        {"group": "추가 캐시백 5%", "label": "대형할인점", "place": "이마트·롯데마트·홈플러스", "value": "5%", "valueType": "캐시백", "minimumSpend": 300000, "cap": 3000, "capScope": "월", "limits": "월 2회, 건당 3천원까지"},
+        {"group": "추가 캐시백 5%", "label": "백화점", "place": "롯데·신세계·현대·갤러리아·AK플라자 백화점", "value": "5%", "valueType": "캐시백", "minimumSpend": 300000, "cap": 3000, "capScope": "월", "limits": "월 2회, 건당 3천원까지"},
+        {"group": "추가 캐시백 5%", "label": "주유", "place": "주유 업종(BC카드 가맹점 등록 기준)", "value": "5%", "valueType": "캐시백", "minimumSpend": 300000, "cap": 13000, "capScope": "월", "limits": "월 2회, 건당 1만3천원까지"},
+        {"group": "추가 캐시백 5%", "label": "사우나", "place": "사우나 업종(BC카드 가맹점 등록 기준)", "value": "5%", "valueType": "캐시백", "minimumSpend": 300000, "cap": 3000, "capScope": "월", "limits": "월 2회, 건당 3천원까지"},
+        {"group": "추가 캐시백 5%", "label": "슈퍼마켓", "place": "슈퍼마켓 업종(BC카드 가맹점 등록 기준)", "value": "5%", "valueType": "캐시백", "minimumSpend": 300000, "cap": 3000, "capScope": "월", "limits": "월 2회, 건당 3천원까지"},
+        {"group": "기본 캐시백", "label": "국내외 가맹점", "place": "국내외 모든 가맹점(일시불+할부)", "value": "0.1%", "valueType": "캐시백", "minimumSpend": 0, "cap": null, "capScope": "월", "limits": "전월실적·통합한도 제한 없음", "conditions": ["더프라임에이지적금 가입 시 0.1% 추가(전월 1회 이상 납부 실적 필요)"]}
+      ]
+    }
+  ]
+}
