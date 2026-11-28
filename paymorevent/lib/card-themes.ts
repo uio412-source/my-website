@@ -90,7 +90,7 @@ export function matchesPaymentEligibility(c:Card,theme:string,mode:'spend'|'bene
  return mode==='both'?e.spend==='allowed'&&e.benefit==='allowed':mode==='spend'?e.spend==='allowed':mode==='benefit'?e.benefit==='allowed':e.spend==='allowed'||e.benefit==='allowed';
 }
 /** 가입 대상이 정해진 카드(공무원·법인 등). 목록 추천순에서 아래로, 쓰임 필터에서는 뺍니다. */
-export const RESTRICTED = /교육청|공무원|도청|시청|군청|경찰|소방|국방|나라사랑|국민행복|바우처|복지카드|화물복지|법인|BIZ|비즈니스|사업자|학생증|ISIC|협회|연합회|조합원|운송사업자|다자녀|꿈디딤|꿈드리미|교육사랑/i;
+export const RESTRICTED = /교육청|공무원|도청|시청|군청|경찰|소방|국방|나라사랑|국민행복|바우처|복지카드|화물복지|법인|BIZ|비즈니스|사업자|학생증|ISIC|협회|연합회|조합원|운송사업자|다자녀|꿈디딤|꿈드리미|교육사랑|머니카드\s*Y/i;
 
 // ---------- 국내 전 가맹점 기본 적립·할인 ----------
 // 세금·관리비·상품권처럼 업종 혜택이 붙지 않는 결제에 실제로 남는 건 '전 가맹점 기본 혜택'뿐입니다.

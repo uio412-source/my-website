@@ -221,14 +221,14 @@ def build_cards():
         fee = fee_label(clean(c.get("annualFeeText")))
         cards.append({
             "id": c["id"], "issuer": c.get("issuer") or "", "name": name,
-            "type": "체크" if c.get("type") == "debit" else "신용",
+            "type": {"debit": "체크", "prepaid": "선불"}.get(c.get("type"), "신용"),
             "brands": [b for b in (c.get("brands") or []) if b != "국내전용"],
             "pay": pay, "atm": atm, "lounge": lounge,
             "back": max(rates) if rates else None,
-            "fee": "연회비 없음" if c.get("type") == "debit" and (not fee or fee.endswith(" 0원")) else fee,
+            "fee": "연회비 없음" if c.get("type") in ("debit", "prepaid") and (not fee or fee.endswith(" 0원")) else fee,
             "url": c.get("sourceUrl"),
         })
-    cards.sort(key=lambda x: (x["issuer"], x["type"] != "체크", x["name"]))
+    cards.sort(key=lambda x: (x["issuer"], {"체크": 0, "선불": 1}.get(x["type"], 2), x["name"]))
     return cards
 
 

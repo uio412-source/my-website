@@ -35,7 +35,7 @@ export type Card = {
   familyId?: string; familyName?: string;
   issuerGroup?: string; benefitKinds?: string[];
   /** 할인·적립받은 결제 전체가 전월실적에서 빠지는 카드 (picking-review.json) */ benefitSpendExcluded?: boolean; conditionEvidence?: {url:string; checkedAt:string; spendStatus:string; benefitStatus:string}; pickingScenarios?: PickingScenario[];
-  id: string; issuer: string; name: string; type: "credit" | "debit";
+  id: string; issuer: string; name: string; type: "credit" | "debit" | "prepaid";
   annualFeeMin: number | null; annualFeeText: string; brands: string[];
   benefits: Benefit[]; minimumSpend: number | null; spendExclusions: string[];
   benefitExclusions: string[]; description: string; sourceUrl: string;

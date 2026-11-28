@@ -121,7 +121,7 @@
         }
       } else {
         const types = countBy(cards, (c) => c.type);
-        filters = chips('ctype', [['all', '전체', cards.length], ...['체크', '신용'].filter((t) => types[t]).map((t) => [t, t + '카드', types[t]])], state.ctype);
+        filters = chips('ctype', [['all', '전체', cards.length], ...['체크', '신용', '선불'].filter((t) => types[t]).map((t) => [t, t + '카드', types[t]])], state.ctype);
         const list = cards.filter((c) => state.ctype === 'all' || c.type === state.ctype);
         head = `<div class="wl-block-head">카드사별 트래블카드 · 해외 결제·인출 수수료와 라운지<span>${list.length}종</span></div>`;
         body = cardRows(list);
