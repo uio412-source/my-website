@@ -171,6 +171,9 @@ def main():
     cards = json.loads(CATALOG.read_text(encoding="utf-8"))["cards"]
     seen, rows = set(), []
     for c in cards:
+        # 선불카드(네이버페이·페이코 등 핀테크 충전식)는 여신금융협회 상품설명서가 없어 card-terms 대기열에 넣지 않음
+        if c.get("type") == "prepaid":
+            continue
         fam = (c["issuer"], c.get("familyName") or c["name"])
         if fam in seen:
             continue

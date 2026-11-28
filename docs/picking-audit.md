@@ -3,7 +3,7 @@
 > `python3 tools/data/picking_audit.py --md docs/picking-audit.md`가 만든 검사 결과입니다. 손으로 고치지 말고 다시 생성하세요.
 > 화면과 같은 순서(`catalog-snapshot.json` → `verified-card-rules.json.gz` → `terms-rules.json.gz` → `picking-review.json`)로 계산하고, `pickingOptions()`(lib/catalog-model.ts)를 그대로 옮겨 쓴 사본입니다.
 
-- 검사일 2026-11-28 11:27 · 카드 1,552장 · 요율 모델 있음 341장 · 피킹률 계산됨 187장 · 상품설명서 정리본 763장 · 요율 확인 대기(rewardCoveragePending) 660장
+- 검사일 2026-11-28 11:42 · 카드 1,563장 · 요율 모델 있음 341장 · 피킹률 계산됨 187장 · 상품설명서 정리본 618장 · 요율 확인 대기(rewardCoveragePending) 671장
 
 ## A1 수수료 면제를 요율에 더한 카드(가정과 원문 확인) — 6건
 
@@ -92,7 +92,7 @@
 - 현대카드MY BUSINESS X F&B (`hyundai-xmbfb`) {"benefitMinSpend": 500000, "rateMinSpend": 1000000, "rates": 1}
 - 현대카드MY BUSINESS X Retail (`hyundai-xmbrt`) {"benefitMinSpend": 500000, "rateMinSpend": 1000000, "rates": 1}
 
-## B1 상품설명서 정리본은 있는데 피킹률이 비는 카드 — 614건
+## B1 상품설명서 정리본은 있는데 피킹률이 비는 카드 — 505건
 
 - BC 바로 ZONE 카드 (`bc-104520`) {"issuer": "BC 바로카드", "termBenefits": 10, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
 - BC 바로 에어마스터 (`bc-104452`) {"issuer": "BC 바로카드", "termBenefits": 3, "minimumSpend": 500000, "rates": 0, "pending": false, "benefits": 2}
@@ -110,32 +110,6 @@
 - 신세계 클리어 플러스 (`bc-101881`) {"issuer": "BC 바로카드", "termBenefits": 8, "minimumSpend": 200000, "rates": 0, "pending": true, "benefits": 2}
 - 케이뱅크 히든카드 (`bc-105000`) {"issuer": "BC 바로카드", "termBenefits": 3, "minimumSpend": 400000, "rates": 1, "pending": true, "benefits": 2}
 - 페이북카드 (`bc-105052`) {"issuer": "BC 바로카드", "termBenefits": 5, "minimumSpend": 400000, "rates": 2, "pending": true, "benefits": 2}
-- BLISS Mileage (`ibk-104506`) {"issuer": "IBK기업은행", "termBenefits": 2, "minimumSpend": 500000, "rates": 0, "pending": false, "benefits": 2}
-- BLISS.5 (IBK) SKYPASS (`ibk-033103`) {"issuer": "IBK기업은행", "termBenefits": 2, "minimumSpend": 0, "rates": 0, "pending": false, "benefits": 2}
-- BLISS.5 (IBK) TOP (`ibk-034721`) {"issuer": "IBK기업은행", "termBenefits": 2, "minimumSpend": 0, "rates": 0, "pending": false, "benefits": 2}
-- BOC(福) (`ibk-104417`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 500000, "rates": 0, "pending": false, "benefits": 1}
-- Hola IYTC 국제청소년증 체크카드 (`ibk-756147`) {"issuer": "IBK기업은행", "termBenefits": 2, "minimumSpend": 200000, "rates": 0, "pending": true, "benefits": 2}
-- I-Campus(일상생활형) (`ibk-104311`) {"issuer": "IBK기업은행", "termBenefits": 2, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
-- I-Mileage(대한항공마일리지) (`ibk-103401`) {"issuer": "IBK기업은행", "termBenefits": 4, "minimumSpend": 500000, "rates": 0, "pending": true, "benefits": 2}
-- I-Travel (`ibk-104084`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 500000, "rates": 0, "pending": false, "benefits": 2}
-- I-기후동행카드 (`ibk-104073`) {"issuer": "IBK기업은행", "termBenefits": 3, "minimumSpend": 0, "rates": 1, "pending": true, "benefits": 2}
-- I-어디로든그린카드 (`ibk-103214`) {"issuer": "IBK기업은행", "termBenefits": 3, "minimumSpend": 0, "rates": 0, "pending": true, "benefits": 2}
-- K22 Mileage SKYPASS (`ibk-103039`) {"issuer": "IBK기업은행", "termBenefits": 2, "minimumSpend": 500000, "rates": 0, "pending": false, "benefits": 2}
-- K22 Point (`ibk-103038`) {"issuer": "IBK기업은행", "termBenefits": 2, "minimumSpend": 500000, "rates": 0, "pending": false, "benefits": 2}
-- Olleh Super DC카드 (`ibk-755847`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
-- 부자되세요 더 마일리지(체크) (`ibk-756228`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
-- 안녕 체크카드 (`ibk-756202`) {"issuer": "IBK기업은행", "termBenefits": 3, "minimumSpend": 200000, "rates": 0, "pending": true, "benefits": 2}
-- 알토스카드 (`ibk-101642`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 0, "rates": 0, "pending": true, "benefits": 2}
-- 용인시민카드(신용) (`ibk-756176`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
-- 용인시민카드(체크) (`ibk-756189`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 200000, "rates": 0, "pending": true, "benefits": 2}
-- 이지캐시백 카드(체크) (`ibk-756655`) {"issuer": "IBK기업은행", "termBenefits": 2, "minimumSpend": 300000, "rates": 1, "pending": false, "benefits": 2}
-- 인피니트 스카이패스 카드 (`ibk-225018`) {"issuer": "IBK기업은행", "termBenefits": 2, "minimumSpend": 0, "rates": 0, "pending": false, "benefits": 2}
-- 일상의 기쁨(신용) (`ibk-927222`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 500000, "rates": 0, "pending": true, "benefits": 2}
-- 일상의 기쁨(체크) (`ibk-927235`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
-- 참! 좋은 kt wiz카드(신용) (`ibk-755889`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 0, "rates": 0, "pending": false, "benefits": 2}
-- 참! 좋은 kt wiz카드(체크) (`ibk-755892`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 0, "rates": 0, "pending": false, "benefits": 2}
-- 참! 좋은 다이소카드(체크) (`ibk-756309`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 200000, "rates": 0, "pending": true, "benefits": 2}
-- 하이틴즈(Hi TEENS Check) (`ibk-100026`) {"issuer": "IBK기업은행", "termBenefits": 1, "minimumSpend": 100000, "rates": 0, "pending": true, "benefits": 2}
 - AK KB국민카드 (`kb-04444`) {"issuer": "KB국민카드", "termBenefits": 2, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
 - ALL point 카드 (`kb-09162`) {"issuer": "KB국민카드", "termBenefits": 10, "minimumSpend": 0, "rates": 0, "pending": true, "benefits": 2}
 - ALL 카드 (`kb-09922`) {"issuer": "KB국민카드", "termBenefits": 5, "minimumSpend": 0, "rates": 1, "pending": true, "benefits": 2}
@@ -154,9 +128,35 @@
 - KB국민 펫코노미 카드 (`kb-04404`) {"issuer": "KB국민카드", "termBenefits": 4, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
 - KB라이프 딱좋은 요즘 건강 KB카드 (`kb-09579`) {"issuer": "KB국민카드", "termBenefits": 2, "minimumSpend": 400000, "rates": 0, "pending": false, "benefits": 2}
 - KT 할부 Plus KB국민카드 (`kb-01507`) {"issuer": "KB국민카드", "termBenefits": 2, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
-- … 외 554건 (--detail 로 전체 표)
+- LGU+ 라이트할부 Ⅱ KB국민카드 (`kb-01508`) {"issuer": "KB국민카드", "termBenefits": 2, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
+- LG전자 KB국민카드 (`kb-04425`) {"issuer": "KB국민카드", "termBenefits": 2, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
+- My WE:SH 카드 (`kb-09923`) {"issuer": "KB국민카드", "termBenefits": 7, "minimumSpend": 400000, "rates": 0, "pending": false, "benefits": 2}
+- NEED AutoSlim 카드 (`kb-09792`) {"issuer": "KB국민카드", "termBenefits": 3, "minimumSpend": 400000, "rates": 0, "pending": false, "benefits": 2}
+- On the Go 체크카드 (`kb-09701`) {"issuer": "KB국민카드", "termBenefits": 6, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
+- SK인텔릭스 올림 KB국민카드 (`kb-04418`) {"issuer": "KB국민카드", "termBenefits": 5, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
+- T 라이트 KB국민카드 (`kb-01506`) {"issuer": "KB국민카드", "termBenefits": 2, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
+- TBX 카드 (`kb-00218`) {"issuer": "KB국민카드", "termBenefits": 3, "minimumSpend": 400000, "rates": 0, "pending": false, "benefits": 2}
+- WE:SH All+ 카드 (`kb-09297`) {"issuer": "KB국민카드", "termBenefits": 6, "minimumSpend": 400000, "rates": 0, "pending": true, "benefits": 2}
+- WE:SH Travel (`kb-09561`) {"issuer": "KB국민카드", "termBenefits": 8, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
+- Wavve 카드 (`kb-04287`) {"issuer": "KB국민카드", "termBenefits": 4, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
+- YOU Prime 카드 (`kb-09771`) {"issuer": "KB국민카드", "termBenefits": 13, "minimumSpend": 400000, "rates": 0, "pending": false, "benefits": 2}
+- YOU Wish 카드 (`kb-09780`) {"issuer": "KB국민카드", "termBenefits": 8, "minimumSpend": 400000, "rates": 0, "pending": false, "benefits": 2}
+- Youth Club 체크카드 (`kb-04124`) {"issuer": "KB국민카드", "termBenefits": 8, "minimumSpend": 200000, "rates": 0, "pending": false, "benefits": 2}
+- toss KB국민카드 (`kb-04350`) {"issuer": "KB국민카드", "termBenefits": 2, "minimumSpend": 500000, "rates": 0, "pending": false, "benefits": 2}
+- 가온 플래티늄바우처카드 (`kb-09200`) {"issuer": "KB국민카드", "termBenefits": 7, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
+- 교원 웰스 KB국민카드 (`kb-04417`) {"issuer": "KB국민카드", "termBenefits": 6, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
+- 국민행복체크카드 (`kb-02066`) {"issuer": "KB국민카드", "termBenefits": 2, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
+- 굿데이카드 (`kb-09061`) {"issuer": "KB국민카드", "termBenefits": 5, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
+- 노리2 체크카드(Global) (`kb-07972`) {"issuer": "KB국민카드", "termBenefits": 14, "minimumSpend": 200000, "rates": 6, "pending": false, "benefits": 2}
+- 다담카드(비 OTP) (`kb-09169`) {"issuer": "KB국민카드", "termBenefits": 5, "minimumSpend": 300000, "rates": 0, "pending": false, "benefits": 2}
+- 랭킹닭컴 신용카드 (`kb-04289`) {"issuer": "KB국민카드", "termBenefits": 3, "minimumSpend": 300000, "rates": 0, "pending": true, "benefits": 2}
+- 마이핏카드(적립형) (`kb-09247`) {"issuer": "KB국민카드", "termBenefits": 3, "minimumSpend": 500000, "rates": 0, "pending": false, "benefits": 2}
+- 보람상조 KB카드 (`kb-04494`) {"issuer": "KB국민카드", "termBenefits": 2, "minimumSpend": 400000, "rates": 0, "pending": true, "benefits": 2}
+- 볼트업 KB EV 카드 (`kb-00236`) {"issuer": "KB국민카드", "termBenefits": 5, "minimumSpend": 400000, "rates": 0, "pending": false, "benefits": 2}
+- 사장님카드 (`kb-09291`) {"issuer": "KB국민카드", "termBenefits": 4, "minimumSpend": 500000, "rates": 0, "pending": false, "benefits": 2}
+- … 외 445건 (--detail 로 전체 표)
 
-## B2 정리본 혜택 표가 카드 DB보다 자세한 카드 — 341건
+## B2 정리본 혜택 표가 카드 DB보다 자세한 카드 — 302건
 
 - BC 바로 On＆Off 카드 (`bc-102040`) {"cardBenefits": 2, "termBenefits": 5}
 - BC 바로 ZONE 카드 (`bc-104520`) {"cardBenefits": 2, "termBenefits": 10}
@@ -169,7 +169,6 @@
 - 신세계 클리어 플러스 (`bc-101881`) {"cardBenefits": 2, "termBenefits": 8}
 - 신세계 푸빌라 (`bc-102603`) {"cardBenefits": 2, "termBenefits": 5}
 - 페이북카드 (`bc-105052`) {"cardBenefits": 2, "termBenefits": 5}
-- I-Mileage(대한항공마일리지) (`ibk-103401`) {"cardBenefits": 2, "termBenefits": 4}
 - ALL point 카드 (`kb-09162`) {"cardBenefits": 2, "termBenefits": 10}
 - ALL 카드 (`kb-09922`) {"cardBenefits": 2, "termBenefits": 5}
 - BeV Ⅲ 카드 (`kb-09310`) {"cardBenefits": 2, "termBenefits": 18}
@@ -218,7 +217,8 @@
 - NH 모두의카드(신용) (`nh-90010471`) {"cardBenefits": 3, "termBenefits": 10}
 - NH 모두의카드(체크) (`nh-90010470`) {"cardBenefits": 2, "termBenefits": 6}
 - NH1961체크카드 (`nh-90010117`) {"cardBenefits": 2, "termBenefits": 5}
-- … 외 281건 (--detail 로 전체 표)
+- NH20해봄체크카드 (`nh-90000359`) {"cardBenefits": 2, "termBenefits": 7}
+- … 외 242건 (--detail 로 전체 표)
 
 ## C1 혜택 줄이 추상 문구만 있는 카드(대상 업종·가맹점 없음) — 1건
 

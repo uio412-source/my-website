@@ -6,7 +6,7 @@ import {hotelTier, useFit} from '@/lib/card-themes';
 import {cardPath} from '@/lib/card-presentation';
 import {valetRules} from '@/lib/hotel-valet';
 import {COMPARE_KEY, COMPARE_MAX, clearCompare, toggleCompare, useStoredIds} from '@/lib/my-cards';
-import {feeLabel, highlights} from '@/lib/mc-text';
+import {feeLabel, highlights, typeLabel} from '@/lib/mc-text';
 import {spendShort} from '@/lib/card-value';
 import type {Card, Offer} from '@/lib/catalog-types';
 
@@ -55,7 +55,7 @@ function CompareSheet({cards, events, onClose}: {cards: Card[]; events: Offer[];
   const minFee = fees.length > 1 ? Math.min(...fees) : null, maxPick = picks.length > 1 ? Math.max(...picks) : null;
   const fit = (c: Card, t: string) => useFit(c, t) ? O : X;
   const rows: [string, (x: typeof info[number]) => ReactNode][] = [
-    ['종류', x => x.c.type === 'credit' ? '신용' : '체크'],
+    ['종류', x => typeLabel(x.c.type)],
     ['연회비', x => <b className={x.c.annualFeeMin !== null && x.c.annualFeeMin === minFee ? 'best' : undefined}>{(feeLabel(x.c.annualFeeMin) ?? '–').replace(/^연회비\s*/, '')}</b>],
     ['전월실적', x => (spendShort(x.c) ?? '–').replace(/^전월\s*/, '')],
     ['최고 피킹률', x => x.pick === null ? X : <b className={x.pick === maxPick ? 'best up' : 'up'}>{formatPicking(x.pick)}%</b>],

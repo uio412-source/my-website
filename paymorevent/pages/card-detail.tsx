@@ -14,7 +14,7 @@ import {annualFeeRows, cardPath, networkBrands} from '@/lib/card-presentation';
 import {customerLines, uniqueLines} from '@/lib/customer-copy';
 import {pendingValet, valetHotelResults, valetMapPath, valetQuota, valetRules} from '@/lib/hotel-valet';
 import {termRows} from '@/lib/card-terms';
-import {benefitRow, cardMinimumSpend, cleanBenefits, dday, feeLabel, headlineAmount, pickLabel, won, ymd, type BenefitRow} from '@/lib/mc-text';
+import {benefitRow, cardMinimumSpend, cleanBenefits, dday, feeLabel, headlineAmount, pickLabel, typeLabel, won, ymd, type BenefitRow} from '@/lib/mc-text';
 import type {Card, Offer} from '@/lib/catalog-types';
 import {viewOf} from '@/lib/event-view';
 import {nameAndValue} from '@/components/event-row';
@@ -207,7 +207,7 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
 
     <table className="cd-t cd-info">
       <tbody>
-        <tr><th scope="row">종류</th><td>{card.type === 'credit' ? '신용' : '체크'}{brands.length > 0 && <small>{brands.join(' · ')}</small>}</td></tr>
+        <tr><th scope="row">종류</th><td>{typeLabel(card.type)}{brands.length > 0 && <small>{brands.join(' · ')}</small>}</td></tr>
         <tr><th scope="row">연회비</th><td><b>{fee.main}</b>{fee.sub && <small>{fee.sub}</small>}</td></tr>
         <tr><th scope="row">전월실적</th><td><b>{spendInfo.main}</b>{spendInfo.sub && <small>{spendInfo.sub}</small>}</td></tr>
         {best && <tr><th scope="row">최고 피킹률</th><td><b className="up">{formatPicking(best.value)}%</b></td></tr>}
@@ -283,7 +283,7 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
         <span className="mc-body">
           <span className="mc-issuer">{c.issuer}</span>
           <a className="mc-name mc-stretch" href={cardPath(c.id)}>{c.familyName ?? c.name}</a>
-          <span className="mc-facts">{[c.type === 'credit' ? '신용' : '체크', feeLabel(c.annualFeeMin), spendShort(c)].filter(Boolean).join(' · ')}</span>
+          <span className="mc-facts">{[typeLabel(c.type), feeLabel(c.annualFeeMin), spendShort(c)].filter(Boolean).join(' · ')}</span>
           <span className="mc-hl">{shared.slice(0, 3).map(a => <i key={a}>{a}</i>)}</span>
         </span>
         <span className="mc-side">
@@ -291,7 +291,7 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
           <CompareToggle id={c.id} compact/>
         </span>
       </div>)}</div>
-      <p className="cd-foot">같은 {card.type === 'credit' ? '신용' : '체크'}카드·비슷한 연회비 중 혜택 영역이 겹치는 카드</p>
+      <p className="cd-foot">같은 {typeLabel(card.type)}카드·비슷한 연회비 중 혜택 영역이 겹치는 카드</p>
     </section>}
 
     {(benefits.length > 0 || termConds.length > 0 || spendRule.length > 0 || variants.length > 1 || eligibility.length > 0 || spendOut.length > 0 || benefitOut.length > 0) && <section className="cd-sec">
