@@ -1,0 +1,184 @@
+{
+ "type": "card-events",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "listUrls": [
+  "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001"
+ ],
+ "events": [
+  {
+   "id": "kb-202609-macau-luxury-special",
+   "kind": "card",
+   "title": "KB국민 고객 한정! 마카오 럭셔리리조트 특전",
+   "summary": "마카오 럭셔리 리조트 KB국민 고객 특전",
+   "category": "해외/여행",
+   "startsAt": "2026-09-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202609-green-card-forest-trip",
+   "kind": "card",
+   "title": "숲 여행도 그린카드 숲 여행 하고 경품까지!",
+   "summary": "그린카드 숲 여행 참여 시 경품",
+   "category": "응모형",
+   "startsAt": "2026-09-01",
+   "endsAt": "2026-11-30",
+   "entryRequired": true,
+   "cards": [
+    "그린카드"
+   ],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202609-master-donquijote-4000yen",
+   "kind": "card",
+   "title": "마스터카드라면 돈키호테 월 최대 4천엔 혜택",
+   "summary": "돈키호테 Mastercard 결제 월 최대 4천엔 혜택",
+   "category": "해외/여행",
+   "startsAt": "2026-09-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "Mastercard 브랜드 KB국민카드로 결제"
+   ],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202608-master-hotelscom-13",
+   "kind": "card",
+   "title": "마스터카드 호텔스닷컴 최대 13% 즉시할인",
+   "summary": "호텔스닷컴 Mastercard 결제 최대 13% 할인",
+   "category": "해외/여행",
+   "startsAt": "2026-08-10",
+   "endsAt": "2027-01-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "Mastercard 브랜드 KB국민카드로 결제"
+   ],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202608-saily-esim-20",
+   "kind": "card",
+   "title": "속도는 기본 안전한 이심 세일리 20% 즉시할인",
+   "summary": "세일리 eSIM 20% 즉시할인",
+   "category": "해외/여행",
+   "startsAt": "2026-08-18",
+   "endsAt": "2027-08-17",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202608-radisson-uk-12",
+   "kind": "card",
+   "title": "래디슨호텔그룹 영국호텔 12% 즉시할인",
+   "summary": "래디슨 영국 호텔 12% 즉시할인",
+   "category": "해외/여행",
+   "startsAt": "2026-08-05",
+   "endsAt": "2027-07-16",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202610-warner-bros-tokyo-4",
+   "kind": "card",
+   "title": "워너브라더스 스튜디오도쿄 4% 캐시백",
+   "summary": "워너브라더스 도쿄 결제 4% 캐시백",
+   "category": "해외/여행",
+   "startsAt": "2026-10-01",
+   "endsAt": "2027-09-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202607-visitbritain",
+   "kind": "card",
+   "title": "셜록홈즈 축구 펍의 나라 #VisitBritain",
+   "summary": "영국 여행 관련 할인·경품 혜택",
+   "category": "해외/여행",
+   "startsAt": "2026-07-17",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202608-travellers-donquijote-1000yen",
+   "kind": "card",
+   "title": "일본 돈키호테 트래블러스로 천엔 득템!",
+   "summary": "트래블러스 체크로 돈키호테 1천엔 혜택",
+   "category": "해외/여행",
+   "startsAt": "2026-08-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [
+    "트래블러스 체크카드"
+   ],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202607-travel-jikgu-need",
+   "kind": "card",
+   "title": "여행 직구 NEED Global하게 더 드림",
+   "summary": "여행·직구 결제 추가 혜택",
+   "category": "해외/여행",
+   "startsAt": "2026-07-01",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "kb-202607-millennium-uk-10",
+   "kind": "card",
+   "title": "밀레니엄호텔그룹 영국호텔 최대 10% 즉시할인",
+   "summary": "밀레니엄 영국 호텔 최대 10% 즉시할인",
+   "category": "해외/여행",
+   "startsAt": "2026-07-17",
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  }
+ ]
+}
