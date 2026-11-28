@@ -1,0 +1,113 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20171202003",
+   "name": "1st카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20171202003",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20171202003",
+   "docDate": "2026-07-03",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 8000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 10000
+    },
+    {
+     "brand": "Visa",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard",
+    "Visa"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 최초 발급 후 사용등록 월 포함 익월 말까지 전월실적과 무관하게 혜택 제공",
+   "spendExclusions": [
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "연회비",
+    "각종 수수료·이자",
+    "무이자할부 이용금액",
+    "기프트카드 구입·충전",
+    "각종 상품권 구입",
+    "대학·대학원 등록금",
+    "각종 공과금·지방세·국세",
+    "대중교통 이용대금",
+    "국내 영화관 이용금액",
+    "추가혜택 선택업종 이용금액"
+   ],
+   "benefitExclusions": [
+    "결제대행업체(PG)·간편결제 전용 가맹점으로 분류된 결제"
+   ],
+   "benefits": [
+    {
+     "group": "기본혜택Ⅰ",
+     "label": "국내/외 가맹점",
+     "place": "국내외 모든 가맹점",
+     "value": "0.5%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "전월 실적 무관, 통합 월 한도 7만원",
+     "conditions": [
+      "캐시백형·포인트 적립형 중 선택"
+     ]
+    },
+    {
+     "group": "기본혜택Ⅰ",
+     "label": "국내 영화관",
+     "place": "국내 영화관",
+     "value": "3,000원",
+     "valueType": "캐시백",
+     "minimumSpend": 100000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "일 1회·월 2회·연 8회",
+     "conditions": [
+      "건당 8천원 이상 이용 시"
+     ]
+    },
+    {
+     "group": "기본혜택Ⅰ",
+     "label": "자동화기기 수수료",
+     "place": "광주은행 자동화기기 출금",
+     "value": "면제",
+     "valueType": "면제",
+     "minimumSpend": 100000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 5회 이내"
+    },
+    {
+     "group": "기본혜택Ⅱ(선택 2업종)",
+     "label": "선택업종 2개",
+     "place": "외식, 주유, 대형할인점, 백화점, 홈/온라인쇼핑, 병원, 학원, 보험 업종 중 2가지",
+     "value": "1.2%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": 70000,
+     "capScope": "월",
+     "limits": "기본혜택Ⅰ·Ⅱ·추가혜택 통합 월 7만원",
+     "conditions": [
+      "추가연회비 없이 2가지 업종 선택",
+      "선택업종은 6개월에 1회 변경 가능"
+     ]
+    }
+   ]
+  }
+ ]
+}
