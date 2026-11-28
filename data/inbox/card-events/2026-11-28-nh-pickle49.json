@@ -1,0 +1,164 @@
+{
+ "type": "card-events",
+ "issuer": "NH농협카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "listUrls": [
+  "https://card.nonghyup.com/servlet/IpCb2001R.act"
+ ],
+ "events": [
+  {
+   "id": "nh-202612-business-card-annual-fee-cashback",
+   "kind": "card",
+   "title": "개인사업자 기업카드 연회비 캐시백 이벤트",
+   "summary": "기업카드 연회비 캐시백",
+   "category": "포인트/캐시백",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "개인사업자 기업카드 신규 발급 후 이용"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-unionpay-klook",
+   "kind": "card",
+   "title": "[유니온페이] 클룩 즉시 할인 프로모션",
+   "summary": "클룩 결제 즉시 할인",
+   "category": "해외/여행",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "유니온페이 브랜드 NH농협카드로 클룩 결제"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-business-installment",
+   "kind": "card",
+   "title": "[개인사업자] 업종별 무이자할부 이벤트",
+   "summary": "개인사업자 업종별 무이자 할부",
+   "category": "기타",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "개인사업자 카드로 업종별 지정 가맹점 무이자 할부"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-caddie-fee-discount",
+   "kind": "card",
+   "title": "NH농협카드와 함께하는 캐디피 결제 청구할인 이벤트",
+   "summary": "캐디피 결제 청구할인",
+   "category": "기타",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "NH농협카드로 골프장 캐디피 결제"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-greenjacket-caddie-10",
+   "kind": "card",
+   "title": "그린재킷에서 NH농협카드로 결제 시 캐디피 10% 할인",
+   "summary": "그린재킷 캐디피 10% 할인",
+   "category": "기타",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "그린재킷에서 NH농협카드로 캐디피 결제"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-overseas-data-20",
+   "kind": "card",
+   "title": "해외 데이터(포켓와이파이/USIM/eSIM) 최대 20%+추가 20% 할인",
+   "summary": "해외 데이터 상품 최대 20%+추가 20% 할인",
+   "category": "해외/여행",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "NH농협카드로 포켓와이파이·USIM·eSIM 결제"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-europe-rentcar-15",
+   "kind": "card",
+   "title": "렌터카로 즐기는 유럽 여행 최대 15% 할인 혜택",
+   "summary": "유럽 렌터카 최대 15% 할인",
+   "category": "해외/여행",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "NH농협카드로 유럽 렌터카 예약"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-montju-pharmacy-15",
+   "kind": "card",
+   "title": "프랑스 몽쥬 약국 최대 15% 할인받기",
+   "summary": "프랑스 몽쥬 약국 최대 15% 할인",
+   "category": "해외/여행",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "프랑스 몽쥬 약국에서 NH농협카드 결제"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-hawaii-hotel-breakfast",
+   "kind": "card",
+   "title": "하와이 특급 호텔&리조트 조식 제공 최저가 프로모션",
+   "summary": "하와이 특급 호텔 조식 포함 최저가 예약",
+   "category": "해외/여행",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "NH농협카드로 하와이 특급 호텔·리조트 예약"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  }
+ ]
+}
