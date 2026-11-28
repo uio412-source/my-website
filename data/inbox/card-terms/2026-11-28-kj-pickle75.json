@@ -1,0 +1,168 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20250319001",
+   "name": "기아 챔피언스카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20250319001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20250319001",
+   "docDate": "2025-03-19",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 4100
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 4200
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 신규 후 수령일부터 다음 달 말일까지 실적 미달이어도 통합 캐시백 한도 기본 1만 5천원 제공",
+   "spendExclusions": [
+    "무이자할부",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료",
+    "모든 주유소 주유 및 LPG 이용금액"
+   ],
+   "benefitExclusions": [
+    "포스트시즌·한국시리즈 경기(경기장 입장료)",
+    "가족회원 카드(경기장 추가 캐시백)"
+   ],
+   "benefits": [
+    {
+     "group": "경기장",
+     "label": "입장료",
+     "place": "광주-기아 챔피언스 필드 정규시즌 홈경기(EV·K5·K8·K9 내야지정석, 외야자유석)",
+     "value": "최대 5,000원",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": 5000,
+     "capScope": "일",
+     "limits": "2,500원 현장할인 + 2,500원 추가 캐시백, 1일 1회",
+     "conditions": [
+      "전월실적 조건 없음, 월간 통합 캐시백 한도에서 제외",
+      "휴대폰·인터넷 예약 및 현장결제 포함"
+     ]
+    },
+    {
+     "group": "경기장",
+     "label": "팀스토어",
+     "place": "광주-기아 챔피언스 필드 내 팀스토어(온·오프라인)",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 건별 5만원 이상",
+     "shared": "경기장 통합한도"
+    },
+    {
+     "group": "경기장",
+     "label": "편의점·F&B",
+     "place": "광주-기아 챔피언스 필드 내 편의점·햄버거·떡볶이·치킨·PUB 등 F&B 매장(오프라인)",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "1일 2회·월 5회, 건별 1만원 이상",
+     "shared": "경기장 통합한도"
+    },
+    {
+     "group": "생활영역",
+     "label": "주유",
+     "place": "SK에너지·GS칼텍스·S-OIL·HD현대오일뱅크·알뜰주유소·E1 주유소(LPG 충전소 포함)",
+     "value": "리터당 100원",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 1회 이용금액 10만원까지"
+    },
+    {
+     "group": "생활영역",
+     "label": "영화",
+     "place": "CGV·메가박스·롯데시네마(온라인예매·현장구매)",
+     "value": "1회당 1,500원",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 건당 1만원 이상"
+    },
+    {
+     "group": "생활영역",
+     "label": "커피",
+     "place": "스타벅스·메가MGC커피·빽다방·컴포즈커피·투썸플레이스·이디야커피·폴바셋·할리스커피 등 21개 브랜드",
+     "value": "1회당 1,000원",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 4000,
+     "capScope": "월",
+     "limits": "1일 1회·월 4회, 건당 1만원 이상"
+    },
+    {
+     "group": "생활영역",
+     "label": "철도",
+     "place": "KTX·SRT",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 4회, 1만원 이상"
+    },
+    {
+     "group": "레저",
+     "label": "놀이공원·레저",
+     "place": "중흥골드스파 워터락, 금호리조트 화순아쿠아나, 광주패밀리랜드, 디오션 워터파크, 보성다비치콘도 해수온천",
+     "value": "최대 50%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "연",
+     "conditions": [
+      "중흥골드스파는 전월 20만원 이상 시 본인 35%·동반 3인 20%",
+      "나머지 시설은 실적 조건 없이 본인·동반 1인 30~50%"
+     ]
+    },
+    {
+     "group": "외식",
+     "label": "패밀리레스토랑",
+     "place": "아웃백스테이크(전국)·빕스(광주)·베네치아(광주지산점)",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": 40000,
+     "capScope": "월",
+     "limits": "1일 1회·통합 월 4회",
+     "conditions": [
+      "현장할인"
+     ]
+    }
+   ]
+  }
+ ]
+}
