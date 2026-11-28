@@ -1,4 +1,4 @@
-"""Local GitHub issue chat and five-minute agent inbox."""
+"""Local GitHub issue chat and hourly agent inbox."""
 import argparse
 import concurrent.futures
 import functools
@@ -171,7 +171,7 @@ def worker(path):
                     active[agent] = pool.submit(run_agent, agent, command, rows, db_path)
             except (OSError, ValueError, RuntimeError, subprocess.TimeoutExpired) as err:
                 print(type(err).__name__, "작업방 조회 실패", file=sys.stderr, flush=True)
-            time.sleep(max(0, 300 - (time.monotonic() - start)))
+            time.sleep(max(0, 3600 - (time.monotonic() - start)))
 
 
 if __name__ == "__main__":
