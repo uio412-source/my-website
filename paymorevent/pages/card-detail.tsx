@@ -15,7 +15,7 @@ import {customerLines, uniqueLines} from '@/lib/customer-copy';
 import {pendingValet, valetHotelResults, valetMapPath, valetQuota, valetRules} from '@/lib/hotel-valet';
 import {termRows} from '@/lib/card-terms';
 import {discontinuedBadge} from '@/lib/issuance-status';
-import {benefitRow, cardMinimumSpend, cleanBenefits, dday, headlineAmount, pickLabel, won, ymd, type BenefitRow} from '@/lib/mc-text';
+import {benefitRow, cardMinimumSpend, cleanBenefits, dday, headlineAmount, pickLabel, typeLabel, won, ymd, type BenefitRow} from '@/lib/mc-text';
 import type {Card, Offer} from '@/lib/catalog-types';
 import {viewOf} from '@/lib/event-view';
 import {nameAndValue} from '@/components/event-row';
@@ -249,7 +249,7 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
 
     <table className="cd-t cd-info">
       <tbody>
-        <tr><th scope="row">종류</th><td>{card.type === 'credit' ? '신용' : '체크'}</td></tr>
+        <tr><th scope="row">종류</th><td>{typeLabel(card.type)}</td></tr>
         <tr><th scope="row">연회비</th><td><b>{fee.main}</b>{fee.sub && <small>{fee.sub}</small>}</td></tr>
         <tr><th scope="row">전월실적</th><td><b>{spendInfo.main}</b>{spendInfo.sub && <small>{spendInfo.sub}</small>}</td></tr>
         {best && <tr><th scope="row">최고 피킹률</th><td><b className="up">{formatPicking(best.value)}%</b></td></tr>}

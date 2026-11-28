@@ -10,7 +10,7 @@ import {myEvents} from '@/lib/my-benefits';
 import {MINE_KEY, MINE_MAX, toggleMine, useStoredIds} from '@/lib/my-cards';
 import {cardPath} from '@/lib/card-presentation';
 import {valetHotelResults, valetMapPath, valetRules} from '@/lib/hotel-valet';
-import {dday, koReading, searchScore, today} from '@/lib/mc-text';
+import {dday, koReading, searchScore, today, typeLabel} from '@/lib/mc-text';
 
 const PAGE = 6;          // 카드마다 처음 보여 줄 이벤트 수
 const RESULTS = 12;      // 카드 찾기 결과 수
@@ -143,7 +143,7 @@ function AddCard({cards, mine, ready, onAdd}: {cards: Card[]; mine: Card[]; read
         const on = has.has(cardFamilyKey(c));
         return <li key={c.id}><button type="button" aria-pressed={on} disabled={on} onClick={() => add(c)}>
           <CardArt card={c}/>
-          <span className="my-add-t"><small>{c.issuer} · {c.type === 'credit' ? '신용' : '체크'}</small><b>{nameOf(c)}</b></span>
+          <span className="my-add-t"><small>{c.issuer} · {typeLabel(c.type)}</small><b>{nameOf(c)}</b></span>
           <span className="my-add-btn">{on ? <><CircleCheck aria-hidden/>등록됨</> : <><Plus aria-hidden/>등록</>}</span>
         </button></li>;
       })}</ul>

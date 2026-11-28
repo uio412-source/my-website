@@ -21,9 +21,13 @@ const ISSUER_TILE: Record<string, [string, number]> = {
 export function issuerTile(issuer: string): [string, number] {
   const g = issuerGroup(issuer);
   if (ISSUER_TILE[g] && (g !== 'BC' || /BC/.test(issuer))) return ISSUER_TILE[g];
+  const fintech: Record<string, string> = {'네이버페이': 'N페이', 'NHN페이코': '페이코', 'KG파이낸셜': 'KG', '트래블월렛': '트래블', '코나카드': '코나'};
+  if (fintech[issuer]) return [fintech[issuer], 1];
   const short = issuer.replace(/카드$|은행$|뱅크$/, '').replace(/^IBK기업$/, 'IBK').slice(0, 3);
   return [short || issuer.slice(0, 2), 1];
 }
+/** 카드 종류 이름. 선불(prepaid)은 네이버페이·페이코처럼 핀테크가 내는 충전식 카드 */
+export const typeLabel = (t: string) => t === 'credit' ? '신용' : t === 'prepaid' ? '선불' : '체크';
 export const ISSUER_FILTERS = ['삼성', '국민', '신한', '우리', '하나', '현대', '롯데', '농협', 'BC', '새마을', '기타'];
 export const issuerFilterLabel = (g: string) => g === '국민' ? 'KB국민' : g === '농협' ? 'NH농협' : g === 'BC' ? 'BC·은행' : g === '새마을' ? 'MG새마을금고' : g;
 
@@ -118,7 +122,7 @@ const SYNONYMS: Record<string, string[]> = {
   커피: ['커피', '카페', '스타벅스'], 통신: ['통신', 'skt', 'kt', 'lgu+', '휴대폰'], 교통: ['교통', '버스', '지하철', '택시', 'k패스'],
   마일: ['마일', '마일리지', '스카이패스', '아시아나'], 무실적: ['무실적', '실적무관', '조건없'], 라운지: ['라운지', 'pp카드', '마티나'],
   쇼핑: ['쇼핑', '쿠팡', '마트', '백화점', '온라인'], 배달: ['배달', '배민', '쿠팡이츠', '요기요'], 아멕스: ['아멕스', 'amex', 'americanexpress'],
-  마스터: ['마스터', 'mastercard', 'master'], 비자: ['비자', 'visa'], 체크: ['체크', 'debit'], 신용: ['신용', 'credit'],
+  마스터: ['마스터', 'mastercard', 'master'], 비자: ['비자', 'visa'], 체크: ['체크', 'debit'], 신용: ['신용', 'credit'], 선불: ['선불', 'prepaid', '충전식'],
 };
 /** 카드 이름의 영어 단어를 한글 읽기로 바꾼 글('신한카드 Deep Dream 체크' → '신한카드 딥 드림 체크'). 바뀐 게 없으면 ''.
  *  '딥드림'·'제로'처럼 한글로 치거나 초성(ㄷㄷ)으로 찾을 때 씀. 모르는 단어는 그대로 둠 */
@@ -238,6 +242,7 @@ function valueLabel(b: CleanBenefit, text: string) {
   if (b.rate) {
     const pcts = [...b.rate.matchAll(/([\d.]+)\s*%/g)].map(m => Number(m[1]));
     if (b.rate.length > 8 && pcts.length > 1) return {main: `${Math.min(...pcts)}~${Math.max(...pcts)}%`, sub: '항목별'};
+    if (!/\d/.test(b.rate)) return {main: b.rate, sub: ''}; // '면제'·'무료'·'무이자'에 '할인'을 붙이지 않음
     return {main: b.rate, sub: /적립|포인트|마일/.test(b.title + text.slice(0, 80)) ? '적립' : /캐시백/.test(b.title + text.slice(0, 80)) ? '캐시백' : '할인'};
   }
   const range = /([\d.]+)\s*%?\s*~\s*([\d.]+)\s*%/.exec(b.title) ?? /([\d.]+)\s*%?\s*~\s*([\d.]+)\s*%/.exec(text.slice(0, 120));
