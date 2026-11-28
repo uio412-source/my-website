@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-28T11:35:00+09:00",
+ "updatedAt": "2026-11-28T11:55:00+09:00",
  "lock": null,
  "runs": [
   {
@@ -1302,6 +1302,19 @@
     "samsung-aap1452",
     "samsung-aap1453"
    ]
+  },
+  {
+   "at": "2026-11-28T11:55:00+09:00",
+   "kind": "data-fix",
+   "pr": null,
+   "summary": "현정 님 보유 단종·구버전 카드 16종 카드 DB 추가(1,552→1,568장) — 신한 The More(더모아)·The CLASSIC-Y·D-day·CJ ONE 신한카드, 롯데 올마이쇼핑(해외), KB 톡톡 my point·Liiv Mate·금융포인트리 플래티늄, 우리 카드의정석 Dear Traveler·Dear Shopper, MG+ S 하나카드·더나은 체크, 키움증권 하나카드, BC 바로 GOAT, 넥슨 현대카드 UNLIMITED, 네이버 현대카드 Edition2. 카드사 공식 상품 페이지·약관·상품설명서로 혜택·연회비·실적/혜택 제외·상품권·세금·관리비 판정을 채웠고, 혜택 줄 78개를 '적용처 / 혜택·조건'으로 다시 써 label-audit에서 이 16장 문제 0. 롯데×마스터 '해외 결제 최대 11만 네이버페이 포인트'(evnBultSeq=11390, 2026-11-06~12-31, 20/40/80만원 3/5/11만P, 응모 필수)를 events.json에 최신판으로 추가(기존 5만P 행사 11308은 종료 상태로 유지)",
+   "queueKeys": [],
+   "picking": {
+    "cards": 1568,
+    "withPicking": 187,
+    "newIssues": 0,
+    "note": "picking_audit A1 6·A2 0·A3 8·A4 51·C2 16 그대로(새 카드는 rewardCoveragePending으로 두고 피킹률 모델은 미연결)"
+   }
   }
  ],
  "skipped": [
@@ -1749,6 +1762,34 @@
    "status": "open",
    "reason": "카드 DB 혜택 '옵션패키지 상세보기'가 원문 요약 문구뿐(대상 업종·가맹점 없음) — picking_audit C1에 남음",
    "retry": "삼성카드 taptap O 상세의 옵션패키지 서비스 안내(static11 svc)를 읽어 옵션별 업종·한도를 적기"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "woori-dear-shopper 카드 상세 주소(카드 코드)",
+   "status": "open",
+   "reason": "단종으로 우리카드 상품 상세 HTML이 카드 코드별로 내용을 그려 주지 않아(모든 코드가 같은 껍데기) 디어쇼퍼 코드를 확인하지 못함. 혜택은 상품안내장 내용으로 채움",
+   "retry": "카드사(1588-9955·1599-0031)에 카드 코드 확인 또는 상품안내장 PDF 링크 확보"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "kb-liiv-mate 공식 상품 상세",
+   "status": "workaround",
+   "reason": "리브메이트 신용카드는 2019-08 신규 발급 중단으로 상품 상세 페이지가 내려감(KB 카드 상품 목록에도 없음)",
+   "retry": "필요 시 카드사에 2017년판 상품설명서 요청. 현재는 공식 상품설명서 기준 값과 공지 주소로 기록"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "mg-deonaun(더나은 체크) 상품몰 PRDT_CD",
+   "status": "open",
+   "reason": "새마을금고 상품몰 목록이 스크립트로만 그려져 코드(PRDT_CD)를 확인하지 못함",
+   "retry": "상품몰에서 '더나은' 검색 후 코드 확인해 sourceUrl 교체"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "신한카드 D-day 브랜드·연회비 표기",
+   "status": "open",
+   "reason": "공식 상세 페이지에서 연회비 표가 접혀 있어(브랜드별 금액 미노출) 18,000원·VISA로 기재 — 가족카드 연회비 없음만 공식 확인",
+   "retry": "카드사(1544-7000) 또는 카드 실물 브랜드 확인 후 brands·annualFeeText 교체"
   }
  ]
 }
