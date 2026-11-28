@@ -1,0 +1,97 @@
+{
+ "type": "card-events",
+ "issuer": "NH농협카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "listUrls": [
+  "https://card.nonghyup.com/servlet/IpCb2001R.act"
+ ],
+ "events": [
+  {
+   "id": "nh-202612-overseas-luxury-hotel-10",
+   "kind": "card",
+   "title": "해외 특급호텔&리조트 최저가 기준 10% 추가 할인",
+   "summary": "해외 특급호텔·리조트 최저가에서 10% 추가 할인",
+   "category": "해외/여행",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "NH농협카드로 지정 해외 호텔·리조트 예약"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-jcb-hongkong-circlek",
+   "kind": "card",
+   "title": "[JCB] 홍콩 Circle K 편의점 즉시 할인 혜택",
+   "summary": "홍콩 Circle K 즉시 할인",
+   "category": "해외/여행",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "JCB 브랜드 NH농협카드로 홍콩 Circle K 결제"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-installment-2026",
+   "kind": "card",
+   "title": "2026년 업종별 무이자할부 혜택",
+   "summary": "2026년 업종별 무이자 할부",
+   "category": "기타",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "NH농협카드로 업종별 지정 가맹점 무이자 할부"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-shogolf-range",
+   "kind": "card",
+   "title": "쇼골프 골프연습장 할인 이벤트",
+   "summary": "쇼골프 골프연습장 할인",
+   "category": "기타",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "쇼골프 골프연습장에서 NH농협카드 결제"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-hankook-tire-cashback",
+   "kind": "card",
+   "title": "NH농협카드 한국타이어 캐시백 이벤트",
+   "summary": "한국타이어 구매 시 캐시백",
+   "category": "응모형",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": true,
+   "cards": [],
+   "conditions": [
+    "한국타이어 매장에서 NH농협카드 결제",
+    "응모 필요"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  }
+ ]
+}
