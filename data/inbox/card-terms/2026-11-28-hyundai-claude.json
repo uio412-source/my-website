@@ -473,6 +473,888 @@
      "conditions": []
     }
    ]
+  },
+  {
+   "cardId": "hyundai-mbto",
+   "queueKey": "hyundai-mbto",
+   "name": "현대카드MY BUSINESS the Orange",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=MBTO",
+   "termsUrl": "https://www.hyundaicard.com/upload/card/T_A3W-20260115-1814-95_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_MB%20Sunny_V11_%EA%B3%B5%EC%8B%9C%EC%8B%A4%EC%9A%A9.pdf",
+   "docDate": "2026-01-15",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 250000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 250000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 일시불·할부(본인·가족 카드)",
+   "grace": "카드 수령 등록월 다음 달 이용분까지 전월 50만·100만원 미만도 제공",
+   "spendExclusions": [
+    "상품권 등 현금성 유가증권·선불카드 구매·충전",
+    "다른 카드 이용금액",
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료"
+   ],
+   "benefitExclusions": [
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "국내외 기본 적립",
+     "place": "국내외 모든 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "한도 없음",
+     "conditions": [
+      "추가 혜택과 중복 없음"
+     ]
+    },
+    {
+     "group": null,
+     "label": "온라인몰",
+     "place": "네이버플러스 스토어·쿠팡·무신사·KREAM·29CM",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 10000,
+     "capScope": "월",
+     "shared": null,
+     "limits": "영역별 월 1만 M포인트",
+     "conditions": [
+      "공식 홈페이지·앱 결제"
+     ]
+    },
+    {
+     "group": null,
+     "label": "다이닝",
+     "place": "일반음식점",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 10000,
+     "capScope": "월",
+     "shared": null,
+     "limits": "영역별 월 1만 M포인트",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "웰니스",
+     "place": "피부과·헬스장·필라테스·요가·테니스장·수영장",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 10000,
+     "capScope": "월",
+     "shared": null,
+     "limits": "영역별 월 1만 M포인트",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "테크",
+     "place": "넷플릭스·유튜브 프리미엄·디즈니+·멜론·지니·ChatGPT·Perplexity·Google One·SKT·KT·LG U+ 이동통신 요금·앱스토어·구글 플레이 결제",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 10000,
+     "capScope": "월",
+     "shared": null,
+     "limits": "영역별 월 1만 M포인트",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "이동 경비",
+     "place": "GS칼텍스·SK에너지·HD현대오일뱅크·S-OIL 주유/LPG·전기차 충전·시내버스·지하철·택시",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 10000,
+     "capScope": "월",
+     "shared": null,
+     "limits": "영역별 월 1만 M포인트",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "연간 바우처",
+     "place": "쇼핑·호텔·여행 20만원 바우처 또는 25만 M포인트",
+     "value": "20만원",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "연 1회 택1",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "공항 라운지",
+     "place": "THE LOUNGE 전 세계 1,000여 개 공항 라운지",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "연 5회",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "발레파킹",
+     "place": "인천공항 T1·T2 · 그랜드 워커힐 서울·비스타 워커힐 서울",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "공항·호텔 통합 월 5회",
+     "conditions": [
+      "실물 카드 제시",
+      "주차요금 별도"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-spmmb",
+   "queueKey": "hyundai-spmmb",
+   "name": "현대카드MY BUSINESS Summit",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=SPMMB",
+   "termsUrl": "https://www.hyundaicard.com/upload/card/T_A3W-20260423-1554-00_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_MB_%ED%98%84%EB%8C%80%EC%B9%B4%EB%93%9C%20Summit_V3_%EA%B3%B5%EC%8B%9C%EC%8B%A4%EC%9A%A9.pdf",
+   "docDate": "2026-04-23",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 250000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 250000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 일시불·할부(본인·가족 카드)",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 등 현금성 유가증권·선불카드 구매·충전",
+    "다른 카드 이용금액",
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료"
+   ],
+   "benefitExclusions": [
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "국내외 기본 적립",
+     "place": "국내외 모든 가맹점",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "한도 없음",
+     "conditions": [
+      "추가 혜택과 중복 없음"
+     ]
+    },
+    {
+     "group": "일상 소비",
+     "label": "교육",
+     "place": "학원·유치원 업종",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "일상 소비·사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "일상 소비",
+     "label": "병원",
+     "place": "병원·약국 업종",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "일상 소비·사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "일상 소비",
+     "label": "여행",
+     "place": "국내 항공사·여행사·특급호텔 업종",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "일상 소비·사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "일상 소비",
+     "label": "골프",
+     "place": "골프장·골프연습장 업종",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "일상 소비·사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "대형마트·식자재몰",
+     "place": "이마트·롯데마트·홈플러스 · 배민상회·식봄",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "일상 소비·사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": [
+      "온라인몰·SSM·임대 매장 제외"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "운영 경비",
+     "place": "전기요금·가스요금·4대 보험",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "일상 소비·사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "광고 홍보비",
+     "place": "네이버·배달의민족·당근",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 30000,
+     "capScope": "월",
+     "shared": "일상 소비·사업성 경비 통합 월 3만 M포인트",
+     "limits": null,
+     "conditions": [
+      "광고용 비즈머니·광고머니 충전만"
+     ]
+    },
+    {
+     "group": null,
+     "label": "연간 바우처",
+     "place": "쇼핑·호텔·여행 20만원 바우처 또는 25만 M포인트",
+     "value": "20만원",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "연 1회 택1",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "공항 라운지",
+     "place": "THE LOUNGE 전 세계 1,000여 개 공항 라운지",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "연 5회",
+     "conditions": [
+      "본인만"
+     ]
+    },
+    {
+     "group": null,
+     "label": "발레파킹",
+     "place": "인천공항 T1·T2 공식 주차대행 · 그랜드 워커힐 서울·레스케이프·비스타 워커힐 서울",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "공항·호텔 통합 월 5회",
+     "conditions": [
+      "본인 탑승 차량만",
+      "주차요금 별도"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-mbmzrup",
+   "queueKey": "hyundai-mbmzrup",
+   "name": "현대카드MY BUSINESS ZERO Up(포인트형)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=MBMZRUP",
+   "termsUrl": "https://www.hyundaicard.com/upload/card/T_A3W-20260602-1759-78_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_MB%20Zero%20up%20%ED%8F%AC%EC%9D%B8%ED%8A%B8_V2_%EA%B3%B5%EC%8B%9C%EC%8B%A4%EC%9A%A9.pdf",
+   "docDate": "2026-06-02",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 40000
+    },
+    {
+     "brand": "American Express",
+     "amount": 40000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 40000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "American Express",
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월실적 조건 없음",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료",
+    "간편결제 가맹점명으로 승인된 결제(추가 혜택)"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "국내외 기본 적립",
+     "place": "국내외 모든 가맹점",
+     "value": "1.2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "실적·한도 없음",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "온라인몰",
+     "place": "네이버플러스 스토어·쿠팡·SSG.COM·G마켓·옥션",
+     "value": "2.4%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "건당 10만원 이상 · 한도 없음",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "대형마트",
+     "place": "이마트·농협하나로마트·롯데마트",
+     "value": "2.4%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "건당 10만원 이상 · 한도 없음",
+     "conditions": [
+      "온라인몰·SSM·임대 매장 제외"
+     ]
+    },
+    {
+     "group": null,
+     "label": "교육",
+     "place": "학원·유치원 업종",
+     "value": "2.4%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "건당 10만원 이상 · 한도 없음",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "주유",
+     "place": "주유 업종",
+     "value": "2.4%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "건당 10만원 이상 · 한도 없음",
+     "conditions": [
+      "LPG·수소·전기차 충전 제외"
+     ]
+    },
+    {
+     "group": null,
+     "label": "이동통신",
+     "place": "SKT·KT·LG U+ 이동통신 요금",
+     "value": "2.4%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "건당 10만원 이상 · 한도 없음",
+     "conditions": [
+      "정기 결제만, 알뜰폰·결합상품 제외"
+     ]
+    },
+    {
+     "group": null,
+     "label": "운영 경비",
+     "place": "전기요금·도시가스요금·4대 보험",
+     "value": "2.4%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "건당 10만원 이상 · 한도 없음",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "M 긴급적립",
+     "place": "M포인트 선지급(10만 단위, 최대 24개월 상환)",
+     "value": "최대 50만 M포인트",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": null,
+     "conditions": [
+      "할인이 아니라 상환할 부채"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-mmbrt",
+   "queueKey": "hyundai-mmbrt",
+   "name": "현대카드MY BUSINESS M Retail",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=MMBRT",
+   "termsUrl": "https://www.hyundaicard.com/upload/card/T_A3W-20260319-1715-01_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_MB_M%20Retail_V2_%EA%B3%B5%EC%8B%9C%EC%8B%A4%EC%9A%A9.pdf",
+   "docDate": "2026-03-19",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 50000
+    },
+    {
+     "brand": "American Express",
+     "amount": 50000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 50000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "American Express",
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 일시불·할부(본인·가족 카드)",
+   "grace": "카드 수령 등록월 다음 달 이용분까지 전월 50만·100만원 미만도 제공",
+   "spendExclusions": [
+    "상품권 등 현금성 유가증권·선불카드 구매·충전",
+    "다른 카드 이용금액",
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료",
+    "학교 납입금·대학 등록금"
+   ],
+   "benefitExclusions": [
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료",
+    "간편결제·PG·키오스크 등 별도 가맹점번호 결제(추가 혜택)"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "국내외 기본 적립",
+     "place": "국내외 모든 가맹점",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "한도 없음",
+     "conditions": [
+      "추가 혜택과 중복 없음"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "주유",
+     "place": "GS칼텍스·SK에너지·HD현대오일뱅크·S-OIL 주유/LPG",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 2만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "전기차 충전",
+     "place": "환경부·한국전력·한국전기차충전서비스·지에스차지비·파워큐브·KT·에버온·채비·에스트래픽·GS칼텍스·E-pit·플러그링크 등 전기차 충전",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 2만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "이동통신",
+     "place": "SKT·KT·LG U+ 이동통신 요금",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 2만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "전기·도시가스",
+     "place": "전기요금·도시가스요금",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 2만 M포인트",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "4대 보험",
+     "place": "건강보험·국민연금·고용보험·산재보험",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 2만 M포인트",
+     "limits": null,
+     "conditions": []
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-smecn",
+   "queueKey": "hyundai-smecn",
+   "name": "캐시노트 BUSINESS 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=SMECN",
+   "termsUrl": "https://www.hyundaicard.com/upload/card/T_A3W-20251127-1340-86_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_%EC%BA%90%EC%8B%9C%EB%85%B8%ED%8A%B8%20BUSINESS%20%ED%98%84%EB%8C%80%EC%B9%B4%EB%93%9C_M%EB%AA%B0_V2_%EA%B3%B5%EC%8B%9C%EC%8B%A4%EC%9A%A9.pdf",
+   "docDate": "2025-11-27",
+   "annualFee": [
+    {
+     "brand": "Visa",
+     "amount": 30000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "Visa",
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 일시불·할부(본인·가족 카드)",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 등 현금성 유가증권·선불카드 구매·충전",
+    "다른 카드 이용금액",
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료"
+   ],
+   "benefitExclusions": [
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료",
+    "고속도로 통행료·후불하이패스·고속버스",
+    "부동산 임대료(캐시노트 매장월세 결제는 적립)"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "국내외 기본 적립",
+     "place": "국내외 모든 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "한도 없음",
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "캐시노트",
+     "place": "캐시노트플러스 멤버십·캐시노트 마켓 등 캐시노트 서비스",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "사업성 경비 5개 영역 합산 월 2만5천 M포인트",
+     "limits": "영역별 월 5천 M포인트",
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "구매 경비",
+     "place": "이마트·홈플러스·롯데마트·트레이더스·롯데마트 맥스·슈퍼마켓·정육점·농축수산물·배민상회·식봄·화장품점·미용 재료·서점",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "사업성 경비 5개 영역 합산 월 2만5천 M포인트",
+     "limits": "영역별 월 5천 M포인트",
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "운영 경비",
+     "place": "전기요금·도시가스요금·손해보험·4대 보험",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "사업성 경비 5개 영역 합산 월 2만5천 M포인트",
+     "limits": "영역별 월 5천 M포인트",
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "광고 홍보비",
+     "place": "네이버·배달의민족·당근",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "사업성 경비 5개 영역 합산 월 2만5천 M포인트",
+     "limits": "영역별 월 5천 M포인트",
+     "conditions": [
+      "광고용 비즈머니·광고머니·광고캐시 충전만"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "이동 경비",
+     "place": "주유/LPG 업종·전기차 충전·SKT·KT·LG U+ 이동통신 요금",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 1000000,
+     "cap": 5000,
+     "capScope": "월",
+     "shared": "사업성 경비 5개 영역 합산 월 2만5천 M포인트",
+     "limits": "영역별 월 5천 M포인트",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "카드매출 바로입금",
+     "place": "캐시노트 카드매출 바로입금 수수료",
+     "value": "전액 할인 쿠폰",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "월 1매",
+     "conditions": []
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-slmb",
+   "queueKey": "hyundai-slmb",
+   "name": "현대 소상공인 특례 햇살론카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=SLMB",
+   "termsUrl": "https://www.hyundaicard.com/upload/card/T_A3W-20251127-1341-77_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_%ED%98%84%EB%8C%80%20%EC%86%8C%EC%83%81%EA%B3%B5%EC%9D%B8%20%ED%8A%B9%EB%A1%80%20%ED%96%87%EC%82%B4%EB%A1%A0%EC%B9%B4%EB%93%9C_V2_%EA%B3%B5%EC%8B%9C%EC%8B%A4%EC%9A%A9.pdf",
+   "docDate": "2025-11-27",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 일시불·할부",
+   "grace": null,
+   "spendExclusions": [
+    "상품권 등 현금성 유가증권·선불카드 구매·충전",
+    "다른 카드 이용금액",
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료"
+   ],
+   "benefitExclusions": [
+    "카드론·현금서비스",
+    "연회비·제수수료·이자",
+    "국제브랜드·해외서비스 수수료"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "국내 기본 할인",
+     "place": "국내 모든 가맹점",
+     "value": "0.7%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "shared": null,
+     "limits": "한도 없음",
+     "conditions": [
+      "청구 할인"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "온라인몰",
+     "place": "네이버플러스 스토어·쿠팡·G마켓·옥션·11번가",
+     "value": "1.5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 2만원",
+     "limits": null,
+     "conditions": [
+      "공식 홈페이지·앱 결제"
+     ]
+    },
+    {
+     "group": "사업성 경비",
+     "label": "주유",
+     "place": "주유/LPG 업종",
+     "value": "1.5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 2만원",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "이동통신",
+     "place": "SKT·KT·LG U+ 이동통신 요금",
+     "value": "1.5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 2만원",
+     "limits": null,
+     "conditions": []
+    },
+    {
+     "group": "사업성 경비",
+     "label": "전기·도시가스",
+     "place": "전기요금·도시가스요금",
+     "value": "1.5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "shared": "사업성 경비 통합 월 2만원",
+     "limits": null,
+     "conditions": []
+    }
+   ]
   }
  ]
 }
