@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 17:14 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 17:15 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-28 17:14 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#342](https://github.com/uio412-source/my-website/pull/342) | Pickle | data: 수집 2026-11-28 (Pickle51 · KB국민 스타트럭 HD현대오일뱅크·GS칼텍스 상품… | 2026-11-28 17:15 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#336](https://github.com/uio412-source/my-website/pull/336) | ChatGPT | data: 수집 2026-11-28 (현대카드 공식 상세 이벤트 3건) | 2026-11-28 17:14 | 1파일 · data/inbox/card-events 1 | 머지 |
 | [#341](https://github.com/uio412-source/my-website/pull/341) | Pickle | data: 수집 2026-11-28 (Pickle50 · NH농협카드 이벤트 7페이지 5건) | 2026-11-28 17:13 | 1파일 · data/inbox/card-events 1 | 머지 |
 | [#340](https://github.com/uio412-source/my-website/pull/340) | Pickle | data: 수집 2026-11-28 (Pickle49 · NH농협카드 이벤트 6페이지 9건) | 2026-11-28 17:13 | 1파일 · data/inbox/card-events 1 | 머지 |
 | [#339](https://github.com/uio412-source/my-website/pull/339) | Pickle | data: 수집 2026-11-28 (Pickle48 · NH농협카드 이벤트 5페이지 10건) | 2026-11-28 17:12 | 1파일 · data/inbox/card-events 1 | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-28 17:14 KST · `python tools/data/agent_sync.py` · 기�
 | [#319](https://github.com/uio412-source/my-website/pull/319) | Pickle | data: 수집 2026-11-28 (Pickle32 · KB HERITAGE Smart 할인형 쿠폰 서비… | 2026-11-28 13:26 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#318](https://github.com/uio412-source/my-website/pull/318) | Pickle | data: 수집 2026-11-28 (Pickle31 · KB 국방멤버쉽카드 표 판독) | 2026-11-28 13:21 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#317](https://github.com/uio412-source/my-website/pull/317) | Pickle | data: 수집 2026-11-28 (Pickle30 · 현대카드 쏘카카드 표 판독) | 2026-11-28 13:15 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#316](https://github.com/uio412-source/my-website/pull/316) | Pickle | data: 수집 2026-11-28 (Pickle29 · KB 롯데마트 카드 표 판독) | 2026-11-28 13:11 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#315](https://github.com/uio412-source/my-website/pull/315) | Pickle | data: 수집 2026-11-28 (Pickle28 · KB 스마트 지킴이·CU 표 판독 수집) | 2026-11-28 13:06 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -73,7 +73,7 @@ _지금 잠근 영역이 없습니다._
 
 | PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
 |---|---|---|---|---|---|
-| [#336](https://github.com/uio412-source/my-website/pull/336) | ChatGPT | `ai/chatgpt/data-2026-11-28-hyunda…` | 2026-11-28 17:04 | 1파일 · data/inbox/card-events 1 | data: 수집 2026-11-28 (현대카드 공식 상세 이벤트 3건) |
+| [#343](https://github.com/uio412-source/my-website/pull/343) | Claude | `ai/claude/hana-terms-30` | 2026-11-28 17:15 | 6파일 · data/ 3 · docs/ 2 · data/inbox/ca… | data: 수집 2026-11-28 (Claude · 하나카드 상품설명서 30종) |
 | [#322](https://github.com/uio412-source/my-website/pull/322) | ChatGPT | `ai/chatgpt/fix-issuance-eligibili…` | 2026-11-28 13:38 | 10파일 · paymorevent/ 6 · data/ 2 · docs/… | fix(issuance): 발급 지원금 판정의 기준일과 카드 범위 구분 |
 | [#312](https://github.com/uio412-source/my-website/pull/312) | ChatGPT | `ai/chatgpt/crash-trough-returns` | 2026-11-28 12:49 | 4파일 · assets/ 2 · data/ 1 · 루트 1 | fix(stocks): 주요 하락장 수익률을 기간 최저 종가로 계산 |
 
@@ -89,9 +89,9 @@ _지금 잠근 영역이 없습니다._
 
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
-| ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
+| ChatGPT | `data/agent-notes/chatgpt.json` | #336 data: 수집 2026-11-28 (현대카드 공식 상세 이… | 2026-11-28 17:14 | 0건 |
 | Claude | `data/agent-notes/claude.json` | - | - | 16건 |
-| Pickle | `data/agent-notes/pickle.json` | #341 data: 수집 2026-11-28 (Pickle50 · N… | 2026-11-28 17:13 | 70건 |
+| Pickle | `data/agent-notes/pickle.json` | #342 data: 수집 2026-11-28 (Pickle51 · K… | 2026-11-28 17:15 | 70건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
@@ -388,9 +388,11 @@ _지금 잠근 영역이 없습니다._
 - **- · Claude · hana-16937 하나증권 캐시백 투자 · hana-16773 에너지 더블 · hana-16729 국민연금증 연금하나 · hana-15125 CLUB H 아멕스 리저브 · hana-14410 밀리언달러 · hana-14247 햇살론 · hana-13913 스카이패스 아멕스 플래티늄 · hana-12943 원큐 · hana-12933 MULTI Oil · hana-12802 국민 행복**
   - 사유: 여신금융협회 심의필 2020~2023년 + 준법심의 2026년 — 오전 기록(Club Leaders 등)과 같은 경우, 기준일 규칙 확인 대기
   - 해결 방법: 2026-11-28 준법심의 날짜를 docDate로 써서 수집(2026-11-28-hana-claude.json)
+  - 참고: #343
 - **- · Claude · hana-9894 CLUB Signature SKYPASS · hana-16910/16912/16764/16762/16760 Club Leaders 10·15·3·5·8 · hana-17017 K-패스 하나 신용 · hana-7969 1Q Special+**
   - 사유: 여신금융협회 심의필이 2020~2024년(올해·작년 규칙 밖)인데 같은 페이지에 2026년 준법심의(카드사 자체 개정 심의)가 있음 — 어느 날짜를 docDate로 볼지 규칙 확인 필요
   - 해결 방법: 2026-11-28 준법심의 날짜를 docDate로 써서 수집(2026-11-28-hana-claude.json)
+  - 참고: #343
 - **- · Claude · shinhan-201902270001 The BEST+ · shinhan-202603060001 The CLASSIC Air**
   - 사유: Claude 세션에서 shinhancard.com은 Bash curl 프록시 403, WebFetch는 권한 요청 시간 초과. 신한 프리미엄 카드 상세에는 상품설명서 PDF 링크가 없고 브랜드 가이드 PDF(pconts/download/card/MO_26_*)만 있음
   - 해결 방법: 브라우저가 있는 에이전트(Pickle)가 상세 페이지 본문(심의필 날짜)으로 옮기거나, 상품공시실에서 상품설명서 PDF 확인
