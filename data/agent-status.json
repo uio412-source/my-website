@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T12:02:38+09:00",
+  "generatedAt": "2026-11-28T17:04:27+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -9,12 +9,7 @@
       "role": "ChatGPT 예약 작업·Dot — 데이터 수집(data/inbox) 담당. 브랜치 ai/chatgpt/data-*, 파일 YYYY-MM-DD-<출처>.json(접미사 없음).",
       "updatedAt": "2026-11-25T19:40:00+09:00",
       "lock": null,
-      "lastMergedPR": {
-        "number": 288,
-        "title": "feat(cards): 상세 공유·발급 브랜드 UI 정리",
-        "mergedAt": "2026-11-28T02:44:48Z",
-        "mergedAtKST": "2026-11-28 11:44"
-      },
+      "lastMergedPR": null,
       "runs": [
         {
           "at": "2026-11-25T15:09:00+09:00",
@@ -42,12 +37,7 @@
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
       "updatedAt": "2026-11-28T12:30:00+09:00",
       "lock": null,
-      "lastMergedPR": {
-        "number": 295,
-        "title": "Mr. Stocks: 메뉴 이름 변경 + AI 트레이딩(공사중) 추가",
-        "mergedAt": "2026-11-28T02:59:28Z",
-        "mergedAtKST": "2026-11-28 11:59"
-      },
+      "lastMergedPR": null,
       "runs": [
         {
           "at": "2026-11-28T12:30:00+09:00",
@@ -415,13 +405,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-28T12:05:00+09:00",
+      "updatedAt": "2026-11-28T16:40:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 296,
-        "title": "docs(agent-notes): 단종카드 16종 추가 기록(PR 번호·배포 확인)",
-        "mergedAt": "2026-11-28T03:01:18Z",
-        "mergedAtKST": "2026-11-28 12:01"
+        "number": 334,
+        "title": "docs: 이벤트 수집 마무리 — 대기열·Pickle 기록·현황판 동기화",
+        "mergedAt": "2026-11-28T05:36:42Z",
+        "mergedAtKST": "2026-11-28 14:36"
       },
       "runs": [
         {
@@ -1735,45 +1725,871 @@
             "newIssues": 0,
             "note": "picking_audit A1 6·A2 0·A3 8·A4 51·C2 16 그대로(새 카드는 rewardCoveragePending으로 두고 피킹률 모델은 미연결)"
           }
+        },
+        {
+          "at": "2026-11-28T12:06:30+09:00",
+          "kind": "feature",
+          "pr": null,
+          "summary": "Mr. Cards 발급 이벤트 화면에 '발급 지원금 비교' 탭 구현 — 네이버페이·카카오페이·아정당·뽐뿌 발급 이벤트 68건(네이버 24·카카오 12·아정당 20·뽐뿌 12)을 paymorevent/data/issuance-events.json으로 모으고, 카드사별 내 상태(마지막 결제일·보유/탈회+탈회일·이벤트 수령일·대상 카드 미사용 체크, localStorage mrcards.issuance.profiles)로 참여 가능 여부(✅/⚠️ 대상카드/⏳ N일 뒤/❌ 사유/⚪ 미입력·조건 미확인)를 판정하는 표를 추가. 이벤트마다 noPaymentMonths·noRewardMonths·excludeCanceledMonths·allowExistingHolder(false|true|target_card_only)·eligibilityRuleText·eligibilitySummary를 원문에서 구조화. 재수집 스크립트 tools/data/fetch_issuance_events.py(네이버 __NEXT_DATA__, 카카오 RSC flight, 아정당 data-mfe-state, 뽐뿌는 403이라 --ppomppu-file 브라우저 목록 입력). 화면 코드 components/issuance.tsx·lib/issuance-events.ts·app/mc.css, AGENTS.md·docs/roadmap.md 갱신.",
+          "queueKeys": [],
+          "picking": {
+            "cards": null,
+            "withPicking": null,
+            "newIssues": 0,
+            "note": "카드 DB는 건드리지 않음. inbox validate 148파일 통과, picking_audit·label-audit 기존 결과 그대로(새 문제 0), npm build 통과"
+          }
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 287,
+          "summary": "현대카드 M·MM·X 상품설명서",
+          "queueKeys": [
+            "hyundai-me4",
+            "hyundai-mpe4",
+            "hyundai-xpe4"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 290,
+          "summary": "현대카드 Z family Ed2·Z play·ZERO Ed3(포인트형)",
+          "queueKeys": [
+            "hyundai-zfe2",
+            "hyundai-zoe2",
+            "hyundai-mzroe3"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 292,
+          "summary": "SSG.COM카드 Ed2·넥슨 현대카드 Ed2·국민행복 현대카드",
+          "queueKeys": [
+            "hyundai-sge2",
+            "hyundai-nxnx",
+            "hyundai-phhc"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 294,
+          "summary": "NOL·LG전자·SK인텔릭스 현대카드",
+          "queueKeys": [
+            "hyundai-nolhc",
+            "hyundai-lgehc",
+            "hyundai-skihc"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 297,
+          "summary": "대한항공카드 060",
+          "queueKeys": [
+            "hyundai-kale2t1"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 298,
+          "summary": "KB Easy ring·Easy auto·The Easy",
+          "queueKeys": [
+            "kb-09253",
+            "kb-09246",
+            "kb-09250"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "brand-services",
+          "pr": 300,
+          "summary": "현대카드 AMEX The Platinum·Gold 선택제공서비스(호텔 발렛 39곳)",
+          "queueKeys": [
+            "hyundai-american-express-platinum",
+            "hyundai-american-express-gold"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 301,
+          "summary": "KB 가온플래티늄·굿데이올림",
+          "queueKeys": [
+            "kb-09152",
+            "kb-09063"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 303,
+          "summary": "KB 톡톡 Pay·KB Pay 챌린지",
+          "queueKeys": [
+            "kb-09231",
+            "kb-09113"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 305,
+          "summary": "KB 스카이패스 티타늄·KB Pay 챌린지+",
+          "queueKeys": [
+            "kb-04285",
+            "kb-09114"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 306,
+          "summary": "KB 톡톡 with·TMAP",
+          "queueKeys": [
+            "kb-09272",
+            "kb-09389"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 308,
+          "summary": "KB SK에너지 러브유·스타트럭플러스 S-OIL",
+          "queueKeys": [
+            "kb-02245",
+            "kb-04088"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 309,
+          "summary": "KB 가온 Biz·탄탄대로 Biz",
+          "queueKeys": [
+            "kb-09176",
+            "kb-09183"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 310,
+          "summary": "KB 웅진씽크빅·비상온리원",
+          "queueKeys": [
+            "kb-02171",
+            "kb-02210"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 311,
+          "summary": "KB The CJ·STARTLUCK",
+          "queueKeys": [
+            "kb-01142",
+            "kb-02076"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "brand-services",
+          "pr": 313,
+          "summary": "삼성카드 Mastercard WORLD 선택서비스(호텔 발렛 25곳)",
+          "queueKeys": [
+            "samsung-mastercard-world"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "brand-services",
+          "pr": 314,
+          "summary": "삼성카드 VISA INFINITE 선택서비스(호텔 발렛 30곳)",
+          "queueKeys": [
+            "samsung-visa-infinite"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 315,
+          "summary": "KB 스마트 지킴이·CU(이미지 표 렌더 판독)",
+          "queueKeys": [
+            "kb-09283",
+            "kb-09060"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 316,
+          "summary": "KB 롯데마트(표 판독)",
+          "queueKeys": [
+            "kb-09180"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 317,
+          "summary": "현대 쏘카카드(표 판독)",
+          "queueKeys": [
+            "hyundai-schc"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 318,
+          "summary": "KB 국방멤버쉽(표 판독)",
+          "queueKeys": [
+            "kb-00996"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-terms",
+          "pr": 319,
+          "summary": "KB HERITAGE Smart 할인형 쿠폰 서비스",
+          "queueKeys": [
+            "kb-09125"
+          ]
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-events",
+          "pr": 320,
+          "summary": "KB국민카드 이벤트 1·2페이지 21건",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-events",
+          "pr": 321,
+          "summary": "KB국민카드 이벤트 3페이지 12건",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-events",
+          "pr": 323,
+          "summary": "KB국민카드 이벤트 4페이지 11건",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-events",
+          "pr": 324,
+          "summary": "KB국민카드 이벤트 5페이지 11건",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-events",
+          "pr": 325,
+          "summary": "KB국민카드 이벤트 6페이지 11건",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-events",
+          "pr": 326,
+          "summary": "KB국민카드 이벤트 7페이지 11건",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-events",
+          "pr": 327,
+          "summary": "KB국민카드 이벤트 8페이지 11건",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-events",
+          "pr": 328,
+          "summary": "KB국민카드 이벤트 9페이지 11건",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T15:30:00+09:00",
+          "kind": "card-events",
+          "pr": 329,
+          "summary": "KB국민카드 이벤트 10페이지 12건",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T16:40:00+09:00",
+          "kind": "sync",
+          "pr": 330,
+          "summary": "50배치 수집 마무리 동기화(대기열·Pickle 기록·현황판)",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T16:40:00+09:00",
+          "kind": "card-events",
+          "pr": 331,
+          "summary": "하나카드 이벤트 19건",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T16:40:00+09:00",
+          "kind": "card-events",
+          "pr": 332,
+          "summary": "NH농협카드 이벤트 1페이지 11건",
+          "queueKeys": []
+        },
+        {
+          "at": "2026-11-28T16:40:00+09:00",
+          "kind": "card-events",
+          "pr": 333,
+          "summary": "NH농협카드 이벤트 2페이지 12건",
+          "queueKeys": []
         }
       ],
-      "openIssues": 63
+      "openIssues": 70
     }
   },
   "locks": [],
   "openPRs": [
     {
+      "number": 335,
+      "title": "data: 수집 2026-11-28 (Pickle45 · KB국민카드 이벤트 11페이지 9건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle45",
+      "createdAtKST": "2026-11-28 17:03",
+      "area": "1파일 · data/inbox/card-events 1",
+      "url": "https://github.com/uio412-source/my-website/pull/335",
+      "draft": false
+    },
+    {
+      "number": 322,
+      "title": "fix(issuance): 발급 지원금 판정의 기준일과 카드 범위 구분",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/fix-issuance-eligibility-scope",
+      "createdAtKST": "2026-11-28 13:38",
+      "area": "10파일 · paymorevent/ 6 · data/ 2 · docs/ 1 외 1곳",
+      "url": "https://github.com/uio412-source/my-website/pull/322",
+      "draft": false
+    },
+    {
+      "number": 312,
+      "title": "fix(stocks): 주요 하락장 수익률을 기간 최저 종가로 계산",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/crash-trough-returns",
+      "createdAtKST": "2026-11-28 12:49",
+      "area": "4파일 · assets/ 2 · data/ 1 · 루트 1",
+      "url": "https://github.com/uio412-source/my-website/pull/312",
+      "draft": false
+    }
+  ],
+  "recentPRs": [
+    {
+      "number": 334,
+      "title": "docs: 이벤트 수집 마무리 — 대기열·Pickle 기록·현황판 동기화",
+      "agent": "Pickle",
+      "branch": "ai/pickle/final-sync-2026-11-28",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T05:36:42Z",
+      "mergedAtKST": "2026-11-28 14:36",
+      "createdAt": "2026-11-28T05:35:43Z",
+      "createdAtKST": "2026-11-28 14:35",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/334"
+    },
+    {
+      "number": 333,
+      "title": "data: 수집 2026-11-28 (Pickle44 · NH농협카드 이벤트 2페이지 12건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle44",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T05:34:51Z",
+      "mergedAtKST": "2026-11-28 14:34",
+      "createdAt": "2026-11-28T05:30:50Z",
+      "createdAtKST": "2026-11-28 14:30",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/333"
+    },
+    {
+      "number": 332,
+      "title": "data: 수집 2026-11-28 (Pickle43 · NH농협카드 이벤트 11건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle43",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T05:29:59Z",
+      "mergedAtKST": "2026-11-28 14:29",
+      "createdAt": "2026-11-28T05:26:01Z",
+      "createdAtKST": "2026-11-28 14:26",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/332"
+    },
+    {
+      "number": 331,
+      "title": "data: 수집 2026-11-28 (Pickle42 · 하나카드 이벤트 19건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle42",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T05:24:49Z",
+      "mergedAtKST": "2026-11-28 14:24",
+      "createdAt": "2026-11-28T05:20:49Z",
+      "createdAtKST": "2026-11-28 14:20",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/331"
+    },
+    {
+      "number": 330,
+      "title": "docs: 50배치 연속 수집 마무리 — 대기열·Pickle 기록·현황판 동기화",
+      "agent": "Pickle",
+      "branch": "ai/pickle/50batch-sync-2026-11-28",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T05:16:34Z",
+      "mergedAtKST": "2026-11-28 14:16",
+      "createdAt": "2026-11-28T05:12:47Z",
+      "createdAtKST": "2026-11-28 14:12",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/330"
+    },
+    {
+      "number": 329,
+      "title": "data: 수집 2026-11-28 (Pickle41 · KB국민카드 이벤트 10페이지 12건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle41",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T05:11:43Z",
+      "mergedAtKST": "2026-11-28 14:11",
+      "createdAt": "2026-11-28T05:07:44Z",
+      "createdAtKST": "2026-11-28 14:07",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/329"
+    },
+    {
+      "number": 328,
+      "title": "data: 수집 2026-11-28 (Pickle40 · KB국민카드 이벤트 9페이지 11건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle40",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T05:06:44Z",
+      "mergedAtKST": "2026-11-28 14:06",
+      "createdAt": "2026-11-28T05:02:46Z",
+      "createdAtKST": "2026-11-28 14:02",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/328"
+    },
+    {
+      "number": 327,
+      "title": "data: 수집 2026-11-28 (Pickle39 · KB국민카드 이벤트 8페이지 11건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle39",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T05:01:48Z",
+      "mergedAtKST": "2026-11-28 14:01",
+      "createdAt": "2026-11-28T04:57:48Z",
+      "createdAtKST": "2026-11-28 13:57",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/327"
+    },
+    {
+      "number": 326,
+      "title": "data: 수집 2026-11-28 (Pickle38 · KB국민카드 이벤트 7페이지 11건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle38",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:56:46Z",
+      "mergedAtKST": "2026-11-28 13:56",
+      "createdAt": "2026-11-28T04:52:47Z",
+      "createdAtKST": "2026-11-28 13:52",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/326"
+    },
+    {
+      "number": 325,
+      "title": "data: 수집 2026-11-28 (Pickle37 · KB국민카드 이벤트 6페이지 11건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle37",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:51:59Z",
+      "mergedAtKST": "2026-11-28 13:51",
+      "createdAt": "2026-11-28T04:48:00Z",
+      "createdAtKST": "2026-11-28 13:48",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/325"
+    },
+    {
+      "number": 324,
+      "title": "data: 수집 2026-11-28 (Pickle36 · KB국민카드 이벤트 5페이지 11건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle36",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:47:13Z",
+      "mergedAtKST": "2026-11-28 13:47",
+      "createdAt": "2026-11-28T04:43:14Z",
+      "createdAtKST": "2026-11-28 13:43",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/324"
+    },
+    {
+      "number": 323,
+      "title": "data: 수집 2026-11-28 (Pickle35 · KB국민카드 이벤트 4페이지 11건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle35",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:42:26Z",
+      "mergedAtKST": "2026-11-28 13:42",
+      "createdAt": "2026-11-28T04:38:26Z",
+      "createdAtKST": "2026-11-28 13:38",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/323"
+    },
+    {
+      "number": 321,
+      "title": "data: 수집 2026-11-28 (Pickle34 · KB국민카드 이벤트 3페이지 12건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle34",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:37:36Z",
+      "mergedAtKST": "2026-11-28 13:37",
+      "createdAt": "2026-11-28T04:33:37Z",
+      "createdAtKST": "2026-11-28 13:33",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/321"
+    },
+    {
+      "number": 320,
+      "title": "data: 수집 2026-11-28 (Pickle33 · KB국민카드 카드사 이벤트 21건)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle33",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:32:08Z",
+      "mergedAtKST": "2026-11-28 13:32",
+      "createdAt": "2026-11-28T04:28:10Z",
+      "createdAtKST": "2026-11-28 13:28",
+      "area": "1파일 · data/inbox/card-events 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/320"
+    },
+    {
+      "number": 319,
+      "title": "data: 수집 2026-11-28 (Pickle32 · KB HERITAGE Smart 할인형 쿠폰 서비스)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle32",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:26:36Z",
+      "mergedAtKST": "2026-11-28 13:26",
+      "createdAt": "2026-11-28T04:22:38Z",
+      "createdAtKST": "2026-11-28 13:22",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/319"
+    },
+    {
+      "number": 318,
+      "title": "data: 수집 2026-11-28 (Pickle31 · KB 국방멤버쉽카드 표 판독)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle31",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:21:06Z",
+      "mergedAtKST": "2026-11-28 13:21",
+      "createdAt": "2026-11-28T04:17:06Z",
+      "createdAtKST": "2026-11-28 13:17",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/318"
+    },
+    {
+      "number": 317,
+      "title": "data: 수집 2026-11-28 (Pickle30 · 현대카드 쏘카카드 표 판독)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle30",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:15:51Z",
+      "mergedAtKST": "2026-11-28 13:15",
+      "createdAt": "2026-11-28T04:11:52Z",
+      "createdAtKST": "2026-11-28 13:11",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/317"
+    },
+    {
+      "number": 316,
+      "title": "data: 수집 2026-11-28 (Pickle29 · KB 롯데마트 카드 표 판독)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle29",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:11:23Z",
+      "mergedAtKST": "2026-11-28 13:11",
+      "createdAt": "2026-11-28T04:07:24Z",
+      "createdAtKST": "2026-11-28 13:07",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/316"
+    },
+    {
+      "number": 315,
+      "title": "data: 수집 2026-11-28 (Pickle28 · KB 스마트 지킴이·CU 표 판독 수집)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle28",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:06:39Z",
+      "mergedAtKST": "2026-11-28 13:06",
+      "createdAt": "2026-11-28T04:02:39Z",
+      "createdAtKST": "2026-11-28 13:02",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/315"
+    },
+    {
+      "number": 314,
+      "title": "data: 수집 2026-11-28 (Pickle27 · 삼성카드 VISA INFINITE 발렛·호텔 서비스)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle27",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T04:01:43Z",
+      "mergedAtKST": "2026-11-28 13:01",
+      "createdAt": "2026-11-28T03:57:45Z",
+      "createdAtKST": "2026-11-28 12:57",
+      "area": "1파일 · data/inbox/brand-services 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/314"
+    },
+    {
+      "number": 313,
+      "title": "data: 수집 2026-11-28 (Pickle26 · 삼성카드 Mastercard WORLD 발렛·호텔 서비스)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle26",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:57:11Z",
+      "mergedAtKST": "2026-11-28 12:57",
+      "createdAt": "2026-11-28T03:53:12Z",
+      "createdAtKST": "2026-11-28 12:53",
+      "area": "1파일 · data/inbox/brand-services 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/313"
+    },
+    {
+      "number": 311,
+      "title": "data: 수집 2026-11-28 (Pickle25 · KB The CJ·STARTLUCK 상품설명서)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle25",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:52:35Z",
+      "mergedAtKST": "2026-11-28 12:52",
+      "createdAt": "2026-11-28T03:48:37Z",
+      "createdAtKST": "2026-11-28 12:48",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/311"
+    },
+    {
+      "number": 310,
+      "title": "data: 수집 2026-11-28 (Pickle24 · KB 웅진씽크빅·비상온리원 카드)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle24",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:48:04Z",
+      "mergedAtKST": "2026-11-28 12:48",
+      "createdAt": "2026-11-28T03:44:05Z",
+      "createdAtKST": "2026-11-28 12:44",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/310"
+    },
+    {
+      "number": 309,
+      "title": "data: 수집 2026-11-28 (Pickle23 · KB 가온 Biz·탄탄대로 Biz 상품설명서)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle23",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:43:36Z",
+      "mergedAtKST": "2026-11-28 12:43",
+      "createdAt": "2026-11-28T03:39:36Z",
+      "createdAtKST": "2026-11-28 12:39",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/309"
+    },
+    {
+      "number": 308,
+      "title": "data: 수집 2026-11-28 (Pickle22 · KB SK에너지 러브유·스타트럭플러스 S-OIL)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle22",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:38:56Z",
+      "mergedAtKST": "2026-11-28 12:38",
+      "createdAt": "2026-11-28T03:34:57Z",
+      "createdAtKST": "2026-11-28 12:34",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/308"
+    },
+    {
+      "number": 306,
+      "title": "data: 수집 2026-11-28 (Pickle21 · KB 톡톡 with·TMAP 상품설명서)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle21",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:34:20Z",
+      "mergedAtKST": "2026-11-28 12:34",
+      "createdAt": "2026-11-28T03:30:20Z",
+      "createdAtKST": "2026-11-28 12:30",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/306"
+    },
+    {
+      "number": 307,
+      "title": "fix(issuance): 발급 이벤트 이용조건은 기본 구간(500만원 이하)만 읽기 + 데이터 재수집",
+      "agent": "Pickle",
+      "branch": "ai/pickle/issuance-spend",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:33:11Z",
+      "mergedAtKST": "2026-11-28 12:33",
+      "createdAt": "2026-11-28T03:32:20Z",
+      "createdAtKST": "2026-11-28 12:32",
+      "area": "2파일 · paymorevent/ 1 · tools/data 1",
+      "files": 2,
+      "url": "https://github.com/uio412-source/my-website/pull/307"
+    },
+    {
+      "number": 305,
+      "title": "data: 수집 2026-11-28 (Pickle20 · KB 스카이패스 티타늄·KB Pay 챌린지+)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle20",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:29:41Z",
+      "mergedAtKST": "2026-11-28 12:29",
+      "createdAt": "2026-11-28T03:25:42Z",
+      "createdAtKST": "2026-11-28 12:25",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/305"
+    },
+    {
+      "number": 303,
+      "title": "data: 수집 2026-11-28 (Pickle19 · KB 톡톡 Pay·KB Pay 챌린지 상품설명서)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle19",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:25:03Z",
+      "mergedAtKST": "2026-11-28 12:25",
+      "createdAt": "2026-11-28T03:21:03Z",
+      "createdAtKST": "2026-11-28 12:21",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/303"
+    },
+    {
+      "number": 304,
+      "title": "polish(paymorevent): 발급 표 이름 중복 제거·날짜 입력 칸 넓히기",
+      "agent": "Pickle",
+      "branch": "ai/pickle/issuance-polish",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:24:36Z",
+      "mergedAtKST": "2026-11-28 12:24",
+      "createdAt": "2026-11-28T03:22:25Z",
+      "createdAtKST": "2026-11-28 12:22",
+      "area": "2파일 · paymorevent/ 2",
+      "files": 2,
+      "url": "https://github.com/uio412-source/my-website/pull/304"
+    },
+    {
+      "number": 301,
+      "title": "data: 수집 2026-11-28 (Pickle18 · KB 가온플래티늄·굿데이올림 상품설명서)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle18",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:20:31Z",
+      "mergedAtKST": "2026-11-28 12:20",
+      "createdAt": "2026-11-28T03:16:33Z",
+      "createdAtKST": "2026-11-28 12:16",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/301"
+    },
+    {
+      "number": 302,
+      "title": "fix(paymorevent): 발급 지원금 판정 — 입력 전 '참여 가능' 오판·뽐뿌 카드사 표기 수정",
+      "agent": "Pickle",
+      "branch": "ai/pickle/issuance-fix",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:17:16Z",
+      "mergedAtKST": "2026-11-28 12:17",
+      "createdAt": "2026-11-28T03:16:35Z",
+      "createdAtKST": "2026-11-28 12:16",
+      "area": "4파일 · paymorevent/ 3 · tools/data 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/302"
+    },
+    {
+      "number": 300,
+      "title": "data: 수집 2026-11-28 (Pickle17 · 현대카드 AMEX The Platinum·Gold 발렛·라운지)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle17",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:15:08Z",
+      "mergedAtKST": "2026-11-28 12:15",
+      "createdAt": "2026-11-28T03:11:09Z",
+      "createdAtKST": "2026-11-28 12:11",
+      "area": "1파일 · data/inbox/brand-services 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/300"
+    },
+    {
+      "number": 299,
+      "title": "feat(paymorevent): 발급 지원금 비교 표 — 4개 출처 수집·카드사 상태별 참여 판정",
+      "agent": "Pickle",
+      "branch": "ai/pickle/issuance-events",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:11:44Z",
+      "mergedAtKST": "2026-11-28 12:11",
+      "createdAt": "2026-11-28T03:09:26Z",
+      "createdAtKST": "2026-11-28 12:09",
+      "area": "11파일 · paymorevent/ 5 · data/ 2 · docs/ 2 외 2곳",
+      "files": 11,
+      "url": "https://github.com/uio412-source/my-website/pull/299"
+    },
+    {
+      "number": 298,
+      "title": "data: 수집 2026-11-28 (Pickle16 · KB Easy ring·Easy auto·The Easy 상품설명서)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle16",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:09:51Z",
+      "mergedAtKST": "2026-11-28 12:09",
+      "createdAt": "2026-11-28T03:05:51Z",
+      "createdAtKST": "2026-11-28 12:05",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/298"
+    },
+    {
       "number": 297,
       "title": "data: 수집 2026-11-28 (Pickle15 · 대한항공카드 060 상품설명서)",
       "agent": "Pickle",
       "branch": "ai/chatgpt/data-2026-11-28-pickle15",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T03:04:37Z",
+      "mergedAtKST": "2026-11-28 12:04",
+      "createdAt": "2026-11-28T03:00:36Z",
       "createdAtKST": "2026-11-28 12:00",
       "area": "1파일 · data/inbox/card-terms 1",
-      "url": "https://github.com/uio412-source/my-website/pull/297",
-      "draft": false
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/297"
     },
-    {
-      "number": 286,
-      "title": "fix(cards): 피킹률 자동 변환의 조건 누락과 오래된 요율 재사용 방지",
-      "agent": "ChatGPT",
-      "branch": "ai/chatgpt/fix-terms-reward-converter",
-      "createdAtKST": "2026-11-28 11:39",
-      "area": "4파일 · tools/data 3 · paymorevent/ 1",
-      "url": "https://github.com/uio412-source/my-website/pull/286",
-      "draft": false
-    },
-    {
-      "number": 277,
-      "title": "data: 수집 2026-11-28 (Claude · 상품설명서 7종)",
-      "agent": "Claude",
-      "branch": "ai/claude/data-2026-11-28",
-      "createdAtKST": "2026-11-28 05:05",
-      "area": "6파일 · data/ 3 · data/inbox/card-terms 2 · docs/ 1",
-      "url": "https://github.com/uio412-source/my-website/pull/277",
-      "draft": true
-    }
-  ],
-  "recentPRs": [
     {
       "number": 296,
       "title": "docs(agent-notes): 단종카드 16종 추가 기록(PR 번호·배포 확인)",
@@ -1787,510 +2603,6 @@
       "area": "3파일 · data/ 2 · docs/ 1",
       "files": 3,
       "url": "https://github.com/uio412-source/my-website/pull/296"
-    },
-    {
-      "number": 294,
-      "title": "data: 수집 2026-11-28 (Pickle14 · NOL·LG전자·SK인텔릭스 현대카드)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle14",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T03:00:00Z",
-      "mergedAtKST": "2026-11-28 12:00",
-      "createdAt": "2026-11-28T02:56:01Z",
-      "createdAtKST": "2026-11-28 11:56",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/294"
-    },
-    {
-      "number": 295,
-      "title": "Mr. Stocks: 메뉴 이름 변경 + AI 트레이딩(공사중) 추가",
-      "agent": "Claude",
-      "branch": "ai/claude/stocks-menu",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T02:59:28Z",
-      "mergedAtKST": "2026-11-28 11:59",
-      "createdAt": "2026-11-28T02:59:12Z",
-      "createdAtKST": "2026-11-28 11:59",
-      "area": "9파일 · 루트 5 · assets/ 2 · docs/ 1 외 1곳",
-      "files": 9,
-      "url": "https://github.com/uio412-source/my-website/pull/295"
-    },
-    {
-      "number": 292,
-      "title": "data: 수집 2026-11-28 (Pickle13 · SSG.COM·넥슨·국민행복 현대카드 3종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle13",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T02:54:37Z",
-      "mergedAtKST": "2026-11-28 11:54",
-      "createdAt": "2026-11-28T02:50:38Z",
-      "createdAtKST": "2026-11-28 11:50",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/292"
-    },
-    {
-      "number": 293,
-      "title": "data(events): 롯데×마스터 11만P 이벤트 id 정리",
-      "agent": "Pickle",
-      "branch": "ai/pickle/lotte-11man-event-id",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T02:52:23Z",
-      "mergedAtKST": "2026-11-28 11:52",
-      "createdAt": "2026-11-28T02:50:41Z",
-      "createdAtKST": "2026-11-28 11:50",
-      "area": "1파일 · paymorevent/ 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/293"
-    },
-    {
-      "number": 290,
-      "title": "data: 수집 2026-11-28 (Pickle12 · 현대카드 Z family·Z play·ZERO Ed3 포인트형)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle12",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T02:49:45Z",
-      "mergedAtKST": "2026-11-28 11:49",
-      "createdAt": "2026-11-28T02:45:45Z",
-      "createdAtKST": "2026-11-28 11:45",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/290"
-    },
-    {
-      "number": 291,
-      "title": "Mr. Cards: 선불카드 11종 추가 + 카드 종류 '선불'",
-      "agent": "Claude",
-      "branch": "ai/claude/prepaid-cards-2",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T02:49:17Z",
-      "mergedAtKST": "2026-11-28 11:49",
-      "createdAt": "2026-11-28T02:48:29Z",
-      "createdAtKST": "2026-11-28 11:48",
-      "area": "21파일 · paymorevent/ 10 · data/ 3 · docs/ 3 외 4곳",
-      "files": 21,
-      "url": "https://github.com/uio412-source/my-website/pull/291"
-    },
-    {
-      "number": 287,
-      "title": "data: 수집 2026-11-28 (Pickle11 · 현대카드 M·MM·X 상품설명서 3종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle11",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T02:44:56Z",
-      "mergedAtKST": "2026-11-28 11:44",
-      "createdAt": "2026-11-28T02:40:57Z",
-      "createdAtKST": "2026-11-28 11:40",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/287"
-    },
-    {
-      "number": 288,
-      "title": "feat(cards): 상세 공유·발급 브랜드 UI 정리",
-      "agent": "ChatGPT",
-      "branch": "ai/chatgpt/card-detail-share-networks",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T02:44:48Z",
-      "mergedAtKST": "2026-11-28 11:44",
-      "createdAt": "2026-11-28T02:42:27Z",
-      "createdAtKST": "2026-11-28 11:42",
-      "area": "12파일 · paymorevent/ 11 · 루트 1",
-      "files": 12,
-      "url": "https://github.com/uio412-source/my-website/pull/288"
-    },
-    {
-      "number": 289,
-      "title": "feat(cards): 공식 신규 발급 중단일 수집 및 검수 데이터 연결",
-      "agent": "ChatGPT",
-      "branch": "ai/chatgpt/verify-card-issuance-dates",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T02:43:58Z",
-      "mergedAtKST": "2026-11-28 11:43",
-      "createdAt": "2026-11-28T02:43:34Z",
-      "createdAtKST": "2026-11-28 11:43",
-      "area": "9파일 · paymorevent/ 6 · tools/data 2 · docs/ 1",
-      "files": 9,
-      "url": "https://github.com/uio412-source/my-website/pull/289"
-    },
-    {
-      "number": 285,
-      "title": "data(cards): 보유 단종·구버전 카드 16종 추가 + 롯데×마스터 11만P 이벤트",
-      "agent": "Pickle",
-      "branch": "ai/pickle/add-user-discontinued-cards",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T02:39:41Z",
-      "mergedAtKST": "2026-11-28 11:39",
-      "createdAt": "2026-11-28T02:38:10Z",
-      "createdAtKST": "2026-11-28 11:38",
-      "area": "7파일 · paymorevent/ 3 · data/ 2 · docs/ 2",
-      "files": 7,
-      "url": "https://github.com/uio412-source/my-website/pull/285"
-    },
-    {
-      "number": 284,
-      "title": "fix(tools): picking_audit C2 — 무실적 카드는 화면 규칙과 같이 제외",
-      "agent": "Pickle",
-      "branch": "ai/pickle/picking-audit-c2-fix",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T02:28:14Z",
-      "mergedAtKST": "2026-11-28 11:28",
-      "createdAt": "2026-11-28T02:27:23Z",
-      "createdAtKST": "2026-11-28 11:27",
-      "area": "2파일 · docs/ 1 · tools/data 1",
-      "files": 2,
-      "url": "https://github.com/uio412-source/my-website/pull/284"
-    },
-    {
-      "number": 283,
-      "title": "fix(paymorevent): 삼성 앤마일리지 특별혜택 표·상품권 판정 수정 + 라벨/판정 검수 추가",
-      "agent": "Pickle",
-      "branch": "ai/pickle/fix-samsung-mileage-and-audit",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T02:22:43Z",
-      "mergedAtKST": "2026-11-28 11:22",
-      "createdAt": "2026-11-28T02:22:07Z",
-      "createdAtKST": "2026-11-28 11:22",
-      "area": "18파일 · paymorevent/ 8 · docs/ 4 · data/ 3 외 3곳",
-      "files": 18,
-      "url": "https://github.com/uio412-source/my-website/pull/283"
-    },
-    {
-      "number": 282,
-      "title": "docs: 로드맵에 Mr. Cards 피킹률 전수조사(#281) 기록·남은 검수 후보",
-      "agent": "Pickle",
-      "branch": "ai/pickle/roadmap-picking-audit",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T01:50:31Z",
-      "mergedAtKST": "2026-11-28 10:50",
-      "createdAt": "2026-11-28T01:49:54Z",
-      "createdAtKST": "2026-11-28 10:49",
-      "area": "1파일 · docs/ 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/282"
-    },
-    {
-      "number": 281,
-      "title": "fix(paymorevent): 피킹률 전수조사 — 실적 영역≠혜택 영역 계산 수정·누락 요율 모델 66장·에이전트 검수 규칙",
-      "agent": "Pickle",
-      "branch": "ai/pickle/fix-picking-and-audit-rules",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T01:45:55Z",
-      "mergedAtKST": "2026-11-28 10:45",
-      "createdAt": "2026-11-28T01:35:41Z",
-      "createdAtKST": "2026-11-28 10:35",
-      "area": "16파일 · paymorevent/ 8 · docs/ 3 · data/ 2 외 2곳",
-      "files": 16,
-      "url": "https://github.com/uio412-source/my-website/pull/281"
-    },
-    {
-      "number": 280,
-      "title": "pay: 매일 확인 2026-11-28 — 토스 페이스페이 브랜드 3곳(자담치킨·감성커피·진교동찜닭)",
-      "agent": "Claude",
-      "branch": "ai/claude/pay-daily-2026-11-28",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T01:27:21Z",
-      "mergedAtKST": "2026-11-28 10:27",
-      "createdAt": "2026-11-28T01:23:02Z",
-      "createdAtKST": "2026-11-28 10:23",
-      "area": "6파일 · data/ 2 · docs/ 2 · pay/ 2",
-      "files": 6,
-      "url": "https://github.com/uio412-source/my-website/pull/280"
-    },
-    {
-      "number": 279,
-      "title": "Mr. Stocks 배당: 프로필 User1·User2·User3 + 평단·수량·현재가·수익률",
-      "agent": "Claude",
-      "branch": "ai/claude/dividend-profiles",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T01:19:08Z",
-      "mergedAtKST": "2026-11-28 10:19",
-      "createdAt": "2026-11-28T01:18:54Z",
-      "createdAtKST": "2026-11-28 10:18",
-      "area": "6파일 · assets/ 2 · 루트 2 · data/ 1 외 1곳",
-      "files": 6,
-      "url": "https://github.com/uio412-source/my-website/pull/279"
-    },
-    {
-      "number": 278,
-      "title": "data: 수집 2026-11-28 (카드·여행 이벤트 5건)",
-      "agent": "ChatGPT",
-      "branch": "ai/chatgpt/data-2026-11-28",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T00:11:16Z",
-      "mergedAtKST": "2026-11-28 09:11",
-      "createdAt": "2026-11-28T00:01:02Z",
-      "createdAtKST": "2026-11-28 09:01",
-      "area": "4파일 · data/inbox/card-events 2 · data/inbox/travel-events 2",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/278"
-    },
-    {
-      "number": 276,
-      "title": "docs: 공용 현황판 갱신 (2026-11-28 Pickle · 현대카드 안내문 경로 기록)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/sync-2026-11-28c",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T18:04:59Z",
-      "mergedAtKST": "2026-11-28 03:04",
-      "createdAt": "2026-11-27T18:04:15Z",
-      "createdAtKST": "2026-11-28 03:04",
-      "area": "3파일 · data/ 2 · docs/ 1",
-      "files": 3,
-      "url": "https://github.com/uio412-source/my-website/pull/276"
-    },
-    {
-      "number": 275,
-      "title": "docs: 공용 현황판 갱신 (2026-11-28 Pickle 카드명 정정 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/sync-2026-11-28b",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T17:55:56Z",
-      "mergedAtKST": "2026-11-28 02:55",
-      "createdAt": "2026-11-27T17:55:05Z",
-      "createdAtKST": "2026-11-28 02:55",
-      "area": "3파일 · data/ 2 · docs/ 1",
-      "files": 3,
-      "url": "https://github.com/uio412-source/my-website/pull/275"
-    },
-    {
-      "number": 274,
-      "title": "data: 수집 2026-11-28 3차 (SC제일은행 ZERO Edition3 카드명 정정)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle2",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T17:54:36Z",
-      "mergedAtKST": "2026-11-28 02:54",
-      "createdAt": "2026-11-27T17:53:37Z",
-      "createdAtKST": "2026-11-28 02:53",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/274"
-    },
-    {
-      "number": 273,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-28 Pickle 1차 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/sync-2026-11-28",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T17:50:07Z",
-      "mergedAtKST": "2026-11-28 02:50",
-      "createdAt": "2026-11-27T17:48:38Z",
-      "createdAtKST": "2026-11-28 02:48",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/273"
-    },
-    {
-      "number": 272,
-      "title": "data: 수집 2026-11-28 1차 (하나 AMEX PLATINUM ELITE·롯데 Visa Signature·SC 6종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T17:47:53Z",
-      "mergedAtKST": "2026-11-28 02:47",
-      "createdAt": "2026-11-27T17:45:38Z",
-      "createdAtKST": "2026-11-28 02:45",
-      "area": "4파일 · data/inbox/brand-services 2 · data/inbox/card-terms 2",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/272"
-    },
-    {
-      "number": 271,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle 51~77차 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-final",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T15:34:48Z",
-      "mergedAtKST": "2026-11-28 00:34",
-      "createdAt": "2026-11-27T15:32:39Z",
-      "createdAtKST": "2026-11-28 00:32",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/271"
-    },
-    {
-      "number": 270,
-      "title": "data: 수집 2026-11-27 77차 (현대카드 이벤트 22건)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle77",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T15:32:08Z",
-      "mergedAtKST": "2026-11-28 00:32",
-      "createdAt": "2026-11-27T15:29:04Z",
-      "createdAtKST": "2026-11-28 00:29",
-      "area": "1파일 · data/inbox/card-events 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/270"
-    },
-    {
-      "number": 269,
-      "title": "data: 수집 2026-11-27 76차 (KB국민카드 이벤트 11건)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle76",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T15:27:56Z",
-      "mergedAtKST": "2026-11-28 00:27",
-      "createdAt": "2026-11-27T15:24:58Z",
-      "createdAtKST": "2026-11-28 00:24",
-      "area": "1파일 · data/inbox/card-events 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/269"
-    },
-    {
-      "number": 268,
-      "title": "data: 수집 2026-11-27 75차 (KB국민카드 이벤트 10건)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle75",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T15:24:11Z",
-      "mergedAtKST": "2026-11-28 00:24",
-      "createdAt": "2026-11-27T15:21:12Z",
-      "createdAtKST": "2026-11-28 00:21",
-      "area": "1파일 · data/inbox/card-events 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/268"
-    },
-    {
-      "number": 267,
-      "title": "data: 수집 2026-11-27 74차 (KB국민카드 이벤트 22건)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle74",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T15:20:14Z",
-      "mergedAtKST": "2026-11-28 00:20",
-      "createdAt": "2026-11-27T15:17:17Z",
-      "createdAtKST": "2026-11-28 00:17",
-      "area": "1파일 · data/inbox/card-events 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/267"
-    },
-    {
-      "number": 266,
-      "title": "data: 수집 2026-11-27 73차 (KB국민카드 이벤트 20건)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle73",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T15:16:16Z",
-      "mergedAtKST": "2026-11-28 00:16",
-      "createdAt": "2026-11-27T15:13:17Z",
-      "createdAtKST": "2026-11-28 00:13",
-      "area": "1파일 · data/inbox/card-events 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/266"
-    },
-    {
-      "number": 265,
-      "title": "data: 수집 2026-11-27 72차 (KB국민카드 이벤트 21건)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle72",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T15:12:11Z",
-      "mergedAtKST": "2026-11-28 00:12",
-      "createdAt": "2026-11-27T15:09:12Z",
-      "createdAtKST": "2026-11-28 00:09",
-      "area": "1파일 · data/inbox/card-events 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/265"
-    },
-    {
-      "number": 264,
-      "title": "data: 수집 2026-11-27 71차 (KB국민카드 이벤트 20건)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle71",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T15:07:57Z",
-      "mergedAtKST": "2026-11-28 00:07",
-      "createdAt": "2026-11-27T15:04:56Z",
-      "createdAtKST": "2026-11-28 00:04",
-      "area": "1파일 · data/inbox/card-events 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/264"
-    },
-    {
-      "number": 263,
-      "title": "data: 수집 2026-11-27 70차 (NH농협카드 이벤트 9건)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle70",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T15:02:57Z",
-      "mergedAtKST": "2026-11-28 00:02",
-      "createdAt": "2026-11-27T14:59:57Z",
-      "createdAtKST": "2026-11-27 23:59",
-      "area": "1파일 · data/inbox/card-events 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/263"
-    },
-    {
-      "number": 262,
-      "title": "data: 수집 2026-11-27 69차 (롯데카드 이벤트 10건)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle69",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T14:58:33Z",
-      "mergedAtKST": "2026-11-27 23:58",
-      "createdAt": "2026-11-27T14:55:34Z",
-      "createdAtKST": "2026-11-27 23:55",
-      "area": "1파일 · data/inbox/card-events 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/262"
-    },
-    {
-      "number": 261,
-      "title": "data: 수집 2026-11-27 68차 (롯데카드 4종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle68",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T14:54:22Z",
-      "mergedAtKST": "2026-11-27 23:54",
-      "createdAt": "2026-11-27T14:51:23Z",
-      "createdAtKST": "2026-11-27 23:51",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/261"
-    },
-    {
-      "number": 260,
-      "title": "data: 수집 2026-11-27 67차 (하나카드 이벤트 14건)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle67",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T14:50:27Z",
-      "mergedAtKST": "2026-11-27 23:50",
-      "createdAt": "2026-11-27T14:47:25Z",
-      "createdAtKST": "2026-11-27 23:47",
-      "area": "1파일 · data/inbox/card-events 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/260"
-    },
-    {
-      "number": 259,
-      "title": "data: 수집 2026-11-27 66차 (롯데카드 AVENUEL·제휴 8종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle66",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T14:45:49Z",
-      "mergedAtKST": "2026-11-27 23:45",
-      "createdAt": "2026-11-27T14:42:50Z",
-      "createdAtKST": "2026-11-27 23:42",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/259"
-    },
-    {
-      "number": 258,
-      "title": "data: 수집 2026-11-27 65차 (롯데카드 디지로카·제휴 8종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle65",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T14:42:17Z",
-      "mergedAtKST": "2026-11-27 23:42",
-      "createdAt": "2026-11-27T14:39:17Z",
-      "createdAtKST": "2026-11-27 23:39",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/258"
     }
   ],
   "queue": {
@@ -2301,14 +2613,14 @@
     },
     "counts": {
       "cards": {
-        "done": 781,
-        "todo": 682,
+        "done": 807,
+        "todo": 656,
         "total": 1463
       },
       "brandPrograms": {
-        "done": 43,
+        "done": 45,
         "valetOnly": 3,
-        "todo": 48,
+        "todo": 46,
         "total": 94
       },
       "eventSources": {
@@ -2392,6 +2704,15 @@
     {
       "date": "2026-11-28",
       "agent": "Pickle",
+      "target": "KB 91** 이미지 PDF 14종",
+      "status": "open",
+      "reason": "텍스트 추출이 1~1,000자로 표가 이미지이고 일부는 공통 설명서라 혜택 확인 불가",
+      "retry": "PDF 페이지 렌더 판독으로 순차 수집",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
       "target": "KB국민카드 남은 50종 상품설명서",
       "status": "open",
       "reason": "후보 12종 PDF 확인 결과 6종은 이미지 PDF(텍스트 2~1,043자), 나머지는 심의필 2020~2024년판뿐",
@@ -2405,6 +2726,15 @@
       "status": "open",
       "reason": "안내장 심의필이 2016-07-19·2018-02-21로 '올해·작년 문서' 규칙 밖",
       "retry": "2025~2026년판 안내장이 올라오면 교체",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "SC제일은행 sc-4420·sc-4753",
+      "status": "open",
+      "reason": "상품 안내장 심의필이 2016·2018년판이라 규칙(올해·작년 문서) 밖",
+      "retry": "2025~2026년판 안내장 확보 시 수집",
       "ref": ""
     },
     {
@@ -2455,6 +2785,15 @@
     {
       "date": "2026-11-28",
       "agent": "Pickle",
+      "target": "삼성카드 상품설명서(138종)",
+      "status": "open",
+      "reason": "카드 상세가 스크립트로 그려지고 static11 PDF 파일명 추측이 404",
+      "retry": "카드 상세 API·상품공시실 목록에서 PDF 링크 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
       "target": "상품설명서 정리본은 있는데 피킹률이 비는 카드 613장(B1) · 요율 모델이 미완성이라 피킹률이 비는 카드 51장(A4)",
       "status": "open",
       "reason": "통합 한도(shared)·건당/횟수 제한·혼합 표기(최대 N원, 0.x~y%) 카드는 자동 변환이 부풀려질 수 있어 건너뜀. A4 카드는 기존 요율 모델 일부만 있어 손 검수 필요",
@@ -2473,10 +2812,37 @@
     {
       "date": "2026-11-28",
       "agent": "Pickle",
+      "target": "신협 체크카드 8종(cu-1120·1080·1140·1040·5·4·1·2)",
+      "status": "open",
+      "reason": "안내문이 발급 안내(서류·한도)뿐이고 혜택표가 없어 card-terms로 담을 수 없음",
+      "retry": "카드 상세 페이지에서 혜택 표 확인 후 별도 수집",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "우리카드 95종·하나카드 55종 termsUrl",
+      "status": "open",
+      "reason": "우리는 카드Clause 업로드 경로가 오류 페이지, 하나는 공통 약관 PDF만 연결",
+      "retry": "카드 상세 페이지에서 상품설명서 링크 재확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
       "target": "우리카드·롯데카드·신한카드·BC카드 카드 상세 상품설명서",
       "status": "open",
       "reason": "상세 페이지 HTML에 상품설명서 링크가 없고 스크립트로만 그려짐(우리 H1CRD101S02·롯데 LPCDADB_V100·신한 pconts·BC CreditCardMain 모두)",
       "retry": "브라우저로 상세 탭을 렌더해 PDF 링크 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "카드사 이벤트(신한·삼성·현대·하나·NH·BC·IBK)",
+      "status": "open",
+      "reason": "목록이 ajax/스크립트 렌더로 정적 수집 불가(브라우저로 KB만 성공)",
+      "retry": "브라우저로 목록 페이지를 렌더해 다음 회차 수집",
       "ref": ""
     },
     {
@@ -2495,6 +2861,15 @@
       "status": "open",
       "reason": "표지·제목은 PLATINUM ELITE 서비스 안내서이나 본문 '전월 이용금액 산정 기준'에 American Express® Green Card Edition2가 적혀 있어 대상 카드 확정 불가",
       "retry": "AMEX PLATINUM ELITE 해당 카드 상세에서 같은 안내서의 대상 카드 표기를 확인한 뒤 수집",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "현대카드 hyundai-american-express-platinum-elite(안내서 c=03184)",
+      "status": "open",
+      "reason": "표지는 PLATINUM ELITE지만 본문 대상 카드가 Green Card Edition2",
+      "retry": "대상 카드 확정 후 수집",
       "ref": ""
     },
     {

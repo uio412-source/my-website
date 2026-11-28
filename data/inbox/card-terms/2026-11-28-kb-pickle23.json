@@ -1,0 +1,198 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09176",
+   "queueKey": "kb-09176",
+   "name": "가온 Biz카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09176&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09176__prdctOpmn_20160708.pdf",
+   "docDate": "2016-07-08",
+   "annualFee": [
+    {"brand": "UnionPay", "amount": 15000},
+    {"brand": "Visa", "amount": 20000}
+   ],
+   "brands": ["UnionPay", "Visa"],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 이용실적 50만원 이상, 건당 1만원 이상 전표",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 실적이 없어도 기본 적립(국내·해외)과 사업지원영역·고액결제 1구간 제공",
+   "spendExclusions": [
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "각종 세금·공과금·아파트 관리비",
+    "정부지원금·대학 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전"
+   ],
+   "benefitExclusions": [
+    "건당 1만원 미만 결제",
+    "해외 이용 전표의 추가 적립",
+    "사업지원영역과 고액결제 중복(고액결제 우선)"
+   ],
+   "benefits": [
+    {
+     "group": "기본 적립",
+     "label": "국내 가맹점",
+     "place": "국내 모든 가맹점",
+     "value": "0.3%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "적립 한도 없음",
+     "conditions": ["포인트리 적립", "건당 1만원 이상"]
+    },
+    {
+     "group": "기본 적립",
+     "label": "해외·해외직구",
+     "place": "해외 가맹점(해외직구 포함)",
+     "value": "2.0%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 최대 1만점",
+     "conditions": ["포인트리 적립"]
+    },
+    {
+     "group": "추가 적립",
+     "label": "사업지원 영역",
+     "place": "주유(주유소·충전소), 통신(전화요금·케이블TV·인터넷), 전자상거래(전자상거래·PG·오픈마켓)",
+     "value": "0.6%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 50000,
+     "capScope": "월",
+     "limits": "월 5만점",
+     "conditions": ["건당 1만원 이상, 국내 이용만", "고액결제 추가 적립과 중복 불가(고액결제 우선)"]
+    },
+    {
+     "group": "추가 적립",
+     "label": "고액결제",
+     "place": "국내 가맹점 건당 50만원·100만원 이상 결제",
+     "value": "1.0%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 50000}],
+     "cap": 50000,
+     "capScope": "월",
+     "limits": "월 5만점",
+     "conditions": ["건당 50만원 이상 0.6%, 100만원 이상 1.0% 추가", "사업지원영역과 중복 불가(고액결제 우선)"]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09183",
+   "queueKey": "kb-09183",
+   "name": "탄탄대로 Biz카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09183&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09183__prdctOpmn_20170425.pdf",
+   "docDate": "2017-04-25",
+   "annualFee": [
+    {"brand": "JCB", "amount": 15000},
+    {"brand": "Mastercard", "amount": 15000}
+   ],
+   "brands": ["JCB", "Mastercard"],
+   "minimumSpend": 400000,
+   "spendBasis": "전월 이용실적 40만원 이상, 건당 1만원 이상 결제",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 실적이 없어도 1구간(40만원) 서비스 제공",
+   "spendExclusions": [
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "각종 세금·공과금·아파트 관리비",
+    "정부지원금·대학 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전"
+   ],
+   "benefitExclusions": [
+    "건당 1만원 미만 결제",
+    "대형할인점 온라인 쇼핑몰·건물 내 임대매장·상품권 구매·SSM",
+    "인터넷 쇼핑몰의 상품권·선불카드 충전·이용권·여행·항공권·티켓·도서",
+    "롯데ON 백화점 등 오프라인 매장 온라인몰 승인 건"
+   ],
+   "benefits": [
+    {
+     "group": "Biz Favorite (4종 택1)",
+     "label": "주유",
+     "place": "SK주유소·GS칼텍스 주유소(충전소 포함)",
+     "value": "리터당 100점",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 이용 금액 20만(1구간)·30만원(2구간)까지",
+     "conditions": ["포인트리 적립", "경유·등유·LPG는 휘발유가 환산"]
+    },
+    {
+     "group": "Biz Favorite (4종 택1)",
+     "label": "주유 (130점형)",
+     "place": "SK주유소·GS칼텍스 주유소(충전소 포함)",
+     "value": "리터당 130점",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 이용 금액 20만(1구간)·30만원(2구간)까지",
+     "conditions": ["택1 선택 시", "경유·등유·LPG는 휘발유가 환산"]
+    },
+    {
+     "group": "Biz Favorite (4종 택1)",
+     "label": "대형마트",
+     "place": "이마트·홈플러스·롯데마트, 하나로식자재매장",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "tiers": [{"spend": 400000, "cap": 10000}, {"spend": 800000, "cap": 15000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "1구간 1만점·2구간 1만5천점",
+     "conditions": ["온라인 쇼핑몰·임대매장·상품권 구매·SSM 제외"]
+    },
+    {
+     "group": "Biz Favorite (4종 택1)",
+     "label": "대형마트 (20%형)",
+     "place": "이마트·홈플러스·롯데마트, 하나로식자재매장",
+     "value": "20%",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "tiers": [{"spend": 400000, "cap": 15000}, {"spend": 800000, "cap": 30000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "1구간 1만5천점·2구간 3만점",
+     "conditions": ["택1 선택 시", "온라인 쇼핑몰·임대매장·상품권 구매·SSM 제외"]
+    },
+    {
+     "group": "Biz Favorite (4종 택1)",
+     "label": "인터넷 쇼핑몰",
+     "place": "G마켓·옥션·11번가·인터파크·롯데ON·신세계몰",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "tiers": [{"spend": 400000, "cap": 10000}, {"spend": 800000, "cap": 15000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "1구간 1만점·2구간 1만5천점",
+     "conditions": ["상품권·선불카드 충전·이용권·여행·항공권·티켓·도서 제외", "롯데ON은 롯데ON몰 이용 건만"]
+    },
+    {
+     "group": "Biz Favorite (4종 택1)",
+     "label": "인터넷 쇼핑몰 (20%형)",
+     "place": "G마켓·옥션·11번가·인터파크·롯데ON·신세계몰",
+     "value": "20%",
+     "valueType": "적립",
+     "minimumSpend": 400000,
+     "tiers": [{"spend": 400000, "cap": 15000}, {"spend": 800000, "cap": 30000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "1구간 1만5천점·2구간 3만점",
+     "conditions": ["택1 선택 시", "상품권·선불카드 충전·이용권·여행·항공권·티켓·도서 제외"]
+    }
+   ]
+  }
+ ]
+}

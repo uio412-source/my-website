@@ -1,0 +1,115 @@
+{
+ "type": "brand-services",
+ "issuer": "삼성카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "programs": [
+  {
+   "id": "samsung-mastercard-world",
+   "brand": "Mastercard",
+   "tier": "World",
+   "provider": "issuer_selection",
+   "docTitle": "Mastercard 프리미엄 서비스 이용 안내 (WORLD 등급 서비스)",
+   "url": "https://static11.samsungcard.com/wcms/personal/files/2606_MASTER_W_005_all.pdf",
+   "docDate": "2026-03-11",
+   "validThrough": "2026-12-31",
+   "cards": ["THE iD. 1st", "SFC THE iD. 1st", "더 로이어스 클래식 삼성카드"],
+   "services": [
+    {
+     "category": "hotel_valet",
+     "title": "국내 특급 호텔 무료 발렛파킹",
+     "minimumSpend": 500000,
+     "monthlyLimit": 3,
+     "quotaScope": "hotel_airport",
+     "sharedWith": "인천공항 무료 발렛파킹과 통합 월 3회",
+     "freeHours": 3,
+     "holderOnly": true,
+     "useRequired": true,
+     "hotels": [
+      {"name": "그랜드 워커힐 서울", "city": "서울"},
+      {"name": "그랜드 하얏트 서울", "city": "서울"},
+      {"name": "노보텔 앰배서더 서울 강남", "city": "서울"},
+      {"name": "노보텔 앰배서더 서울 동대문 호텔&레지던스", "city": "서울"},
+      {"name": "더 플라자", "city": "서울"},
+      {"name": "메리어트 이그제큐티브 아파트먼트 서울", "city": "서울"},
+      {"name": "몬드리안 서울 이태원", "city": "서울"},
+      {"name": "반얀트리 클럽 앤 스파 서울", "city": "서울"},
+      {"name": "비스타 워커힐 서울", "city": "서울"},
+      {"name": "서울가든호텔", "city": "서울"},
+      {"name": "서울 드래곤 시티", "city": "서울"},
+      {"name": "서울신라호텔", "city": "서울"},
+      {"name": "앰배서더 서울 풀만 호텔", "city": "서울"},
+      {"name": "코트야드 서울 타임스퀘어", "city": "서울"},
+      {"name": "파크 하얏트 서울", "city": "서울"},
+      {"name": "호텔 코리아나", "city": "서울"},
+      {"name": "JW 메리어트 동대문 스퀘어 서울", "city": "서울"},
+      {"name": "JW 메리어트 호텔 서울", "city": "서울"},
+      {"name": "그랜드 머큐어 앰배서더 창원", "city": "창원"},
+      {"name": "그랜드 하얏트 인천", "city": "인천"},
+      {"name": "소노캄 고양", "city": "경기"},
+      {"name": "소노캄 여수", "city": "여수"},
+      {"name": "파크 하얏트 부산", "city": "부산"},
+      {"name": "호텔 오노마", "city": "대전"},
+      {"name": "호텔 인터불고 대구", "city": "대구"}
+     ],
+     "hotelRules": [
+      {"name": "JW 메리어트 호텔 서울", "receiptMin": 50000, "monthlyLimit": null, "note": "객실·F&B 합산 5만원 이상 당일 영수증"},
+      {"name": "몬드리안 서울 이태원", "receiptMin": 25000, "monthlyLimit": null, "note": "객실·F&B 합산 2만5천원 이상"},
+      {"name": "호텔 코리아나", "receiptMin": 25000, "monthlyLimit": null, "note": "객실·F&B 합산 2만5천원 이상"},
+      {"name": "파크 하얏트 서울", "receiptMin": 20000, "monthlyLimit": null, "note": "객실·F&B 합산 2만원 이상"}
+     ],
+     "conditions": [
+      "객실·F&B 매장(연회장 제외) 이용 본인 방문, 당일 영수증 제시",
+      "일 3시간까지 무료 주차, 초과 시 주차요금 부과",
+      "발급월+1개월까지 전월 50만원 미만도 제공"
+     ]
+    },
+    {
+     "category": "airport_valet",
+     "title": "인천공항 무료 발렛파킹",
+     "minimumSpend": 500000,
+     "monthlyLimit": 3,
+     "quotaScope": "hotel_airport",
+     "sharedWith": "국내 특급 호텔 발렛파킹과 통합 월 3회",
+     "conditions": ["인천국제공항 제1·2여객터미널", "주차요금 본인 별도 정산", "발급월+1개월까지 전월 50만원 미만도 제공"]
+    },
+    {
+     "category": "dining",
+     "title": "Dine with Mastercard",
+     "minimumSpend": 500000,
+     "coverage": "호텔·패밀리 레스토랑 6만원 이상 3만원, 호텔 델리 4만원 이상 2만원 현장 할인",
+     "conditions": ["서울신라호텔(더 파크뷰·라연·아리아께·콘티넨탈·팔선), 그랜드 워커힐(온달), 콘래드 서울(SUT. The Butcher's Edge) 등", "실물 카드 제시 후 할인 요청"]
+    },
+    {
+     "category": "hotel_benefit",
+     "title": "국내 특급호텔 F&B·객실·스파 할인",
+     "minimumSpend": 0,
+     "coverage": "국내 특급호텔 F&B 5~15%(42곳), 객실 5~50% 할인·무료 업그레이드(44곳), 스파 10~20%(16곳)",
+     "conditions": ["Mastercard 프리미엄 서비스 회원임을 말하고 카드 제시·결제", "HoteLux Elite 멤버십 12개월·1,000 포인트 제공"]
+    },
+    {
+     "category": "travel_booking",
+     "title": "해외 호텔·항공 예약 할인",
+     "minimumSpend": 0,
+     "coverage": "Trip.com 호텔 15%·항공 3%, Hotels.com·Expedia 8%, Agoda 10%, Rakuten Travel 20%",
+     "conditions": ["각 제휴사 공식 프로모션 페이지에서 카드 결제", "제휴사별 예약·이용 기간 있음"]
+    },
+    {
+     "category": "golf",
+     "title": "프리미엄 골프장 그린피 할인",
+     "minimumSpend": 0,
+     "annualLimit": 4,
+     "coverage": "15개국 48개 프리미엄 골프장 그린피 50% 할인(연 4회, 이용기간 ~26.6.30)",
+     "conditions": ["수트라하버 골프&컨트리클럽 본인 그린피 면제·객실 25% 할인", "LANE4 골프장 이동 서비스 5만원 할인"]
+    },
+    {
+     "category": "other",
+     "title": "면세점 멤버십·생활 할인",
+     "minimumSpend": 0,
+     "coverage": "신라면세점 Black 등급(최대 20%·S.Rewards 1만P), 신세계면세점 Black 멤버십(최대 20%)",
+     "conditions": ["신라면세점 골드플러스 멤버십 별도 제공(오프라인 15%·온라인 20%)", "Car up 자동차 케어 30%, 내셔널지오그래픽 트래블러 구독 20% 할인"]
+    }
+   ]
+  }
+ ]
+}

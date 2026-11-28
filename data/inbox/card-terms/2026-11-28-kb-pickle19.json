@@ -1,0 +1,139 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09231",
+   "queueKey": "kb-09231",
+   "name": "톡톡 Pay카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09231&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09231__prdctOpmn_20171221.pdf",
+   "docDate": "2017-12-21",
+   "annualFee": [
+    {"brand": "JCB", "amount": 20000},
+    {"brand": "Mastercard", "amount": 20000}
+   ],
+   "brands": ["JCB", "Mastercard", "국내전용"],
+   "minimumSpend": 400000,
+   "spendBasis": "전월 1일~말일 KB국민 톡톡 Pay카드 일시불·할부 승인 금액(해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 실적이 없어도 1구간(40만원) 서비스 제공",
+   "spendExclusions": [
+    "할인서비스 받은 이용 건(해당 이용 금액 전체)",
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "각종 세금·공과금",
+    "초중고(국·공립) 학교 납입금",
+    "정부지원금",
+    "대학·대학원 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "무승인 전표(교통요금·자판기·터널통행료·항공기 내)",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "무이자 할부 이용 금액",
+    "일반결제(ISP) 이용 금액(간편결제 할인)",
+    "택시·시외버스·고속버스(대중교통 할인)",
+    "백화점·대형쇼핑몰·역사 내 입점 가맹점(편의점 할인 제외 가능)"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "간편결제",
+     "place": "KB Pay·삼성페이·네이버페이·카카오페이·SSG페이 등 온·오프라인 간편결제",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [{"spend": 400000, "cap": 7000}, {"spend": 800000, "cap": 15000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "1구간 20%·월 7천원, 2구간 40%·월 1만5천원, 1일 5천원",
+     "conditions": ["ISP 일반결제 이용 금액 제외"]
+    },
+    {
+     "group": null,
+     "label": "대중교통",
+     "place": "버스·지하철",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 7000,
+     "capScope": "월",
+     "limits": "월 7천원",
+     "conditions": ["이용대금명세서 기재 이용일 기준", "택시·시외버스·고속버스 제외"]
+    },
+    {
+     "group": null,
+     "label": "편의점",
+     "place": "GS25·CU",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 5천원",
+     "conditions": ["백화점·대형쇼핑몰·역사 내 입점 가맹점 제외 가능"]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09113",
+   "queueKey": "kb-09113",
+   "name": "KB Pay 챌린지카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09113&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09113__prdctOpmn_20210518.pdf",
+   "docDate": "2021-05-18",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 15000},
+    {"brand": "Mastercard", "amount": 15000},
+    {"brand": "UnionPay", "amount": 15000}
+   ],
+   "brands": ["국내전용", "Mastercard", "UnionPay"],
+   "minimumSpend": 0,
+   "spendBasis": "전월 실적 조건 없음(KB Pay 이용 횟수 기준)",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [
+    "취소된 이용 건",
+    "단기카드대출·장기카드대출",
+    "국세·지방세·공과금(전기·수도)·아파트 관리비",
+    "정부지원금·초중고 납입금·대학 등록금",
+    "4대 사회보험료·각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드·기프트카드 구입·충전",
+    "무승인 거래(항공기 내 면세·도로 통행료)",
+    "후불대중교통·하이패스 이용 금액"
+   ],
+   "benefits": [
+    {
+     "group": "스탬프 서비스",
+     "label": "KB Pay 3회 이용",
+     "place": "KB Pay 온·오프라인 결제",
+     "value": "1천점",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": 50000,
+     "capScope": "월",
+     "limits": "월 5만점",
+     "conditions": ["3회 이용마다 1천 포인트리", "건당 1만원 이상, 동일 가맹점 1일 1회", "월간 적립 기간은 전월 마지막 토요일 다음 날~당월 마지막 토요일"]
+    },
+    {
+     "group": "출석체크 서비스",
+     "label": "매주 출석",
+     "place": "KB Pay 온·오프라인 결제",
+     "value": "1천점",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "주 1회 1천 포인트리",
+     "conditions": ["일요일~토요일 매일 1회 이상 KB Pay 이용 시", "건당 1만원 이상, 취소 시 이용 횟수 차감", "매주 토요일 다음 달 25일 합산 적립"]
+    }
+   ]
+  }
+ ]
+}

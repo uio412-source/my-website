@@ -1,0 +1,98 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-02171",
+   "queueKey": "kb-02171",
+   "name": "웅진씽크빅 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=02171&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/02171__prdctOpmn_20210423.pdf",
+   "docDate": "2021-04-23",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 15000},
+    {"brand": "JCB", "amount": 15000},
+    {"brand": "Mastercard", "amount": 15000}
+   ],
+   "brands": ["국내전용", "JCB", "Mastercard"],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 이용실적 30만원 이상(1구간)·70만원 이상(2구간)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 실적이 없어도 1구간 할인 적용",
+   "spendExclusions": [
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "각종 세금·공과금·아파트 관리비",
+    "정부지원금·학교 납입금·대학 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전"
+   ],
+   "benefitExclusions": [
+    "웅진씽크빅 자동납부 외 결제",
+    "자동납부 승인 금액이 할인 금액보다 작으면 승인 금액까지만 할인"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "웅진씽크빅 자동납부",
+     "place": "웅진씽크빅 요금 자동납부",
+     "value": "17,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [{"spend": 300000, "cap": 12000}, {"spend": 700000, "cap": 17000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "1구간 1만2천원 · 2구간 1만7천원",
+     "conditions": ["카드로 웅진씽크빅 요금을 자동납부 신청한 경우만", "여러 건이면 합산해 월 할인 금액 내에서 할인"]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-02210",
+   "queueKey": "kb-02210",
+   "name": "비상온리원 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=02210&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/02210__prdctOpmn_20210430.pdf",
+   "docDate": "2021-04-30",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 15000},
+    {"brand": "JCB", "amount": 15000},
+    {"brand": "Mastercard", "amount": 15000}
+   ],
+   "brands": ["국내전용", "JCB", "Mastercard"],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 이용실적 30만원 이상(1구간)·70만원 이상(2구간)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 실적이 없어도 1구간 할인 적용",
+   "spendExclusions": [
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "각종 세금·공과금·아파트 관리비",
+    "정부지원금·학교 납입금·대학 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전"
+   ],
+   "benefitExclusions": [
+    "비상온리원 자동납부 외 결제",
+    "자동납부 승인 금액이 할인 금액보다 작으면 승인 금액까지만 할인"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "비상온리원 자동납부",
+     "place": "비상온리원 요금 자동납부",
+     "value": "17,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [{"spend": 300000, "cap": 12000}, {"spend": 700000, "cap": 17000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "1구간 1만2천원 · 2구간 1만7천원",
+     "conditions": ["카드로 비상온리원 요금을 자동납부 신청한 경우만", "여러 건이면 합산해 월 할인 금액 내에서 할인"]
+    }
+   ]
+  }
+ ]
+}

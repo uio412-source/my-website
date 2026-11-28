@@ -1,0 +1,103 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09180",
+   "queueKey": "kb-09180",
+   "name": "롯데마트 KB국민카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09180&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09180__prdctOpmn_20150916.pdf",
+   "docDate": "2015-09-16",
+   "annualFee": [
+    {"brand": "JCB", "amount": 10000},
+    {"brand": "American Express", "amount": 15000}
+   ],
+   "brands": ["JCB", "American Express"],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 이용실적 30만원 이상(30만·50만·70만·90만 구간별 한도)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말까지 실적 10만원 미만도 10%(주중)·1만원(1만원 미만 시) 할인",
+   "spendExclusions": [
+    "롯데마트 KB국민카드로 할인받은 이용 건(해당 매출 전체)",
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "연회비·각종 수수료·이자·연체료",
+    "각종 세금·공과금·아파트 관리비",
+    "정부지원금·대학 등록금·학원비",
+    "선불카드 구입·충전·각종 상품권 구입",
+    "대중교통·항공기 내 이용 등 무승인 전표"
+   ],
+   "benefitExclusions": [
+    "선불카드 구입·충전·각종 상품권 구입",
+    "PG 결제·호텔·백화점·대형마트 등 입점 가맹점(가맹점 사정)",
+    "주유·기프트카드 결제"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "롯데마트",
+     "place": "롯데마트(오프라인 매장, 건당 5만원 이상 결제)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [{"spend": 300000, "cap": 20000}, {"spend": 500000, "cap": 30000}, {"spend": 700000, "cap": 40000}, {"spend": 900000, "cap": 50000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "주중·주말 각각 월 1만·1만5천·2만·2만5천원(합계 2만~5만원)",
+     "conditions": ["롯데마트 인터넷몰은 주중, 매장은 주말 할인으로 산정", "건당 5만원 이상 결제"]
+    },
+    {
+     "group": "생활 혜택",
+     "label": "커피전문점",
+     "place": "커피전문점 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 20만원 이용 금액까지",
+     "conditions": []
+    },
+    {
+     "group": "생활 혜택",
+     "label": "택시",
+     "place": "택시 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 20만원 이용 금액까지",
+     "conditions": []
+    },
+    {
+     "group": "생활 혜택",
+     "label": "놀이공원",
+     "place": "롯데월드·에버랜드·캐리비안베이",
+     "value": "30~50%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "롯데월드 월 2매·연 5매, 에버랜드 연 10매",
+     "conditions": ["현장 할인", "롯데월드 종합이용권 50%, 에버랜드 자유이용권 50%, 캐리비안베이 입장권 30%"]
+    },
+    {
+     "group": "생활 혜택",
+     "label": "영화",
+     "place": "메가박스·CGV 온라인 영화 예매",
+     "value": "3,500원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "1일 2회 · 월 4회 · 연 10회",
+     "conditions": ["승인 건당 3,500원 청구 할인"]
+    }
+   ]
+  }
+ ]
+}

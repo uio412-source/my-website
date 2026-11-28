@@ -1,0 +1,375 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09253",
+   "queueKey": "kb-09253",
+   "name": "Easy ring 티타늄카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09253&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09253__prdctOpmn_20200421.pdf",
+   "docDate": "2020-04-21",
+   "annualFee": [
+    {"brand": "Mastercard", "amount": 30000},
+    {"brand": "국내전용", "amount": 30000}
+   ],
+   "brands": ["Mastercard", "국내전용"],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 KB국민 Easy ring 티타늄카드 일시불·할부 승인 금액(해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 실적 없어도 50만~100만 구간 서비스 제공",
+   "spendExclusions": [
+    "취소 금액",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "국세·지방세·공과금(전기·수도)",
+    "아파트 관리비",
+    "정부지원금(보육료·유치원보조비·바우처)",
+    "초중고 납입금 전체",
+    "대학·대학원 등록금",
+    "4대 사회보험료",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "교통요금",
+    "무승인 전표(자판기·터널통행료·항공기 내)"
+   ],
+   "benefitExclusions": [
+    "무이자 할부 이용 금액",
+    "상품권·선불카드 구입·충전",
+    "간편결제(Pay) 이용 금액(음원·영상·배달앱)",
+    "상품권·여행·항공권·티켓·도서·별도 팝업 사이트(온라인 쇼핑)",
+    "대형마트 온라인 결제·상품권 구매·임대매장·SSM",
+    "백화점·마트 입점 일부 가맹점"
+   ],
+   "benefits": [
+    {
+     "group": "통신 할인",
+     "label": "통신요금 자동납부",
+     "place": "SKT·KT·LG U+·KB Liiv M 통신요금 자동납부(유선전화·인터넷 결합상품 포함)",
+     "value": "1만원당 1,500원",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 7000}, {"spend": 1000000, "cap": 15000}, {"spend": 1500000, "cap": 25000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "구간별 7천·1만5천·2만5천원",
+     "conditions": ["승인 건별 1만원 미만 절사 후 합산", "알뜰폰(SKT·KT·LG U+) 제외"]
+    },
+    {
+     "group": "Easy ring+",
+     "label": "영화",
+     "place": "CGV·롯데시네마·메가박스(현장·공식 홈페이지·앱)",
+     "value": "3천원",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 1회",
+     "conditions": ["건당 1만원 이상 결제 시"]
+    },
+    {
+     "group": "Easy ring+",
+     "label": "음원·영상",
+     "place": "멜론·지니·넷플릭스(공식 홈페이지·앱 정기결제)",
+     "value": "건당 5천원당 1천원",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "월 2천원",
+     "conditions": ["간편결제(pay) 이용 금액 제외"]
+    },
+    {
+     "group": "Easy ring+",
+     "label": "배달앱",
+     "place": "요기요·마켓컬리",
+     "value": "2천원",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": 4000,
+     "capScope": "월",
+     "limits": "월 2회(4천원)",
+     "conditions": ["건당 2만원 이상 결제 시", "간편결제(pay) 이용 금액 제외"]
+    },
+    {
+     "group": "Easy ring 선택서비스(택2)",
+     "label": "온라인 쇼핑",
+     "place": "G마켓·옥션·11번가·쿠팡·위메프",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 5000}, {"spend": 1000000, "cap": 10000}, {"spend": 1500000, "cap": 15000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "구간별 5천·1만·1만5천원",
+     "conditions": ["택2 선택서비스(월 1회 변경 가능)"]
+    },
+    {
+     "group": "Easy ring 선택서비스(택2)",
+     "label": "대형마트",
+     "place": "이마트·롯데마트·홈플러스",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 5000}, {"spend": 1000000, "cap": 10000}, {"spend": 1500000, "cap": 15000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "구간별 5천·1만·1만5천원",
+     "conditions": ["온라인 결제·상품권 구매·임대매장·SSM 제외"]
+    },
+    {
+     "group": "Easy ring 선택서비스(택2)",
+     "label": "커피·편의점·제과",
+     "place": "커피·편의점·제과·아이스크림 업종(KB국민카드 등록 가맹점 기준)",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 5000}, {"spend": 1000000, "cap": 10000}, {"spend": 1500000, "cap": 15000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "구간별 5천·1만·1만5천원",
+     "conditions": ["온라인 결제·상품권·선불카드 충전 제외"]
+    },
+    {
+     "group": "Easy ring 선택서비스(택2)",
+     "label": "주유",
+     "place": "SK주유소·GS주유소(충전소 포함)",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 5000}, {"spend": 1000000, "cap": 10000}, {"spend": 1500000, "cap": 15000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "구간별 5천·1만·1만5천원",
+     "conditions": []
+    },
+    {
+     "group": "Easy ring 리워드",
+     "label": "초과 실적 적립",
+     "place": "KB국민 Easy ring 티타늄카드 전 가맹점",
+     "value": "0.3%",
+     "valueType": "적립",
+     "minimumSpend": 1500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "적립 한도 없음",
+     "conditions": ["전월 이용실적 150만원 초과 이용 금액에 대해 포인트리 적립", "실적 산정 다음 달 25일 적립"]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09246",
+   "queueKey": "kb-09246",
+   "name": "Easy auto 티타늄카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09246&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09246__prdctOpmn_20160708.pdf",
+   "docDate": "2016-07-08",
+   "annualFee": [
+    {"brand": "Mastercard", "amount": 30000},
+    {"brand": "국내전용", "amount": 30000}
+   ],
+   "brands": ["Mastercard", "국내전용"],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 KB국민 Easy auto 티타늄카드 일시불·할부 승인 금액(해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 실적 없어도 50만원 구간 서비스 제공",
+   "spendExclusions": [
+    "취소 금액",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "국세·지방세·공과금(전기·수도)",
+    "아파트 관리비",
+    "정부지원금(보육료·유치원보조비·바우처)",
+    "초중고 납입금 전체",
+    "대학·대학원 등록금",
+    "4대 사회보험료",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전"
+   ],
+   "benefitExclusions": [
+    "무이자 할부 이용 금액",
+    "상품권·선불카드 구입·충전",
+    "대형마트 등 일부 입점 매장(차량관리·제과·편의점)"
+   ],
+   "benefits": [
+    {
+     "group": "차량관리 서비스",
+     "label": "주유",
+     "place": "SK주유소·GS칼텍스 주유소·충전소",
+     "value": "리터당 150점",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 10000}, {"spend": 1000000, "cap": 20000}, {"spend": 1500000, "cap": 30000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "구간별 1만·2만·3만 포인트리",
+     "conditions": ["포인트리 적립", "경유·등유·LPG는 휘발유가 환산"]
+    },
+    {
+     "group": "차량관리 서비스",
+     "label": "오토케어",
+     "place": "차량정비·부품·인테리어, 주차장, 세차장, 기타 차량서비스 업종",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 1만점",
+     "conditions": ["포인트리 적립", "대형마트 등 일부 입점 매장 제외"]
+    },
+    {
+     "group": "차량관리 서비스",
+     "label": "자동차보험",
+     "place": "자동차보험(손해보험) 업종",
+     "value": "1만점",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 10000,
+     "capScope": "연",
+     "limits": "연 1회",
+     "conditions": ["보험료 건당 10만원 이상 이용 시", "회계연도(1월 1일~12월 31일) 기준"]
+    },
+    {
+     "group": "Easy auto+ 서비스",
+     "label": "영화",
+     "place": "CGV·롯데시네마·메가박스(공식 홈페이지·앱·현장 결제)",
+     "value": "3천점",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 1회",
+     "conditions": ["건당 1만원 이상 이용 시"]
+    },
+    {
+     "group": "Easy auto+ 서비스",
+     "label": "제과·아이스크림",
+     "place": "제과·아이스크림 업종",
+     "value": "2천점",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 4000,
+     "capScope": "월",
+     "limits": "월 2회",
+     "conditions": ["건당 1만원 이상 이용 시", "백화점·대형마트 입점 매장 제외"]
+    },
+    {
+     "group": "Easy auto+ 서비스",
+     "label": "편의점·올리브영",
+     "place": "CU·GS25, 올리브영",
+     "value": "1천점",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 3회",
+     "conditions": ["건당 1만원 이상 이용 시", "백화점·대형마트 입점 매장 제외"]
+    },
+    {
+     "group": "전 가맹점 적립",
+     "label": "전 가맹점",
+     "place": "국내외 가맹점 신용판매(일시불·할부)",
+     "value": "0.2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "실적 조건·월 적립 한도 없음",
+     "conditions": ["포인트리 적립", "무이자 할부·세금·공과금·관리비 등은 제외"]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09250",
+   "queueKey": "kb-09250",
+   "name": "The Easy카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09250&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09250__prdctOpmn_20181001.pdf",
+   "docDate": "2018-10-01",
+   "annualFee": [
+    {"brand": "Mastercard", "amount": 15000},
+    {"brand": "국내전용", "amount": 15000}
+   ],
+   "brands": ["Mastercard", "국내전용", "JCB"],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 KB국민 The Easy카드 일시불·할부 승인 금액(해외는 매입 완료 기준)",
+   "grace": "실적 조건 없이 기본 적립·할인 제공(추가 적립·할인은 전월 50만원 이상)",
+   "spendExclusions": [
+    "취소 금액",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "각종 세금·공과금(전기·수도)",
+    "아파트 관리비",
+    "정부지원금(보육료·유치원보조비·바우처)",
+    "초중고(국·공립) 납입금",
+    "대학·대학원 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "교통요금",
+    "무승인 전표(자판기·터널통행료·항공기 내)"
+   ],
+   "benefitExclusions": [
+    "무이자 할부 이용 금액",
+    "간편결제(Pay) 이용 금액",
+    "마트 온라인 쇼핑몰·상품권 구매·건물 내 입점 매장·SSM",
+    "백화점·대형마트 입점 일부 가맹점",
+    "학원의 PG 인터넷 결제·유아교육기관·학습자재 업종",
+    "알뜰폰 통신요금"
+   ],
+   "benefits": [
+    {
+     "group": "기본(적립형/할인형 택1)",
+     "label": "전 가맹점",
+     "place": "국내외 모든 가맹점",
+     "value": "0.7%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "전월 실적 조건·월 한도 없음",
+     "conditions": ["적립형 선택 시 포인트리 적립, 할인형 선택 시 청구 할인", "결제일 다음 영업일 적립"]
+    },
+    {
+     "group": "추가 적립(적립형)",
+     "label": "7대 영역 상위 2개",
+     "place": "마트·편의점·커피·주유·학원·미용·생활(통신·관리비 자동납부) 중 월 이용 횟수가 가장 많은 2개 영역",
+     "value": "3%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 10000}, {"spend": 1000000, "cap": 20000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "구간별 1만·2만 포인트리",
+     "conditions": [
+      "상위 2개 영역 합산 이용 금액에 3% 적립",
+      "간편결제(Pay) 이용 금액·무이자 할부·취소 금액 제외",
+      "다음 달 두 번째 금요일 적립"
+     ]
+    },
+    {
+     "group": "추가 할인(할인형)",
+     "label": "7대 영역 상위 2건",
+     "place": "마트·편의점·커피·주유·학원·미용·생활(통신·관리비 자동납부) 중 건당 이용 금액이 가장 큰 2건",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 10000}, {"spend": 1000000, "cap": 20000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "구간별 1만·2만원",
+     "conditions": [
+      "상위 2건에 5% 추가 할인",
+      "간편결제(Pay)·무이자 할부·취소 금액 제외",
+      "다음 달 두 번째 금요일 결제 계좌 입금"
+     ]
+    }
+   ]
+  }
+ ]
+}
