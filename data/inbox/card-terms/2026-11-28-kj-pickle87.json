@@ -1,0 +1,123 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20171202016",
+   "name": "K-TEEN 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20171202016",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20171202016",
+   "docDate": "2017-06-21",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 100000,
+   "spendBasis": "전월 1일~말일 체크카드 이용액(포인트 적립·할인 받은 이용금액, 현금입출금, 기프트카드 구입·충전, 아파트 관리비, 대학 등록금, 공과금·세금, 교통이용금액 제외)",
+   "grace": "카드 최초 발급 후 사용 등록월 포함 익월 말까지 전월실적과 무관하게 10만원 이상 구간 한도 내 제공",
+   "spendExclusions": [
+    "포인트 적립·할인 받은 이용금액",
+    "현금 입출금",
+    "기프트카드 구입·충전",
+    "아파트 관리비",
+    "대학 등록금",
+    "각종 공과금·세금",
+    "교통 이용금액"
+   ],
+   "benefitExclusions": [
+    "선불 충전 금액으로 이용한 건",
+    "무인발급기 예매(영화)"
+   ],
+   "benefits": [
+    {
+     "group": "영화",
+     "label": "CGV·메가박스",
+     "place": "CGV·메가박스 현장 매표소",
+     "value": "1,000P",
+     "valueType": "적립",
+     "minimumSpend": 100000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 1만원 이상"
+    },
+    {
+     "group": "커피",
+     "label": "커피전문점",
+     "place": "카페베네·드롭탑·엔제리너스·파스쿠찌",
+     "value": "500P",
+     "valueType": "적립",
+     "minimumSpend": 100000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 3회, 1만원 이상"
+    },
+    {
+     "group": "패스트푸드",
+     "label": "패스트푸드",
+     "place": "롯데리아·베스킨라빈스",
+     "value": "500P",
+     "valueType": "적립",
+     "minimumSpend": 100000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 3회, 5천원 이상"
+    },
+    {
+     "group": "편의점",
+     "label": "편의점",
+     "place": "세븐일레븐·GS25·미니스톱·CU",
+     "value": "500P",
+     "valueType": "적립",
+     "minimumSpend": 100000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 3회, 5천원 이상"
+    },
+    {
+     "group": "도서",
+     "label": "인터넷서점",
+     "place": "YES24",
+     "value": "500P",
+     "valueType": "적립",
+     "minimumSpend": 100000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 3회, 2만원 이상"
+    },
+    {
+     "group": "교육",
+     "label": "토익 응시료",
+     "place": "토익 응시료",
+     "value": "2,000P",
+     "valueType": "적립",
+     "minimumSpend": 100000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 1회"
+    },
+    {
+     "group": "레저",
+     "label": "놀이공원·레저",
+     "place": "광주패밀리랜드, 여수 디오션 워터파크",
+     "value": "50%·30%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "일",
+     "limits": "본인·동반 1인, 1일 1회"
+    }
+   ]
+  }
+ ]
+}
