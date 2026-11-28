@@ -1,0 +1,92 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20190711001",
+   "name": "LG전자 베스트케어카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20190711001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20190711001",
+   "docDate": "2019-07-08",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 14000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 최초 발급 후 사용등록일부터 다음 달 말일까지 전월실적 30만원 미만이어도 8,000원 캐시백 제공",
+   "spendExclusions": [
+    "무이자할부",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "렌탈료·장기할부 외 이용",
+    "카드거래정지·한도부족·자동이체 누락 시"
+   ],
+   "benefits": [
+    {
+     "group": "렌탈·할부",
+     "label": "LG전자 렌탈료",
+     "place": "LG전자 렌탈료(케어십 포함) 자동이체 또는 LG베스트샵 장기할부",
+     "value": "월 최대 2만원",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 8000
+      },
+      {
+       "spend": 1000000,
+       "cap": 20000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "횟수 제한 없이 월 캐시백 한도 내 합산",
+     "conditions": [
+      "렌탈료 자동이체 또는 장기할부 이용 필수",
+      "렌탈료와 장기할부 캐시백은 중복 적용되지 않음"
+     ]
+    },
+    {
+     "group": "할부",
+     "label": "LG전자 장기할부",
+     "place": "LG베스트샵 40만원 이상 상품",
+     "value": "연 5.5%",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "24·36개월, 원금균등상환"
+    }
+   ]
+  }
+ ]
+}
