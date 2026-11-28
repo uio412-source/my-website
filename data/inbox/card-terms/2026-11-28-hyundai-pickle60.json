@@ -1,0 +1,141 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "hyundai-nve2",
+   "queueKey": "hyundai-nve2",
+   "name": "네이버 현대카드 Edition2",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03403",
+   "termsUrl": "https://www.hyundaicard.com/upload/card/T_AEI-20260320-1625-35_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_%EB%84%A4%EC%9D%B4%EB%B2%84%20Ed2_V1_%EA%B3%B5%EC%8B%9C%EC%8B%A4%EC%9A%A9.pdf",
+   "docDate": "2026-03-20",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "Visa",
+     "amount": 20000
+    },
+    {
+     "brand": "American Express",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Visa",
+    "American Express"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 네이버 현대카드 Edition2 일시불·할부 이용 금액",
+   "grace": "최초 신규 발급 시 카드 수령 등록월 다음 달 이용 건까지는 전월 50만원 미만도 혜택 제공",
+   "spendExclusions": [
+    "국제브랜드 수수료",
+    "해외서비스 수수료",
+    "연회비",
+    "제수수료·이자",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "현금성 유가증권(상품권·기프티콘·외식상품권) 구입",
+    "선불카드 충전 금액"
+   ],
+   "benefits": [
+    {
+     "group": "기본",
+     "label": "국내외 가맹점",
+     "place": "국내외 모든 가맹점",
+     "value": "0.7%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "적립 한도 없음",
+     "conditions": [
+      "추가 혜택 대상점 이용 시 기본 혜택 중복 미적용"
+     ]
+    },
+    {
+     "group": "추가",
+     "label": "네이버플러스 멤버십",
+     "place": "네이버를 통해 네이버페이로 결제한 네이버플러스 멤버십 적립 대상 주문",
+     "value": "7%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "월 2만 네이버페이 포인트",
+     "conditions": [
+      "네이버플러스 멤버십 회원에 한함",
+      "멤버십 해지 시 다음 날 승인 건부터 0.7% 적립"
+     ]
+    },
+    {
+     "group": "추가",
+     "label": "네이버플러스 비회원",
+     "place": "네이버플러스 멤버십 적립 대상 주문",
+     "value": "0.7%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "월 2천 네이버페이 포인트"
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-phhcc",
+   "queueKey": "hyundai-phhcc",
+   "name": "국민행복 현대체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03403",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03403",
+   "docDate": "2026-04-08",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 국민행복 현대체크카드 일시불·할부 이용 금액(국가바우처 사용 금액 제외)",
+   "grace": "최초 신규 발급 시 카드 수령 등록월 다음 달 이용 건까지는 전월 30만원 미만도 혜택 제공",
+   "spendExclusions": [
+    "국가바우처 사용 금액",
+    "연회비",
+    "제수수료·이자",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "국가바우처 사용 금액",
+    "바우처와 본인 부담금 복합 결제 시"
+   ],
+   "benefits": [
+    {
+     "group": "기본",
+     "label": "국내 가맹점",
+     "place": "국내 모든 가맹점(본인 부담금에 한함)",
+     "value": "0.1%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "1회·연간 적립 한도 없음",
+     "conditions": [
+      "국가바우처 사용 금액을 제외한 본인 부담금에만 적용"
+     ]
+    }
+   ]
+  }
+ ]
+}
