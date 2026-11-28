@@ -1,0 +1,83 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "hyundai-kale2t1",
+   "queueKey": "hyundai-kale2t1",
+   "name": "대한항공카드 060",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=KALE2T1",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03209",
+   "docDate": "2026-03-01",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 60000},
+    {"brand": "Visa", "amount": 60000}
+   ],
+   "brands": ["국내전용", "Visa"],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 대한항공카드 060(본인+가족 카드) 일시불·할부 이용 금액",
+   "grace": "최초 신규 발급 시 카드 수령 등록월 다음 달 이용 건까지 전월 50만원 미만도 혜택 제공",
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비·제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "공과금(국세·관세·지방세·상하수도 요금·과태료 등)",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전"
+   ],
+   "benefitExclusions": [
+    "장기카드대출·단기카드대출·연회비·제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "공과금(국세·관세·지방세·상하수도 요금·과태료 등)",
+    "전기 요금·도시가스 요금·아파트 관리비·부동산 임대료·자동납부 서비스 이용 수수료",
+    "사립유치원 교육비·초중고 학교 납입금·대학·대학원 등록금",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "건강보험·국민연금·고용보험·산재보험료",
+    "고속도로 통행 요금·후불하이패스·고속버스 결제",
+    "현대카드 할인·무이자 할부 적용 결제 건의 전체 이용 금액"
+   ],
+   "benefits": [
+    {
+     "group": "기본 혜택",
+     "label": "국내 가맹점",
+     "place": "추가 혜택 대상점을 제외한 국내 가맹점",
+     "value": "1천원당 1마일",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": null,
+     "limits": "적립 한도 없음",
+     "conditions": ["스카이패스 마일리지 적립", "간편결제·해외 원화 결제는 국내 가맹점으로 구분"]
+    },
+    {
+     "group": "추가 혜택",
+     "label": "대한항공 직판 항공권",
+     "place": "대한항공 홈페이지·앱·서비스센터·국내 시내 및 공항 지점(원화 결제)",
+     "value": "1천원당 2마일",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 2만 마일(초과 시 1마일)",
+     "conditions": ["여행사·예약 사이트 결제는 국내 가맹점 기본 혜택 적용", "외화·해외 지점 결제는 해외 가맹점 적립률"]
+    },
+    {
+     "group": "추가 혜택",
+     "label": "해외 가맹점",
+     "place": "해외 온·오프라인 가맹점(외화 결제)",
+     "value": "1천원당 2마일",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": 4000,
+     "capScope": "월",
+     "limits": "월 4천 마일(초과 시 1마일)",
+     "conditions": ["해외 가맹점에서 외화 결제 시에만 추가 적립", "본인+가족 카드 합산 한도"]
+    }
+   ]
+  }
+ ]
+}
