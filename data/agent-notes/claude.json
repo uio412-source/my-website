@@ -1,9 +1,16 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-28T05:03:00+09:00",
+  "updatedAt": "2026-11-28T10:50:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-28T10:50:00+09:00",
+      "kind": "code",
+      "pr": 280,
+      "summary": "Mr. Pay 매일 확인 — 배너 변동 없음(checked만), brands.json에 토스 페이스페이 '페페데이'(11/26~27) 참여 브랜드 자담치킨·감성커피·진교동찜닭(일부) 추가. 온누리 10% 특별할인(11/2~6)·K-베이커리 페스티벌(11/18~20)은 끝나서 안 넣음, 남대문 'A약국' 기사는 익명이라 제외",
+      "queueKeys": []
+    },
     {
       "at": "2026-11-28T05:03:00+09:00",
       "kind": "collect",

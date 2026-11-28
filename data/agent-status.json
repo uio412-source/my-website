@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T05:05:49+09:00",
+  "generatedAt": "2026-11-28T10:29:03+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -9,7 +9,12 @@
       "role": "ChatGPT 예약 작업·Dot — 데이터 수집(data/inbox) 담당. 브랜치 ai/chatgpt/data-*, 파일 YYYY-MM-DD-<출처>.json(접미사 없음).",
       "updatedAt": "2026-11-25T19:40:00+09:00",
       "lock": null,
-      "lastMergedPR": null,
+      "lastMergedPR": {
+        "number": 278,
+        "title": "data: 수집 2026-11-28 (카드·여행 이벤트 5건)",
+        "mergedAt": "2026-11-28T00:11:16Z",
+        "mergedAtKST": "2026-11-28 09:11"
+      },
       "runs": [
         {
           "at": "2026-11-25T15:09:00+09:00",
@@ -35,15 +40,22 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-28T05:03:00+09:00",
+      "updatedAt": "2026-11-28T10:50:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 239,
-        "title": "data: 수집 2026-11-27 4차 (Claude · 하나카드 상품설명서 26종)",
-        "mergedAt": "2026-11-27T13:26:27Z",
-        "mergedAtKST": "2026-11-27 22:26"
+        "number": 280,
+        "title": "pay: 매일 확인 2026-11-28 — 토스 페이스페이 브랜드 3곳(자담치킨·감성커피·진교동찜닭)",
+        "mergedAt": "2026-11-28T01:27:21Z",
+        "mergedAtKST": "2026-11-28 10:27"
       },
       "runs": [
+        {
+          "at": "2026-11-28T10:50:00+09:00",
+          "kind": "code",
+          "pr": 280,
+          "summary": "Mr. Pay 매일 확인 — 배너 변동 없음(checked만), brands.json에 토스 페이스페이 '페페데이'(11/26~27) 참여 브랜드 자담치킨·감성커피·진교동찜닭(일부) 추가. 온누리 10% 특별할인(11/2~6)·K-베이커리 페스티벌(11/18~20)은 끝나서 안 넣음, 남대문 'A약국' 기사는 익명이라 제외",
+          "queueKeys": []
+        },
         {
           "at": "2026-11-28T05:03:00+09:00",
           "kind": "collect",
@@ -1666,6 +1678,48 @@
   ],
   "recentPRs": [
     {
+      "number": 280,
+      "title": "pay: 매일 확인 2026-11-28 — 토스 페이스페이 브랜드 3곳(자담치킨·감성커피·진교동찜닭)",
+      "agent": "Claude",
+      "branch": "ai/claude/pay-daily-2026-11-28",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T01:27:21Z",
+      "mergedAtKST": "2026-11-28 10:27",
+      "createdAt": "2026-11-28T01:23:02Z",
+      "createdAtKST": "2026-11-28 10:23",
+      "area": "6파일 · data/ 2 · docs/ 2 · pay/ 2",
+      "files": 6,
+      "url": "https://github.com/uio412-source/my-website/pull/280"
+    },
+    {
+      "number": 279,
+      "title": "Mr. Stocks 배당: 프로필 User1·User2·User3 + 평단·수량·현재가·수익률",
+      "agent": "Claude",
+      "branch": "ai/claude/dividend-profiles",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T01:19:08Z",
+      "mergedAtKST": "2026-11-28 10:19",
+      "createdAt": "2026-11-28T01:18:54Z",
+      "createdAtKST": "2026-11-28 10:18",
+      "area": "6파일 · assets/ 2 · 루트 2 · data/ 1 외 1곳",
+      "files": 6,
+      "url": "https://github.com/uio412-source/my-website/pull/279"
+    },
+    {
+      "number": 278,
+      "title": "data: 수집 2026-11-28 (카드·여행 이벤트 5건)",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/data-2026-11-28",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T00:11:16Z",
+      "mergedAtKST": "2026-11-28 09:11",
+      "createdAt": "2026-11-28T00:01:02Z",
+      "createdAtKST": "2026-11-28 09:01",
+      "area": "4파일 · data/inbox/card-events 2 · data/inbox/travel-events 2",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/278"
+    },
+    {
       "number": 276,
       "title": "docs: 공용 현황판 갱신 (2026-11-28 Pickle · 현대카드 안내문 경로 기록)",
       "agent": "Pickle",
@@ -2168,48 +2222,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/241"
-    },
-    {
-      "number": 240,
-      "title": "docs: 수집 대기열·공용 현황판 갱신 (2026-11-27 Pickle #238 반영)",
-      "agent": "Pickle",
-      "branch": "ai/pickle/queue-sync-2026-11-27-pickle238",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T13:27:51Z",
-      "mergedAtKST": "2026-11-27 22:27",
-      "createdAt": "2026-11-27T13:27:09Z",
-      "createdAtKST": "2026-11-27 22:27",
-      "area": "4파일 · data/ 3 · docs/ 1",
-      "files": 4,
-      "url": "https://github.com/uio412-source/my-website/pull/240"
-    },
-    {
-      "number": 238,
-      "title": "data: 수집 2026-11-27 48차 (롯데카드 상품설명서 5종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle48",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T13:26:42Z",
-      "mergedAtKST": "2026-11-27 22:26",
-      "createdAt": "2026-11-27T13:22:37Z",
-      "createdAtKST": "2026-11-27 22:22",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/238"
-    },
-    {
-      "number": 239,
-      "title": "data: 수집 2026-11-27 4차 (Claude · 하나카드 상품설명서 26종)",
-      "agent": "Claude",
-      "branch": "ai/claude/data-2026-11-27-hana2",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T13:26:27Z",
-      "mergedAtKST": "2026-11-27 22:26",
-      "createdAt": "2026-11-27T13:26:07Z",
-      "createdAtKST": "2026-11-27 22:26",
-      "area": "5파일 · data/ 3 · data/inbox/card-terms 1 · docs/ 1",
-      "files": 5,
-      "url": "https://github.com/uio412-source/my-website/pull/239"
     }
   ],
   "queue": {
@@ -2231,16 +2243,16 @@
         "total": 94
       },
       "eventSources": {
-        "collected": 9,
+        "collected": 11,
         "total": 30
       }
     },
     "lastCollected": {
       "card-terms": "2026-11-28",
       "brand-services": "2026-11-28",
-      "card-events": "2026-11-27",
+      "card-events": "2026-11-28",
       "hotel-events": null,
-      "travel-events": null,
+      "travel-events": "2026-11-28",
       "card-products": "2026-11-26"
     }
   },

@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-27",
+ "checked": "2026-11-28",
  "about": "토스페이·네이버페이 페이스사인(얼굴결제)이 되는 매장·시장·브랜드·장소. 매장 단위 공개 목록이 없어(앱 지도에만 있음) 공식 발표·보도·매장 공개 안내에 나온 곳만 적음. status: 됨(지금 됨)·일부(일부 매장·시범)·예정(도입 발표만). kind: store(매장 하나: sido·sgg·market로 그 시도의 온누리 가맹점과 상호를 맞춤)·market(시장·상점가 전체: 그 시장의 디지털 온누리 가맹점)·brand(상호에 들어가는 프랜차이즈 이름)·place(장소, 맞추지 않음). onnuri: 매장·시장에서 온누리도 되는지(됨·확인 필요). match:false는 흔한 이름이라 상호 대조에서 뺌. 맞춘 결과는 tools/pay/check_stores.py로 확인. 매월 초 확인.",
  "programs": [
   {
@@ -380,6 +380,47 @@
    "date": "2026-10",
    "src": "https://biz.sbs.co.kr/amp/article/20000342045",
    "srcTitle": "SBS Biz · 토스, '페이스페이' 20% 적립 프로모션…900만 가입자 돌파"
+  },
+  {
+   "name": "자담치킨",
+   "aliases": [],
+   "kind": "brand",
+   "cat": "치킨",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "일부",
+   "scope": "페이스페이 결제가 되는 가맹점만(2026-11-26~27 '페페데이' 20% 할인 행사), 되는 매장 수는 안내 없음 · 토스 앱에서 확인",
+   "date": "2026-11",
+   "src": "https://www.eroun.net/news/articleView.html?idxno=96567",
+   "srcTitle": "이로운넷 · 자담치킨, 토스 '페페데이' 참여… 매장 결제 시 20% 할인",
+   "src2": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5087779"
+  },
+  {
+   "name": "감성커피",
+   "aliases": [],
+   "kind": "brand",
+   "cat": "카페",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "일부",
+   "scope": "페이스페이 되는지는 매장마다 다름(2026-11-26~27 '페페데이' 할인 행사) · 토스 앱에서 확인",
+   "date": "2026-11",
+   "src": "https://www.sisunnews.co.kr/news/articleView.html?idxno=250436",
+   "srcTitle": "시선뉴스 · 감성커피, 토스 페이스페이 프로모션 '페페데이' 진행",
+   "src2": "https://www.gokorea.kr/news/articleView.html?idxno=887240"
+  },
+  {
+   "name": "진교동찜닭",
+   "aliases": [],
+   "kind": "brand",
+   "cat": "음식점",
+   "program": "toss",
+   "method": "페이스페이",
+   "status": "일부",
+   "scope": "참여 매장만(2026-11-26~27 '페페데이' 최대 20%·1만원 할인), 매장별 페이스페이 여부는 토스 앱에서 확인",
+   "date": "2026-11",
+   "src": "https://www.enetnews.co.kr/news/articleView.html?idxno=56824",
+   "srcTitle": "이넷뉴스 · 진교동찜닭, 토스 '페페데이' 참여"
   },
   {
    "name": "경희대학교 서울캠퍼스",

@@ -22,6 +22,17 @@
 .dv-kpi small { font-size: .74rem; color: var(--color-muted); font-variant-numeric: tabular-nums; }
 .dv-kpi.accent b { color: var(--color-primary); }
 
+/* ----- 프로필 · 평가 ----- */
+.dv-prof { margin: -4px 0 14px; }
+.dv-val {
+  display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 14px 0 0; padding-top: 12px;
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+  font-size: .78rem; color: var(--color-muted); font-weight: 600;
+}
+.dv-val b { color: var(--color-text); font-weight: 800; font-variant-numeric: tabular-nums; margin-left: 4px; white-space: nowrap; }
+.dv-val b.up { color: var(--color-up); }
+.dv-val b.down { color: var(--color-down); }
+
 /* ----- 월별 예상 배당 ----- */
 .dv-cal { margin-bottom: 22px; }
 .cal-bars {
@@ -59,6 +70,22 @@
 .dv-empty b { font-size: 1rem; }
 .dv-empty p { margin: 0 0 10px; font-size: .85rem; color: var(--color-muted); }
 .dv-note { font-size: .74rem; color: var(--color-muted); line-height: 1.6; margin: 0; }
+.dv-sort, .dv-reset {
+  font: inherit; font-size: .75rem; font-weight: 700; cursor: pointer; padding: 0; border: 0; background: none;
+  color: var(--color-muted); text-decoration: underline; text-underline-offset: 3px;
+}
+.dv-reset { font-size: inherit; color: var(--color-primary); }
+@media (hover: hover) { .dv-sort:hover { color: var(--color-primary); } }
+/* 종목 줄 아래 수량 · 평단 · 현재가 · 수익률 */
+.dv-row .dv-st {
+  grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px;
+  margin-top: -2px; padding: 8px 10px; border-radius: 10px; background: var(--color-bg-alt);
+}
+.dv-st > span { display: flex; flex-direction: column; gap: 1px; min-width: 0; font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dv-st i { font-style: normal; font-size: .66rem; font-weight: 600; color: var(--color-muted); }
+.dv-st em { font-style: normal; }
+.dv-st em.up { color: var(--color-up); }
+.dv-st em.down { color: var(--color-down); }
 
 /* ----- 추가 · 수정 시트 ----- */
 .fld { display: flex; flex-direction: column; gap: 5px; font-size: .78rem; font-weight: 700; color: var(--color-muted); min-width: 0; }

@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 05:05 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 10:29 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,9 @@ _자동 생성 2026-11-28 05:05 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#280](https://github.com/uio412-source/my-website/pull/280) | Claude | pay: 매일 확인 2026-11-28 — 토스 페이스페이 브랜드 3곳(자담치킨·감성커피·진교동찜닭) | 2026-11-28 10:27 | 6파일 · data/ 2 · docs/ 2 · pay/ 2 | 머지 |
+| [#279](https://github.com/uio412-source/my-website/pull/279) | Claude | Mr. Stocks 배당: 프로필 User1·User2·User3 + 평단·수량·현재가·수익률 | 2026-11-28 10:19 | 6파일 · assets/ 2 · 루트 2 · data/ 1 외 1곳 | 머지 |
+| [#278](https://github.com/uio412-source/my-website/pull/278) | ChatGPT | data: 수집 2026-11-28 (카드·여행 이벤트 5건) | 2026-11-28 09:11 | 4파일 · data/inbox/card-events 2 · data/inbox/tra… | 머지 |
 | [#276](https://github.com/uio412-source/my-website/pull/276) | Pickle | docs: 공용 현황판 갱신 (2026-11-28 Pickle · 현대카드 안내문 경로 기록) | 2026-11-28 03:04 | 3파일 · data/ 2 · docs/ 1 | 머지 |
 | [#275](https://github.com/uio412-source/my-website/pull/275) | Pickle | docs: 공용 현황판 갱신 (2026-11-28 Pickle 카드명 정정 반영) | 2026-11-28 02:55 | 3파일 · data/ 2 · docs/ 1 | 머지 |
 | [#274](https://github.com/uio412-source/my-website/pull/274) | Pickle | data: 수집 2026-11-28 3차 (SC제일은행 ZERO Edition3 카드명 정정) | 2026-11-28 02:54 | 1파일 · data/inbox/card-terms 1 | 머지 |
@@ -57,9 +60,6 @@ _자동 생성 2026-11-28 05:05 KST · `python tools/data/agent_sync.py` · 기�
 | [#257](https://github.com/uio412-source/my-website/pull/257) | Pickle | data: 수집 2026-11-27 64차 (IBK기업은행 체크 5종) | 2026-11-27 23:38 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#256](https://github.com/uio412-source/my-website/pull/256) | Pickle | data: 수집 2026-11-27 63차 (IBK기업은행 제휴·지역 7종) | 2026-11-27 23:33 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#255](https://github.com/uio412-source/my-website/pull/255) | Pickle | data: 수집 2026-11-27 62차 (IBK기업은행 제휴·지역 5종) | 2026-11-27 23:30 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#254](https://github.com/uio412-source/my-website/pull/254) | Pickle | data: 수집 2026-11-27 61차 (IBK기업은행 5종) | 2026-11-27 23:26 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#253](https://github.com/uio412-source/my-website/pull/253) | Pickle | data: 수집 2026-11-27 60차 (IBK기업은행 6종) | 2026-11-27 23:22 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#252](https://github.com/uio412-source/my-website/pull/252) | Pickle | data: 수집 2026-11-27 59차 (IBK기업은행 7종) | 2026-11-27 23:18 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -80,15 +80,15 @@ _지금 잠근 영역이 없습니다._
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 680 / 1447종 · **브랜드 프로그램** todo 48 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 9 / 30곳
-- **최근 수집일** — card-terms 2026-11-28 · brand-services 2026-11-28 · card-events 2026-11-27 · hotel-events 없음 · travel-events 없음 · card-products 2026-11-26
+- **남은 카드** 680 / 1447종 · **브랜드 프로그램** todo 48 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 11 / 30곳
+- **최근 수집일** — card-terms 2026-11-28 · brand-services 2026-11-28 · card-events 2026-11-28 · hotel-events 없음 · travel-events 2026-11-28 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
 
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
-| ChatGPT | `data/agent-notes/chatgpt.json` | - | - | 0건 |
-| Claude | `data/agent-notes/claude.json` | #239 data: 수집 2026-11-27 4차 (Claude · … | 2026-11-27 22:26 | 22건 |
+| ChatGPT | `data/agent-notes/chatgpt.json` | #278 data: 수집 2026-11-28 (카드·여행 이벤트 5건) | 2026-11-28 09:11 | 0건 |
+| Claude | `data/agent-notes/claude.json` | #280 pay: 매일 확인 2026-11-28 — 토스 페이스페이 … | 2026-11-28 10:27 | 22건 |
 | Pickle | `data/agent-notes/pickle.json` | #276 docs: 공용 현황판 갱신 (2026-11-28 Pickl… | 2026-11-28 03:04 | 56건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
