@@ -71,7 +71,9 @@ _지금 잠근 영역이 없습니다._
 
 ### 열린 PR
 
-_열린 PR이 없습니다._
+| PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
+|---|---|---|---|---|---|
+| [#390](https://github.com/uio412-source/my-website/pull/390) | Claude | `ai/claude/hyundai-business-terms-2` | 2026-11-28 22:22 | 4파일 · data/ 2 · data/inbox/card-terms 1… | data: 현대카드 BUSINESS 상품설명서 2차 — MY BUSINESS·캐시노트·햇… |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-28)
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T22:22:07+09:00",
+  "generatedAt": "2026-11-28T22:22:27+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -52,7 +52,7 @@
         {
           "at": "2026-11-28T23:20:00+09:00",
           "kind": "collect",
-          "pr": null,
+          "pr": 390,
           "summary": "card-terms 현대카드 BUSINESS 2차 6종 — MY BUSINESS the Orange(가이드북 2026.01)·Summit(2026.04)·ZERO Up 포인트형(2026.06)·M Retail(2026.03)·캐시노트 BUSINESS(2025.11)·소상공인 특례 햇살론(2025.11). 기존 Pickle 정리본의 '사업성 경비 영역'·'사업 영역'을 실제 대상점·영역별/통합 한도(월 1만·2만·2만5천·3만 M포인트, 햇살론 월 2만원)로 나누고 바우처·라운지·발레 채움. 9종 모두 상세 혜택 표가 정리본으로 그려짐(table=true)",
           "queueKeys": [
             "hyundai-mbto",
@@ -2573,7 +2573,18 @@
     }
   },
   "locks": [],
-  "openPRs": [],
+  "openPRs": [
+    {
+      "number": 390,
+      "title": "data: 현대카드 BUSINESS 상품설명서 2차 — MY BUSINESS·캐시노트·햇살론 6종",
+      "agent": "Claude",
+      "branch": "ai/claude/hyundai-business-terms-2",
+      "createdAtKST": "2026-11-28 22:22",
+      "area": "4파일 · data/ 2 · data/inbox/card-terms 1 · docs/ 1",
+      "url": "https://github.com/uio412-source/my-website/pull/390",
+      "draft": false
+    }
+  ],
   "recentPRs": [
     {
       "number": 389,
@@ -3120,20 +3131,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/351"
-    },
-    {
-      "number": 350,
-      "title": "data: 수집 2026-11-28 (Pickle58 · KB AMEX Blue·Biz Prime 상품설명서 2종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle58",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T08:24:39Z",
-      "mergedAtKST": "2026-11-28 17:24",
-      "createdAt": "2026-11-28T08:24:17Z",
-      "createdAtKST": "2026-11-28 17:24",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/350"
     }
   ],
   "queue": {
