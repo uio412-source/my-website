@@ -1,0 +1,1502 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-29",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "hyundai-tpe4",
+   "queueKey": "hyundai-tpe4",
+   "name": "the Purple",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=TPE4",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03268",
+   "docDate": "2026-07-29",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 1000000
+    },
+    {
+     "brand": "국내외겸용(Visa Infinite)",
+     "amount": 1000000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용(Visa Infinite)"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 the Purple(본인+가족) 일시불·할부 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "국제브랜드 수수료",
+    "해외서비스 수수료",
+    "국세·관세·지방세 등 공과금",
+    "상품권 등 현금성 유가증권 구매",
+    "선불카드 구매·충전금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "기본 적립",
+     "place": "국내외 가맹점 (대한항공 마일리지형)",
+     "value": "1,000원당 1마일",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "1회·연간 한도 없음"
+    },
+    {
+     "label": "기본 적립",
+     "place": "국내외 가맹점 (M포인트형)",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "1회·연간 한도 없음"
+    },
+    {
+     "label": "the Purple Vouchers",
+     "place": "럭셔리 브랜드(키톤·몽클레르)·국내 파인다이닝",
+     "value": "10만원권 7매",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "limits": "연 1회",
+     "conditions": [
+      "발급 첫해 누적 이용금액 400만원 이상",
+      "2차년도부터 전년도 이용금액 4,000만원 이상",
+      "본인 카드 제시, 1회 최대 7매 중복 사용"
+     ]
+    },
+    {
+     "label": "공항 라운지",
+     "place": "Priority Pass 제휴 라운지 (본인)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "limits": "이용 한도 제한 없음",
+     "conditions": [
+      "발급 첫해 누적 400만원 이상, 2차년도부터 전년도 4,000만원 이상"
+     ]
+    },
+    {
+     "label": "공항 라운지",
+     "place": "마티나 골드 라운지 (인천국제공항 제2여객터미널)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "limits": "연 6회",
+     "conditions": [
+      "본인 회원 한정, 실물 카드 제시"
+     ]
+    },
+    {
+     "label": "발레파킹",
+     "place": "인천국제공항 및 특급호텔 3곳",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "limits": "공항·호텔 통합 월 10회",
+     "conditions": [
+      "그랜드 인터컨티넨탈 서울 파르나스·그랜드 하얏트 서울·페어몬트 앰배서더 서울",
+      "호텔 객실·식음료 이용 후 주차권·실물 카드·영수증 제시",
+      "주차 비용 별도"
+     ]
+    },
+    {
+     "label": "메탈 플레이트",
+     "place": "본인·가족 회원",
+     "value": "제공",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "conditions": [
+      "카드 유효기간 내 재발급 신청 시 본인 발급 수수료 1회 무료"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-hmhc",
+   "queueKey": "hyundai-hmhc",
+   "name": "Hyundai Mobility카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=HMHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02869",
+   "docDate": "2025-04-03",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "국내외겸용(VISA/AMEX)",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용(VISA/AMEX)"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "결제일자에 청구된 당월 이용금액(본인+가족) 일시불·할부",
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "국제브랜드 수수료",
+    "해외서비스 수수료",
+    "국세·관세·지방세 등 공과금",
+    "전기요금",
+    "도시가스요금",
+    "아파트 관리비",
+    "초·중·고교 학교납입금",
+    "대학·대학원 등록금",
+    "자동납부서비스 이용수수료",
+    "상품권 등 현금성 유가증권 구매",
+    "선불카드 충전금액",
+    "건강보험·국민연금·고용보험·산재보험",
+    "고속도로 통행요금",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "차량유지관리",
+     "place": "주유·가스 충전·정비·주차·세차·하이패스 업종",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "기본 적립, 한도 없음"
+    },
+    {
+     "label": "차량유지관리",
+     "place": "주유·가스 충전·정비·주차·세차·하이패스 업종",
+     "value": "2%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "추가 적립, 월 이용금액 30만원 한도"
+    },
+    {
+     "label": "Mobility",
+     "place": "대중교통(철도·고속버스·시내버스·지하철·택시)·쏘카·타다",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "기본 적립, 한도 없음"
+    },
+    {
+     "label": "Mobility",
+     "place": "대중교통(철도·고속버스·시내버스·지하철·택시)·쏘카·타다",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "추가 적립, 월 이용금액 30만원 한도"
+    },
+    {
+     "label": "일반 가맹점",
+     "place": "그 외 일반 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "한도 없음"
+    },
+    {
+     "label": "현대 인증중고차",
+     "place": "현대 인증중고차",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "당월 이용금액과 무관하게 적립"
+     ]
+    },
+    {
+     "label": "신차 구매",
+     "place": "현대자동차 신차 구매",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "특별 적립, 기본·추가 적립과 중복 불가"
+     ]
+    },
+    {
+     "label": "차량 정비",
+     "place": "현대자동차 Bluehands 서비스센터 및 협력업체",
+     "value": "2만원 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 20000,
+     "capScope": "연",
+     "conditions": [
+      "연간 2만원 한도 내 5천원 단위로 선택 사용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-yshc",
+   "queueKey": "hyundai-yshc",
+   "name": "예스24 현대카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=YSHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02912",
+   "docDate": "2025-03-19",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    },
+    {
+     "brand": "국내외겸용(Visa)",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용(Visa)"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "국제브랜드 수수료",
+    "해외서비스 수수료",
+    "국세·관세·지방세 등 공과금",
+    "전기요금",
+    "도시가스요금",
+    "아파트 관리비",
+    "초·중·고교 학교납입금",
+    "대학·대학원 등록금",
+    "자동납부서비스 이용수수료",
+    "상품권 등 현금성 유가증권 구매",
+    "선불카드 충전금액",
+    "건강보험·국민연금·고용보험·산재보험",
+    "고속도로 통행요금",
+    "고속버스",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "예스24",
+     "place": "예스24 간편결제(온라인 YES24)",
+     "value": "3%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "limits": "실적·한도 제한 없음",
+     "conditions": [
+      "크레마클럽(eBook 정기구독)·오프라인 중고매장 제외"
+     ]
+    },
+    {
+     "label": "예스24",
+     "place": "예스24 일반 결제",
+     "value": "2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "limits": "실적·한도 제한 없음",
+     "conditions": [
+      "국내도서·외국도서·중고샵·eBook·CD/LP·DVD·문구/GIFT만 해당"
+     ]
+    },
+    {
+     "label": "그 외 가맹점",
+     "place": "그 외 국내외 가맹점",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "limits": "실적·한도 제한 없음"
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-mrded2",
+   "queueKey": "hyundai-mrded2",
+   "name": "Kia Members 신용카드 Edition2",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=MRDED2",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02714",
+   "docDate": "2026-05-08",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "국내외겸용(Visa/Amex)",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용(Visa/Amex)"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "결제일자에 청구된 당월 이용금액(본인+가족) 일시불·할부",
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "국세·관세·지방세 등 공과금",
+    "전기요금",
+    "도시가스요금",
+    "아파트 관리비",
+    "초·중·고교 학교납입금",
+    "대학·대학원 등록금",
+    "자동납부서비스 이용수수료",
+    "상품권 등 현금성 유가증권 구매",
+    "선불카드 구매·충전금액",
+    "건강보험·국민연금·고용보험·산재보험",
+    "고속도로 통행요금",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "기본 적립",
+     "place": "국내외 가맹점",
+     "value": "0.5~1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "M포인트, 한도 없음",
+     "conditions": [
+      "당월 이용금액 50만~100만원 0.5%, 100만원 이상 1%",
+      "세이브-오토 상환 중에는 1.5%"
+     ]
+    },
+    {
+     "label": "신차 구매",
+     "place": "기아 신차 구매",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "conditions": [
+      "기아멤버스 포인트는 특별 적립만 적용, 기본 적립과 중복 불가"
+     ]
+    },
+    {
+     "label": "인증중고차",
+     "place": "기아 인증중고차 구매",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null
+    },
+    {
+     "label": "Kia Members 제휴처",
+     "place": "Kia Members 제휴처",
+     "value": "0.5~2%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "기가멤버스 포인트, 제휴처 이용금액 월 300만원·연 2,000만원 한도",
+     "conditions": [
+      "당월 이용금액·세이브-오토 경험 여부에 따라 0.5~2%"
+     ]
+    },
+    {
+     "label": "주유",
+     "place": "GS칼텍스 주유",
+     "value": "리터당 60 M포인트",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "일 2회, 1회 10만원 한도, LPG 제외"
+    },
+    {
+     "label": "신차 구매",
+     "place": "기아 신차 구매 (세이브-오토 이용)",
+     "value": "2만 기아멤버스 포인트",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "conditions": [
+      "차량 결제금액 200만원 이상",
+      "세이브-오토 이용 시에 한함"
+     ]
+    },
+    {
+     "label": "연간 이용",
+     "place": "카드 발급월부터 1년간 이용금액 6백만원 이상",
+     "value": "1만 기아멤버스 포인트",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "conditions": [
+      "발급 2차년도부터 제공"
+     ]
+    },
+    {
+     "label": "차량 정비",
+     "place": "기아 공식 서비스센터",
+     "value": "2만원 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 20000,
+     "capScope": "연",
+     "conditions": [
+      "1만원 단위 선택 가능, 연간 2만원 한도"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-mcwye3",
+   "queueKey": "hyundai-mcwye3",
+   "name": "coway-현대카드M Edition3",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=MCWYE3",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02733",
+   "docDate": "2026-05-19",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "국내외겸용(VISA)",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용(VISA)"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 coway-현대카드M Edition3(본인+가족) 일시불·할부 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "국세·관세·지방세 등 공과금",
+    "전기요금",
+    "도시가스요금",
+    "아파트 관리비",
+    "초·중·고교 학교납입금",
+    "대학·대학원 등록금",
+    "자동납부서비스 이용수수료",
+    "상품권 등 현금성 유가증권 구매",
+    "선불카드 구매·충전금액",
+    "건강보험·국민연금·고용보험·산재보험",
+    "고속도로 통행요금",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "coway 렌탈요금",
+     "place": "coway 렌탈요금 자동납부 (1~36개월 차)",
+     "value": "1만5천원 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "월",
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 15000
+      },
+      {
+       "spend": 1000000,
+       "cap": 20000
+      }
+     ],
+     "limits": "월 할인한도",
+     "conditions": [
+      "37개월 차부터는 M포인트 적립 기준 적용",
+      "coway 고객센터 자동납부 신청 필요"
+     ]
+    },
+    {
+     "label": "기본 적립",
+     "place": "커피·영화·대중교통·베이커리·편의점·학원·외식·통신·백화점·마트 등 업종",
+     "value": "0.5~3%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "1회·연간 적립한도 제한 없음",
+     "conditions": [
+      "당월 이용금액 100만원 이상 시 1.5배 적립",
+      "커피·영화 3%, 대중교통·베이커리 2% 등"
+     ]
+    },
+    {
+     "label": "신차 구매",
+     "place": "현대자동차·기아 신차 구매",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null
+    },
+    {
+     "label": "주유",
+     "place": "GS칼텍스 주유",
+     "value": "리터당 60 M포인트",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "limits": "일 2회, 1회 10만원 한도, LPG 제외"
+    },
+    {
+     "label": "추가 적립",
+     "place": "G마켓·GS SHOP·신세계몰 (현대카드 홈페이지 경유)",
+     "value": "1~2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "G마켓 1%, GS SHOP 2%, 신세계몰 2% 추가 적립",
+      "기본 적립과 중복 적용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-mkte3",
+   "queueKey": "hyundai-mkte3",
+   "name": "kt-현대카드M Edition3(청구할인형)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=MKTE3",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02847",
+   "docDate": "2026-05-19",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "국내외겸용(VISA)",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용(VISA)"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 kt-현대카드M Edition3(본인+가족) 일시불·할부 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "국세·관세·지방세 등 공과금",
+    "전기요금",
+    "도시가스요금",
+    "아파트 관리비",
+    "초·중·고교 학교납입금",
+    "대학·대학원 등록금",
+    "자동납부서비스 이용수수료",
+    "상품권 등 현금성 유가증권 구매",
+    "선불카드 구매·충전금액",
+    "건강보험·국민연금·고용보험·산재보험",
+    "고속도로 통행요금",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액",
+    "청구 할인이 적용된 kt 통신요금",
+    "kt 라이트할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "kt 통신요금",
+     "place": "kt 통신요금 자동이체 (1~24개월 차)",
+     "value": "1만3천원 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "월",
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 13000
+      },
+      {
+       "spend": 700000,
+       "cap": 18000
+      }
+     ],
+     "limits": "월 할인한도",
+     "conditions": [
+      "kt 고객센터 자동이체 신청 필요",
+      "자동이체 아닌 결제·납기 경과 결제는 할인 제외"
+     ]
+    },
+    {
+     "label": "kt 통신요금",
+     "place": "kt 통신요금 자동이체 (25개월 차부터)",
+     "value": "6천원 할인",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 6000,
+     "capScope": "월",
+     "limits": "월 할인한도"
+    },
+    {
+     "label": "기본 적립",
+     "place": "커피·영화·대중교통·베이커리·편의점·학원·외식·통신·백화점·마트 등 업종",
+     "value": "0.5~3%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "1회·연간 적립한도 제한 없음",
+     "conditions": [
+      "당월 이용금액 100만원 이상 시 1.5배 적립",
+      "커피·영화 3%, 대중교통·베이커리 2% 등"
+     ]
+    },
+    {
+     "label": "신차 구매",
+     "place": "현대자동차·기아 신차 구매",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null
+    },
+    {
+     "label": "주유",
+     "place": "GS칼텍스 주유",
+     "value": "리터당 60 M포인트",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "limits": "일 2회, 1회 10만원 한도, LPG 제외"
+    },
+    {
+     "label": "추가 적립",
+     "place": "G마켓·GS SHOP·신세계몰 (현대카드 홈페이지 경유)",
+     "value": "1~2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "G마켓 1%, GS SHOP 2%, 신세계몰 2% 추가 적립",
+      "기본 적립과 중복 적용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-mcje2",
+   "queueKey": "hyundai-mcje2",
+   "name": "The CJ-현대카드M Edition2",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=MCJE2",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=01026",
+   "docDate": "2026-05-19",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 The CJ-현대카드M Edition2(본인+가족) 일시불·할부 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "국세·관세·지방세 등 공과금",
+    "전기요금",
+    "도시가스요금",
+    "아파트 관리비",
+    "초·중·고교 학교납입금",
+    "대학·대학원 등록금",
+    "자동납부서비스 이용수수료",
+    "상품권 등 현금성 유가증권 구매",
+    "선불카드 구매·충전금액",
+    "건강보험·국민연금·고용보험·산재보험",
+    "고속도로 통행요금",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "기본 적립",
+     "place": "버스·지하철·택시·영화·공연·서점·커피·베이커리·편의점·외식·백화점·할인점 등 업종",
+     "value": "0.5~2%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "1회·연간 적립한도 무제한",
+     "conditions": [
+      "당월 이용금액 100만원 이상 시 1.5배 적립(0.75~3%)",
+      "버스·지하철·택시·영화·커피·베이커리 2%, 편의점·보험·화장품 1%, 외식·온라인쇼핑 0.7% 등"
+     ]
+    },
+    {
+     "label": "The CJ적립금",
+     "place": "VIPS·더플레이스·더스테이크하우스·빕스버거·제일제면소·푸드월드·한쿡·더방",
+     "value": "2%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "conditions": [
+      "CJmall 회원에 한해 사용 가능",
+      "M포인트와 별도 적립"
+     ]
+    },
+    {
+     "label": "The CJ적립금",
+     "place": "CJ올리브영",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "conditions": [
+      "CJmall 회원에 한해 사용 가능"
+     ]
+    },
+    {
+     "label": "CJ 외식",
+     "place": "VIPS·더플레이스·더스테이크하우스·빕스버거·제일제면소·푸드월드·한쿡",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 200000,
+     "capScope": "건",
+     "limits": "일 1회, 1회 이용금액 20만원 한도",
+     "conditions": [
+      "현장 할인"
+     ]
+    },
+    {
+     "label": "CJ 쇼핑",
+     "place": "CJ올리브영·투썸플레이스·뚜레쥬르",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "limits": "현장 할인",
+     "conditions": [
+      "백화점·할인점 내 입점매장 제외"
+     ]
+    },
+    {
+     "label": "CJ 쇼핑",
+     "place": "CJ ONSTYLE",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 30000,
+     "capScope": "월",
+     "limits": "월 3만원 한도",
+     "conditions": [
+      "청구 할인"
+     ]
+    },
+    {
+     "label": "CJ 외식",
+     "place": "더방",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "limits": "현장 할인"
+    },
+    {
+     "label": "영화",
+     "place": "CGV 영화티켓",
+     "value": "3,000원 할인",
+     "valueType": "할인",
+     "minimumSpend": 100000,
+     "cap": null,
+     "limits": "월 1회·연간 8회 한도",
+     "conditions": [
+      "청구 할인"
+     ]
+    },
+    {
+     "label": "하이패스",
+     "place": "하이패스 이용금액",
+     "value": "2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "limits": "일 2회, 1회 10만원 한도, LPG 제외"
+    },
+    {
+     "label": "주유",
+     "place": "GS칼텍스 주유",
+     "value": "리터당 60 M포인트",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "limits": "일 2회, 1회 10만원 한도, LPG 제외"
+    },
+    {
+     "label": "신차 구매",
+     "place": "현대자동차·기아 신차 구매",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-nexon-unlimited",
+   "queueKey": "hyundai-nexon-unlimited",
+   "name": "넥슨 현대카드 UNLIMITED",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=NXNX",
+   "termsUrl": "https://www.hyundaicard.com/upload/card/T_AWO-20260609-1745-84_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_%EB%84%A5%EC%8A%A8_UNLIMITED_V4.pdf",
+   "docDate": "2025-04-07",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 150000
+    },
+    {
+     "brand": "국내외겸용",
+     "amount": 150000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월 1일~말일 넥슨 현대카드 UNLIMITED(본인+하이패스카드) 일시불·할부 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "국세·관세·지방세 등 공과금",
+    "전기요금",
+    "도시가스요금",
+    "아파트 관리비",
+    "초·중·고교 학교납입금",
+    "대학·대학원 등록금",
+    "자동납부서비스 이용수수료",
+    "상품권 등 현금성 유가증권 구매",
+    "선불카드 구매·충전금액",
+    "건강보험·국민연금·고용보험·산재보험",
+    "고속도로 통행요금",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "포인트 적립",
+     "place": "국내외 가맹점",
+     "value": "1~3%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "limits": "적립한도 제한 없음",
+     "conditions": [
+      "전월 이용금액 100만원 미만 1%, 100만원 이상 3%",
+      "넥슨 홈페이지·앱 결제 넥슨 게임 이용금액은 전월 이용금액 합산 제외"
+     ]
+    },
+    {
+     "label": "게임 바우처",
+     "place": "넥슨 현대카드 포인트 바우처",
+     "value": "6만 포인트",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "연",
+     "conditions": [
+      "발급 1차년도 누적 이용금액 100만원 이상",
+      "2차년도부터 전년도 이용금액 1,000만원 이상"
+     ]
+    },
+    {
+     "label": "생활 편의",
+     "place": "온라인쇼핑몰·배달앱·디지털 스트리밍·커피전문점·편의점·택시",
+     "value": "건당 3만원 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 60000,
+     "capScope": "연",
+     "limits": "결제 건당 3만원, 연간 통합 6만원 한도",
+     "conditions": [
+      "발급 1차년도 누적 100만원 이상, 2차년도부터 전년도 1,000만원 이상"
+     ]
+    },
+    {
+     "label": "PC방",
+     "place": "PC방 업종",
+     "value": "최대 3천원 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 1회, 건당 최대 3천원",
+     "conditions": [
+      "전월 실적 관계없이 적용"
+     ]
+    },
+    {
+     "label": "넥슨뮤지엄",
+     "place": "넥슨뮤지엄 입장권",
+     "value": "2장 전액 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "limits": "연 1회",
+     "conditions": [
+      "현장 결제 시 청구 할인"
+     ]
+    },
+    {
+     "label": "메탈 플레이트",
+     "place": "본인 회원",
+     "value": "제공",
+     "valueType": "제공",
+     "minimumSpend": null,
+     "cap": null,
+     "conditions": [
+      "발급 수수료 10만원 별도 부과"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-hehc",
+   "queueKey": "hyundai-hehc",
+   "name": "Hyundai EV카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=HEHC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02885",
+   "docDate": "2025-11-21",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "국내외겸용(VISA/AMEX)",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용(VISA/AMEX)"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 Hyundai EV카드(본인+가족) 일시불·할부 이용금액",
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "국제브랜드 수수료",
+    "해외서비스 수수료",
+    "국세·관세·지방세 등 공과금",
+    "전기요금",
+    "도시가스요금",
+    "아파트 관리비",
+    "초·중·고교 학교납입금",
+    "대학·대학원 등록금",
+    "자동납부서비스 이용수수료",
+    "상품권 등 현금성 유가증권 구매",
+    "선불카드 충전금액",
+    "건강보험·국민연금·고용보험·산재보험",
+    "고속도로 통행요금",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "전기차·수소차 충전",
+     "place": "환경부·한국전력·차지비·파워큐브·KT·에버온 등 충전소",
+     "value": "50~100% 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "월",
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 10000
+      },
+      {
+       "spend": 800000,
+       "cap": 20000
+      }
+     ],
+     "limits": "월 할인한도",
+     "conditions": [
+      "전월 이용금액 50만원 이상 50%·80만원 이상 100%",
+      "일반 적립과 중복 적용 불가",
+      "휴대용 충전 단말기 구매금액 제외"
+     ]
+    },
+    {
+     "label": "차량유지관리",
+     "place": "주차·세차·하이패스 업종",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "기본 적립, 한도 없음"
+    },
+    {
+     "label": "차량유지관리",
+     "place": "주차·세차·하이패스 업종",
+     "value": "2.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "추가 적립, 월 이용금액 30만원 한도"
+    },
+    {
+     "label": "Mobility",
+     "place": "대중교통(철도·고속버스·시내버스·지하철·택시)·쏘카·타다",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "기본 적립, 한도 없음"
+    },
+    {
+     "label": "Mobility",
+     "place": "대중교통(철도·고속버스·시내버스·지하철·택시)·쏘카·타다",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "추가 적립, 월 이용금액 30만원 한도"
+    },
+    {
+     "label": "일반 가맹점",
+     "place": "그 외 일반 가맹점",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "한도 없음"
+    },
+    {
+     "label": "현대 인증중고차",
+     "place": "현대 인증중고차",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "당월 이용금액과 무관하게 적립"
+     ]
+    },
+    {
+     "label": "신차 구매",
+     "place": "현대자동차 신차 구매",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "특별 적립, 일반 적립과 중복 적용 불가"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-hmhcp",
+   "queueKey": "hyundai-hmhcp",
+   "name": "Hyundai Mobility Platinum카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=HMHCP",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02870",
+   "docDate": "2025-04-03",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 70000
+    },
+    {
+     "brand": "국내외겸용(VISA/AMEX)",
+     "amount": 70000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용(VISA/AMEX)"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "결제일자에 청구된 당월 이용금액(본인+가족) 일시불·할부",
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "국세·관세·지방세 등 공과금",
+    "전기요금",
+    "도시가스요금",
+    "아파트 관리비",
+    "초·중·고교 학교납입금",
+    "대학·대학원 등록금",
+    "자동납부서비스 이용수수료",
+    "상품권 등 현금성 유가증권 구매",
+    "선불카드 구매·충전금액",
+    "건강보험·국민연금·고용보험·산재보험",
+    "고속도로 통행요금",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "차량유지관리",
+     "place": "주유·가스 충전·정비·주차·세차·하이패스 업종",
+     "value": "1~1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "기본 적립, 한도 없음",
+     "conditions": [
+      "당월 이용금액 50만~200만원 1%, 200만원 이상 1.5%"
+     ]
+    },
+    {
+     "label": "차량유지관리",
+     "place": "주유·가스 충전·정비·주차·세차·하이패스 업종",
+     "value": "2~3%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "추가 적립, 월 이용금액 30만원 한도",
+     "conditions": [
+      "50만~200만원 2%, 200만원 이상 3%"
+     ]
+    },
+    {
+     "label": "Mobility",
+     "place": "대중교통(철도·고속버스·시내버스·지하철·택시)·쏘카·타다",
+     "value": "1~1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "기본 적립, 한도 없음"
+    },
+    {
+     "label": "Mobility",
+     "place": "대중교통(철도·고속버스·시내버스·지하철·택시)·쏘카·타다",
+     "value": "1~1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "추가 적립, 월 이용금액 30만원 한도"
+    },
+    {
+     "label": "일반 가맹점",
+     "place": "그 외 일반 가맹점",
+     "value": "1~1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "한도 없음"
+    },
+    {
+     "label": "현대 인증중고차",
+     "place": "현대 인증중고차",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null
+    },
+    {
+     "label": "신차 구매",
+     "place": "현대자동차 신차 구매",
+     "value": "2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "특별 적립, 기본·추가 적립과 중복 불가"
+     ]
+    },
+    {
+     "label": "차량 정비",
+     "place": "현대자동차 Bluehands 서비스센터 및 협력업체",
+     "value": "2만원 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": 20000,
+     "capScope": "연",
+     "conditions": [
+      "연간 2만원 한도 내 5천원 단위 선택 사용"
+     ]
+    },
+    {
+     "label": "커피",
+     "place": "스타벅스·폴바셋·이디야 (현대카드 가맹점)",
+     "value": "500원 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "limits": "본인+가족 합산 월 1회·연간 12회",
+     "conditions": [
+      "백화점·할인점·쇼핑몰·역사 내 입점매장 제외",
+      "폴바셋·이디야 선주문 결제 제외"
+     ]
+    },
+    {
+     "label": "주차",
+     "place": "서울 및 대도시 제휴 주차장 (주말)",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": null,
+     "cap": null,
+     "limits": "본인+가족 합산 일 1회·연간 20회",
+     "conditions": [
+      "당월 이용금액 50만원 이상 시 다음 달 이용 가능"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-mlsb",
+   "queueKey": "hyundai-mlsb",
+   "name": "현대카드M-화물차유가보조금카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=MLSB",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02480",
+   "docDate": "2026-05-11",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [
+    "주유소·충전소 업종 이용금액",
+    "하이패스 이용금액",
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "지방세·국세 등 세금 납부액",
+    "도시가스요금",
+    "대학·대학원 등록금",
+    "자동납부 서비스 이용수수료",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "유가보조금",
+     "place": "전국 주유소·충전소 (등록 차량·유종)",
+     "value": "유가보조금 환급",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "화물차유가보조금카드에 등록된 차량번호·유종과 동일할 때만 적용",
+      "보조금 지급 한도·지원단가는 정부 정책에 따라 변동"
+     ]
+    },
+    {
+     "label": "주유 할인",
+     "place": "화물차 우대 주유소 (HD현대오일뱅크·GS칼텍스)",
+     "value": "리터당 15~95원 할인",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "limits": "전월 이용금액 구간별, 추가 할인 월간한도 공통",
+     "conditions": [
+      "경유 주유 시에만 적용",
+      "전월 30만원 미만 15원, 150만원 이상 95원"
+     ]
+    },
+    {
+     "label": "주유 할인",
+     "place": "일반 주유소 (HD현대오일뱅크·GS칼텍스)",
+     "value": "리터당 5~35원 할인",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "경유 주유 시에만 적용",
+      "전월 30만원 미만 할인 없음"
+     ]
+    },
+    {
+     "label": "부가세 환급",
+     "place": "더존비즈온 부가세 환급 지원 서비스",
+     "value": "제공",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "홈페이지(dcloudhdcard.com) 회원가입 후 이용"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-cmsc",
+   "queueKey": "hyundai-cmsc",
+   "name": "현대카드M CHECK-경차전용카드(유류세 환급)",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=CMSC",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02523",
+   "docDate": "2026-05-11",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월 4일~당월 3일 즉시 출금된 체크 결제금액",
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "지방세·국세 등 세금 납부액",
+    "도시가스요금",
+    "대학·대학원 등록금",
+    "자동납부서비스 이용수수료",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [],
+   "benefits": [
+    {
+     "label": "유류세 환급",
+     "place": "전국 주유소·충전소(LPG)",
+     "value": "유류세 환급",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": 300000,
+     "capScope": "연",
+     "conditions": [
+      "카드 앞면 차량번호와 같은 차량 주유·충전 시에만 적용",
+      "1회 6만원·1일 12만원 한도 내 환급",
+      "연 30만원 한도(카드사 통합)"
+     ]
+    },
+    {
+     "label": "기본 적립",
+     "place": "국내 가맹점",
+     "value": "0.5~1%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "limits": "한도 없음",
+     "conditions": [
+      "당월 이용금액 100만원 미만 0.5%, 100만원 이상 1%"
+     ]
+    }
+   ]
+  }
+ ]
+}
