@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T10:44:21+09:00",
+  "generatedAt": "2026-11-28T11:16:46+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -369,13 +369,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-28T10:40:00+09:00",
+      "updatedAt": "2026-11-28T11:35:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 276,
-        "title": "docs: 공용 현황판 갱신 (2026-11-28 Pickle · 현대카드 안내문 경로 기록)",
-        "mergedAt": "2026-11-27T18:04:59Z",
-        "mergedAtKST": "2026-11-28 03:04"
+        "number": 282,
+        "title": "docs: 로드맵에 Mr. Cards 피킹률 전수조사(#281) 기록·남은 검수 후보",
+        "mergedAt": "2026-11-28T01:50:31Z",
+        "mergedAtKST": "2026-11-28 10:50"
       },
       "runs": [
         {
@@ -1666,23 +1666,23 @@
           "queueKeys": [
             "sc-6266"
           ]
+        },
+        {
+          "at": "2026-11-28T11:35:00+09:00",
+          "kind": "data-fix",
+          "pr": null,
+          "summary": "삼성 앤마일리지(aap1452)·SFC(aap1453) 상세 혜택 표 정리: shortLabel의 ~원당 라벨 깨짐 수정(전 카드 '당 …' 라벨 11→0), 카드 DB·verified-card-rules·cards.json.gz·home-cards.json을 공식 원문(기본 1,000원당 1마일·특별 1,000원당 2마일 통합 월 2,000마일·아멕스 PLATINUM 라운지/발렛/커피)으로 보정, card-terms 정리본 2장 추가, 무실적 카드 실적 칸 ? → ✓(spendFreeCard), 검수 label-audit.mjs·picking_audit C1·C2 추가",
+          "queueKeys": [
+            "samsung-aap1452",
+            "samsung-aap1453"
+          ]
         }
       ],
-      "openIssues": 58
+      "openIssues": 59
     }
   },
   "locks": [],
   "openPRs": [
-    {
-      "number": 281,
-      "title": "fix(paymorevent): 피킹률 전수조사 — 실적 영역≠혜택 영역 계산 수정·누락 요율 모델 66장·에이전트 검수 규칙",
-      "agent": "Pickle",
-      "branch": "ai/pickle/fix-picking-and-audit-rules",
-      "createdAtKST": "2026-11-28 10:35",
-      "area": "16파일 · paymorevent/ 8 · docs/ 3 · data/ 2 외 2곳",
-      "url": "https://github.com/uio412-source/my-website/pull/281",
-      "draft": false
-    },
     {
       "number": 277,
       "title": "data: 수집 2026-11-28 (Claude · 상품설명서 7종)",
@@ -1695,6 +1695,34 @@
     }
   ],
   "recentPRs": [
+    {
+      "number": 282,
+      "title": "docs: 로드맵에 Mr. Cards 피킹률 전수조사(#281) 기록·남은 검수 후보",
+      "agent": "Pickle",
+      "branch": "ai/pickle/roadmap-picking-audit",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T01:50:31Z",
+      "mergedAtKST": "2026-11-28 10:50",
+      "createdAt": "2026-11-28T01:49:54Z",
+      "createdAtKST": "2026-11-28 10:49",
+      "area": "1파일 · docs/ 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/282"
+    },
+    {
+      "number": 281,
+      "title": "fix(paymorevent): 피킹률 전수조사 — 실적 영역≠혜택 영역 계산 수정·누락 요율 모델 66장·에이전트 검수 규칙",
+      "agent": "Pickle",
+      "branch": "ai/pickle/fix-picking-and-audit-rules",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T01:45:55Z",
+      "mergedAtKST": "2026-11-28 10:45",
+      "createdAt": "2026-11-28T01:35:41Z",
+      "createdAtKST": "2026-11-28 10:35",
+      "area": "16파일 · paymorevent/ 8 · docs/ 3 · data/ 2 외 2곳",
+      "files": 16,
+      "url": "https://github.com/uio412-source/my-website/pull/281"
+    },
     {
       "number": 280,
       "title": "pay: 매일 확인 2026-11-28 — 토스 페이스페이 브랜드 3곳(자담치킨·감성커피·진교동찜닭)",
@@ -2212,20 +2240,6 @@
       "area": "4파일 · data/ 3 · docs/ 1",
       "files": 4,
       "url": "https://github.com/uio412-source/my-website/pull/243"
-    },
-    {
-      "number": 242,
-      "title": "data: 수집 2026-11-27 50차 (현대카드 상품설명서 9종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle50",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T13:40:19Z",
-      "mergedAtKST": "2026-11-27 22:40",
-      "createdAt": "2026-11-27T13:37:21Z",
-      "createdAtKST": "2026-11-27 22:37",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/242"
     }
   ],
   "queue": {
@@ -2236,8 +2250,8 @@
     },
     "counts": {
       "cards": {
-        "done": 760,
-        "todo": 687,
+        "done": 762,
+        "todo": 685,
         "total": 1447
       },
       "brandPrograms": {
@@ -2247,16 +2261,16 @@
         "total": 94
       },
       "eventSources": {
-        "collected": 9,
+        "collected": 11,
         "total": 30
       }
     },
     "lastCollected": {
       "card-terms": "2026-11-28",
       "brand-services": "2026-11-28",
-      "card-events": "2026-11-27",
+      "card-events": "2026-11-28",
       "hotel-events": null,
-      "travel-events": null,
+      "travel-events": "2026-11-28",
       "card-products": "2026-11-26"
     }
   },
@@ -2277,6 +2291,15 @@
       "status": "open",
       "reason": "안내장 심의필이 2016-07-19·2018-02-21로 '올해·작년 문서' 규칙 밖",
       "retry": "2025~2026년판 안내장이 올라오면 교체",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "samsung-aap1483 (삼성카드 taptap O)",
+      "status": "open",
+      "reason": "카드 DB 혜택 '옵션패키지 상세보기'가 원문 요약 문구뿐(대상 업종·가맹점 없음) — picking_audit C1에 남음",
+      "retry": "삼성카드 taptap O 상세의 옵션패키지 서비스 안내(static11 svc)를 읽어 옵션별 업종·한도를 적기",
       "ref": ""
     },
     {

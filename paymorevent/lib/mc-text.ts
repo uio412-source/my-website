@@ -34,7 +34,7 @@ const NUMBERED = /^\d+\.\s*/;
 
 export type CleanBenefit = {title: string; lines: string[]; rate: string | null; cap: string | null; spend: string | null; voucher: boolean};
 
-const tidy = (s: string) => s.replace(/\s+/g, ' ').replace(/\s*([·,])\s*/g, '$1 ').replace(/(\d), (?=\d{3}(?!\d))/g, '$1,').replace(/[;:]\s*$/, '').trim();
+const tidy = (s: string) => s.replace(/\s+/g, ' ').replace(/\s*(?:자세히|상세)\s*보기$/g, '').replace(/\s*([·,])\s*/g, '$1 ').replace(/(\d), (?=\d{3}(?!\d))/g, '$1,').replace(/[;:]\s*$/, '').trim();
 const short = (s: string, n: number) => s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s;
 
 export function cleanBenefits(card: Pick<Card, 'benefits'>): CleanBenefit[] {
@@ -279,11 +279,26 @@ function isHeaderLine(line: string) {
 }
 /** "대중교통· 택시 10% 결제일할인" → "대중교통·택시" (혜택 칸과 겹치는 율·금액·동사는 뺌) */
 function shortLabel(name: string) {
-  const t = name.replace(/\s*·\s*/g, '·')
+  // "1,000원당 스카이패스 1 마일리지 추가 적립" → "스카이패스 추가 적립"
+  // (원·개·건 '당'의 기준 금액은 혜택 칸에 따로 나오므로 라벨 앞에서 통째로 뺀다 — 예전에는 "1,000"만 지워져 "당 스카이패스"가 됐음)
+  const per = /^\s*(?:최대\s*)?[\d,.]+\s*(?:만\s*|천\s*)?(?:원|개|건|리터|L|달러)\s*당\s*/.exec(name);
+  let base = per ? name.slice(per[0].length) : name;
+  // 같은 줄에 이어 붙은 다른 문장("3,000원당 1.3 ALL 포인트. 원화 환산 1.3%…")은 첫 문장만
+  base = base.split(/\s*[.。]\s+(?=[가-힣A-Za-z])/)[0];
+  let t = base.replace(/\s*·\s*/g, '·')
     .replace(/\s*(?:최대\s*)?[\d.]+\s*%?\s*~\s*[\d.]+\s*%\s*/g, ' ')
+    // "1 AIR마일"처럼 숫자와 단위 사이에 이름이 끼면 맨 앞 숫자만 뺌
+    .replace(/^\s*(?:최대\s*)?[\d,.]+\s+(?=[^\s]*\s*(?:마일리지|마일|포인트|캐쉬백))/g, ' ')
     .replace(/\s*(?:최대\s*)?[\d,.]+\s*(?:%|만\s*원|천\s*원|원|마일리지|마일|P|배)\s*/g, ' ')
-    .replace(/\s*(?:결제일\s*)?(?:할인|적립|캐시백|청구할인|서비스|혜택|제공|면제|무료\s*이용|무료)\s*$/g, '')
-    .replace(/\s*(?:결제일\s*)?(?:할인|적립|캐시백)\s*$/g, '').replace(/의$/, '').replace(/\s+/g, ' ').trim();
+    .replace(/\s+/g, ' ').trim();
+  // 끝의 할인·적립·서비스는 빼되, "스카이패스 추가"처럼 수식어만 남으면 되레 뜻이 사라지므로 그때는 그대로 둔다
+  const tail = /\s*(?:결제일\s*)?(?:할인|적립|캐시백|청구할인|서비스|혜택|제공|면제|무료\s*이용|무료)\s*$/.exec(t);
+  if (tail) {
+    const head = t.slice(0, tail.index).trim();
+    if (head.length >= 2 && !/(?:^|\s)(?:추가|기본|특별|선택|우대|공통|일반|최대)$/.test(head)) t = head;
+    else if (head.length < 2) t = t.trim();
+  }
+  t = t.replace(/의$/, '').trim();
   const u = t.length > 8 ? t.replace(/\s*\([^)]*\)\s*/g, ' ').trim() : t;
   return u.length >= 2 ? u : t.length >= 2 ? t : name;
 }
@@ -307,6 +322,12 @@ export function benefitRow(b: CleanBenefit): BenefitRow {
   let where = (lines[0] ?? '').split(' / ')[0]
     .replace(/\(\s*(?:월|연)?\s*(?:통합\s*)?(?:할인|적립)?\s*한도[^)]*\)/g, '')
     .replace(/\s*(?:일|월|연)\s*\d+\s*회.*$/, '').replace(/\s*※.*$/, '').replace(/[,·]\s*$/, '').trim();
+  // "국내외 가맹점 이용금액 1,000원당 스카이패스 1 마일리지 기본 적립"처럼 혜택 문장이 통째로 들어오면
+  // '1,000원당' 앞까지(어디서 쓰는지)만 남긴다. 그러고도 남는 '이용금액·사용액'은 어디서 쓰는지가 아니므로 뺀다.
+  if (/(?:원|개|건|리터|L)\s*당/.test(where)) {
+    where = where.replace(/\s*(?:최대\s*)?[\d,.]+\s*(?:만\s*|천\s*)?(?:원|개|건|리터|L)\s*당.*$/, '').trim();
+    where = where.replace(/\s*(?:이용|사용|승인|결제)\s*(?:금액|액)$/, '').trim();
+  }
   // 할인율 칸과 겹치는 끝부분("… 10% 할인")은 빼고 어디서 쓰는지만
   if (b.rate) where = where.replace(new RegExp(String.raw`\s*` + b.rate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + String.raw`\s*(?:결제일\s*)?(?:할인|적립|캐시백)?(?:\(청구할인\))?$`), '').trim();
   where = where.replace(/\s*(?:최대\s*)?[\d.]+\s*%\s*(?:결제일\s*)?(?:할인|적립|캐시백)?\s*$/, '').replace(/[,·]\s*$/, '').trim();
