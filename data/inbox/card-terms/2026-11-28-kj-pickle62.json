@@ -1,0 +1,180 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20210929001",
+   "name": "광주전남愛사랑 HONORS V2 CARD",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20210929001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20210929001",
+   "docDate": "2025-12-29",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 298000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 300000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 신규 후 수령일부터 다음 달 말일까지 이용실적이 30만원 미달이어도 포인트 적립 서비스 제공",
+   "spendExclusions": [
+    "무이자할부",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권(모바일상품권 포함) 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료(SMS·할부·해외사용 수수료 등)"
+   ],
+   "benefitExclusions": [
+    "ATM 인출·현금서비스"
+   ],
+   "benefits": [
+    {
+     "group": "기본적립",
+     "label": "국내 가맹점",
+     "place": "국내 전 가맹점",
+     "value": "0.1%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "전월실적·적립한도 조건 없음"
+    },
+    {
+     "group": "기본적립",
+     "label": "해외 가맹점",
+     "place": "해외 전 가맹점",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "전월실적·적립한도 조건 없음",
+     "conditions": [
+      "ATM 인출·현금서비스 제외"
+     ]
+    },
+    {
+     "group": "생활업종",
+     "label": "주유",
+     "place": "전국 주유소(충전소·전기차 충전 포함)",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 2회, 1회 5만원까지"
+    },
+    {
+     "group": "생활업종",
+     "label": "커피전문점",
+     "place": "스타벅스(사이렌오더 포함)·할리스·투썸플레이스·엔제리너스·탐앤탐스·이디야·카페베네·커피빈·드롭탑",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 2회, 1회 5만원까지"
+    },
+    {
+     "group": "생활업종",
+     "label": "패밀리레스토랑",
+     "place": "아웃백스테이크하우스·VIPS",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 1회, 1회 3만원 이상",
+     "conditions": [
+      "기본적립과 중복 적립"
+     ]
+    },
+    {
+     "group": "특별적립",
+     "label": "골프장",
+     "place": "전국 골프장",
+     "value": "10만원당 5,000포인트",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 1회"
+    },
+    {
+     "group": "특별적립",
+     "label": "영화예매",
+     "place": "CGV·메가박스·롯데시네마(모바일·온라인·현장)",
+     "value": "5,000포인트",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 2회, 1회 1만원 이상"
+    },
+    {
+     "group": "특별적립",
+     "label": "프로야구",
+     "place": "기아타이거즈·LG트윈스 홈구장",
+     "value": "2,500포인트",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 2500,
+     "capScope": "월",
+     "limits": "월 1회",
+     "conditions": [
+      "정규시즌 홈경기에 한함(포스트시즌 제외)"
+     ]
+    },
+    {
+     "group": "기부",
+     "label": "고향사랑 기부",
+     "place": "광주광역시·전라남도 사회복지공동모금회",
+     "value": "0.2%",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "신용판매(일시불+할부) 이용액의 0.2%",
+      "기부금은 국세청에 자동 통보되어 연말정산 반영"
+     ]
+    },
+    {
+     "group": "포인트 전환",
+     "label": "대한항공 마일리지",
+     "place": "대한항공 SKYPASS",
+     "value": "20포인트당 1마일",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "본인회원 카드로만 신청, 본인회원 마일리지로 전환",
+      "대한항공 회원 가입 필요(비회원은 발급 시 자동 부여)"
+     ]
+    }
+   ]
+  }
+ ]
+}
