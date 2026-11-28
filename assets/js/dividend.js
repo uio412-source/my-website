@@ -1,4 +1,5 @@
-// 배당: 보유 종목(이 브라우저에 저장) × 종목별 최근 12개월 주당 배당금 → 투자금 · 연 배당금 · 배당률
+// 배당: 프로필(User1·2·3)별 보유 종목(이 브라우저에 저장, 기본값은 data/dividend-profiles.json) × 종목별 최근 12개월 주당 배당금
+// → 투자금 · 연 배당금 · 배당률 · 평가금액·손익, 종목별 수량·평단·현재가·수익률
 (() => {
   const $ = (id) => document.getElementById(id);
   const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -22,7 +23,7 @@
   const short = (v) => (v >= 1e8 ? (v / 1e8).toFixed(1).replace(/\.0$/, "") + "억" : v >= 1e4 ? (v / 1e4).toFixed(v >= 1e5 ? 0 : 1).replace(/\.0$/, "") + "만" : nf0.format(Math.round(v)));
   const tone = (s) => Array.from(s).reduce((a, c) => a + c.charCodeAt(0), 0) % 5 + 1;
   const initials = (name, s) => {
-    if (!isKR(s)) return ticker(s).slice(0, 4);
+    if (!isKR(s)) return ticker(s).replace(/[^A-Za-z0-9]/g, "").slice(0, 4);
     const n = name.replace(/\s/g, "");
     const latin = /^[A-Za-z]+/.exec(n);
     return latin ? latin[0].slice(0, 2).toUpperCase() : Array.from(n).slice(0, 2).join("");
@@ -30,19 +31,83 @@
   const tile = (name, s) => { const t = initials(name, s); return `<span class="tile" data-tone="${tone(s)}" data-len="${t.length}" aria-hidden="true">${esc(t)}</span>`; };
 
   const read = (k, f) => { try { return JSON.parse(localStorage.getItem(k)) ?? f; } catch { return f; } };
-  let holdings = read(KEY, []);
+  // 수량: 소수점 주식은 유효숫자 4~7자리까지(0.04525 · 146.7627 · 2,895)
+  const nfQ1 = new Intl.NumberFormat("ko-KR", { maximumSignificantDigits: 4 });
+  const nfQ = new Intl.NumberFormat("ko-KR", { maximumSignificantDigits: 7 });
+  const qtyText = (q) => (q < 1 ? nfQ1 : q >= 1e6 ? nf0 : nfQ).format(q);
+  // 1억 2,403만원 · 4,762만원 · 9,800원
+  const krBig = (v) => {
+    const a = Math.abs(v), s = v < 0 ? "−" : "";
+    if (a >= 1e8) { const e = Math.floor(a / 1e8), m = Math.round((a % 1e8) / 1e4); return `${s}${e}억${m ? " " + nf0.format(m) + "만" : ""}원`; }
+    return a >= 1e4 ? `${s}${nf0.format(Math.round(a / 1e4))}만원` : `${s}${nf0.format(Math.round(a))}원`;
+  };
+  const signPct = (v) => (Number.isFinite(v) ? (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v * 100).toFixed(2) + "%" : "—");
+  const dir = (v) => (v > 0 ? "up" : v < 0 ? "down" : "flat");
+
+  // ---------- 프로필 (User1·2·3) ----------
+  // 프로필마다 보유 종목·금융소득 설정을 따로 저장. User1은 예전 저장값(KEY)을 그대로 씀.
+  // data/dividend-profiles.json에 기본값(예: 증권사 화면에서 옮긴 보유 내역)이 있으면, 이 브라우저에서 고치기 전까지 그 값을 보여 줌.
+  const PROFILE_KEY = "mrstocks.dividend.profile";
+  const SORT_KEY = "mrstocks.dividend.sort";
+  const PROFILES = [{ id: "u1", name: "User1" }, { id: "u2", name: "User2" }, { id: "u3", name: "User3" }];
+  const keyOf = (id) => (id === "u1" ? KEY : `${KEY}.${id}`);
+  let prof = PROFILES.some((p) => p.id === read(PROFILE_KEY, "u1")) ? read(PROFILE_KEY, "u1") : "u1";
+  let PRESET = {};             // id → { name, asOf, src, items }
+  let holdings = [];
+  let edited = false;          // 이 프로필을 이 브라우저에서 고쳤는지(고쳤으면 기본값 대신 저장값)
+  let sortBy = read(SORT_KEY, "div") === "value" ? "value" : "div";
+
+  // 증권사 화면 값(원화 평가금액·손익) → 보유 종목. 평단 = (평가금액 − 손익) ÷ 수량
+  function fromPreset(id) {
+    const p = PRESET[id];
+    return (p?.items || []).flatMap((x) => {
+      if (!x.symbol || !(x.qty > 0) || !Number.isFinite(x.value)) return [];
+      const per = (x.value - (x.pnl || 0)) / x.qty;
+      const h = { id: `${id}-${x.symbol}`, symbol: x.symbol, name: x.name || x.symbol, qty: x.qty, cost: null, pxKrw: x.value / x.qty };
+      if (isKR(x.symbol)) h.cost = per;
+      else h.costKrw = per; // 해외 종목은 원화 평단(매수 때 환율 포함)으로 둠
+      return [h];
+    });
+  }
+  function loadHoldings(id) {
+    const stored = read(keyOf(id), null);
+    edited = Array.isArray(stored);
+    return edited ? stored : fromPreset(id);
+  }
+  const profName = (id) => PRESET[id]?.name || PROFILES.find((p) => p.id === id)?.name || id;
+
   let afterTax = read(TAX_KEY, false) === true;
   let DIV = { items: {}, fx: {} }, QUOTES = {}, catalog = null, catalogP = null;
-  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(holdings)); return true; } catch { return false; } };
+  const save = () => { try { localStorage.setItem(keyOf(prof), JSON.stringify(holdings)); edited = true; return true; } catch { return false; } };
 
   async function load() {
-    const [d, q] = await Promise.all([
+    const [d, q, pr] = await Promise.all([
       getJSON("ungjup/dividends").catch(() => ({ items: {}, fx: {} })),
       getJSON("ungjup/holdings_lv").catch(() => ({ items: {} })),
+      getJSON("dividend-profiles").catch(() => null),
     ]);
     DIV = d;
     QUOTES = q.items || {};
+    if (pr?.profiles) PRESET = Object.fromEntries(pr.profiles.filter((p) => p && p.id).map((p) => [p.id, p]));
+    holdings = loadHoldings(prof);
     render();
+  }
+
+  function switchProfile(id) {
+    if (id === prof || !PROFILES.some((p) => p.id === id)) return;
+    prof = id;
+    try { localStorage.setItem(PROFILE_KEY, JSON.stringify(id)); } catch {}
+    holdings = loadHoldings(id);
+    loadFt();
+    render();
+    $("dv-status").textContent = `${profName(id)} 보기`;
+  }
+
+  function renderProfiles() {
+    $("dv-prof").innerHTML = PROFILES.map((p) => {
+      const n = p.id === prof ? holdings.length : (read(keyOf(p.id), null) || fromPreset(p.id)).length;
+      return `<button type="button" role="tab" data-p="${p.id}" aria-selected="${p.id === prof}">${esc(profName(p.id))}<span>${n || ""}</span></button>`;
+    }).join("");
   }
 
   // ---------- 계산 ----------
@@ -50,19 +115,26 @@
   function calc(h) {
     const d = DIV.items[h.symbol];
     const cur = d?.cur || curOf(h.symbol);
-    const price = d?.price ?? QUOTES[h.symbol]?.close ?? null;
-    const cost = h.cost ?? price;
-    const dps = d ? d.dps : h.dps ?? null; // 데이터가 있으면 그것, 없으면 직접 입력값
     const rate = cur === "USD" ? fx() : 1;
+    let price = d?.price ?? QUOTES[h.symbol]?.close ?? null;
+    const oldPx = !Number.isFinite(price) && h.pxKrw > 0 && rate; // 시세 데이터가 없으면 증권사 화면 기준가
+    if (oldPx) price = h.pxKrw / rate;
+    // 해외 종목 원화 평단(costKrw)이 있으면 투자금은 그 값 그대로(환율 변동 포함 손익)
+    const costK = cur === "USD" && Number.isFinite(h.costKrw) && h.costKrw > 0 ? h.costKrw : null;
+    const known = costK != null || (Number.isFinite(h.cost) && h.cost > 0); // 평단을 아는지(모르면 현재가로 계산)
+    const cost = h.cost ?? (costK != null ? (rate ? costK / rate : null) : price);
+    const dps = d ? d.dps : h.dps ?? null; // 데이터가 있으면 그것, 없으면 직접 입력값
     const keep = afterTax ? 1 - (TAX[cur] ?? 0.154) : 1;
     const ok = rate && Number.isFinite(cost) && cost > 0;
+    const invest = costK != null ? h.qty * costK : ok ? h.qty * cost * rate : null;
+    const value = rate && Number.isFinite(price) ? h.qty * price * rate : null;
+    const annual = invest != null && rate && Number.isFinite(dps) ? h.qty * dps * rate * keep : null;
     return {
-      d, cur, price, cost, dps, rate,
-      invest: ok ? h.qty * cost * rate : null,
-      annual: ok && Number.isFinite(dps) ? h.qty * dps * rate * keep : null,
-      yieldCost: Number.isFinite(dps) && cost > 0 ? (dps * keep) / cost : null,
+      d, cur, price, cost, dps, rate, costK, known, oldPx, invest, value, annual,
+      pnl: known && invest != null && value != null ? value - invest : null,
+      yieldCost: annual != null && invest > 0 ? annual / invest : null,
       yieldNow: Number.isFinite(dps) && price > 0 ? (dps * keep) / price : null,
-      months: (d?.months || []).map(([m, a]) => [m, h.qty * a * rate * keep]),
+      months: (d?.months || []).map(([m, a]) => [m, h.qty * a * (rate || 0) * keep]),
       manual: !d && Number.isFinite(h.dps),
     };
   }
@@ -72,7 +144,19 @@
     const rows = holdings.map((h) => ({ h, c: calc(h) }));
     const invest = rows.reduce((s, r) => s + (r.c.invest || 0), 0);
     const annual = rows.reduce((s, r) => s + (r.c.annual || 0), 0);
-    const nowValue = rows.reduce((s, r) => s + (r.c.price && r.c.rate ? r.h.qty * r.c.price * r.c.rate : 0), 0);
+    const nowValue = rows.reduce((s, r) => s + (r.c.value || 0), 0);
+    // 평가손익은 평단을 아는 종목만 (평단을 비운 종목은 현재가로 넣은 것이라 손익 0)
+    const pk = rows.filter((r) => r.c.pnl != null);
+    const pnl = pk.reduce((s, r) => s + r.c.pnl, 0);
+    const pnlBase = pk.reduce((s, r) => s + r.c.invest, 0);
+
+    renderProfiles();
+    const val = $("dv-val");
+    val.hidden = !(nowValue > 0);
+    if (nowValue > 0) {
+      val.innerHTML = `<span>평가금액 <b>${krBig(nowValue)}</b></span>` +
+        (pk.length ? `<span>평가손익 <b class="${dir(pnl)}">${pnl > 0 ? "+" : ""}${krBig(pnl)} (${signPct(pnlBase ? pnl / pnlBase : 0)})</b></span>` : "");
+    }
 
     $("k-invest").textContent = won(invest);
     $("k-div").textContent = won(annual);
@@ -82,25 +166,40 @@
     $("k-cur").textContent = nowValue ? `현재가 기준 ${pct(annual / nowValue)}` : "현재가 기준 —";
     $("dv-sub").textContent = `${holdings.length}종목 · ${afterTax ? "세후" : "세전"}` + (fx() ? ` · 1달러 ${nf0.format(fx())}원` : "");
     $("dv-tax").querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tax === (afterTax ? "1" : "0"))));
-    $("dv-count").textContent = holdings.length ? "연 배당금 순" : "";
+    const sortBtn = $("dv-sort");
+    sortBtn.hidden = !holdings.length;
+    sortBtn.textContent = sortBy === "value" ? "평가금액 순" : "연 배당금 순";
 
     renderCalendar(rows);
 
-    const sorted = rows.sort((a, b) => (b.c.annual ?? -1) - (a.c.annual ?? -1));
+    const sorted = rows.sort(sortBy === "value"
+      ? (a, b) => (b.c.value ?? -1) - (a.c.value ?? -1)
+      : (a, b) => (b.c.annual ?? -1) - (a.c.annual ?? -1));
     $("dv-list").innerHTML = sorted.length
       ? `<div class="wl-rows">${sorted.map(({ h, c }) => {
-          const sub = [`${Number.isInteger(h.qty) ? nf0.format(h.qty) : +h.qty.toFixed(6)}주`,
-            Number.isFinite(c.cost) ? `${h.cost != null ? "평단" : "현재가"} ${money(c.cost, c.cur)}` : ""].filter(Boolean).join(" · ");
+          // 해외 종목은 원화 평단이 있으면 원화로(평단과 같은 단위), 아니면 달러로
+          const inKrw = c.cur !== "USD" || c.costK != null;
+          const px = (v) => (!Number.isFinite(v) ? "—" : inKrw ? won(v * (c.cur === "USD" ? c.rate : 1)) : money(v, c.cur));
+          const costTxt = c.costK != null ? won(c.costK) : c.known ? px(c.cost) : "—";
+          const pr = c.pnl != null && c.invest > 0 ? c.pnl / c.invest : null;
+          const sub = c.value != null ? `평가 ${krBig(c.value)}` : "";
+          const stats = `<span class="dv-st" aria-hidden="true">
+              <span><i>수량(주)</i>${qtyText(h.qty)}</span>
+              <span><i>평단</i>${costTxt}</span>
+              <span><i>현재가${c.oldPx ? "*" : ""}</i>${px(c.price)}</span>
+              <span><i>수익률</i><em class="${pr == null ? "" : dir(pr)}">${pr == null ? "—" : signPct(pr)}</em></span>
+            </span>`;
           const freq = c.d?.freq ? `<span class="freq">${FREQ[c.d.freq]}</span>` : c.manual ? `<span class="freq manual">직접 입력</span>` : "";
           const right = c.annual != null && c.dps > 0
             ? `<b class="px">${won(c.annual)}</b><em class="yld">${pct(c.yieldCost)}</em>`
             : c.annual === 0 || c.dps === 0
               ? `<b class="px muted">배당 없음</b><em class="yld none">0.00%</em>`
               : `<b class="px muted">—</b><em class="yld none">정보 없음</em>`;
-          return `<button type="button" class="wl-row" data-id="${esc(h.id)}" aria-label="${esc(h.name)} 수정">
+          return `<button type="button" class="wl-row dv-row" data-id="${esc(h.id)}" aria-label="${esc(h.name)} 수정">
             ${tile(h.name, h.symbol)}
             <span class="wl-id"><b class="nm">${esc(h.name)}</b><small>${esc(sub)}${freq}</small></span>
             <span class="wl-px">${right}</span>
+            ${stats}
           </button>`;
         }).join("")}</div>`
       : `<div class="dv-empty">
@@ -110,8 +209,15 @@
           <button type="button" class="btn-primary" data-add>첫 종목 추가하기</button>
         </div>`;
 
+    const pre = PRESET[prof];
+    const fromSrc = pre?.items?.length && pre.asOf
+      ? (edited
+          ? ` · <button type="button" class="dv-reset" data-reset>${esc(pre.asOf.slice(5).replace("-", "."))} ${esc(pre.src || "기본값")} 기준으로 되돌리기</button>`
+          : ` · 평단·수량은 ${esc(pre.asOf.replace(/-/g, "."))} ${esc(pre.src || "")} 기준`)
+      : "";
     $("dv-note").innerHTML = `최근 12개월 배당 기준 예상치${afterTax ? " · 세후 국내 15.4%·미국 15%" : ""} · 미국 종목은 오늘 환율 · 이 브라우저에만 저장` +
-      (DIV.updated ? ` · ${esc(DIV.updated.slice(5, 10).replace("-", "."))} 갱신` : "");
+      (DIV.updated ? ` · ${esc(DIV.updated.slice(5, 10).replace("-", "."))} 갱신` : "") +
+      (rows.some((r) => r.c.oldPx) ? " · 현재가* 는 시세 데이터가 없어 증권사 화면 기준" : "") + fromSrc;
     renderFt();
   }
 
@@ -166,10 +272,17 @@
   const ETF_BRAND = /^(KODEX|TIGER|RISE|KBSTAR|ACE|SOL|PLUS|HANARO|KOSEF|ARIRANG|KIWOOM|TIMEFOLIO|WON|1Q|BNK|UNICORN|FOCUS|TRUSTON|HK|KoAct|VITA|TIME|IBK|TREX|ITF|KCGI|SMART|DAISHIN343|마이티|에셋플러스|히어로즈|파워|마이다스|흥국|대신343)(\s|$|\d)/i;
   // 해외 지수·자산을 담은 커버드콜은 해외 옵션이라 비과세가 아님
   const FOREIGN_RX = /미국|나스닥|S&P|글로벌|차이나|중국|홍콩|항셍|일본|니케이|인도|베트남|유럽|대만|빅테크|테크100|월드|국채|채권|원유|골드|금현물|달러/i;
-  let ft = read(FT_KEY, {});
-  if (!ft || typeof ft !== "object") ft = {};
-  ft.per = ft.per && typeof ft.per === "object" ? ft.per : {};
-  const saveFt = () => { try { localStorage.setItem(FT_KEY, JSON.stringify(ft)); } catch {} };
+  // 금융소득은 사람마다 따로라 설정도 프로필별(User1은 예전 저장값 FT_KEY)
+  const ftKey = () => (prof === "u1" ? FT_KEY : `${FT_KEY}.${prof}`);
+  let ft = {};
+  function loadFt() {
+    ft = read(ftKey(), {});
+    if (!ft || typeof ft !== "object") ft = {};
+    ft.per = ft.per && typeof ft.per === "object" ? ft.per : {};
+    const ids = { "ft-interest": "interest", "ft-gain": "gain", "ft-other": "other" };
+    for (const [id, k] of Object.entries(ids)) $(id).value = Number.isFinite(ft[k]) && ft[k] > 0 ? ft[k] : "";
+  }
+  const saveFt = () => { try { localStorage.setItem(ftKey(), JSON.stringify(ft)); } catch {} };
   const man = (v) => (Math.abs(v) >= 1e4 ? nf0.format(Math.round(v / 1e4)) + "만원" : won(v));
   const manIn = (id) => { const v = Number($(id).value); return Number.isFinite(v) && v > 0 ? v * 1e4 : 0; };
 
@@ -345,9 +458,14 @@
   }
 
   let picked = null, editing = null, results = [], active = -1;
+  let costKrwMode = false; // 수정 중인 해외 종목이 원화 평단(costKrw)이면 취득가 칸도 원화로
 
   function setPicked(p) {
     picked = p;
+    if (costKrwMode && (!p || holdings.find((x) => x.id === editing)?.symbol !== p.symbol)) {
+      costKrwMode = false; // 다른 종목을 고르면 평소처럼 그 종목 통화로
+      $("dv-cost").value = "";
+    }
     const box = $("dv-picked");
     if (!p) { box.hidden = true; $("dv-dps-wrap").hidden = true; preview(); return; }
     const d = DIV.items[p.symbol];
@@ -362,7 +480,7 @@
         <div><dt>주당 배당금(연)</dt><dd>${d ? money(d.dps, cur) : "직접 입력"}</dd></div>
         <div><dt>배당률</dt><dd>${d && price ? pct(d.dps / price) : "—"}${d?.freq ? ` · ${FREQ[d.freq]}` : ""}</dd></div>
       </dl>`;
-    $("dv-cost-label").textContent = `취득가 (주당, ${cur === "USD" ? "달러" : "원"})`;
+    $("dv-cost-label").textContent = costKrwMode ? "평단 (주당, 원화)" : `취득가 (주당, ${cur === "USD" ? "달러" : "원"})`;
     $("dv-cost").placeholder = Number.isFinite(price) ? `비우면 현재가 ${money(price, cur)}` : "현재가를 몰라서 꼭 입력해 주세요";
     $("dv-dps-wrap").hidden = !!d;
     $("dv-dps-label").textContent = `연간 주당 배당금 (${cur === "USD" ? "달러" : "원"}, 직접 입력)`;
@@ -377,7 +495,9 @@
     const box = $("dv-preview");
     const f = formItem();
     if (!picked || !(f.qty > 0)) { box.hidden = true; return; }
-    const c = calc({ symbol: picked.symbol, qty: f.qty, cost: f.cost, dps: DIV.items[picked.symbol] ? null : f.dps });
+    const c = calc(costKrwMode
+      ? { symbol: picked.symbol, qty: f.qty, cost: null, costKrw: f.cost, dps: null }
+      : { symbol: picked.symbol, qty: f.qty, cost: f.cost, dps: DIV.items[picked.symbol] ? null : f.dps });
     if (c.annual == null) { box.hidden = true; return; }
     box.hidden = false;
     box.innerHTML = `<span>예상 연 배당금</span><b>${won(c.annual)}</b><span>배당률</span><b>${pct(c.yieldCost)}</b>`;
@@ -420,8 +540,9 @@
     $("dv-title").textContent = h ? "보유 종목 수정" : "보유 종목 추가";
     $("dv-del").hidden = !h;
     $("dv-err").textContent = "";
+    costKrwMode = !!h && !isKR(h.symbol) && Number.isFinite(h.costKrw);
     $("dv-qty").value = h?.qty ?? "";
-    $("dv-cost").value = h?.cost ?? "";
+    $("dv-cost").value = costKrwMode ? Math.round(h.costKrw) : h?.cost != null ? +(+h.cost).toFixed(4) : "";
     $("dv-dps").value = h?.dps ?? "";
     $("dv-q").value = "";
     closeOptions();
@@ -441,13 +562,22 @@
     if (f.cost == null && !Number.isFinite(price)) return err("이 종목은 현재가를 몰라서 취득가를 입력해야 해요.");
     if (f.cost != null && !(f.cost > 0)) return err("취득가는 0보다 커야 해요.");
     const item = { id: editing || "d" + Date.now().toString(36), symbol: picked.symbol, name: picked.name, qty: f.qty, cost: f.cost };
+    if (costKrwMode) { item.cost = null; if (f.cost != null) item.costKrw = f.cost; }
+    const old = holdings.find((h) => h.id === editing && h.symbol === item.symbol);
+    if (old?.pxKrw) item.pxKrw = old.pxKrw;
     if (!d && f.dps != null) item.dps = f.dps;
     const next = holdings.filter((h) => h.id !== item.id);
     // 같은 종목을 새로 추가하면 수량·평단을 합침
     const same = !editing && next.find((h) => h.symbol === item.symbol);
     if (same) {
-      const pa = same.cost ?? price, pb = item.cost ?? price;
-      same.cost = Number.isFinite(pa) && Number.isFinite(pb) ? (same.qty * pa + item.qty * pb) / (same.qty + item.qty) : same.cost;
+      if (Number.isFinite(same.costKrw)) { // 원화 평단끼리 합침
+        const r = curOf(item.symbol) === "USD" ? fx() : 1;
+        const pb = (item.cost ?? price) * r;
+        if (Number.isFinite(pb)) same.costKrw = (same.qty * same.costKrw + item.qty * pb) / (same.qty + item.qty);
+      } else {
+        const pa = same.cost ?? price, pb = item.cost ?? price;
+        same.cost = Number.isFinite(pa) && Number.isFinite(pb) ? (same.qty * pa + item.qty * pb) / (same.qty + item.qty) : same.cost;
+      }
       same.qty += item.qty;
     } else next.push(item);
     holdings = next;
@@ -458,9 +588,9 @@
   }
 
   function setupFt() {
+    loadFt();
     const ids = { "ft-interest": "interest", "ft-gain": "gain", "ft-other": "other" };
     for (const [id, k] of Object.entries(ids)) {
-      if (Number.isFinite(ft[k]) && ft[k] > 0) $(id).value = ft[k];
       $(id).addEventListener("input", () => {
         const v = Number($(id).value);
         ft[k] = Number.isFinite(v) && v > 0 ? v : null;
@@ -493,6 +623,19 @@
   function setup() {
     setupFt();
     const dlg = $("dv-dlg");
+    $("dv-prof").addEventListener("click", (e) => { const b = e.target.closest("[data-p]"); if (b) switchProfile(b.dataset.p); });
+    $("dv-sort").addEventListener("click", () => {
+      sortBy = sortBy === "value" ? "div" : "value";
+      try { localStorage.setItem(SORT_KEY, JSON.stringify(sortBy)); } catch {}
+      render();
+    });
+    $("dv-note").addEventListener("click", (e) => {
+      if (!e.target.closest("[data-reset]")) return;
+      try { localStorage.removeItem(keyOf(prof)); } catch {}
+      holdings = loadHoldings(prof);
+      render();
+      $("dv-status").textContent = `${profName(prof)} 기본값으로 되돌림`;
+    });
     $("dv-add").addEventListener("click", () => openSheet());
     $("dv-list").addEventListener("click", (e) => {
       const row = e.target.closest(".wl-row");

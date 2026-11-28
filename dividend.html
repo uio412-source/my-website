@@ -54,6 +54,12 @@
         </button>
       </div>
 
+      <div class="wl-tabs dv-prof" id="dv-prof" role="tablist" aria-label="프로필">
+        <button type="button" role="tab" data-p="u1" aria-selected="true">User1</button>
+        <button type="button" role="tab" data-p="u2" aria-selected="false">User2</button>
+        <button type="button" role="tab" data-p="u3" aria-selected="false">User3</button>
+      </div>
+
       <section class="dv-hero" aria-label="배당 요약">
         <div class="dv-hero-top">
           <span>예상 연간 배당</span>
@@ -67,6 +73,7 @@
           <div class="dv-kpi"><span>연 배당금</span><b id="k-div">0원</b><small id="k-month">월 평균 0원</small></div>
           <div class="dv-kpi accent"><span>배당률</span><b id="k-yield">0.00%</b><small id="k-cur">현재가 기준 0.00%</small></div>
         </div>
+        <p class="dv-val" id="dv-val" hidden></p>
       </section>
 
       <section class="dv-cal" id="dv-cal" aria-labelledby="cal-title" hidden>
@@ -75,7 +82,7 @@
       </section>
 
       <section class="dv-list-sec" aria-labelledby="list-title">
-        <div class="wl-sec-head"><h2 id="list-title">보유 종목</h2><span id="dv-count"></span></div>
+        <div class="wl-sec-head"><h2 id="list-title">보유 종목</h2><button type="button" class="dv-sort" id="dv-sort" title="눌러서 정렬 바꾸기" hidden>연 배당금 순</button></div>
         <div id="dv-list"><p class="wl-empty" role="status">불러오는 중…</p></div>
       </section>
 
