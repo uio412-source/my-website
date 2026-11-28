@@ -1,0 +1,288 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09152",
+   "queueKey": "kb-09152",
+   "name": "가온플래티늄카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09152&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09152__prdctOpmn_20150824.pdf",
+   "docDate": "2015-08-24",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 95000},
+    {"brand": "Visa", "amount": 100000},
+    {"brand": "Mastercard", "amount": 100000},
+    {"brand": "American Express", "amount": 100000}
+   ],
+   "brands": ["국내전용", "Visa", "Mastercard", "American Express"],
+   "minimumSpend": 0,
+   "spendBasis": "기본·추가 적립과 해외 캐시백은 전월 실적 조건 없음(영화·놀이공원 할인만 전월 30만원 이상)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 실적이 없어도 영화·놀이공원 할인 제공",
+   "spendExclusions": [],
+   "benefitExclusions": [
+    "무이자 할부 이용 금액",
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "지방세·정부지원금",
+    "대학·대학원 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "취소 금액"
+   ],
+   "benefits": [
+    {
+     "group": "기본 적립",
+     "label": "국내 가맹점",
+     "place": "국내 모든 가맹점",
+     "value": "0.7%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "적립 한도 없음",
+     "conditions": ["포인트리 적립"]
+    },
+    {
+     "group": "추가 적립",
+     "label": "주말·공휴일",
+     "place": "국내 가맹점(주말·공휴일 이용)",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "적립 한도 없음",
+     "conditions": ["대중교통(버스·지하철)·이동통신요금 자동납부는 추가 적립 제외(택시는 적립)"]
+    },
+    {
+     "group": "추가 적립",
+     "label": "음식·커피",
+     "place": "일반음식점·한식·중식·일식·양식·뷔페·패밀리레스토랑, 커피전문점(스타벅스·커피빈 등)",
+     "value": "0.8%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "적립 한도 없음",
+     "conditions": ["포인트리 적립"]
+    },
+    {
+     "group": "추가 적립",
+     "label": "대중교통·택시",
+     "place": "버스·지하철, 택시",
+     "value": "0.8%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "적립 한도 없음",
+     "conditions": ["시외버스·고속버스 제외"]
+    },
+    {
+     "group": "추가 적립",
+     "label": "이동통신요금",
+     "place": "SKT·KT Olleh·LG U+ 이동통신요금",
+     "value": "0.8%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "적립 한도 없음",
+     "conditions": ["KB국민 가온플래티늄카드 자동납부 등록 시"]
+    },
+    {
+     "group": "할인 서비스",
+     "label": "영화",
+     "place": "메가박스·CGV 온라인 영화 예매",
+     "value": "3,500원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "1일 2회 · 월 4회 · 연 10회",
+     "conditions": ["승인 건당 3,500원 청구 할인"]
+    },
+    {
+     "group": "할인 서비스",
+     "label": "놀이공원",
+     "place": "롯데월드 어드벤처·에버랜드·캐리비안베이",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": null,
+     "limits": "롯데월드 1일 1매·월 2매·연 5매, 에버랜드 연 10매",
+     "conditions": ["현장 결제 시", "캐리비안베이는 30% 할인"]
+    },
+    {
+     "group": "할인 서비스",
+     "label": "해외 이용",
+     "place": "해외 가맹점(일시불 매입 완료 기준)",
+     "value": "2%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 100만원 이용 금액까지",
+     "conditions": ["할인 금액은 다음 달 둘째 주 결제 계좌 입금"]
+    },
+    {
+     "group": "플래티늄 리워드",
+     "label": "연간 결제납부 실적",
+     "place": "KB국민 가온플래티늄카드 연간 결제납부 실적",
+     "value": "18만점",
+     "valueType": "적립",
+     "minimumSpend": null,
+     "tiers": [{"spend": 5000000, "cap": 30000}, {"spend": 10000000, "cap": 80000}, {"spend": 20000000, "cap": 180000}],
+     "cap": null,
+     "capScope": "연",
+     "limits": "구간별 3만·8만·18만 포인트리",
+     "conditions": ["발급월 다음 달~다음 해 동발급월 12개월 결제납부 금액 기준", "매년 발급월 기준 다음 달 27일 적립"]
+    },
+    {
+     "group": "웰컴 포인트리",
+     "label": "웰컴 적립",
+     "place": "KB국민 가온플래티늄카드 최초 발급",
+     "value": "5만점",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "cap": 50000,
+     "capScope": "연",
+     "limits": "최초 발급 1회",
+     "conditions": ["연회비 납부 및 일시불·할부 20만원 이상 이용 시", "달성일 기준 다음 달 27일 적립"]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09063",
+   "queueKey": "kb-09063",
+   "name": "굿데이올림카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09063&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09063__prdctOpmn_20150213.pdf",
+   "docDate": "2015-02-13",
+   "annualFee": [
+    {"brand": "Visa", "amount": 20000},
+    {"brand": "Mastercard", "amount": 20000},
+    {"brand": "American Express", "amount": 20000},
+    {"brand": "UnionPay", "amount": 15000}
+   ],
+   "brands": ["Visa", "Mastercard", "American Express", "UnionPay"],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 KB국민 굿데이올림카드 일시불·할부 승인 금액(해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 실적이 없어도 1구간(30만~60만) 서비스 제공",
+   "spendExclusions": [
+    "기본·추가 할인받은 이용 건(해당 매출 전체)",
+    "취소 금액",
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "연회비·각종 수수료·이자·연체료",
+    "각종 세금·공과금",
+    "아파트 관리비",
+    "정부지원금",
+    "선불카드 구입·충전",
+    "각종 상품권 구입",
+    "대학·대학원 등록금",
+    "대중교통·항공기 내 등 무승인 전표"
+   ],
+   "benefitExclusions": [
+    "무이자 할부 이용 금액",
+    "선불카드 구입·충전",
+    "각종 상품권 구입",
+    "대형마트 온라인 쇼핑몰·상품권 구매·임대매장·SSM",
+    "학원 PG 결제·유아교육기관·학습자재, 피트니스 레포츠클럽·수영장·골프연습장·테니스장·요가·스포츠용품점",
+    "음식의 제과·아이스크림·패스트푸드·유흥주점 업종"
+   ],
+   "benefits": [
+    {
+     "group": "기본 서비스",
+     "label": "주유",
+     "place": "주유소·충전소 업종(GS칼텍스 고시 휘발유가 기준)",
+     "value": "리터당 60원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 제공 이용금액 20만(1구간)·40만원(2구간), 1일 10만원",
+     "conditions": ["경유·등유·LPG는 휘발유가에 비례해 할인율 적용"]
+    },
+    {
+     "group": "기본 서비스",
+     "label": "대형마트",
+     "place": "이마트·롯데마트·홈플러스",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 제공 이용금액 3만·5만·10만원(1·2·3구간)",
+     "conditions": ["온라인 쇼핑몰·상품권 구매·임대매장·SSM 제외"]
+    },
+    {
+     "group": "기본 서비스",
+     "label": "통신",
+     "place": "전화요금·인터넷이용료·케이블TV 업종(휴대폰·유선·국제전화·인터넷전화·IPTV)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 제공 이용금액 3만원",
+     "conditions": []
+    },
+    {
+     "group": "기본 서비스",
+     "label": "대중교통",
+     "place": "버스·지하철·택시",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 제공 이용금액 5만원",
+     "conditions": ["시외버스·고속버스 제외"]
+    },
+    {
+     "group": "기본 서비스",
+     "label": "해외 이용",
+     "place": "해외 가맹점(해외직구 포함)",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 제공 이용금액 20만원",
+     "conditions": ["할인 금액은 다음 달 둘째 주 결제 계좌 입금"]
+    },
+    {
+     "group": "추가 서비스",
+     "label": "음식·커피·편의점·약국",
+     "place": "일반음식점·휴게음식점·패밀리레스토랑·일반주점, 커피전문점, 편의점, 약국",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 제공 이용금액 5만원",
+     "conditions": ["제과·아이스크림·패스트푸드·유흥주점 업종 제외"]
+    },
+    {
+     "group": "추가 서비스",
+     "label": "학원·피트니스",
+     "place": "문리계·외국어·예체능·기술·자동차학원 및 독서실, 종합스포츠센터",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 제공 이용금액 30만원",
+     "conditions": ["학원 PG 결제·유아교육기관·학습자재 제외", "레포츠클럽·수영장·골프연습장·테니스장·요가·스포츠용품점 제외"]
+    }
+   ]
+  }
+ ]
+}
