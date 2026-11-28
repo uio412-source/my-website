@@ -1,0 +1,127 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20240111001",
+   "name": "다자녀행복카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20240111001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20240111001",
+   "docDate": "2026-06-26",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 9000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 10000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 신규 후 수령일부터 다음 달 말일까지 실적 미달이어도 통합 캐시백 한도 1만원 제공",
+   "spendExclusions": [
+    "무이자할부",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료",
+    "상하수도 요금"
+   ],
+   "benefitExclusions": [
+    "스타벅스 사이렌오더(커피)",
+    "백화점·대형할인점 등 일부 입점 매장",
+    "각 브랜드 상품권·선불카드 구입·충전"
+   ],
+   "benefits": [
+    {
+     "group": "주유",
+     "label": "주유",
+     "place": "전국 주유소(LPG 충전소 포함)",
+     "value": "리터당 100원",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 1회 이용액 10만원까지"
+    },
+    {
+     "group": "병원·약국",
+     "label": "병원·약국",
+     "place": "병원·약국 업종",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 통합 최대 5천원"
+    },
+    {
+     "group": "교육",
+     "label": "학원",
+     "place": "학원 업종",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 2회, 통합 최대 5천원"
+    },
+    {
+     "group": "교통",
+     "label": "버스·지하철·KTX",
+     "place": "버스(시외·고속버스 포함)·지하철, KTX·SRT",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "1일 1회, 통합 최대 5천원"
+    },
+    {
+     "group": "커피",
+     "label": "커피",
+     "place": "스타벅스·엔제리너스·할리스커피·이디야·투썸플레이스·카페베네",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 통합 최대 5천원",
+     "conditions": [
+      "오프라인 결제건에 한함(스타벅스 사이렌오더 제외)"
+     ]
+    },
+    {
+     "group": "쇼핑",
+     "label": "대형할인점·온라인쇼핑",
+     "place": "이마트·롯데마트·홈플러스·농협하나로마트(창고형 포함), 인터넷쇼핑몰(PG 가맹점 포함)",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 통합 최대 5천원"
+    }
+   ]
+  }
+ ]
+}
