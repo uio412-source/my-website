@@ -1,0 +1,203 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-02245",
+   "queueKey": "kb-02245",
+   "name": "SK에너지 러브유 KB국민카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=02245&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/02245__prdctOpmn_20120412.pdf",
+   "docDate": "2012-04-12",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 7000},
+    {"brand": "Visa", "amount": 12000},
+    {"brand": "Mastercard", "amount": 12000},
+    {"brand": "JCB", "amount": 12000}
+   ],
+   "brands": ["국내전용", "Visa", "Mastercard", "JCB"],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 일시불·할부 이용실적 30만원 이상(SK 주유 할인 이용 건 제외)",
+   "grace": "최초 사용 등록일부터 60일간 주유 할인, 90일간 대중교통 할인은 실적 무관",
+   "spendExclusions": [
+    "SK 주유 할인 이용 건",
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "각종 세금·공과금·아파트 관리비",
+    "정부지원금·대학 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "무승인 전표"
+   ],
+   "benefitExclusions": [
+    "LPG 충전",
+    "기존 외상·사전 약정 단가 거래(주유 현장 할인)",
+    "1.4톤 초과 화물차·수입차(엔진오일 무료 교환)",
+    "시외·고속버스 제외 여부는 안내문 기준 시내버스·지하철·고속·시외버스 할인"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "SK주유소",
+     "place": "SK에너지 주유소",
+     "value": "리터당 100원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "1일 30만원·월 30만원 이용금액까지 할인",
+     "conditions": ["휘발유·경유·등유 대상(LPG 제외)", "SK에너지 고시 휘발유가 기준", "초회 60일간은 실적 무관"]
+    },
+    {
+     "group": "차량 정비",
+     "label": "엔진오일 무료 교환",
+     "place": "스피드메이트",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "연",
+     "limits": "연 1회",
+     "conditions": ["ZIC-X7 기준, 5인 이하 가솔린 승용차(엔진오일 4L 이하)", "1.4톤 초과 화물차·수입차 제외", "본인 회원만"]
+    },
+    {
+     "group": "차량 정비",
+     "label": "스피드메이트 정비",
+     "place": "스피드메이트(엔진세정·브레이크패드·에어컨 가스·엔진오일·항균필터·부동액 교환 등)",
+     "value": "2만원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "건",
+     "limits": "월 1건 · 연 최대 3건",
+     "conditions": ["정비항목 중 월 1건 정액 현장 할인", "타이어 펑크 수리·안전점검(연 1회)·워셔액 보충·공임 10% 할인 별도"]
+    },
+    {
+     "group": null,
+     "label": "대중교통",
+     "place": "시내버스·지하철(후불교통), 고속·시외버스",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 4000,
+     "capScope": "월",
+     "limits": "월 4만원 이용분까지(최대 4천원)",
+     "conditions": ["초회 90일간은 실적 무관"]
+    },
+    {
+     "group": null,
+     "label": "캠핑 지원 캐시백",
+     "place": "SK에너지 러브유 KB국민카드 회원 추첨",
+     "value": "70만원",
+     "valueType": "캐시백",
+     "minimumSpend": null,
+     "cap": 700000,
+     "capScope": "연",
+     "limits": "연 80명 추첨",
+     "conditions": ["추첨 방식"]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-04088",
+   "queueKey": "kb-04088",
+   "name": "스타트럭플러스 S-OIL카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04088&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/04088__prdctOpmn_20160920.pdf",
+   "docDate": "2016-09-20",
+   "annualFee": [
+    {"brand": "UnionPay", "amount": 0},
+    {"brand": "Mastercard", "amount": 0}
+   ],
+   "brands": ["UnionPay", "Mastercard"],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 이용(승인) 실적 30만원 이상(주유소·충전소 업종 이용 금액 제외)",
+   "grace": null,
+   "spendExclusions": [
+    "주유소·충전소 업종 이용 금액",
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "각종 세금·공과금·아파트 관리비",
+    "정부지원금·대학 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "대중교통 등 무승인 전표",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "LPG 충전소 결제(주유 청구 할인)",
+    "기존 외상·사전 약정 단가 거래·LPG 충전(현장 할인)",
+    "대형마트 온라인 쇼핑몰·상품권 구매·건물 내 임대매장·SSM"
+   ],
+   "benefits": [
+    {
+     "group": "주유 할인",
+     "label": "S-OIL 화물차 우대주유소",
+     "place": "S-OIL 화물차 우대주유소(경유)",
+     "value": "리터당 최대 100원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [{"spend": 300000, "cap": 100000}, {"spend": 600000, "cap": 150000}, {"spend": 900000, "cap": 200000}, {"spend": 1500000, "cap": 325000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "현장 35원 + 청구 10~65원(구간별 청구 한도 5만~32만5천원)",
+     "conditions": ["현장 할인 리터당 35원은 실적·한도 제한 없음", "S-OIL 고시 경유가 기준"]
+    },
+    {
+     "group": "생활편의 서비스",
+     "label": "대형마트",
+     "place": "이마트·롯데마트·홈플러스",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [{"spend": 300000, "cap": 5000}, {"spend": 600000, "cap": 10000}, {"spend": 900000, "cap": 15000}, {"spend": 1500000, "cap": 20000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "구간별 5천~2만원",
+     "conditions": ["온라인 쇼핑몰·상품권 구매·임대매장·SSM 제외"]
+    },
+    {
+     "group": "생활편의 서비스",
+     "label": "커피전문점",
+     "place": "스타벅스·커피빈 등 커피전문점 업종",
+     "value": "25%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [{"spend": 300000, "cap": 5000}, {"spend": 600000, "cap": 10000}],
+     "cap": null,
+     "capScope": "월",
+     "limits": "30만원 5천원 · 60만원 이상 1만원",
+     "conditions": []
+    },
+    {
+     "group": "생활편의 서비스",
+     "label": "자동차정비",
+     "place": "차량정비·부품 등 자동차정비 업종",
+     "value": "2%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 5천원",
+     "conditions": []
+    },
+    {
+     "group": "유가보조금",
+     "label": "화물차 유가보조금",
+     "place": "모든 주유소·충전소(사업용 화물차)",
+     "value": "차등 지원",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": null,
+     "limits": "최대 적재량에 따라 차등",
+     "conditions": ["국토교통부 유가보조금 지급지침에 따라 청구 할인 방식으로 적용", "보조금 월 지급 한도·지원 단가는 정부 정책에 따라 변경"]
+    }
+   ]
+  }
+ ]
+}
