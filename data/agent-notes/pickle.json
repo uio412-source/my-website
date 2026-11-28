@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-28T21:30:00+09:00",
+ "updatedAt": "2026-11-29T02:50:00+09:00",
  "lock": null,
  "runs": [
   {
@@ -2084,6 +2084,33 @@
    "queueKeys": [
     "kb-04550"
    ]
+  },
+  {
+   "at": "2026-11-29T02:45:00+09:00",
+   "kind": "card-terms",
+   "summary": "현대카드 상품설명서 12종 · 혜택 78줄 (공식 PDF 심의필 날짜 기준)",
+   "pr": 394,
+   "queueKeys": [
+    "hyundai-tpe4",
+    "hyundai-hmhc",
+    "hyundai-hmhcp",
+    "hyundai-yshc",
+    "hyundai-hehc",
+    "hyundai-mrded2",
+    "hyundai-mcwye3",
+    "hyundai-mkte3",
+    "hyundai-mcje2",
+    "hyundai-nexon-unlimited",
+    "hyundai-mlsb",
+    "hyundai-cmsc"
+   ]
+  },
+  {
+   "at": "2026-11-29T02:50:00+09:00",
+   "kind": "audit",
+   "summary": "피킹률 전수 검사: A1 6건·A2 0건·A3 8건 모두 기존 카드, 이번 수집분에서 새 A1/A2/A3 없음. terms_to_rules --dry-run 요율 모델 추가 0장",
+   "pr": 394,
+   "queueKeys": []
   }
  ],
  "skipped": [
@@ -2632,6 +2659,34 @@
    "reason": "같은 표기 불일치(1.4·1.5천원 vs 기본+제휴 합계)",
    "retry": "합계 기준(4,100·4,200원)으로 기재, 카드사 확인 필요",
    "status": "workaround"
+  },
+  {
+   "at": "2026-11-29",
+   "target": "hyundai-msce2 현대카드M-경차전용카드 Edition2",
+   "status": "open",
+   "reason": "카드가 연결한 약관 PDF(T_ATW-20220506-…V10.pdf)의 심의필이 2022-07-27로 '올해·작년 문서' 규칙 밖",
+   "retry": "2025~2026년판 약관·가이드북이 올라오면 같은 카드 상세의 pdf_link에서 교체"
+  },
+  {
+   "at": "2026-11-29",
+   "target": "hyundai-mrdsc Kia Members 경차전용카드",
+   "status": "open",
+   "reason": "카드 상세(CPCCR0201_01.hc?cardWcd=MRDSC)에 상품설명서 pdf_link가 렌더되지 않음(guideCardCheck3 미해당)",
+   "retry": "카드사(1577-6000)에 상품설명서 요청 또는 다른 제휴 카드 가이드북(02714) 내 경차전용 항목 확인"
+  },
+  {
+   "at": "2026-11-29",
+   "target": "hyundai-kale2t2·kale2t3 대한항공카드 120·300",
+   "status": "open",
+   "reason": "카드가 연결한 문서(c=03210·03211)가 상품설명서가 아니라 'Mastercard 프리미엄서비스 안내'(국내 공항 라운지 연 2회)임",
+   "retry": "대한항공카드 상품설명서(가이드북) 코드를 카드 상세 외 경로(상품공시실·고객센터)에서 확인"
+  },
+  {
+   "at": "2026-11-29",
+   "target": "hyundai-ampte2·amgle2·amgre2 AMEX 3종 card-terms",
+   "status": "workaround",
+   "reason": "연결 문서(c=03186·03185·03184)가 '2026년 선택제공서비스 안내서'로 혜택이 브랜드 서비스뿐이고 연회비 표가 없음",
+   "retry": "2026-11-28 판단 유지 — card-terms 대신 brand-services로 남김"
   }
  ]
 }

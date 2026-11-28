@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T22:22:27+09:00",
+  "generatedAt": "2026-11-29T02:42:14+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -10,10 +10,10 @@
       "updatedAt": "2026-11-25T19:40:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 388,
-        "title": "data: 수집 2026-11-28 (IBK기업은행 카드 이벤트 4건)",
-        "mergedAt": "2026-11-28T12:34:48Z",
-        "mergedAtKST": "2026-11-28 21:34"
+        "number": 393,
+        "title": "GitHub 이슈 기반 모바일 에이전트 채팅방과 5분 확인 워커",
+        "mergedAt": "2026-11-28T15:01:52Z",
+        "mergedAtKST": "2026-11-29 00:01"
       },
       "runs": [
         {
@@ -43,10 +43,10 @@
       "updatedAt": "2026-11-28T23:20:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 389,
-        "title": "data: 현대카드 BUSINESS 상품설명서 — 케이뱅크·카카오뱅크 3종 다시 정리",
-        "mergedAt": "2026-11-28T13:18:10Z",
-        "mergedAtKST": "2026-11-28 22:18"
+        "number": 390,
+        "title": "data: 현대카드 BUSINESS 상품설명서 2차 — MY BUSINESS·캐시노트·햇살론 6종",
+        "mergedAt": "2026-11-28T13:22:48Z",
+        "mergedAtKST": "2026-11-28 22:22"
       },
       "runs": [
         {
@@ -478,13 +478,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-28T21:30:00+09:00",
+      "updatedAt": "2026-11-29T02:50:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 387,
-        "title": "docs: 50배치 2차 수집 마무리 — 대기열·Pickle 기록·현황판 동기화",
-        "mergedAt": "2026-11-28T09:09:41Z",
-        "mergedAtKST": "2026-11-28 18:09"
+        "number": 394,
+        "title": "data: 수집 2026-11-29 (현대카드 상품설명서 12종)",
+        "mergedAt": "2026-11-28T17:41:29Z",
+        "mergedAtKST": "2026-11-29 02:41"
       },
       "runs": [
         {
@@ -2567,25 +2567,94 @@
           "queueKeys": [
             "kb-04550"
           ]
+        },
+        {
+          "at": "2026-11-29T02:45:00+09:00",
+          "kind": "card-terms",
+          "summary": "현대카드 상품설명서 12종 · 혜택 78줄 (공식 PDF 심의필 날짜 기준)",
+          "pr": 394,
+          "queueKeys": [
+            "hyundai-tpe4",
+            "hyundai-hmhc",
+            "hyundai-hmhcp",
+            "hyundai-yshc",
+            "hyundai-hehc",
+            "hyundai-mrded2",
+            "hyundai-mcwye3",
+            "hyundai-mkte3",
+            "hyundai-mcje2",
+            "hyundai-nexon-unlimited",
+            "hyundai-mlsb",
+            "hyundai-cmsc"
+          ]
+        },
+        {
+          "at": "2026-11-29T02:50:00+09:00",
+          "kind": "audit",
+          "summary": "피킹률 전수 검사: A1 6건·A2 0건·A3 8건 모두 기존 카드, 이번 수집분에서 새 A1/A2/A3 없음. terms_to_rules --dry-run 요율 모델 추가 0장",
+          "pr": 394,
+          "queueKeys": []
         }
       ],
-      "openIssues": 74
+      "openIssues": 78
     }
   },
   "locks": [],
   "openPRs": [
     {
-      "number": 390,
-      "title": "data: 현대카드 BUSINESS 상품설명서 2차 — MY BUSINESS·캐시노트·햇살론 6종",
-      "agent": "Claude",
-      "branch": "ai/claude/hyundai-business-terms-2",
-      "createdAtKST": "2026-11-28 22:22",
-      "area": "4파일 · data/ 2 · data/inbox/card-terms 1 · docs/ 1",
-      "url": "https://github.com/uio412-source/my-website/pull/390",
+      "number": 392,
+      "title": "에이전트 예약 작업에서 공용 검수 요청 확인",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/agent-handoffs-391",
+      "createdAtKST": "2026-11-28 23:53",
+      "area": "1파일 · docs/ 1",
+      "url": "https://github.com/uio412-source/my-website/pull/392",
       "draft": false
     }
   ],
   "recentPRs": [
+    {
+      "number": 394,
+      "title": "data: 수집 2026-11-29 (현대카드 상품설명서 12종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-29-pickle",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T17:41:29Z",
+      "mergedAtKST": "2026-11-29 02:41",
+      "createdAt": "2026-11-28T17:40:30Z",
+      "createdAtKST": "2026-11-29 02:40",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/394"
+    },
+    {
+      "number": 393,
+      "title": "GitHub 이슈 기반 모바일 에이전트 채팅방과 5분 확인 워커",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/github-agent-room",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T15:01:52Z",
+      "mergedAtKST": "2026-11-29 00:01",
+      "createdAt": "2026-11-28T14:59:21Z",
+      "createdAtKST": "2026-11-28 23:59",
+      "area": "5파일 · agent-chat/ 5",
+      "files": 5,
+      "url": "https://github.com/uio412-source/my-website/pull/393"
+    },
+    {
+      "number": 390,
+      "title": "data: 현대카드 BUSINESS 상품설명서 2차 — MY BUSINESS·캐시노트·햇살론 6종",
+      "agent": "Claude",
+      "branch": "ai/claude/hyundai-business-terms-2",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T13:22:48Z",
+      "mergedAtKST": "2026-11-28 22:22",
+      "createdAt": "2026-11-28T13:22:10Z",
+      "createdAtKST": "2026-11-28 22:22",
+      "area": "4파일 · data/ 2 · data/inbox/card-terms 1 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/390"
+    },
     {
       "number": 389,
       "title": "data: 현대카드 BUSINESS 상품설명서 — 케이뱅크·카카오뱅크 3종 다시 정리",
@@ -3089,60 +3158,18 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/354"
-    },
-    {
-      "number": 353,
-      "title": "data: 수집 2026-11-28 (Pickle61 · 광주은행 광주·전남愛사랑플래티늄 카드 혜택)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle61",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T08:29:30Z",
-      "mergedAtKST": "2026-11-28 17:29",
-      "createdAt": "2026-11-28T08:28:57Z",
-      "createdAtKST": "2026-11-28 17:28",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/353"
-    },
-    {
-      "number": 352,
-      "title": "data: 수집 2026-11-28 (Pickle60 · 현대 네이버 Ed2·국민행복 체크 상품설명서 2종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle60",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T08:27:15Z",
-      "mergedAtKST": "2026-11-28 17:27",
-      "createdAt": "2026-11-28T08:26:53Z",
-      "createdAtKST": "2026-11-28 17:26",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/352"
-    },
-    {
-      "number": 351,
-      "title": "data: 수집 2026-11-28 (Pickle59 · KB AMEX Rose Gold·토스모바일 상품설명서 2종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle59",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T08:25:39Z",
-      "mergedAtKST": "2026-11-28 17:25",
-      "createdAt": "2026-11-28T08:25:18Z",
-      "createdAtKST": "2026-11-28 17:25",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/351"
     }
   ],
   "queue": {
-    "built": "2026-11-28",
+    "built": "2026-11-29",
     "nextStart": {
       "cards": "samsung-aap1483",
       "brandPrograms": "shinhan-mastercard-titanium"
     },
     "counts": {
       "cards": {
-        "done": 880,
-        "todo": 583,
+        "done": 892,
+        "todo": 571,
         "total": 1463
       },
       "brandPrograms": {
@@ -3157,7 +3184,7 @@
       }
     },
     "lastCollected": {
-      "card-terms": "2026-11-28",
+      "card-terms": "2026-11-29",
       "brand-services": "2026-11-28",
       "card-events": "2026-11-28",
       "hotel-events": null,
@@ -3166,6 +3193,33 @@
     }
   },
   "skipped": [
+    {
+      "date": "2026-11-29",
+      "agent": "Pickle",
+      "target": "hyundai-kale2t2·kale2t3 대한항공카드 120·300",
+      "status": "open",
+      "reason": "카드가 연결한 문서(c=03210·03211)가 상품설명서가 아니라 'Mastercard 프리미엄서비스 안내'(국내 공항 라운지 연 2회)임",
+      "retry": "대한항공카드 상품설명서(가이드북) 코드를 카드 상세 외 경로(상품공시실·고객센터)에서 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-29",
+      "agent": "Pickle",
+      "target": "hyundai-mrdsc Kia Members 경차전용카드",
+      "status": "open",
+      "reason": "카드 상세(CPCCR0201_01.hc?cardWcd=MRDSC)에 상품설명서 pdf_link가 렌더되지 않음(guideCardCheck3 미해당)",
+      "retry": "카드사(1577-6000)에 상품설명서 요청 또는 다른 제휴 카드 가이드북(02714) 내 경차전용 항목 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-29",
+      "agent": "Pickle",
+      "target": "hyundai-msce2 현대카드M-경차전용카드 Edition2",
+      "status": "open",
+      "reason": "카드가 연결한 약관 PDF(T_ATW-20220506-…V10.pdf)의 심의필이 2022-07-27로 '올해·작년 문서' 규칙 밖",
+      "retry": "2025~2026년판 약관·가이드북이 올라오면 같은 카드 상세의 pdf_link에서 교체",
+      "ref": ""
+    },
     {
       "date": "2026-11-28",
       "agent": "Pickle",
@@ -3884,6 +3938,15 @@
       "status": "open",
       "reason": "카드사 페이지 표기(국내 1.4천원·해외 1.5천원)와 기본+제휴 합계(1.1+3.0 / 1.2+3.0)가 불일치",
       "retry": "카드사(1577-3650) 확인 후 annualFee 교체",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-29",
+      "agent": "Pickle",
+      "target": "hyundai-ampte2·amgle2·amgre2 AMEX 3종 card-terms",
+      "status": "workaround",
+      "reason": "연결 문서(c=03186·03185·03184)가 '2026년 선택제공서비스 안내서'로 혜택이 브랜드 서비스뿐이고 연회비 표가 없음",
+      "retry": "2026-11-28 판단 유지 — card-terms 대신 brand-services로 남김",
       "ref": ""
     },
     {
