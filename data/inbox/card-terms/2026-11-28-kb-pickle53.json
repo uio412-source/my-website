@@ -1,0 +1,346 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09570",
+   "queueKey": "kb-09570",
+   "name": "WE:SH Daily 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09570&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09570__prdctOpmn_20260922.pdf",
+   "docDate": "2024-07-01",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 15000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "JCB",
+    "Mastercard"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) KB국민 WE:SH Daily 카드 일시불·할부 승인 금액(해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 전월 40만원 미만이어도 3,500원 한도까지 할인 제공",
+   "spendExclusions": [
+    "WE:SH Daily 선택할인 받은 이용건(해당 금액 전체)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "상품권·선불카드 구입·충전",
+    "아파트 관리비",
+    "유치원·초·중·고 납입금 전체",
+    "정부지원금(보육료·유치원보조비·바우처)",
+    "대학(원) 등록금",
+    "국세·지방세",
+    "공과금(전기·수도)",
+    "4대 사회보험료",
+    "각종 수수료·이자·연체료·연회비",
+    "무승인 전표",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액",
+    "단기·장기카드대출",
+    "상품권·선불카드 구입·충전",
+    "아파트 관리비",
+    "유치원·초·중·고 납입금",
+    "정부지원금",
+    "대학(원) 등록금",
+    "국세·지방세",
+    "공과금(전기·수도)",
+    "4대 사회보험료",
+    "각종 수수료·이자·연체료·연회비",
+    "신차구매(환급) 할인 전표",
+    "해외이용 건",
+    "RF 후불교통요금",
+    "취소 금액"
+   ],
+   "benefits": [
+    {
+     "group": "선택할인(6개 영역 중 택1)",
+     "label": "쇼핑",
+     "place": "KB Pay 쇼핑(G마켓·11번가·SSG.COM)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 7000
+      },
+      {
+       "spend": 800000,
+       "cap": 12000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "건당 5,000원 한도",
+     "conditions": [
+      "KB Pay 결제 건에 한함",
+      "상품권·여행·티켓·도서·별도 팝업 사이트 제외"
+     ]
+    },
+    {
+     "group": "선택할인(6개 영역 중 택1)",
+     "label": "편의점",
+     "place": "GS25·CU",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 7000
+      },
+      {
+       "spend": 800000,
+       "cap": 12000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "건당 5,000원 한도",
+     "conditions": [
+      "오프라인 매장 결제건에 한함",
+      "백화점·대형마트 입점 매장 제외"
+     ]
+    },
+    {
+     "group": "선택할인(6개 영역 중 택1)",
+     "label": "커피",
+     "place": "스타벅스·커피빈(사이렌오더·퍼플오더 포함)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 7000
+      },
+      {
+       "spend": 800000,
+       "cap": 12000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "건당 5,000원 한도",
+     "conditions": [
+      "공식 홈페이지·모바일앱 결제건에 한함"
+     ]
+    },
+    {
+     "group": "선택할인(6개 영역 중 택1)",
+     "label": "생활",
+     "place": "올리브영·온라인다이소몰",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 7000
+      },
+      {
+       "spend": 800000,
+       "cap": 12000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "건당 5,000원 한도",
+     "conditions": [
+      "올리브영은 오프라인 매장 및 공식 홈페이지·모바일앱 결제건",
+      "온라인다이소몰은 공식 홈페이지·모바일앱 결제건"
+     ]
+    },
+    {
+     "group": "선택할인(6개 영역 중 택1)",
+     "label": "먹방",
+     "place": "제과·아이스크림점 및 패스트푸드 업종",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 7000
+      },
+      {
+       "spend": 800000,
+       "cap": 12000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "건당 5,000원 한도",
+     "conditions": [
+      "백화점·대형마트 등 일부 입점 매장 제외"
+     ]
+    },
+    {
+     "group": "선택할인(6개 영역 중 택1)",
+     "label": "취향",
+     "place": "오늘의집·29CM·NOL(롯데) 티켓·티켓링크",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 7000
+      },
+      {
+       "spend": 800000,
+       "cap": 12000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "건당 5,000원 한도",
+     "conditions": [
+      "공식 홈페이지·모바일앱 결제건에 한함",
+      "NOL은 티켓 카테고리 결제, 티켓링크는 공연·전시·스포츠 예매에 한함"
+     ]
+    },
+    {
+     "group": "기본할인",
+     "label": "국내 가맹점",
+     "place": "국내 모든 가맹점",
+     "value": "0.5%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "한도 없음",
+     "conditions": [
+      "선택할인과 중복 적용",
+      "할인 제외 대상은 서비스 제공 공통 기준 참조"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09348",
+   "queueKey": "kb-09348",
+   "name": "전통시장온누리카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09348&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09348__prdctOpmn_20250627.pdf",
+   "docDate": "2025-06-30",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) KB 전통시장온누리카드 일시불·할부 승인 금액(가족카드 포함, 해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지는 전월 40만원 미만이어도 40만원 구간 할인 제공",
+   "spendExclusions": [
+    "무이자할부 이용금액",
+    "상품권·선불카드 구입·충전 금액",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액",
+    "상품권·선불카드 구입·충전 금액",
+    "취소 금액",
+    "백화점·대형마트 등 일부 입점 매장",
+    "KB Pay 쇼핑의 상품권·여행·티켓·도서·제휴몰 이용"
+   ],
+   "benefits": [
+    {
+     "group": "전통시장",
+     "label": "전통시장가맹점",
+     "place": "국세청이 지정한 전통시장 가점(월 1회 갱신)",
+     "value": "5~10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "건당 1만원 이상 이용 시 할인 제공"
+     ]
+    },
+    {
+     "group": "온누리상품권",
+     "label": "온누리상품권 차감",
+     "place": "온누리상품권 가맹점",
+     "value": "5~10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "KB 전통시장온누리카드를 온누리상품권 앱에 사전 등록·선택 필요",
+      "건당 1만원 이상 이용 시 할인 제공"
+     ]
+    },
+    {
+     "group": "KB Pay 쇼핑",
+     "label": "KB Pay 쇼핑",
+     "place": "KB Pay '쇼핑·여행' 탭",
+     "value": "5~10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "상품권·여행·티켓·도서·제휴몰 등 이용은 제외",
+      "건당 1만원 이상 이용 시 할인 제공"
+     ]
+    }
+   ]
+  }
+ ]
+}
