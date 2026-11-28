@@ -1,0 +1,95 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20200910001",
+   "name": "롯데하이마트 하트♥러브카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20200910001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20200910001",
+   "docDate": "2020-09-10",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 14000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 15000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "최초 사용등록일·최초 승인일 중 빠른 날부터 다음 달 말일까지 실적 30만원 미만이어도 13,000원 캐시백 제공",
+   "spendExclusions": [
+    "무이자할부",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "월 할부금 선결제·상환 종료 시"
+   ],
+   "benefits": [
+    {
+     "group": "할부",
+     "label": "롯데하이마트",
+     "place": "롯데하이마트 장기할부",
+     "value": "월 1만3천~2만3천원",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 13000
+      },
+      {
+       "spend": 700000,
+       "cap": 17000
+      },
+      {
+       "spend": 1200000,
+       "cap": 23000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "횟수 제한 없이 월 캐시백 한도 내 합산",
+     "conditions": [
+      "롯데하이마트 장기할부 이용 시에만 적용",
+      "캐시백은 정기결제일 +2영업일 적용"
+     ]
+    },
+    {
+     "group": "할부",
+     "label": "장기할부",
+     "place": "롯데하이마트 40만원 이상 상품",
+     "value": "연 5.5%",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "24·36개월, 원금균등상환"
+    }
+   ]
+  }
+ ]
+}
