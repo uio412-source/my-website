@@ -11,6 +11,7 @@ import {
 } from '@/lib/catalog-model';
 import {FIELDS, endBucket, viewOf} from '@/lib/event-view';
 import {EventGroups} from '@/components/event-row';
+import {IssuanceView} from '@/components/issuance';
 import {ELIGIBILITY_THEMES, hotelTier, useFit} from '@/lib/card-themes';
 import {browseThemes} from '@/lib/customer-copy';
 import {cardPath} from '@/lib/card-presentation';
@@ -70,7 +71,7 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
       <div className="mc-head"><h1>{SECTIONS[tab].title}</h1>{SECTIONS[tab].sub && <p>{SECTIONS[tab].sub}</p>}</div>
       {loadFailed && <div className="mc-alert" role="status">전체 카드 목록을 불러오지 못했어요. <button type="button" onClick={() => { setLoadFailed(false); setAttempt(a => a + 1); }}>다시 불러오기</button></div>}
       {tab === 'cards' && <CardsView cards={cards} events={events}/>}
-      {tab !== 'cards' && tab !== 'mine' && !eventsLoading && <Freshness events={events} kind={tab === 'cashback' ? 'cashback' : 'card'}/>}
+      {tab !== 'cards' && tab !== 'mine' && !eventsLoading && tab === 'events' && <Freshness events={events} kind="card"/>}
       {tab !== 'cards' && (eventsLoading
         ? <Empty title="이벤트를 불러오고 있어요…"/>
         : tab === 'cashback' ? <CashbackView events={events}/> : tab === 'mine' ? <MineView cards={cards} events={events} ready={fullCards}/> : <EventsView events={events} cards={cards}/>)}
@@ -228,7 +229,10 @@ function Field({label, value, set, options}: {label: string; value: string; set:
 }
 
 // ======================= 발급이벤트 =======================
+// ① 발급 지원금 비교: 네이버페이·카카오페이·아정당·뽐뿌에서 모은 발급 이벤트 표(내 카드사 상태로 참여 가능 판정)
+// ② 카드사 발급 캐시백: 카드사 공지에서 모은 신규 발급 캐시백 목록
 function CashbackView({events}: {events: Offer[]}) {
+  const [view, setView] = useState<'issuance' | 'offers'>('issuance');
   const [q, setQ] = useState('');
   const [issuer, setIssuer] = useState('all');
   const [channel, setChannel] = useState('all');
@@ -242,18 +246,23 @@ function CashbackView({events}: {events: Offer[]}) {
     .sort((a, b) => sort === 'amount' ? b.amount - a.amount : (a.o.endsAt ?? '9').localeCompare(b.o.endsAt ?? '9')), [base, q, issuer, channel, sort]);
   const counts = useMemo(() => base.reduce((m, o) => { const g = groupOf(o.issuer); m[g] = (m[g] ?? 0) + 1; return m; }, {} as Record<string, number>), [base]);
   return <>
-    <SearchBox value={q} onChange={setQ} placeholder="카드·카드사 검색"/>
-    <div className="mc-filters">
-      <Chips label="카드사" issuers items={[{value: 'all', label: '전체', count: base.length}, ...issuerItems(ISSUER_FILTERS.filter(g => counts[g]), counts)]} value={issuer} onChange={setIssuer}/>
-      {channels.length > 1 && <Chips label="채널" items={[{value: 'all', label: '전체'}, ...channels.map(c => ({value: c, label: c}))]} value={channel} onChange={setChannel}/>}
-    </div>
     <div className="mc-bar">
-      <span className="mc-count">{list.length}<small>건</small></span>
-      <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}><option value="amount">혜택 큰 순</option><option value="end">마감 임박순</option></select>
+      <Tabs label="발급 이벤트 보기" items={[{value: 'issuance', label: '발급 지원금 비교'}, {value: 'offers', label: '카드사 캐시백', count: base.length}]} value={view} onChange={v => setView(v as 'issuance' | 'offers')}/>
     </div>
-    {list.length ? <EventGroups list={list.map(x => x.o)} grouped={false} amountOf={o => list.find(x => x.o === o)?.amount || null}/>
-      : <Empty title="지금 진행 중인 발급 이벤트가 없어요."/>}
-    <p className="mc-note">금액은 공지의 최대치예요. 조건은 이벤트를 눌러 확인하세요.</p>
+    {view === 'issuance' ? <IssuanceView/> : <>
+      <SearchBox value={q} onChange={setQ} placeholder="카드·카드사 검색"/>
+      <div className="mc-filters">
+        <Chips label="카드사" issuers items={[{value: 'all', label: '전체', count: base.length}, ...issuerItems(ISSUER_FILTERS.filter(g => counts[g]), counts)]} value={issuer} onChange={setIssuer}/>
+        {channels.length > 1 && <Chips label="채널" items={[{value: 'all', label: '전체'}, ...channels.map(c => ({value: c, label: c}))]} value={channel} onChange={setChannel}/>}
+      </div>
+      <div className="mc-bar">
+        <span className="mc-count">{list.length}<small>건</small></span>
+        <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}><option value="amount">혜택 큰 순</option><option value="end">마감 임박순</option></select>
+      </div>
+      {list.length ? <EventGroups list={list.map(x => x.o)} grouped={false} amountOf={o => list.find(x => x.o === o)?.amount || null}/>
+        : <Empty title="지금 진행 중인 발급 이벤트가 없어요."/>}
+      <p className="mc-note">금액은 공지의 최대치예요. 조건은 이벤트를 눌러 확인하세요.</p>
+    </>}
   </>;
 }
 
