@@ -1,0 +1,119 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20190319001",
+   "name": "광주상생카드체크",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20190319001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20190319001",
+   "docDate": "2022-06-16",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월 1일~말일 이용실적(비씨카드 등록 가맹점 기준)",
+   "grace": "카드 신규 후 수령일부터 다음 달 말일까지 실적 미달이어도 통합 캐시백 한도 1만원 제공",
+   "spendExclusions": [
+    "광주 소재 백화점·대형마트·SSM",
+    "유흥업소",
+    "국세·지방세·공과금",
+    "대학(원) 등록금",
+    "상품권·선불카드 구입·충전",
+    "4대보험료",
+    "온라인 가맹점(PG·인터넷몰)",
+    "타지역 소재 가맹점"
+   ],
+   "benefitExclusions": [
+    "광주상생카드 가맹점 미등록 매장"
+   ],
+   "benefits": [
+    {
+     "group": "전통시장",
+     "label": "전통시장",
+     "place": "광주광역시 소재 전통시장 등록 가맹점",
+     "value": "0.2%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월"
+    },
+    {
+     "group": "오매 서비스",
+     "label": "수퍼·편의점",
+     "place": "수퍼마켓·편의점 업종(광주 소재)",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 2회, 건당 3천원"
+    },
+    {
+     "group": "오매 서비스",
+     "label": "주유",
+     "place": "전 주유소(광주 소재)",
+     "value": "리터당 50원",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 2회, 건당 3천원"
+    },
+    {
+     "group": "오매 서비스",
+     "label": "교통",
+     "place": "시내버스·지하철",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "cap": 2000,
+     "capScope": "월"
+    },
+    {
+     "group": "오매 서비스",
+     "label": "이·미용",
+     "place": "이·미용 업종(광주 소재)",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 2회, 건당 3천원"
+    },
+    {
+     "group": "오매 서비스",
+     "label": "커피",
+     "place": "엔제리너스·드롭탑·파스쿠찌·투썸플레이스(광주 소재)",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 2회, 건당 3천원"
+    },
+    {
+     "group": "금융",
+     "label": "수수료 면제",
+     "place": "광주은행 자동화기기 출금",
+     "value": "월 3회 면제",
+     "valueType": "면제",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": "월"
+    }
+   ]
+  }
+ ]
+}
