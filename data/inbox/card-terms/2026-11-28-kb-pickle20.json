@@ -1,0 +1,234 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-04285",
+   "queueKey": "kb-04285",
+   "name": "스카이패스 티타늄 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04285&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/04285__prdctOpmn_20220211.pdf",
+   "docDate": "2022-02-11",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 45000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 45000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "마일리지 적립은 전월 실적 조건 없음(티타늄서비스만 전월 30만원 이상)",
+   "grace": "티타늄서비스는 실적 유예기간 없음",
+   "spendExclusions": [
+    "(부분)무이자 할부",
+    "취소 금액",
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "각종 세금·공과금·전기·수도",
+    "아파트 관리비",
+    "정부지원금",
+    "초중고(국·공립) 납입금",
+    "대학·대학원 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "교통요금",
+    "무승인 전표(자판기·터널통행료·항공기 내)"
+   ],
+   "benefitExclusions": [
+    "(부분)무이자 할부",
+    "단기카드대출·장기카드대출",
+    "각종 세금·공과금·전기·수도·아파트 관리비",
+    "정부지원금·초중고 납입금·대학 등록금",
+    "각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "취소 금액·4대 사회보험료"
+   ],
+   "benefits": [
+    {
+     "group": "마일리지 적립",
+     "label": "국내외 가맹점",
+     "place": "국내외 모든 가맹점(일시불·할부)",
+     "value": "1,000원당 1마일",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 총 5,000마일(국내·해외 합산)",
+     "conditions": [
+      "대한항공 스카이패스 적립",
+      "결제(회수) 금액 기준, 원금 기준",
+      "가족카드 이용분은 본인 회원에 적립"
+     ]
+    },
+    {
+     "group": "마일리지 적립",
+     "label": "해외·면세점",
+     "place": "해외 가맹점·면세점",
+     "value": "2마일",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 총 5,000마일 한도에 합산",
+     "conditions": [
+      "기본 1마일에 1마일 추가 적립"
+     ]
+    },
+    {
+     "group": "티타늄 서비스",
+     "label": "인천공항 발레파킹",
+     "place": "인천국제공항",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 3회 · 연 12회",
+     "conditions": [
+      "전월 실적 30만원 이상",
+      "실적 유예기간 없음"
+     ]
+    },
+    {
+     "group": "티타늄 서비스",
+     "label": "특급호텔 발레파킹",
+     "place": "국내 특급호텔",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "월 3회 · 연 12회",
+     "conditions": [
+      "전월 실적 30만원 이상",
+      "실적 유예기간 없음"
+     ]
+    },
+    {
+     "group": "티타늄 서비스",
+     "label": "인천공항 라운지",
+     "place": "인천국제공항 라운지",
+     "value": "무료",
+     "valueType": "무료",
+     "minimumSpend": 300000,
+     "cap": null,
+     "capScope": "연",
+     "limits": "일 1회 · 연 2회",
+     "conditions": [
+      "전월 실적 30만원 이상",
+      "실적 유예기간 없음"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09114",
+   "queueKey": "kb-09114",
+   "name": "KB Pay 챌린지+카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09114&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09114__prdctOpmn_20210518.pdf",
+   "docDate": "2021-05-18",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 30000
+    },
+    {
+     "brand": "UnionPay",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard",
+    "UnionPay"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "스탬프·출석 서비스는 실적 조건 없음(이용 리워드만 당월 80만원)",
+   "grace": null,
+   "spendExclusions": [
+    "취소 금액",
+    "무이자 할부 이용 금액",
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "국세·지방세·공과금(전기·수도)·아파트 관리비",
+    "정부지원금·초중고 납입금·대학 등록금",
+    "4대 사회보험료·각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드·기프트카드 구입·충전",
+    "무승인 거래(항공기 내 면세·도로 통행료)",
+    "후불대중교통·하이패스 이용 금액"
+   ],
+   "benefitExclusions": [
+    "취소된 이용 건",
+    "단기카드대출·장기카드대출",
+    "국세·지방세·공과금·아파트 관리비",
+    "정부지원금·학교 납입금·대학 등록금",
+    "상품권·선불카드·기프트카드 구입·충전"
+   ],
+   "benefits": [
+    {
+     "group": "스탬프 서비스",
+     "label": "KB Pay 3회 이용",
+     "place": "KB Pay 온·오프라인 결제",
+     "value": "1천점",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": 50000,
+     "capScope": "월",
+     "limits": "월 5만점",
+     "conditions": [
+      "3회 이용마다 1천 포인트리",
+      "건당 1만원 이상, 동일 가맹점 1일 1회",
+      "적립 기간은 전월 마지막 토요일 다음 날~당월 마지막 토요일"
+     ]
+    },
+    {
+     "group": "출석체크 서비스",
+     "label": "매주 출석",
+     "place": "KB Pay 온·오프라인 결제",
+     "value": "1천점",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "주 1회 1천 포인트리",
+     "conditions": [
+      "일요일~토요일 매일 1회 이상 KB Pay 이용 시",
+      "건당 1만원 이상",
+      "매주 토요일 다음 달 25일 합산 적립"
+     ]
+    },
+    {
+     "group": "이용 리워드",
+     "label": "당월 실적",
+     "place": "KB국민 KB Pay 챌린지+카드 전체 이용",
+     "value": "4천점",
+     "valueType": "적립",
+     "minimumSpend": 800000,
+     "cap": 4000,
+     "capScope": "월",
+     "limits": "당월 1회",
+     "conditions": [
+      "당월 실적 80만원 이용 시",
+      "적립일은 실적 기준 다음 달 25일"
+     ]
+    }
+   ]
+  }
+ ]
+}
