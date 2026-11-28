@@ -1,0 +1,93 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09125",
+   "queueKey": "kb-09125",
+   "name": "HERITAGE Smart [할인형]",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09125&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09125__prdctOpmn_20230103.pdf",
+   "docDate": "2023-01-03",
+   "annualFee": [
+    {
+     "brand": "Mastercard",
+     "amount": 200000
+    },
+    {
+     "brand": "국내전용",
+     "amount": 200000
+    }
+   ],
+   "brands": [
+    "Mastercard",
+    "국내전용"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "쿠폰 발급 첫해는 연회비 납부 + 해당 카드 50만원 이상 이용, 다음해부터는 연회비 납부 + 전년도 600만원 이상 이용",
+   "grace": null,
+   "spendExclusions": [
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "국세·지방세·각종 공과금(전기·수도 등)·아파트 관리비",
+    "정부지원금·초중고 납입금 전체·대학 등록금",
+    "4대 사회보험료·각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "교통요금·무승인 전표·취소 금액"
+   ],
+   "benefitExclusions": [
+    "쿠폰 사용처리 완료된 전표의 취소건(쿠폰 사용취소 처리)",
+    "전체·부분 납부 또는 취소 건, 15만원 미만 결제",
+    "가족 회원(쿠폰은 본인 회원만)"
+   ],
+   "benefits": [
+    {
+     "group": "쿠폰 서비스",
+     "label": "특급호텔 할인",
+     "place": "국내 5성급 관광호텔(한국관광협회 등급결정 기준)",
+     "value": "15만원",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": 150000,
+     "capScope": "연",
+     "limits": "연 1회 쿠폰 1장",
+     "conditions": [
+      "15만원 이상 현장 결제 후 전표 매입 완료 시 쿠폰 신청",
+      "매입 완료일부터 첫 결제일 전 영업일까지 신청"
+     ]
+    },
+    {
+     "group": "쿠폰 서비스",
+     "label": "항공권 할인",
+     "place": "대한항공·아시아나·진에어·제주항공·티웨이 공식 홈페이지",
+     "value": "15만원",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": 150000,
+     "capScope": "연",
+     "limits": "연 1회 쿠폰 1장",
+     "conditions": [
+      "15만원 이상 항공권 결제 후 전표 매입 완료 시 쿠폰 신청"
+     ]
+    },
+    {
+     "group": "쿠폰 서비스",
+     "label": "공연·전시 할인",
+     "place": "공연·전시 티켓 결제",
+     "value": "15만원",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": 150000,
+     "capScope": "연",
+     "limits": "연 1회 쿠폰 1장",
+     "conditions": [
+      "15만원 이상 공연·전시 티켓 결제 후 전표 매입 완료 시 쿠폰 신청"
+     ]
+    }
+   ]
+  }
+ ]
+}
