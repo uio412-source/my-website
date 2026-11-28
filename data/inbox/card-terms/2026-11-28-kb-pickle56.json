@@ -1,0 +1,145 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09138",
+   "queueKey": "kb-09138",
+   "name": "HERITAGE Classic[할인형]",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09138&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09138__prdctOpmn_20241128.pdf",
+   "docDate": "2024-11-28",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 127000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 127000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard",
+    "K-World(JCB)"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) HERITAGE Classic(할인형) 일시불·할부 승인 금액(해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 전월 50만원 미만이어도 할인 제공(카 라이프는 월 5천원 한도)",
+   "spendExclusions": [
+    "쿠폰 서비스 적용 매출",
+    "무이자할부 이용금액",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "상품권·선불카드 구입·충전",
+    "아파트 관리비",
+    "유치원·초·중·고 납입금 전체",
+    "정부지원금",
+    "대학(원) 등록금",
+    "국세·지방세",
+    "공과금(전기·수도)",
+    "4대 사회보험료",
+    "각종 수수료·이자·연체료·연회비",
+    "신차구매 청구(환급) 할인 전표",
+    "RF 후불교통요금",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액",
+    "상품권·선불카드 구입·충전",
+    "취소 금액",
+    "백화점·대형마트 등 일부 입점 매장"
+   ],
+   "benefits": [
+    {
+     "group": "쿠폰",
+     "label": "쿠폰 3택1",
+     "place": "KB국민카드 포인트리 8만점 / 롯데백화점 상품권 8만원 / CGV CINE de CHEF 9만원 현장할인",
+     "value": "연 1회 택1",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "연",
+     "conditions": [
+      "본인·가족회원 합산 연 1회, 쿠폰 분할 신청 불가",
+      "다음해부터는 전년도 연간 이용실적 600만원 이상 시 제공"
+     ]
+    },
+    {
+     "group": "공항 라운지",
+     "label": "공항 라운지",
+     "place": "THE LOUNGE 전세계 공항 라운지",
+     "value": "연 2회 무료",
+     "valueType": "무료",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": "연",
+     "conditions": [
+      "동반 1인 포함(본인과 동시 입장 시 2회 차감)",
+      "본인회원 한정, 국내전용 카드는 미제공"
+     ],
+     "limits": "연 2회(동반 1인 포함)"
+    },
+    {
+     "group": "기본",
+     "label": "국내외 가맹점",
+     "place": "국내외 모든 가맹점",
+     "value": "1%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "할인한도 없음"
+    },
+    {
+     "group": "특별",
+     "label": "생활밀착 4개 영역",
+     "place": "쇼핑(네이버플러스 스토어·쿠팡·G마켓·11번가·SSG.COM·백화점·대형마트·슈퍼마켓), 생활(음식점·커피·편의점·택시), 교육(학원·학습지·독서실), 건강(병원·건강검진센터)",
+     "value": "1.2%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": null,
+     "capScope": "월",
+     "limits": "기본 1%에 0.2% 추가, 한도 없음",
+     "conditions": [
+      "온라인몰은 KB Pay 결제 시에만 할인",
+      "백화점·대형마트·슈퍼마켓·음식·편의점은 오프라인 결제건에 한함"
+     ]
+    },
+    {
+     "group": "특별",
+     "label": "Flex",
+     "place": "온라인항공(대한항공·아시아나항공), 호텔(특급·일반·기타관광호텔), 온라인면세(롯데·신라·신세계), 스포츠, 미용실",
+     "value": "건당 1만원",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": 10000,
+     "capScope": "연",
+     "limits": "분기당 영역 통합 1회, 건당 20만원 이상",
+     "conditions": [
+      "건당 20만원 이상 결제 시",
+      "호텔은 오프라인 결제건, 온라인항공·온라인면세는 공식 홈페이지·앱 결제건"
+     ]
+    },
+    {
+     "group": "특별",
+     "label": "카 라이프",
+     "place": "주차장·세차장 업종",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "cap": 10000,
+     "capScope": "월",
+     "conditions": [
+      "주유소 내 세차장은 업종분류 기준에 따라 제외될 수 있음"
+     ]
+    }
+   ]
+  }
+ ]
+}
