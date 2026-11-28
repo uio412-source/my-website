@@ -1,0 +1,131 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20260417001",
+   "name": "삼성AI구독 장기할부 광주은행BC카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20260417001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20260417001",
+   "docDate": "2026-04-09",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 29000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(무이자할부·취소매출표 접수월 차감)",
+   "grace": "카드 신규 후 수령일부터 다음 월 말일까지 실적 미달이어도 30~70만 구간 10,000원 캐시백 제공",
+   "spendExclusions": [
+    "무이자할부",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "삼성전자가 아닌 타 운영사 구독·할부",
+    "간편결제·PG 가맹점으로 분류된 결제"
+   ],
+   "benefits": [
+    {
+     "group": "구독·할부",
+     "label": "삼성 AI구독",
+     "place": "삼성전자 AI구독료 자동납부 또는 삼성스토어 장기할부",
+     "value": "월 1만~1만4천원",
+     "valueType": "캐시백",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 10000
+      },
+      {
+       "spend": 700000,
+       "cap": 12000
+      },
+      {
+       "spend": 1000000,
+       "cap": 14000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "횟수 제한 없이 월 캐시백 한도 내 합산",
+     "conditions": [
+      "삼성닷컴에서 자동납부 등록 필요(1회성 구매 제외)",
+      "구독료와 장기할부 캐시백은 중복 적용되지 않음"
+     ]
+    },
+    {
+     "group": "할부",
+     "label": "삼성전자 장기할부",
+     "place": "삼성스토어 50만원 이상 제품",
+     "value": "연 5.5%",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "24·36개월, 원금균등·잔액별 수수료"
+    },
+    {
+     "group": "레저",
+     "label": "놀이공원·레저",
+     "place": "중흥골드스파 워터락, 금호리조트 화순 아쿠아나, 디오션 워터파크, 보성다비치콘도 해수온천",
+     "value": "최대 35%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "일",
+     "conditions": [
+      "중흥골드스파는 전월 20만원 이상 시 본인 35%·동반 3인 20%",
+      "나머지 시설은 실적 조건 없이 본인·동반 1인 30%"
+     ]
+    },
+    {
+     "group": "야구장",
+     "label": "광주-기아 챔피언스 필드",
+     "place": "광주-기아 챔피언스 필드 입장권",
+     "value": "2,500원",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": 2500,
+     "capScope": "일"
+    },
+    {
+     "group": "외식",
+     "label": "패밀리레스토랑",
+     "place": "아웃백스테이크하우스(전국, 입점매장 제외)·빕스(광주)·베네치아(광주지산점)",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": 200000,
+     "cap": 40000,
+     "capScope": "월",
+     "limits": "1일 1회·통합 월 4회"
+    }
+   ]
+  }
+ ]
+}
