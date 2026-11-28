@@ -1,0 +1,108 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20241021001",
+   "name": "TOGETHER 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20241021001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20241021001",
+   "docDate": "2024-09-27",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월 1일~말일 승인일 기준 정상 매입 금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 신규 후 수령일부터 다음 달 말일까지 실적 미달이어도 통합 캐시백 한도 5천원 제공",
+   "spendExclusions": [
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "예매 대행 사이트(영화)",
+    "간편결제 명의로 승인된 결제"
+   ],
+   "benefits": [
+    {
+     "group": "기본",
+     "label": "국내외 가맹점",
+     "place": "국내외 모든 가맹점",
+     "value": "0.2%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "전월실적·통합한도 제한 없음"
+    },
+    {
+     "group": "추가",
+     "label": "커피·쇼핑·주유 등",
+     "place": "커피(공차·메가MGC·스타벅스 등 20개 브랜드), 쇼핑할인점(이마트·롯데마트·홈플러스·농협하나로마트·온라인쇼핑), 주유·백화점·슈퍼마켓·영화·교통(버스·지하철·택시·고속·시외·공항버스·KTX/SRT)·편의점",
+     "value": "0.2%",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "tiers": [
+      {
+       "spend": 200000,
+       "cap": 5000
+      },
+      {
+       "spend": 500000,
+       "cap": 10000
+      },
+      {
+       "spend": 1000000,
+       "cap": 20000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "limits": "통합한도 5천·1만·2만원"
+    },
+    {
+     "group": "금융",
+     "label": "수수료 면제",
+     "place": "광주은행 자동화기기 출금, 인터넷·스마트뱅킹 타행이체",
+     "value": "월 3회 면제",
+     "valueType": "면제",
+     "minimumSpend": 200000,
+     "cap": null,
+     "capScope": "월"
+    },
+    {
+     "group": "외환",
+     "label": "해외송금·환전",
+     "place": "당발송금(USD·JPY·EUR), 외화 현찰 환전",
+     "value": "최대 5,000원",
+     "valueType": "면제",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "환율 50% 우대",
+     "conditions": [
+      "당발송금 수수료 우대(USD·JPY·EUR, 최대 5천원)",
+      "외화 현찰 환전 스프레드 50% 우대"
+     ]
+    }
+   ]
+  }
+ ]
+}
