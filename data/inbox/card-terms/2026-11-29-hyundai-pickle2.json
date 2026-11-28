@@ -1,0 +1,216 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-29",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "hyundai-mrdev",
+   "queueKey": "hyundai-mrdev",
+   "name": "Kia Members 전기차 신용카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=MRDEV",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02749",
+   "docDate": "2026-05-08",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 30000
+    },
+    {
+     "brand": "국내외겸용(VISA/AMEX)",
+     "amount": 30000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "국내외겸용(VISA/AMEX)"
+   ],
+   "minimumSpend": 500000,
+   "spendBasis": "결제일자에 청구된 당월 이용금액(본인+가족) 일시불·할부",
+   "grace": null,
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "국제브랜드 수수료",
+    "해외서비스 수수료",
+    "국세·관세·지방세 등 공과금",
+    "전기요금",
+    "도시가스요금",
+    "아파트 관리비",
+    "초·중·고교 학교납입금",
+    "대학·대학원 등록금",
+    "자동납부서비스 이용수수료",
+    "상품권 등 현금성 유가증권 구매",
+    "선불카드 충전금액",
+    "건강보험·국민연금·고용보험·산재보험",
+    "고속도로 통행요금",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "전기차 충전",
+     "place": "환경부·한국전력·차지비·파워큐브·KT·에버온 등 충전소",
+     "value": "30~70% 할인",
+     "valueType": "할인",
+     "minimumSpend": null,
+     "cap": null,
+     "capScope": "월",
+     "tiers": [
+      {
+       "spend": 500000,
+       "cap": 10000
+      },
+      {
+       "spend": 1000000,
+       "cap": 20000
+      }
+     ],
+     "limits": "월 할인한도",
+     "conditions": [
+      "당월 이용금액 50만~100만원 30%, 100만원 이상 70%",
+      "전기차 충전 할인이 적용된 이용금액은 포인트 적립 불가",
+      "휴대용 충전 단말기 구매 제외"
+     ]
+    },
+    {
+     "label": "기본 적립",
+     "place": "국내외 가맹점",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "limits": "한도 없음"
+    },
+    {
+     "label": "Kia Members 제휴처",
+     "place": "Kia Members 제휴처",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "conditions": [
+      "M포인트와 기아멤버스 포인트 동시 적립"
+     ]
+    },
+    {
+     "label": "신차 구매",
+     "place": "기아 신차 구매",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null,
+     "conditions": [
+      "특별 적립, 기본 적립과 중복 불가"
+     ]
+    },
+    {
+     "label": "인증중고차",
+     "place": "기아 인증중고차 구매",
+     "value": "1.5%",
+     "valueType": "적립",
+     "minimumSpend": 500000,
+     "cap": null
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-lsbsoilx",
+   "queueKey": "hyundai-lsbsoilx",
+   "name": "현대카드X-화물차유가보조금카드(S-OIL)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=LSBSOILX",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02483",
+   "docDate": "2025-06-13",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": null,
+   "grace": null,
+   "spendExclusions": [
+    "주유소·충전소 업종 이용금액",
+    "하이패스 이용금액",
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비",
+    "제수수료",
+    "이자",
+    "지방세·국세 등 세금 납부액",
+    "도시가스요금",
+    "대학·대학원 등록금",
+    "자동납부 서비스 이용수수료",
+    "당사 할인서비스 이용금액",
+    "무이자할부 이용금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액"
+   ],
+   "benefits": [
+    {
+     "label": "유가보조금",
+     "place": "전국 주유소·충전소 (등록 차량·유종)",
+     "value": "유가보조금 환급",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "카드에 등록된 차량번호·유종과 동일할 때만 적용",
+      "보조금 지급 한도·지원단가는 정부 정책에 따라 변동"
+     ]
+    },
+    {
+     "label": "주유 할인",
+     "place": "화물차 우대 주유소 (S-OIL)",
+     "value": "리터당 35~105원 할인",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "limits": "추가 할인 월간한도 공통(최대 28만원)",
+     "conditions": [
+      "경유 주유 시에만 적용",
+      "전월 30만원 미만 35원, 150만원 이상 105원"
+     ]
+    },
+    {
+     "label": "주유 할인",
+     "place": "일반 주유소 (S-OIL)",
+     "value": "리터당 5~35원 할인",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "경유 주유 시에만 적용",
+      "전월 30만원 미만 할인 없음"
+     ]
+    },
+    {
+     "label": "부가세 환급",
+     "place": "더존비즈온 부가세 환급 지원 서비스",
+     "value": "제공",
+     "valueType": "제공",
+     "minimumSpend": 0,
+     "cap": null,
+     "conditions": [
+      "홈페이지(dcloudhdcard.com) 회원가입 후 이용"
+     ]
+    }
+   ]
+  }
+ ]
+}
