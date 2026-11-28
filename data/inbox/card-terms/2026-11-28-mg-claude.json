@@ -1,0 +1,1115 @@
+{
+  "type": "card-terms",
+  "issuer": "MG새마을금고",
+  "collectedAt": "2026-11-28",
+  "collector": "Claude",
+  "cards": [
+    {
+      "cardId": "mg-15273",
+      "queueKey": "mg-15273",
+      "name": "MG+ BLACK 하나카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://m.hanacard.co.kr/MGINTROM.web?CD_PD_SEQ=18338",
+      "termsUrl": null,
+      "docDate": "2025-02-12",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 120000
+        },
+        {
+          "brand": "국내전용",
+          "amount": 115000
+        }
+      ],
+      "brands": [
+        "Visa",
+        "국내전용"
+      ],
+      "minimumSpend": 500000,
+      "spendBasis": null,
+      "grace": null,
+      "brandPrograms": [
+        "hana-visa-signature"
+      ],
+      "spendExclusions": [
+        "국세",
+        "지방세",
+        "수도·전기요금",
+        "그 외 공과금(우편요금·여권 발급비용·과태료·범칙금·벌금·공공기관 부담금)",
+        "도시가스 요금",
+        "아파트관리비",
+        "국민연금·고용·산재·건강보험료 납부",
+        "스쿨뱅킹",
+        "초·중·고 학교 납입금",
+        "대학·대학원 등록금",
+        "상품권·기프트카드 구매",
+        "선불카드·선불전자지급수단(하나머니 등) 충전",
+        "부동산임대료"
+      ],
+      "benefitExclusions": [
+        "국세",
+        "지방세",
+        "그 외 공과금(우편요금·여권 발급비용·과태료·범칙금·벌금·공공기관 부담금)",
+        "국민연금·고용·산재·건강보험료 납부",
+        "수도요금",
+        "스쿨뱅킹",
+        "초·중·고 학교 납입금",
+        "대학·대학원 등록금",
+        "상품권·기프트카드 구매",
+        "선불카드·선불전자지급수단(하나머니 등) 충전",
+        "부동산임대료",
+        "무이자·부분 무이자 할부 이용금액"
+      ],
+      "benefits": [
+        {
+          "group": "청구할인",
+          "label": "해외",
+          "place": "해외 전 가맹점",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 1000000,
+              "cap": 30000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "해외·여행·면세점 한도",
+          "limits": null,
+          "conditions": [
+            "최종 원화 청구금액 기준"
+          ]
+        },
+        {
+          "group": "청구할인",
+          "label": "여행",
+          "place": "하나투어, 아고다, 익스피디아, 호텔스닷컴",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 1000000,
+              "cap": 30000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "해외·여행·면세점 한도",
+          "limits": null,
+          "conditions": [
+            "공식 홈페이지·앱 결제(하나투어는 오프라인 포함)",
+            "다른 온라인몰로 이동해 결제한 건 제외"
+          ]
+        },
+        {
+          "group": "청구할인",
+          "label": "면세점",
+          "place": "신라면세점, 롯데면세점, 신세계면세점, 현대면세점",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 1000000,
+              "cap": 30000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "해외·여행·면세점 한도",
+          "limits": null,
+          "conditions": [
+            "공식 홈페이지·앱·오프라인 매장",
+            "여행사·구매대행·오픈마켓·소셜 경유 제외"
+          ]
+        },
+        {
+          "group": "청구할인",
+          "label": "홈쇼핑",
+          "place": "GS SHOP, 롯데홈쇼핑, 현대홈쇼핑, CJ온스타일, NS홈쇼핑, 홈앤쇼핑, 공영쇼핑",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 1000000,
+              "cap": 30000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "홈쇼핑·백화점 한도",
+          "limits": null,
+          "conditions": [
+            "공식 홈페이지·앱·TV홈쇼핑 결제"
+          ]
+        },
+        {
+          "group": "청구할인",
+          "label": "백화점",
+          "place": "롯데백화점, 신세계백화점, 현대백화점, 갤러리아백화점",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 1000000,
+              "cap": 30000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "홈쇼핑·백화점 한도",
+          "limits": null,
+          "conditions": [
+            "오프라인 결제",
+            "상설·임대매장 제외"
+          ]
+        },
+        {
+          "group": "청구할인",
+          "label": "골프",
+          "place": "골프장·골프연습장 업종(스크린골프 포함)",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 15000
+            },
+            {
+              "spend": 1000000,
+              "cap": 30000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "오프라인 결제"
+          ]
+        },
+        {
+          "group": "청구할인",
+          "label": "커피",
+          "place": "스타벅스, 투썸플레이스",
+          "value": "50%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 5000
+            },
+            {
+              "spend": 1000000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "커피·택시 한도",
+          "limits": null,
+          "conditions": [
+            "대형시설물(백화점·할인점·아울렛·쇼핑몰·휴게소·공항·호텔·리조트·역사·마트) 입점·임대매장 제외",
+            "배달앱·식당예약앱 주문 제외"
+          ]
+        },
+        {
+          "group": "청구할인",
+          "label": "택시",
+          "place": "카카오T, UT, 택시업종",
+          "value": "50%",
+          "valueType": "할인",
+          "minimumSpend": 500000,
+          "tiers": [
+            {
+              "spend": 500000,
+              "cap": 5000
+            },
+            {
+              "spend": 1000000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "커피·택시 한도",
+          "limits": null,
+          "conditions": [
+            "카카오T·UT는 공식 앱에 카드 등록 후 선결제",
+            "택시업종은 오프라인 결제"
+          ]
+        },
+        {
+          "group": "프리미엄",
+          "label": "바우처",
+          "place": "호텔다이닝 현장할인·신세계상품권·SK주유권(5만원×2)·배달의민족 상품권(각 10만원) 또는 9만 하나머니 중 택1",
+          "value": "10만원",
+          "valueType": "제공",
+          "minimumSpend": null,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "연 1회 택1",
+          "conditions": [
+            "1차년도: 카드 발급 후 50만원 이상 이용",
+            "2차년도부터: 직전 1년 600만원 이상 이용",
+            "호텔다이닝은 10만원 이상 결제 시 현장할인",
+            "본인회원만, 미사용 바우처는 이월 안 됨"
+          ]
+        },
+        {
+          "group": "프리미엄",
+          "label": "공항 라운지",
+          "place": "THE LOUNGE 제휴 전세계 공항 라운지",
+          "value": "무료",
+          "valueType": "무료",
+          "minimumSpend": null,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "본인·동반자 통합 연 3회",
+          "conditions": [
+            "국내외겸용 카드만",
+            "THE LOUNGE 앱에서 라운지 패스 발급(24시간 유효)",
+            "바우처와 같은 연간 이용 실적 조건",
+            "일 3회"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "mg-15272",
+      "queueKey": "mg-15272",
+      "name": "MG+ Blue 하나카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://m.hanacard.co.kr/MGINTROM.web?CD_PD_SEQ=18339",
+      "termsUrl": null,
+      "docDate": "2026-07-03",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 20000
+        },
+        {
+          "brand": "Visa",
+          "amount": 20000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 20000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Visa",
+        "Mastercard"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "지난달 1일~말일 국내외 일시불·할부 이용금액(승인 시점 기준)",
+      "grace": "최초 카드 사용등록일부터 다음 달 말일까지 30만원 이상 80만원 미만 기준 제공",
+      "spendExclusions": [
+        "국세",
+        "지방세",
+        "수도·전기요금",
+        "그 외 공과금(우편요금·여권 발급비용·과태료·범칙금·벌금·공공기관 부담금)",
+        "도시가스 요금",
+        "아파트관리비",
+        "국민연금·고용·산재·건강보험료 납부",
+        "스쿨뱅킹",
+        "초·중·고 학교 납입금",
+        "대학·대학원 등록금",
+        "상품권·기프트카드 구매",
+        "선불카드·선불전자지급수단(하나머니 등) 충전",
+        "부동산임대료",
+        "할인 받은 매출 전체"
+      ],
+      "benefitExclusions": [
+        "무이자 할부 이용 건"
+      ],
+      "benefits": [
+        {
+          "group": "Blue 특화",
+          "label": "보험",
+          "place": "건강보험료, 국민연금, 고용보험료, 산재보험료",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "Blue 특화 한도",
+          "limits": null,
+          "conditions": [
+            "청구할인"
+          ]
+        },
+        {
+          "group": "Blue 특화",
+          "label": "공과금",
+          "place": "도시가스요금, 전기요금(한국전력)",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "Blue 특화 한도",
+          "limits": null,
+          "conditions": [
+            "하나카드 자동납부 등록 가능 가맹점만",
+            "아파트·빌라·연립·다세대·상가 등 일괄 단체요금 제외"
+          ]
+        },
+        {
+          "group": "Blue 특화",
+          "label": "식자재",
+          "place": "배민상회, 식자재왕도매, 장보고식자재",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "Blue 특화 한도",
+          "limits": null,
+          "conditions": [
+            "청구할인"
+          ]
+        },
+        {
+          "group": "일상생활",
+          "label": "요식",
+          "place": "국내 일반음식점(한식·중식·일식·서양식·패스트푸드·간이음식점·치킨·기타음식점·뷔페·출장연회)",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "일상생활 한도",
+          "limits": null,
+          "conditions": [
+            "오프라인 결제만",
+            "배달앱·식당예약앱 주문·선결제 제외"
+          ]
+        },
+        {
+          "group": "일상생활",
+          "label": "커피",
+          "place": "스타벅스, 투썸플레이스, 폴바셋, 메가MGC커피, 커피빈, 이디야, 블루보틀",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "일상생활 한도",
+          "limits": null,
+          "conditions": [
+            "온·오프라인",
+            "대형시설물(백화점·할인점·아울렛·쇼핑몰·휴게소·공항·호텔·리조트·역사·마트) 입점·임대매장 제외",
+            "배달앱·예약앱 주문, 상품권·선불 충전 제외"
+          ]
+        },
+        {
+          "group": "일상생활",
+          "label": "주유",
+          "place": "SK에너지, GS칼텍스, S-Oil, HD현대오일뱅크, 알뜰주유소(LPG 충전 포함)",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "일상생활 한도",
+          "limits": null,
+          "conditions": [
+            "오프라인 주유 결제만"
+          ]
+        },
+        {
+          "group": "일상생활",
+          "label": "친환경 충전",
+          "place": "EV(전기차) 충전, 수소 충전",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "일상생활 한도",
+          "limits": null,
+          "conditions": [
+            "가맹점 멤버십에 카드 등록 후 이용 또는 현장 결제",
+            "관리비 등 다른 이용건에 포함된 충전 요금 제외"
+          ]
+        },
+        {
+          "group": "일상생활",
+          "label": "슈퍼마켓",
+          "place": "GS THE FRESH, 롯데슈퍼, 노브랜드, 이마트에브리데이, 홈플러스익스프레스",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "일상생활 한도",
+          "limits": null,
+          "conditions": [
+            "오프라인 결제만"
+          ]
+        },
+        {
+          "group": "자동납부",
+          "label": "통신",
+          "place": "SKT, KT, LGU+ 자동납부 요금(인터넷·TV·유선전화 결합상품 포함)",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "자동납부 한도",
+          "limits": null,
+          "conditions": [
+            "통신사 자동납부로 청구된 요금만",
+            "약정금액 대납·지점 월납·알뜰폰 제외"
+          ]
+        },
+        {
+          "group": "자동납부",
+          "label": "렌탈",
+          "place": "LG전자, 코웨이, SK매직, 자이글 자동납부 요금",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "자동납부 한도",
+          "limits": null,
+          "conditions": [
+            "자동납부 결제 건만(일반 제품·서비스 구매, 대리점 결제 제외)"
+          ]
+        },
+        {
+          "group": "자동납부",
+          "label": "보안",
+          "place": "에스원 자동납부 요금",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "자동납부 한도",
+          "limits": null,
+          "conditions": [
+            "자동납부 결제 건만(일반 제품·서비스 구매, 대리점 결제 제외)"
+          ]
+        },
+        {
+          "group": "자동납부",
+          "label": "방역",
+          "place": "세스코 자동납부 요금",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "자동납부 한도",
+          "limits": null,
+          "conditions": [
+            "자동납부 결제 건만(일반 제품·서비스 구매, 대리점 결제 제외)"
+          ]
+        },
+        {
+          "group": "자동납부",
+          "label": "아파트 관리비",
+          "place": "아파트 관리비 자동납부 요금",
+          "value": "10%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 800000,
+              "cap": 15000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "자동납부 한도",
+          "limits": null,
+          "conditions": [
+            "자동납부 결제 건만(일반 제품·서비스 구매, 대리점 결제 제외)"
+          ]
+        },
+        {
+          "group": "비즈니스",
+          "label": "상권 분석",
+          "place": "TAX DIET 상권 분석 서비스(나이스디앤알 회원가입 후 이용)",
+          "value": "월 3회",
+          "valueType": "제공",
+          "minimumSpend": null,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "월 3회",
+          "conditions": [
+            "부가세 환급 대상 카드 이용내역 자동 분류도 제공"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "mg-15486",
+      "queueKey": "mg-15486",
+      "name": "MG+ W 하나카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://m.hanacard.co.kr/MGINTROM.web?CD_PD_SEQ=18682",
+      "termsUrl": null,
+      "docDate": "2025-09-29",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 19000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 19000
+        },
+        {
+          "brand": "Visa",
+          "amount": 19000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Mastercard",
+        "Visa"
+      ],
+      "minimumSpend": 300000,
+      "spendBasis": "지난달 1일~말일 국내외 일시불·할부 이용금액(승인 시점 기준)",
+      "grace": "최초 카드 사용등록일부터 다음 달 말일까지 30만원 이상 60만원 미만 기준 제공",
+      "spendExclusions": [
+        "국세",
+        "지방세",
+        "수도·전기요금",
+        "그 외 공과금(우편요금·여권 발급비용·과태료·범칙금·벌금·공공기관 부담금)",
+        "도시가스 요금",
+        "아파트관리비",
+        "국민연금·고용·산재·건강보험료 납부",
+        "스쿨뱅킹",
+        "초·중·고 학교 납입금",
+        "대학·대학원 등록금",
+        "상품권·기프트카드 구매",
+        "선불카드·선불전자지급수단(하나머니 등) 충전",
+        "부동산임대료"
+      ],
+      "benefitExclusions": [
+        "상품권·기프트카드 구매",
+        "선불카드·선불전자지급수단(하나머니 등) 충전",
+        "무이자·부분 무이자 할부 이용금액",
+        "대형시설물 입점 점포·임대매장"
+      ],
+      "benefits": [
+        {
+          "group": null,
+          "label": "학원",
+          "place": "입시·보습학원, 외국어학원, 예체능계열학원, 무술도장, 자동차운전학원, 기술·직업훈련학원",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 600000,
+              "cap": 20000
+            },
+            {
+              "spend": 1000000,
+              "cap": 40000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "통합 할인 한도",
+          "limits": "월 1회",
+          "conditions": [
+            "월 최초 결제 1건만 할인",
+            "오프라인 결제만"
+          ]
+        },
+        {
+          "group": null,
+          "label": "병원·약국",
+          "place": "종합병원, 일반병원, 요양병원, 동물병원, 치과, 내과, 외과, 안과, 성형외과, 산부인과, 신경정신과, 이비인후과, 피부과, 소아과, 정형외과, 한방병원, 한의원, 한약방, 약국",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 600000,
+              "cap": 20000
+            },
+            {
+              "spend": 1000000,
+              "cap": 40000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "통합 할인 한도",
+          "limits": null,
+          "conditions": [
+            "오프라인 결제만"
+          ]
+        },
+        {
+          "group": null,
+          "label": "여가생활",
+          "place": "골프장, 골프연습장, 당구장, 취미·레저·스포츠(수영장 포함), 헬스클럽, 스포츠용품점, 헤어샵",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 600000,
+              "cap": 20000
+            },
+            {
+              "spend": 1000000,
+              "cap": 40000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "통합 할인 한도",
+          "limits": null,
+          "conditions": [
+            "오프라인 결제만",
+            "관공서·복지회관·청소년센터 등 공립 기관 제외"
+          ]
+        },
+        {
+          "group": null,
+          "label": "쇼핑",
+          "place": "홈쇼핑(GS SHOP·롯데·현대·CJ온스타일·NS·홈앤쇼핑·공영쇼핑), 이마트, 롯데마트, 홈플러스, 올리브영, 다이소",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 300000,
+          "tiers": [
+            {
+              "spend": 300000,
+              "cap": 10000
+            },
+            {
+              "spend": 600000,
+              "cap": 20000
+            },
+            {
+              "spend": 1000000,
+              "cap": 40000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": "통합 할인 한도",
+          "limits": null,
+          "conditions": [
+            "홈쇼핑은 공식 홈페이지·앱·TV홈쇼핑 결제",
+            "홈쇼핑 외에는 오프라인 결제만",
+            "대형마트 상설·임대매장, 창고형 할인매장 제외"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "mg-15066",
+      "queueKey": "mg-15066",
+      "name": "MG+ 신용카드 Primo",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://m.hanacard.co.kr/MGINTROM.web?CD_PD_SEQ=18096",
+      "termsUrl": null,
+      "docDate": "2026-07-03",
+      "annualFee": [
+        {
+          "brand": "국내전용",
+          "amount": 12000
+        },
+        {
+          "brand": "Visa",
+          "amount": 12000
+        },
+        {
+          "brand": "Mastercard",
+          "amount": 12000
+        }
+      ],
+      "brands": [
+        "국내전용",
+        "Visa",
+        "Mastercard"
+      ],
+      "minimumSpend": 400000,
+      "spendBasis": "지난달 1일~말일 국내외 일시불·할부 이용금액(승인 시점 기준)",
+      "grace": "최초 카드 사용등록일부터 다음 달 말일까지 40만원 이상 80만원 미만 기준 제공",
+      "spendExclusions": [
+        "국세",
+        "지방세",
+        "수도·전기요금",
+        "그 외 공과금(우편요금·여권 발급비용·과태료·범칙금·벌금·공공기관 부담금)",
+        "도시가스 요금",
+        "아파트관리비",
+        "국민연금·고용·산재·건강보험료 납부",
+        "스쿨뱅킹",
+        "초·중·고 학교 납입금",
+        "대학·대학원 등록금",
+        "상품권·기프트카드 구매",
+        "선불카드·선불전자지급수단(하나머니 등) 충전",
+        "부동산임대료",
+        "할인 받은 매출 전체(전 가맹점 0.5% 할인 매출은 포함)"
+      ],
+      "benefitExclusions": [
+        "국세",
+        "지방세",
+        "그 외 공과금(우편요금·여권 발급비용·과태료·범칙금·벌금·공공기관 부담금)",
+        "국민연금·고용·산재·건강보험료 납부",
+        "수도요금",
+        "스쿨뱅킹",
+        "초·중·고 학교 납입금",
+        "대학·대학원 등록금",
+        "상품권·기프트카드 구매",
+        "선불카드·선불전자지급수단(하나머니 등) 충전",
+        "부동산임대료",
+        "무이자·부분 무이자 할부 이용금액"
+      ],
+      "benefits": [
+        {
+          "group": "기본",
+          "label": "전 가맹점",
+          "place": "국내외 전 가맹점",
+          "value": "0.5%",
+          "valueType": "할인",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "한도 없음",
+          "conditions": [
+            "전월실적 조건·월 할인한도 없음",
+            "생활서비스 월 한도를 넘은 결제에도 0.5% 적용",
+            "매출 건당 할인 큰 서비스 하나만 적용"
+          ]
+        },
+        {
+          "group": "생활서비스",
+          "label": "대중교통",
+          "place": "버스, 지하철",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 7000
+            },
+            {
+              "spend": 800000,
+              "cap": 12000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "시외버스·고속버스·철도(KTX·SRT·ITX) 제외"
+          ]
+        },
+        {
+          "group": "생활서비스",
+          "label": "편의점",
+          "place": "CU, GS25, 세븐일레븐, 이마트24",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 7000
+            },
+            {
+              "spend": 800000,
+              "cap": 12000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "오프라인 결제만",
+            "대형시설물(백화점·할인점·아울렛·쇼핑몰·휴게소·공항·호텔·리조트·역사·마트) 입점·임대매장 제외"
+          ]
+        },
+        {
+          "group": "생활서비스",
+          "label": "슈퍼마켓",
+          "place": "GS THE FRESH, 롯데슈퍼, 이마트 에브리데이, 홈플러스 익스프레스, 노브랜드",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 7000
+            },
+            {
+              "spend": 800000,
+              "cap": 12000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "오프라인 결제만",
+            "대형시설물(백화점·할인점·아울렛·쇼핑몰·휴게소·공항·호텔·리조트·역사·마트) 입점·임대매장 제외"
+          ]
+        },
+        {
+          "group": "생활서비스",
+          "label": "주유",
+          "place": "SK에너지, GS칼텍스, S-Oil, HD현대오일뱅크, 알뜰주유소(LPG 충전 포함)",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 800000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "오프라인 결제만",
+            "주유소 임대매장 제외"
+          ]
+        },
+        {
+          "group": "생활서비스",
+          "label": "생활요금",
+          "place": "아파트관리비, 전기요금, 가스요금",
+          "value": "5%",
+          "valueType": "할인",
+          "minimumSpend": 400000,
+          "tiers": [
+            {
+              "spend": 400000,
+              "cap": 5000
+            },
+            {
+              "spend": 800000,
+              "cap": 10000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "하나카드 자동납부 등록 가능 가맹점만",
+            "전기·가스는 가정용(주택용)·일부 영업용",
+            "관리사무소 일괄 납부 제외"
+          ]
+        },
+        {
+          "group": "기본",
+          "label": "무이자 할부",
+          "place": "국내 가맹점",
+          "value": "2~3개월 무이자",
+          "valueType": "제공",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "5만원 이상 결제 건"
+          ]
+        }
+      ]
+    }
+  ]
+}

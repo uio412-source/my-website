@@ -121,6 +121,28 @@
       "queueKeys": []
     },
     {
+      "at": "2026-11-28T10:48:00+09:00",
+      "kind": "audit",
+      "pr": 277,
+      "summary": "#277 수집분 피킹률 검수(14장) — picking_audit.py 전수 1,552장(#283 반영 뒤 11:24 재검사): 이번 7종(mg-15273·15272·15486·15066, internet-10·7·9)은 A1~A5·C1·C2 새 문제 0건. MG 4종·KT멤버십은 B1(요율 모델 없음, 통합 한도·구간이라 자동 변환 대상 아님), internet-7·9는 0.3% 피킹률 계산됨. 고친 카드 없음",
+      "queueKeys": []
+    },
+    {
+      "at": "2026-11-28T05:03:00+09:00",
+      "kind": "collect",
+      "pr": 277,
+      "summary": "card-terms MG새마을금고 4종(MG+ BLACK·Blue·W·신용카드 Primo — 하나카드 MGINTROM 상세, 심의필 2025~2026) · 케이뱅크 3종(KT멤버십 더블혜택·모임·플러스 체크 — 준법감시인 심의필 2026-09-21) · 혜택 44줄. 예약 실행 WebFetch는 대기열 주소를 바로 못 열어(권한 대기 시간 초과) WebSearch 결과 주소로 열었음",
+      "queueKeys": [
+        "mg-15273",
+        "mg-15272",
+        "mg-15486",
+        "mg-15066",
+        "internet-10",
+        "internet-7",
+        "internet-9"
+      ]
+    },
+    {
       "at": "2026-11-27T23:00:00+09:00",
       "kind": "collect",
       "pr": 239,
@@ -588,6 +610,63 @@
       "status": "open",
       "reason": "머니트리는 공식 페이지에 상시 혜택 수치가 없고, 토스 유스·카카오뱅크 mini는 상시 혜택이 없는 10대 선불카드, 와이어바알리는 공식 카드 안내를 못 찾음",
       "retry": "공식 혜택 안내가 생기면 같은 방식(prepaid)으로 추가"
+    },
+    {
+      "at": "2026-11-28",
+      "target": "Claude 예약 실행 WebFetch — 대기열·카드 DB에 적힌 주소 직접 열기",
+      "status": "workaround",
+      "reason": "레포 파일에서 읽은 주소는 출처 확인 권한 요청이 떠서 무인 실행에선 '시간 초과'로 실패(하나 13건, 사이트에 닿지도 않음)",
+      "retry": "WebSearch(allowed_domains=카드사 도메인)로 같은 카드 페이지를 찾은 뒤 검색 결과 주소로 열기 — 하나는 MKCDCMN1000M·MGINTROM·leaflet PDF 주소가 검색에 나옴"
+    },
+    {
+      "at": "2026-11-28",
+      "target": "hana-8554 #tag1카드 Navy (남은 하나 12종: 8552·10120·2572·8321·9912·9525·11747·4985·5230·4987·9608·5545도 같을 가능성 큼)",
+      "status": "resolved",
+      "reason": "여신금융협회 심의필 2018-04-16 + 준법심의 2026-06-23 — 11-27 기록과 같은 기준일 문제(HJ 확인 대기)",
+      "retry": "#343(다른 Claude 세션)이 준법심의 날짜를 기준일로 12종 수집(hana-5545 ISIC만 todo). 기준일 규칙은 data-update.md 7장(HJ 확인 전)",
+      "ref": "#343"
+    },
+    {
+      "at": "2026-11-28",
+      "target": "신협 cu-* 체크카드 12종(어부바·K-패스·CUbig 등)",
+      "status": "open",
+      "reason": "cu.co.kr 상세가 http↔https 302를 계속 돌아 WebFetch로 본문을 못 받음(2회 실패), 안내장 fileDownload 링크도 못 얻음",
+      "retry": "브라우저가 있는 에이전트가 상세의 안내장(fileDownload.do?fileKey=…) PDF 받기"
+    },
+    {
+      "at": "2026-11-28",
+      "target": "MG새마을금고 체크카드 9종(mg-104566·100754·100133·103827·104064·101353·105023·101488·102341)",
+      "status": "open",
+      "reason": "mgcheck.kfcc.co.kr·www.kfcc.co.kr 모두 WebFetch robots.txt 읽기 실패(ROBOTS_UNREACHABLE)",
+      "retry": "브라우저로 mgcheck.kfcc.co.kr 카드 안내·설명서자료실(www.kfcc.co.kr/customer/cus0703_01.do) 확인"
+    },
+    {
+      "at": "2026-11-28",
+      "target": "mg-15822 MG+ 트래블로그 하나카드",
+      "status": "open",
+      "reason": "하나카드 공식 페이지가 검색에 안 나옴(뉴스·비교 사이트뿐). MGINTROM 18096·18338·18339·18590·18682는 Primo·BLACK·Blue·S·W",
+      "retry": "하나카드 MGINTROM.web?CD_PD_SEQ=… 중 트래블로그 번호를 브라우저로 찾기"
+    },
+    {
+      "at": "2026-11-28",
+      "target": "internet-8 케이뱅크 ONE 체크카드(K-패스)",
+      "status": "open",
+      "reason": "상품안내에 '별도 제공되는 부가서비스는 없습니다' — 혜택이 시즌 캐시백 이벤트뿐이라 상품설명서 혜택 표가 없음. 상품설명서 링크는 #none",
+      "retry": "시즌 혜택은 card-events로, 상품설명서 PDF는 브라우저로 확인"
+    },
+    {
+      "at": "2026-11-28",
+      "target": "internet-9 케이뱅크 플러스 체크카드 '생활 필수 영역 3% 특별 캐시백(최대 3만원)'",
+      "status": "open",
+      "reason": "페이지에 기간·월 한도·실적 조건이 안 적혀 있어 상시 혜택인지 확정 못 함 — 0.3%·ATM만 옮김",
+      "retry": "플러스 체크카드 상품설명서(#none 링크, 브라우저로 받기)에서 3% 조건 확인 후 다시 수집"
+    },
+    {
+      "at": "2026-11-28",
+      "target": "토스뱅크 internet-3·4·5·6 · 카카오뱅크 internet-0·1·2 · 우체국 post-* 12종 · 경남은행 kn-*",
+      "status": "open",
+      "reason": "토스뱅크는 혜택이 접힌 영역이라 HTML에 본문 없음, kakaobank.com·www.knbank.co.kr은 robots.txt 읽기 실패, 우체국 금융상품몰 상세는 JS 껍데기만(상품명도 없음)",
+      "retry": "브라우저가 있는 에이전트가 맡기"
     }
   ]
 }

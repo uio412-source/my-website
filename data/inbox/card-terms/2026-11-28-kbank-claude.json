@@ -1,0 +1,311 @@
+{
+  "type": "card-terms",
+  "issuer": "케이뱅크",
+  "collectedAt": "2026-11-28",
+  "collector": "Claude",
+  "cards": [
+    {
+      "cardId": "internet-10",
+      "queueKey": "internet-10",
+      "name": "KT멤버십 더블혜택 체크카드",
+      "cardType": "debit",
+      "status": "active",
+      "url": "https://www.kbanknow.com/web/product/card/kt-membership-card",
+      "termsUrl": null,
+      "docDate": "2026-09-21",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 0
+        }
+      ],
+      "brands": [
+        "Visa"
+      ],
+      "minimumSpend": 200000,
+      "spendBasis": "전월 1일~말일 국내 가맹점 이용금액 합계",
+      "grace": "사용등록일부터 다음 달 말일까지 실적 없이도 20만원 구간 적용",
+      "spendExclusions": [
+        "대학등록금",
+        "아파트관리비",
+        "상품권·기프트카드 결제금액",
+        "제세공과금",
+        "사회보험료",
+        "교통카드 이용금액"
+      ],
+      "benefitExclusions": [
+        "카드 결제 없이 멤버십 할인·쿠폰만 쓴 건"
+      ],
+      "benefits": [
+        {
+          "group": "KT멤버십 더블",
+          "label": "영화·외식",
+          "place": "KT멤버십 제휴가맹점 중 영화·음식·베이커리·카페 업종",
+          "value": "멤버십 할인액만큼",
+          "valueType": "캐시백",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 5000
+            },
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 20000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "멤버십 할인과 이 카드 결제가 함께 이뤄진 건",
+            "다음 달 3일 결제계좌 입금"
+          ]
+        },
+        {
+          "group": "KT멤버십 더블",
+          "label": "편의점·쇼핑",
+          "place": "KT멤버십 제휴가맹점 중 편의점·쇼핑·문화·레져 업종",
+          "value": "멤버십 할인액만큼",
+          "valueType": "캐시백",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 5000
+            },
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 20000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "멤버십 할인과 이 카드 결제가 함께 이뤄진 건",
+            "다음 달 3일 결제계좌 입금"
+          ]
+        },
+        {
+          "group": "통신",
+          "label": "KT 통신요금",
+          "place": "KT 이동통신·인터넷·IPTV·집전화·인터넷전화·유무선 결합·와이브로 요금",
+          "value": "5~20%",
+          "valueType": "캐시백",
+          "minimumSpend": 200000,
+          "tiers": [
+            {
+              "spend": 200000,
+              "cap": 5000
+            },
+            {
+              "spend": 500000,
+              "cap": 10000
+            },
+            {
+              "spend": 1000000,
+              "cap": 20000
+            }
+          ],
+          "cap": null,
+          "capScope": "월",
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "20만원 이상 5%, 50만원 이상 10%, 100만원 이상 20%",
+            "이 카드로 자동이체한 요금 월 1건",
+            "다음 달 3일 결제계좌 입금"
+          ]
+        },
+        {
+          "group": "수수료",
+          "label": "ATM 수수료",
+          "place": "국내 모든 CD/ATM 입·출금·이체",
+          "value": "무료",
+          "valueType": "면제",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "월 30회",
+          "conditions": [
+            "케이뱅크 ATM은 30회 넘어도 무료",
+            "무카드 거래(케이뱅크·GS25·효성·한네트 ATM)도 카드 거래와 합산 월 30회"
+          ]
+        },
+        {
+          "group": "수수료",
+          "label": "해외 수수료",
+          "place": "해외 가맹점 결제, 해외 ATM 현금인출",
+          "value": "수수료 면제",
+          "valueType": "면제",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": null,
+          "conditions": [
+            "해외서비스수수료(결제 0.25%, ATM 건당 $3) 면제",
+            "국제브랜드 수수료·현지 ATM 수수료는 별도",
+            "T&E 업종(항공·렌터카·호텔·무인주유기) 이용 불가"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "internet-7",
+      "queueKey": "internet-7",
+      "name": "모임 체크카드",
+      "cardType": "debit",
+      "status": "active",
+      "url": "https://www.kbanknow.com/web/product/card/moim-card",
+      "termsUrl": null,
+      "docDate": "2026-09-21",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 0
+        }
+      ],
+      "brands": [
+        "Visa"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": null,
+      "grace": null,
+      "spendExclusions": [],
+      "benefitExclusions": [
+        "대학등록금",
+        "아파트관리비",
+        "상품권·기프트카드 결제금액",
+        "각종 수수료",
+        "이자",
+        "제세공과금",
+        "사회보험료",
+        "임대료",
+        "철도승차권 취소수수료"
+      ],
+      "benefits": [
+        {
+          "group": null,
+          "label": "전 가맹점",
+          "place": "국내·외 모든 가맹점",
+          "value": "0.3%",
+          "valueType": "캐시백",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "한도 없음",
+          "conditions": [
+            "전월실적 조건·캐시백 한도 없음",
+            "매출접수일별 합산 후 1일 1회 결제계좌 입금",
+            "모임통장 모임장 발급",
+            "T&E 업종(항공·렌터카·호텔·무인주유기) 이용 불가"
+          ]
+        },
+        {
+          "group": "수수료",
+          "label": "ATM 수수료",
+          "place": "국내 모든 CD/ATM 입·출금·이체",
+          "value": "무료",
+          "valueType": "면제",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "월 30회",
+          "conditions": [
+            "케이뱅크 ATM은 30회 넘어도 무료",
+            "무카드 거래(케이뱅크·GS25·효성·한네트 ATM)도 카드 거래와 합산 월 30회"
+          ]
+        }
+      ]
+    },
+    {
+      "cardId": "internet-9",
+      "queueKey": "internet-9",
+      "name": "플러스 체크카드",
+      "cardType": "debit",
+      "status": "active",
+      "url": "https://www.kbanknow.com/web/product/card/plus-card",
+      "termsUrl": null,
+      "docDate": "2026-09-21",
+      "annualFee": [
+        {
+          "brand": "Visa",
+          "amount": 0
+        }
+      ],
+      "brands": [
+        "Visa"
+      ],
+      "minimumSpend": 0,
+      "spendBasis": null,
+      "grace": null,
+      "spendExclusions": [],
+      "benefitExclusions": [
+        "대학등록금",
+        "아파트관리비",
+        "상품권·기프트카드 결제금액",
+        "각종 수수료",
+        "이자",
+        "제세공과금",
+        "사회보험료",
+        "교통카드 이용금액"
+      ],
+      "benefits": [
+        {
+          "group": null,
+          "label": "전 가맹점",
+          "place": "국내·외 모든 가맹점",
+          "value": "0.3%",
+          "valueType": "캐시백",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "한도 없음",
+          "conditions": [
+            "전월실적 조건·캐시백 한도 없음",
+            "매출접수일별 합산 후 1일 1회 결제계좌 입금",
+            "T&E 업종(항공·렌터카·호텔·무인주유기) 이용 불가"
+          ]
+        },
+        {
+          "group": "수수료",
+          "label": "ATM 수수료",
+          "place": "국내 모든 CD/ATM 입·출금·이체",
+          "value": "무료",
+          "valueType": "면제",
+          "minimumSpend": 0,
+          "tiers": null,
+          "cap": null,
+          "capScope": null,
+          "shared": null,
+          "limits": "월 30회",
+          "conditions": [
+            "케이뱅크 ATM은 30회 넘어도 무료",
+            "무카드 거래(케이뱅크·GS25·효성·한네트 ATM)도 카드 거래와 합산 월 30회"
+          ]
+        }
+      ]
+    }
+  ]
+}
