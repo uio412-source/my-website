@@ -1,0 +1,216 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09116",
+   "queueKey": "kb-09116",
+   "name": "American Express Rose Gold Card",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09116&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09116__prdctOpmn_20231129.pdf",
+   "docDate": "2023-11-29",
+   "annualFee": [
+    {
+     "brand": "American Express",
+     "amount": 19000
+    }
+   ],
+   "brands": [
+    "American Express"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) American Express Rose Gold KB Kookmin Card 일시불·할부 승인 금액(해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 전월 30만원 미만이어도 1구간 할인 제공",
+   "spendExclusions": [
+    "Rose Gold 카드로 할인받은 이용건(해당 금액 전체)",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "상품권·선불카드 구입·충전",
+    "아파트 관리비",
+    "유치원·초·중·고 납입금 전체",
+    "정부지원금",
+    "대학(원) 등록금",
+    "국세·지방세",
+    "각종 공과금(전기·수도)",
+    "4대 사회보험료",
+    "각종 수수료·이자·연체료·연회비",
+    "무승인 전표",
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "무이자할부 이용금액",
+    "상품권·선불카드 구입·충전",
+    "KB Pay 외 다른 결제수단 이용 금액",
+    "백화점·대형마트 등 일부 입점 매장"
+   ],
+   "benefits": [
+    {
+     "group": "온라인쇼핑",
+     "label": "KB Pay 쇼핑",
+     "place": "쿠팡·티몬·위메프·G마켓·11번가·SSG.COM(KB Pay 결제)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 10000
+      },
+      {
+       "spend": 700000,
+       "cap": 15000
+      },
+      {
+       "spend": 1200000,
+       "cap": 20000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "상품권·여행·항공권·티켓·도서·별도 팝업 사이트 제외"
+     ]
+    },
+    {
+     "group": "커피",
+     "label": "커피",
+     "place": "커피전문점 업종 오프라인 매장, 스타벅스 사이렌오더·커피빈 페퍼로더·메가커피 메가오더",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "conditions": [
+      "백화점·대형마트 등 일부 입점 매장 제외"
+     ]
+    },
+    {
+     "group": "편의점",
+     "label": "편의점",
+     "place": "GS25·CU(오프라인 매장)",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "conditions": [
+      "오프라인 매장 일반결제건에 한함"
+     ]
+    },
+    {
+     "group": "오프라인쇼핑",
+     "label": "마트·백화점",
+     "place": "롯데마트(롯데마트 맥스 포함)·홈플러스·롯데백화점·GS THE FRESH·롯데슈퍼·홈플러스익스프레스",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "conditions": [
+      "온라인 결제·상품권 구매·임대 매장 제외"
+     ]
+    },
+    {
+     "group": "여행",
+     "label": "온라인 항공",
+     "place": "대한항공·아시아나항공 직판 항공권",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "연 6만원",
+     "conditions": [
+      "공식 홈페이지·모바일앱 결제건에 한함",
+      "외화 결제건은 해외 가맹점으로 분류해 할인 미제공"
+     ]
+    },
+    {
+     "group": "여행",
+     "label": "온라인 면세점",
+     "place": "롯데면세점·신라면세점·신세계면세점·현대백화점 면세점",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 20000,
+     "capScope": "월",
+     "limits": "연 6만원",
+     "conditions": [
+      "공식 홈페이지·모바일앱 결제건에 한함"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-04351",
+   "queueKey": "kb-04351",
+   "name": "토스모바일 KB국민카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=04351&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/__04351__prdctOpmn_20230926.pdf",
+   "docDate": "2023-07-21",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 20000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 20000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) 토스모바일 KB국민카드 일시불·할부 승인 금액",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 전월 이용실적이 없어도 1구간(30만원 이상) 할인 제공",
+   "spendExclusions": [
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "상품권·선불카드 구입·충전",
+    "국세·지방세",
+    "공과금",
+    "4대 사회보험료",
+    "무승인 전표",
+    "취소 금액",
+    "연회비·수수료"
+   ],
+   "benefitExclusions": [
+    "토스모바일 통신요금 자동납부 이외 이용"
+   ],
+   "benefits": [
+    {
+     "group": "통신",
+     "label": "토스모바일 요금",
+     "place": "토스모바일 통신요금 자동납부",
+     "value": "7,000~11,000원",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "tiers": [
+      {
+       "spend": 300000,
+       "cap": 7000
+      },
+      {
+       "spend": 700000,
+       "cap": 11000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "카드 수령 후 토스 앱에서 자동납부 별도 신청 필요",
+      "할인 금액보다 자동납부 승인금액이 적으면 승인금액까지만 할인"
+     ]
+    }
+   ]
+  }
+ ]
+}
