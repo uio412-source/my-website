@@ -1,0 +1,110 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20230613001",
+   "name": "DUAL카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20230613001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20230613001",
+   "docDate": "2023-02-15",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 10000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 12000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 300000,
+   "spendBasis": "전월 1일~말일까지 승인일 기준 정상 매입 금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 신규 후 수령일부터 다음 달 말일까지 실적 미달이어도 포인트 적립 서비스 제공",
+   "spendExclusions": [
+    "무이자할부",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권(모바일상품권 포함) 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "각 브랜드 상품권·선불카드 구입·충전 금액",
+    "현장할인·교통·커피 적립 매출(기본 포인트 적립 시)"
+   ],
+   "benefits": [
+    {
+     "group": "외식",
+     "label": "아웃백",
+     "place": "아웃백스테이크하우스",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": 300000,
+     "cap": 40000,
+     "capScope": "월",
+     "limits": "월 1회 현장할인"
+    },
+    {
+     "group": "교통",
+     "label": "버스·지하철",
+     "place": "버스·지하철",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월"
+    },
+    {
+     "group": "커피",
+     "label": "커피전문점",
+     "place": "스타벅스(사이렌오더 포함)·엔젤리너스·이디야·투썸플레이스·메가커피",
+     "value": "5%",
+     "valueType": "적립",
+     "minimumSpend": 300000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 2회"
+    },
+    {
+     "group": "기본",
+     "label": "신용거래",
+     "place": "전 가맹점(신용거래)",
+     "value": "0.5%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "전월실적 조건 없음"
+    },
+    {
+     "group": "기본",
+     "label": "체크거래",
+     "place": "전 가맹점(체크거래)",
+     "value": "0.3%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "전월실적 조건 없음"
+    }
+   ]
+  }
+ ]
+}
