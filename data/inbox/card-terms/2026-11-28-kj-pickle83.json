@@ -1,0 +1,148 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20220519002",
+   "name": "메가박스 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20220519002",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20220519002",
+   "docDate": "2022-06-10",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불·할부 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 신규 후 수령일부터 다음 달 말일까지 실적 미달이어도 통합 캐시백 한도 5천원 제공",
+   "spendExclusions": [
+    "무이자할부",
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "연회비",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "예매 대행 사이트(영화)",
+    "각 브랜드 상품권·선불카드 구입·충전",
+    "백화점·대형할인점 등 일부 입점 매장",
+    "간편결제 명의 승인 건"
+   ],
+   "benefits": [
+    {
+     "group": "영화",
+     "label": "메가박스",
+     "place": "메가박스 영화관(현장구입·홈페이지·앱 예매)",
+     "value": "5,000원",
+     "valueType": "캐시백",
+     "minimumSpend": 400000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 1회",
+     "conditions": [
+      "현장할인 적용 후 최종 승인금액이 5천원 이하인 경우 승인금액만 캐시백"
+     ]
+    },
+    {
+     "group": "영화",
+     "label": "메가박스 현장할인",
+     "place": "메가박스 영화관",
+     "value": "3,000원",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 1회, 건당 1만원 이상",
+     "conditions": [
+      "캐시백과 중복 적용, 전월실적·통합한도 무관"
+     ]
+    },
+    {
+     "group": "구독",
+     "label": "핫트렌드",
+     "place": "넷플릭스·멜론·유튜브·웨이브",
+     "value": "20%",
+     "valueType": "캐시백",
+     "minimumSpend": 400000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 2회"
+    },
+    {
+     "group": "온라인쇼핑",
+     "label": "인터넷쇼핑",
+     "place": "쿠팡·티몬·위메프",
+     "value": "20%",
+     "valueType": "캐시백",
+     "minimumSpend": 400000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "월 2회, 월 최대 2천원"
+    },
+    {
+     "group": "편의점",
+     "label": "편의점",
+     "place": "CU·GS25·세븐일레븐·미니스톱·이마트24",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 400000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "월 2회, 월 최대 2천원"
+    },
+    {
+     "group": "패스트푸드",
+     "label": "패스트푸드",
+     "place": "롯데리아·버거킹·맥도널드·KFC",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 400000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "월 2회, 월 최대 2천원"
+    },
+    {
+     "group": "커피",
+     "label": "커피전문점",
+     "place": "스타벅스(사이렌오더 포함)·할리스커피·투썸플레이스·엔제리너스·탐앤탐스·이디야·카페베네·커피빈·드롭탑",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 400000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "월 2회, 월 최대 2천원"
+    },
+    {
+     "group": "대중교통",
+     "label": "버스·지하철",
+     "place": "시내버스·지하철",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 400000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "월 최대 2천원"
+    }
+   ]
+  }
+ ]
+}
