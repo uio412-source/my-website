@@ -15,14 +15,14 @@
  },
  "counts": {
   "cards": {
-   "done": 765,
-   "todo": 698,
+   "done": 800,
+   "todo": 663,
    "total": 1463
   },
   "brandPrograms": {
-   "done": 43,
+   "done": 45,
    "valetOnly": 3,
-   "todo": 48,
+   "todo": 46,
    "total": 94
   },
   "eventSources": {
@@ -43,7 +43,7 @@
    "type": "card-events",
    "name": "KB국민카드",
    "url": "https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001",
-   "lastCollected": "2026-11-27"
+   "lastCollected": "2026-11-28"
   },
   {
    "key": "card-events:삼성카드",
@@ -457,7 +457,7 @@
    "brand": "Visa",
    "tier": "Infinite",
    "where": "static11.samsungcard.com/wcms/personal/files/ 의 *_MASTER_*·*_AMEX_*·*_VISA_* PDF (2026년 파일명 우선)",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "samsung-mastercard-platinum",
@@ -593,7 +593,7 @@
    "brand": "American Express",
    "tier": "Platinum",
    "where": "카드 상세 > 상품설명서 · 'Visa/Mastercard/AMEX 프리미엄 서비스' 안내",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-american-express-platinum-elite",
@@ -7826,7 +7826,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09060__prdctOpmn_20240626.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04459",
@@ -7859,7 +7859,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09246__prdctOpmn_20231226.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09244",
@@ -7892,7 +7892,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09253__prdctOpmn_20240222.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09064",
@@ -7947,7 +7947,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09114__prdctOpmn_20210923.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09113",
@@ -7958,7 +7958,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09113__prdctOpmn_20211213.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04131",
@@ -8189,7 +8189,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/_02245__prdctOpmn_20241129.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04418",
@@ -8211,7 +8211,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/02076__prdctOpmn_20241129.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-01506",
@@ -8255,7 +8255,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/_09389__prdctOpmn_20230829.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-01142",
@@ -8266,7 +8266,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/01142__prdctOpmn_20220615.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09250",
@@ -8277,7 +8277,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09250__prdctOpmn_20250321.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04367",
@@ -8409,7 +8409,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09152__prdctOpmn_20231201.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04491",
@@ -8453,7 +8453,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09063__prdctOpmn_20250813.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04918",
@@ -8519,7 +8519,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09180__prdctOpmn_20241129.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09821",
@@ -8607,7 +8607,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/02210__prdctOpmn_20221118.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09291",
@@ -8651,7 +8651,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09283__prdctOpmn_20240104.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04285",
@@ -8662,7 +8662,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04285__prdctOpmn_20230921.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04092",
@@ -8695,7 +8695,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04088__prdctOpmn_20241129.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04324",
@@ -8750,7 +8750,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/02171__prdctOpmn_20241127.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04361",
@@ -8871,7 +8871,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09231__prdctOpmn_20231226.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09272",
@@ -8882,7 +8882,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09272__prdctOpmn_20231226.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09563",
@@ -12182,7 +12182,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03410",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mzrosce3",
@@ -12248,7 +12248,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03414",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mimb",
@@ -12314,7 +12314,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=02845",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-alb",
@@ -12842,7 +12842,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03169",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-zoe2",
@@ -12853,7 +12853,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03173",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-zwe2",
@@ -12875,7 +12875,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03156",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-hdqhc",
@@ -12963,7 +12963,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09125__prdctOpmn_20241129.pdf",
    "lastVerified": "2026-10-05",
    "priority": 55,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09126",
@@ -15383,7 +15383,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03133",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-sge2",
@@ -15394,7 +15394,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03060",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-nve3",
@@ -15416,7 +15416,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03378",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-kale2t1",
@@ -15427,7 +15427,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03209",
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-gmse4",
@@ -16527,7 +16527,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09176__prdctOpmn_20241129.pdf",
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-02065",
@@ -16549,7 +16549,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/00996__prdctOpmn_20241128.pdf",
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09183",
@@ -16560,7 +16560,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09183__prdctOpmn_20241128.pdf",
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90010173",
@@ -16846,7 +16846,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03401",
    "lastVerified": "2026-10-05",
    "priority": 0,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-02066",

@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-28T12:06:30+09:00",
+ "updatedAt": "2026-11-28T15:30:00+09:00",
  "lock": null,
  "runs": [
   {
@@ -1328,6 +1328,287 @@
     "newIssues": 0,
     "note": "카드 DB는 건드리지 않음. inbox validate 148파일 통과, picking_audit·label-audit 기존 결과 그대로(새 문제 0), npm build 통과"
    }
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 287,
+   "summary": "현대카드 M·MM·X 상품설명서",
+   "queueKeys": [
+    "hyundai-me4",
+    "hyundai-mpe4",
+    "hyundai-xpe4"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 290,
+   "summary": "현대카드 Z family Ed2·Z play·ZERO Ed3(포인트형)",
+   "queueKeys": [
+    "hyundai-zfe2",
+    "hyundai-zoe2",
+    "hyundai-mzroe3"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 292,
+   "summary": "SSG.COM카드 Ed2·넥슨 현대카드 Ed2·국민행복 현대카드",
+   "queueKeys": [
+    "hyundai-sge2",
+    "hyundai-nxnx",
+    "hyundai-phhc"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 294,
+   "summary": "NOL·LG전자·SK인텔릭스 현대카드",
+   "queueKeys": [
+    "hyundai-nolhc",
+    "hyundai-lgehc",
+    "hyundai-skihc"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 297,
+   "summary": "대한항공카드 060",
+   "queueKeys": [
+    "hyundai-kale2t1"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 298,
+   "summary": "KB Easy ring·Easy auto·The Easy",
+   "queueKeys": [
+    "kb-09253",
+    "kb-09246",
+    "kb-09250"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "brand-services",
+   "pr": 300,
+   "summary": "현대카드 AMEX The Platinum·Gold 선택제공서비스(호텔 발렛 39곳)",
+   "queueKeys": [
+    "hyundai-american-express-platinum",
+    "hyundai-american-express-gold"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 301,
+   "summary": "KB 가온플래티늄·굿데이올림",
+   "queueKeys": [
+    "kb-09152",
+    "kb-09063"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 303,
+   "summary": "KB 톡톡 Pay·KB Pay 챌린지",
+   "queueKeys": [
+    "kb-09231",
+    "kb-09113"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 305,
+   "summary": "KB 스카이패스 티타늄·KB Pay 챌린지+",
+   "queueKeys": [
+    "kb-04285",
+    "kb-09114"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 306,
+   "summary": "KB 톡톡 with·TMAP",
+   "queueKeys": [
+    "kb-09272",
+    "kb-09389"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 308,
+   "summary": "KB SK에너지 러브유·스타트럭플러스 S-OIL",
+   "queueKeys": [
+    "kb-02245",
+    "kb-04088"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 309,
+   "summary": "KB 가온 Biz·탄탄대로 Biz",
+   "queueKeys": [
+    "kb-09176",
+    "kb-09183"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 310,
+   "summary": "KB 웅진씽크빅·비상온리원",
+   "queueKeys": [
+    "kb-02171",
+    "kb-02210"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 311,
+   "summary": "KB The CJ·STARTLUCK",
+   "queueKeys": [
+    "kb-01142",
+    "kb-02076"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "brand-services",
+   "pr": 313,
+   "summary": "삼성카드 Mastercard WORLD 선택서비스(호텔 발렛 25곳)",
+   "queueKeys": [
+    "samsung-mastercard-world"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "brand-services",
+   "pr": 314,
+   "summary": "삼성카드 VISA INFINITE 선택서비스(호텔 발렛 30곳)",
+   "queueKeys": [
+    "samsung-visa-infinite"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 315,
+   "summary": "KB 스마트 지킴이·CU(이미지 표 렌더 판독)",
+   "queueKeys": [
+    "kb-09283",
+    "kb-09060"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 316,
+   "summary": "KB 롯데마트(표 판독)",
+   "queueKeys": [
+    "kb-09180"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 317,
+   "summary": "현대 쏘카카드(표 판독)",
+   "queueKeys": [
+    "hyundai-schc"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 318,
+   "summary": "KB 국방멤버쉽(표 판독)",
+   "queueKeys": [
+    "kb-00996"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-terms",
+   "pr": 319,
+   "summary": "KB HERITAGE Smart 할인형 쿠폰 서비스",
+   "queueKeys": [
+    "kb-09125"
+   ]
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-events",
+   "pr": 320,
+   "summary": "KB국민카드 이벤트 1·2페이지 21건",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-events",
+   "pr": 321,
+   "summary": "KB국민카드 이벤트 3페이지 12건",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-events",
+   "pr": 323,
+   "summary": "KB국민카드 이벤트 4페이지 11건",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-events",
+   "pr": 324,
+   "summary": "KB국민카드 이벤트 5페이지 11건",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-events",
+   "pr": 325,
+   "summary": "KB국민카드 이벤트 6페이지 11건",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-events",
+   "pr": 326,
+   "summary": "KB국민카드 이벤트 7페이지 11건",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-events",
+   "pr": 327,
+   "summary": "KB국민카드 이벤트 8페이지 11건",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-events",
+   "pr": 328,
+   "summary": "KB국민카드 이벤트 9페이지 11건",
+   "queueKeys": []
+  },
+  {
+   "at": "2026-11-28T15:30:00+09:00",
+   "kind": "card-events",
+   "pr": 329,
+   "summary": "KB국민카드 이벤트 10페이지 12건",
+   "queueKeys": []
   }
  ],
  "skipped": [
@@ -1803,6 +2084,55 @@
    "status": "open",
    "reason": "공식 상세 페이지에서 연회비 표가 접혀 있어(브랜드별 금액 미노출) 18,000원·VISA로 기재 — 가족카드 연회비 없음만 공식 확인",
    "retry": "카드사(1544-7000) 또는 카드 실물 브랜드 확인 후 brands·annualFeeText 교체"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "신협 체크카드 8종(cu-1120·1080·1140·1040·5·4·1·2)",
+   "status": "open",
+   "reason": "안내문이 발급 안내(서류·한도)뿐이고 혜택표가 없어 card-terms로 담을 수 없음",
+   "retry": "카드 상세 페이지에서 혜택 표 확인 후 별도 수집"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "SC제일은행 sc-4420·sc-4753",
+   "status": "open",
+   "reason": "상품 안내장 심의필이 2016·2018년판이라 규칙(올해·작년 문서) 밖",
+   "retry": "2025~2026년판 안내장 확보 시 수집"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "KB 91** 이미지 PDF 14종",
+   "status": "open",
+   "reason": "텍스트 추출이 1~1,000자로 표가 이미지이고 일부는 공통 설명서라 혜택 확인 불가",
+   "retry": "PDF 페이지 렌더 판독으로 순차 수집"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "삼성카드 상품설명서(138종)",
+   "status": "open",
+   "reason": "카드 상세가 스크립트로 그려지고 static11 PDF 파일명 추측이 404",
+   "retry": "카드 상세 API·상품공시실 목록에서 PDF 링크 확인"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "우리카드 95종·하나카드 55종 termsUrl",
+   "status": "open",
+   "reason": "우리는 카드Clause 업로드 경로가 오류 페이지, 하나는 공통 약관 PDF만 연결",
+   "retry": "카드 상세 페이지에서 상품설명서 링크 재확인"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "현대카드 hyundai-american-express-platinum-elite(안내서 c=03184)",
+   "status": "open",
+   "reason": "표지는 PLATINUM ELITE지만 본문 대상 카드가 Green Card Edition2",
+   "retry": "대상 카드 확정 후 수집"
+  },
+  {
+   "at": "2026-11-28",
+   "target": "카드사 이벤트(신한·삼성·현대·하나·NH·BC·IBK)",
+   "status": "open",
+   "reason": "목록이 ajax/스크립트 렌더로 정적 수집 불가(브라우저로 KB만 성공)",
+   "retry": "브라우저로 목록 페이지를 렌더해 다음 회차 수집"
   }
  ]
 }
