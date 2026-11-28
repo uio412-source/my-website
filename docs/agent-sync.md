@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 10:29 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 10:47 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,7 @@ _자동 생성 2026-11-28 10:29 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#281](https://github.com/uio412-source/my-website/pull/281) | Pickle | fix(paymorevent): 피킹률 전수조사 — 실적 영역≠혜택 영역 계산 수정·누락 요율 모델 66장… | 2026-11-28 10:45 | 16파일 · paymorevent/ 8 · docs/ 3 · data/ 2 외 2곳 | 머지 |
 | [#280](https://github.com/uio412-source/my-website/pull/280) | Claude | pay: 매일 확인 2026-11-28 — 토스 페이스페이 브랜드 3곳(자담치킨·감성커피·진교동찜닭) | 2026-11-28 10:27 | 6파일 · data/ 2 · docs/ 2 · pay/ 2 | 머지 |
 | [#279](https://github.com/uio412-source/my-website/pull/279) | Claude | Mr. Stocks 배당: 프로필 User1·User2·User3 + 평단·수량·현재가·수익률 | 2026-11-28 10:19 | 6파일 · assets/ 2 · 루트 2 · data/ 1 외 1곳 | 머지 |
 | [#278](https://github.com/uio412-source/my-website/pull/278) | ChatGPT | data: 수집 2026-11-28 (카드·여행 이벤트 5건) | 2026-11-28 09:11 | 4파일 · data/inbox/card-events 2 · data/inbox/tra… | 머지 |
@@ -59,7 +60,6 @@ _자동 생성 2026-11-28 10:29 KST · `python tools/data/agent_sync.py` · 기�
 | [#258](https://github.com/uio412-source/my-website/pull/258) | Pickle | data: 수집 2026-11-27 65차 (롯데카드 디지로카·제휴 8종) | 2026-11-27 23:42 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#257](https://github.com/uio412-source/my-website/pull/257) | Pickle | data: 수집 2026-11-27 64차 (IBK기업은행 체크 5종) | 2026-11-27 23:38 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#256](https://github.com/uio412-source/my-website/pull/256) | Pickle | data: 수집 2026-11-27 63차 (IBK기업은행 제휴·지역 7종) | 2026-11-27 23:33 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#255](https://github.com/uio412-source/my-website/pull/255) | Pickle | data: 수집 2026-11-27 62차 (IBK기업은행 제휴·지역 5종) | 2026-11-27 23:30 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -89,13 +89,13 @@ _지금 잠근 영역이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #278 data: 수집 2026-11-28 (카드·여행 이벤트 5건) | 2026-11-28 09:11 | 0건 |
 | Claude | `data/agent-notes/claude.json` | #280 pay: 매일 확인 2026-11-28 — 토스 페이스페이 … | 2026-11-28 10:27 | 22건 |
-| Pickle | `data/agent-notes/pickle.json` | #276 docs: 공용 현황판 갱신 (2026-11-28 Pickl… | 2026-11-28 03:04 | 56건 |
+| Pickle | `data/agent-notes/pickle.json` | #281 fix(paymorevent): 피킹률 전수조사 — 실적 영… | 2026-11-28 10:45 | 58건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 70건
+### 다시 볼 것 (open) — 71건
 
 - **2026-11-28 · Claude · MG새마을금고 체크카드 9종(mg-104566·100754·100133·103827·104064·101353·105023·101488·102341)**
   - 사유: mgcheck.kfcc.co.kr·www.kfcc.co.kr 모두 WebFetch robots.txt 읽기 실패(ROBOTS_UNREACHABLE)
@@ -130,6 +130,9 @@ _지금 잠근 영역이 없습니다._
 - **2026-11-28 · Pickle · 삼성카드 상품설명서 140종**
   - 사유: 카드 상세 딥링크가 홈으로 리다이렉트되고 브라우저로도 상세 진입 불가, static11 PDF 파일명 추측 404 (2026-11-28 브라우저 재확인)
   - 재시도: 상품공시실 목록에서 카드별 PDF 링크를 직접 확인하거나 다른 에이전트가 확보한 링크 사용
+- **2026-11-28 · Pickle · 상품설명서 정리본은 있는데 피킹률이 비는 카드 613장(B1) · 요율 모델이 미완성이라 피킹률이 비는 카드 51장(A4)**
+  - 사유: 통합 한도(shared)·건당/횟수 제한·혼합 표기(최대 N원, 0.x~y%) 카드는 자동 변환이 부풀려질 수 있어 건너뜀. A4 카드는 기존 요율 모델 일부만 있어 손 검수 필요
+  - 재시도: 카드별로 상품설명서 원문 표를 보고 verified-card-rules.json.gz(요율·혜택·계획)나 picking-review.json(plans·groups)에 근거와 함께 추가 → python3 tools/data/picking_audit.py --card <id>로 확인
 - **2026-11-28 · Pickle · 우리카드·롯데카드·신한카드·BC카드 카드 상세 상품설명서**
   - 사유: 상세 페이지 HTML에 상품설명서 링크가 없고 스크립트로만 그려짐(우리 H1CRD101S02·롯데 LPCDADB_V100·신한 pconts·BC CreditCardMain 모두)
   - 재시도: 브라우저로 상세 탭을 렌더해 PDF 링크 확인
@@ -309,7 +312,7 @@ _지금 잠근 영역이 없습니다._
   - 사유: ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)
   - 재시도: check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기
 
-### 다른 경로로 처리 (workaround) — 8건
+### 다른 경로로 처리 (workaround) — 9건
 
 - **2026-11-28 · Claude · Claude 예약 실행 WebFetch — 대기열·카드 DB에 적힌 주소 직접 열기**
   - 사유: 레포 파일에서 읽은 주소는 출처 확인 권한 요청이 떠서 무인 실행에선 '시간 초과'로 실패(하나 13건, 사이트에 닿지도 않음)
@@ -317,6 +320,9 @@ _지금 잠근 영역이 없습니다._
 - **2026-11-28 · Pickle · NH농협카드 VISA Platinum·VISA Signature·Mastercard Platinum 브랜드서비스**
   - 사유: 안내문(VISA_Platinum_251001.pdf·VISA_Signature_251001.pdf·Mastercard_Platinum_251001.pdf)은 확보했으나 '국내 호텔 발레파킹' 대상 호텔 목록이 안내문에 없어 hotel_valet 필수 항목을 채울 수 없음
   - 대신 이렇게: 카드 상세·상품설명서에서 대상 호텔 목록을 확인한 뒤 수집
+- **2026-11-28 · Pickle · 피킹률 5% 초과 8건(A3: kb-04409 11%·kb-04260 6.67%·shinhan-202102250002 6.0%·hyundai-smecn 6.6%·woori-102488 5.3%·nh-90010505 5.33%·nh-90010515 6.17%·nh-90010051 6.0%)**
+  - 사유: 한도(월 캡)·추가 적립 한도가 있는 영역 요율이라 계산값은 맞지만, 5% 초과는 근거를 남겨야 함
+  - 대신 이렇게: 각 카드 note·calculationValidation.evidence에 한도 근거를 적고, 한도 없는 요율이 생기면 계산에서 뺄 것
 - **2026-11-28 · Pickle · 현대카드 상품 가이드북·브랜드 안내서 일괄 확보 경로(다음 회차용)**
   - 사유: 현대카드 상세 페이지는 스크립트로 그려지지만 안내문 PDF는 https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=<5자리 코드> 로 바로 받을 수 있음. 코드 03000~03200 조회에서 PDF 146건(중복 제거 69종) 확인 — 03182 코스트코 리워드 비즈니스 Edition2 가이드북, 03183 후불하이패스 가이드북, 03184 AMEX PLATINUM ELITE 안내서, 03185 AMEX Gold 안내서, 03186 The Platinum 안내서
   - 대신 이렇게: 코드별 표지 제목을 읽어 카드 DB와 대조해 가이드북인 것을 card-terms로 회차당 6~8종 수집

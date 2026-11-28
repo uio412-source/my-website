@@ -65,6 +65,21 @@ export function pickingOptions(c:Card){
  if(c.rewardModelComplete||rates.some(r=>r.minimumSpend===0))for(const r of rates){
   const rate=r.rewardUnits*r.unitValue/r.spendUnit,cap=rateCap(r);
   const fixed=rate>=1,sub=SUBSCRIPTION.test(r.label),excluded=r.spendExcluded??c.benefitSpendExcluded??false;
+  // 전월실적을 다른 영역(예: 국내)에서 채워야 열리는 요율. 요율의 minimumSpend 는 그 다른 영역의
+  // 금액이므로, 같은 금액을 이 영역에도 쓴 경우로 본다. 국내 실적에는 기본 적립이 함께 붙는다.
+  // (예: 국내 100만원 초과 시 해외 4% — 국내 100만원을 해외에 쓴 것으로 계산하면 안 됨)
+  if(r.minimumSpend>0&&r.minimumSpendArea){
+   const result=rewardAtSpend(r,r.minimumSpend);if(!result)continue;
+   const baseRate=(r.minimumSpendAreaRewardUnits??0)*r.unitValue/r.spendUnit,base=r.minimumSpend*baseRate;
+   const points=Math.min(base+result.earning,cap??Infinity),total=r.minimumSpend*2,benefit=points+result.fee;
+   legacy.push({value:benefit/total*100,scenario:{label:r.label,monthlySpend:total,monthlyBenefit:benefit,annualFee:0,verified:true,maximumVerified:true,calculation:'tier-cap',basis:'minimum-tier',minimumEligibleSpend:r.minimumSpend,totalSpend:total,benefitScope:r.label,sourceUrl:r.sourceUrl,assumptions:[
+    `${r.minimumSpendArea} 전월실적 ${wonText(r.minimumSpend)}을 채워야 이 요율이 열려서, ${r.minimumSpendArea} ${wonText(r.minimumSpend)} + 같은 금액을 이 영역에 쓴 경우로 계산했어요${sub?' (구독료는 월 3만원까지)':''}.`,
+    ...(base>0?[`${r.minimumSpendArea} 실적 ${wonText(r.minimumSpend)}에는 기본 적립 ${formatPicking(baseRate*100)}%(${wonText(base)})가 함께 붙어요.`]:[]),
+    ...(cap!==null?[`국내·해외를 합친 한도 ${wonText(cap)}까지 반영했어요.`]:[]),
+    ...(result.fee?[`동일 결제 수수료 면제 ${formatPicking(result.fee/r.minimumSpend*100)}% 포함.`,r.feeWaiver!.note]:[]),
+    r.note,'영역별 요율은 대안입니다. 연회비·바우처·연간 보너스는 빼고 계산해요.'],components:[...(base>0?[{label:'기본 적립(실적 결제)',amount:base,cap:'적용 조건 참조'}]:[]),{label:'적립·할인',amount:result.earning,cap:cap===null?'총 한도 없음':wonText(cap)},...(result.fee?[{label:'동일 거래 수수료 면제',amount:result.fee,cap:'적용 조건 참조'}]:[])]}});
+   continue;
+  }
   // A complete model may have an actual total or additional earning cap at
   // the minimum tier. Apply it to that spending amount instead of publishing
   // either the headline rate or cap/minimum without checking achievable value.
