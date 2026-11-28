@@ -1,0 +1,171 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09349",
+   "queueKey": "kb-09349",
+   "name": "전통시장온누리체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09349&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/__09349__prdctOpmn_20250627.pdf",
+   "docDate": "2025-06-30",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) KB 전통시장온누리체크카드 승인(이용) 금액(해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 전월 40만원 미만이어도 각 서비스 영역 월 1만원까지 할인 제공",
+   "spendExclusions": [
+    "취소 금액"
+   ],
+   "benefitExclusions": [
+    "KB Pay 쇼핑의 상품권·여행·티켓·도서·제휴몰 이용"
+   ],
+   "benefits": [
+    {
+     "group": "전통시장",
+     "label": "전통시장가맹점",
+     "place": "국세청이 지정한 전통시장 가점(월 1회 갱신)",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 400000,
+     "cap": 2000,
+     "capScope": "월",
+     "conditions": [
+      "건당 1만원 이상 이용 시 할인 제공"
+     ]
+    },
+    {
+     "group": "온누리상품권",
+     "label": "온누리상품권 차감",
+     "place": "온누리상품권 가맹점",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 400000,
+     "cap": 2000,
+     "capScope": "월",
+     "conditions": [
+      "KB 전통시장온누리체크카드를 온누리상품권 앱에 사전 등록·선택 필요",
+      "건당 1만원 이상 이용 시 할인 제공"
+     ]
+    },
+    {
+     "group": "KB Pay 쇼핑",
+     "label": "KB Pay 쇼핑",
+     "place": "KB Pay '쇼핑·여행' 탭",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 400000,
+     "cap": 2000,
+     "capScope": "월",
+     "conditions": [
+      "상품권·여행·티켓·도서·제휴몰 등 이용은 제외",
+      "건당 1만원 이상 이용 시 할인 제공"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09322",
+   "queueKey": "kb-09322",
+   "name": "K-패스체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09322&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09322__prdctOpmn_20240424.pdf",
+   "docDate": "2023-04-26",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    },
+    {
+     "brand": "Visa",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Visa"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) KB국민 K-패스체크카드 승인(이용) 금액(해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록 후 다음 달 말일까지 전월 실적 조건 미달이어도 서비스 제공",
+   "spendExclusions": [
+    "후불교통요금",
+    "무승인 금액(자판기·터널통행료·유료도로·기차/고속버스 취소반환수수료 등)",
+    "정부지원금(보육료·유치원 보조비·바우처)",
+    "포인트리 충전금액",
+    "대학(대학원) 등록금",
+    "상품권·선불카드 구입·충전",
+    "연체료",
+    "지방세(지방세·상하수도·세외수입)",
+    "취소 금액",
+    "각종 수수료 및 이자"
+   ],
+   "benefitExclusions": [
+    "택시·시외버스·고속버스·공항버스 이용 금액(대중교통 적립)",
+    "건당 1만원 미만 이용 금액(생활서비스 적립)"
+   ],
+   "benefits": [
+    {
+     "group": "대중교통",
+     "label": "버스·지하철",
+     "place": "버스·지하철",
+     "value": "10%",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "월 2천점",
+     "conditions": [
+      "버스·지하철 요금 할인은 실제 카드 사용일이 아닌 이용내역서상 기재된 이용일 기준"
+     ]
+    },
+    {
+     "group": "생활서비스",
+     "label": "생활서비스",
+     "place": "이동통신요금 자동납부(SK·KT·LG·LiivM), 커피·약국·편의점·패스트푸드 업종, 영화(CGV·롯데시네마)",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "cap": 4000,
+     "capScope": "월",
+     "limits": "월 4천점",
+     "conditions": [
+      "건당 1만원 이상 이용 시"
+     ]
+    },
+    {
+     "group": "생활서비스",
+     "label": "KB Pay 추가적립",
+     "place": "생활서비스 적립 영역에서 KB Pay 이용",
+     "value": "1%",
+     "valueType": "적립",
+     "minimumSpend": 200000,
+     "cap": 4000,
+     "capScope": "월",
+     "limits": "월 4천점, 전체 합계 월 1만점",
+     "conditions": [
+      "생활서비스 적립과 중복 적립"
+     ]
+    }
+   ]
+  }
+ ]
+}
