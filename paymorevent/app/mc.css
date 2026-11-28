@@ -256,6 +256,9 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .cd-head-art .mc-art.lg img { max-width: 82%; max-height: 168px; }
 .cd-head-t p { font-size: .84rem; font-weight: 700; color: var(--mc-muted); }
 .cd-head h1 { font-size: 1.5rem; line-height: 1.3; letter-spacing: -.02em; margin: 2px 0 0; }
+.cd-networks { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 9px 0 0; padding: 0; }
+.cd-networks li { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-width: 50px; min-height: 29px; padding: 3px 6px; box-sizing: border-box; border: 1px solid #e3e7eb; border-radius: 7px; background: #fff; color: #374151; font-size: .69rem; font-weight: 750; }
+.cd-networks img { display: block; width: 44px; height: 18px; object-fit: contain; }
 .cd-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
 
 .cd-sec { padding-top: 28px; }
@@ -344,14 +347,14 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .ed-steps li { counter-increment: s; display: grid; grid-template-columns: 28px 1fr; gap: 8px; padding: 10px 4px; border-bottom: 1px solid var(--mc-border); font-size: .84rem; line-height: 1.55; overflow-wrap: anywhere; }
 .ed-steps li::before { content: counter(s); font-weight: 800; color: var(--mc-primary); text-align: center; }
 
-/* ---------- 2026-11 카드 화면 보강: 세로 카드 눕히기 · 줄 링크 · 비교 · 최근 본 카드 · 계산기 · 비슷한 카드 ---------- */
+/* ---------- 2026-11 카드 화면 보강: 세로 카드 눕히기 · 줄 링크 · 비교 · 계산기 ---------- */
 /* 세로 카드 이미지는 -90도로 눕혀 가로 카드와 같은 크기로 (요소 상자는 그대로라 최대 폭·높이를 바꿔 줌) */
 /* 요소 상자가 칸보다 커도 가운데에 오도록 절대 위치로 */
 .mc-art.portrait { position: relative; }
 .mc-art.portrait img { position: absolute; top: 50%; left: 50%; max-width: 44px; max-height: 64px; transform: translate(-50%, -50%) rotate(-90deg); }
 .mc-art.lg.portrait img { max-width: 150px; max-height: 240px; }
 .cd-head-art .mc-art.lg.portrait img { width: auto; height: 250px; max-width: none; max-height: none; }
-.mc-dock .mc-art.portrait img, .mc-recent .mc-art.portrait img { max-width: 28px; max-height: 40px; }
+.mc-dock .mc-art.portrait img { max-width: 28px; max-height: 40px; }
 
 /* 목록 줄: 이름 링크가 줄 전체를 덮고, 비교 버튼만 위에 떠서 따로 눌림 */
 .mc-cardrow { position: relative; }
@@ -366,21 +369,10 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 }
 .mc-cmp[aria-pressed="true"] { color: var(--mc-primary); border-color: var(--mc-primary); background: color-mix(in srgb, var(--mc-primary) 8%, var(--mc-bg)); }
 
-/* 최근 본 카드 */
-.mc-recent { margin: 2px 0 14px; }
-.mc-recent-h { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; font-size: .78rem; }
-.mc-recent-h b { color: var(--mc-muted); font-weight: 800; }
-.mc-recent-list { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
-.mc-recent-list::-webkit-scrollbar { display: none; }
-.mc-recent-list a {
-  flex-shrink: 0; display: flex; align-items: center; gap: 8px; max-width: 200px; padding: 6px 12px 6px 6px; border-radius: 12px;
-  border: 1px solid var(--mc-border); background: var(--mc-bg); color: var(--mc-text); text-decoration: none; font-size: .78rem; font-weight: 700;
-}
-.mc-recent-list span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.mc-recent .mc-art, .mc-dock .mc-art { width: 40px; height: 28px; }
-.mc-recent .mc-art img, .mc-dock .mc-art img { max-width: 40px; max-height: 28px; }
-.mc-recent .mc-art-ph, .mc-dock .mc-art-ph { width: 40px; height: 28px; }
-.mc-recent .mc-art-ph .mc-tile, .mc-dock .mc-art-ph .mc-tile { width: 24px; height: 24px; border-radius: 7px; font-size: .5rem; }
+.mc-dock .mc-art { width: 40px; height: 28px; }
+.mc-dock .mc-art img { max-width: 40px; max-height: 28px; }
+.mc-dock .mc-art-ph { width: 40px; height: 28px; }
+.mc-dock .mc-art-ph .mc-tile { width: 24px; height: 24px; border-radius: 7px; font-size: .5rem; }
 
 /* 비교함 막대: 화면 아래(휴대폰은 탭바 위)에 떠 있음 */
 .mc-dock {
@@ -429,6 +421,8 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
   color: var(--mc-primary); background: color-mix(in srgb, var(--mc-primary) 10%, transparent);
 }
 .cd-badge.gift { color: var(--mc-up); background: color-mix(in srgb, var(--mc-up) 10%, transparent); }
+.cd-badge.discontinued { color: var(--mc-up); background: color-mix(in srgb, var(--mc-up) 10%, var(--mc-bg)); }
+.cd-badge.scheduled { color: var(--mc-muted); background: var(--mc-bg-alt); }
 .cd-badge small { font-size: .68rem; font-weight: 700; opacity: .8; }
 
 /* 혜택 표(휴대폰 3칸): 적용처는 구분 칸 아래 작은 글씨 */
@@ -456,8 +450,19 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .cd-calc-net b.plus { color: var(--mc-green) !important; }
 .cd-calc-net b.minus { color: var(--mc-up) !important; }
 
-/* 비슷한 카드 */
-.cd-sim .mc-row { padding: 10px 12px; }
+/* 카드 상세 하단 공유 */
+.cd-share { margin-top: 22px; padding: 15px; border: 1px solid var(--mc-border); border-radius: 14px; background: var(--mc-bg-alt); }
+.cd-share h2 { margin: 0 0 11px; font-size: .98rem; }
+.cd-share-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; max-width: 405px; }
+.cd-share-button { font: inherit; display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-width: 0; min-height: 49px; padding: 6px 7px; border: 1px solid var(--mc-border); border-radius: 10px; background: var(--mc-bg); color: var(--mc-text); font-size: .82rem; font-weight: 750; cursor: pointer; }
+.cd-share-button:hover { border-color: var(--mc-primary); }
+.cd-share-button:focus-visible { outline: 2px solid var(--mc-primary); outline-offset: 2px; }
+.cd-share-icon { display: inline-grid; place-items: center; width: 29px; height: 29px; flex: 0 0 29px; border-radius: 8px; color: var(--mc-primary); background: color-mix(in srgb, var(--mc-primary) 10%, var(--mc-bg)); }
+.cd-share-icon.kakao { color: #25180d; background: #fee500; }
+.cd-share p { margin: 8px 0 0; color: var(--mc-muted); font-size: .73rem; }
+.cd-share .cd-share-status { color: var(--mc-text); }
+.cd-share-status:empty { margin: 0; }
+.cd-share-url { box-sizing: border-box; width: 100%; margin-top: 8px; padding: 7px 9px; border-radius: 6px; border: 1px solid var(--mc-border); color: var(--mc-text); background: var(--mc-bg); }
 
 @media (max-width: 720px) {
   .mc-dock { bottom: calc(72px + env(safe-area-inset-bottom)); }

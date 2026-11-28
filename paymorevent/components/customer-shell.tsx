@@ -150,13 +150,13 @@ function DbProgress() {
   </section>;
 }
 
-export function SiteFooter() {
+export function SiteFooter({hideDatabaseDownload = false}: {hideDatabaseDownload?: boolean} = {}) {
   return <footer className="pm-footer">
     <a href={sitePath()} className="pm-footer-brand">Mr. <span>Cards</span></a>
     <p>카드 상품과 이벤트를 한곳에서.</p>
     <div>
       <span>최종 이용 조건은 카드사 안내를 확인하세요.</span>
-      <a href={sitePath('downloads/paymorevent-card-database.xlsx')} download="Mr.Cards-카드DB.xlsx" className="pm-db-link">카드 DB 엑셀</a>
+      {!hideDatabaseDownload && <a href={sitePath('downloads/paymorevent-card-database.xlsx')} download="Mr.Cards-카드DB.xlsx" className="pm-db-link">카드 DB 엑셀</a>}
       <a href={sitePath('../ungjup.html')} className="mc-family">Mr. Stocks 바로가기</a>
     </div>
     <DbProgress />

@@ -41,6 +41,7 @@ export type Card = {
   benefitExclusions: string[]; description: string; sourceUrl: string;
   termsUrl: string | null; imageUrl: string | null; tags: string[];
   issuanceStatus: "confirmed" | "catalog" | "unknown"; verifiedAt: string;
+  discontinuedAt?: string | null; discontinuationSourceUrl?: string;
   verificationNote: string; eligibility?:string[]; searchText?:string; benefitCount?:number;
   /** 상품설명서 정리본(카드 상세 card-data/<id>.json에만, scripts/card-terms.mjs) */ terms?: import('./card-terms').CardTerms;
 };

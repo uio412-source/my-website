@@ -1,20 +1,21 @@
 // 카드 상세 — 표준 양식: 머리(이미지·카드사·이름) → 기본 정보 표 → 혜택 표 → 피킹률 표 → 결제 인정 표 → 이벤트 → 원문
 // 모든 정보는 같은 모양의 표(.cd-t)로만 보여 준다. 설명 문단은 두지 않는다.
 import {Fragment, useEffect, useState, type ReactNode} from 'react';
-import {sitePath} from '@/lib/site-path';
+import {CreditCard} from 'lucide-react';
+import {assetPath, sitePath} from '@/lib/site-path';
 import {SiteHeader, SiteFooter} from '@/components/customer-shell';
 import {CardArt} from '@/components/mc-ui';
 import {CompareDock, CompareToggle} from '@/components/compare';
 import {MineToggle} from '@/components/mine';
-import {benefitAt, firstSpend, monthlyMax, similarCards, spendShort} from '@/lib/card-value';
-import {rememberCard} from '@/lib/my-cards';
+import {benefitAt, firstSpend, monthlyMax} from '@/lib/card-value';
 import {activeOffer, cardFamilyKey, dedupeOffers, eventPath, formatPicking, linkedOffers, pickingExcluded, pickingOptions, rewardValue} from '@/lib/catalog-model';
 import {PAYMENT_CHECKS, paymentCheck, spendFreeCard, type PaymentCheck} from '@/lib/card-themes';
 import {annualFeeRows, cardPath, networkBrands} from '@/lib/card-presentation';
 import {customerLines, uniqueLines} from '@/lib/customer-copy';
 import {pendingValet, valetHotelResults, valetMapPath, valetQuota, valetRules} from '@/lib/hotel-valet';
 import {termRows} from '@/lib/card-terms';
-import {benefitRow, cardMinimumSpend, cleanBenefits, dday, feeLabel, headlineAmount, pickLabel, won, ymd, type BenefitRow} from '@/lib/mc-text';
+import {discontinuedBadge} from '@/lib/issuance-status';
+import {benefitRow, cardMinimumSpend, cleanBenefits, dday, headlineAmount, pickLabel, won, ymd, type BenefitRow} from '@/lib/mc-text';
 import type {Card, Offer} from '@/lib/catalog-types';
 import {viewOf} from '@/lib/event-view';
 import {nameAndValue} from '@/components/event-row';
@@ -80,18 +81,49 @@ function useNarrow(q = '(max-width: 520px)') {
   return on;
 }
 
-/** 공유: 휴대폰은 공유 창, 아니면 주소 복사 */
-function ShareButton({title}: {title: string}) {
-  const [done, setDone] = useState(false);
-  useEffect(() => { if (!done) return; const t = setTimeout(() => setDone(false), 1800); return () => clearTimeout(t); }, [done]);
-  const share = async () => {
-    const url = location.href.split('#')[0];
+/** 카카오톡은 지원 브라우저의 기기 공유 메뉴에서 선택한다. */
+function CardShare({title, id}: {title: string; id: string}) {
+  const [notice, setNotice] = useState('');
+  const [manual, setManual] = useState('');
+  const cardUrl = () => new URL(cardPath(id), window.location.origin).href;
+
+  const copy = async (forKakao = false) => {
+    const url = cardUrl();
+    setManual('');
     try {
-      if (navigator.share) await navigator.share({title: `${title} | Mr. Cards`, url});
-      else { await navigator.clipboard.writeText(url); setDone(true); }
-    } catch { /* 공유 창을 닫은 경우 */ }
+      await navigator.clipboard.writeText(url);
+      setNotice(forKakao ? '링크를 복사했어요. 카카오톡 대화에 붙여넣으세요.' : '카드 링크를 복사했어요.');
+    } catch {
+      setManual(url);
+      setNotice(forKakao ? '아래 링크를 복사해 카카오톡 대화에 붙여넣으세요.' : '자동 복사를 사용할 수 없어요. 아래 링크를 복사하세요.');
+    }
   };
-  return <button type="button" className="mc-btn" onClick={share}>{done ? '주소 복사됨 ✓' : '공유'}</button>;
+
+  const shareKakao = async () => {
+    setNotice('');
+    setManual('');
+    if (typeof navigator.share !== 'function') return copy(true);
+    try {
+      await navigator.share({title: title + ' | Mr. Cards', url: cardUrl()});
+    } catch (error) {
+      if (!(error instanceof DOMException && error.name === 'AbortError')) await copy(true);
+    }
+  };
+
+  return <section className="cd-share" aria-labelledby="cd-share-title">
+    <h2 id="cd-share-title">카드 공유</h2>
+    <div className="cd-share-actions">
+      <button type="button" className="cd-share-button" onClick={() => copy()}>
+        <span className="cd-share-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M10 13a4 4 0 0 0 6 .5l4-4a4 4 0 0 0-5.7-5.7l-2.2 2.2"/><path d="M14 11a4 4 0 0 0-6-.5l-4 4a4 4 0 0 0 5.7 5.7l2.2-2.2"/></svg></span>링크 복사
+      </button>
+      <button type="button" className="cd-share-button" aria-describedby="cd-kakao-hint" onClick={shareKakao}>
+        <span className="cd-share-icon kakao"><svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9.5 9.5 0 0 0-9.5 8.4c0 3 1.9 5.5 4.8 6.8l-.9 3.3c0 .2.2.4.4.3l3.8-2.6 1.4.1c5.2 0 9.5-3.7 9.5-8.2S17.2 3 12 3Z"/></svg></span>카톡 공유
+      </button>
+    </div>
+    <p id="cd-kakao-hint">공유 메뉴에서 카카오톡을 선택하세요.</p>
+    {manual && <input className="cd-share-url" aria-label="공유할 카드 링크" value={manual} readOnly onFocus={e => e.currentTarget.select()} />}
+    <p className="cd-share-status" role="status">{notice}</p>
+  </section>;
 }
 
 const signedWon = (n: number) => (n < 0 ? '−' : '+') + (Math.abs(n) >= 10000 ? `${Number((Math.abs(n) / 10000).toFixed(1)).toLocaleString('ko-KR')}만원` : `${Math.round(Math.abs(n)).toLocaleString('ko-KR')}원`);
@@ -143,10 +175,8 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
   const best = picks[0];
   const top = monthlyMax(picks);
   const narrow = useNarrow();
-  useEffect(() => { rememberCard(card.id); }, [card.id]);
   // 지금 받을 수 있는 발급 캐시백 중 가장 큰 것
   const cashback = offers.filter(o => o.kind === 'cashback' && activeOffer(o)).map(o => ({o, amount: headlineAmount(o, rewardValue(o))})).sort((a, b) => b.amount - a.amount)[0];
-  const similar = similarCards(card, catalog.cards);
   const dropped = pickingExcluded(card);
   const valet = valetRules(card.id), valetPending = pendingValet(card.id);
   const services = (card.networkServices ?? []).filter(s => s.category !== 'hotel_valet');
@@ -159,6 +189,11 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
   // 상품설명서 정리본(lib/card-terms.ts): 전월실적·실적/혜택 제외는 정리본이 있으면 정리본으로,
   // 혜택 표는 정리본이 카드 DB 혜택을 대부분 담고 있을 때만(terms.table) 정리본으로
   const terms = card.terms;
+  const issuance = card.discontinuationSourceUrl
+    ? discontinuedBadge('discontinued', card.discontinuedAt)
+    : terms?.status === 'discontinued' && terms.discontinuationSourceUrl
+      ? discontinuedBadge('discontinued', terms.discontinuedAt)
+      : null;
   const termTable = terms?.table ? termRows(terms) : null;
   const termSpend = terms?.minimumSpend ?? null;
   // 카드 값보다 혜택별 조건이 실제에 가까움: 혜택에 전월실적이 걸려 있으면 그 최소값을 보여 줌
@@ -168,7 +203,7 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
     ? {main: won(positive[0]) + ' 이상', sub: benefitSpends.includes(0) || termSpend === 0 ? '일부 혜택은 실적 무관' : positive.length > 1 ? '혜택별로 다름' : ''}
     : termSpend === 0 ? {main: '없음', sub: ''}
     : {main: spend.value === null ? '–' : spend.value === 0 ? '없음' : won(spend.value) + (spend.varies ? '~' : ' 이상'), sub: ''};
-  const brands = networkBrands(card.brands).map(b => b.label).filter(b => b !== '국내전용');
+  const brands = networkBrands(card.brands ?? []);
   const [allBenefits, setAllBenefits] = useState(false);
   const [allPicks, setAllPicks] = useState(false);
   const SHOW = 10;
@@ -191,23 +226,30 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
       <div className="cd-head-t">
         <p>{card.issuer}</p>
         <h1>{title}</h1>
-        {(cashback || top) && <div className="cd-badges">
+        {brands.length > 0 && <ul className="cd-networks" aria-label="발급 브랜드">
+          {brands.map(brand => <li key={brand.key}>
+            {brand.image
+              ? <img src={assetPath(brand.image)} alt={brand.label} title={brand.label} width="44" height="20" />
+              : <><CreditCard size={15} aria-hidden="true" />{brand.label}</>}
+          </li>)}
+        </ul>}
+        {(issuance || cashback || top) && <div className="cd-badges">
+          {issuance && <span className={'cd-badge ' + (issuance.ended ? 'discontinued' : 'scheduled')}>{issuance.label}</span>}
           {cashback && <a className="cd-badge gift" href={eventPath(cashback.o.id)}>발급 캐시백{cashback.amount ? ` 최대 ${won(cashback.amount)}` : ''}{dday(cashback.o.endsAt) && <small>{dday(cashback.o.endsAt)}</small>}</a>}
           {top && <span className="cd-badge">월 최대 {won(Math.round(top.benefit))} 혜택</span>}
         </div>}
         <div className="cd-actions">
-          <a className="mc-btn primary" href={card.sourceUrl} target="_blank" rel="noopener noreferrer">카드사에서 신청 ↗</a>
+          <a className="mc-btn primary" href={card.sourceUrl} target="_blank" rel="noopener noreferrer">{issuance?.ended ? '카드사 상품 안내 ↗' : '카드사에서 신청 ↗'}</a>
           {termsUrl && <a className="mc-btn" href={termsUrl} target="_blank" rel="noopener noreferrer">상품설명서</a>}
           <CompareToggle id={card.id}/>
           <MineToggle id={card.id} family={variants.map(v => v.id)}/>
-          <ShareButton title={title}/>
         </div>
       </div>
     </header>
 
     <table className="cd-t cd-info">
       <tbody>
-        <tr><th scope="row">종류</th><td>{card.type === 'credit' ? '신용' : '체크'}{brands.length > 0 && <small>{brands.join(' · ')}</small>}</td></tr>
+        <tr><th scope="row">종류</th><td>{card.type === 'credit' ? '신용' : '체크'}</td></tr>
         <tr><th scope="row">연회비</th><td><b>{fee.main}</b>{fee.sub && <small>{fee.sub}</small>}</td></tr>
         <tr><th scope="row">전월실적</th><td><b>{spendInfo.main}</b>{spendInfo.sub && <small>{spendInfo.sub}</small>}</td></tr>
         {best && <tr><th scope="row">최고 피킹률</th><td><b className="up">{formatPicking(best.value)}%</b></td></tr>}
@@ -276,24 +318,6 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
       {offers.length > 5 && <a className="mc-more" href={sitePath('?card=' + encodeURIComponent(card.id) + '#events')}>{offers.length - 5}건 더 보기</a>}
     </section>}
 
-    {similar.length > 0 && <section className="cd-sec">
-      <h2>비슷한 카드</h2>
-      <div className="mc-rows cd-sim">{similar.map(({c, shared, pick}) => <div key={c.id} className="mc-row mc-cardrow">
-        <CardArt card={c}/>
-        <span className="mc-body">
-          <span className="mc-issuer">{c.issuer}</span>
-          <a className="mc-name mc-stretch" href={cardPath(c.id)}>{c.familyName ?? c.name}</a>
-          <span className="mc-facts">{[c.type === 'credit' ? '신용' : '체크', feeLabel(c.annualFeeMin), spendShort(c)].filter(Boolean).join(' · ')}</span>
-          <span className="mc-hl">{shared.slice(0, 3).map(a => <i key={a}>{a}</i>)}</span>
-        </span>
-        <span className="mc-side">
-          {pick !== null && <span className="mc-pick"><small>피킹률</small>{formatPicking(pick)}%</span>}
-          <CompareToggle id={c.id} compact/>
-        </span>
-      </div>)}</div>
-      <p className="cd-foot">같은 {card.type === 'credit' ? '신용' : '체크'}카드·비슷한 연회비 중 혜택 영역이 겹치는 카드</p>
-    </section>}
-
     {(benefits.length > 0 || termConds.length > 0 || spendRule.length > 0 || variants.length > 1 || eligibility.length > 0 || spendOut.length > 0 || benefitOut.length > 0) && <section className="cd-sec">
       <h2>원문</h2>
       {variants.length > 1 && <details className="mc-acc"><summary>다른 브랜드·디자인<small>{variants.length}</small></summary><div className="mc-variants">{variants.map(v => <a key={v.id} href={cardPath(v.id)} aria-current={v.id === card.id ? 'page' : undefined}>{v.name}<small>{v.brands.join('·')}</small></a>)}</div></details>}
@@ -306,6 +330,7 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
     </section>}
 
     <p className="cd-foot">{termTable ? <>출처 카드사 상품설명서 · {ymd(terms!.docDate)} 기준</> : <>출처 카드사 공식 · {ymd(card.verifiedAt) || '확인일 미상'}</>}</p>
+    <CardShare title={title} id={card.id}/>
     <CompareDock cards={catalog.cards} events={catalog.events}/>
-  </main><SiteFooter/></div>;
+  </main><SiteFooter hideDatabaseDownload/></div>;
 }
