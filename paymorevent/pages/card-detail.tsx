@@ -189,9 +189,11 @@ export default function CardDetail({card, catalog}: {card: Card; catalog: {cards
   // 상품설명서 정리본(lib/card-terms.ts): 전월실적·실적/혜택 제외는 정리본이 있으면 정리본으로,
   // 혜택 표는 정리본이 카드 DB 혜택을 대부분 담고 있을 때만(terms.table) 정리본으로
   const terms = card.terms;
-  const reviewedStatus = terms?.status ?? (card.discontinuationSourceUrl ? 'discontinued' : undefined);
-  const reviewedEndDate = terms?.discontinuedAt ?? (card.discontinuationSourceUrl ? card.discontinuedAt : undefined);
-  const issuance = discontinuedBadge(reviewedStatus, reviewedEndDate);
+  const issuance = card.discontinuationSourceUrl
+    ? discontinuedBadge('discontinued', card.discontinuedAt)
+    : terms?.status === 'discontinued' && terms.discontinuationSourceUrl
+      ? discontinuedBadge('discontinued', terms.discontinuedAt)
+      : null;
   const termTable = terms?.table ? termRows(terms) : null;
   const termSpend = terms?.minimumSpend ?? null;
   // 카드 값보다 혜택별 조건이 실제에 가까움: 혜택에 전월실적이 걸려 있으면 그 최소값을 보여 줌
