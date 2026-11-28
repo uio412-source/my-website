@@ -1,0 +1,135 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20260324001",
+   "name": "기아챔피언스 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20260324001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20260324001",
+   "docDate": "2026-03-12",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 200000,
+   "spendBasis": "전월 1일~말일 승인일 기준 일시불 이용금액(매출 취소 시 취소매출표 접수월 실적에서 차감)",
+   "grace": "카드 신규 후 수령일부터 다음 월 말일까지 실적 미달이어도 경기장 내·외 통합 캐시백 한도 1만원 제공",
+   "spendExclusions": [
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "포스트시즌·한국시리즈 경기(경기장 입장료)"
+   ],
+   "benefits": [
+    {
+     "group": "경기장",
+     "label": "입장료",
+     "place": "광주-기아 챔피언스 필드 정규시즌 홈경기(EV·K5·K8·K9 내야지정석, 외야자유석)",
+     "value": "3,500원",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": 3500,
+     "capScope": "일",
+     "limits": "2,500원 현장할인+1,000원 캐시백, 1일 1회",
+     "conditions": [
+      "전월실적 조건 없이 제공, 경기장 통합 캐시백 한도와 무관"
+     ]
+    },
+    {
+     "group": "경기장",
+     "label": "팀스토어",
+     "place": "광주-기아 챔피언스 필드 내 팀스토어(온·오프라인)",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 건별 5만원 이상",
+     "shared": "경기장 통합한도"
+    },
+    {
+     "group": "경기장",
+     "label": "편의점·F&B",
+     "place": "경기장 내 편의점·햄버거·떡볶이·치킨·PUB 등 F&B 매장(오프라인)",
+     "value": "10%",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "1일 2회·월 5회, 건별 1만원 이상",
+     "shared": "경기장 통합한도"
+    },
+    {
+     "group": "생활영역",
+     "label": "영화",
+     "place": "CGV·메가박스·롯데시네마(온라인예매·현장구매)",
+     "value": "1회당 1,000원",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "cap": 2000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 건당 1만원 이상",
+     "shared": "생활영역 통합한도"
+    },
+    {
+     "group": "생활영역",
+     "label": "커피",
+     "place": "공차·달콤·더벤티·드롭탑·메가MGC커피·벌크커피·빽다방·스타벅스·엔제리너스·이디야·카페베네·커피빈·컴포즈커피·탐앤탐스·투썸플레이스·파스쿠찌·폴바셋·할리스 등 21개 브랜드",
+     "value": "1회당 1,000원",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "1일 1회·월 3회, 건당 1만원 이상",
+     "shared": "생활영역 통합한도"
+    },
+    {
+     "group": "생활영역",
+     "label": "철도",
+     "place": "KTX·SRT",
+     "value": "5%",
+     "valueType": "캐시백",
+     "minimumSpend": 200000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "1일 1회·월 2회, 건당 1만원 이상",
+     "shared": "생활영역 통합한도"
+    },
+    {
+     "group": "레저",
+     "label": "레저시설",
+     "place": "디오션 워터파크, 보성다비치콘도 해수온천",
+     "value": "30%",
+     "valueType": "할인",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "일",
+     "limits": "본인·동반 1인, 1일 1회",
+     "conditions": [
+      "전월실적 조건 없이 제공"
+     ]
+    }
+   ]
+  }
+ ]
+}
