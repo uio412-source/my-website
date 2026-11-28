@@ -1,0 +1,189 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09272",
+   "queueKey": "kb-09272",
+   "name": "톡톡 with카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09272&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09272__prdctOpmn_20201230.pdf",
+   "docDate": "2020-12-30",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 12000},
+    {"brand": "Visa", "amount": 12000},
+    {"brand": "UnionPay", "amount": 12000}
+   ],
+   "brands": ["국내전용", "Visa", "UnionPay"],
+   "minimumSpend": 400000,
+   "spendBasis": "전월 1일~말일 톡톡with 계열카드 일시불·할부 승인 금액(해외는 매입 완료 기준)",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 실적이 없어도 서비스 제공",
+   "spendExclusions": [
+    "톡톡with 계열 카드로 청구할인 받은 이용 건(해당 매출 전체)",
+    "취소 금액",
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "국세·지방세·공과금(전기·수도)·아파트 관리비",
+    "정부지원금·초중고 납입금 전체·대학 등록금",
+    "4대 사회보험료·각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "교통요금",
+    "무승인 전표(자판기·터널통행료·항공기 내)"
+   ],
+   "benefitExclusions": [
+    "무이자 할부 이용 금액",
+    "상품권(선물하기 등)·선불카드 충전(스타벅스)",
+    "간편결제·앱스토어 인앱 결제(구독 할인)",
+    "오프라인 매장 결제(QR·바코드·NFC·카카오T·택시)(온라인 간편결제 할인)",
+    "시외버스·고속버스·공항버스(대중교통 할인)"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "스타벅스",
+     "place": "스타벅스(사이렌오더 포함)",
+     "value": "50%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 10000,
+     "capScope": "월",
+     "limits": "월 1만원",
+     "conditions": ["상품권·선불카드 충전 제외"]
+    },
+    {
+     "group": null,
+     "label": "구독",
+     "place": "YouTube Premium·넷플릭스·웨이브·티빙",
+     "value": "20%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 3천원",
+     "conditions": ["공식 홈페이지·앱 정기결제만", "간편결제·앱스토어 인앱 결제 제외"]
+    },
+    {
+     "group": null,
+     "label": "배달",
+     "place": "배달의민족·요기요",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 5천원",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "온라인 간편결제",
+     "place": "KB Pay·삼성페이·LG페이·카카오페이·네이버페이·PAYCO·쿠페이·스마일페이·SSGPAY·L.pay",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 3천원",
+     "conditions": ["국내 온라인 가맹점 결제만", "오프라인 매장 결제 제외", "스타벅스·배달 할인과 중복 적용 가능(한도 각각 차감)"]
+    },
+    {
+     "group": null,
+     "label": "대중교통",
+     "place": "버스·지하철",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 3000,
+     "capScope": "월",
+     "limits": "월 3천원",
+     "conditions": ["이용대금명세서 기재 이용일 기준", "시외버스·고속버스·공항버스 제외"]
+    }
+   ]
+  },
+  {
+   "cardId": "kb-09389",
+   "queueKey": "kb-09389",
+   "name": "TMAP KB국민카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09389&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09389__prdctOpmn_20230620.pdf",
+   "docDate": "2023-06-20",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 15000},
+    {"brand": "Visa", "amount": 15000}
+   ],
+   "brands": ["국내전용", "Visa"],
+   "minimumSpend": 400000,
+   "spendBasis": "전월 1일~말일 TMAP KB국민카드 일시불·할부 승인 금액",
+   "grace": "최초 카드 사용 등록일(KB Pay 등 간편결제 등록 포함)부터 다음 달 말일까지 실적이 없어도 할인 제공",
+   "spendExclusions": [
+    "단기카드대출(현금서비스)·장기카드대출(카드론)",
+    "국세·지방세·공과금(전기·수도)·아파트 관리비",
+    "정부지원금·초중고 납입금 전체·대학 등록금",
+    "4대 사회보험료·각종 수수료·이자·연체료·연회비",
+    "상품권·선불카드 구입·충전",
+    "교통요금",
+    "무승인 전표"
+   ],
+   "benefitExclusions": [
+    "무이자 할부 이용 금액",
+    "상품권·선불카드 구입·충전",
+    "간편결제·앱스토어 인앱 결제(OTT 할인)"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "티맵",
+     "place": "티맵 앱 유료서비스",
+     "value": "30%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 15000,
+     "capScope": "월",
+     "limits": "월 1만5천원",
+     "conditions": ["티맵 앱에서 결제 시 30%", "티맵 앱에서 KB Pay 결제 시 20% 추가 할인(최대 50%)"]
+    },
+    {
+     "group": null,
+     "label": "OTT",
+     "place": "넷플릭스·티빙·웨이브",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 5천원",
+     "conditions": ["공식 홈페이지·앱 정기결제만", "간편결제·인앱 결제 제외"]
+    },
+    {
+     "group": null,
+     "label": "주유",
+     "place": "주유소·LPG 충전소 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 5천원",
+     "conditions": []
+    },
+    {
+     "group": null,
+     "label": "식음료",
+     "place": "커피·음료, 제과·아이스크림, 편의점 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "월 5천원",
+     "conditions": []
+    }
+   ]
+  }
+ ]
+}
