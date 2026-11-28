@@ -1,9 +1,33 @@
 {
   "agent": "Claude",
   "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-  "updatedAt": "2026-11-28T10:50:00+09:00",
+  "updatedAt": "2026-11-28T12:30:00+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-28T12:30:00+09:00",
+      "kind": "catalog",
+      "pr": null,
+      "summary": "카드 DB에 선불카드 11종 추가(종류 prepaid 신설) — Npay 머니카드·머니카드Y·PAYCO 포인트·트래블페이·트래블제로·제주항공 트래블제로·모빌카드·한패스 트리플·트리플 오토·GO·이지. 각 회사 공식 페이지·보도자료(navercorp·payco·travel-wallet·konacard·mobilcard·hanpass) 기준, rewardCoveragePending. 선불은 상품설명서가 없어 수집 대기열에서 뺌",
+      "picking": {
+        "checked": 1579,
+        "newIssues": 0,
+        "note": "picking_audit A1 6·A2 0·A3 8 — 추가 전과 같음(새 카드는 요율 모델 없음)"
+      },
+      "cardIds": [
+        "npay-moneycard",
+        "npay-moneycard-y",
+        "payco-pointcard",
+        "travelwallet-travelpay",
+        "kona-travelzero",
+        "kona-travelzero-jejuair",
+        "kg-mobilcard",
+        "hanpass-triple",
+        "hanpass-triple-auto",
+        "hanpass-go",
+        "hanpass-easy"
+      ]
+    },
     {
       "at": "2026-11-28T10:50:00+09:00",
       "kind": "code",
@@ -31,6 +55,40 @@
         "internet-10",
         "internet-7",
         "internet-9"
+      ]
+    },
+    {
+      "at": "2026-11-27T23:00:00+09:00",
+      "kind": "collect",
+      "pr": 239,
+      "summary": "card-terms 하나카드 4차 26종(신용 8: 대한노인회·소상공인 특례 햇살론·하나 더 소호·하나 더 넥스트 멤버스·원더 K리그 축덕·원더 2.0 HAPPY BIRTH·HAPPY·FREE, 체크 18: 나라사랑·주거래 생활·1Q 계열 3·Young Hana 계열 4·트래블로그·모두의 건강·모두의 일상·VIVA X·글로벌 페이 블루·신세계·시코르·Mega·비바 G 플래티늄) — m.hanacard.co.kr 상세 페이지(WebFetch), 한도·적립/캐시백 구분이 헷갈린 8종은 한 번 더 읽어 확인",
+      "queueKeys": [
+        "hana-18805",
+        "hana-18679",
+        "hana-18408",
+        "hana-18370",
+        "hana-17583",
+        "hana-16877",
+        "hana-15862",
+        "hana-15860",
+        "hana-18704",
+        "hana-17601",
+        "hana-17056",
+        "hana-15431",
+        "hana-4228",
+        "hana-15428",
+        "hana-10209",
+        "hana-5471",
+        "hana-15406",
+        "hana-13799",
+        "hana-13550",
+        "hana-12781",
+        "hana-12523",
+        "hana-10358",
+        "hana-9658",
+        "hana-9646",
+        "hana-5276",
+        "hana-2620"
       ]
     },
     {
@@ -456,6 +514,13 @@
       "status": "open",
       "reason": "상세 페이지(CD_PD_SEQ=16798)가 카드 정보 없이 배너만 보여 줌(1회)",
       "retry": "하나카드 카드 목록에서 대구로 카드 새 주소 찾기"
+    },
+    {
+      "date": "2026-11-28",
+      "target": "머니트리카드(갤럭시아머니트리) · 토스 유스카드 · 카카오뱅크 mini카드 · 와이어바알리 카드",
+      "status": "open",
+      "reason": "머니트리는 공식 페이지에 상시 혜택 수치가 없고, 토스 유스·카카오뱅크 mini는 상시 혜택이 없는 10대 선불카드, 와이어바알리는 공식 카드 안내를 못 찾음",
+      "retry": "공식 혜택 안내가 생기면 같은 방식(prepaid)으로 추가"
     },
     {
       "at": "2026-11-28",

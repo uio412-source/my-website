@@ -9,7 +9,7 @@ export type TermBenefit = {
   shared?: string | null; limits?: string | null; conditions?: string[] | null;
 };
 export type CardTerms = {
-  name: string; docDate: string; collectedAt: string; url: string; termsUrl: string | null; status?: 'active' | 'discontinued';
+  name: string; docDate: string; collectedAt: string; url: string; termsUrl: string | null; status?: 'active' | 'discontinued'; discontinuedAt?: string | null; discontinuationSourceUrl?: string | null;
   spendBasis?: string | null; grace?: string | null; spendExclusions: string[]; benefitExclusions: string[]; benefits: TermBenefit[];
   /** 화면에 쓸 카드 전월실적(빌드 때 카드 DB와 맞지 않는 0은 null로 바꿈) */ minimumSpend: number | null;
   /** 혜택 표를 정리본으로 그릴지(카드 DB 혜택을 대부분 담고 있을 때만) */ table: boolean; cover: number;

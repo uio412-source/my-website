@@ -18,9 +18,8 @@ import {valetRules} from '@/lib/hotel-valet';
 import {sitePath} from '@/lib/site-path';
 import {CompareDock, CompareToggle} from '@/components/compare';
 import {MineView} from '@/components/mine';
-import {RECENT_KEY, clearRecent, useStoredIds} from '@/lib/my-cards';
 import {spendShort} from '@/lib/card-value';
-import {ISSUER_FILTERS, feeLabel, headlineAmount, highlights, issuerFilterLabel, koReading, RESTRICTED, searchScore, today, ymd} from '@/lib/mc-text';
+import {ISSUER_FILTERS, feeLabel, typeLabel, headlineAmount, highlights, issuerFilterLabel, koReading, RESTRICTED, searchScore, today, ymd} from '@/lib/mc-text';
 import sources from '@/data/personal-benefit-sources.json';
 
 type Tab = 'cards' | 'cashback' | 'events' | 'mine';
@@ -80,18 +79,6 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
   </div>;
 }
 
-/** 최근 본 카드: 상세에서 돌아왔을 때 바로 다시 열 수 있게 (브라우저에만 저장) */
-function Recent({cards}: {cards: Card[]}) {
-  const ids = useStoredIds(RECENT_KEY);
-  const byId = useMemo(() => new Map(cards.map(c => [c.id, c])), [cards]);
-  const list = ids.map(id => byId.get(id)).filter((c): c is Card => !!c);
-  if (!list.length) return null;
-  return <div className="mc-recent">
-    <div className="mc-recent-h"><b>최근 본 카드</b><button type="button" className="mc-link" onClick={clearRecent}>지우기</button></div>
-    <div className="mc-recent-list">{list.map(c => <a key={c.id} href={cardPath(c.id)}><CardArt card={c}/><span>{c.familyName ?? c.name}</span></a>)}</div>
-  </div>;
-}
-
 /** 이벤트 데이터가 언제 확인한 건지. 카드사마다 확인한 날이 달라서 범위로 보여 주고, 2주 넘은 게 있으면 알림 */
 function Freshness({events, kind}: {events: Offer[]; kind: 'card' | 'cashback'}) {
   const days = events.filter(o => o.kind === kind && visibleOffer(o) && activeOffer(o)).map(o => o.verifiedAt).filter(Boolean).sort();
@@ -109,7 +96,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
   // 혜택 태그는 여러 개 고를 수 있음(고른 태그를 모두 만족하는 카드). 다시 누르면 해제, '전체'는 모두 해제
   const [themes, setThemes] = useState<string[]>(() => new URLSearchParams(location.search).get('valet') ? ['호텔 발레'] : []);
   const [issuer, setIssuer] = useState('all');
-  const [type, setType] = useState<'all' | 'credit' | 'debit'>('all');
+  const [type, setType] = useState<'all' | 'credit' | 'debit' | 'prepaid'>('all');
   const [fee, setFee] = useState('all'), [spend, setSpend] = useState('all'), [brand, setBrand] = useState('all'), [kind, setKind] = useState('all');
   const [withEvents, setWithEvents] = useState(false);
   const [sort, setSort] = useState('best');
@@ -134,7 +121,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       m.set(c.id, {
         themes: browseThemes(c), best, events: n, hl, rec,
         text: [[(c.familyName ?? c.name) + ' ' + koReading(c.familyName ?? c.name), 100], [(c.searchAliases ?? []).join(' '), 80], [c.issuer + ' ' + groupOf(c.issuer), 40],
-          [c.benefits.map(b => b.title).join(' '), 30], [browseThemes(c).join(' ') + ' ' + c.brands.join(' ') + (c.type === 'credit' ? ' 신용' : ' 체크'), 25],
+          [c.benefits.map(b => b.title).join(' '), 30], [browseThemes(c).join(' ') + ' ' + c.brands.join(' ') + ' ' + typeLabel(c.type), 25],
           [(c.searchText ?? '') + ' ' + c.benefits.map(b => b.detail).join(' '), 8]],
       });
     }
@@ -189,7 +176,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
       <Chips label="카드사" issuers items={[{value: 'all', label: '전체'}, ...issuerItems(ISSUER_FILTERS)]} value={issuer} onChange={setIssuer}/>
     </div>
     <div className="mc-bar">
-      <Tabs label="카드 종류" items={[{value: 'all', label: '전체'}, {value: 'credit', label: '신용'}, {value: 'debit', label: '체크'}]} value={type} onChange={setType}/>
+      <Tabs label="카드 종류" items={[{value: 'all', label: '전체'}, {value: 'credit', label: '신용'}, {value: 'debit', label: '체크'}, {value: 'prepaid', label: '선불'}]} value={type} onChange={setType}/>
       <button type="button" className="mc-btn" aria-expanded={panel} onClick={() => setPanel(p => !p)}>필터{advanced > 0 && <b>{advanced}</b>}</button>
       {anything && <button type="button" className="mc-link" onClick={reset}>초기화</button>}
     </div>
@@ -202,7 +189,6 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
     </div>}
     {themes.includes('호텔 발레') && <p className="mc-note">서울 호텔별로 어떤 카드가 되는지는 <a href={sitePath('../hotels/valet.html')}>Mr. Hotels 발레파킹 지도</a>에서 볼 수 있어요.</p>}
 
-    {!anything && <Recent cards={cards}/>}
     <div className="mc-listhead">
       <span className="mc-count">{filtered.length.toLocaleString('ko-KR')}<small>/{families.toLocaleString('ko-KR')}종</small></span>
       <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}>
@@ -212,7 +198,7 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
     </div>
     {filtered.length ? <div className="mc-rows">{filtered.slice(0, more).map(c => {
       const m = meta.get(c.id)!;
-      const facts = [c.type === 'credit' ? '신용' : '체크', feeLabel(c.annualFeeMin), spendShort(c), RESTRICTED.test(c.name) ? '가입 대상 제한' : ''].filter(Boolean);
+      const facts = [typeLabel(c.type), feeLabel(c.annualFeeMin), spendShort(c), RESTRICTED.test(c.name) ? '가입 대상 제한' : ''].filter(Boolean);
       const why = [...new Set(themes.filter(t => EXPLAINED.has(t)).map(t => whyFor(c, t)).filter((w): w is string => !!w))];
       // 줄 전체가 링크(이름의 ::after가 줄을 덮음)이고, 비교 버튼만 따로 눌림
       return <div key={c.id} className="mc-row mc-cardrow">
@@ -327,7 +313,7 @@ function EventsView({events, cards}: {events: Offer[]; cards: Card[]}) {
         ? <div className="mc-mine-on"><span>내 카드</span><b>{mine.familyName ?? mine.name}</b><small>{mine.issuer}</small><button type="button" className="mc-link" onClick={() => pickMine(null)}>해제</button></div>
         : <div className="mc-mine-q">
           <input value={mq} onChange={e => setMq(e.target.value)} placeholder="내 카드로 찾기 — 카드 이름 입력" aria-label="내 카드 이름"/>
-          {suggestions.length > 0 && <ul className="mc-suggest">{suggestions.map(c => <li key={c.id}><button type="button" onClick={() => pickMine(c)}><IssuerTile issuer={c.issuer} size="sm"/>{c.familyName ?? c.name}<small>{c.type === 'credit' ? '신용' : '체크'}</small></button></li>)}</ul>}
+          {suggestions.length > 0 && <ul className="mc-suggest">{suggestions.map(c => <li key={c.id}><button type="button" onClick={() => pickMine(c)}><IssuerTile issuer={c.issuer} size="sm"/>{c.familyName ?? c.name}<small>{typeLabel(c.type)}</small></button></li>)}</ul>}
         </div>}
     </div>
     <div className="mc-filters">

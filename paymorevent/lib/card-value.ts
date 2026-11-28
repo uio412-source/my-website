@@ -1,8 +1,6 @@
-// 카드 상세의 '월 최대 혜택'·'내 지출로 계산'·'비슷한 카드'에 쓰는 계산
-import {bestPicking, cardFamilyKey, pickingOptions} from './catalog-model';
-import {RESTRICTED} from './card-themes';
+// 카드 상세의 '월 최대 혜택'·'내 지출로 계산'에 쓰는 계산
+import {pickingOptions} from './catalog-model';
 import {won} from './mc-text';
-import {browseThemes} from './customer-copy';
 import type {Card} from './catalog-types';
 
 type Opt = ReturnType<typeof pickingOptions>[number];
@@ -48,34 +46,4 @@ export function spendShort(card: Pick<Card, 'minimumSpend' | 'benefits'>) {
   const positive = spends.filter(v => v > 0);
   if (positive.length) return `전월 ${won(Math.min(...positive))}${spends.includes(0) ? ' (일부 무실적)' : ''}`;
   return card.minimumSpend == null ? null : card.minimumSpend === 0 ? '무실적' : `전월 ${won(card.minimumSpend)}`;
-}
-
-// 혜택 영역(목록 필터와 같은 말). 무실적·발급 조건 같은 성격 태그는 영역이 아니라서 뺌
-const NOT_AREA = new Set(['무실적', '마티나골드', '상품권', '상품권 가능', '관리비', '국세', '지방세', '세금']);
-const areas = (c: Card) => new Set(browseThemes(c).filter(t => !NOT_AREA.has(t)));
-
-/** 같은 종류(신용·체크)·비슷한 연회비에서 혜택 영역(해외·라운지·커피…)이 겹치는 다른 카드. 많이 겹치고 피킹률이 높은 순 */
-export function similarCards(card: Card, cards: Card[], n = 4) {
-  const mine = areas(card);
-  if (!mine.size) return [];
-  const fee = card.annualFeeMin ?? 0, maxFee = Math.max(fee * 2, fee + 20000), minFee = fee >= 100000 ? fee / 3 : 0;
-  const self = cardFamilyKey(card), seen = new Set([self]);
-  const scored: {c: Card; shared: string[]; pick: number | null; score: number}[] = [];
-  for (const c of cards) {
-    const cf = c.annualFeeMin ?? 0;
-    if (c.type !== card.type || RESTRICTED.test(c.name) || cf > maxFee || cf < minFee) continue;
-    const shared = [...areas(c)].filter(a => mine.has(a));
-    if (!shared.length) continue;
-    const pick = bestPicking(c)?.value ?? null;
-    scored.push({c, shared, pick, score: shared.length / mine.size * 30 + (pick ?? 0) * 3});
-  }
-  scored.sort((a, b) => b.score - a.score);
-  const out: typeof scored = [];
-  for (const s of scored) {
-    const k = cardFamilyKey(s.c);
-    if (seen.has(k)) continue;
-    seen.add(k); out.push(s);
-    if (out.length >= n) break;
-  }
-  return out;
 }

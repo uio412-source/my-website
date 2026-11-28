@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 11:41 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 11:51 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,11 @@ _자동 생성 2026-11-28 11:41 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#290](https://github.com/uio412-source/my-website/pull/290) | Pickle | data: 수집 2026-11-28 (Pickle12 · 현대카드 Z family·Z play·ZERO E… | 2026-11-28 11:49 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#291](https://github.com/uio412-source/my-website/pull/291) | Claude | Mr. Cards: 선불카드 11종 추가 + 카드 종류 '선불' | 2026-11-28 11:49 | 21파일 · paymorevent/ 10 · data/ 3 · docs/ 3 외 4곳 | 머지 |
+| [#287](https://github.com/uio412-source/my-website/pull/287) | Pickle | data: 수집 2026-11-28 (Pickle11 · 현대카드 M·MM·X 상품설명서 3종) | 2026-11-28 11:44 | 1파일 · data/inbox/card-terms 1 | 머지 |
+| [#288](https://github.com/uio412-source/my-website/pull/288) | ChatGPT | feat(cards): 상세 공유·발급 브랜드 UI 정리 | 2026-11-28 11:44 | 12파일 · paymorevent/ 11 · 루트 1 | 머지 |
+| [#289](https://github.com/uio412-source/my-website/pull/289) | ChatGPT | feat(cards): 공식 신규 발급 중단일 수집 및 검수 데이터 연결 | 2026-11-28 11:43 | 9파일 · paymorevent/ 6 · tools/data 2 · docs/ 1 | 머지 |
 | [#285](https://github.com/uio412-source/my-website/pull/285) | Pickle | data(cards): 보유 단종·구버전 카드 16종 추가 + 롯데×마스터 11만P 이벤트 | 2026-11-28 11:39 | 7파일 · paymorevent/ 3 · data/ 2 · docs/ 2 | 머지 |
 | [#284](https://github.com/uio412-source/my-website/pull/284) | Pickle | fix(tools): picking_audit C2 — 무실적 카드는 화면 규칙과 같이 제외 | 2026-11-28 11:28 | 2파일 · docs/ 1 · tools/data 1 | 머지 |
 | [#283](https://github.com/uio412-source/my-website/pull/283) | Pickle | fix(paymorevent): 삼성 앤마일리지 특별혜택 표·상품권 판정 수정 + 라벨/판정 검수 추가 | 2026-11-28 11:22 | 18파일 · paymorevent/ 8 · docs/ 4 · data/ 3 외 3곳 | 머지 |
@@ -55,11 +60,6 @@ _자동 생성 2026-11-28 11:41 KST · `python tools/data/agent_sync.py` · 기�
 | [#267](https://github.com/uio412-source/my-website/pull/267) | Pickle | data: 수집 2026-11-27 74차 (KB국민카드 이벤트 22건) | 2026-11-28 00:20 | 1파일 · data/inbox/card-events 1 | 머지 |
 | [#266](https://github.com/uio412-source/my-website/pull/266) | Pickle | data: 수집 2026-11-27 73차 (KB국민카드 이벤트 20건) | 2026-11-28 00:16 | 1파일 · data/inbox/card-events 1 | 머지 |
 | [#265](https://github.com/uio412-source/my-website/pull/265) | Pickle | data: 수집 2026-11-27 72차 (KB국민카드 이벤트 21건) | 2026-11-28 00:12 | 1파일 · data/inbox/card-events 1 | 머지 |
-| [#264](https://github.com/uio412-source/my-website/pull/264) | Pickle | data: 수집 2026-11-27 71차 (KB국민카드 이벤트 20건) | 2026-11-28 00:07 | 1파일 · data/inbox/card-events 1 | 머지 |
-| [#263](https://github.com/uio412-source/my-website/pull/263) | Pickle | data: 수집 2026-11-27 70차 (NH농협카드 이벤트 9건) | 2026-11-28 00:02 | 1파일 · data/inbox/card-events 1 | 머지 |
-| [#262](https://github.com/uio412-source/my-website/pull/262) | Pickle | data: 수집 2026-11-27 69차 (롯데카드 이벤트 10건) | 2026-11-27 23:58 | 1파일 · data/inbox/card-events 1 | 머지 |
-| [#261](https://github.com/uio412-source/my-website/pull/261) | Pickle | data: 수집 2026-11-27 68차 (롯데카드 4종) | 2026-11-27 23:54 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#260](https://github.com/uio412-source/my-website/pull/260) | Pickle | data: 수집 2026-11-27 67차 (하나카드 이벤트 14건) | 2026-11-27 23:50 | 1파일 · data/inbox/card-events 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -73,6 +73,8 @@ _지금 잠근 영역이 없습니다._
 
 | PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
 |---|---|---|---|---|---|
+| [#293](https://github.com/uio412-source/my-website/pull/293) | Pickle | `ai/pickle/lotte-11man-event-id` | 2026-11-28 11:50 | 7파일 · paymorevent/ 3 · data/ 2 · docs/ 2 | data(events): 롯데×마스터 11만P 이벤트 id 정리 |
+| [#292](https://github.com/uio412-source/my-website/pull/292) | Pickle | `ai/chatgpt/data-2026-11-28-pickle…` | 2026-11-28 11:50 | 1파일 · data/inbox/card-terms 1 | data: 수집 2026-11-28 (Pickle13 · SSG.COM·넥슨·국민행복 현… |
 | [#286](https://github.com/uio412-source/my-website/pull/286) | ChatGPT | `ai/chatgpt/fix-terms-reward-conve…` | 2026-11-28 11:39 | 4파일 · tools/data 3 · paymorevent/ 1 | fix(cards): 피킹률 자동 변환의 조건 누락과 오래된 요율 재사용 방지 |
 | [#277](https://github.com/uio412-source/my-website/pull/277) (초안) | Claude | `ai/claude/data-2026-11-28` | 2026-11-28 05:05 | 6파일 · data/ 3 · data/inbox/card-terms 2… | data: 수집 2026-11-28 (Claude · 상품설명서 7종) |
 
@@ -81,22 +83,22 @@ _지금 잠근 영역이 없습니다._
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 694 / 1463종 · **브랜드 프로그램** todo 48 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 11 / 30곳
+- **남은 카드** 688 / 1463종 · **브랜드 프로그램** todo 48 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 11 / 30곳
 - **최근 수집일** — card-terms 2026-11-28 · brand-services 2026-11-28 · card-events 2026-11-28 · hotel-events 없음 · travel-events 2026-11-28 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
 
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
-| ChatGPT | `data/agent-notes/chatgpt.json` | #278 data: 수집 2026-11-28 (카드·여행 이벤트 5건) | 2026-11-28 09:11 | 0건 |
-| Claude | `data/agent-notes/claude.json` | #280 pay: 매일 확인 2026-11-28 — 토스 페이스페이 … | 2026-11-28 10:27 | 22건 |
-| Pickle | `data/agent-notes/pickle.json` | #285 data(cards): 보유 단종·구버전 카드 16종 추가 … | 2026-11-28 11:39 | 63건 |
+| ChatGPT | `data/agent-notes/chatgpt.json` | #288 feat(cards): 상세 공유·발급 브랜드 UI 정리 | 2026-11-28 11:44 | 0건 |
+| Claude | `data/agent-notes/claude.json` | #291 Mr. Cards: 선불카드 11종 추가 + 카드 종류 '선… | 2026-11-28 11:49 | 23건 |
+| Pickle | `data/agent-notes/pickle.json` | #290 data: 수집 2026-11-28 (Pickle12 · 현… | 2026-11-28 11:49 | 63건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 75건
+### 다시 볼 것 (open) — 76건
 
 - **2026-11-28 · Claude · MG새마을금고 체크카드 9종(mg-104566·100754·100133·103827·104064·101353·105023·101488·102341)**
   - 사유: mgcheck.kfcc.co.kr·www.kfcc.co.kr 모두 WebFetch robots.txt 읽기 실패(ROBOTS_UNREACHABLE)
@@ -324,6 +326,9 @@ _지금 잠근 영역이 없습니다._
 - **- · Claude · tools/data/inbox.py card-terms cardId 규칙**
   - 사유: ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)
   - 재시도: check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기
+- **- · Claude · 머니트리카드(갤럭시아머니트리) · 토스 유스카드 · 카카오뱅크 mini카드 · 와이어바알리 카드**
+  - 사유: 머니트리는 공식 페이지에 상시 혜택 수치가 없고, 토스 유스·카카오뱅크 mini는 상시 혜택이 없는 10대 선불카드, 와이어바알리는 공식 카드 안내를 못 찾음
+  - 재시도: 공식 혜택 안내가 생기면 같은 방식(prepaid)으로 추가
 
 ### 다른 경로로 처리 (workaround) — 10건
 

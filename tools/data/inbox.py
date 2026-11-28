@@ -271,7 +271,7 @@ def check_card_products(doc: dict, where: str, p: Problems):
         return
     for i, c in enumerate(changes):
         w = f"{where} changes[{i}]"
-        if not _keys(p, w, c, {"change", "name", "cardType", "url"}, {"cardId", "annualFee", "minimumSpend", "benefits", "note"}):
+        if not _keys(p, w, c, {"change", "name", "cardType", "url"}, {"cardId", "annualFee", "minimumSpend", "benefits", "note", "discontinuedAt"}):
             continue
         if c.get("change") not in ("new", "changed", "discontinued"):
             p.add(w, "change는 new(신상품)·changed(혜택·연회비 변경)·discontinued(발급 중단)")
@@ -281,8 +281,13 @@ def check_card_products(doc: dict, where: str, p: Problems):
             p.add(w, "name은 카드사 표기 그대로 2~60자")
         if c.get("cardType") not in ("credit", "debit"):
             p.add(w, "cardType은 credit 또는 debit")
-        if not _url(c.get("url"), CARD_DOMAINS):
-            p.add(w, "url은 카드사 공식 상품 페이지 https")
+        if not _url(c.get("url"), OFFICIAL_CARD if c.get("change") == "discontinued" else CARD_DOMAINS):
+            p.add(w, "url은 카드사 공식 상품 페이지 또는 신규 발급 중단 공지 https")
+        if "discontinuedAt" in c:
+            if c.get("change") != "discontinued":
+                p.add(w, "discontinuedAt는 change가 discontinued인 경우만")
+            if c["discontinuedAt"] is not None and not _day(c["discontinuedAt"]):
+                p.add(w, "discontinuedAt는 신규 발급 중단 시행일 YYYY-MM-DD 또는 null")
         if "minimumSpend" in c and c["minimumSpend"] is not None and (not isinstance(c["minimumSpend"], int) or c["minimumSpend"] < 0):
             p.add(w, "minimumSpend는 원 단위 정수 또는 null")
         for j, b in enumerate(c.get("benefits") or []):
@@ -442,7 +447,7 @@ def check_card_terms(doc: dict, where: str, p: Problems):
     for i, c in enumerate(cards):
         w = f"{where} cards[{i}]"
         if not _keys(p, w, c, {"name", "cardType", "url", "termsUrl", "docDate", "annualFee", "brands", "minimumSpend", "spendExclusions", "benefitExclusions", "benefits"},
-                     {"cardId", "queueKey", "spendBasis", "grace", "brandPrograms", "status"}):
+                     {"cardId", "queueKey", "spendBasis", "grace", "brandPrograms", "status", "discontinuedAt", "discontinuationSourceUrl"}):
             continue
         if "cardId" in c and c["cardId"] is not None and not (isinstance(c["cardId"], str) and ID.match(c["cardId"])):
             p.add(w, "cardId는 catalog-snapshot의 id 또는 null")
@@ -458,6 +463,21 @@ def check_card_terms(doc: dict, where: str, p: Problems):
             p.add(w, "docDate는 상품설명서 기준일(심의필 날짜) YYYY-MM-DD")
         if "status" in c and c["status"] not in ("active", "discontinued"):
             p.add(w, "status는 active 또는 discontinued")
+        evidence = c.get("discontinuationSourceUrl")
+        ended = c.get("discontinuedAt")
+        if c.get("status") == "discontinued":
+            cid = c.get("cardId")
+            if not isinstance(cid, str) or not ID.fullmatch(cid):
+                p.add(w, "status가 discontinued이면 정확한 기존 cardId 필요")
+            if not _url(evidence, OFFICIAL_CARD):
+                p.add(w, "discontinuationSourceUrl은 신규 발급 중단 시행의 카드사 공식 상세 공지 https")
+            if ended is not None:
+                if not _day(ended):
+                    p.add(w, "discontinuedAt는 신규 발급 중단 시행일 YYYY-MM-DD 또는 null")
+                elif _day(doc.get("collectedAt")) and ended > doc["collectedAt"]:
+                    p.add(w, "시행 전 신규 발급 중단은 card-products 검토 대기열에만 기록")
+        elif "discontinuedAt" in c or "discontinuationSourceUrl" in c:
+            p.add(w, "discontinuedAt·discontinuationSourceUrl은 status가 discontinued인 경우만")
         fee = c.get("annualFee")
         if not isinstance(fee, list) or not fee or not all(isinstance(f, dict) and set(f) == {"brand", "amount"} and _text(f["brand"], 2, 20) and _int_or_none(f["amount"]) for f in fee):
             p.add(w, "annualFee는 [{brand: 'Visa'·'국내전용'…, amount: 원 단위 정수}] 배열")

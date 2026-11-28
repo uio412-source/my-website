@@ -7,6 +7,7 @@ export type NetworkBrand = {key: string; label: string; image: string | null};
 
 export function networkBrand(value: string): NetworkBrand {
   const key = value.toLowerCase().replace(/[\s·_-]/g, '');
+  if (/^(?:bc|비씨)(?:global|글로벌)$/.test(key)) return {key: 'bcglobal', label: 'BC Global', image: '/brands/bc-global.svg'};
   if (/master|마스터/.test(key)) return {key: 'mastercard', label: 'Mastercard', image: '/brands/mastercard.svg'};
   if (/visa|비자/.test(key)) return {key: 'visa', label: 'Visa', image: '/brands/visa.svg'};
   if (/unionpay|은련|유니온페이|유피아이|upi|kworld/.test(key)) return {key: 'unionpay', label: 'UnionPay', image: '/brands/unionpay.png'};

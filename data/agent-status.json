@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T11:41:05+09:00",
+  "generatedAt": "2026-11-28T11:51:10+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -10,10 +10,10 @@
       "updatedAt": "2026-11-25T19:40:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 278,
-        "title": "data: 수집 2026-11-28 (카드·여행 이벤트 5건)",
-        "mergedAt": "2026-11-28T00:11:16Z",
-        "mergedAtKST": "2026-11-28 09:11"
+        "number": 288,
+        "title": "feat(cards): 상세 공유·발급 브랜드 UI 정리",
+        "mergedAt": "2026-11-28T02:44:48Z",
+        "mergedAtKST": "2026-11-28 11:44"
       },
       "runs": [
         {
@@ -40,15 +40,39 @@
     "Claude": {
       "noteFile": "data/agent-notes/claude.json",
       "role": "Claude — 사이트 코드·화면(paymorevent·hotels·travel·assets)과 도구·문서 개선 담당. 브랜치 ai/claude/<작업내용>, 수집 파일 YYYY-MM-DD-<출처>-claude.json.",
-      "updatedAt": "2026-11-28T10:50:00+09:00",
+      "updatedAt": "2026-11-28T12:30:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 280,
-        "title": "pay: 매일 확인 2026-11-28 — 토스 페이스페이 브랜드 3곳(자담치킨·감성커피·진교동찜닭)",
-        "mergedAt": "2026-11-28T01:27:21Z",
-        "mergedAtKST": "2026-11-28 10:27"
+        "number": 291,
+        "title": "Mr. Cards: 선불카드 11종 추가 + 카드 종류 '선불'",
+        "mergedAt": "2026-11-28T02:49:17Z",
+        "mergedAtKST": "2026-11-28 11:49"
       },
       "runs": [
+        {
+          "at": "2026-11-28T12:30:00+09:00",
+          "kind": "catalog",
+          "pr": null,
+          "summary": "카드 DB에 선불카드 11종 추가(종류 prepaid 신설) — Npay 머니카드·머니카드Y·PAYCO 포인트·트래블페이·트래블제로·제주항공 트래블제로·모빌카드·한패스 트리플·트리플 오토·GO·이지. 각 회사 공식 페이지·보도자료(navercorp·payco·travel-wallet·konacard·mobilcard·hanpass) 기준, rewardCoveragePending. 선불은 상품설명서가 없어 수집 대기열에서 뺌",
+          "picking": {
+            "checked": 1579,
+            "newIssues": 0,
+            "note": "picking_audit A1 6·A2 0·A3 8 — 추가 전과 같음(새 카드는 요율 모델 없음)"
+          },
+          "cardIds": [
+            "npay-moneycard",
+            "npay-moneycard-y",
+            "payco-pointcard",
+            "travelwallet-travelpay",
+            "kona-travelzero",
+            "kona-travelzero-jejuair",
+            "kg-mobilcard",
+            "hanpass-triple",
+            "hanpass-triple-auto",
+            "hanpass-go",
+            "hanpass-easy"
+          ]
+        },
         {
           "at": "2026-11-28T10:50:00+09:00",
           "kind": "code",
@@ -76,6 +100,40 @@
             "internet-10",
             "internet-7",
             "internet-9"
+          ]
+        },
+        {
+          "at": "2026-11-27T23:00:00+09:00",
+          "kind": "collect",
+          "pr": 239,
+          "summary": "card-terms 하나카드 4차 26종(신용 8: 대한노인회·소상공인 특례 햇살론·하나 더 소호·하나 더 넥스트 멤버스·원더 K리그 축덕·원더 2.0 HAPPY BIRTH·HAPPY·FREE, 체크 18: 나라사랑·주거래 생활·1Q 계열 3·Young Hana 계열 4·트래블로그·모두의 건강·모두의 일상·VIVA X·글로벌 페이 블루·신세계·시코르·Mega·비바 G 플래티늄) — m.hanacard.co.kr 상세 페이지(WebFetch), 한도·적립/캐시백 구분이 헷갈린 8종은 한 번 더 읽어 확인",
+          "queueKeys": [
+            "hana-18805",
+            "hana-18679",
+            "hana-18408",
+            "hana-18370",
+            "hana-17583",
+            "hana-16877",
+            "hana-15862",
+            "hana-15860",
+            "hana-18704",
+            "hana-17601",
+            "hana-17056",
+            "hana-15431",
+            "hana-4228",
+            "hana-15428",
+            "hana-10209",
+            "hana-5471",
+            "hana-15406",
+            "hana-13799",
+            "hana-13550",
+            "hana-12781",
+            "hana-12523",
+            "hana-10358",
+            "hana-9658",
+            "hana-9646",
+            "hana-5276",
+            "hana-2620"
           ]
         },
         {
@@ -386,7 +444,7 @@
           "queueKeys": []
         }
       ],
-      "openIssues": 22
+      "openIssues": 23
     },
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
@@ -394,10 +452,10 @@
       "updatedAt": "2026-11-28T11:55:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 285,
-        "title": "data(cards): 보유 단종·구버전 카드 16종 추가 + 롯데×마스터 11만P 이벤트",
-        "mergedAt": "2026-11-28T02:39:41Z",
-        "mergedAtKST": "2026-11-28 11:39"
+        "number": 290,
+        "title": "data: 수집 2026-11-28 (Pickle12 · 현대카드 Z family·Z play·ZERO Ed3 포인트형)",
+        "mergedAt": "2026-11-28T02:49:45Z",
+        "mergedAtKST": "2026-11-28 11:49"
       },
       "runs": [
         {
@@ -1719,6 +1777,26 @@
   "locks": [],
   "openPRs": [
     {
+      "number": 293,
+      "title": "data(events): 롯데×마스터 11만P 이벤트 id 정리",
+      "agent": "Pickle",
+      "branch": "ai/pickle/lotte-11man-event-id",
+      "createdAtKST": "2026-11-28 11:50",
+      "area": "7파일 · paymorevent/ 3 · data/ 2 · docs/ 2",
+      "url": "https://github.com/uio412-source/my-website/pull/293",
+      "draft": false
+    },
+    {
+      "number": 292,
+      "title": "data: 수집 2026-11-28 (Pickle13 · SSG.COM·넥슨·국민행복 현대카드 3종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle13",
+      "createdAtKST": "2026-11-28 11:50",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "url": "https://github.com/uio412-source/my-website/pull/292",
+      "draft": false
+    },
+    {
       "number": 286,
       "title": "fix(cards): 피킹률 자동 변환의 조건 누락과 오래된 요율 재사용 방지",
       "agent": "ChatGPT",
@@ -1740,6 +1818,76 @@
     }
   ],
   "recentPRs": [
+    {
+      "number": 290,
+      "title": "data: 수집 2026-11-28 (Pickle12 · 현대카드 Z family·Z play·ZERO Ed3 포인트형)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle12",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T02:49:45Z",
+      "mergedAtKST": "2026-11-28 11:49",
+      "createdAt": "2026-11-28T02:45:45Z",
+      "createdAtKST": "2026-11-28 11:45",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/290"
+    },
+    {
+      "number": 291,
+      "title": "Mr. Cards: 선불카드 11종 추가 + 카드 종류 '선불'",
+      "agent": "Claude",
+      "branch": "ai/claude/prepaid-cards-2",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T02:49:17Z",
+      "mergedAtKST": "2026-11-28 11:49",
+      "createdAt": "2026-11-28T02:48:29Z",
+      "createdAtKST": "2026-11-28 11:48",
+      "area": "21파일 · paymorevent/ 10 · data/ 3 · docs/ 3 외 4곳",
+      "files": 21,
+      "url": "https://github.com/uio412-source/my-website/pull/291"
+    },
+    {
+      "number": 287,
+      "title": "data: 수집 2026-11-28 (Pickle11 · 현대카드 M·MM·X 상품설명서 3종)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-28-pickle11",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T02:44:56Z",
+      "mergedAtKST": "2026-11-28 11:44",
+      "createdAt": "2026-11-28T02:40:57Z",
+      "createdAtKST": "2026-11-28 11:40",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/287"
+    },
+    {
+      "number": 288,
+      "title": "feat(cards): 상세 공유·발급 브랜드 UI 정리",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/card-detail-share-networks",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T02:44:48Z",
+      "mergedAtKST": "2026-11-28 11:44",
+      "createdAt": "2026-11-28T02:42:27Z",
+      "createdAtKST": "2026-11-28 11:42",
+      "area": "12파일 · paymorevent/ 11 · 루트 1",
+      "files": 12,
+      "url": "https://github.com/uio412-source/my-website/pull/288"
+    },
+    {
+      "number": 289,
+      "title": "feat(cards): 공식 신규 발급 중단일 수집 및 검수 데이터 연결",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/verify-card-issuance-dates",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T02:43:58Z",
+      "mergedAtKST": "2026-11-28 11:43",
+      "createdAt": "2026-11-28T02:43:34Z",
+      "createdAtKST": "2026-11-28 11:43",
+      "area": "9파일 · paymorevent/ 6 · tools/data 2 · docs/ 1",
+      "files": 9,
+      "url": "https://github.com/uio412-source/my-website/pull/289"
+    },
     {
       "number": 285,
       "title": "data(cards): 보유 단종·구버전 카드 16종 추가 + 롯데×마스터 11만P 이벤트",
@@ -2173,104 +2321,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/254"
-    },
-    {
-      "number": 253,
-      "title": "data: 수집 2026-11-27 60차 (IBK기업은행 6종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle60",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T14:22:24Z",
-      "mergedAtKST": "2026-11-27 23:22",
-      "createdAt": "2026-11-27T14:19:25Z",
-      "createdAtKST": "2026-11-27 23:19",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/253"
-    },
-    {
-      "number": 252,
-      "title": "data: 수집 2026-11-27 59차 (IBK기업은행 7종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle59",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T14:18:37Z",
-      "mergedAtKST": "2026-11-27 23:18",
-      "createdAt": "2026-11-27T14:15:38Z",
-      "createdAtKST": "2026-11-27 23:15",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/252"
-    },
-    {
-      "number": 251,
-      "title": "data: 수집 2026-11-27 58차 (현대카드 the Red·제휴 9종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle58",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T14:12:23Z",
-      "mergedAtKST": "2026-11-27 23:12",
-      "createdAt": "2026-11-27T14:09:22Z",
-      "createdAtKST": "2026-11-27 23:09",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/251"
-    },
-    {
-      "number": 250,
-      "title": "data: 수집 2026-11-27 57차 (현대카드 GOLD·SC the Red 등 7종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle57",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T14:08:37Z",
-      "mergedAtKST": "2026-11-27 23:08",
-      "createdAt": "2026-11-27T14:05:38Z",
-      "createdAtKST": "2026-11-27 23:05",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/250"
-    },
-    {
-      "number": 249,
-      "title": "data: 수집 2026-11-27 56차 (현대카드 ZERO·MY BUSINESS 9종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle56",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T14:04:03Z",
-      "mergedAtKST": "2026-11-27 23:04",
-      "createdAt": "2026-11-27T14:01:04Z",
-      "createdAtKST": "2026-11-27 23:01",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/249"
-    },
-    {
-      "number": 248,
-      "title": "data: 수집 2026-11-27 55차 (현대카드 Boutique·X 8종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle55",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T13:59:46Z",
-      "mergedAtKST": "2026-11-27 22:59",
-      "createdAt": "2026-11-27T13:56:48Z",
-      "createdAtKST": "2026-11-27 22:56",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/248"
-    },
-    {
-      "number": 247,
-      "title": "data: 수집 2026-11-27 54차 (현대카드 BUSINESS·케이뱅크Z·렌탈 9종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle54",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T13:56:00Z",
-      "mergedAtKST": "2026-11-27 22:56",
-      "createdAt": "2026-11-27T13:53:01Z",
-      "createdAtKST": "2026-11-27 22:53",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/247"
     }
   ],
   "queue": {
@@ -2281,8 +2331,8 @@
     },
     "counts": {
       "cards": {
-        "done": 769,
-        "todo": 694,
+        "done": 775,
+        "todo": 688,
         "total": 1463
       },
       "brandPrograms": {
@@ -2979,6 +3029,15 @@
       "status": "open",
       "reason": "ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)",
       "retry": "check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기",
+      "ref": ""
+    },
+    {
+      "date": "",
+      "agent": "Claude",
+      "target": "머니트리카드(갤럭시아머니트리) · 토스 유스카드 · 카카오뱅크 mini카드 · 와이어바알리 카드",
+      "status": "open",
+      "reason": "머니트리는 공식 페이지에 상시 혜택 수치가 없고, 토스 유스·카카오뱅크 mini는 상시 혜택이 없는 10대 선불카드, 와이어바알리는 공식 카드 안내를 못 찾음",
+      "retry": "공식 혜택 안내가 생기면 같은 방식(prepaid)으로 추가",
       "ref": ""
     },
     {

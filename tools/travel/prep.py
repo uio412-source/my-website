@@ -146,7 +146,7 @@ def cards_index():
         if key in seen:
             continue
         seen.add(key)
-        base = {"id": c["id"], "issuer": c["issuer"], "name": family, "type": "신용" if c.get("type") == "credit" else "체크",
+        base = {"id": c["id"], "issuer": c["issuer"], "name": family, "type": {"credit": "신용", "prepaid": "선불"}.get(c.get("type"), "체크"),
                 "fee": c.get("annualFeeMin")}
         # 라운지: 국제브랜드 서비스 + 카드 혜택 원문
         items = []
