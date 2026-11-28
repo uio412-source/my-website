@@ -1,0 +1,78 @@
+{
+ "type": "card-terms",
+ "issuer": "광주은행",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": null,
+   "queueKey": "kj-CDR20230323001",
+   "name": "GLOBAL TRAVEL 체크카드",
+   "cardType": "debit",
+   "status": "active",
+   "url": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20230323001",
+   "termsUrl": "https://www.kjbank.com/ib20/mnu/FPMCARD020103?INBN_GDS_NO=CDR20230323001",
+   "docDate": "2023-04-20",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 0
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 0,
+   "spendBasis": "전월 1일~말일 승인일 기준 정상 매입 금액(전월실적 조건 없음)",
+   "spendExclusions": [
+    "제세공과금·국세·지방세·관세·과태료",
+    "건강보험·국민연금·고용보험·장애인 고용부담금",
+    "아파트 관리비",
+    "대학교(대학원) 등록금",
+    "이자",
+    "기프트·선불카드 구매·충전",
+    "상품권 구매",
+    "거래 취소 건",
+    "제수수료"
+   ],
+   "benefitExclusions": [
+    "국제브랜드 수수료 1%·현지 ATM 이용수수료(해외 ATM 인출 시 정상 부과)"
+   ],
+   "benefits": [
+    {
+     "group": "해외",
+     "label": "해외 이용수수료",
+     "place": "해외 가맹점 결제",
+     "value": "1.2%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월",
+     "limits": "국제브랜드 1.0%+해외서비스 0.2%"
+    },
+    {
+     "group": "해외",
+     "label": "해외 ATM",
+     "place": "Mastercard 로고 해외 ATM 현금 인출",
+     "value": "최대 $3",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "건",
+     "limits": "200불 이하 $2, 200~500불 $2.5, 500불 초과 $3"
+    },
+    {
+     "group": "국내",
+     "label": "국내 가맹점",
+     "place": "국내 모든 가맹점",
+     "value": "0.2%",
+     "valueType": "캐시백",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": "월"
+    }
+   ]
+  }
+ ]
+}
