@@ -167,7 +167,7 @@ function Row({e, v}: {e: IssuanceEvent; v: ReturnType<typeof judge>}) {
     <span className="is-c-source" role="cell" data-label="출처"><i className="is-src" data-src={e.sourceId}>{e.source}</i></span>
     <span className="is-c-name" role="cell" data-label="카드·이벤트">
       <a href={e.url} target="_blank" rel="noopener noreferrer">{e.cardName || e.title}</a>
-      {e.cardName && e.title && e.cardName !== e.title && <small>{e.title}</small>}
+      {e.cardName && e.title && !e.title.startsWith(e.cardName) && <small>{e.title}</small>}
       {e.period && <small className="is-period">{ymd(e.startsAt)}~{ymd(e.endsAt)}</small>}
     </span>
     <span className="is-c-benefit" role="cell" data-label="혜택"><b>{e.benefitAmount ? won(e.benefitAmount) : e.benefitText ?? '업체 문의'}</b></span>
