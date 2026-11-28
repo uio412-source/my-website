@@ -209,8 +209,9 @@ def spend_condition(text: str) -> str | None:
         found.append((int(m.group(1).replace(",", "")), flat(m.group(0))))
     if not found:
         return None
-    base = [x for x in found if x[0] >= 10] or found
-    return min(base, key=lambda x: x[0])[1]
+    # 500만원을 넘는 금액은 대개 추가 구간(예: 3,000만원 이상 추가 결제)이라 기본 조건으로 쓰지 않는다
+    base = [x for x in found if 10 <= x[0] <= 500] or [x for x in found if x[0] <= 500]
+    return min(base, key=lambda x: x[0])[1] if base else None
 
 
 def rule_sentence(text: str) -> str | None:
