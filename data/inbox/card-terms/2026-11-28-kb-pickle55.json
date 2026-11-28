@@ -1,0 +1,228 @@
+{
+ "type": "card-terms",
+ "issuer": "KB국민카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "kb-09298",
+   "queueKey": "kb-09298",
+   "name": "YOU Wish up 카드",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09298&mainCC=a",
+   "termsUrl": "https://img2.kbcard.com/obj/card/download/09298__prdctOpmn_20260429.pdf",
+   "docDate": "2025-04-22",
+   "annualFee": [
+    {
+     "brand": "국내전용",
+     "amount": 50000
+    },
+    {
+     "brand": "Mastercard",
+     "amount": 50000
+    }
+   ],
+   "brands": [
+    "국내전용",
+    "Mastercard"
+   ],
+   "minimumSpend": 400000,
+   "spendBasis": "전월 1일~말일(승인시점 기준) KB YOU Wish up 카드 일시불·할부 승인 금액",
+   "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 전월 40만원 미만이어도 각 서비스 1구간 월 할인한도의 50%까지 제공",
+   "spendExclusions": [
+    "단기카드대출(현금서비스)",
+    "장기카드대출(카드론)",
+    "상품권·선불카드 구입·충전",
+    "국세·지방세",
+    "공과금",
+    "4대 사회보험료",
+    "대학 등록금",
+    "아파트 관리비",
+    "무승인 전표",
+    "취소 금액",
+    "연회비·수수료"
+   ],
+   "benefitExclusions": [
+    "해외 가맹점 결제",
+    "간편결제·인앱 결제(OTT)",
+    "백화점·대형마트 등 일부 입점 매장"
+   ],
+   "benefits": [
+    {
+     "group": "KB Pay",
+     "label": "KB Pay",
+     "place": "국내 가맹점 KB Pay 결제",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "건당 2,500원",
+     "conditions": [
+      "해외 가맹점 결제 제외",
+      "음식·건강·여가·차량·생활서비스 할인과 중복 적용(통신·구독 할인은 중복 불가)"
+     ]
+    },
+    {
+     "group": "음식점·편의점",
+     "label": "음식점·편의점",
+     "place": "한식·일식·중식·양식·뷔페·패밀리레스토랑·일반음식점 업종, 편의점 GS25·CU",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "건당 2,500원",
+     "conditions": [
+      "백화점·대형마트 등 일부 입점 매장 제외",
+      "편의점은 오프라인 매장 일반결제건에 한함"
+     ]
+    },
+    {
+     "group": "이동통신",
+     "label": "이동통신요금",
+     "place": "SKT·KT·LG U+·Liiv M 이동통신 자동납부",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 5000,
+     "capScope": "월",
+     "limits": "건당 2,500원",
+     "conditions": [
+      "인터넷·IPTV 등 결합상품 제외"
+     ]
+    },
+    {
+     "group": "OTT",
+     "label": "OTT",
+     "place": "넷플릭스·유튜브·웨이브·티빙·디즈니+ 공식 홈페이지 정기결제",
+     "value": "30%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 5000,
+     "capScope": "월",
+     "conditions": [
+      "간편결제·인앱 결제건 제외"
+     ]
+    },
+    {
+     "group": "병원·약국·스포츠",
+     "label": "병원·약국",
+     "place": "종합병원·일반병원(치과·한방)·일반의원(치과·한의원)·건강진단센터, 약국 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월"
+    },
+    {
+     "group": "병원·약국·스포츠",
+     "label": "스포츠",
+     "place": "스포츠용품점·레저용품점·골프(연습)장·테니스장·볼링장·스키장·수영장·종합스포츠센터·레포츠클럽·요가 업종",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월"
+    },
+    {
+     "group": "여가",
+     "label": "온라인쇼핑",
+     "place": "G마켓·11번가·SSG.COM·무신사·지그재그·W컨셉·29CM·오늘의집·온라인 다이소몰(KB Pay 결제 시)",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "상품권·여행·티켓·도서·배달·멤버십 구독료·외부 제휴몰·별도 팝업사이트 제외"
+     ]
+    },
+    {
+     "group": "여가",
+     "label": "주유",
+     "place": "SK에너지·GS칼텍스",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월"
+    },
+    {
+     "group": "여가",
+     "label": "커피",
+     "place": "커피전문점 업종 오프라인 매장",
+     "value": "5%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "tiers": [
+      {
+       "spend": 400000,
+       "cap": 5000
+      },
+      {
+       "spend": 800000,
+       "cap": 10000
+      }
+     ],
+     "cap": null,
+     "capScope": "월",
+     "conditions": [
+      "백화점·대형마트 등 일부 입점 매장 제외"
+     ]
+    },
+    {
+     "group": "차량",
+     "label": "주차장·세차장",
+     "place": "주차장·세차장 업종",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 400000,
+     "cap": 10000,
+     "capScope": "월"
+    }
+   ]
+  }
+ ]
+}
