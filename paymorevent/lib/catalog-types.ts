@@ -4,6 +4,10 @@ export type EligibilityRule = import('./card-themes').PaymentEligibility & {item
 export type DatabaseAudit = {documentsRead:number;pdfRead:number;spendSections:number;benefitSections:number;reviewStatus:'reviewed'|'partial'|'unreviewed';checkedAt:string;processedAt?:string;note:string};
 export type FeeWaiver = {label:string;rate:number|null;minimumSpend:number|null;channel:string;sourceUrl:string;note:string;verified:boolean};
 export type RewardRate = {label:string;spendUnit:number;rewardUnits:number;rewardUnit:string;unitValue:number;minimumSpend:number;monthlyCapValue:number|null;sourceUrl:string;note:string;verified:boolean;feeWaiver?:FeeWaiver;fallbackRewardUnits?:number;additionalMonthlyCapValue?:number;additionalMonthlyCapUnits?:number;monthlyCapUnits?:number;specialRewardCapUnits?:number;minimumSpendScope?:string;minimumSpendInclusive?:boolean;maximumSpendExclusive?:number;eligibilityRequirement?:string;sharedCapGroup?:string;yearlyCapUnits?:number;serviceTitle?:string;channel?:string;
+ /** 전월실적을 이 영역이 아닌 다른 곳(예: '국내')에서 채우는 요율. minimumSpend 는 그 다른 영역의 금액입니다. */
+ minimumSpendArea?:string;
+ /** 위 실적 금액에 붙는 기본 적립 (rewardUnits 단위·spendUnit당). 예: 국내 실적 100만원에 국내 기본 1.2% */
+ minimumSpendAreaRewardUnits?:number;
  /** 이 혜택을 받은 결제는 전월실적에서 빠짐 (picking-review.json) */ spendExcluded?:boolean};
 export type NetworkService = {
   id:string;network:string;tier:string;provider:'international_network'|'issuer_selection'|'issuer_card';

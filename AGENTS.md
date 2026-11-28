@@ -25,7 +25,19 @@
     - 목록 줄은 이름 링크가 줄 전체를 덮는 구조(`.mc-stretch`)라 줄 안에 버튼을 둘 수 있습니다. 세로 카드 이미지는 `CardArt`가 가로로 눕혀 보여 줍니다. 목록·비교의 전월실적은 `spendShort`(혜택별 실적 중 가장 작은 값, 상세와 같은 기준)로 씁니다.
   - **다크 모드**: Mr. Stocks와 같은 `theme` 저장값을 같이 씁니다(한쪽에서 바꾸면 다른 쪽도 같음). 색은 `app/mr-cards.css`의 `--mc-*` 변수만 쓰고(`app/mc.css`에 색 값을 직접 쓰지 마세요), 다크 값은 `scripts/dark-theme.mjs`의 `tokens`에서 `app/mr-cards-dark.css`로 생성합니다. 변수를 추가·변경했다면 `paymorevent/`에서 `npm run theme`을 실행해 함께 커밋하세요.
   - **첫 화면 속도**: `pages/main.tsx`는 화면(목록·카드 상세·이벤트 상세)과 큰 데이터(`data/events.json`, `data/home-cards.json`)를 `import()`로 나눠 받습니다. 이 파일들을 다시 맨 위 `import`로 불러오지 마세요(첫 화면 JS가 다시 2.5MB가 됩니다).
-  - **피킹률**(`lib/catalog-model.ts`의 `pickingOptions`): 놀이공원·스포츠 경기·골프·호텔 예약사이트처럼 이용률 낮은 혜택은 `NICHE_PICKING`으로 빼고, 구독·멤버십은 월 3만원까지만 쓴다고 봅니다. 할인받은 결제가 전월실적에서 빠지는 카드는 그 결제를 실적 밖에서 더 쓴다고 보고 분모에 더합니다. 손으로 검수한 수정(한도·통합한도·실적 제외)은 `data/picking-review.json`에 이유와 함께 적으면 빌드 때 덮어씁니다.
+  - **ピ킹률**(`lib/catalog-model.ts`의 `pickingOptions`): 놀이공원·스포츠 경기·골프·호텔 예약사이트처럼 이용률 낮은 혜택은 `NICHE_PICKING`으로 빼고, 구독·멤버십은 월 3만원까지만 쓴다고 봅니다. 할인받은 결제가 전월실적에서 빠지는 카드는 그 결제를 실적 밖에서 더 쓴다고 보고 분모에 더합니다. 손으로 검수한 수정(한도·통합한도·실적 제외)은 `data/picking-review.json`에 이유와 함께 적으면 빌드 때 덮어씁니다.
+  - **피킹률·혜택 데이터 작성 규칙 (2026-11-28, 모든 에이전트 공통)**: 카드 한 장의 숫자가 틀리면 사이트 전체의 신뢰가 깨집니다. 아래 여섯 가지를 어기는 데이터는 넣지 마세요.
+    1. **실적 조건의 영역과 혜택의 영역을 구분합니다.** `minimumSpend`는 그 요율을 받는 영역의 실적입니다. 조건이 다른 영역(예: "국내 전월실적 100만원 초과 시 해외 4%")이면 `minimumSpendArea: '국내'`와 그 실적에 붙는 기본 적립 `minimumSpendAreaRewardUnits`(예: 1.2)를 적습니다. 그러면 계산은 "국내 실적 100만원 + 같은 금액을 해외에" 기준이 되고, 국내 실적에 붙는 기본 적립도 함께 더합니다. **국내 실적 조건을 해외 결제로 채운 것으로 계산하면 안 됩니다**(클래시 트래블카드가 5.25%로 보이던 원인).
+    2. **해외 결제 수수료 면제(`feeWaiver`)는 적립률에 섞지 않습니다.** `rewardUnits`는 표에 적힌 적립·할인률만, 면제는 `feeWaiver`(rate·minimumSpend·공식 원문 URL·note)로 적습니다. 계산은 `verified`이고 `feeWaiver.minimumSpend <= 요율 minimumSpend`일 때만 면제를 더하며, 화면 가정 줄에 "동일 결제 수수료 면제 1.25% 포함"과 원문이 나옵니다.
+    3. **`rewardRates`를 일부만 넣고 `rewardModelComplete`를 빼지 않습니다.** 한도가 걸린 요율이 있는데 완성 표시가 없으면 `pickingOptions`가 피킹률을 비우거나(안전) 낮은 기본률만 내보냅니다. 모델을 다 채웠으면 `rewardModelComplete: true`, 아직이면 `rewardCoveragePending: true` + `rewardCoverageNote`로 이유를 적습니다.
+    4. **통합 한도(`shared`)를 영역별로 더하지 않습니다.** "생활 통합 월 1만원"을 영역 4개에 각각 적용해 4배로 세는 것이 대표적 사고입니다. 통합 한도·영역 한도·실적 제외는 `data/picking-review.json`의 `plans`(groups·rules)로 배분하고, `tools/data/terms_to_rules.py`는 통합 한도·건당/횟수 제한이 있는 카드를 자동 변환에서 뻡니다.
+    5. **5%를 넘는 피킹률은 한도·근거가 있을 때만.** 한도 없는 5% 초과, 캡을 다 채우는 비현실적 가정은 넣지 않습니다. 계산 결과가 5%를 넘으면 그 근거(한도·구간·실적 조건)를 `note`·`calculationValidation.evidence`에 적습니다.
+    6. **바꾸기 전에 전수 검사를 돌립니다.** `python3 tools/data/picking_audit.py`(화면과 같은 순서로 `verified-card-rules` → `terms-rules` → `picking-review`를 덮어 계산). A1(수수료 면제 합산)·A2(실적 영역 불일치)·A3(5% 초과)에 새 카드가 생겼으면 이유를 적거나 고칩니다. 결과 요약은 `docs/picking-audit.md`, 상세는 같은 명령의 출력입니다.
+  - **에이전트 상호 검수(Audit, 2026-11-28)**: ChatGPT·Claude·Pickle은 서로의 데이터를 믿고 덮어쓰지 않고, 아래를 확인한 뒤 자기 기록에 남깁니다.
+    - 작업 전: `docs/agent-sync.md`의 잠금·실패 로그와 `data/collect-queue.json`(`todo`)·`data/inbox`의 key·열린 PR을 보고, **다른 에이전트가 방금 올린/머지한 카드**를 같은 값으로 다시 만들지 않습니다.
+    - 작업 중: 카드를 고쳤으면 그 카드만 `python3 tools/data/picking_audit.py --card <id>`로 계산을 확인하고, 전수 검사에서 새 A1·A2·A3가 나오지 않았는지 봅니다(모델을 고쳤으면 `docs/picking-audit.md`도 같이 갱신).
+    - PR 전: `python3 tools/data/inbox.py validate`(수집 PR), JSON 무결성, `data/terms-rules.json.gz`를 다시 만들었으면 `python3 tools/data/terms_to_rules.py --dry-run`의 숫자를 PR 본문에 적습니다.
+    - 기록: `data/agent-notes/<내 파일>.json`의 `runs`에 한 일·검수 결과(`picking`: 검사한 카드 수·새 문제 수), `skipped`에 고치지 못한 카드와 이유를 남기고 `python tools/data/agent_sync.py`로 현황판을 갱신합니다. 다른 에이전트 PR을 검수했으면 `runs`에 `kind: 'audit'`로 그 PR 번호와 결론(통과/지적)을 적습니다.
   - **이렇게 써도 될까?**(`lib/card-themes.ts`의 `PAYMENT_CHECKS`·`paymentCheck`): 관리비·4대보험·국세·지방세·공과금·자동차 구매·상품권·등록금·월세·무이자할부·혜택받은 결제. 상품권·관리비·세금은 저장된 판정을, 나머지는 원문 제외 목록에서 찾습니다(제외 목록 전체를 확인한 카드만 '목록에 없음 = 인정'). 카드 단위 저장 판정(`paymentEligibility`)이 있으면 범위별 규칙(`eligibilityRules`)보다 먼저이고, 규칙은 판정이 '미확인'인 항목만 채웁니다(`paymentVerdict`) — 상품설명서의 계산 예시 문장이 '가능' 규칙으로 파싱돼 하나 CLUB H가 상품권 가능으로 보이던 문제(2026-11-25 수정)를 막기 위한 규칙입니다. 목록의 **쓰임 필터**(`card-themes.ts`의 `useFit`)는 실제로 써서 남는 게 있는 카드만 보여 주고, 카드 줄에 이유를 한 줄로 붙입니다(예: "혜택 O · 기본 1% 적립", "실적 O · 전월 30만원 채우기"):
     - 국세·지방세: 혜택 O + 국내 전 가맹점 기본 적립·할인(`generalReward`)
     - 상품권(상테크)·관리비: 혜택 O + 기본 혜택(관리비는 관리비 전용 할인도), 또는 실적 O + 채울 전월실적·연간 실적 혜택. 가입 대상 제한 카드(`RESTRICTED`)는 뺌. 관리비 전용 할인 → 혜택 O → 실적만 O 순서로 정렬
@@ -101,6 +113,10 @@ tools/data/inbox.py      수집 파일(data/inbox) 검사·배포 때 합치기
 tools/data/automerge.py  수집 PR(ai/chatgpt/data-*) 검사 후 자동 머지·배포 실행
 tools/data/queue.py      수집 대기열 → data/collect-queue.json
 tools/data/agent_sync.py 에이전트 현황판 → docs/agent-sync.md · data/agent-status.json
+paymorevent/data/picking-review.json 손 검수한 피킹률 수정(한도·통합한도·실적 제외)
+paymorevent/data/terms-rules.json.gz 상품설명서 정리본에서 기계 변환한 요율 모델(tools/data/terms_to_rules.py)
+tools/data/picking_audit.py 피킹률·혜택 전수 검사(화면의 pickingOptions 와 같은 계산)
+docs/picking-audit.md   피킹률 전수 검사 결과 요약(에이전트 검수 기록)
 data/agent-notes/     에이전트별 작업 기록(chatgpt·claude·pickle.json — 자기 파일만 고침)
 tools/ungjup/build.py 데이터 생성기 (Yahoo Finance → data/ungjup/*.json)
 tools/ungjup/extras.py 종목 검색 목록(symbols.json)·종목별 뉴스(news.json) 생성
@@ -114,7 +130,7 @@ assets/img/           이미지
 ```
 
 ## 작업 규칙
-**작업 전·후 공통 (모든 AI 도구)**: 시작 전에 `docs/agent-sync.md`·`data/agent-status.json`(잠금·실패 로그·다음 시작점)·`data/collect-queue.json`(`todo`만)·`data/inbox/`의 key·열린 PR(`gh pr list --state open`)을 확인합니다. 끝나면 `data/agent-notes/<내 이름>.json`(chatgpt·claude·pickle)에 한 일·실패·잠금을 적고 `python tools/data/agent_sync.py`로 현황판을 갱신해 같은 PR에 넣습니다. 브랜치·파일 접미사 규칙과 기록 형식은 `docs/data-update.md` 9장에 있습니다.
+**작업 전·후 공통 (모든 AI 도구)**: 시작 전에 `docs/agent-sync.md`·`data/agent-status.json`(잠금·실패 로그·다음 시작점)·`data/collect-queue.json`(`todo`만)·`data/inbox/`의 key·열린 PR(`gh pr list --state open`)을 확인합니다. 끝나면 `data/agent-notes/<내 이름>.json`(chatgpt·claude·pickle)에 한 일·실패·잠금을 적고 `python tools/data/agent_sync.py`로 현황판을 갱신해 같은 PR에 넣습니다. 카드 혜택·피킹률을 건드렸으면 `python3 tools/data/picking_audit.py`로 검수하고(새 A1·A2·A3가 없는지) 결과를 같은 기록의 `runs`에 남깁니다(검수 항목은 위 Mr. Cards '피킹률·혜택 데이터 작성 규칙' 6번·'에이전트 상호 검수'). 브랜치·파일 접미사 규칙과 기록 형식은 `docs/data-update.md` 9장에 있습니다.
 
 1. **`main`에 직접 push하지 마세요.** 브랜치(`ai/<도구>/<작업내용>`, 예: `ai/claude/update-hero`)에서 작업하고 Pull Request를 만드세요.
 2. PR 설명에는 **무엇을, 왜** 바꿨는지와 어떤 AI 도구로 작업했는지 적으세요.
