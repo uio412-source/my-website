@@ -15,14 +15,14 @@
  },
  "counts": {
   "cards": {
-   "done": 830,
-   "todo": 633,
+   "done": 880,
+   "todo": 583,
    "total": 1463
   },
   "brandPrograms": {
-   "done": 45,
+   "done": 46,
    "valetOnly": 3,
-   "todo": 46,
+   "todo": 45,
    "total": 94
   },
   "eventSources": {
@@ -57,7 +57,7 @@
    "type": "card-events",
    "name": "현대카드",
    "url": "https://www.hyundaicard.com/cpb/ev/CPBEV0101_06.hc",
-   "lastCollected": "2026-11-27"
+   "lastCollected": "2026-11-28"
   },
   {
    "key": "card-events:우리카드",
@@ -553,7 +553,7 @@
    "brand": "Mastercard",
    "tier": "Platinum",
    "where": "카드 상세 > 상품설명서 · 'Visa/Mastercard/AMEX 프리미엄 서비스' 안내",
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mastercard-titanium",
@@ -1171,7 +1171,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20210929001",
@@ -1182,7 +1182,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 85,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P14715-A14715",
@@ -3371,7 +3371,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20171202002",
@@ -3382,7 +3382,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20230613001",
@@ -3393,7 +3393,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20230623001",
@@ -3404,7 +3404,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20190711001",
@@ -3415,7 +3415,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20220817001",
@@ -3426,7 +3426,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20201221001",
@@ -3437,7 +3437,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20180228001",
@@ -3459,7 +3459,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20250922003",
@@ -3470,7 +3470,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20210429002",
@@ -3481,7 +3481,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20200910001",
@@ -3492,7 +3492,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20200421001",
@@ -3503,7 +3503,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20220519001",
@@ -3514,7 +3514,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20260417001",
@@ -3525,7 +3525,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20240710002",
@@ -3536,7 +3536,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20240710001",
@@ -3547,7 +3547,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P02117-A02117",
@@ -7793,7 +7793,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09115__prdctOpmn_20240405.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09116",
@@ -7804,7 +7804,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09116__prdctOpmn_20231129.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04409",
@@ -8046,7 +8046,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09314__prdctOpmn_20221228.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-02083",
@@ -8178,7 +8178,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04550__prdctOpmn_20241129.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-02245",
@@ -8310,7 +8310,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09570__prdctOpmn_20260922.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09561",
@@ -8354,7 +8354,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09298__prdctOpmn_20260429.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09780",
@@ -8376,7 +8376,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09924__prdctOpmn_20260519.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04368",
@@ -8673,7 +8673,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04092__prdctOpmn_20230912.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04095",
@@ -8684,7 +8684,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/04095__prdctOpmn_20230912.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04088",
@@ -8772,7 +8772,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09348__prdctOpmn_20250627.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-04420",
@@ -8860,7 +8860,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/__04351__prdctOpmn_20230926.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09231",
@@ -9531,7 +9531,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20191107002",
@@ -9542,7 +9542,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20230323001",
@@ -9553,7 +9553,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20260324001",
@@ -9564,7 +9564,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20250922002",
@@ -9575,7 +9575,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20210429001",
@@ -9586,7 +9586,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20220519002",
@@ -9597,7 +9597,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20200623001",
@@ -9608,7 +9608,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20171202013",
@@ -9619,7 +9619,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-C15817-A15817",
@@ -12919,7 +12919,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09138__prdctOpmn_20241128.pdf",
    "lastVerified": "2026-10-05",
    "priority": 55,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09129",
@@ -12974,7 +12974,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09126__prdctOpmn_20231101.pdf",
    "lastVerified": "2026-10-05",
    "priority": 55,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "shinhan-201410310001",
@@ -13150,7 +13150,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09322__prdctOpmn_20240424.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09701",
@@ -13205,7 +13205,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/01664__prdctOpmn_20260818.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-07972",
@@ -13249,7 +13249,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/__09349__prdctOpmn_20250627.pdf",
    "lastVerified": "2026-10-05",
    "priority": 50,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-01690",
@@ -14910,7 +14910,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20241021001",
@@ -14921,7 +14921,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kj-CDR20190319001",
@@ -14932,7 +14932,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 40,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P11024-A11024",
@@ -15614,7 +15614,7 @@
    "termsUrl": "https://www.hyundaicard.com/upload/card/T_AEI-20260320-1625-35_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_%EB%84%A4%EC%9D%B4%EB%B2%84%20Ed2_V1_%EA%B3%B5%EC%8B%9C%EC%8B%A4%EC%9A%A9.pdf",
    "lastVerified": "2026-11-28",
    "priority": 30,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "jb-credit-8",
@@ -15790,7 +15790,7 @@
    "termsUrl": "https://img2.kbcard.com/obj/card/download/09106__prdctOpmn_20260625.pdf",
    "lastVerified": "2026-10-05",
    "priority": 15,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "kb-09200",
@@ -15911,7 +15911,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 10,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "lotte-P15766-A15766",
@@ -17000,7 +17000,7 @@
    "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03403",
    "lastVerified": "2026-10-05",
    "priority": -10,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90010182",
