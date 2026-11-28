@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 22:19 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 22:24 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,7 @@ _자동 생성 2026-11-28 22:19 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#390](https://github.com/uio412-source/my-website/pull/390) | Claude | data: 현대카드 BUSINESS 상품설명서 2차 — MY BUSINESS·캐시노트·햇살론 6종 | 2026-11-28 22:22 | 4파일 · data/ 2 · data/inbox/card-terms 1 · docs/… | 머지 |
 | [#389](https://github.com/uio412-source/my-website/pull/389) | Claude | data: 현대카드 BUSINESS 상품설명서 — 케이뱅크·카카오뱅크 3종 다시 정리 | 2026-11-28 22:18 | 4파일 · data/ 2 · data/inbox/card-terms 1 · docs/… | 머지 |
 | [#388](https://github.com/uio412-source/my-website/pull/388) | ChatGPT | data: 수집 2026-11-28 (IBK기업은행 카드 이벤트 4건) | 2026-11-28 21:34 | 1파일 · data/inbox/card-events 1 | 머지 |
 | [#387](https://github.com/uio412-source/my-website/pull/387) | Pickle | docs: 50배치 2차 수집 마무리 — 대기열·Pickle 기록·현황판 동기화 | 2026-11-28 18:09 | 4파일 · data/ 3 · docs/ 1 | 머지 |
@@ -59,7 +60,6 @@ _자동 생성 2026-11-28 22:19 KST · `python tools/data/agent_sync.py` · 기�
 | [#368](https://github.com/uio412-source/my-website/pull/368) | Pickle | data: 수집 2026-11-28 (Pickle76 · 광주은행 더프라임에이지 베테랑 신용카드 혜택) | 2026-11-28 17:46 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#367](https://github.com/uio412-source/my-website/pull/367) | Pickle | data: 수집 2026-11-28 (Pickle75 · 광주은행 기아 챔피언스카드 혜택) | 2026-11-28 17:45 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#366](https://github.com/uio412-source/my-website/pull/366) | Pickle | data: 수집 2026-11-28 (Pickle74 · 광주은행 대한항공SKYPASS 카드 혜택) | 2026-11-28 17:44 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#365](https://github.com/uio412-source/my-website/pull/365) | Pickle | data: 수집 2026-11-28 (Pickle73 · 광주은행 메가박스 신용카드 혜택) | 2026-11-28 17:43 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -86,14 +86,14 @@ _열린 PR이 없습니다._
 | 에이전트 | 기록 파일 | 마지막 머지 PR | 반영 시각 | 다시 볼 것(open/workaround) |
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #388 data: 수집 2026-11-28 (IBK기업은행 카드 이… | 2026-11-28 21:34 | 0건 |
-| Claude | `data/agent-notes/claude.json` | #389 data: 현대카드 BUSINESS 상품설명서 — 케이뱅크·… | 2026-11-28 22:18 | 23건 |
+| Claude | `data/agent-notes/claude.json` | #390 data: 현대카드 BUSINESS 상품설명서 2차 — MY… | 2026-11-28 22:22 | 25건 |
 | Pickle | `data/agent-notes/pickle.json` | #387 docs: 50배치 2차 수집 마무리 — 대기열·Pickle… | 2026-11-28 18:09 | 74건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 84건
+### 다시 볼 것 (open) — 86건
 
 - **2026-11-28 · Claude · MG새마을금고 체크카드 9종(mg-104566·100754·100133·103827·104064·101353·105023·101488·102341)**
   - 사유: mgcheck.kfcc.co.kr·www.kfcc.co.kr 모두 WebFetch robots.txt 읽기 실패(ROBOTS_UNREACHABLE)
@@ -321,6 +321,12 @@ _열린 PR이 없습니다._
 - **- · Claude · hana-kiwoom 키움증권 하나카드**
   - 사유: 대기열 주소가 키움증권 이벤트 페이지(evt.kiwoom.com)라 하나카드 공식 상세(CD_PD_SEQ)를 못 찾음
   - 재시도: 하나카드 카드 목록에서 키움증권 하나카드 상세 주소 찾기
+- **- · Claude · hyundai-mbzrup·mbzro·zroscmbe3 (ZERO Up·ZERO Edition3·SC ZERO 할인형)**
+  - 사유: 할인형 변형은 정리본이 없고(이름에 '(할인형)'이 붙은 카드 DB 항목), 할인형 가이드북 본문을 못 찾음
+  - 재시도: 할인형 가이드북을 찾으면 포인트형과 같은 대상점으로 0.8%/1.6%(ZERO Up) 등 옮기기
+- **- · Claude · hyundai-mmbfb·mmbes M F&B·E-seller, hyundai-xmbfb·xmbrt·xmbes X F&B·Retail·E-seller**
+  - 사유: 현재 판 가이드북 본문을 못 읽어 사업성 경비 대상점 이름(대형마트·온라인 쇼핑 등)과 통합 한도를 확인 못 함. 상품 목록 페이지에는 영역 이름만 있음(X는 1%/3% 할인, M은 1.5%/5% 적립). hyundaicard.com은 WebFetch가 robots로 막힘
+  - 재시도: 가이드북 PDF(현대카드 upload/card/T_A3W-2026…_MB_M F&B·E-seller·X …)를 브라우저로 열거나 첨부받아 대상점·한도를 옮기기
 - **- · Claude · kj-CDR20180228002 광주·전남愛사랑플래티늄 · kj-CDR20210929001 HONORS V2**
   - 사유: kjbank.com 카드 상세가 INBN_GDS_NO를 무시하고 1st플래티늄 플러스만 보여 줌, 상품설명서 링크는 href=#(스크립트), curl 프록시 403
   - 재시도: 브라우저로 상품공시(/ib20/mnu/BHPCSCN040802)·약관(BHPCSCN040803)에서 카드명으로 PDF 받기, 또는 m.kjbank.com/mweb/spa/goodsDetail/?pick=C0xx
