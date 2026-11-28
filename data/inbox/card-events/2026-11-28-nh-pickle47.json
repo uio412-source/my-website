@@ -1,0 +1,161 @@
+{
+ "type": "card-events",
+ "issuer": "NH농협카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "listUrls": [
+  "https://card.nonghyup.com/servlet/IpCb2001R.act"
+ ],
+ "events": [
+  {
+   "id": "nh-202702-master-qingdao",
+   "kind": "card",
+   "title": "[마스터카드] 중국 청도 특정 가맹점 즉시 할인 프로모션",
+   "summary": "칭다오 지정 가맹점 즉시 할인",
+   "category": "해외/여행",
+   "startsAt": null,
+   "endsAt": "2027-02-28",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "마스터카드 브랜드 NH농협카드로 칭다오 지정 가맹점 결제"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202611-nhpay-mall-open",
+   "kind": "card",
+   "title": "NH pay 쇼핑몰 오픈기념 이벤트!",
+   "summary": "NH pay 쇼핑몰 오픈 기념 혜택",
+   "category": "포인트/캐시백",
+   "startsAt": null,
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-installment-sectors",
+   "kind": "card",
+   "title": "11~12월 업종별 할부혜택 안내",
+   "summary": "11~12월 업종별 무이자 할부",
+   "category": "기타",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "NH농협카드로 업종별 지정 가맹점 무이자 할부 결제"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202611-nhpay-lucky-leaf",
+   "kind": "card",
+   "title": "혜택을 만드는 습관, NH pay 럭키 리프",
+   "summary": "NH pay 럭키 리프 참여 혜택",
+   "category": "응모형",
+   "startsAt": null,
+   "endsAt": "2026-11-30",
+   "entryRequired": true,
+   "cards": [],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-nhauto-installment-giftcard-400000",
+   "kind": "card",
+   "title": "NH오토카드할부 신세계 상품권 최대 40만원 증정 EVENT",
+   "summary": "오토카드 할부 이용 시 신세계 상품권 최대 40만원",
+   "category": "응모형",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": true,
+   "cards": [],
+   "conditions": [
+    "NH오토카드 할부 이용",
+    "응모 후 추첨 지급"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202611-vip-coffee-coupon",
+   "kind": "card",
+   "title": "VIP 회원님 할인 혜택 누리시고, 커피쿠폰도 받아가세요!",
+   "summary": "VIP 할인 혜택 + 커피 쿠폰",
+   "category": "기타",
+   "startsAt": null,
+   "endsAt": "2026-11-30",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "NH농협카드 VIP 회원 대상"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202611-hero-card-giftcard",
+   "kind": "card",
+   "title": "NH 대한민국히어로카드 이용하고 상품권 받아가세요!",
+   "summary": "대한민국히어로카드 이용 시 상품권 증정",
+   "category": "응모형",
+   "startsAt": null,
+   "endsAt": "2026-11-30",
+   "entryRequired": true,
+   "cards": [
+    "NH 대한민국히어로카드"
+   ],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-movv-incheon-private-van",
+   "kind": "card",
+   "title": "NH농협카드 고객님을 위한 MOVV 인천공항 프라이빗밴 특별혜택",
+   "summary": "인천공항 프라이빗밴 특별 혜택",
+   "category": "해외/여행",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [],
+   "conditions": [
+    "NH농협카드로 MOVV 인천공항 프라이빗밴 예약"
+   ],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  },
+  {
+   "id": "nh-202612-hero-card-annual-fee-cashback",
+   "kind": "card",
+   "title": "NH대한민국히어로카드 연회비 캐시백 이벤트",
+   "summary": "대한민국히어로카드 연회비 캐시백",
+   "category": "포인트/캐시백",
+   "startsAt": null,
+   "endsAt": "2026-12-31",
+   "entryRequired": false,
+   "cards": [
+    "NH 대한민국히어로카드"
+   ],
+   "conditions": [],
+   "url": "https://card.nonghyup.com/servlet/IpCb2001R.act",
+   "cashbackAmount": null,
+   "channel": "카드사 공식"
+  }
+ ]
+}
