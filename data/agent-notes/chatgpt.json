@@ -1,22 +1,32 @@
 {
   "agent": "ChatGPT",
   "role": "ChatGPT 예약 작업·Dot — 데이터 수집(data/inbox) 담당. 브랜치 ai/chatgpt/data-*, 파일 YYYY-MM-DD-<출처>.json(접미사 없음).",
-  "updatedAt": "2026-11-25T19:40:00+09:00",
+  "updatedAt": "2026-11-28T12:47:28+09:00",
   "lock": null,
   "runs": [
+    {
+      "at": "2026-11-28T12:47:28+09:00",
+      "kind": "code",
+      "summary": "마켓뷰 주요 하락장별 최저 종가를 전체 지정 기간에서 찾고 1·3·6·12개월 수익률과 요약에 적용. 6개 자산 64개 사례 재계산 검증.",
+      "queueKeys": []
+    },
     {
       "at": "2026-11-25T15:09:00+09:00",
       "kind": "card-terms",
       "pr": 99,
       "summary": "BC 바로 모두의카드(bc-103112) 전월실적 제외 정정 1종 — 아파트 관리비 추가",
-      "queueKeys": ["bc-103112"]
+      "queueKeys": [
+        "bc-103112"
+      ]
     },
     {
       "at": "2026-11-25T14:06:00+09:00",
       "kind": "card-terms",
       "pr": 97,
       "summary": "BC 바로 모두의카드 1종 · 혜택 6줄 — 2026-10-28 약관 개정으로 K-패스→모두의카드 명칭 변경 확인(카드 ID 유지)",
-      "queueKeys": ["bc-103112"]
+      "queueKeys": [
+        "bc-103112"
+      ]
     }
   ],
   "skipped": []
