@@ -41,16 +41,32 @@ const snippet=(texts:string[],re:RegExp)=>{for(const t of texts){const m=re.exec
 export function paymentCheck(c:Card,key:string):PaymentCheck{
  const spendOnly=key==='할인받은 이용금액';
  const re=CHECK_PATTERNS[key];
- if(!re){const saved=paymentEligibility(c,key),e=paymentVerdict(c,key),lines=(saved.evidence??'').split('\n'),pr=patterns[key]??/$^/;return {spend:e.spend,benefit:e.benefit,spendEvidence:e.spend==='excluded'?snippet(lines.slice(0,1),pr)??snippet(c.spendExclusions,pr):undefined,benefitEvidence:e.benefit==='excluded'?snippet(lines.slice(-1),pr)??snippet(c.benefitExclusions,pr):undefined};}
+ const free=spendFreeCard(c);
+ // 무실적 카드는 실적 칸을 ✓로 두고, 누르면 이유를 보여 줍니다(?로 남겨 오해를 사지 않게)
+ const freeNote=free?SPEND_FREE_NOTE:undefined;
+ if(!re){const saved=paymentEligibility(c,key),e=paymentVerdict(c,key),lines=(saved.evidence??'').split('\n'),pr=patterns[key]??/$^/;return {spend:e.spend,benefit:e.benefit,spendEvidence:e.spend==='excluded'?snippet(lines.slice(0,1),pr)??snippet(c.spendExclusions,pr):e.spend==='allowed'?freeNote:undefined,benefitEvidence:e.benefit==='excluded'?snippet(lines.slice(-1),pr)??snippet(c.benefitExclusions,pr):undefined};}
  const complete=Object.values(c.paymentEligibility??{}).some(e=>e.basis==='full_exclusion_list');
  const spendEvidence=snippet(c.spendExclusions,re),benefitEvidence=spendOnly?undefined:snippet(c.benefitExclusions,re);
- const spend=spendEvidence||(spendOnly&&c.benefitSpendExcluded)?'excluded':complete?'allowed':'unknown';
- return {spend,benefit:spendOnly?'na':benefitEvidence?'excluded':complete?'allowed':'unknown',spendEvidence,benefitEvidence};
+ const spend=spendEvidence||(spendOnly&&c.benefitSpendExcluded)?'excluded':complete?'allowed':free?'allowed':'unknown';
+ return {spend,benefit:spendOnly?'na':benefitEvidence?'excluded':complete?'allowed':'unknown',spendEvidence:spendEvidence??(spend==='allowed'?freeNote:undefined),benefitEvidence};
 }
 export function scopedPaymentEligibility(c:Card,theme:string):PaymentEligibility[]{
  const re=patterns[theme];
  return (c.eligibilityRules??[]).filter(rule=>rule.item===theme||aliases[theme]?.includes(rule.item)||!!re?.test(rule.item));
 }
+/** 전월 이용금액 조건이 아예 없는 카드(무실적). 카드 값과 혜택·요율·배분 어디에도 양수 실적 조건이 없을 때만 참.
+ * 이런 카드는 어떤 결제든 실적을 채울 필요가 없어서 '실적 ?'로 두면 오해만 생깁니다(2026-11-28 삼성 앤마일리지). */
+export function spendFreeCard(c:Pick<Card,'minimumSpend'|'benefits'|'rewardRates'|'spendingPlans'>):boolean{
+ if(c.minimumSpend!==0)return false;
+ const spends=[
+  ...c.benefits.map(b=>b.minimumSpend),
+  ...(c.rewardRates??[]).map(r=>r.minimumSpend),
+  ...(c.spendingPlans??[]).map(p=>p.minimumSpend),
+ ];
+ return !spends.some(v=>typeof v==='number'&&v>0);
+}
+/** 무실적 카드에서 '실적 인정'이 뜻하는 것(표 아래·줄을 누를 때 보여 줄 설명) */
+export const SPEND_FREE_NOTE='전월 이용금액 조건이 없는 카드예요 — 이 결제로 채울 실적이 없어 실적을 따지지 않아요.';
 /** 카드 단위 판정(paymentEligibility)이 먼저입니다. 카드 단위로 확인된 판정은 범위별 규칙으로 뒤집지 않고,
  * 확인되지 않은(unknown) 항목만 범위별 규칙(eligibilityRules)으로 채웁니다.
  * 상품설명서의 계산 예시처럼 제외·인정 문구가 아닌 발췌에서 파생된 '가능' 규칙이
@@ -60,10 +76,12 @@ export function paymentVerdict(c:Card,theme:string):{spend:PaymentEligibility['s
  const base=paymentEligibility(c,theme);
  if(base.spend!=='unknown'&&base.benefit!=='unknown')return {spend:base.spend,benefit:base.benefit};
  const scoped=scopedPaymentEligibility(c,theme);
+ const free=spendFreeCard(c);
  const fill=(key:'spend'|'benefit'):'allowed'|'excluded'|'unknown'=>{
   if(base[key]!=='unknown')return base[key];
   if(scoped.some(rule=>rule[key]==='excluded'))return 'excluded';
-  return scoped.some(rule=>rule[key]==='allowed')?'allowed':'unknown';
+  if(scoped.some(rule=>rule[key]==='allowed'))return 'allowed';
+  return key==='spend'&&free?'allowed':'unknown';
  };
  return {spend:fill('spend'),benefit:fill('benefit')};
 }

@@ -4,9 +4,9 @@
  "lastCollected": {
   "card-terms": "2026-11-28",
   "brand-services": "2026-11-28",
-  "card-events": "2026-11-27",
+  "card-events": "2026-11-28",
   "hotel-events": null,
-  "travel-events": null,
+  "travel-events": "2026-11-28",
   "card-products": "2026-11-26"
  },
  "nextStart": {
@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 760,
-   "todo": 687,
+   "done": 762,
+   "todo": 685,
    "total": 1447
   },
   "brandPrograms": {
@@ -26,7 +26,7 @@
    "total": 94
   },
   "eventSources": {
-   "collected": 9,
+   "collected": 11,
    "total": 30
   }
  },
@@ -64,7 +64,7 @@
    "type": "card-events",
    "name": "우리카드",
    "url": "https://pc.wooricard.com/dcpc/yh1/bnf/bnf01/H1BNF201S00.do",
-   "lastCollected": "2026-11-25"
+   "lastCollected": "2026-11-28"
   },
   {
    "key": "card-events:하나카드",
@@ -78,7 +78,7 @@
    "type": "card-events",
    "name": "롯데카드",
    "url": "https://www.lottecard.co.kr/app/LPBNFDA_V100.lc",
-   "lastCollected": "2026-11-27"
+   "lastCollected": "2026-11-28"
   },
   {
    "key": "card-events:NH농협카드",
@@ -155,7 +155,7 @@
    "type": "travel-events",
    "name": "대한항공",
    "url": "https://www.koreanair.com",
-   "lastCollected": null
+   "lastCollected": "2026-11-28"
   },
   {
    "key": "travel-events:아시아나항공",
@@ -218,7 +218,7 @@
    "type": "travel-events",
    "name": "신라면세점",
    "url": "https://www.shilladfs.com",
-   "lastCollected": null
+   "lastCollected": "2026-11-28"
   },
   {
    "key": "travel-events:신세계면세점",
@@ -10015,7 +10015,7 @@
    "termsUrl": "https://static11.samsungcard.com/wcms/personal/files/2604_AMEX_P_003.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "samsung-aap1453",
@@ -10026,7 +10026,7 @@
    "termsUrl": "https://static11.samsungcard.com/wcms/personal/files/2604_AMEX_P_003.pdf",
    "lastVerified": "2026-10-05",
    "priority": 60,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "samsung-aap1485",
