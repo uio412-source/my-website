@@ -1,6 +1,6 @@
 # 🤝 GPT · Claude · Pickle 공용 작업 현황판
 
-_자동 생성 2026-11-28 11:25 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
+_자동 생성 2026-11-28 11:41 KST · `python tools/data/agent_sync.py` · 기계용 JSON은 [`data/agent-status.json`](../data/agent-status.json)_
 
 > **작업 시작 전에 이 파일과 `data/agent-status.json`, `data/collect-queue.json`(`todo`만), `data/inbox/`의 key, 열린 PR을 봅니다.**
 > **끝나면 `data/agent-notes/<내 파일>.json`에 한 일·실패·다음 시작점을 적고 `python tools/data/agent_sync.py`를 돌립니다.**
@@ -35,6 +35,8 @@ _자동 생성 2026-11-28 11:25 KST · `python tools/data/agent_sync.py` · 기�
 
 | PR | 에이전트 | 내용 | 반영 시각 | 영역(파일) | 상태 |
 |---|---|---|---|---|---|
+| [#285](https://github.com/uio412-source/my-website/pull/285) | Pickle | data(cards): 보유 단종·구버전 카드 16종 추가 + 롯데×마스터 11만P 이벤트 | 2026-11-28 11:39 | 7파일 · paymorevent/ 3 · data/ 2 · docs/ 2 | 머지 |
+| [#284](https://github.com/uio412-source/my-website/pull/284) | Pickle | fix(tools): picking_audit C2 — 무실적 카드는 화면 규칙과 같이 제외 | 2026-11-28 11:28 | 2파일 · docs/ 1 · tools/data 1 | 머지 |
 | [#283](https://github.com/uio412-source/my-website/pull/283) | Pickle | fix(paymorevent): 삼성 앤마일리지 특별혜택 표·상품권 판정 수정 + 라벨/판정 검수 추가 | 2026-11-28 11:22 | 18파일 · paymorevent/ 8 · docs/ 4 · data/ 3 외 3곳 | 머지 |
 | [#282](https://github.com/uio412-source/my-website/pull/282) | Pickle | docs: 로드맵에 Mr. Cards 피킹률 전수조사(#281) 기록·남은 검수 후보 | 2026-11-28 10:50 | 1파일 · docs/ 1 | 머지 |
 | [#281](https://github.com/uio412-source/my-website/pull/281) | Pickle | fix(paymorevent): 피킹률 전수조사 — 실적 영역≠혜택 영역 계산 수정·누락 요율 모델 66장… | 2026-11-28 10:45 | 16파일 · paymorevent/ 8 · docs/ 3 · data/ 2 외 2곳 | 머지 |
@@ -58,8 +60,6 @@ _자동 생성 2026-11-28 11:25 KST · `python tools/data/agent_sync.py` · 기�
 | [#262](https://github.com/uio412-source/my-website/pull/262) | Pickle | data: 수집 2026-11-27 69차 (롯데카드 이벤트 10건) | 2026-11-27 23:58 | 1파일 · data/inbox/card-events 1 | 머지 |
 | [#261](https://github.com/uio412-source/my-website/pull/261) | Pickle | data: 수집 2026-11-27 68차 (롯데카드 4종) | 2026-11-27 23:54 | 1파일 · data/inbox/card-terms 1 | 머지 |
 | [#260](https://github.com/uio412-source/my-website/pull/260) | Pickle | data: 수집 2026-11-27 67차 (하나카드 이벤트 14건) | 2026-11-27 23:50 | 1파일 · data/inbox/card-events 1 | 머지 |
-| [#259](https://github.com/uio412-source/my-website/pull/259) | Pickle | data: 수집 2026-11-27 66차 (롯데카드 AVENUEL·제휴 8종) | 2026-11-27 23:45 | 1파일 · data/inbox/card-terms 1 | 머지 |
-| [#258](https://github.com/uio412-source/my-website/pull/258) | Pickle | data: 수집 2026-11-27 65차 (롯데카드 디지로카·제휴 8종) | 2026-11-27 23:42 | 1파일 · data/inbox/card-terms 1 | 머지 |
 
 _(최근 25건만. 전체는 `data/agent-status.json`의 `recentPRs`.)_
 
@@ -73,6 +73,7 @@ _지금 잠근 영역이 없습니다._
 
 | PR | 에이전트 | 브랜치 | 만든 시각 | 영역(파일) | 내용 |
 |---|---|---|---|---|---|
+| [#286](https://github.com/uio412-source/my-website/pull/286) | ChatGPT | `ai/chatgpt/fix-terms-reward-conve…` | 2026-11-28 11:39 | 4파일 · tools/data 3 · paymorevent/ 1 | fix(cards): 피킹률 자동 변환의 조건 누락과 오래된 요율 재사용 방지 |
 | [#277](https://github.com/uio412-source/my-website/pull/277) (초안) | Claude | `ai/claude/data-2026-11-28` | 2026-11-28 05:05 | 6파일 · data/ 3 · data/inbox/card-terms 2… | data: 수집 2026-11-28 (Claude · 상품설명서 7종) |
 
 ### 수집 대기열 (`data/collect-queue.json`, built 2026-11-28)
@@ -80,7 +81,7 @@ _지금 잠근 영역이 없습니다._
 대기열은 만든 시점 기준입니다. `data/inbox/`에 key가 있으면 이미 한 항목이니 그 key는 빼고 고릅니다. `built`가 최근 수집 PR보다 이르면 inbox에 이미 있는 key가 `todo`로 남아 있을 수 있습니다 — 그럴 때는 `python tools/data/queue.py`로 갱신해 PR 하나로 올립니다.
 
 - **다음 시작점** — cards `samsung-aap1483` · brandPrograms `shinhan-mastercard-titanium`
-- **남은 카드** 678 / 1447종 · **브랜드 프로그램** todo 48 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 11 / 30곳
+- **남은 카드** 694 / 1463종 · **브랜드 프로그램** todo 48 · valet-only 3 / 94개 · **이벤트 출처** 한 번이라도 모은 곳 11 / 30곳
 - **최근 수집일** — card-terms 2026-11-28 · brand-services 2026-11-28 · card-events 2026-11-28 · hotel-events 없음 · travel-events 2026-11-28 · card-products 2026-11-26
 
 ### 에이전트별 마지막 반영
@@ -89,13 +90,13 @@ _지금 잠근 영역이 없습니다._
 |---|---|---|---|---|
 | ChatGPT | `data/agent-notes/chatgpt.json` | #278 data: 수집 2026-11-28 (카드·여행 이벤트 5건) | 2026-11-28 09:11 | 0건 |
 | Claude | `data/agent-notes/claude.json` | #280 pay: 매일 확인 2026-11-28 — 토스 페이스페이 … | 2026-11-28 10:27 | 22건 |
-| Pickle | `data/agent-notes/pickle.json` | #283 fix(paymorevent): 삼성 앤마일리지 특별혜택 표… | 2026-11-28 11:22 | 59건 |
+| Pickle | `data/agent-notes/pickle.json` | #285 data(cards): 보유 단종·구버전 카드 16종 추가 … | 2026-11-28 11:39 | 63건 |
 
 ## 4. 실패 · 보류 · 제외 로그 (같은 삽질 금지)
 
 상태 — `open` 다시 볼 것 · `workaround` 다른 경로로 처리함 · `resolved` 해결됨
 
-### 다시 볼 것 (open) — 72건
+### 다시 볼 것 (open) — 75건
 
 - **2026-11-28 · Claude · MG새마을금고 체크카드 9종(mg-104566·100754·100133·103827·104064·101353·105023·101488·102341)**
   - 사유: mgcheck.kfcc.co.kr·www.kfcc.co.kr 모두 WebFetch robots.txt 읽기 실패(ROBOTS_UNREACHABLE)
@@ -124,9 +125,15 @@ _지금 잠근 영역이 없습니다._
 - **2026-11-28 · Pickle · SC제일은행 sc-4420 신세계이마트 삼성카드 2 · sc-4753 글로벌 삼성체크**
   - 사유: 안내장 심의필이 2016-07-19·2018-02-21로 '올해·작년 문서' 규칙 밖
   - 재시도: 2025~2026년판 안내장이 올라오면 교체
+- **2026-11-28 · Pickle · mg-deonaun(더나은 체크) 상품몰 PRDT_CD**
+  - 사유: 새마을금고 상품몰 목록이 스크립트로만 그려져 코드(PRDT_CD)를 확인하지 못함
+  - 재시도: 상품몰에서 '더나은' 검색 후 코드 확인해 sourceUrl 교체
 - **2026-11-28 · Pickle · samsung-aap1483 (삼성카드 taptap O)**
   - 사유: 카드 DB 혜택 '옵션패키지 상세보기'가 원문 요약 문구뿐(대상 업종·가맹점 없음) — picking_audit C1에 남음
   - 재시도: 삼성카드 taptap O 상세의 옵션패키지 서비스 안내(static11 svc)를 읽어 옵션별 업종·한도를 적기
+- **2026-11-28 · Pickle · woori-dear-shopper 카드 상세 주소(카드 코드)**
+  - 사유: 단종으로 우리카드 상품 상세 HTML이 카드 코드별로 내용을 그려 주지 않아(모든 코드가 같은 껍데기) 디어쇼퍼 코드를 확인하지 못함. 혜택은 상품안내장 내용으로 채움
+  - 재시도: 카드사(1588-9955·1599-0031)에 카드 코드 확인 또는 상품안내장 PDF 링크 확보
 - **2026-11-28 · Pickle · 롯데카드 브랜드서비스 나머지 등급(VISA_SIGNATURE 외)**
   - 사유: image.lottecard.co.kr/webapp/file/<BRAND>_<등급>_<NN>_select_service_260514.pdf 이름 규칙으로 216건을 확인했으나 VISA_SIGNATURE_02만 존재
   - 재시도: 해당 등급 롯데카드 상세 페이지에서 select_service PDF 링크 확인(카드 상세에 링크가 있는 카드만 노출)
@@ -136,6 +143,9 @@ _지금 잠근 영역이 없습니다._
 - **2026-11-28 · Pickle · 상품설명서 정리본은 있는데 피킹률이 비는 카드 613장(B1) · 요율 모델이 미완성이라 피킹률이 비는 카드 51장(A4)**
   - 사유: 통합 한도(shared)·건당/횟수 제한·혼합 표기(최대 N원, 0.x~y%) 카드는 자동 변환이 부풀려질 수 있어 건너뜀. A4 카드는 기존 요율 모델 일부만 있어 손 검수 필요
   - 재시도: 카드별로 상품설명서 원문 표를 보고 verified-card-rules.json.gz(요율·혜택·계획)나 picking-review.json(plans·groups)에 근거와 함께 추가 → python3 tools/data/picking_audit.py --card <id>로 확인
+- **2026-11-28 · Pickle · 신한카드 D-day 브랜드·연회비 표기**
+  - 사유: 공식 상세 페이지에서 연회비 표가 접혀 있어(브랜드별 금액 미노출) 18,000원·VISA로 기재 — 가족카드 연회비 없음만 공식 확인
+  - 재시도: 카드사(1544-7000) 또는 카드 실물 브랜드 확인 후 brands·annualFeeText 교체
 - **2026-11-28 · Pickle · 우리카드·롯데카드·신한카드·BC카드 카드 상세 상품설명서**
   - 사유: 상세 페이지 HTML에 상품설명서 링크가 없고 스크립트로만 그려짐(우리 H1CRD101S02·롯데 LPCDADB_V100·신한 pconts·BC CreditCardMain 모두)
   - 재시도: 브라우저로 상세 탭을 렌더해 PDF 링크 확인
@@ -315,7 +325,7 @@ _지금 잠근 영역이 없습니다._
   - 사유: ID 정규식이 소문자만 받아 대문자가 든 카드 DB id(lotte-P14715-A14715, kj-CDR…)를 cardId에 못 넣음 → cardId null + queueKey로 둠(머지는 이름으로 연결됨)
   - 재시도: check_card_terms에서 cardId만 카드 DB id 형식(대소문자)을 허용하도록 고치기
 
-### 다른 경로로 처리 (workaround) — 9건
+### 다른 경로로 처리 (workaround) — 10건
 
 - **2026-11-28 · Claude · Claude 예약 실행 WebFetch — 대기열·카드 DB에 적힌 주소 직접 열기**
   - 사유: 레포 파일에서 읽은 주소는 출처 확인 권한 요청이 떠서 무인 실행에선 '시간 초과'로 실패(하나 13건, 사이트에 닿지도 않음)
@@ -323,6 +333,9 @@ _지금 잠근 영역이 없습니다._
 - **2026-11-28 · Pickle · NH농협카드 VISA Platinum·VISA Signature·Mastercard Platinum 브랜드서비스**
   - 사유: 안내문(VISA_Platinum_251001.pdf·VISA_Signature_251001.pdf·Mastercard_Platinum_251001.pdf)은 확보했으나 '국내 호텔 발레파킹' 대상 호텔 목록이 안내문에 없어 hotel_valet 필수 항목을 채울 수 없음
   - 대신 이렇게: 카드 상세·상품설명서에서 대상 호텔 목록을 확인한 뒤 수집
+- **2026-11-28 · Pickle · kb-liiv-mate 공식 상품 상세**
+  - 사유: 리브메이트 신용카드는 2019-08 신규 발급 중단으로 상품 상세 페이지가 내려감(KB 카드 상품 목록에도 없음)
+  - 대신 이렇게: 필요 시 카드사에 2017년판 상품설명서 요청. 현재는 공식 상품설명서 기준 값과 공지 주소로 기록
 - **2026-11-28 · Pickle · 피킹률 5% 초과 8건(A3: kb-04409 11%·kb-04260 6.67%·shinhan-202102250002 6.0%·hyundai-smecn 6.6%·woori-102488 5.3%·nh-90010505 5.33%·nh-90010515 6.17%·nh-90010051 6.0%)**
   - 사유: 한도(월 캡)·추가 적립 한도가 있는 영역 요율이라 계산값은 맞지만, 5% 초과는 근거를 남겨야 함
   - 대신 이렇게: 각 카드 note·calculationValidation.evidence에 한도 근거를 적고, 한도 없는 요율이 생기면 계산에서 뺄 것

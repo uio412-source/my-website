@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T11:25:10+09:00",
+  "generatedAt": "2026-11-28T11:41:05+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -391,13 +391,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-28T11:35:00+09:00",
+      "updatedAt": "2026-11-28T11:55:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 283,
-        "title": "fix(paymorevent): 삼성 앤마일리지 특별혜택 표·상품권 판정 수정 + 라벨/판정 검수 추가",
-        "mergedAt": "2026-11-28T02:22:43Z",
-        "mergedAtKST": "2026-11-28 11:22"
+        "number": 285,
+        "title": "data(cards): 보유 단종·구버전 카드 16종 추가 + 롯데×마스터 11만P 이벤트",
+        "mergedAt": "2026-11-28T02:39:41Z",
+        "mergedAtKST": "2026-11-28 11:39"
       },
       "runs": [
         {
@@ -1698,13 +1698,36 @@
             "samsung-aap1452",
             "samsung-aap1453"
           ]
+        },
+        {
+          "at": "2026-11-28T11:55:00+09:00",
+          "kind": "data-fix",
+          "pr": null,
+          "summary": "현정 님 보유 단종·구버전 카드 16종 카드 DB 추가(1,552→1,568장) — 신한 The More(더모아)·The CLASSIC-Y·D-day·CJ ONE 신한카드, 롯데 올마이쇼핑(해외), KB 톡톡 my point·Liiv Mate·금융포인트리 플래티늄, 우리 카드의정석 Dear Traveler·Dear Shopper, MG+ S 하나카드·더나은 체크, 키움증권 하나카드, BC 바로 GOAT, 넥슨 현대카드 UNLIMITED, 네이버 현대카드 Edition2. 카드사 공식 상품 페이지·약관·상품설명서로 혜택·연회비·실적/혜택 제외·상품권·세금·관리비 판정을 채웠고, 혜택 줄 78개를 '적용처 / 혜택·조건'으로 다시 써 label-audit에서 이 16장 문제 0. 롯데×마스터 '해외 결제 최대 11만 네이버페이 포인트'(evnBultSeq=11390, 2026-11-06~12-31, 20/40/80만원 3/5/11만P, 응모 필수)를 events.json에 최신판으로 추가(기존 5만P 행사 11308은 종료 상태로 유지)",
+          "queueKeys": [],
+          "picking": {
+            "cards": 1568,
+            "withPicking": 187,
+            "newIssues": 0,
+            "note": "picking_audit A1 6·A2 0·A3 8·A4 51·C2 16 그대로(새 카드는 rewardCoveragePending으로 두고 피킹률 모델은 미연결)"
+          }
         }
       ],
-      "openIssues": 59
+      "openIssues": 63
     }
   },
   "locks": [],
   "openPRs": [
+    {
+      "number": 286,
+      "title": "fix(cards): 피킹률 자동 변환의 조건 누락과 오래된 요율 재사용 방지",
+      "agent": "ChatGPT",
+      "branch": "ai/chatgpt/fix-terms-reward-converter",
+      "createdAtKST": "2026-11-28 11:39",
+      "area": "4파일 · tools/data 3 · paymorevent/ 1",
+      "url": "https://github.com/uio412-source/my-website/pull/286",
+      "draft": false
+    },
     {
       "number": 277,
       "title": "data: 수집 2026-11-28 (Claude · 상품설명서 7종)",
@@ -1717,6 +1740,34 @@
     }
   ],
   "recentPRs": [
+    {
+      "number": 285,
+      "title": "data(cards): 보유 단종·구버전 카드 16종 추가 + 롯데×마스터 11만P 이벤트",
+      "agent": "Pickle",
+      "branch": "ai/pickle/add-user-discontinued-cards",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T02:39:41Z",
+      "mergedAtKST": "2026-11-28 11:39",
+      "createdAt": "2026-11-28T02:38:10Z",
+      "createdAtKST": "2026-11-28 11:38",
+      "area": "7파일 · paymorevent/ 3 · data/ 2 · docs/ 2",
+      "files": 7,
+      "url": "https://github.com/uio412-source/my-website/pull/285"
+    },
+    {
+      "number": 284,
+      "title": "fix(tools): picking_audit C2 — 무실적 카드는 화면 규칙과 같이 제외",
+      "agent": "Pickle",
+      "branch": "ai/pickle/picking-audit-c2-fix",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T02:28:14Z",
+      "mergedAtKST": "2026-11-28 11:28",
+      "createdAt": "2026-11-28T02:27:23Z",
+      "createdAtKST": "2026-11-28 11:27",
+      "area": "2파일 · docs/ 1 · tools/data 1",
+      "files": 2,
+      "url": "https://github.com/uio412-source/my-website/pull/284"
+    },
     {
       "number": 283,
       "title": "fix(paymorevent): 삼성 앤마일리지 특별혜택 표·상품권 판정 수정 + 라벨/판정 검수 추가",
@@ -2220,48 +2271,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/247"
-    },
-    {
-      "number": 246,
-      "title": "data: 수집 2026-11-27 53차 (현대카드 제휴 6종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle53",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T13:52:10Z",
-      "mergedAtKST": "2026-11-27 22:52",
-      "createdAt": "2026-11-27T13:49:11Z",
-      "createdAtKST": "2026-11-27 22:49",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/246"
-    },
-    {
-      "number": 245,
-      "title": "data: 수집 2026-11-27 52차 (현대카드 알파벳카드 8종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle52",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T13:48:30Z",
-      "mergedAtKST": "2026-11-27 22:48",
-      "createdAt": "2026-11-27T13:45:31Z",
-      "createdAtKST": "2026-11-27 22:45",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/245"
-    },
-    {
-      "number": 244,
-      "title": "data: 수집 2026-11-27 51차 (현대카드 상품설명서 6종)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-27-pickle51",
-      "state": "MERGED",
-      "mergedAt": "2026-11-27T13:44:52Z",
-      "mergedAtKST": "2026-11-27 22:44",
-      "createdAt": "2026-11-27T13:41:51Z",
-      "createdAtKST": "2026-11-27 22:41",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/244"
     }
   ],
   "queue": {
@@ -2273,8 +2282,8 @@
     "counts": {
       "cards": {
         "done": 769,
-        "todo": 678,
-        "total": 1447
+        "todo": 694,
+        "total": 1463
       },
       "brandPrograms": {
         "done": 43,
@@ -2381,10 +2390,28 @@
     {
       "date": "2026-11-28",
       "agent": "Pickle",
+      "target": "mg-deonaun(더나은 체크) 상품몰 PRDT_CD",
+      "status": "open",
+      "reason": "새마을금고 상품몰 목록이 스크립트로만 그려져 코드(PRDT_CD)를 확인하지 못함",
+      "retry": "상품몰에서 '더나은' 검색 후 코드 확인해 sourceUrl 교체",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
       "target": "samsung-aap1483 (삼성카드 taptap O)",
       "status": "open",
       "reason": "카드 DB 혜택 '옵션패키지 상세보기'가 원문 요약 문구뿐(대상 업종·가맹점 없음) — picking_audit C1에 남음",
       "retry": "삼성카드 taptap O 상세의 옵션패키지 서비스 안내(static11 svc)를 읽어 옵션별 업종·한도를 적기",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "woori-dear-shopper 카드 상세 주소(카드 코드)",
+      "status": "open",
+      "reason": "단종으로 우리카드 상품 상세 HTML이 카드 코드별로 내용을 그려 주지 않아(모든 코드가 같은 껍데기) 디어쇼퍼 코드를 확인하지 못함. 혜택은 상품안내장 내용으로 채움",
+      "retry": "카드사(1588-9955·1599-0031)에 카드 코드 확인 또는 상품안내장 PDF 링크 확보",
       "ref": ""
     },
     {
@@ -2412,6 +2439,15 @@
       "status": "open",
       "reason": "통합 한도(shared)·건당/횟수 제한·혼합 표기(최대 N원, 0.x~y%) 카드는 자동 변환이 부풀려질 수 있어 건너뜀. A4 카드는 기존 요율 모델 일부만 있어 손 검수 필요",
       "retry": "카드별로 상품설명서 원문 표를 보고 verified-card-rules.json.gz(요율·혜택·계획)나 picking-review.json(plans·groups)에 근거와 함께 추가 → python3 tools/data/picking_audit.py --card <id>로 확인",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "신한카드 D-day 브랜드·연회비 표기",
+      "status": "open",
+      "reason": "공식 상세 페이지에서 연회비 표가 접혀 있어(브랜드별 금액 미노출) 18,000원·VISA로 기재 — 가족카드 연회비 없음만 공식 확인",
+      "retry": "카드사(1544-7000) 또는 카드 실물 브랜드 확인 후 brands·annualFeeText 교체",
       "ref": ""
     },
     {
@@ -2961,6 +2997,15 @@
       "status": "workaround",
       "reason": "안내문(VISA_Platinum_251001.pdf·VISA_Signature_251001.pdf·Mastercard_Platinum_251001.pdf)은 확보했으나 '국내 호텔 발레파킹' 대상 호텔 목록이 안내문에 없어 hotel_valet 필수 항목을 채울 수 없음",
       "retry": "카드 상세·상품설명서에서 대상 호텔 목록을 확인한 뒤 수집",
+      "ref": ""
+    },
+    {
+      "date": "2026-11-28",
+      "agent": "Pickle",
+      "target": "kb-liiv-mate 공식 상품 상세",
+      "status": "workaround",
+      "reason": "리브메이트 신용카드는 2019-08 신규 발급 중단으로 상품 상세 페이지가 내려감(KB 카드 상품 목록에도 없음)",
+      "retry": "필요 시 카드사에 2017년판 상품설명서 요청. 현재는 공식 상품설명서 기준 값과 공지 주소로 기록",
       "ref": ""
     },
     {

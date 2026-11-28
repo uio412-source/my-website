@@ -16,8 +16,8 @@
  "counts": {
   "cards": {
    "done": 769,
-   "todo": 678,
-   "total": 1447
+   "todo": 694,
+   "total": 1463
   },
   "brandPrograms": {
    "done": 43,
@@ -12977,6 +12977,17 @@
    "status": "todo"
   },
   {
+   "key": "shinhan-201410310001",
+   "issuer": "신한카드",
+   "name": "신한카드 The CLASSIC-Y",
+   "type": "credit",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/premium/1187940_2205.html",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 55,
+   "status": "todo"
+  },
+  {
    "key": "woori-103726",
    "issuer": "우리카드",
    "name": "TWO CHAIRS W",
@@ -12995,6 +13006,28 @@
    "url": "https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD101S02.do?cdPrdCd=225501",
    "termsUrl": "https://pc.wooricard.com/upload/cardClause/2025/4/30/0c158a5c-eb2e-498e-9aee-10480345d467.pdf",
    "lastVerified": "2026-10-05",
+   "priority": 55,
+   "status": "todo"
+  },
+  {
+   "key": "woori-dear-shopper",
+   "issuer": "우리카드",
+   "name": "카드의정석 Dear, Shopper",
+   "type": "credit",
+   "url": "https://m.wooricard.com/dcmw/yh1/crd/crd01/M1CRD101S02.do",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 55,
+   "status": "todo"
+  },
+  {
+   "key": "woori-102486",
+   "issuer": "우리카드",
+   "name": "카드의정석 Dear, Traveler",
+   "type": "credit",
+   "url": "https://m.wooricard.com/dcmw/yh1/crd/crd01/M1CRD101S02.do?cdPrdCd=102486",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
    "priority": 55,
    "status": "todo"
   },
@@ -13030,6 +13063,17 @@
    "lastVerified": "2026-10-05",
    "priority": 55,
    "status": "done"
+  },
+  {
+   "key": "hyundai-nexon-unlimited",
+   "issuer": "현대카드",
+   "name": "넥슨 현대카드 UNLIMITED",
+   "type": "credit",
+   "url": "https://www.hyundaicard.com/upload/card/T_AWO-20260609-1745-84_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_%EB%84%A5%EC%8A%A8_UNLIMITED_V4.pdf",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 55,
+   "status": "todo"
   },
   {
    "key": "hyundai-kale2t2",
@@ -14616,6 +14660,50 @@
    "status": "todo"
   },
   {
+   "key": "bc-100008",
+   "issuer": "BC 바로카드",
+   "name": "GOAT BC 바로카드",
+   "type": "credit",
+   "url": "https://m.bccard.com/app/mobileweb/CardDetail.do?cardGdsNo=100008&exec=cardDetail",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 40,
+   "status": "todo"
+  },
+  {
+   "key": "kb-liiv-mate",
+   "issuer": "KB국민카드",
+   "name": "KB국민 Liiv Mate카드",
+   "type": "credit",
+   "url": "https://card.kbcard.com/CMN/DVIEW/HSEMCXCRSCTC0001?ARTICLE_SERIAL=11440&ROUTE_TYPE=VIEW",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 40,
+   "status": "todo"
+  },
+  {
+   "key": "kb-09041",
+   "issuer": "KB국민카드",
+   "name": "KB국민 금융포인트리 플래티늄카드",
+   "type": "credit",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09041&mainCC=a",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 40,
+   "status": "todo"
+  },
+  {
+   "key": "kb-09206",
+   "issuer": "KB국민카드",
+   "name": "KB국민 톡톡 my point카드",
+   "type": "credit",
+   "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?mainCC=a&cooperationcode=09206",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 40,
+   "status": "todo"
+  },
+  {
    "key": "kb-09061",
    "issuer": "KB국민카드",
    "name": "굿데이카드",
@@ -14847,6 +14935,17 @@
    "status": "todo"
   },
   {
+   "key": "lotte-P11024-A11024",
+   "issuer": "롯데카드",
+   "name": "올마이쇼핑 카드 (해외)",
+   "type": "credit",
+   "url": "https://www.lottecard.co.kr/app/LPCDADB_V100.lc?vtCdKndC=P11024-A11024",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 40,
+   "status": "todo"
+  },
+  {
    "key": "suhyup-806",
    "issuer": "수협은행",
    "name": "Real Zero 체크카드",
@@ -15045,6 +15144,17 @@
    "status": "todo"
   },
   {
+   "key": "shinhan-201106290001",
+   "issuer": "신한카드",
+   "name": "CJ ONE 신한카드",
+   "type": "credit",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188421_2207.html",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 40,
+   "status": "todo"
+  },
+  {
    "key": "shinhan-202410040001",
    "issuer": "신한카드",
    "name": "신한 후불 기후동행 체크카드",
@@ -15065,6 +15175,28 @@
    "lastVerified": "2026-10-05",
    "priority": 40,
    "status": "done"
+  },
+  {
+   "key": "shinhan-201910140001",
+   "issuer": "신한카드",
+   "name": "신한카드 D-day",
+   "type": "credit",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1188312_2207.html",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 40,
+   "status": "todo"
+  },
+  {
+   "key": "shinhan-202011100001",
+   "issuer": "신한카드",
+   "name": "신한카드 The More(더모아)",
+   "type": "credit",
+   "url": "https://www.shinhancard.com/pconts/html/card/apply/credit/1198942_2207.html",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 40,
+   "status": "todo"
   },
   {
    "key": "shinhan-201703020001",
@@ -15232,6 +15364,17 @@
    "status": "done"
   },
   {
+   "key": "hana-kiwoom",
+   "issuer": "하나카드",
+   "name": "키움증권 하나카드",
+   "type": "credit",
+   "url": "https://evt.kiwoom.com/e/m/home/event/VEvent20260106View",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 40,
+   "status": "todo"
+  },
+  {
    "key": "hyundai-nolhc",
    "issuer": "현대카드",
    "name": "NOL 카드",
@@ -15329,6 +15472,28 @@
    "lastVerified": "2026-10-05",
    "priority": 30,
    "status": "done"
+  },
+  {
+   "key": "mg-15417",
+   "issuer": "MG새마을금고",
+   "name": "MG+ S 하나카드",
+   "type": "credit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201?PRDT_CD=15417",
+   "termsUrl": "https://m.hanacard.co.kr/leaflet/15/15417_20250616.pdf",
+   "lastVerified": "2026-11-28",
+   "priority": 30,
+   "status": "todo"
+  },
+  {
+   "key": "mg-deonaun",
+   "issuer": "MG새마을금고",
+   "name": "더나은 체크카드",
+   "type": "debit",
+   "url": "https://mbank.kfcc.co.kr/CARD/06/PMWCARD060201",
+   "termsUrl": null,
+   "lastVerified": "2026-11-28",
+   "priority": 30,
+   "status": "todo"
   },
   {
    "key": "cu-1040",
@@ -15437,6 +15602,17 @@
    "url": "https://www.tossbank.com/card/k-pass",
    "termsUrl": null,
    "lastVerified": "2026-10-05",
+   "priority": 30,
+   "status": "todo"
+  },
+  {
+   "key": "hyundai-nve2",
+   "issuer": "현대카드",
+   "name": "네이버 현대카드 Edition2",
+   "type": "credit",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=NVE2",
+   "termsUrl": "https://www.hyundaicard.com/upload/card/T_AEI-20260320-1625-35_%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_%EB%84%A4%EC%9D%B4%EB%B2%84%20Ed2_V1_%EA%B3%B5%EC%8B%9C%EC%8B%A4%EC%9A%A9.pdf",
+   "lastVerified": "2026-11-28",
    "priority": 30,
    "status": "todo"
   },
