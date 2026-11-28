@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-29T02:42:14+09:00",
+  "generatedAt": "2026-11-29T02:50:25+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
   "prFresh": true,
@@ -478,13 +478,13 @@
     "Pickle": {
       "noteFile": "data/agent-notes/pickle.json",
       "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
-      "updatedAt": "2026-11-29T02:50:00+09:00",
+      "updatedAt": "2026-11-29T02:52:00+09:00",
       "lock": null,
       "lastMergedPR": {
-        "number": 394,
-        "title": "data: 수집 2026-11-29 (현대카드 상품설명서 12종)",
-        "mergedAt": "2026-11-28T17:41:29Z",
-        "mergedAtKST": "2026-11-29 02:41"
+        "number": 396,
+        "title": "data: 수집 2026-11-29 (현대카드 상품설명서 2종 추가)",
+        "mergedAt": "2026-11-28T17:49:17Z",
+        "mergedAtKST": "2026-11-29 02:49"
       },
       "runs": [
         {
@@ -2571,7 +2571,7 @@
         {
           "at": "2026-11-29T02:45:00+09:00",
           "kind": "card-terms",
-          "summary": "현대카드 상품설명서 12종 · 혜택 78줄 (공식 PDF 심의필 날짜 기준)",
+          "summary": "현대카드 상품설명서 14종(1차 12종 #394 + 2차 2종 #396) · 혜택 87줄 (공식 PDF 심의필 날짜 기준)",
           "pr": 394,
           "queueKeys": [
             "hyundai-tpe4",
@@ -2585,7 +2585,9 @@
             "hyundai-mcje2",
             "hyundai-nexon-unlimited",
             "hyundai-mlsb",
-            "hyundai-cmsc"
+            "hyundai-cmsc",
+            "hyundai-mrdev",
+            "hyundai-lsbsoilx"
           ]
         },
         {
@@ -2594,6 +2596,16 @@
           "summary": "피킹률 전수 검사: A1 6건·A2 0건·A3 8건 모두 기존 카드, 이번 수집분에서 새 A1/A2/A3 없음. terms_to_rules --dry-run 요율 모델 추가 0장",
           "pr": 394,
           "queueKeys": []
+        },
+        {
+          "at": "2026-11-29T02:49:00+09:00",
+          "kind": "card-terms",
+          "summary": "현대카드 2차: Kia Members 전기차 신용카드 · 현대카드X-화물차유가보조금카드(S-OIL)",
+          "pr": 396,
+          "queueKeys": [
+            "hyundai-mrdev",
+            "hyundai-lsbsoilx"
+          ]
         }
       ],
       "openIssues": 78
@@ -2613,6 +2625,34 @@
     }
   ],
   "recentPRs": [
+    {
+      "number": 396,
+      "title": "data: 수집 2026-11-29 (현대카드 상품설명서 2종 추가)",
+      "agent": "Pickle",
+      "branch": "ai/chatgpt/data-2026-11-29-pickle2",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T17:49:17Z",
+      "mergedAtKST": "2026-11-29 02:49",
+      "createdAt": "2026-11-28T17:48:29Z",
+      "createdAtKST": "2026-11-29 02:48",
+      "area": "1파일 · data/inbox/card-terms 1",
+      "files": 1,
+      "url": "https://github.com/uio412-source/my-website/pull/396"
+    },
+    {
+      "number": 395,
+      "title": "docs: 수집 2026-11-29 반영 — 대기열·Pickle 기록·현황판 동기화",
+      "agent": "Pickle",
+      "branch": "ai/pickle/sync-2026-11-29",
+      "state": "MERGED",
+      "mergedAt": "2026-11-28T17:43:21Z",
+      "mergedAtKST": "2026-11-29 02:43",
+      "createdAt": "2026-11-28T17:42:31Z",
+      "createdAtKST": "2026-11-29 02:42",
+      "area": "4파일 · data/ 3 · docs/ 1",
+      "files": 4,
+      "url": "https://github.com/uio412-source/my-website/pull/395"
+    },
     {
       "number": 394,
       "title": "data: 수집 2026-11-29 (현대카드 상품설명서 12종)",
@@ -3130,34 +3170,6 @@
       "area": "1파일 · data/inbox/card-terms 1",
       "files": 1,
       "url": "https://github.com/uio412-source/my-website/pull/356"
-    },
-    {
-      "number": 355,
-      "title": "data: 수집 2026-11-28 (Pickle63 · 광주은행 DUAL카드 혜택)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle63",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T08:31:49Z",
-      "mergedAtKST": "2026-11-28 17:31",
-      "createdAt": "2026-11-28T08:31:28Z",
-      "createdAtKST": "2026-11-28 17:31",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/355"
-    },
-    {
-      "number": 354,
-      "title": "data: 수집 2026-11-28 (Pickle62 · 광주은행 광주전남愛사랑 HONORS V2 카드 혜택)",
-      "agent": "Pickle",
-      "branch": "ai/chatgpt/data-2026-11-28-pickle62",
-      "state": "MERGED",
-      "mergedAt": "2026-11-28T08:30:51Z",
-      "mergedAtKST": "2026-11-28 17:30",
-      "createdAt": "2026-11-28T08:30:18Z",
-      "createdAtKST": "2026-11-28 17:30",
-      "area": "1파일 · data/inbox/card-terms 1",
-      "files": 1,
-      "url": "https://github.com/uio412-source/my-website/pull/354"
     }
   ],
   "queue": {
@@ -3168,8 +3180,8 @@
     },
     "counts": {
       "cards": {
-        "done": 892,
-        "todo": 571,
+        "done": 894,
+        "todo": 569,
         "total": 1463
       },
       "brandPrograms": {

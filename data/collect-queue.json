@@ -15,8 +15,8 @@
  },
  "counts": {
   "cards": {
-   "done": 892,
-   "todo": 571,
+   "done": 894,
+   "todo": 569,
    "total": 1463
   },
   "brandPrograms": {
@@ -7221,7 +7221,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "hyundai-mcje2",
@@ -7276,7 +7276,7 @@
    "termsUrl": null,
    "lastVerified": "2026-10-05",
    "priority": 70,
-   "status": "todo"
+   "status": "done"
   },
   {
    "key": "nh-90010626",
