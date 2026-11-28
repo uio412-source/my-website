@@ -1,12 +1,10 @@
-// 브라우저에만 저장하는 내 목록: 비교함(최대 3장)·최근 본 카드(최대 8장)·내 카드(내 혜택, 최대 12장). 탭·화면끼리 바로 맞춰집니다.
+// 브라우저에만 저장하는 내 목록: 비교함(최대 3장)·내 카드(내 혜택, 최대 12장). 탭·화면끼리 바로 맞춰집니다.
 import {useEffect, useState} from 'react';
 
 export const COMPARE_KEY = 'mrcards.compare';
-export const RECENT_KEY = 'mrcards.recent';
 export const MINE_KEY = 'mrcards.mine';
 export const MINE_MAX = 12;
 export const COMPARE_MAX = 3;
-const RECENT_MAX = 8;
 const EVENT = 'mrcards:store';
 
 function read(key: string): string[] {
@@ -42,11 +40,6 @@ export function toggleCompare(id: string) {
   return true;
 }
 export const clearCompare = () => write(COMPARE_KEY, []);
-
-export function rememberCard(id: string) {
-  write(RECENT_KEY, [id, ...read(RECENT_KEY).filter(x => x !== id)].slice(0, RECENT_MAX));
-}
-export const clearRecent = () => write(RECENT_KEY, []);
 
 /** 내 카드(내 혜택)에 등록하거나 빼기. 가득 차 있으면 false */
 export function toggleMine(id: string) {

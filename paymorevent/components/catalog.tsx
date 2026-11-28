@@ -18,7 +18,6 @@ import {valetRules} from '@/lib/hotel-valet';
 import {sitePath} from '@/lib/site-path';
 import {CompareDock, CompareToggle} from '@/components/compare';
 import {MineView} from '@/components/mine';
-import {RECENT_KEY, clearRecent, useStoredIds} from '@/lib/my-cards';
 import {spendShort} from '@/lib/card-value';
 import {ISSUER_FILTERS, feeLabel, headlineAmount, highlights, issuerFilterLabel, koReading, RESTRICTED, searchScore, today, ymd} from '@/lib/mc-text';
 import sources from '@/data/personal-benefit-sources.json';
@@ -77,18 +76,6 @@ export default function Catalog({initialCards, initialEvents, eventsLoading = fa
         : tab === 'cashback' ? <CashbackView events={events}/> : tab === 'mine' ? <MineView cards={cards} events={events} ready={fullCards}/> : <EventsView events={events} cards={cards}/>)}
     </main>
     <SiteFooter/>
-  </div>;
-}
-
-/** 최근 본 카드: 상세에서 돌아왔을 때 바로 다시 열 수 있게 (브라우저에만 저장) */
-function Recent({cards}: {cards: Card[]}) {
-  const ids = useStoredIds(RECENT_KEY);
-  const byId = useMemo(() => new Map(cards.map(c => [c.id, c])), [cards]);
-  const list = ids.map(id => byId.get(id)).filter((c): c is Card => !!c);
-  if (!list.length) return null;
-  return <div className="mc-recent">
-    <div className="mc-recent-h"><b>최근 본 카드</b><button type="button" className="mc-link" onClick={clearRecent}>지우기</button></div>
-    <div className="mc-recent-list">{list.map(c => <a key={c.id} href={cardPath(c.id)}><CardArt card={c}/><span>{c.familyName ?? c.name}</span></a>)}</div>
   </div>;
 }
 
@@ -202,7 +189,6 @@ function CardsView({cards, events}: {cards: Card[]; events: Offer[]}) {
     </div>}
     {themes.includes('호텔 발레') && <p className="mc-note">서울 호텔별로 어떤 카드가 되는지는 <a href={sitePath('../hotels/valet.html')}>Mr. Hotels 발레파킹 지도</a>에서 볼 수 있어요.</p>}
 
-    {!anything && <Recent cards={cards}/>}
     <div className="mc-listhead">
       <span className="mc-count">{filtered.length.toLocaleString('ko-KR')}<small>/{families.toLocaleString('ko-KR')}종</small></span>
       <select className="mc-select" aria-label="정렬" value={sort} onChange={e => setSort(e.target.value)}>
