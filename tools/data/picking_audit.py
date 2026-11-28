@@ -515,11 +515,11 @@ def audit(cards: list[dict], terms: dict, detail: bool):
                                        "detail": (b.get("detail") or "")[:60]})
                 break
 
-        # C2 혜택 인정인데 전월실적이 ? — 무실적 카드인데 규칙이 못 채운 경우는 오류로 본다
+        # C2 혜택 인정인데 전월실적이 ? — 카드 값이 0인 무실적 카드는 화면 규칙(spendFreeCard)이 ✓로 채우므로 뺌
         pe = card.get("paymentEligibility") or {}
         unknown = [k for k in ELIGIBILITY_KEYS
                    if (pe.get(k) or {}).get("benefit") == "allowed" and (pe.get(k) or {}).get("spend") == "unknown"]
-        if unknown:
+        if unknown and not (card.get("minimumSpend") == 0 and not spends_positive(card)):
             findings["C2"].append({"id": cid, "name": card["name"], "items": unknown,
                                    "minimumSpend": card.get("minimumSpend"),
                                    "무실적": not spends_positive(card)})
