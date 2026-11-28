@@ -1,0 +1,303 @@
+{
+ "type": "card-terms",
+ "issuer": "현대카드",
+ "collectedAt": "2026-11-28",
+ "collector": "Pickle",
+ "cards": [
+  {
+   "cardId": "hyundai-zfe2",
+   "queueKey": "hyundai-zfe2",
+   "name": "현대카드Z family Edition2",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ZFE2",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03169",
+   "docDate": "2026-03-01",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 20000},
+    {"brand": "Visa", "amount": 20000},
+    {"brand": "American Express", "amount": 20000}
+   ],
+   "brands": ["국내전용", "Visa", "American Express"],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 현대카드Z family Edition2(본인+가족 카드) 일시불·할부 이용 금액",
+   "grace": "신규 발급 시 발급월부터 다음 달 이용 건까지 전월 50만원 미만도 50만원 구간 할인 제공",
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비·제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "공과금(국세·관세·지방세·상하수도 요금·과태료 등)",
+    "전기 요금·도시가스 요금·아파트 관리비·자동납부서비스 이용 수수료",
+    "초중고 학교납입금·사립유치원 교육비·대학·대학원 등록금",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "건강보험·국민연금·고용보험·산재보험료",
+    "고속도로 통행 요금·후불하이패스·고속버스 결제",
+    "무이자 할부 이용 금액",
+    "할인 혜택이 적용된 결제 건의 전체 이용 금액"
+   ],
+   "benefitExclusions": [
+    "장기카드대출(카드론)·단기카드대출(현금서비스)·연회비·제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "현대카드 할인 서비스·무이자 할부 이용 금액"
+   ],
+   "benefits": [
+    {
+     "group": "5개 영역 할인",
+     "label": "학원",
+     "place": "입시학원·예체능학원·자동차학원 등 학원 업종",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 6000}, {"spend": 1000000, "cap": 10000}],
+     "cap": null,
+     "capScope": "월",
+     "shared": "영역별 월 할인 한도",
+     "limits": "월 6천원(50만원)·1만원(100만원)",
+     "conditions": ["대상 학원 업종 통합 1일 1회 할인", "본인+가족 카드 합산"]
+    },
+    {
+     "group": "5개 영역 할인",
+     "label": "병원·약국",
+     "place": "종합병원·한의원·약국 등 병원·약국 업종",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 6000}, {"spend": 1000000, "cap": 10000}],
+     "cap": null,
+     "capScope": "월",
+     "shared": "영역별 월 할인 한도",
+     "limits": "월 6천원(50만원)·1만원(100만원)",
+     "conditions": ["병원·약국 업종 통합 1일 1회 할인", "동물병원·의료기기·요양병원 업종 제외"]
+    },
+    {
+     "group": "5개 영역 할인",
+     "label": "온라인 쇼핑몰",
+     "place": "네이버쇼핑·쿠팡·G마켓·옥션·11번가·SSG.COM·컬리",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 6000}, {"spend": 1000000, "cap": 10000}],
+     "cap": null,
+     "capScope": "월",
+     "shared": "영역별 월 할인 한도",
+     "limits": "월 6천원(50만원)·1만원(100만원)",
+     "conditions": [
+      "온라인 쇼핑몰 통합 1일 1회 할인",
+      "쿠팡이츠 결제·연결 사이트 결제 제외",
+      "네이버쇼핑은 naver.com 도메인 가맹점만"
+     ]
+    },
+    {
+     "group": "5개 영역 할인",
+     "label": "주유",
+     "place": "GS칼텍스·SK에너지·HD현대오일뱅크·S-OIL",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 6000}, {"spend": 1000000, "cap": 10000}],
+     "cap": null,
+     "capScope": "월",
+     "shared": "영역별 월 할인 한도",
+     "limits": "월 6천원(50만원)·1만원(100만원)",
+     "conditions": ["대상 주유소 통합 1일 1회 할인", "본인+가족 카드 합산"]
+    },
+    {
+     "group": "5개 영역 할인",
+     "label": "생활 요금 정기결제",
+     "place": "이동통신요금(SKT·KT·LG U+)·아파트 관리비·도시가스 요금",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 6000}, {"spend": 1000000, "cap": 10000}],
+     "cap": null,
+     "capScope": "월",
+     "shared": "영역별 월 할인 한도",
+     "limits": "월 6천원(50만원)·1만원(100만원)",
+     "conditions": [
+      "대상 생활 요금 정기 결제 신청 후 매달 결제 발생 시 할인",
+      "알뜰폰·선불폰·결합상품 요금과 비정기 결제 제외",
+      "현대카드 정기결제가 가능한 아파트 관리비만"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-zoe2",
+   "queueKey": "hyundai-zoe2",
+   "name": "현대카드Z play",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=ZOE2",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03173",
+   "docDate": "2026-03-01",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 20000},
+    {"brand": "Visa", "amount": 20000},
+    {"brand": "American Express", "amount": 20000}
+   ],
+   "brands": ["국내전용", "Visa", "American Express"],
+   "minimumSpend": 500000,
+   "spendBasis": "전월 1일~말일 현대카드Z play(본인+가족 카드) 일시불·할부 이용 금액",
+   "grace": "신규 발급 시 발급월부터 다음 달 이용 건까지 전월 50만원 미만도 50만원 구간 할인 제공",
+   "spendExclusions": [
+    "장기카드대출(카드론)",
+    "단기카드대출(현금서비스)",
+    "연회비·제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "공과금(국세·관세·지방세·상하수도 요금·과태료 등)",
+    "전기 요금·도시가스 요금·아파트 관리비·자동납부서비스 이용 수수료",
+    "초중고 학교납입금·사립유치원 교육비·대학·대학원 등록금",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "건강보험·국민연금·고용보험·산재보험료",
+    "고속도로 통행 요금·후불하이패스·고속버스 결제",
+    "무이자 할부 이용 금액",
+    "할인 혜택이 적용된 결제 건의 전체 이용 금액"
+   ],
+   "benefitExclusions": [
+    "장기카드대출(카드론)·단기카드대출(현금서비스)·연회비·제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "현대카드 할인 서비스·무이자 할부 이용 금액"
+   ],
+   "benefits": [
+    {
+     "group": "5개 영역 할인",
+     "label": "일반음식점",
+     "place": "한식·뷔페·패스트푸드 등 일반음식점 업종",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 6000}, {"spend": 1000000, "cap": 10000}],
+     "cap": null,
+     "capScope": "월",
+     "shared": "영역별 월 할인 한도",
+     "limits": "월 6천원(50만원)·1만원(100만원)",
+     "conditions": ["일반음식점 업종 통합 1일 1회 할인", "본인+가족 카드 합산"]
+    },
+    {
+     "group": "5개 영역 할인",
+     "label": "영화",
+     "place": "CGV·메가박스·롯데시네마",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 6000}, {"spend": 1000000, "cap": 10000}],
+     "cap": null,
+     "capScope": "월",
+     "shared": "영역별 월 할인 한도",
+     "limits": "월 6천원(50만원)·1만원(100만원)",
+     "conditions": [
+      "영화 영역 통합 1일 1회 할인",
+      "공식 홈페이지·앱 결제만, 연결 사이트·앱 결제 제외",
+      "매점 메뉴 결제는 현대카드 가맹점·업종 분류 기준에 따라 적용"
+     ]
+    },
+    {
+     "group": "5개 영역 할인",
+     "label": "온라인 쇼핑몰",
+     "place": "네이버쇼핑·쿠팡·G마켓·옥션·11번가·SSG.COM·컬리",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 6000}, {"spend": 1000000, "cap": 10000}],
+     "cap": null,
+     "capScope": "월",
+     "shared": "영역별 월 할인 한도",
+     "limits": "월 6천원(50만원)·1만원(100만원)",
+     "conditions": [
+      "온라인 쇼핑몰 통합 1일 1회 할인",
+      "쿠팡이츠 결제·연결 사이트 결제 제외",
+      "네이버쇼핑은 naver.com 도메인 가맹점만"
+     ]
+    },
+    {
+     "group": "5개 영역 할인",
+     "label": "해외 가맹점",
+     "place": "해외 온·오프라인 가맹점",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 6000}, {"spend": 1000000, "cap": 10000}],
+     "cap": null,
+     "capScope": "월",
+     "shared": "영역별 월 할인 한도",
+     "limits": "월 6천원(50만원)·1만원(100만원)",
+     "conditions": [
+      "국내외겸용 카드 이용 시에만 혜택 제공(국내전용 제외)",
+      "해외 가맹점 통합 1일 1회 할인",
+      "승인일이 아닌 매출일자 기준으로 이용 금액 산정"
+     ]
+    },
+    {
+     "group": "5개 영역 할인",
+     "label": "디지털 콘텐츠",
+     "place": "넷플릭스·유튜브 프리미엄·디즈니+·멜론·지니",
+     "value": "10%",
+     "valueType": "할인",
+     "minimumSpend": 500000,
+     "tiers": [{"spend": 500000, "cap": 6000}, {"spend": 1000000, "cap": 10000}],
+     "cap": null,
+     "capScope": "월",
+     "shared": "영역별 월 할인 한도",
+     "limits": "월 6천원(50만원)·1만원(100만원)",
+     "conditions": [
+      "디지털 콘텐츠 서비스 통합 할인, 본인+가족 카드 합산",
+      "통신 요금 합산 청구·앱스토어 인앱 결제는 제외",
+      "넷플릭스·유튜브 프리미엄·디즈니+는 PC 공식 홈페이지에서 결제 수단 등록 시 할인"
+     ]
+    }
+   ]
+  },
+  {
+   "cardId": "hyundai-mzroe3",
+   "queueKey": "hyundai-mzroe3",
+   "name": "현대카드ZERO Edition3(포인트형)",
+   "cardType": "credit",
+   "status": "active",
+   "url": "https://www.hyundaicard.com/cpc/cr/CPCCR0201_01.hc?cardWcd=MZROE3",
+   "termsUrl": "https://www.hyundaicard.com/cpu/ug/CPUUG2001_0405.hc?cDS=00&c=03156",
+   "docDate": "2026-03-01",
+   "annualFee": [
+    {"brand": "국내전용", "amount": 15000},
+    {"brand": "Visa", "amount": 15000},
+    {"brand": "American Express", "amount": 15000}
+   ],
+   "brands": ["국내전용", "Visa", "American Express"],
+   "minimumSpend": 0,
+   "spendBasis": "전월 실적 조건 없음",
+   "grace": null,
+   "spendExclusions": [],
+   "benefitExclusions": [
+    "장기카드대출(카드론)·단기카드대출(현금서비스)·연회비·제수수료·이자",
+    "국제브랜드 수수료·해외서비스 수수료",
+    "공과금(국세·관세·지방세·상하수도 요금·과태료 등)",
+    "전기 요금·도시가스 요금·아파트 관리비·자동납부서비스 이용 수수료",
+    "초중고 학교납입금·사립유치원 교육비·대학·대학원 등록금",
+    "상품권 등 현금성 유가증권 구매·선불카드 구매·충전",
+    "건강보험·국민연금·고용보험·산재보험료",
+    "고속도로 통행 요금·후불하이패스·고속버스 결제",
+    "현대카드 할인 서비스·무이자 할부 이용 금액"
+   ],
+   "benefits": [
+    {
+     "group": null,
+     "label": "국내외 가맹점",
+     "place": "국내외 모든 가맹점(현대카드 가맹점 등록 기준)",
+     "value": "1.2%",
+     "valueType": "적립",
+     "minimumSpend": 0,
+     "cap": null,
+     "capScope": null,
+     "limits": "실적·한도 제한 없음",
+     "conditions": [
+      "M포인트 적립",
+      "해외 이용 적립은 국내외겸용 카드만",
+      "매출 건별 소수점 이하 반올림"
+     ]
+    }
+   ]
+  }
+ ]
+}
