@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-28T12:06:33+09:00",
+  "generatedAt": "2026-11-28T13:35:07+09:00",
   "repo": "uio412-source/my-website",
   "how": "python tools/data/agent_sync.py 로 다시 만듭니다. 손으로 고치지 마세요. 기록은 data/agent-notes/<에이전트>.json.",
-  "prFresh": true,
+  "prFresh": false,
   "agents": {
     "ChatGPT": {
       "noteFile": "data/agent-notes/chatgpt.json",
       "role": "ChatGPT 예약 작업·Dot — 데이터 수집(data/inbox) 담당. 브랜치 ai/chatgpt/data-*, 파일 YYYY-MM-DD-<출처>.json(접미사 없음).",
-      "updatedAt": "2026-11-25T19:40:00+09:00",
+      "updatedAt": "2026-11-28T13:35:07+09:00",
       "lock": null,
       "lastMergedPR": {
         "number": 288,
@@ -16,6 +16,12 @@
         "mergedAtKST": "2026-11-28 11:44"
       },
       "runs": [
+        {
+          "at": "2026-11-28T13:35:07+09:00",
+          "kind": "issuance-fix",
+          "pr": null,
+          "summary": "발급 지원금 비교: 확정 기간·행사 시작·롤링·이력 범위 분리, 카드사 공통 대상 카드 미사용 폐기, 롯데·우리·현대·IBK 네 건 재현, 미검수 행 확정 배지 방지. 회귀 11건 및 정적 빌드 통과, 발급 원본/카드 DB 무변경."
+        },
         {
           "at": "2026-11-25T15:09:00+09:00",
           "kind": "card-terms",

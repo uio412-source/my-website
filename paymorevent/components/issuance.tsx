@@ -4,8 +4,8 @@
 import {useEffect, useMemo, useState} from 'react';
 import type {IssuanceData, IssuanceEvent, IssuerProfile} from '@/lib/issuance-events';
 import {
-  EMPTY_PROFILE, PROFILE_ISSUERS, VERDICT_ORDER, isProfileEmpty, issuerKey, judge, loadProfiles, midDate,
-  ruleLine, saveProfiles, shortDate,
+  EMPTY_PROFILE, PROFILE_ISSUERS, VERDICT_ORDER, isProfileEmpty, judge, loadProfiles, midDate, profileIssuerFor,
+  ruleLine, rulesFor, saveProfiles, shortDate, targetKey,
 } from '@/lib/issuance-events';
 import {Chips, Empty, IssuerTile, SearchBox, Tabs} from '@/components/mc-ui';
 import {today, won, ymd} from '@/lib/mc-text';
@@ -21,6 +21,8 @@ export function IssuanceView({onCount}: {onCount?: (n: number) => void}) {
   const [source, setSource] = useState('all');
   const [issuer, setIssuer] = useState('all');
   const [only, setOnly] = useState<VerdictTab>('all');
+  // Target-card confirmations are scoped to this exact offer and this page session.
+  const [targetConfirmations, setTargetConfirmations] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     let on = true;
@@ -44,21 +46,26 @@ export function IssuanceView({onCount}: {onCount?: (n: number) => void}) {
   }, [events]);
   const issuers = useMemo(() => {
     const seen: string[] = [];
-    for (const e of events) { const k = issuerKey(e.issuer); if (k && !seen.includes(k)) seen.push(k); }
+    for (const e of events) { const k = profileIssuerFor(e); if (k && !seen.includes(k)) seen.push(k); }
     return seen.sort((a, b) => PROFILE_ISSUERS.indexOf(a as never) - PROFILE_ISSUERS.indexOf(b as never));
   }, [events]);
 
+  const creditIssuers = new Set(events.filter(e => rulesFor(e)?.payment?.scope === 'personal-credit').map(profileIssuerFor));
+  const cancellationIssuers = new Set(events.filter(e => rulesFor(e)?.cancellation).map(profileIssuerFor));
   const now = today();
-  const rows = useMemo(() => events.map(e => ({e, v: judge(e, profiles[issuerKey(e.issuer)], now)})), [events, profiles, now]);
+  const rows = useMemo(() => events.map(e => {
+    const key = targetKey(e);
+    return {e, v: judge(e, profiles[profileIssuerFor(e)], now, key && targetConfirmations[key] ? key : undefined)};
+  }), [events, profiles, now, targetConfirmations]);
   const filtered = useMemo(() => {
     const term = q.trim().toLowerCase();
     return rows.filter(({e, v}) => {
       if (source !== 'all' && e.source !== source) return false;
-      if (issuer !== 'all' && issuerKey(e.issuer) !== issuer) return false;
+      if (issuer !== 'all' && profileIssuerFor(e) !== issuer) return false;
       if (only === 'ok' && v.status !== 'ok') return false;
       if (only === 'target' && v.status !== 'target') return false;
       if (only === 'wait' && v.status !== 'wait') return false;
-      if (term && !(`${e.issuer} ${e.cardName ?? ''} ${e.title} ${e.benefitText ?? ''} ${e.spendCondition ?? ''} ${e.eligibilitySummary ?? ''}`.toLowerCase().includes(term))) return false;
+      if (term && !(`${profileIssuerFor(e)} ${e.issuer} ${e.cardName ?? ''} ${e.title} ${e.benefitText ?? ''} ${e.spendCondition ?? ''} ${ruleLine(e) ?? ''}`.toLowerCase().includes(term))) return false;
       return true;
     }).sort((a, b) => (VERDICT_ORDER[a.v.status] - VERDICT_ORDER[b.v.status]) || ((b.e.benefitAmount ?? 0) - (a.e.benefitAmount ?? 0)));
   }, [rows, q, source, issuer, only]);
@@ -75,7 +82,7 @@ export function IssuanceView({onCount}: {onCount?: (n: number) => void}) {
       <div className="is-panel-head">
         <div>
           <b>내 카드사 상태</b>
-          <small>{filled ? `${filled}곳 입력됨` : '입력하면 참여 가능한 이벤트만 골라 드려요'}</small>
+          <small>{filled ? `${filled}곳 입력됨` : '입력하면 확인된 조건으로 참여 여부를 비교해요'}</small>
         </div>
         <span className="is-panel-note">저장은 이 브라우저에만</span>
       </div>
@@ -92,25 +99,31 @@ export function IssuanceView({onCount}: {onCount?: (n: number) => void}) {
             </button>
             {isOpen && <div className="is-p-form">
               <label className="is-f">
-                <span>마지막 결제일</span>
+                <span>카드사 전체 마지막 결제일</span>
                 <input type="date" value={p.lastPayment ?? ''} max={now} disabled={p.noPayment}
                        onChange={e => setProfile(name, {lastPayment: e.target.value || null, noPayment: false})}/>
               </label>
               <button type="button" className="is-chip" aria-pressed={p.noPayment}
-                      onClick={() => setProfile(name, {noPayment: !p.noPayment, lastPayment: !p.noPayment ? null : p.lastPayment})}>
-                결제 이력 없음(신규·무실적)
+                      onClick={() => setProfile(name, {noPayment: !p.noPayment, lastPayment: !p.noPayment ? null : p.lastPayment, ...(!p.noPayment ? {lastCreditPayment: null, noCreditPayment: false} : {})})}>
+                이 카드사 결제 이력 없음
               </button>
               <div className="is-f">
                 <span>카드 보유 상태</span>
                 <div className="is-seg" role="group" aria-label={`${name} 카드 보유 상태`}>
                   {([['none', '미보유'], ['holding', '보유 중'], ['canceled', '탈회']] as const).map(([v, l]) =>
-                    <button key={v} type="button" aria-pressed={p.holding === v} onClick={() => setProfile(name, {holding: p.holding === v ? null : v})}>{l}</button>)}
+                    <button key={v} type="button" aria-pressed={p.holding === v} onClick={() => setProfile(name, {holding: p.holding === v ? null : v, ...(v === 'canceled' ? {noCancellation: false} : {})})}>{l}</button>)}
                 </div>
               </div>
-              {p.holding === 'canceled' && <label className="is-f">
-                <span>탈회일</span>
-                <input type="date" value={p.canceledAt ?? ''} max={now} onChange={e => setProfile(name, {canceledAt: e.target.value || null})}/>
+              {(p.holding === 'canceled' || cancellationIssuers.has(name)) && <label className="is-f">
+                <span>최근 탈회일</span>
+                <input type="date" value={p.canceledAt ?? ''} max={now} disabled={p.noCancellation}
+                       onChange={e => setProfile(name, {canceledAt: e.target.value || null, noCancellation: false})}/>
               </label>}
+              {p.holding !== 'canceled' && cancellationIssuers.has(name) &&
+                <button type="button" className="is-chip" aria-pressed={p.noCancellation}
+                        onClick={() => setProfile(name, {noCancellation: !p.noCancellation, canceledAt: !p.noCancellation ? null : p.canceledAt})}>
+                  탈회 이력 없음
+                </button>}
               <label className="is-f">
                 <span>최근 이벤트 혜택 수령일</span>
                 <input type="date" value={p.lastReward ?? ''} max={now} disabled={p.noReward}
@@ -120,15 +133,22 @@ export function IssuanceView({onCount}: {onCount?: (n: number) => void}) {
                       onClick={() => setProfile(name, {noReward: !p.noReward, lastReward: !p.noReward ? null : p.lastReward})}>
                 수령 이력 없음
               </button>
-              <label className="is-check">
-                <input type="checkbox" checked={p.targetCardUnused} onChange={e => setProfile(name, {targetCardUnused: e.target.checked})}/>
-                대상 카드로는 결제한 적 없음
-              </label>
+              {creditIssuers.has(name) && <>
+                <label className="is-f">
+                  <span>개인 신용카드 마지막 결제일</span>
+                  <input type="date" value={p.lastCreditPayment ?? ''} max={now} disabled={p.noCreditPayment || p.noPayment}
+                         onChange={e => setProfile(name, {lastCreditPayment: e.target.value || null, noCreditPayment: false})}/>
+                </label>
+                <button type="button" className="is-chip" disabled={p.noPayment} aria-pressed={p.noCreditPayment || p.noPayment}
+                        onClick={() => setProfile(name, {noCreditPayment: !p.noCreditPayment, lastCreditPayment: !p.noCreditPayment ? null : p.lastCreditPayment})}>
+                  개인 신용카드 결제 이력 없음
+                </button>
+              </>}
             </div>}
           </div>;
         })}
       </div>
-      <p className="is-p-help">결제일·탈회일·수령일로 <b>N일 뒤 가능</b>을 계산해요. 조건이 끝나기 전에 이벤트가 끝나면 <b>조건 미충족</b>으로 표시합니다.</p>
+      <p className="is-p-help">지정 기간과 매일 바뀌는 기준을 구분해요. 원문이나 이력이 불충분하면 <b>조건 확인 필요</b>로 표시해요.</p>
     </section>
 
     <div className="is-filters">
@@ -150,7 +170,11 @@ export function IssuanceView({onCount}: {onCount?: (n: number) => void}) {
         <span role="columnheader">카드사</span><span role="columnheader">출처</span><span role="columnheader">카드 · 이벤트</span>
         <span role="columnheader">혜택</span><span role="columnheader">이용조건</span><span role="columnheader">무실적 기준</span><span role="columnheader">참여 가능</span>
       </div>
-      {filtered.map(({e, v}) => <Row key={e.id} e={e} v={v}/>)}
+      {filtered.map(({e, v}) => {
+        const key = targetKey(e);
+        return <Row key={e.id} e={e} v={v} confirmed={!!(key && targetConfirmations[key])}
+                    onConfirm={key ? checked => setTargetConfirmations(prev => ({...prev, [key]: checked})) : undefined}/>;
+      })}
     </div> : <Empty title={only === 'ok' ? '지금 바로 참여 가능한 이벤트가 없어요.' : '조건에 맞는 이벤트가 없어요.'} action={{label: '필터 초기화', onClick: () => { setQ(''); setSource('all'); setIssuer('all'); setOnly('all'); }}}/>}
 
     <p className="mc-note">
@@ -159,11 +183,15 @@ export function IssuanceView({onCount}: {onCount?: (n: number) => void}) {
   </>;
 }
 
-function Row({e, v}: {e: IssuanceEvent; v: ReturnType<typeof judge>}) {
+function Row({e, v, confirmed, onConfirm}: {
+  e: IssuanceEvent; v: ReturnType<typeof judge>; confirmed: boolean; onConfirm?: (checked: boolean) => void;
+}) {
   const [openRule, setOpenRule] = useState(false);
   const rule = ruleLine(e);
+  const issuer = profileIssuerFor(e);
+  const product = rulesFor(e)?.targetUnused?.product;
   return <div className={'is-tr is-state-' + v.status + (openRule ? ' is-open' : '')} role="row">
-    <span className="is-c-issuer" role="cell">{e.issuer ? <IssuerTile issuer={e.issuer} size="xs"/> : null}<b>{e.issuer || '카드사 미확인'}</b></span>
+    <span className="is-c-issuer" role="cell">{issuer ? <IssuerTile issuer={issuer} size="xs"/> : null}<b>{issuer || '카드사 미확인'}</b></span>
     <span className="is-c-source" role="cell" data-label="출처"><i className="is-src" data-src={e.sourceId}>{e.source}</i></span>
     <span className="is-c-name" role="cell" data-label="카드·이벤트">
       <a href={e.url} target="_blank" rel="noopener noreferrer">{e.cardName || e.title}</a>
@@ -173,7 +201,7 @@ function Row({e, v}: {e: IssuanceEvent; v: ReturnType<typeof judge>}) {
     <span className="is-c-benefit" role="cell" data-label="혜택"><b>{e.benefitAmount ? won(e.benefitAmount) : e.benefitText ?? '업체 문의'}</b></span>
     <span className="is-c-spend" role="cell" data-label="이용조건">{e.spendCondition ?? '—'}</span>
     <span className="is-c-rule" role="cell" data-label="무실적 기준">
-      <button type="button" className="is-rule" aria-expanded={openRule} onClick={() => setOpenRule(o => !o)} disabled={!rule}>
+      <button type="button" className="is-rule" aria-expanded={openRule} onClick={() => setOpenRule(o => !o)} disabled={!rule && !e.eligibilityRuleText}>
         {rule ?? '조건 확인 필요'}
       </button>
       {openRule && <span className="is-rule-more">
@@ -186,7 +214,11 @@ function Row({e, v}: {e: IssuanceEvent; v: ReturnType<typeof judge>}) {
       {v.status === 'wait' && v.from && <small>{shortDate(v.from)}부터{v.days !== undefined ? ` (D-${v.days})` : ''}</small>}
       {v.status === 'blocked' && v.reasons.length > 0 && <small>{v.reasons[0]}</small>}
       {v.status === 'unknown' && v.missing?.length ? <small>{v.missing.join('·')} 입력</small> : null}
-      {v.status === 'target' && <small>내 카드 미사용이면 가능</small>}
+      {v.status === 'unknown' && v.reasons.length > 0 && <small>{v.reasons[0]}</small>}
+      {product && onConfirm && v.status !== 'blocked' && <label className="is-check">
+        <input type="checkbox" checked={confirmed} onChange={event => onConfirm(event.target.checked)}/>
+        {product} 미사용 확인
+      </label>}
       {v.status === 'ok' && v.reasons.length > 0 && <small>{v.reasons[0]}</small>}
     </span>
   </div>;
@@ -198,6 +230,7 @@ function summaryOf(p: IssuerProfile): string {
   const parts: string[] = [];
   if (p.noPayment) parts.push('결제 이력 없음');
   else if (p.lastPayment) parts.push(`결제 ${shortDate(p.lastPayment)}`);
+  if (p.lastCreditPayment) parts.push(`개인 신용 ${shortDate(p.lastCreditPayment)}`);
   if (p.holding === 'holding') parts.push('보유 중');
   else if (p.holding === 'none') parts.push('미보유');
   else if (p.holding === 'canceled') parts.push(p.canceledAt ? `탈회 ${shortDate(p.canceledAt)}` : '탈회');
