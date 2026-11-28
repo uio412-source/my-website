@@ -1,7 +1,7 @@
 {
  "agent": "Pickle",
  "role": "Pickle(Claude 기반) — 데이터 수집(data/inbox)과 코드·문서 작업. 수집 브랜치 ai/chatgpt/data-YYYY-MM-DD-pickle*, 코드·문서 ai/pickle/<작업내용>, 수집 파일 접미사 -pickle·-pickle2·-pickle3.",
- "updatedAt": "2026-11-28T11:55:00+09:00",
+ "updatedAt": "2026-11-28T12:05:00+09:00",
  "lock": null,
  "runs": [
   {
@@ -1306,8 +1306,8 @@
   {
    "at": "2026-11-28T11:55:00+09:00",
    "kind": "data-fix",
-   "pr": null,
-   "summary": "현정 님 보유 단종·구버전 카드 16종 카드 DB 추가(1,552→1,568장) — 신한 The More(더모아)·The CLASSIC-Y·D-day·CJ ONE 신한카드, 롯데 올마이쇼핑(해외), KB 톡톡 my point·Liiv Mate·금융포인트리 플래티늄, 우리 카드의정석 Dear Traveler·Dear Shopper, MG+ S 하나카드·더나은 체크, 키움증권 하나카드, BC 바로 GOAT, 넥슨 현대카드 UNLIMITED, 네이버 현대카드 Edition2. 카드사 공식 상품 페이지·약관·상품설명서로 혜택·연회비·실적/혜택 제외·상품권·세금·관리비 판정을 채웠고, 혜택 줄 78개를 '적용처 / 혜택·조건'으로 다시 써 label-audit에서 이 16장 문제 0. 롯데×마스터 '해외 결제 최대 11만 네이버페이 포인트'(evnBultSeq=11390, 2026-11-06~12-31, 20/40/80만원 3/5/11만P, 응모 필수)를 events.json에 최신판으로 추가(기존 5만P 행사 11308은 종료 상태로 유지)",
+   "pr": 285,
+   "summary": "현정 님 보유 단종·구버전 카드 16종 카드 DB 추가(1,552→1,568장) — 신한 The More(더모아)·The CLASSIC-Y·D-day·CJ ONE 신한카드, 롯데 올마이쇼핑(해외), KB 톡톡 my point·Liiv Mate·금융포인트리 플래티늄, 우리 카드의정석 Dear Traveler·Dear Shopper, MG+ S 하나카드·더나은 체크, 키움증권 하나카드, BC 바로 GOAT, 넥슨 현대카드 UNLIMITED, 네이버 현대카드 Edition2. 카드사 공식 상품 페이지·약관·상품설명서로 혜택·연회비·실적/혜택 제외·상품권·세금·관리비 판정을 채웠고, 혜택 줄 78개를 '적용처 / 혜택·조건'으로 다시 써 label-audit에서 이 16장 문제 0. 롯데×마스터 '해외 결제 최대 11만 네이버페이 포인트'(evnBultSeq=11390, 2026-11-06~12-31, 20/40/80만원 3/5/11만P, 응모 필수)를 events.json에 최신판으로 추가(기존 5만P 행사 11308은 종료 상태로 유지) · 후속 #293(이벤트 id를 수집 파이프라인 id와 통일) · 배포 후 카드 1,568장 중 16장 라이브 확인, 카드 상세·이벤트 상세 200",
    "queueKeys": [],
    "picking": {
     "cards": 1568,
