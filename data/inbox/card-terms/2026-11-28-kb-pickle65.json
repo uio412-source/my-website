@@ -1,0 +1,61 @@
+{
+  "type": "card-terms",
+  "issuer": "KB국민카드",
+  "collectedAt": "2026-11-28",
+  "collector": "Pickle",
+  "cards": [
+    {
+      "cardId": "kb-09314",
+      "queueKey": "kb-09314",
+      "name": "LFmall 신용카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09314&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/09314__prdctOpmn_20221228.pdf",
+      "docDate": "2022-10-11",
+      "annualFee": [
+        {"brand": "국내전용", "amount": 15000},
+        {"brand": "Mastercard", "amount": 15000}
+      ],
+      "brands": ["국내전용", "Mastercard"],
+      "minimumSpend": 0,
+      "spendBasis": "전월 1일~말일 KB국민 LFmall 신용카드 일시불·할부 승인 금액",
+      "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 전월 이용실적 30만원 미만이어도 30만원 이상 구간 서비스 제공",
+      "spendExclusions": ["LFmall 이용금액(적립 제외)", "무이자(부분)할부 이용금액", "상품권·선불카드 구입·충전", "아파트 관리비", "초·중·고 납입금 전체", "정부지원금", "대학(원) 등록금", "세금·공과금", "4대 사회보험료", "수수료·이자·연체료·연회비", "신차구매 청구(환급) 할인 전표", "취소 금액"],
+      "benefitExclusions": ["무이자할부", "상품권·선불카드 구입·충전", "LF 오프라인 매장 이용금액"],
+      "benefits": [
+        {"group": "쇼핑", "label": "LFmall", "place": "LFmall(lfmall.co.kr)", "value": "5%", "valueType": "할인", "minimumSpend": 0, "tiers": [{"spend": 0, "cap": 5000}, {"spend": 300000, "cap": 20000}], "cap": null, "capScope": "월"},
+        {"group": "기본적립", "label": "국내외 가맹점", "place": "국내외 모든 가맹점", "value": "0.5%", "valueType": "적립", "minimumSpend": 0, "cap": null, "capScope": "월", "limits": "전월실적 조건·적립한도 없음", "conditions": ["LFmall 이용금액은 적립 제외"]}
+      ]
+    },
+    {
+      "cardId": "kb-09924",
+      "queueKey": "kb-09924",
+      "name": "YOU With 카드",
+      "cardType": "credit",
+      "status": "active",
+      "url": "https://card.kbcard.com/CRD/DVIEW/HCAMCXPRICAC0076?cooperationcode=09924&mainCC=a",
+      "termsUrl": "https://img2.kbcard.com/obj/card/download/09924__prdctOpmn_20260519.pdf",
+      "docDate": "2022-12-26",
+      "annualFee": [
+        {"brand": "국내전용", "amount": 15000},
+        {"brand": "Mastercard", "amount": 15000}
+      ],
+      "brands": ["국내전용", "Mastercard"],
+      "minimumSpend": 400000,
+      "spendBasis": "전월 1일~말일 KB국민 YOU With 카드 일시불·할부 승인 금액",
+      "grace": "최초 카드 사용 등록일부터 다음 달 말일까지 실적이 없어도 1구간 서비스 제공",
+      "spendExclusions": ["단기카드대출(현금서비스)", "장기카드대출(카드론)", "상품권·선불카드 구입·충전", "아파트 관리비", "초·중·고 납입금", "정부지원금", "대학 등록금", "국세·지방세", "공과금", "4대 사회보험료", "수수료·이자·연체료·연회비", "취소 금액"],
+      "benefitExclusions": ["백화점·대형마트 등 일부 입점 매장", "상품권 구입·선불식 충전 금액", "배달 현장결제 건"],
+      "benefits": [
+        {"group": "1st 선택(택1)", "label": "마트중심", "place": "이마트·롯데마트·홈플러스, 한식·중식·일식·양식, SK주유소·충전소", "value": "5%", "valueType": "할인", "minimumSpend": 400000, "tiers": [{"spend": 400000, "cap": 8000}, {"spend": 800000, "cap": 11000}, {"spend": 1200000, "cap": 13000}, {"spend": 2000000, "cap": 30000}], "cap": null, "capScope": "월", "limits": "건당 3만원 이상", "conditions": ["온라인(PG가맹점) 결제·상품권 구매·임대매장 SSM 이용금액 제외"]},
+        {"group": "1st 선택(택1)", "label": "백화점중심", "place": "신세계·롯데·현대백화점, 한식·중식·일식·양식, SK주유소·충전소", "value": "5%", "valueType": "할인", "minimumSpend": 400000, "tiers": [{"spend": 400000, "cap": 8000}, {"spend": 800000, "cap": 11000}, {"spend": 1200000, "cap": 13000}, {"spend": 2000000, "cap": 30000}], "cap": null, "capScope": "월", "limits": "건당 3만원 이상", "conditions": ["온라인·임대매장 결제·상품권 구매 이용금액 제외"]},
+        {"group": "1st 선택(택1)", "label": "동네중심", "place": "SSM(롯데슈퍼·이마트에브리데이·홈플러스익스프레스), 배달앱(배달의민족·요기요), 세탁소·정육점·약국·제과/아이스크림점·미용원·서점", "value": "5%", "valueType": "할인", "minimumSpend": 400000, "tiers": [{"spend": 400000, "cap": 8000}, {"spend": 800000, "cap": 11000}, {"spend": 1200000, "cap": 13000}, {"spend": 2000000, "cap": 30000}], "cap": null, "capScope": "월", "conditions": ["배달 현장결제 건 제외", "상품권·선불카드 충전 제외"]},
+        {"group": "2nd 선택(택1)", "label": "둘이중심", "place": "온라인티켓(인터파크·티켓링크) 공연예매, 영화관·공연장/전시장·경기장, 주차장, 커피/음료전문점", "value": "10%", "valueType": "할인", "minimumSpend": 400000, "tiers": [{"spend": 400000, "cap": 7000}, {"spend": 800000, "cap": 9000}, {"spend": 1200000, "cap": 12000}, {"spend": 2000000, "cap": 15000}], "cap": null, "capScope": "월", "conditions": ["현장 구매에 한하며 매점·예매권 구입·예매대행 사이트는 제외"]},
+        {"group": "2nd 선택(택1)", "label": "자녀중심", "place": "문리계학원·외국어학원·예체능학원, 독서실, 패스트푸드점, 편의점(GS25·CU)", "value": "10%", "valueType": "할인", "minimumSpend": 400000, "tiers": [{"spend": 400000, "cap": 7000}, {"spend": 800000, "cap": 9000}, {"spend": 1200000, "cap": 12000}, {"spend": 2000000, "cap": 15000}], "cap": null, "capScope": "월", "limits": "학원·독서실은 건당 3만원 이상"},
+        {"group": "2nd 선택(택1)", "label": "돌봄중심", "place": "종합병원·일반병원(치과·한방)·일반의원(치과·한의원), 한약방, 건강식품점", "value": "10%", "valueType": "할인", "minimumSpend": 400000, "tiers": [{"spend": 400000, "cap": 7000}, {"spend": 800000, "cap": 9000}, {"spend": 1200000, "cap": 12000}, {"spend": 2000000, "cap": 15000}], "cap": null, "capScope": "월", "limits": "건당 3만원 이상"},
+        {"group": "기본서비스", "label": "이동통신", "place": "SKT·KT·LG U+·Liiv M 이동통신요금 자동납부", "value": "10%", "valueType": "할인", "minimumSpend": 400000, "cap": 5000, "capScope": "월", "conditions": ["인터넷·IPTV 등 결합상품 제외"]}
+      ]
+    }
+  ]
+}
